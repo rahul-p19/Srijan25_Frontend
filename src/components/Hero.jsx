@@ -9,11 +9,15 @@ function Hero() {
           <img src='/inverted-commas.svg' className='p-4 border-white border-t border-r' />
         </div>
         <div className='border-white border-b row-span-2'></div>
-        <div className='border-white border-b border-r flex items-end p-6 text-2xl'>
-          <h3>Coding</h3>
+        <div className='relative border-white border-b border-r flex items-end p-6 text-2xl'>
+          <h3 className='absolute top-[50%] -translate-y-[50%] left-[5%] hero-text-1'>Coding</h3>
+          <h3 className='absolute top-[50%] -translate-y-[50%] left-[5%] hero-text-2'>Robotics</h3>
+          <h3 className='absolute top-[50%] -translate-y-[50%] left-[5%] hero-text-3'>Management</h3>
         </div>
-        <div className='border-white border-b flex justify-end items-end p-6 text-2xl'>
-          <h3>F5 Talks</h3>
+        <div className='relative border-white border-b flex justify-end items-end p-6 text-2xl'>
+          <h3 className='absolute top-[50%] -translate-y-[50%] right-[5%] hero-text-1'>Cultural Nights</h3>
+          <h3 className='absolute top-[50%] -translate-y-[50%] right-[5%] hero-text-2'>Comedy Nights</h3>
+          <h3 className='absolute top-[50%] -translate-y-[50%] right-[5%] hero-text-3'>F5 Talks</h3>
         </div>
         <div className='row-span-3 border-r-white border-r flex p-6'>
         </div>
@@ -28,7 +32,10 @@ function Hero() {
       <div className='absolute p-3 z-[90] bottom-[20%] right-[12%] bg-background border border-white'>
         <p className='text-3xl'><span className='text-transparent bg-clip-text bg-gradient-to-r from-blue via-red to-red'>20-23</span> MARCH 2025</p>
       </div>
-      <img src='/mascot.svg' className='absolute z-[100] top-[20%] left-[50%] -translate-x-[50%] mascot-animation' />
+      <img src='/mascot.svg' className='absolute z-[100] top-[20%] left-[50%] -translate-x-[50%] h-full mascot-animation'
+        onMouseOut={(e) => { e.target.style.animationPlayState = "paused"; }}
+        onMouseEnter={(e) => { e.target.style.animationPlayState = "running"; }}
+      />
     </div>
   )
 }
