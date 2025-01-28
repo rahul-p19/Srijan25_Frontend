@@ -26,7 +26,7 @@ function Hero() {
         </div>
       </div>
       <div></div>
-      <div className='absolute z-[90] bottom-0 left-[5%] h-[30%] bg-background border border-white'>
+      <div className='absolute z-[90] bottom-0 left-[5%] h-[30%] bg-background border border-white border-b-transparent'>
         <img src='/fetsu-presents-srijan-glitch.svg' className='h-full' />
       </div>
       <div className='absolute p-3 z-[90] bottom-[20%] right-[12%] bg-background border border-white'>

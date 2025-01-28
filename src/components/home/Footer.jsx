@@ -2,7 +2,7 @@ import React from 'react'
 
 function Footer() {
   return (
-    <footer className='grid grid-cols-5 border-t border-t-white w-screen max-w-full'>
+    <footer className='grid grid-cols-5 border-t border-t-white w-full'>
       <div></div>
       <div className='col-span-3 border-l border-r border-l-white border-r-white flex flex-col p-3'>
         <div className='flex justify-between p-8'>
