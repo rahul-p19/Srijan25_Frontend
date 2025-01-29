@@ -7,7 +7,7 @@ function Footer() {
       <div className='col-span-3 border-l border-r border-l-white border-r-white flex flex-col p-3'>
         <div className='flex justify-between p-8'>
           <div className='flex flex-col gap-y-4'>
-            <h2 className='text-3xl'>Explore</h2>
+            <h2 className='text-3xl text-transparent bg-clip-text bg-gradient-to-r from-white to-light-pink'>Explore</h2>
             <div className='flex flex-col text-left text-lg underline underline-offset-2'>
               <a href='/'>Home</a>
               <a href='/events'>Events</a>
@@ -16,7 +16,7 @@ function Footer() {
             </div>
           </div>
           <div className='flex flex-col gap-y-4'>
-            <h2 className='text-3xl'>Legal</h2>
+            <h2 className='text-3xl text-transparent bg-clip-text bg-gradient-to-t from-white to-light-pink'>Legal</h2>
             <div className='flex flex-col text-right underline underline-offset-2 text-lg'>
               <a href='/privacy'>Privacy</a>
               <a href='/terms'>Terms</a>

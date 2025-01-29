@@ -39,14 +39,14 @@ function SpeakerCard({ speaker }) {
       <div className='bg-gradient-to-b from-red via-lavender to-white p-0.5'>
         <img src={speaker.image} className='object-contain h-full w-full bg-background p-1.5' />
       </div>
-      <div className='flex justify-between w-full px-2'>
+      <div className='flex justify-between w-full px-2 text-xl'>
         <h2>{speaker.name}</h2>
         <div className='flex gap-x-2'>
           <a href={speaker.facebook}>f</a>
           <a href={speaker.linkedin}>in</a>
         </div>
       </div>
-    </div>
+    </div >
   )
 }
 
