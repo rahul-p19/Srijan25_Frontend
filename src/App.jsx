@@ -5,6 +5,7 @@ import Hero from './components/home/Hero'
 import Timeline from './components/home/Timeline'
 import About from './components/home/About'
 import Contact from './components/home/Contact'
+import Speakers from './components/home/Speakers'
 
 function App() {
 
@@ -14,6 +15,7 @@ function App() {
         <Navbar />
         <Hero />
         <Timeline />
+        <Speakers />
         <About />
         <Contact />
         <Footer />
