@@ -1,6 +1,6 @@
 import './App.css'
-import Navbar from "./components/home/Navbar"
-import Footer from "./components/home/Footer"
+import Navbar from "./components/Navbar"
+import Footer from "./components/Footer"
 import Hero from './components/home/Hero'
 import Timeline from './components/home/Timeline'
 import About from './components/home/About'

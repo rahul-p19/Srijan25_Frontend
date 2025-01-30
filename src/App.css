@@ -103,3 +103,23 @@
     top: 150%;
   }
 }
+
+.mobile-navbar{
+  animation: navbarAnimation 1.2s ease-in-out forwards;
+}
+
+.mobile-navbar-closed{
+  animation: navbarCloseAnimation 1.2s ease-in-out forwards;
+}
+
+@keyframes navbarAnimation {
+  100%{
+    bottom: 10%;
+  }
+}
+
+@keyframes navbarCloseAnimation {
+  100%{
+    bottom: 100%;
+  }
+}

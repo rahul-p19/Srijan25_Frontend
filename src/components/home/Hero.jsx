@@ -5,7 +5,7 @@ function Hero() {
     <div className='h-[90vh] w-screen max-w-full grid grid-cols-7 sm:grid-cols-5 relative overflow-x-clip'>
       <div></div>
       <div className='col-span-5 sm:col-span-3 grid grid-cols-2 grid-rows-10 sm:grid-rows-6 border-l border-r border-l-white border-r-white'>
-        <div className='border-r border-b border-white flex items-end sm:row-span-2'>
+        <div className='sm:border-r border-b border-white flex items-end sm:row-span-2'>
           <img src='/inverted-commas.svg' className='p-1 sm:p-4 border-white border-t border-r h-1/3 sm:h-auto' />
         </div>
         <div className='border-white border-b sm:row-span-2'></div>
