@@ -23,7 +23,7 @@ function Contact() {
       <div className='grid row-span-1 sm:grid-rows-5 col-span-7 sm:col-span-1'>
         <div className='row-span-4'></div>
         <div>
-          <button className='w-5/7 sm:w-full h-full p-1 border-white border border-b-transparent border-t sm:border-t-transparent sm:border-l-transparent sm:border-r-transparent text-xl'>SUBSCRIBE</button>
+          <button className='w-5/7 sm:w-full h-full p-1 border-white border border-b-transparent border-t sm:border-l-transparent sm:border-r-transparent text-xl'>SUBSCRIBE</button>
         </div>
       </div>
     </div>
