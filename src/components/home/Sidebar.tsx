@@ -17,23 +17,28 @@ const sections = [
     end: 2.3
   },
   {
-    name: "Speakers",
+    name: "Explore",
     start: 2.3,
     end: 3.2
   },
   {
-    name: "About",
+    name: "Speakers",
     start: 3.2,
-    end: 4.4
+    end: 4.0
+  },
+  {
+    name: "About",
+    start: 4.0,
+    end: 5.0
   },
   {
     name: "Gallery",
-    start: 4.4,
-    end: 5.3
+    start: 5.0,
+    end: 5.9
   },
   {
     name: "Get in Touch",
-    start: 5.3,
+    start: 5.9,
     end: 7
   },
 ]
@@ -78,9 +83,9 @@ function Sidebar() {
         }}>x</button>
         <div className='absolute -top-[1px] right-0 left-0 bg-gradient-to-r from-purple to-red h-[3px] z-[201]'></div>
         <h2 className='text-xl font-semibold border-white border-b pb-3'>All Sections</h2>
-        <div className='flex flex-col gap-y-6 text-lg items-end'>
+        <div className='flex flex-col gap-y-4 text-lg items-end'>
           {sections.map((ele, ind) => (
-            <button key={ind} className='uppercase w-4/5 text-right'
+            <button key={ind} className='uppercase w-4/5 text-right cursor-pointer'
               onClick={() => {
                 window.scrollTo({
                   top: (ele.end - 0.5) * height,
