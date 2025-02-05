@@ -8,6 +8,7 @@ import Contact from './components/home/Contact'
 import Speakers from './components/home/Speakers'
 import Sponsors from './components/home/Sponsors'
 import Gallery from './components/home/Gallery'
+import Sidebar from './components/home/Sidebar'
 
 function App() {
 
@@ -15,6 +16,7 @@ function App() {
     <>
       <main className='font-sometypeMono'>
         <Navbar />
+        <Sidebar />
         <Hero />
         <Timeline />
         <Sponsors />

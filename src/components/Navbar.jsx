@@ -1,11 +1,16 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
-function Navbar() {
+function Navbar(props) {
 
   const [navbarOpen, setNavbarOpen] = useState(false);
+  const [pathname, setPathname] = useState((window.location.pathname).slice(1));
+
+  useEffect(() => {
+    setPathname((window.location.pathname).slice(1));
+  }, [window.location.pathname])
 
   return (
-    <nav className='grid grid-cols-7 sm:grid-cols-5 w-full border-b border-b-white'>
+    <nav className='sticky top-0 grid grid-cols-7 sm:grid-cols-5 w-full border-b border-b-greyBorder bg-background z-[200]'>
       <div className='flex justify-around p-3'>
         <a href='/' className='hidden sm:block'>
           <img src='/srijan-logo-white.svg' />
@@ -14,44 +19,56 @@ function Navbar() {
           <img src='/fetsu-presents-srijan25.svg' />
         </a>
       </div>
-      <div className='col-span-5 sm:col-span-3 grid grid-cols-2 sm:grid-cols-4 p-2 sm:p-0 items-center justify-items-center border-r border-r-white border-l-white border-l text-xl'>
+      <div className='col-span-5 sm:col-span-3 text-center p-2 sm:p-0 flex items-center justify-around border-r border-r-greyBorder border-l-greyBorder border-l text-xl'>
         <a href='/' className='sm:hidden'>
           <img src='/srijan-logo-white.svg' />
         </a>
         <a href='/' className='sm:hidden'>
           <img src='/fetsu-presents-srijan25.svg' />
         </a>
-        <a href='/' className='hidden sm:block'>Home</a>
-        <a href='/#about' className='hidden sm:block'>About</a>
-        <a href='/events' className='hidden sm:block'>Events</a>
-        <a href='/notifications' className='hidden sm:block'>Notifications</a>
+        <a href='/' className={`relative hidden sm:block w-fit`}>Home
+          <div className={`absolute h-[2px] bg-gradient-to-l from-red to-purple bottom-0 ${pathname == "" ? 'w-full' : 'w-0'}`}></div>
+        </a>
+        <a href='/events' className={`relative hidden sm:block w-fit`}>Events
+          <div className={`absolute h-[2px] bg-gradient-to-l from-red to-purple bottom-0 ${pathname == "events" ? 'w-full' : 'w-0'}`}></div>
+        </a>
+        <a href='/notifications' className={`relative hidden sm:block w-fit`}>Notifications
+          <div className={`absolute h-[2px] bg-gradient-to-l from-red to-purple bottom-0 ${pathname == "notifications" ? 'w-full' : 'w-0'}`}></div>
+        </a>
+        <a href='/login' className={`relative hidden sm:block w-fit`}>Login
+          <div className={`absolute h-[2px] bg-gradient-to-l from-red to-purple bottom-0 ${pathname == "login" ? 'w-full' : 'w-0'}`}></div>
+        </a>
       </div>
       <div className='grid place-items-center text-xl'>
-        <a href='/dashboard' className='hidden sm:block'>Dashboard</a>
+        <a href='/dashboard' className='hidden relative sm:block'>Dashboard
+          <div className={`absolute h-[2px] bg-gradient-to-l from-red to-purple bottom-0 ${pathname == "dashboard" ? 'w-full' : 'w-0'}`}></div>
+        </a>
         <button className='sm:hidden' onClick={() => {
           setNavbarOpen(true);
           setTimeout(handler)
         }}>+</button>
       </div>
-      <div className={`${navbarOpen ? 'bottom-0 p-6' : 'bottom-[100%]'} bg-background transition-all duration-700 fixed z-[200] top-0 left-0 right-0`}>
+      <nav
+        className={`bg-background transition-all duration-700 z-[200] p-6 pt-10 fixed flex flex-col items-center gap-y-12 right-0 left-0 shadow-2xl shadow-hray-800/60 ${navbarOpen ? `bottom-0 top-0` : `bottom-[100%] -top-[100%]`
+          }`}>
         <button className={`absolute top-4 right-4 text-xl ${navbarOpen ? '' : 'hidden'}`} onClick={() => {
           setNavbarOpen(false);
         }}>X</button>
-        <div className={`absolute bg-background top-[10%] left-[50%] -translate-x-[50%] flex flex-col gap-y-6 w-4/5 transition-all duration-100 ${navbarOpen ? 'bottom-0 opacity-100' : 'hidden bottom-[100%] opacity-0'} transition-discrete`}>
+        <div className={`flex flex-col gap-y-6 transition-all duration-100 w-4/5`}>
           <div className='flex justify-around w-full pl-6'>
             <img src='/srijan-logo-white.svg' />
             <img src='/fetsu-presents-srijan25.svg' />
           </div>
-          <a href='/' className='text-left border-white/30 border-b w-full py-1'>Home</a>
-          <a href='/' className='text-left border-white/30 border-b w-full py-1'>About</a>
-          <a href='/' className='text-left border-white/30 border-b w-full py-1'>Events</a>
-          <a href='/' className='text-left border-white/30 border-b w-full py-1'>Notifications</a>
-          <a href='/' className='text-left border-white/30 border-b w-full py-1'>Campus Ambassadors</a>
-          <a href='/' className='text-left border-white/30 border-b w-full py-1'>Workshops</a>
-          <a href='/' className='text-left border-white/30 border-b w-full py-1'>Merchandise</a>
-          <a href='/' className='text-left border-white/30 border-b w-full py-1'>Dashboard</a>
+          <a href='/' className='text-left border-greyBorder/30 border-b w-full py-1'>Home</a>
+          <a href='/' className='text-left border-greyBorder/30 border-b w-full py-1'>About</a>
+          <a href='/' className='text-left border-greyBorder/30 border-b w-full py-1'>Events</a>
+          <a href='/' className='text-left border-greyBorder/30 border-b w-full py-1'>Notifications</a>
+          <a href='/' className='text-left border-greyBorder/30 border-b w-full py-1'>Campus Ambassadors</a>
+          <a href='/' className='text-left border-greyBorder/30 border-b w-full py-1'>Workshops</a>
+          <a href='/' className='text-left border-greyBorder/30 border-b w-full py-1'>Merchandise</a>
+          <a href='/' className='text-left border-greyBorder/30 border-b w-full py-1'>Dashboard</a>
         </div>
-      </div>
+      </nav>
     </nav>
   )
 }

@@ -2,9 +2,9 @@ import React from 'react'
 
 function Footer() {
   return (
-    <footer className='grid grid-cols-7 sm:grid-cols-5 border-t border-t-white w-full'>
+    <footer className='grid grid-cols-7 sm:grid-cols-5 border-t border-t-greyBorder w-full'>
       <div></div>
-      <div className='col-span-5 sm:col-span-3 border-l border-r border-l-white border-r-white flex flex-col gap-y-8 sm:gap-y-2 p-1 sm:p-3'>
+      <div className='col-span-5 sm:col-span-3 border-l border-r border-l-greyBorder border-r-greyBorder flex flex-col gap-y-8 sm:gap-y-2 p-1 sm:p-3'>
         <div className='flex justify-between p-2 sm:p-8'>
           <div className='flex flex-col gap-y-4'>
             <h2 className='text-3xl text-transparent bg-clip-text bg-gradient-to-r from-white to-light-pink'>Explore</h2>
