@@ -5,11 +5,11 @@ function Card({ card }) {
   return (
     <div className='flex relative flex-col items-center gap-y-2 w-full h-full cardContainer'>
       <div className='bg-gradient-to-b from-red via-lavender to-white p-0.5 overflow-hidden aspect-square h-full cardDiv'>
-        <div className='h-full overflow-hidden'>
-          <img src={card.image} className='object-cover aspect-square h-full w-full bg-background p-3 transition-all duration-500 cardImage' />
+        <div className='h-full w-full overflow-hidden'>
+          <img src={card.image} className='object-cover aspect-square h-full w-full bg-background p-2 transition-all duration-500 cardImage' />
         </div>
       </div>
-      <div className='opacity-100 sm:opacity-0 transition-opacity duration-500 hover:opacity-100 absolute grid place-items-center bottom-0 bg-background/90 w-full py-6 text-xl cardText'>
+      <div className='opacity-100 sm:opacity-0 transition-opacity duration-500 hover:opacity-100 absolute grid place-items-center bottom-[2px] left-[2px] right-[2px] bg-background/90 py-6 text-xl cardText'>
         <h2>{card.text}</h2>
       </div>
     </div >
