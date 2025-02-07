@@ -232,7 +232,7 @@ const App = () => {
           <TextField
             fullWidth
             size="medium"
-            label="Refferal"
+            label="Referral"
             variant="outlined"
             margin="dense"
             InputLabelProps={{
