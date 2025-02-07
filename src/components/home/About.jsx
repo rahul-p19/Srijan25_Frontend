@@ -12,9 +12,9 @@ function About() {
       </div>
       <div className='col-span-3 border-greyBorder sm:border-l sm:border-r grid row-span-5'>
         <div className='row-span-2 grid place-items-center px-8 py-4 sm:py-0 text-left sm:text-justify'>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-            veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex eacommodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          <p>
+            Founding members of National Council of Bengal, in 1906 set the goal "To achieve self reliance through empowerment of Youth by imparting Best of Global Knowledge", and Jadavpur University, founded on 24th December 1955, continues to do the same today. <br />
+            The university's commitment to research, innovation, community engagement, a legendary network of alumnus, and its unwavering contribution to imparting knowledge and refining the taste of culture and technology has marked its distinguished reputation not only in the Indian subcontinent but also at an international level.
           </p>
         </div>
         <div className='sm:hidden relative h-[20vh] border-greyBorder border-t sm:border-t-transparent'>
@@ -26,9 +26,9 @@ function About() {
           <div className='border-greyBorder border-r'></div>
         </div>
         <div className='row-span-2 grid place-items-center px-8 py-4 sm:py-0 text-left sm:text-justify'>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-            veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex eacommodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          <p>
+            In the heart of Kolkata, where passion ignites, Srijan flourishes — an annual tribute to creativity and excellence, cradled by Jadavpur. From its inception in 2007 as a humble spark, it has flourished into an spectacular festival of technology and management. <br />
+            In this four-day spectacle, Srijan transcends from being merely a festival, it becomes a chorus of the most brilliant minds, echoing through the halls of Jadavpur's heritage. Join us at Jadavpur University to engage in 35+ events ranging from Coding Competitions, B-Plan competitions, Case Studies, Equity Research Events, Robotics Competitions, Web Design, Rap Battles and many more to have an experience of a lifetime.
           </p>
         </div>
       </div>

@@ -1,6 +1,8 @@
 import React from 'react'
+import MascotAnimation from './MascotAnimation'
 
 function Hero() {
+
   return (
     <div className='h-[90vh] w-screen max-w-full grid grid-cols-7 sm:grid-cols-5 relative overflow-x-clip'>
       <div></div>
@@ -32,10 +34,13 @@ function Hero() {
       <div className='absolute p-3 z-[90] bottom-[47%] sm:bottom-[20%] right-[3%] sm:right-[12%] bg-background border border-greyBorder'>
         <p className='text-base sm:text-3xl'><span className='text-transparent bg-clip-text bg-gradient-to-r from-blue via-red to-red'>20-23</span> MARCH <br className='sm:hidden' /> 2025</p>
       </div>
-      <img src='/mascot.svg' className='absolute z-[100] top-[32%] sm:top-[20%] left-[50%] -translate-x-[50%] h-3/4 mascot-animation'
+      {/*<img src='/mascot.svg' className='absolute z-[100] top-[32%] sm:top-[20%] left-[50%] -translate-x-[50%] h-3/4 mascot-animation'
         onMouseOut={(e) => { e.target.style.animationPlayState = "paused"; }}
         onMouseEnter={(e) => { e.target.style.animationPlayState = "running"; }}
-      />
+      />*/}
+      <div className='absolute bottom-2 sm:bottom-0 left-[50%] -translate-x-[50%] h-3/5 sm:h-full w-full z-[102]'>
+        <MascotAnimation />
+      </div>
     </div>
   )
 }
