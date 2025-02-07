@@ -11,23 +11,22 @@ import Sponsors from './components/home/Sponsors'
 import Gallery from './components/home/Gallery'
 import Sidebar from './components/home/Sidebar'
 import Cards from './components/home/Cards'
+import Eventpage from "./components/Events/Eventpage"
+import EventRegistration from './components/Events/EventRegistration'
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-
 function App() {
-
   return (
     <>
       <Router>
         <Routes>
           <Route path="/merchandise" element={<MerchandisePage />} />
-
-          <Route path="" element={
+          <Route path="/events" element={<Eventpage />} />
+          <Route path="/eventregistration" element={<EventRegistration />} />
+          <Route path="/" element={
             <div>
-
               <main className='font-sometypeMono'>
                 <Navbar />
-                <Sidebar />
                 <Hero />
                 <Timeline />
                 <Sponsors />
@@ -37,8 +36,6 @@ function App() {
                 <Gallery />
                 <Contact />
                 <Footer />
-
-
               </main>
             </div>
           } />

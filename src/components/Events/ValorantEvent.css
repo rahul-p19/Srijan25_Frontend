@@ -1,0 +1,51 @@
+/* Keyframes for animated borders */
+@keyframes borderAnimation {
+    0% {
+      border-color: #ff0000;
+    }
+    25% {
+      border-color: #00ff00;
+    }
+    50% {
+      border-color: #0000ff;
+    }
+    75% {
+      border-color: #ffff00;
+    }
+    100% {
+      border-color: #ff0000;
+    }
+  }
+  
+  /* Apply the border animation to elements with the .animate-border class */
+  .animate-border {
+    animation: borderAnimation 3s linear infinite;
+  }
+  
+  /* Keyframes for animated colorful text */
+  @keyframes textColor {
+    0% {
+      color: #ff00ff;
+    }
+    25% {
+      color: #00ffff;
+    }
+    50% {
+      color: #ffff00;
+    }
+    75% {
+      color: #ff0000;
+    }
+    100% {
+      color: #ff00ff;
+    }
+  }
+  
+  /* Apply the text color animation to elements with the .animate-text class */
+  .animate-text {
+    animation: textColor 5s linear infinite;
+  }
+  
+  .animate-zoom-in {
+    animation: zoomIn 0.5s ease-in-out forwards;
+  }
