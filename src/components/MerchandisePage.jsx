@@ -14,43 +14,49 @@ export default function MerchandisePage() {
   const [selectedSize, setSelectedSize] = useState(null);
   const [selectedColor, setSelectedColor] = useState('Black');
   const [isWhite, setIsWhite] = useState(true);
+  const contacts = [
+    { id: 1, upi: "user1@upi" },
+    { id: 2, upi: "user2@upi" },
+  ];
+
 
   return (
 
     <div className="relative bg-black text-white min-h-screen">
 
-<GridLines />
 
-    <div className="min-h-screen bg-black text-white p-8">
+
+
       
       <Navbar />
 
+      <div className="min-h-screen bg-black text-white p-8">
 
 
-      <div className="relative flex items-start">
+      <div className="relative z-100 w-70 flex items-start">
         
         <img src='/merchicon.svg' style={{marginTop:"20px"}} />
       </div>      
       
       {/* Merchandise Section */}
-      <div className="flex items-center justify-center h-screen bg-black text-white" style={{marginTop:"-150px"}}>
+      <div className="flex items-center justify-center h-screen bg-black text-white" style={{marginTop:"30px"}}>
       <div className="flex">
         {/* Left Side - Image and Carousel */}
-        <div className="relative w-80">
+        <div className="relative w-110">
           <img
             src="/shirt.svg" // Replace with actual path
             alt="T-Shirt"
             className="w-full"
           />
           {/* Navigation Arrows */}
-          <button className="absolute left-0 top-1/2 transform -translate-y-1/2 text-2xl">
+          {/*<button className="absolute left-0 top-1/2 transform -translate-y-1/2 text-2xl">
             ❮
           </button>
           <button className="absolute right-0 top-1/2 transform -translate-y-1/2 text-2xl">
             ❯
-          </button>
+          </button>*/}
 
-          <button className="mt-4" style={{marginTop:"-2px", marginLeft:"125px"}}>
+          <button className="mt-4" style={{marginTop:"-2px", marginLeft:"285px", marginBottom:"80px"}}>
   <img
     src="/orderbutton.svg" 
     alt="Place Your Order"
@@ -64,9 +70,9 @@ export default function MerchandisePage() {
         {/* Right Side - Controls */}
         <div className="ml-5">
           {/* Size Selection */}
-          <div className="mb-4" style={{marginTop:"150px"}}>
+          <div className="mb-4" style={{marginTop:"250px"}}>
             <p className="text-sm mb-1" style={{marginLeft:"110px"}}>Size</p>
-            <div className="flex space-x-2">
+            <div className="flex space-x-2 grid grid-cols-4 gap-2 border border-white p-2 w-fit mx-auto">
               {["M", "L", "XL", "XXL"].map((size) => (
                 <button
                   key={size}
@@ -86,7 +92,7 @@ export default function MerchandisePage() {
           {/* Color Selection */}
           <div className="mb-4">
             <p className="text-sm mb-1" style={{marginLeft:"40px"}}>Colour</p>
-            <div className="flex items-center space-x-3">
+            <div className="flex items-center space-x-3 grid-cols-4 gap-2 border border-white p-2 w-fit mx-auto">
               <label className="flex items-center space-x-1">
                 <input
                   type="radio"
@@ -98,7 +104,7 @@ export default function MerchandisePage() {
                 />
                 <span
                   className={`w-4 h-4 inline-block border rounded-full ${
-                    selectedColor === "white" ? "bg-white" : "bg-transparent"
+                    selectedColor === "white" ? "bg-white" : "bg-black"
                   }`}
                 />
                 <span>White</span>
@@ -115,14 +121,37 @@ export default function MerchandisePage() {
                 />
                 <span
                   className={`w-4 h-4 inline-block border rounded-full ${
-                    selectedColor === "black" ? "bg-black" : "bg-transparent"
+                    selectedColor === "black" ? "bg-white" : "bg-black"
                   }`}
                 />
                 <span>Black</span>
               </label>
             </div>
+        
           </div>
 
+          <section className="mt-12" style={{marginRight:"-750px"}}>
+        <h3 className="text-xl">Contact Us</h3>
+        <div className="mt-4 space-y-2">
+          <p>[name] [xxxxxxxxxx]</p>
+          <p>[name] [xxxxxxxxxx]</p>
+        </div>
+      </section>
+
+
+          <div className="flex justify-center items-center min-h-screen bg-black" style={{marginTop:"-300px", marginBottom:"-250px", marginRight:"-700px"}}>
+      {/* Container with same background as page */}
+      <div className="flex gap-2 p-4 bg-black">
+        {contacts.map((contact) => (
+          <div key={contact.id} className="flex flex-col items-center">
+            {/* Profile Placeholder */}
+            <div className="w-24 h-24 bg-gray-400 rounded-md"></div>
+            {/* UPI ID */}
+            <span className="text-white text-sm mt-1">{contact.upi}</span>
+          </div>
+        ))}
+      </div>
+    </div>
 
         </div>
         </div>
@@ -150,23 +179,20 @@ export default function MerchandisePage() {
       {/* How to Order Section */}
       <section className="mt-12">
       <img src='/orderimage.svg' />
-        <p className="text-gray-400 mt-2" style={{textAlign:"center", marginTop:"50px", marginLeft:"40px", marginRight:"40px"}}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod 
+        <p className="text-gray-400 mt-2" style={{textAlign:"center", marginTop:"50px", marginLeft:"40px", marginRight:"40px", marginBottom:"50px"}}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod 
 tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim 
 veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex eacommodo consequat</p>
       </section>
       
       {/* Contact Section */}
-      <section className="mt-12">
-        <h3 className="text-xl">Contacts</h3>
-        <div className="mt-4 space-y-2">
-          <p>[name] [xxxxxxxxxx]</p>
-          <p>[name] [xxxxxxxxxx]</p>
-        </div>
-      </section>
-      </div>
       
+    
+
+
+      </div>
       <Footer />
-    </div>
+     
+      </div>
 
   );
 }
