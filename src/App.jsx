@@ -10,6 +10,7 @@ import Speakers from './components/home/Speakers'
 import Sponsors from './components/home/Sponsors'
 import Gallery from './components/home/Gallery'
 import Eventpage from "./components/Events/Eventpage"
+import EventRegistration from './components/Events/EventRegistration'
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
         <Routes>
           <Route path="/merchandise" element={<MerchandisePage />} />
           <Route path="/events" element={<Eventpage />} /> 
+          <Route path="/eventregistration" element={<EventRegistration />} /> 
           <Route path="/" element={
             <div>
               <main className='font-sometypeMono'>
