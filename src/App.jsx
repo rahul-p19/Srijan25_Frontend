@@ -9,36 +9,32 @@ import Contact from './components/home/Contact'
 import Speakers from './components/home/Speakers'
 import Sponsors from './components/home/Sponsors'
 import Gallery from './components/home/Gallery'
+import Eventpage from "./components/Events/Eventpage"
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-
 function App() {
-
   return (
     <>
-     <Router>
+      <Router>
         <Routes>
           <Route path="/merchandise" element={<MerchandisePage />} />
-        
-          <Route path="" element={
-  <div>
-    
-      <main className='font-sometypeMono'>
-        <Navbar />
-        <Hero />
-        <Timeline />
-        <Sponsors />
-        <Speakers />
-        <About />
-        <Gallery />
-        <Contact />
-        <Footer />
-       
-
-      </main>
-    </div>
+          <Route path="/events" element={<Eventpage />} /> 
+          <Route path="/" element={
+            <div>
+              <main className='font-sometypeMono'>
+                <Navbar />
+                <Hero />
+                <Timeline />
+                <Sponsors />
+                <Speakers />
+                <About />
+                <Gallery />
+                <Contact />
+                <Footer />
+              </main>
+            </div>
           } />
-      </Routes>
+        </Routes>
       </Router>
     </>
   )
