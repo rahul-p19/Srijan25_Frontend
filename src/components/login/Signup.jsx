@@ -242,7 +242,7 @@ const Signup = () => {
 
                         {/* SIGN UP BUTTON */}
                         {isFormValid && (
-                            <div className="w-full flex justify-center mt-6">
+                            <div className="w-full flex justify-center mt-6 cursor-pointer">
                                 <SignUpButton onClick={handleSubmit} textContent = {loading ? "Submitting..." : "Sign Up"}>
                                 </SignUpButton>
                             </div>

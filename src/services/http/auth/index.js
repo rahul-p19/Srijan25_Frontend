@@ -88,6 +88,16 @@ export const forgotPassword = async (email) => {
     })
 }
 
+export const resendOTP = async (email) => {
+    return axios({
+        method: "post",
+        url: CONST.uri.auth.RESEND_OTP,
+        withCredentials: true,
+        data: { email },
+        headers: { "Content-Type": "application/json" },
+    })
+}
+
 export const startWithOAuth2 = (providerUrl) => {
 
     let timer = null

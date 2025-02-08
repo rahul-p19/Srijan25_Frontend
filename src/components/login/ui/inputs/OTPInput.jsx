@@ -3,6 +3,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import { BasicButton } from '../buttons/common';
 import { useNavigate } from "react-router-dom";
 import { useLocation } from 'react-router-dom';
+import { authController } from '../../../../services/http';
 
 const OTPInput = ({ email, length = 6, onVerifySuccess }) => {
   const location = useLocation();
@@ -10,6 +11,7 @@ const OTPInput = ({ email, length = 6, onVerifySuccess }) => {
   const navigate = useNavigate();
   const [otp, setOtp] = useState(Array(length).fill(''));
   const [isFormValid, setIsFormValid] = useState(false); 
+  const [errorMessage, setErrorMessage] = useState('');
   const inputs = useRef([]);
 
   const handleChange = (e, index) => {
@@ -61,15 +63,17 @@ const OTPInput = ({ email, length = 6, onVerifySuccess }) => {
     if (isFormValid) {
         try {
             // Step 1: Verify OTP
-            const verifyResponse = verifyEmail(email, otp.join(''))
+            const verifyResponse = await authController.verifyEmail(email, otp.join(''))
 
             if (verifyResponse.data.success) {
-              navigate('/home', { state: { formData } });
+              navigate('/', { state: { formData } });
             } else {
                 console.error('OTP verification failed:', verifyResponse.data.message);
+                setErrorMessage('Incorrect OTP. Please try again.');
             }
         } catch (error) {
-            console.error('Error in OTP verification or registration:', error.response?.data?.message || error.message);
+            setErrorMessage('Incorrect OTP. Please try again.');
+            console.error('Error in OTP verification or registration:', error.message);
         }
     }
 };
@@ -98,6 +102,10 @@ const OTPInput = ({ email, length = 6, onVerifySuccess }) => {
             }}
           />
         ))}
+        {/* Display Error Message */}
+        {errorMessage && (
+          <div className="text-red-500 text-center mt-2">{errorMessage}</div>
+        )}
         {isFormValid && <div className="w-full flex justify-center mt-6">
           <BasicButton 
             type="submit" 
