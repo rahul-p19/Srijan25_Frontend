@@ -11,6 +11,11 @@ import Sponsors from './components/home/Sponsors'
 import Gallery from './components/home/Gallery'
 import Eventpage from "./components/Events/Eventpage"
 import EventRegistration from './components/Events/EventRegistration'
+import Signup from './components/login/Signup'
+import Login from './components/login/Login'
+import EmailVerify from './components/login/EmailVerify'
+import ResetPassword from './components/login/ResetPassword'
+import ForgotPassword from './components/login/ForgotPassword'
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
@@ -21,6 +26,11 @@ function App() {
           <Route path="/merchandise" element={<MerchandisePage />} />
           <Route path="/events" element={<Eventpage />} /> 
           <Route path="/eventregistration" element={<EventRegistration />} /> 
+          <Route path="/signup" element={<Signup />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/verify" element={<EmailVerify />} />
+          <Route path="/reset-password/:token" element={<ResetPassword />} />
+          <Route path="/forgotPassword" element={<ForgotPassword />} />
           <Route path="/" element={
             <div>
               <main className='font-sometypeMono'>
