@@ -27,6 +27,8 @@
   --color-lavender: #cd95ff;
   --color-light-pink: #ffbaba;
   --font-sometypeMono: "Sometype Mono";
+
+  --breakpoint-xms: 29rem;
 }
 
 .infinite-scroll-carousel{
