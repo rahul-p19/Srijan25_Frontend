@@ -57,7 +57,7 @@ const Login = () => {
                 console.log(`${serviceName} status: ${isActive ? "Available" : "Not available"}`);
             })
             .catch(error => {
-                console.error("Error checking Google OAuth availability:", error);
+                // console.error("Error checking Google OAuth availability:", error);
             });
     }, [navigate]);
     
@@ -160,6 +160,8 @@ const Login = () => {
 
                         <div className="w-full lg:w-1/2 flex flex-col ">
                             <GoogleSignInButton onClick={startWithGoogle}></GoogleSignInButton>
+                            
+                            <h1 className='italic font-bold mt-4'>Not signed up yet? <span onClick={() => navigate("/signup")}  className="text-[#8420FF] cursor-pointer">Sign up</span></h1>
                             <form id="signupForm" className="space-y-4 mt-4" onSubmit={handleSubmit}>                                  
                                 <EmailInput 
                                     labelContent={<><span className="text-[#8420FF]">Enter your</span> email</>}
@@ -173,7 +175,6 @@ const Login = () => {
                                     onFocus={handleInputFocus}
                                     onBlur={handleInputBlur}
                                 />
-                                
                                 <PasswordInput 
                                     labelContent={<><span className="text-[#8420FF]">Enter</span> password</>}
                                     name="loginPassword"
@@ -188,9 +189,9 @@ const Login = () => {
                             </form>
                             <h1 onClick={()=> handleForgotPassword()} className='italic font-bold mt-4 cursor-pointer'><span className="text-[#8420FF] cursor-pointer">Forgot </span>Password?</h1>
                             {/* LOGIN BUTTON */}
-                                <div className="w-full flex justify-center mt-8 lg:-ml-4">
-                                    <SignUpButton onClick={handleSubmit} textContent = {loading ? "Logging In..." : "Login"}/>
-                                </div>
+                            <div className="w-full flex justify-center mt-8 lg:-ml-4">
+                                <SignUpButton onClick={handleSubmit} textContent = {loading ? "Logging In..." : "Login"}/>
+                            </div>
                         </div>
 
                         {/* ROBOT IMAGE */}
@@ -201,8 +202,6 @@ const Login = () => {
                                 className="w-84 h-84 lg:w-84 lg:h-84 object-contain transition-all duration-900"
                             />
                         </div>
-
-                        <h1 className='italic font-bold mt-4 lg:mt-0'>Not signed up yet? <span onClick={() => navigate("/signup")}  className="text-[#8420FF] cursor-pointer">Sign up</span></h1>
                     </div>
                 </div>
             </div>

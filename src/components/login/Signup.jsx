@@ -65,7 +65,7 @@ const Signup = () => {
                 console.log(`${serviceName} status: ${isActive ? "Available" : "Not available"}`);
             })
             .catch(error => {
-                console.error("Error checking Google OAuth availability:", error);
+                // console.error("Error checking Google OAuth availability:", error);
             });
     }, [navigate]);
     
@@ -145,7 +145,7 @@ const Signup = () => {
             <GridLines />
 
             <div className="min-h-screen flex items-center justify-center p-4 font-['Source_Code_Pro']">
-                <div className="w-full max-w-2xl bg-background rounded-2xl backdrop-blur-sm border border-white flex flex-col p-8 text-left">
+                <div className="w-full max-w-2xl bg-black/20 rounded-2xl backdrop-blur-sm border border-white flex flex-col p-8 text-left">
                     <h1 className="font-bold lg:text-2xl">Welcome to Srijan - 2025!<br />Let's begin the adventure</h1>
 
                     <div className="mt-6 flex flex-wrap">

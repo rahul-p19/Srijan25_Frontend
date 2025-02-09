@@ -1,7 +1,7 @@
 .input-field{
     width: 80%;
     background-color: transparent;
-    border: 2px solid rgba(255, 255, 255, 0.2);
+    border: 1px solid #424242;
     border-radius: 8px;
     padding: 0.275rem 0.5rem;
     color: white;
