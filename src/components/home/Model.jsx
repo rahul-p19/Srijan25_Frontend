@@ -7,8 +7,6 @@ export default function Model(props) {
   const meshRef = useRef()
   const { nodes, animations } = useGLTF('/mascot/mascot-waving.glb')
   const { actions } = useAnimations(animations, group);
-  //const texture = useTexture("/mascot/texture_diffuse_cleaned.png");
-  const texture = useTexture("/mascot/texture_normal.png");
   const metallicTexture = useTexture("/mascot/texture_metallic.png");
   const roughnessTexture = useTexture("/mascot/texture_roughness.png");
 
@@ -38,10 +36,8 @@ export default function Model(props) {
             skeleton={nodes.model.skeleton}
           >
             <meshStandardMaterial
-              map={texture}
               metalnessMap={metallicTexture}
               roughnessMap={roughnessTexture}
-              map-flip={false}
             />
           </skinnedMesh>
           <primitive object={nodes.mixamorigHips} />

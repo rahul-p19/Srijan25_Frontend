@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react'
+import CloseIcon from "@mui/icons-material/Close"
+import { DragHandleSharp } from '@mui/icons-material';
 
 const sections = [
   {
@@ -73,16 +75,21 @@ function Sidebar() {
             <p className={`${(scroll >= ele.start * height && scroll < ele.end * height) ? 'scale-y-100 h-auto' : 'scale-y-0 h-0'} transition-all duration-500 origin-bottom text-right text-sm`}>{ele.name}</p>
           </div>
         ))}
-        <button onClick={() => setSidebarOpen(true)} className='self-end pr-1 cursor-pointer'>Menu</button>
+        <button onClick={() => setSidebarOpen(true)} className='cursor-pointer flex flex-col gap-0 items-end text-sm'>
+          <DragHandleSharp />
+          <p>
+            Menu
+          </p>
+        </button>
       </div>
       <nav
         className={`hidden sm:flex bg-background transition-all duration-700 p-6 pt-10 fixed flex-col gap-y-12 top-8 bottom-8 border-greyBorder border z-[200] ${sidebarOpen ? `right-5 left-[78%]` : `left-[100%] -right-[20%]`
           }`}>
-        <button className={`absolute top-4 right-4 cursor-pointer text-xl ${sidebarOpen ? '' : 'hidden'}`} onClick={() => {
+        <button className={`absolute top-10 right-5 cursor-pointer text-xl ${sidebarOpen ? '' : 'hidden'}`} onClick={() => {
           setSidebarOpen(false);
-        }}>x</button>
+        }}><CloseIcon /></button>
         <div className='absolute -top-[1px] right-0 left-0 bg-gradient-to-r from-purple to-red h-[3px] z-[201]'></div>
-        <h2 className='text-xl font-semibold border-white border-b pb-3'>All Sections</h2>
+        <h2 className='text-xl font-semibold border-white border-b pb-3 pl-3 text-left'>All Sections</h2>
         <div className='flex flex-col gap-y-4 text-lg items-end'>
           {sections.map((ele, ind) => (
             <button key={ind} className='uppercase w-4/5 text-right cursor-pointer'

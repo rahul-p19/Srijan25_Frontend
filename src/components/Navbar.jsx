@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from 'react'
+import MenuIcon from '@mui/icons-material/Menu';
+import CloseIcon from '@mui/icons-material/Close';
 
 function Navbar(props) {
 
   const [navbarOpen, setNavbarOpen] = useState(false);
+  const [loggedIn, setLoggedIn] = useState(false);
   const [pathname, setPathname] = useState((window.location.pathname).slice(1));
 
   useEffect(() => {
@@ -35,25 +38,24 @@ function Navbar(props) {
         <a href='/notifications' className={`relative hidden sm:block w-fit`}>Notifications
           <div className={`absolute h-[2px] bg-gradient-to-l from-red to-purple bottom-0 ${pathname == "notifications" ? 'w-full' : 'w-0'}`}></div>
         </a>
-        <a href='/login' className={`relative hidden sm:block w-fit`}>Login
+        <a href='/workshops' className={`relative hidden sm:block w-fit`}>Workshops
           <div className={`absolute h-[2px] bg-gradient-to-l from-red to-purple bottom-0 ${pathname == "login" ? 'w-full' : 'w-0'}`}></div>
         </a>
       </div>
       <div className='grid place-items-center text-xl'>
-        <a href='/dashboard' className='hidden relative sm:block'>Dashboard
+        <a href={`${loggedIn ? '/dashboard' : '/login'}`} className='hidden relative sm:block'> {loggedIn ? 'Dashboard' : 'Login'}
           <div className={`absolute h-[2px] bg-gradient-to-l from-red to-purple bottom-0 ${pathname == "dashboard" ? 'w-full' : 'w-0'}`}></div>
         </a>
         <button className='sm:hidden' onClick={() => {
           setNavbarOpen(true);
-          setTimeout(handler)
-        }}>+</button>
+        }}><MenuIcon /></button>
       </div>
       <nav
         className={`bg-background transition-all duration-700 z-[200] p-6 pt-10 fixed flex flex-col items-center gap-y-12 right-0 left-0 shadow-2xl shadow-hray-800/60 ${navbarOpen ? `bottom-0 top-0` : `bottom-[100%] -top-[100%]`
           }`}>
-        <button className={`absolute top-4 right-4 text-xl ${navbarOpen ? '' : 'hidden'}`} onClick={() => {
+        <button className={`absolute top-12 right-8 text-xl ${navbarOpen ? '' : 'hidden'}`} onClick={() => {
           setNavbarOpen(false);
-        }}>X</button>
+        }}><CloseIcon /></button>
         <div className={`flex flex-col gap-y-6 transition-all duration-100 w-4/5`}>
           <div className='flex justify-around w-full pl-6'>
             <img src='/srijan-logo-white.svg' />

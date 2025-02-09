@@ -1,3 +1,4 @@
+import { Call, EmailOutlined } from '@mui/icons-material'
 import React from 'react'
 
 function Contact() {
@@ -9,8 +10,15 @@ function Contact() {
         <div className='absolute left-[50%] top-[50%] -translate-[50%] w-5/7 h-full border-greyBorder border-l border-r sm:hidden'></div>
       </div>
       <div className='row-span-5 col-span-7 sm:col-span-3 border-greyBorder sm:border-l sm:border-r grid grid-cols-1 sm:grid-cols-2 sm:grid-rows-5'>
-        <div className='row-span-3 sm:row-span-4 border-greyBorder sm:border-r border-b sm:border-b-transparent grid place-items-center'>
-          <a href='mailto:srijan.ju@jadavpuruniversity.in'>srijan.ju@jadavpuruniversity.in</a>
+        <div className='row-span-3 sm:row-span-4 border-greyBorder sm:border-r border-b sm:border-b-transparent flex flex-col items-center justify-center gap-4 sm:pt-8'>
+          <div className='flex gap-2'>
+            <EmailOutlined />
+            <a href='mailto:srijan.ju@jadavpuruniversity.in'>srijan.ju@jadavpuruniversity.in</a>
+          </div>
+          <div className='flex gap-2'>
+            <Call />
+            <p>+917980623712</p>
+          </div>
         </div>
         <div className='w-full row-span-1 sm:row-span-4 sm:pb-2 grid place-items-center sm:items-end'>
           <p className='text-center sm:p-1 w-5/7 sm:w-full sm:text-xl border-greyBorder'>SUBSCRIBE TO OUR NEWSLETTER</p>

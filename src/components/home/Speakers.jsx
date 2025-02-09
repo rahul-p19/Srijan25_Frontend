@@ -1,3 +1,4 @@
+import { Facebook, LinkedIn } from '@mui/icons-material';
 import React, { useState } from 'react'
 
 const speakerDetails = [
@@ -42,8 +43,8 @@ function SpeakerCard({ speaker }) {
       <div className='flex justify-between w-full px-2 text-xl'>
         <h2>{speaker.name}</h2>
         <div className='flex gap-x-2'>
-          <a href={speaker.facebook}>f</a>
-          <a href={speaker.linkedin}>in</a>
+          <a href={speaker.facebook}><Facebook /></a>
+          <a href={speaker.linkedin}><LinkedIn /></a>
         </div>
       </div>
     </div >

@@ -1,4 +1,10 @@
-import React, { useState } from 'react'
+import React, { useState, useRef } from 'react'
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger"
+import { CustomEase } from 'gsap/dist/CustomEase';
+
+gsap.registerPlugin(useGSAP, ScrollTrigger, CustomEase);
 
 const timelineEvents = [
   "Workshop",
@@ -18,12 +24,48 @@ const timelineEvents = [
 function Timeline() {
 
   const [timelineStart, setTimelineStart] = useState(0);
+  const container = useRef();
+
+  useGSAP(() => {
+    const mm = gsap.matchMedia();
+
+    mm.add({
+      isDesktop: '(min-width: 640px)',
+      isMobile: '(max-width: 639px)',
+      reduceMotion: '(prefers-reduced-motion: reduce)'
+    },
+      (context) => {
+        let { isDesktop, reduceMotion } = context.conditions;
+
+        gsap.set(".scrollAnimatedText", {
+          y: 75,
+          xPercent: -50,
+          opacity: 0,
+        })
+
+        gsap.to(".scrollAnimatedText", {
+          y: 0,
+          yPercent: -50,
+          xPercent: -50,
+          opacity: 1,
+          duration: reduceMotion ? 0 : 1,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: container.current,
+            start: isDesktop ? "top 50%" : "top 80%",
+          }
+        })
+      })
+
+  }, {
+    scope: container
+  })
 
   return (
-    <div className='w-full relative border-greyBorder border-t grid grid-cols-1 sm:grid-cols-5 grid-rows-3 sm:grid-rows-1 h-screen'>
+    <div ref={container} className='w-full relative border-greyBorder border-t grid grid-cols-1 sm:grid-cols-5 grid-rows-3 sm:grid-rows-1 h-screen'>
       <div className='relative sm:bg-background z-[100] h-full row-span-1 border-greyBorder border-b sm:border-b-transparent'>
         <div className='sm:hidden absolute left-[50%] -translate-x-[50%] h-full border-greyBorder border-l border-r w-5/7'></div>
-        <h2 className='absolute text-3xl top-[50%] left-[50%] -translate-[50%]'>Timeline</h2>
+        <h2 className='absolute text-3xl top-[50%] left-[50%] -translate-[50%] scrollAnimatedText'>Timeline</h2>
         <div className='absolute top-[65%] left-[50%] -translate-x-[50%] flex gap-x-3'>
           <button onClick={() => {
             if (timelineStart >= 0) return;
@@ -45,14 +87,14 @@ function Timeline() {
             &rsaquo;
           </button>
         </div>
-        <img src='heading-outline.svg' className='absolute top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%]' />
+        <img src='heading-outline.svg' className='scrollAnimatedText absolute top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%]' />
       </div>
       <div className='grid border-greyBorder sm:border-r-transparent sm:border-l col-span-3 sm:grid-cols-2 row-span-2 relative'>
         <div className='sm:hidden absolute left-[50%] -translate-x-[50%] h-full w-5/7'></div>
         <div className='border-greyBorder sm:border-r-transparent'></div>
         <div></div>
       </div>
-      <div className='absolute h-3/5 w-full bottom-0 overflow-x-hidden row-span-2'>
+      <div className='absolute h-3/5 w-full bottom-0 sm:bottom-[20%] overflow-x-hidden row-span-2'>
         <div className='h-[2px] bg-white w-full absolute top-[50%]'></div>
         {timelineEvents.map((event, ind) => {
           const left = window.innerWidth >= 600 ? timelineStart + 20 + 10 * (ind + 1) : timelineStart - 10 + 40 * (ind + 1);

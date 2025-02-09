@@ -1,10 +1,47 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import MascotAnimation from './MascotAnimation'
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+import ScrollTrigger from 'gsap/dist/ScrollTrigger';
+
+gsap.registerPlugin(useGSAP, ScrollTrigger);
 
 function Hero() {
 
+  const container = useRef();
+  const mascot = useRef();
+  const mascotIncreasedHeight = window.innerWidth > 600 ? "200vh" : "150vh";
+
+  /*useGSAP(() => {
+
+    gsap.to(mascot.current, {
+      height: mascotIncreasedHeight,
+      y: "80vh",
+      scrollTrigger: {
+        trigger: container.current,
+        start: "bottom bottom",
+        end: "+=300",
+        scrub: 1
+      }
+    })
+
+    gsap.to(mascot.current, {
+      y: "90vh",
+      opacity: 0,
+      display: "none",
+      scrollTrigger: {
+        trigger: container.current,
+        start: "bottom bottom",
+        end: "+=600",
+        scrub: 1
+      }
+    })
+  }, {
+    scope: container
+  })*/
+
   return (
-    <div className='h-[90vh] w-screen max-w-full grid grid-cols-7 sm:grid-cols-5 relative overflow-x-clip'>
+    <div ref={container} className='h-[90vh] w-screen max-w-full grid grid-cols-7 sm:grid-cols-5 relative overflow-x-clip'>
       <div></div>
       <div className='col-span-5 sm:col-span-3 grid grid-cols-2 grid-rows-10 sm:grid-rows-6 border-l border-r border-l-greyBorder border-r-greyBorder'>
         <div className='sm:border-r border-b border-greyBorder flex items-end sm:row-span-1'>
@@ -38,7 +75,7 @@ function Hero() {
         onMouseOut={(e) => { e.target.style.animationPlayState = "paused"; }}
         onMouseEnter={(e) => { e.target.style.animationPlayState = "running"; }}
       />*/}
-      <div className='absolute bottom-2 sm:bottom-0 left-[50%] -translate-x-[50%] h-3/5 sm:h-full w-full z-[102]'>
+      <div ref={mascot} className='absolute bottom-2 sm:-bottom-2 left-[50%] -translate-x-[50%] h-3/5 sm:h-full w-full z-[102]'>
         <MascotAnimation />
       </div>
     </div>

@@ -44,7 +44,7 @@
   }
 
   .infinite-scroll-gallery{
-  animation: infiniteScrollGallery 20s linear infinite;
+  animation: infiniteScrollGallery 60s linear infinite;
 }
 
 @keyframes infiniteScrollGallery {
@@ -55,3 +55,8 @@
       transform: translate( calc(-50% - 8px), 0)
     }
   }
+
+.scrollAnimatedText{
+  transform: translateY(75px),
+  opacity: 0;
+}

@@ -1,3 +1,4 @@
+import React, { useRef } from "react";
 import './App.css'
 import Navbar from "./components/Navbar"
 import Footer from "./components/Footer"
@@ -16,6 +17,9 @@ import EventRegistration from './components/Events/EventRegistration'
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
+
+  const container = useRef();
+
   return (
     <>
       <Router>
@@ -25,8 +29,9 @@ function App() {
           <Route path="/eventregistration" element={<EventRegistration />} />
           <Route path="/" element={
             <div>
-              <main className='font-sometypeMono'>
+              <main ref={container} className='font-sometypeMono'>
                 <Navbar />
+                <Sidebar />
                 <Hero />
                 <Timeline />
                 <Sponsors />
