@@ -1,3 +1,4 @@
+import "./cards.css"
 import React from 'react'
 
 function Card({ card }) {

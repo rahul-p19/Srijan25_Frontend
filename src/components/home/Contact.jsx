@@ -17,7 +17,7 @@ function Contact() {
           </div>
           <div className='flex gap-2'>
             <Call />
-            <p>+917980623712</p>
+            <p>917980623712</p>
           </div>
         </div>
         <div className='w-full row-span-1 sm:row-span-4 sm:pb-2 grid place-items-center sm:items-end'>

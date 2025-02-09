@@ -1,5 +1,12 @@
 import { Facebook, LinkedIn } from '@mui/icons-material';
-import React, { useState } from 'react'
+import React, { useState, useRef } from 'react'
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger"
+import { CustomEase } from 'gsap/dist/CustomEase';
+
+gsap.registerPlugin(useGSAP, ScrollTrigger, CustomEase);
+
 
 const speakerDetails = [
   {
@@ -54,12 +61,49 @@ function SpeakerCard({ speaker }) {
 function Speakers() {
 
   const [carouselStart, setCarouselStart] = useState(0);
+  const container = useRef();
+
+  useGSAP(() => {
+    const mm = gsap.matchMedia();
+
+    mm.add({
+      isDesktop: '(min-width: 640px)',
+      isMobile: '(max-width: 639px)',
+      reduceMotion: '(prefers-reduced-motion: reduce)'
+    },
+      (context) => {
+        let { isDesktop, reduceMotion } = context.conditions;
+
+        gsap.set(".scrollAnimatedText", {
+          y: 75,
+          xPercent: -50,
+          opacity: 0,
+        })
+
+        gsap.to(".scrollAnimatedText", {
+          y: 0,
+          yPercent: -50,
+          xPercent: -50,
+          opacity: 1,
+          duration: reduceMotion ? 0 : 1,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: container.current,
+            start: isDesktop ? "top 45%" : "top 80%",
+          }
+        })
+      })
+
+  }, {
+    scope: container
+  })
+
 
   return (
-    <div className='w-full relative border-greyBorder border-t grid grid-cols-1 sm:grid-cols-5 grid-rows-3 sm:grid-rows-1 h-screen overflow-x-hidden'>
+    <div ref={container} className='w-full relative border-greyBorder border-t grid grid-cols-1 sm:grid-cols-5 grid-rows-3 sm:grid-rows-1 h-screen overflow-x-hidden'>
       <div className='relative bg-background z-[100] h-full border-greyBorder border-b sm:border-b-transparent sm:border-r sm:-mr-[1px] row-span-1'>
         <div className='sm:hidden absolute left-[50%] -translate-x-[50%] h-full border-greyBorder border-l border-r w-5/7'></div>
-        <h2 className='absolute text-3xl top-[50%] left-[50%] -translate-[50%]'>F5 Speakers</h2>
+        <h2 className='scrollAnimatedText absolute text-3xl text-center top-[50%] left-[50%] -translate-[50%]'>F5 Speakers</h2>
         <div className='absolute top-[65%] left-[50%] -translate-x-[50%] flex gap-x-3'>
           <button onClick={() => {
             if (carouselStart >= 0) return;
@@ -81,7 +125,7 @@ function Speakers() {
             &rsaquo;
           </button>
         </div>
-        <img src='heading-outline.svg' className='absolute top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%]' />
+        <img src='heading-outline.svg' className='scrollAnimatedText absolute top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%]' />
       </div>
       <div className='border-greyBorder sm:border-r sm:border-l col-span-3 grid grid-cols-2 row-span-2'>
         <div className='border-greyBorder border-r'></div>

@@ -38,7 +38,7 @@ function Navbar(props) {
         <a href='/notifications' className={`relative hidden sm:block w-fit`}>Notifications
           <div className={`absolute h-[2px] bg-gradient-to-l from-red to-purple bottom-0 ${pathname == "notifications" ? 'w-full' : 'w-0'}`}></div>
         </a>
-        <a href='/workshops' className={`relative hidden sm:block w-fit`}>Workshops
+        <a href='/workshop' className={`relative hidden sm:block w-fit`}>Workshop
           <div className={`absolute h-[2px] bg-gradient-to-l from-red to-purple bottom-0 ${pathname == "login" ? 'w-full' : 'w-0'}`}></div>
         </a>
       </div>

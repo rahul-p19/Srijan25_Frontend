@@ -52,7 +52,7 @@ function Timeline() {
           ease: "power3.out",
           scrollTrigger: {
             trigger: container.current,
-            start: isDesktop ? "top 50%" : "top 80%",
+            start: isDesktop ? "top 45%" : "top 80%",
           }
         })
       })
@@ -65,7 +65,7 @@ function Timeline() {
     <div ref={container} className='w-full relative border-greyBorder border-t grid grid-cols-1 sm:grid-cols-5 grid-rows-3 sm:grid-rows-1 h-screen'>
       <div className='relative sm:bg-background z-[100] h-full row-span-1 border-greyBorder border-b sm:border-b-transparent'>
         <div className='sm:hidden absolute left-[50%] -translate-x-[50%] h-full border-greyBorder border-l border-r w-5/7'></div>
-        <h2 className='absolute text-3xl top-[50%] left-[50%] -translate-[50%] scrollAnimatedText'>Timeline</h2>
+        <h2 className='absolute text-3xl top-[50%] left-[50%] -translate-y-[50%] scrollAnimatedText'>Timeline</h2>
         <div className='absolute top-[65%] left-[50%] -translate-x-[50%] flex gap-x-3'>
           <button onClick={() => {
             if (timelineStart >= 0) return;

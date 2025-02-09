@@ -1,4 +1,12 @@
-import React from 'react'
+import "./infiniteScroll.css"
+import React, { useRef } from 'react'
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger"
+import { CustomEase } from 'gsap/dist/CustomEase';
+
+gsap.registerPlugin(useGSAP, ScrollTrigger, CustomEase);
+
 
 const photos = [
   "/gallery/1.png",
@@ -29,13 +37,50 @@ const photos = [
 ];
 
 function Gallery() {
+  const container = useRef();
+
+  useGSAP(() => {
+    const mm = gsap.matchMedia();
+
+    mm.add({
+      isDesktop: '(min-width: 640px)',
+      isMobile: '(max-width: 639px)',
+      reduceMotion: '(prefers-reduced-motion: reduce)'
+    },
+      (context) => {
+        let { isDesktop, reduceMotion } = context.conditions;
+
+        gsap.set(".scrollAnimatedText", {
+          y: 75,
+          xPercent: -50,
+          opacity: 0,
+        })
+
+        gsap.to(".scrollAnimatedText", {
+          y: 0,
+          yPercent: -50,
+          xPercent: -50,
+          opacity: 1,
+          duration: reduceMotion ? 0 : 1,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: container.current,
+            start: isDesktop ? "top 45%" : "top 80%",
+          }
+        })
+      })
+
+  }, {
+    scope: container
+  })
+
 
   return (
-    <div className='w-full relative border-greyBorder border-t grid grid-cols-1 grid-rows-4 sm:grid-rows-1 sm:grid-cols-5 h-[80vh] sm:h-screen overflow-x-hidden'>
+    <div ref={container} className='w-full relative border-greyBorder border-t grid grid-cols-1 grid-rows-4 sm:grid-rows-1 sm:grid-cols-5 h-[80vh] sm:h-screen overflow-x-hidden'>
       <div className='absolute left-[50%] -translate-x-[50%] sm:hidden w-5/7 border-greyBorder border-r border-l h-full'></div>
       <div className='relative sm:bg-background z-[100] h-full border-r -mr-[1px] row-span-1 border-greyBorder border-b sm:border-b-transparent'>
-        <h2 className='absolute text-3xl top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%]'>Gallery</h2>
-        <img src='heading-outline.svg' className='absolute top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%]' />
+        <h2 className='scrollAnimatedText absolute text-3xl top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%]'>Gallery</h2>
+        <img src='heading-outline.svg' className='scrollAnimatedText absolute top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%]' />
       </div>
       <div className='relative sm:col-span-3 border-greyBorder sm:border-l sm:border-r grid grid-cols-2 row-span-3'>
         <div className='border-greyBorder sm:border-r'></div>

@@ -1,3 +1,4 @@
+import "./hero.css";
 import React, { useRef } from 'react'
 import MascotAnimation from './MascotAnimation'
 import gsap from "gsap";
@@ -65,8 +66,12 @@ function Hero() {
         </div>
       </div>
       <div></div>
-      <div className='absolute hidden sm:block z-[90] bottom-[25%] sm:bottom-0 left-[10%] h-[10%] sm:h-[22.5%] bg-background border border-greyBorder sm:border-b-transparent'>
-        <img src='/fetsu-presents-srijan-glitch.svg' className='h-full' />
+      <div className='absolute hidden sm:flex flex-col items-center z-[90] bottom-0 left-[5%] h-[37.5%]'>
+        <img src='/fetsu-presents-srijan-glitch.svg' className='h-2/3' />
+        <div className='bg-background border-greyBorder border border-b-transparent py-2 px-12 h-1/3 flex flex-col justify-around'>
+          <h3>The Annual Techno-Management Fest of</h3>
+          <h2 className='uppercase font-bold text-2xl text-center'>Jadavpur University</h2>
+        </div>
       </div>
       <div className='absolute p-3 z-[90] bottom-[47%] sm:bottom-[20%] right-[3%] sm:right-[12%] bg-background border border-greyBorder'>
         <p className='text-base sm:text-3xl'><span className='text-transparent bg-clip-text bg-gradient-to-r from-blue via-red to-red'>20-23</span> MARCH <br className='sm:hidden' /> 2025</p>

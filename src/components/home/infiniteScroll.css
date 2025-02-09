@@ -1,0 +1,30 @@
+.infinite-scroll-carousel{
+  animation: infiniteScroll 20s linear infinite;
+}
+
+@keyframes infiniteScroll {
+    0% {
+      transform: translate(0,0)
+    }
+    100%{
+      transform: translate( calc(-50% - 25px), 0)
+    }
+  }
+
+  .infinite-scroll-gallery{
+  animation: infiniteScrollGallery 60s linear infinite;
+}
+
+@keyframes infiniteScrollGallery {
+    0% {
+      transform: translate(0,0)
+    }
+    100%{
+      transform: translate( calc(-50% - 8px), 0)
+    }
+  }
+
+.scrollAnimatedText{
+  transform: translateY(75px),
+  opacity: 0;
+}
