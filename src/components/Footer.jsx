@@ -26,7 +26,7 @@ function Footer() {
           </div>
         </div>
         <div>
-          <p className='text-sm pb-2 sm:pb-0'>&copy; 2025 - F.E.T.S.U. Presents Srijan, Jadavpur University, Kolkata. All rights reserved.</p>
+          <p className='text-center text-sm pb-2 sm:pb-0'>&copy; 2025 - F.E.T.S.U. Presents Srijan, Jadavpur University, Kolkata. All rights reserved.</p>
         </div>
       </div>
       <div></div>

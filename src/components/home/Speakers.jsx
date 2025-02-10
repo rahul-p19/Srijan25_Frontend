@@ -76,11 +76,28 @@ function Speakers() {
 
         gsap.set(".scrollAnimatedText", {
           y: 75,
-          xPercent: -50,
           opacity: 0,
         })
 
         gsap.to(".scrollAnimatedText", {
+          y: 0,
+          yPercent: -50,
+          opacity: 1,
+          duration: reduceMotion ? 0 : 1,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: container.current,
+            start: isDesktop ? "top 45%" : "top 80%",
+          }
+        })
+
+        gsap.set(".scrollAnimatedImage", {
+          y: 75,
+          xPercent: -50,
+          opacity: 0,
+        })
+
+        gsap.to(".scrollAnimatedImage", {
           y: 0,
           yPercent: -50,
           xPercent: -50,
@@ -92,6 +109,7 @@ function Speakers() {
             start: isDesktop ? "top 45%" : "top 80%",
           }
         })
+
       })
 
   }, {
@@ -125,7 +143,7 @@ function Speakers() {
             &rsaquo;
           </button>
         </div>
-        <img src='heading-outline.svg' className='scrollAnimatedText absolute top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%]' />
+        <img src='heading-outline.svg' className='scrollAnimatedImage absolute top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%]' />
       </div>
       <div className='border-greyBorder sm:border-r sm:border-l col-span-3 grid grid-cols-2 row-span-2'>
         <div className='border-greyBorder border-r'></div>
