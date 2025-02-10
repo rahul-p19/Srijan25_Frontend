@@ -9,6 +9,8 @@ import { ProtectedRoute } from "./components/protected_routes/AuthRoutes";
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { useState } from "react";
+import jwt from 'jsonwebtoken';
+import { verifyToken } from "./components/protected_routes/verifytoken";
 
 function App() {
   /**
@@ -35,6 +37,31 @@ function App() {
 
   const handleLogout = () => setUser(null);
 
+  
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+
+  useEffect(() => {
+    const token = localStorage.getItem('token');
+    if (token) {
+      verifyToken(token);
+    }
+  }, []);
+
+  const verifyToken = async (token) => {
+    try {
+      const response = await fetch('/api/verify', {
+        headers: {
+          'Authorization': `Bearer ${token}`
+        }
+      });
+      setIsAuthenticated(response.ok);
+    } catch (err) {
+      setIsAuthenticated(false);
+      localStorage.removeItem('token');
+    }
+  };
+
+
   return (
     <>
       <Router>
@@ -46,7 +73,13 @@ function App() {
               element={<DashboardPage user={user} logout={handleLogout} />}
             />
           </Route>
-          <Route path="/merchandise" element={<MerchandisePage />} />
+          <Route>
+            <Route path="/merchandise" element={
+              <ProtectedRoute>
+              <MerchandisePage />
+              </ProtectedRoute>
+              } />
+            </Route>
           <Route path="/events" element={<Eventpage />} />
           <Route path="/eventregistration" element={<EventRegistration />} />
         </Routes>
