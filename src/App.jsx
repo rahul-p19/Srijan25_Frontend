@@ -75,9 +75,9 @@ function App() {
           </Route>
           <Route>
             <Route path="/merchandise" element={
-              <ProtectedRoute>
-              <MerchandisePage />
-              </ProtectedRoute>
+             <ProtectedRoute isAuthenticated={isAuthenticated}>
+             <MerchandisePage />
+           </ProtectedRoute>
               } />
             </Route>
           <Route path="/events" element={<Eventpage />} />
