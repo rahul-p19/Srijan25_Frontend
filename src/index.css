@@ -28,4 +28,6 @@
   --color-light-pink: #ffbaba;
   --color-greyBorder: #949494;
   --font-sometypeMono: "Sometype Mono";
+
+  --breakpoint-xms: 29rem;
 }

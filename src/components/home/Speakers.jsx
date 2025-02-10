@@ -1,4 +1,4 @@
-import { Facebook, LinkedIn } from '@mui/icons-material';
+import { Facebook, LinkedIn, YouTube } from '@mui/icons-material';
 import React, { useState, useRef } from 'react'
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
@@ -10,24 +10,24 @@ gsap.registerPlugin(useGSAP, ScrollTrigger, CustomEase);
 
 const speakerDetails = [
   {
-    name: "Prakriti",
-    image: "/speaker-image.png",
-    facebook: "",
-    linkedin: ""
+    name: "Raj Vikramaditya",
+    image: "/speakers/raj-vikramaditya.jpg",
+    youtube: "https://www.youtube.com/@takeUforward",
+    linkedin: "https://www.linkedin.com/in/rajstriver/"
   },
   {
-    name: "Sukriti",
-    image: "/speaker-image.png",
-    facebook: "",
-    linkedin: ""
+    name: "Aman Dhattarwal",
+    image: "/speakers/aman-dhattarwal.jpg",
+    youtube: "https://www.youtube.com/@AmanDhattarwal",
+    linkedin: "https://www.linkedin.com/in/dhattarwalaman/"
   },
   {
-    name: "Robin",
-    image: "/speaker-image.png",
-    facebook: "",
-    linkedin: ""
+    name: "Gaurav Sen",
+    image: "/speakers/gaurav-sen.jpg",
+    youtube: "https://www.youtube.com/@gkcs",
+    linkedin: "https://www.linkedin.com/in/gkcs/"
   },
-  {
+  /*{
     name: "John",
     image: "/speaker-image.png",
     facebook: "",
@@ -38,20 +38,20 @@ const speakerDetails = [
     image: "/speaker-image.png",
     facebook: "",
     linkedin: ""
-  },
+  },*/
 ]
 
 function SpeakerCard({ speaker }) {
   return (
     <div className='flex flex-col items-center gap-y-2 w-full h-full'>
-      <div className='bg-gradient-to-b from-red via-lavender to-white p-0.5'>
-        <img src={speaker.image} className='object-contain h-full w-full bg-background p-1.5' />
+      <div className='bg-gradient-to-b from-red via-lavender to-white p-0.5 h-full'>
+        <img src={speaker.image} className='object-fill aspect-square h-full bg-background p-1.5' />
       </div>
       <div className='flex justify-between w-full px-2 text-xl'>
         <h2>{speaker.name}</h2>
-        <div className='flex gap-x-2'>
-          <a href={speaker.facebook}><Facebook /></a>
-          <a href={speaker.linkedin}><LinkedIn /></a>
+        <div className='flex gap-x-2 items-center'>
+          <a href={speaker.linkedin} target='_blank'><LinkedIn /></a>
+          <a href={speaker.youtube} target='_blank'><YouTube /></a>
         </div>
       </div>
     </div >
@@ -121,7 +121,7 @@ function Speakers() {
     <div ref={container} className='w-full relative border-greyBorder border-t grid grid-cols-1 sm:grid-cols-5 grid-rows-3 sm:grid-rows-1 h-screen overflow-x-hidden'>
       <div className='relative bg-background z-[100] h-full border-greyBorder border-b sm:border-b-transparent sm:border-r sm:-mr-[1px] row-span-1'>
         <div className='sm:hidden absolute left-[50%] -translate-x-[50%] h-full border-greyBorder border-l border-r w-5/7'></div>
-        <h2 className='scrollAnimatedText absolute text-3xl text-center top-[50%] left-[50%] -translate-[50%]'>F5 Speakers</h2>
+        <h2 className='scrollAnimatedText absolute text-3xl text-center top-[50%] left-[50%] -translate-[50%]'>Past Speakers</h2>
         <div className='absolute top-[65%] left-[50%] -translate-x-[50%] flex gap-x-3'>
           <button onClick={() => {
             if (carouselStart >= 0) return;
@@ -155,7 +155,7 @@ function Speakers() {
           const left = window?.innerWidth >= 600 ? carouselStart - 5 + 26 * (ind + 1) : carouselStart - 45 + 50 * (ind + 1);
           return (
             <>
-              <div key={ind} className={`text-left text-nowrap absolute transition-all duration-1000 top-[50%] -translate-y-[20%] sm:-translate-y-[50%] p-2 ${carouselStart === ind * -50 ? '' : 'opacity-0 pointer-events-none sm:pointer-events-auto sm:opacity-100'}`} style={{ left: `${left}%` }}>
+              <div key={ind} className={`h-3/5 text-left text-nowrap absolute transition-all duration-1000 top-[50%] -translate-y-[20%] sm:-translate-y-[50%] p-2 ${carouselStart === ind * -50 ? '' : 'opacity-0 pointer-events-none sm:pointer-events-auto sm:opacity-100'}`} style={{ left: `${left}%` }}>
                 <SpeakerCard speaker={speaker} />
               </div>
             </>
