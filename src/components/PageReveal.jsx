@@ -17,19 +17,19 @@ function PageReveal() {
       opacity: 0,
       display: "none",
       duration: 0.3,
-      delay: 0.1
+      delay: 0.3
     })
 
     gsap.to(leftBlock.current, {
       xPercent: -100,
-      delay: 0.4,
+      delay: 0.7,
       duration: 1.5,
       ease: "power3.inOut"
     })
 
     gsap.to(rightBlock.current, {
       xPercent: 100,
-      delay: 0.4,
+      delay: 0.7,
       duration: 1.5,
       ease: "power3.inOut"
     })
