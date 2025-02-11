@@ -34,6 +34,11 @@ function PageReveal() {
       ease: "power3.inOut"
     })
 
+    gsap.to(container.current, {
+      delay: 2.2,
+      display: "none"
+    })
+
   }, {
     scope: container
   })
