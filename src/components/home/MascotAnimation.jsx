@@ -1,11 +1,16 @@
 import { Canvas } from "@react-three/fiber";
 import Model from "./SrijanModel";
-import { OrbitControls } from "@react-three/drei";
+
+function ModelFallback() {
+  return <>
+    <img src='/mascot.svg' className='absolute z-[100] top-[32%] sm:top-[20%] left-[50%] -translate-x-[50%] h-3/4' />
+  </>
+}
 
 function MascotAnimation() {
 
   return (
-    <Canvas className="h-full w-full" >
+    <Canvas className="h-full w-full" fallback={<ModelFallback />}>
       <ambientLight />
       <directionalLight position={[-5, 5, 5]} intensity={2} color={"#ffffff"} />
       <directionalLight position={[5, 5, 5]} intensity={2} color={"#ffffff"} />

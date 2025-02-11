@@ -89,7 +89,7 @@ function Sidebar() {
           setSidebarOpen(false);
         }}><CloseIcon /></button>
         <div className='absolute -top-[1px] right-0 left-0 bg-gradient-to-r from-purple to-red h-[3px] z-[201]'></div>
-        <h2 className='text-xl font-semibold border-white border-b pb-3 pl-3 text-left'>All Sections</h2>
+        <h2 className='text-xl font-semibold border-greyBorder border-b pb-3 pl-3 text-left'>All Sections</h2>
         <div className='flex flex-col gap-y-4 text-lg items-end'>
           {sections.map((ele, ind) => (
             <button key={ind} className='uppercase w-4/5 text-right cursor-pointer'
