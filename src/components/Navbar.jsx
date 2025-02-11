@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
+import toast from "react-hot-toast";
+
+const notify = () => toast("Coming soon!");
 
 function Navbar(props) {
 
@@ -32,6 +35,7 @@ function Navbar(props) {
         <a href='/' className={`relative hidden sm:block w-fit`}>Home
           <div className={`absolute h-[2px] bg-gradient-to-l from-red to-purple bottom-0 ${pathname == "" ? 'w-full' : 'w-0'}`}></div>
         </a>
+        {/*
         <a href='/events' className={`relative hidden sm:block w-fit`}>Events
           <div className={`absolute h-[2px] bg-gradient-to-l from-red to-purple bottom-0 ${pathname == "events" ? 'w-full' : 'w-0'}`}></div>
         </a>
@@ -39,13 +43,26 @@ function Navbar(props) {
           <div className={`absolute h-[2px] bg-gradient-to-l from-red to-purple bottom-0 ${pathname == "notifications" ? 'w-full' : 'w-0'}`}></div>
         </a>
         <a href='/workshop' className={`relative hidden sm:block w-fit`}>Workshop
-          <div className={`absolute h-[2px] bg-gradient-to-l from-red to-purple bottom-0 ${pathname == "login" ? 'w-full' : 'w-0'}`}></div>
+          <div className={`absolute h-[2px] bg-gradient-to-l from-red to-purple bottom-0 ${pathname == "workshop" ? 'w-full' : 'w-0'}`}></div>
         </a>
+        */}
+        <div className={`relative hidden sm:block w-fit cursor-pointer`} onClick={notify}>Events
+          <div className={`absolute h-[2px] bg-gradient-to-l from-red to-purple bottom-0 ${pathname == "events" ? 'w-full' : 'w-0'}`}></div>
+        </div>
+        <div className={`relative hidden sm:block w-fit cursor-pointer`} onClick={notify}>Notifications
+          <div className={`absolute h-[2px] bg-gradient-to-l from-red to-purple bottom-0 ${pathname == "notifications" ? 'w-full' : 'w-0'}`}></div>
+        </div>
+        <div className={`relative hidden sm:block w-fit cursor-pointer`} onClick={notify}>Workshop
+          <div className={`absolute h-[2px] bg-gradient-to-l from-red to-purple bottom-0 ${pathname == "workshop" ? 'w-full' : 'w-0'}`}></div>
+        </div>
       </div>
       <div className='grid place-items-center text-xl'>
-        <a href={`${loggedIn ? '/dashboard' : '/login'}`} className='hidden relative sm:block'> {loggedIn ? 'Dashboard' : 'Login'}
-          <div className={`absolute h-[2px] bg-gradient-to-l from-red to-purple bottom-0 ${pathname == "dashboard" ? 'w-full' : 'w-0'}`}></div>
-        </a>
+        {/*<a href={`${loggedIn ? '/dashboard' : '/login'}`} className='hidden relative sm:block'> {loggedIn ? 'Dashboard' : 'Login'}
+          <div className={`absolute h-[2px] bg-gradient-to-l from-red to-purple bottom-0 ${pathname == "dashboard" || pathname == "login" ? 'w-full' : 'w-0'}`}></div>
+        </a>*/}
+        <div className='hidden relative sm:block cursor-pointer' onClick={notify}> {loggedIn ? 'Dashboard' : 'Login'}
+          <div className={`absolute h-[2px] bg-gradient-to-l from-red to-purple bottom-0 ${pathname == "dashboard" || pathname == "login" ? 'w-full' : 'w-0'}`}></div>
+        </div>
         <button className='sm:hidden' onClick={() => {
           setNavbarOpen(true);
         }}><MenuIcon /></button>
@@ -61,14 +78,22 @@ function Navbar(props) {
             <img src='/srijan-logo-white.svg' />
             <img src='/fetsu-presents-srijan25.svg' />
           </div>
+          {/*
           <a href='/' className='text-left border-greyBorder/30 border-b w-full py-1'>Home</a>
-          <a href='/' className='text-left border-greyBorder/30 border-b w-full py-1'>About</a>
           <a href='/' className='text-left border-greyBorder/30 border-b w-full py-1'>Events</a>
           <a href='/' className='text-left border-greyBorder/30 border-b w-full py-1'>Notifications</a>
           <a href='/' className='text-left border-greyBorder/30 border-b w-full py-1'>Campus Ambassadors</a>
           <a href='/' className='text-left border-greyBorder/30 border-b w-full py-1'>Workshops</a>
           <a href='/' className='text-left border-greyBorder/30 border-b w-full py-1'>Merchandise</a>
           <a href='/' className='text-left border-greyBorder/30 border-b w-full py-1'>Dashboard</a>
+          */}
+          <a href='/' className='text-left border-greyBorder/30 border-b w-full py-1'>Home</a>
+          <div className='text-left border-greyBorder/30 border-b w-full py-1' onClick={notify}>Events</div>
+          <div className='text-left border-greyBorder/30 border-b w-full py-1' onClick={notify}>Notifications</div>
+          <a href='https://tr.ee/7md571El21' className='text-left border-greyBorder/30 border-b w-full py-1'>Campus Ambassadors</a>
+          <div className='text-left border-greyBorder/30 border-b w-full py-1' onClick={notify}>Workshops</div>
+          <div className='text-left border-greyBorder/30 border-b w-full py-1' onClick={notify}>Merchandise</div>
+          <div className='text-left border-greyBorder/30 border-b w-full py-1' onClick={notify}>Dashboard</div>
         </div>
       </nav>
     </nav>

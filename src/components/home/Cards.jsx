@@ -1,20 +1,37 @@
 import "./cards.css"
 import React from 'react'
+import toast from "react-hot-toast";
+
+const notify = () => toast("Coming soon!");
 
 function Card({ card }) {
+  const live = card.live;
 
-  return (
-    <a href={card.link} className='flex relative flex-col items-center gap-y-2 w-full h-full cardContainer'>
-      <div className='bg-gradient-to-b from-red via-lavender to-white p-0.5 overflow-hidden aspect-square h-full w-full cardDiv'>
-        <div className='h-full w-full overflow-hidden'>
-          <img src={card.image} className='object-cover aspect-square h-full w-full bg-background p-2 transition-all duration-500 cardImage' />
+  return <>
+    {
+      live ? <a href={card.link
+      } className='flex relative flex-col items-center gap-y-2 w-full h-full cardContainer' >
+        < div className='bg-gradient-to-b from-red via-lavender to-white p-0.5 overflow-hidden aspect-square h-full w-full cardDiv' >
+          <div className='h-full w-full overflow-hidden'>
+            <img src={card.image} className='object-cover aspect-square h-full w-full bg-background p-2 transition-all duration-500 cardImage' />
+          </div>
+        </div >
+        <div className='opacity-100 sm:opacity-0 transition-opacity duration-500 hover:opacity-100 absolute grid place-items-center bottom-[2px] left-1 sm:left-0.5 right-1 sm:right-0.5 bg-background/90 py-6 text-xl cardText'>
+          <h2>{card.text}</h2>
         </div>
-      </div>
-      <div className='opacity-100 sm:opacity-0 transition-opacity duration-500 hover:opacity-100 absolute grid place-items-center bottom-[2px] left-1 sm:left-0.5 right-1 sm:right-0.5 bg-background/90 py-6 text-xl cardText'>
-        <h2>{card.text}</h2>
-      </div>
-    </a >
-  )
+      </a >
+        : <div onClick={notify} className='flex relative flex-col items-center gap-y-2 w-full h-full cardContainer'>
+          < div className='bg-gradient-to-b from-red via-lavender to-white p-0.5 overflow-hidden aspect-square h-full w-full cardDiv' >
+            <div className='h-full w-full overflow-hidden'>
+              <img src={card.image} className='object-cover aspect-square h-full w-full bg-background p-2 transition-all duration-500 cardImage' />
+            </div>
+          </div >
+          <div className='opacity-100 sm:opacity-0 transition-opacity duration-500 hover:opacity-100 absolute grid place-items-center bottom-[2px] left-1 sm:left-0.5 right-1 sm:right-0.5 bg-background/90 py-6 text-xl cardText'>
+            <h2>{card.text}</h2>
+          </div>
+        </div >
+    }
+  </>
 }
 
 function Cards() {
@@ -23,22 +40,26 @@ function Cards() {
     {
       image: "/cards/events.svg",
       text: "Events",
-      link: "/events"
+      link: "/events",
+      live: false
     },
     {
       image: "/cards/workshop.svg",
       text: "Workshop",
-      link: "/workshop"
+      link: "/workshop",
+      live: false
     },
     {
       image: "/cards/campus-ambassadors.svg",
       text: "Campus Ambassadors",
-      link: "/campusAmbassadors"
+      link: "https://tr.ee/7md571El21",
+      live: true
     },
     {
       image: "/cards/merchandise.svg",
       text: "Merchandise",
-      link: "/merchandise"
+      link: "/merchandise",
+      live: false
     }
   ]
 

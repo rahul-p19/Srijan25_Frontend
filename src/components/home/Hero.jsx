@@ -4,6 +4,9 @@ import MascotAnimation from './MascotAnimation'
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import ScrollTrigger from 'gsap/dist/ScrollTrigger';
+import toast from "react-hot-toast";
+
+const notify = () => toast("Coming soon!");
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
@@ -62,7 +65,10 @@ function Hero() {
         <div className='row-span-[0] col-span-[0] sm:row-span-4 sm:col-span-1 border-r-greyBorder sm:border-r flex p-6'>
         </div>
         <div className='row-span-1 col-span-2 sm:row-span-4 sm:col-span-1 flex items-end justify-center sm:justify-end'>
-          <a className='p-3 border-greyBorder border sm:border-r-transparent sm:border-b-transparent text-lg sm:text-2xl z-[101] text-background bg-white from-white to-light-pink' href='/register'>Register Now</a>
+          {/*
+          <a className='p-3 border-greyBorder border sm:border-r-transparent sm:border-b-transparent text-lg sm:text-2xl z-[103] text-background bg-white' href='/register'>Register Now</a>
+          */}
+          <div onClick={notify} className='p-3 border-greyBorder border sm:border-r-transparent sm:border-b-transparent text-lg sm:text-2xl z-[103] text-background bg-white cursor-pointer' >Register Now</div>
         </div>
       </div>
       <div></div>

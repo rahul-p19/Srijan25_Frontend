@@ -1,5 +1,8 @@
 import { Call, EmailOutlined } from '@mui/icons-material'
 import React, { useState } from 'react'
+import toast from "react-hot-toast";
+
+const notify = () => toast("Coming soon!");
 
 const backendUrl = import.meta.env.VITE_BACKEND_URL;
 
@@ -14,13 +17,11 @@ function Contact() {
   const handleEmailChange = (e) => {
     setEmail(e.target.value);
     email === "" ? setValidEmail(0) : isValidEmail(email) ? setValidEmail(1) : setValidEmail(-1);
-    console.log(validEmail)
   }
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // TODO: replace alert with react toastify
-    if (!isValidEmail(email)) alert("Please enter a valid email");
+    if (!isValidEmail(email)) toast.error("Please enter a valid email");
     setLoading(true);
     fetch(`${backendUrl}/newsletter`, {
       method: "POST",
@@ -31,18 +32,45 @@ function Contact() {
     })
       .then((res) => res.json())
       .then((res) => {
-        console.log(res);
-        // TODO: replace alert with react toastify
-        if (!res.success) alert(`Error. ${res.message}`)
-        else alert(res.message)
+        if (!res.success) toast.error(`${res.message}`, {
+          style: {
+            fontSize: "16px",
+            textAlign: "left",
+            padding: "4px"
+          }
+        })
+        else toast.success(res.message, {
+          style: {
+            fontSize: "16px",
+            textAlign: "left",
+            padding: "4px"
+          }
+        })
+        setLoading(false);
+      })
+      .catch(() => {
+        toast.error("An error occurred. Please try again later.", {
+          style: {
+            fontSize: "16px",
+            textAlign: "left",
+            padding: "4px"
+          }
+        });
         setLoading(false);
       })
     /*console.log(backendUrl);
     console.log(email);*/
+
+    {/*onSubmit={(e) => handleSubmit(e)}>*/ }
   }
 
   return (
-    <form className='min-h-[40vh] border-greyBorder border-t grid grid-cols-7 grid-rows-10 sm:grid-rows-1 sm:grid-cols-5' onSubmit={(e) => handleSubmit(e)}>
+    <form className='min-h-[40vh] border-greyBorder border-t grid grid-cols-7 grid-rows-10 sm:grid-rows-1 sm:grid-cols-5'
+      onSubmit={(e) => {
+        e.preventDefault();
+        notify();
+        //handleSubmit(e);
+      }}>
       <div className='relative row-span-4 border-greyBorder border-b sm:border-b-transparent col-span-7 sm:col-span-1'>
         <h2 className='absolute text-center text-3xl top-[50%] left-[50%] -translate-[50%]'>Get in Touch</h2>
         <img src='heading-outline.svg' className='absolute top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%]' />
@@ -74,7 +102,7 @@ function Contact() {
           <button className={`w-5/7 sm:w-full ${loading || validEmail !== 1 ? 'bg-greyBorder' : 'bg-white'} text-center text-background h-full p-1 border-greyBorder border border-b-transparent border-t sm:border-l-transparent sm:border-r-transparent text-xl`} type='submit' disabled={loading || validEmail !== 1}>SUBSCRIBE</button>
         </div>
       </div>
-    </form>
+    </form >
   )
 }
 
