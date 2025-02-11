@@ -52,12 +52,12 @@ function Hero() {
           <img src='/inverted-commas.svg' className='p-1 sm:p-4 border-greyBorder border-t border-r h-1/3 sm:h-3/5' />
         </div>
         <div className='border-greyBorder border-b sm:row-span-1'></div>
-        <div className='relative border-greyBorder border-b border-r flex items-end p-6 text-lg sm:text-2xl'>
+        <div className='relative border-greyBorder border-b border-r flex items-end p-6 text-lg text-center sm:text-2xl'>
           <h3 className='absolute top-[50%] -translate-y-[50%] left-[25%] sm:left-[5%] hero-text-1'>Coding</h3>
           <h3 className='absolute top-[50%] -translate-y-[50%] left-[20%] sm:left-[5%] hero-text-2'>Robotics</h3>
           <h3 className='absolute top-[50%] -translate-y-[50%] left-[13%] sm:left-[5%] hero-text-3'>Management</h3>
         </div>
-        <div className='relative border-greyBorder border-b flex justify-end items-end p-6 text-lg sm:text-2xl'>
+        <div className='relative border-greyBorder border-b flex justify-end items-end p-6 text-lg text-center sm:text-2xl'>
           <h3 className='absolute top-[50%] -translate-y-[50%] right-[5%] hero-text-1'>Cultural Nights</h3>
           <h3 className='absolute top-[50%] -translate-y-[50%] right-[5%] hero-text-2'>Comedy Nights</h3>
           <h3 className='absolute top-[50%] -translate-y-[50%] right-[20%] sm:right-[5%] hero-text-3'>F5 Talks</h3>

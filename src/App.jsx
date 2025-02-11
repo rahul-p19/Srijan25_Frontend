@@ -4,6 +4,7 @@ import MerchandisePage from "./components/MerchandisePage";
 import Eventpage from "./components/Events/Eventpage";
 import EventRegistration from "./components/Events/EventRegistration";
 import { DashboardPage } from "./components/protected_routes/DashboardPage";
+import PageNotFound from "./components/PageNotFound";
 
 import { ProtectedRoute } from "./components/protected_routes/AuthRoutes";
 
@@ -49,6 +50,7 @@ function App() {
           <Route path="/merchandise" element={<MerchandisePage />} />
           <Route path="/events" element={<Eventpage />} />
           <Route path="/eventregistration" element={<EventRegistration />} />
+          <Route path="*" element={<PageNotFound />} />
         </Routes >
       </Router >
     </>
