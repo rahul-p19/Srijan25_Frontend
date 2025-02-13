@@ -1,4 +1,4 @@
-import { Instagram, LinkedIn, YouTube } from '@mui/icons-material';
+import { Instagram, YouTube } from '@mui/icons-material';
 import React, { useState, useRef } from 'react'
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
@@ -8,63 +8,57 @@ import { CustomEase } from 'gsap/dist/CustomEase';
 gsap.registerPlugin(useGSAP, ScrollTrigger, CustomEase);
 
 
-const speakerDetails = [
+const artistDetails = [
   {
-    name: "Raj Vikramaditya",
-    image: "/speakers/raj-vikramaditya.jpg",
-    youtube: "https://www.youtube.com/@takeUforward",
-    linkedin: "https://www.linkedin.com/in/rajstriver/"
+    name: "Rahul Subramanian",
+    image: "/artists/rahul-subramanian.jpg",
+    youtube: "https://www.youtube.com/@randomchikibumofficial/",
+    instagram: "https://www.instagram.com/rahulsubramanic/"
   },
   {
-    name: "Aman Dhattarwal",
-    image: "/speakers/aman-dhattarwal.jpg",
-    youtube: "https://www.youtube.com/@AmanDhattarwal",
-    linkedin: "https://www.linkedin.com/in/dhattarwalaman/"
+    name: "Vaibhav Sethia",
+    image: "/artists/vaibhav-sethia.jpg",
+    youtube: "https://www.youtube.com/@vaibhavsethiacomedian",
+    instagram: "https://www.instagram.com/vaibhav_sethia/"
   },
   {
-    name: "Gaurav Sen",
-    image: "/speakers/gaurav-sen.jpg",
-    youtube: "https://www.youtube.com/@gkcs",
-    linkedin: "https://www.linkedin.com/in/gkcs/"
+    name: "Anirban Dasgupta",
+    image: "/artists/anirban-dasgupta.jpg",
+    youtube: "https://www.youtube.com/@AnirbanDasgupta5",
+    instagram: "https://www.instagram.com/anirbandasgupta5/?hl=en"
   },
   {
-    name: "Amitabh",
-    image: "/speakers/Amitabh-Singh.png",
-    linkedin: "https://www.linkedin.com/in/amitabh-amitabh-069038bb/"
+    name: "Azeem Banatwalla",
+    image: "/artists/azeem-banatwalla.jpg",
+    youtube: "https://www.youtube.com/channel/UC8q382aFUrFz3yZMFQo5VVg",
+    instagram: "https://www.instagram.com/azeembanatwalla/?hl=en"
   },
   {
-    name: "Soumita Roy Choudhury",
-    image: "/speakers/soumita-roy-choudhury.jpg",
-    youtube: "",
-    linkedin: "https://www.linkedin.com/in/soumita-roy-choudhury-5a842120/?originalSubdomain=sg"
-  },
-  {
-    name: "Shibaji Paul",
-    image: "/speakers/shibaji-paul.jpg",
-    youtube: "https://www.youtube.com/@explorershibaji",
-    instagram: "https://www.instagram.com/explorer_shibaji/"
+    name: "Siddharth Dudeja",
+    image: "/artists/siddharth-dudeja.jpg",
+    youtube: "https://www.youtube.com/user/siddharthdudeja",
+    instagram: "https://www.instagram.com/siddharthdudeja/?hl=en"
   },
 ]
 
-function SpeakerCard({ speaker }) {
+function SpeakerCard({ artist }) {
   return (
     <div className='flex flex-col items-center gap-y-2 w-full h-full'>
       <div className='bg-gradient-to-b from-red via-lavender to-white p-0.5 h-full'>
-        <img src={speaker.image} className='object-cover aspect-square h-full bg-background p-1.5' />
+        <img src={artist.image} className='object-cover aspect-square h-full bg-background p-1.5' />
       </div>
       <div className='flex justify-between w-full px-2 text-xl'>
-        <h2>{speaker.name}</h2>
+        <h2>{artist.name}</h2>
         <div className='flex gap-x-2 items-center'>
-          {speaker.linkedin && <a href={speaker.linkedin} target='_blank'><LinkedIn /></a>}
-          {speaker.instagram && <a href={speaker.instagram} target='_blank'><Instagram /></a>}
-          {speaker.youtube && <a href={speaker.youtube} target='_blank'><YouTube /></a>}
+          {artist.instagram && <a href={artist.instagram} target='_blank'><Instagram /></a>}
+          {artist.youtube && <a href={artist.youtube} target='_blank'><YouTube /></a>}
         </div>
       </div>
     </div >
   )
 }
 
-function Speakers() {
+function Artists() {
 
   const [carouselStart, setCarouselStart] = useState(0);
   const container = useRef();
@@ -127,7 +121,7 @@ function Speakers() {
     <div ref={container} className='w-full relative border-greyBorder border-t grid grid-cols-1 sm:grid-cols-5 grid-rows-3 sm:grid-rows-1 h-screen overflow-x-hidden'>
       <div className='relative bg-background z-[100] h-full border-greyBorder border-b sm:border-b-transparent sm:border-r sm:-mr-[1px] row-span-1'>
         <div className='sm:hidden absolute left-[50%] -translate-x-[50%] h-full border-greyBorder border-l border-r w-5/7'></div>
-        <h2 className='scrollAnimatedText absolute text-3xl text-center top-[50%] left-[50%] -translate-[50%]'>Past Speakers</h2>
+        <h2 className='scrollAnimatedText absolute text-3xl text-center top-[50%] left-[50%] -translate-[50%]'>Past Artists</h2>
         <div className='absolute top-[65%] left-[50%] -translate-x-[50%] flex gap-x-3'>
           <button onClick={() => {
             if (carouselStart >= 0) return;
@@ -139,13 +133,13 @@ function Speakers() {
             &lsaquo;
           </button>
           <button onClick={() => {
-            if (window.innerWidth >= 600 && carouselStart <= (speakerDetails.length - 2) * -25) return;
-            if (window.innerWidth < 600 && carouselStart <= (speakerDetails.length - 1) * -50) return;
+            if (window.innerWidth >= 600 && carouselStart <= (artistDetails.length - 2) * -25) return;
+            if (window.innerWidth < 600 && carouselStart <= (artistDetails.length - 1) * -50) return;
             setCarouselStart((prev) => {
               return window?.innerWidth >= 600 ? prev - 25 : prev - 50;
             });
           }}
-            className={`text-7xl font-bold ${window.innerWidth >= 600 ? carouselStart <= (speakerDetails.length - 2) * -25 ? 'opacity-40' : '' : carouselStart <= (speakerDetails.length - 1) * -50 ? 'opacity-40' : ''}`}>
+            className={`text-7xl font-bold ${window.innerWidth >= 600 ? carouselStart <= (artistDetails.length - 2) * -25 ? 'opacity-40' : '' : carouselStart <= (artistDetails.length - 1) * -50 ? 'opacity-40' : ''}`}>
             &rsaquo;
           </button>
         </div>
@@ -157,12 +151,12 @@ function Speakers() {
       </div>
       <div className='absolute h-full w-screen overflow-x-hidden'>
         <div className='sm:hidden absolute left-[50%] -translate-x-[50%] h-full border-greyBorder border-l border-r w-5/7'></div>
-        {speakerDetails.map((speaker, ind) => {
+        {artistDetails.map((artist, ind) => {
           const left = window?.innerWidth >= 600 ? carouselStart - 5 + 26 * (ind + 1) : carouselStart - 45 + 50 * (ind + 1);
           return (
             <>
               <div key={ind} className={`h-3/5 text-left text-nowrap absolute transition-all duration-1000 top-[50%] -translate-y-[20%] sm:-translate-y-[50%] p-2 ${carouselStart === ind * -50 ? '' : 'opacity-0 pointer-events-none sm:pointer-events-auto sm:opacity-100'}`} style={{ left: `${left}%` }}>
-                <SpeakerCard speaker={speaker} />
+                <SpeakerCard artist={artist} />
               </div>
             </>
           )
@@ -173,4 +167,4 @@ function Speakers() {
   )
 }
 
-export default Speakers
+export default Artists

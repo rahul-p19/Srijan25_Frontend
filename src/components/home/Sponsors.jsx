@@ -61,6 +61,24 @@ const pastSponsors = [
   },
 ]
 
+const primarySponsors = [
+  {
+    image: "/fetsu-presents-srijan-glitch.svg",
+    text: "",
+    link: ""
+  },
+  {
+    image: "/fetsu-presents-srijan-glitch.svg",
+    text: "",
+    link: ""
+  },
+  {
+    image: "/fetsu-presents-srijan-glitch.svg",
+    text: "",
+    link: ""
+  },
+]
+
 function Sponsors() {
 
   const [heading, setHeading] = useState("Sponsors");
@@ -122,9 +140,15 @@ function Sponsors() {
 
   return (
     <div ref={container} className='w-full relative border-greyBorder border-t grid grid-cols-1 sm:grid-cols-5 grid-rows-5 sm:grid-rows-1 h-[80vh] overflow-x-hidden'>
+      <div className={`absolute top-[40%] z-[300] sm:top-4 right-0 h-1/4 w-full sm:w-4/5 flex justify-between items-center ${heading === "Sponsors" ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"} transition-opacity duration-500`}>
+        <div className="grid place-items-center grid-cols-2 w-2/3 sm:w-3/4 h-full gap-4 px-2">
+          {primarySponsors.filter((sponsor, ind) => ind < 2).map((sponsor, ind) => <img alt={sponsor.text} src={sponsor.image} key={ind} className="sm:w-1/2 border border-greyBorder px-2" />)}
+        </div>
+        <div className="grid place-items-center h-full w-1/3 sm:w-1/4 p-2 sm:p-4"><img alt={primarySponsors[2].text} src={primarySponsors[2].image} className="w-48 border border-greyBorder px-2" /></div>
+      </div>
       <div className='relative bg-background z-[100] h-full border-r -mr-[1px] row-span-2'>
         <div className='sm:hidden absolute left-[50%] -translate-x-[50%] h-full border-greyBorder border-l border-r w-5/7'></div>
-        <h2 className='scrollAnimatedText absolute text-3xl top-[50%] left-[50%] -translate-[50%]'>{heading}</h2>
+        <h2 className='scrollAnimatedText absolute text-3xl text-center top-[50%] left-[50%] -translate-[50%]'>{heading}</h2>
         <div className='absolute top-[65%] left-[50%] -translate-x-[50%] flex gap-x-3'>
           <button onClick={() => setHeading("Past Sponsors")}
             className={`text-7xl font-bold ${heading === "Past Sponsors" ? 'opacity-40' : ''}`}>
@@ -148,7 +172,7 @@ function Sponsors() {
               </li>
             )) : [...pastSponsors, ...pastSponsors].map((sponsor, ind) => (
               <li key={ind} className='w-[40vw] sm:w-[30vw] px-4 sm:px-0 grid place-items-center transition-all duration-1000s border-greyBorder border-l'>
-                <img src={sponsor.image} className='w-72 py-6' />
+                <img src={sponsor.image} alt={sponsor.text} className='w-72 py-6' />
               </li>
             ))}
           </ul>

@@ -17,16 +17,14 @@ function Footer() {
               <div className='cursor-pointer' onClick={notify}>Events</div>
               <div className='cursor-pointer' onClick={notify}>Merchandise</div>
               {/*<a href='/merchandise'>Merchandise</a>*/}
-              <a href='https://tr.ee/7md571El21'>Ambassador</a>
+              <a href='https://docs.google.com/forms/d/e/1FAIpQLSe-zoCeE50FR2dUzauh7wfvHxfHczPwgziqYhRju2zMLH164A/viewform'>Ambassador</a>
             </div>
           </div>
           <div className='flex flex-col gap-y-4'>
             <h2 className='text-3xl text-transparent bg-clip-text bg-gradient-to-t from-white to-light-pink'>Legal</h2>
             <div className='flex flex-col text-right underline underline-offset-2 sm:text-lg'>
-              <a href='/privacy'>Privacy</a>
-              <a href='/terms'>Terms</a>
-              <a href='/event'>Event</a>
-              <a href='/sponsor'>Sponsor</a>
+              <a href='/docs/Srijan_Privacy_Policy.pdf'>Privacy</a>
+              <a href='/docs/Srijan_Terms_and_Conditions.pdf'>Terms</a>
             </div>
           </div>
         </div>

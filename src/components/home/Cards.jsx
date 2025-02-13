@@ -10,7 +10,7 @@ function Card({ card }) {
   return <>
     {
       live ? <a href={card.link
-      } className='flex relative flex-col items-center gap-y-2 w-full h-full cardContainer' >
+      } className='flex relative flex-col items-center gap-y-2 w-4/5 sm:w-full h-full cardContainer' >
         < div className='bg-gradient-to-b from-red via-lavender to-white p-0.5 overflow-hidden aspect-square h-full w-full cardDiv' >
           <div className='h-full w-full overflow-hidden'>
             <img src={card.image} className='object-cover aspect-square h-full w-full bg-background p-2 transition-all duration-500 cardImage' />
@@ -20,7 +20,7 @@ function Card({ card }) {
           <h2>{card.text}</h2>
         </div>
       </a >
-        : <div onClick={notify} className='flex relative flex-col items-center gap-y-2 w-full h-full cardContainer'>
+        : <div onClick={notify} className='flex relative flex-col items-center gap-y-2 w-4/5 sm:w-full h-full cardContainer'>
           < div className='bg-gradient-to-b from-red via-lavender to-white p-0.5 overflow-hidden aspect-square h-full w-full cardDiv' >
             <div className='h-full w-full overflow-hidden'>
               <img src={card.image} className='object-cover aspect-square h-full w-full bg-background p-2 transition-all duration-500 cardImage' />
@@ -38,25 +38,25 @@ function Cards() {
 
   const cardDetails = [
     {
-      image: "/cards/events.svg",
+      image: "/cards/events.png",
       text: "Events",
       link: "/events",
       live: false
     },
     {
-      image: "/cards/workshop.svg",
+      image: "/cards/workshop.jpg",
       text: "Workshop",
-      link: "/workshop",
+      link: "https://docs.google.com/forms/d/e/1FAIpQLScaGsa7rJHbWpdAjYpkRlDERtwvnZzR-1ocx3HIQi03S4GxUw/viewform",
       live: false
     },
     {
-      image: "/cards/campus-ambassadors.svg",
+      image: "/cards/campus-ambassadors.jpg",
       text: "Campus Ambassadors",
-      link: "https://tr.ee/7md571El21",
+      link: "https://docs.google.com/forms/d/e/1FAIpQLSe-zoCeE50FR2dUzauh7wfvHxfHczPwgziqYhRju2zMLH164A/viewform",
       live: true
     },
     {
-      image: "/cards/merchandise.svg",
+      image: "/cards/tshirt.png",
       text: "Merchandise",
       link: "/merchandise",
       live: false
@@ -68,7 +68,7 @@ function Cards() {
       <div className='absolute w-5/7 sm:w-3/5 h-full border-greyBorder border-l border-r'>
         <div className='h-full w-1/2 border-greyBorder sm:border-r'></div>
       </div>
-      <div className='grid grid-cols-1 sm:grid-cols-4 gap-6 z-50 sm:w-11/12'>
+      <div className='grid grid-cols-1 sm:grid-cols-4 place-items-center gap-6 z-50 sm:w-11/12'>
         {cardDetails.map((card, ind) => (
           <Card card={card} key={ind} />
         ))}

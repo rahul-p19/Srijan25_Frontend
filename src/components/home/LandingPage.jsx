@@ -12,6 +12,7 @@ import Cards from "./Cards"
 import { Toaster } from "react-hot-toast"
 import { Suspense } from "react";
 import PageReveal from "../PageReveal";
+import Artists from "./Artists";
 
 function Loading() {
   return <div className="h-screen w-screen bg-background fixed z-[300]">
@@ -56,6 +57,7 @@ export const LandingPage = () => (
       <Sponsors />
       <Cards />
       <Speakers />
+      <Artists />
       <About />
       <Gallery />
       <Contact />
