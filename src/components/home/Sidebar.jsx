@@ -29,19 +29,24 @@ const sections = [
     end: 4.0
   },
   {
-    name: "About",
+    name: "Artists",
     start: 4.0,
-    end: 5.0
+    end: 4.8
+  },
+  {
+    name: "About",
+    start: 4.8,
+    end: 5.8
   },
   {
     name: "Gallery",
-    start: 5.0,
-    end: 5.9
+    start: 5.8,
+    end: 6.7
   },
   {
     name: "Get in Touch",
-    start: 5.9,
-    end: 7
+    start: 6.7,
+    end: 8
   },
 ]
 
@@ -95,7 +100,7 @@ function Sidebar() {
             <button key={ind} className='uppercase w-4/5 text-right cursor-pointer'
               onClick={() => {
                 window.scrollTo({
-                  top: (ele.end - 0.5) * height,
+                  top: (ele.end - 0.4) * height,
                   left: 0,
                   behavior: 'smooth'
                 });
