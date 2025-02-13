@@ -1,5 +1,5 @@
 .infinite-scroll-carousel{
-  animation: infiniteScroll 20s linear infinite;
+  animation: infiniteScroll 65s linear infinite;
 }
 
 @keyframes infiniteScroll {

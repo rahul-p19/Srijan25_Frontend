@@ -48,11 +48,11 @@ const speakerDetails = [
 
 function SpeakerCard({ speaker }) {
   return (
-    <div className='flex flex-col items-center gap-y-2 w-full h-full'>
+    <div className='flex flex-col items-center gap-y-2 w-full h-3/4  xl:h-full'>
       <div className='bg-gradient-to-b from-red via-lavender to-white p-0.5 h-full'>
         <img src={speaker.image} className='object-cover aspect-square h-full bg-background p-1.5' />
       </div>
-      <div className='flex justify-between w-full px-2 text-xl'>
+      <div className='flex justify-between w-full px-2 text-base xl:text-xl'>
         <h2>{speaker.name}</h2>
         <div className='flex gap-x-2 items-center'>
           {speaker.linkedin && <a href={speaker.linkedin} target='_blank'><LinkedIn /></a>}
@@ -149,7 +149,7 @@ function Speakers() {
             &rsaquo;
           </button>
         </div>
-        <img src='heading-outline.svg' className='scrollAnimatedImage absolute top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%]' />
+        <img src='heading-outline.svg' className='px-2 scrollAnimatedImage absolute top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%]' />
       </div>
       <div className='border-greyBorder sm:border-r sm:border-l col-span-3 grid grid-cols-2 row-span-2'>
         <div className='border-greyBorder border-r'></div>

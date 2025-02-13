@@ -43,11 +43,11 @@ const artistDetails = [
 
 function SpeakerCard({ artist }) {
   return (
-    <div className='flex flex-col items-center gap-y-2 w-full h-full'>
+    <div className='flex flex-col items-center gap-y-2 w-full h-3/4 xl:h-full'>
       <div className='bg-gradient-to-b from-red via-lavender to-white p-0.5 h-full'>
         <img src={artist.image} className='object-cover aspect-square h-full bg-background p-1.5' />
       </div>
-      <div className='flex justify-between w-full px-2 text-xl'>
+      <div className='flex justify-between w-full px-2 text-base xl:text-xl'>
         <h2>{artist.name}</h2>
         <div className='flex gap-x-2 items-center'>
           {artist.instagram && <a href={artist.instagram} target='_blank'><Instagram /></a>}
@@ -143,7 +143,7 @@ function Artists() {
             &rsaquo;
           </button>
         </div>
-        <img src='heading-outline.svg' className='scrollAnimatedImage absolute top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%]' />
+        <img src='heading-outline.svg' className='px-2 scrollAnimatedImage absolute top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%]' />
       </div>
       <div className='border-greyBorder sm:border-r sm:border-l col-span-3 grid grid-cols-2 row-span-2'>
         <div className='border-greyBorder border-r'></div>

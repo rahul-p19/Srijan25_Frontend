@@ -72,12 +72,12 @@ function Contact() {
         //handleSubmit(e);
       }}>
       <div className='relative row-span-4 border-greyBorder border-b sm:border-b-transparent col-span-7 sm:col-span-1'>
-        <h2 className='absolute text-center text-3xl top-[50%] left-[50%] -translate-[50%]'>Get in Touch</h2>
-        <img src='heading-outline.svg' className='absolute top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%]' />
+        <h2 className='absolute text-center text-2xl xl:text-3xl top-[50%] left-[50%] -translate-[50%]'>Get in Touch</h2>
+        <img src='heading-outline.svg' className='px-2 absolute top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%]' />
         <div className='absolute left-[50%] top-[50%] -translate-[50%] w-5/7 h-full border-greyBorder border-l border-r sm:hidden'></div>
       </div>
       <div className='row-span-5 col-span-7 sm:col-span-3 border-greyBorder sm:border-l sm:border-r grid grid-cols-1 sm:grid-cols-2 sm:grid-rows-5'>
-        <div className='row-span-3 sm:row-span-4 border-greyBorder sm:border-r border-b sm:border-b-transparent flex flex-col items-center justify-center gap-4 sm:pt-8'>
+        <div className='row-span-3 sm:row-span-4 border-greyBorder sm:border-r border-b sm:border-b-transparent flex flex-col items-center justify-center gap-4 sm:pt-8 text-sm xl:text-base'>
           <div className='flex gap-2'>
             <EmailOutlined />
             <a href='mailto:srijan.ju@jadavpuruniversity.in'>srijan.ju@jadavpuruniversity.in</a>
