@@ -49,7 +49,7 @@ function SpeakerCard({ artist }) {
       </div>
       <div className='flex justify-between w-full px-2 text-base xl:text-xl'>
         <h2>{artist.name}</h2>
-        <div className='flex gap-x-2 items-center'>
+        <div className='hidden gap-x-2 items-center'>
           {artist.instagram && <a href={artist.instagram} target='_blank'><Instagram /></a>}
           {artist.youtube && <a href={artist.youtube} target='_blank'><YouTube /></a>}
         </div>

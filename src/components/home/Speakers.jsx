@@ -54,7 +54,7 @@ function SpeakerCard({ speaker }) {
       </div>
       <div className='flex justify-between w-full px-2 text-base xl:text-xl'>
         <h2>{speaker.name}</h2>
-        <div className='flex gap-x-2 items-center'>
+        <div className='hidden gap-x-2 items-center'>
           {speaker.linkedin && <a href={speaker.linkedin} target='_blank'><LinkedIn /></a>}
           {speaker.instagram && <a href={speaker.instagram} target='_blank'><Instagram /></a>}
           {speaker.youtube && <a href={speaker.youtube} target='_blank'><YouTube /></a>}
