@@ -1,15 +1,112 @@
+
 import React, { useState } from "react";
 import { TextField, Button, Box, Typography, Paper } from "@mui/material";
 
-
+// (Optional) Simple email validation regex for future use
 const isValidEmail = (email) => {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+};
+
+// TeamMembers Component for dynamically adding/removing team member email fields
+const TeamMembers = () => {
+  const [members, setMembers] = useState([""]);
+
+  const handleMemberChange = (index, event) => {
+    const newMembers = [...members];
+    newMembers[index] = event.target.value;
+    setMembers(newMembers);
+  };
+
+  const handleAddMember = () => {
+    setMembers([...members, ""]);
+  };
+
+  const handleRemoveMember = (index) => {
+    // Remove the member at the specified index
+    const newMembers = [...members];
+    newMembers.splice(index, 1);
+    setMembers(newMembers);
+  };
+
+  return (
+    <Box sx={{ mb: 1.5 }}>
+      <Typography variant="subtitle1" color="white" sx={{ mb: 1 }}>
+        Team Members Emails:
+      </Typography>
+      {members.map((email, index) => (
+        <Box
+          key={index}
+          sx={{ display: "flex", alignItems: "center", mb: 1.5 }}
+        >
+          <TextField
+            fullWidth
+            size="medium"
+            label={`Team Member ${index + 1} Email`}
+            variant="outlined"
+            margin="dense"
+            value={email}
+            onChange={(e) => handleMemberChange(index, e)}
+            InputLabelProps={{
+              style: { color: "rgba(25, 255, 55, 0.7)", fontSize: "0.8rem" },
+            }}
+            sx={{
+              bgcolor: "black",
+              boxShadow: 51,
+              fontWeight: "bold",
+              fontFamily: "Roboto, sans-serif",
+              "& .MuiOutlinedInput-root": {
+                backgroundColor: "rgba(255, 255, 255, 0.1)",
+                borderRadius: "4px",
+                transition: "all 0.3s ease",
+                "& fieldset": { borderColor: "rgba(255, 255, 255, 0.3)" },
+                "&:hover fieldset": {
+                  borderColor: "rgba(255, 255, 255, 0.5)",
+                },
+              },
+              "& .MuiInputBase-input": {
+                fontSize: "1.2rem",
+                color: "blue",
+              },
+            }}
+          />
+          <Button
+            variant="outlined"
+            onClick={() => handleRemoveMember(index)}
+            sx={{
+              ml: 1,
+              color: "white",
+              borderColor: "white",
+              fontWeight: "bold",
+              bgcolor: "black",
+              "&:hover": { bgcolor: "black" },
+            }}
+          >
+            Remove
+          </Button>
+        </Box>
+      ))}
+      <Button
+        variant="outlined"
+        onClick={handleAddMember}
+        sx={{
+          mt: 1,
+          color: "white",
+          borderColor: "white",
+          fontWeight: "bold",
+          bgcolor: "black",
+          "&:hover": { bgcolor: "black" },
+        }}
+      >
+        Add Member
+      </Button>
+    </Box>
+  );
 };
 
 const App = () => {
   const [email, setEmail] = useState("");
 
-  // Update the email state as the user types.
+  // Update the email state as the user types in the main email field.
   const handleEmailChange = (event) => {
     setEmail(event.target.value);
   };
@@ -28,6 +125,19 @@ const App = () => {
         p: 2,
       }}
     >
+      {/* Background Gradient Overlay */}
+      <Box
+        sx={{
+          position: "absolute",
+          top: 0,
+          left: 0,
+          width: "100%",
+          height: "100%",
+          background: "linear-gradient(135deg, #000000, #434343)",
+          zIndex: -1,
+        }}
+      />
+
       {/* Background Lines */}
       <Box
         sx={{
@@ -66,7 +176,6 @@ const App = () => {
         elevation={6}
         sx={{
           zIndex: 10,
-          // Adjusted width with extra reduction on mediumer screens.
           width: { xs: "95%", sm: "80%", md: "60%", lg: "50%" },
           p: { xs: 2, sm: 3, md: 4 },
           display: "flex",
@@ -76,6 +185,7 @@ const App = () => {
           backdropFilter: "blur(9px)",
           borderRadius: 3,
           border: "1px solid white",
+          boxShadow: "0px 0px 20px rgba(0,0,0,0.5)",
         }}
       >
         {/* Robot Image */}
@@ -115,146 +225,79 @@ const App = () => {
             color="white"
             align="center"
             fontWeight="bold"
-            sx={{ mb: 2, fontSize: { xs: "1.5rem", md: "2rem" } }}
+            sx={{
+              mb: 2,
+              fontSize: { xs: "1.5rem", md: "2rem" },
+              textShadow: "2px 2px 4px rgba(0,0,0,0.7)",
+            }}
           >
             REGISTRATION
           </Typography>
 
-          {/* Name Field */}
+          {/* Team Name Field */}
           <TextField
             fullWidth
             size="medium"
-            label="Name"
+            label="Team Name"
             variant="outlined"
             margin="dense"
             InputLabelProps={{
-              style: { color: "rgba(255, 255, 255, 0.7)", fontSize: "0.8rem" },
+              style: { color: "rgba(25, 255, 55, 0.7)", fontSize: "0.8rem" },
             }}
             sx={{
               mb: 1.5,
+              bgcolor: "black",
+              boxShadow: 51,
+              fontWeight: "bold",
+              fontFamily: "Roboto, sans-serif",
               "& .MuiOutlinedInput-root": {
-                fontSize: "0.8rem",
-                color: "white",
-                "& fieldset": {
-                  borderColor: "rgba(255, 255, 255, 0.3)",
-                },
-                "&:hover fieldset": {
-                  borderColor: "rgba(255, 255, 255, 0.5)",
-                },
+                backgroundColor: "rgba(255, 255, 255, 0.1)",
+                borderRadius: "4px",
+                transition: "all 0.3s ease",
+                "& fieldset": { borderColor: "rgba(255, 255, 255, 0.3)" },
+                "&:hover fieldset": { borderColor: "rgba(255, 255, 255, 0.5)" },
+              },
+              "& .MuiInputBase-input": {
+                fontSize: "1.2rem",
+                color: "blue",
               },
             }}
           />
 
-          {/* Email Field with Validation */}
+          {/* Team Leader Name Field */}
           <TextField
             fullWidth
             size="medium"
-            label="Email"
+            label="Team Leader Name"
             variant="outlined"
             margin="dense"
-            value={email}
-            onChange={handleEmailChange}
             InputLabelProps={{
-              style: { color: "rgba(255, 255, 255, 0.7)", fontSize: "0.8rem" },
+              style: { color: "rgba(25, 255, 55, 0.7)", fontSize: "0.8rem" },
             }}
             sx={{
               mb: 1.5,
+              bgcolor: "black",
+              boxShadow: 51,
+              fontWeight: "bold",
+              fontFamily: "Roboto, sans-serif",
               "& .MuiOutlinedInput-root": {
-                fontSize: "0.8rem",
-                color: "white",
-                "& fieldset": {
-                  borderColor:
-                    email === ""
-                      ? "rgba(255, 255, 255, 0.3)"
-                      : isValidEmail(email)
-                      ? "green"
-                      : "red",
-                },
-                "&:hover fieldset": {
-                  borderColor:
-                    email === ""
-                      ? "rgba(255, 255, 255, 0.5)"
-                      : isValidEmail(email)
-                      ? "green"
-                      : "red",
-                },
+                backgroundColor: "rgba(255, 255, 255, 0.1)",
+                borderRadius: "4px",
+                transition: "all 0.3s ease",
+                "& fieldset": { borderColor: "rgba(255, 255, 255, 0.3)" },
+                "&:hover fieldset": { borderColor: "rgba(255, 255, 255, 0.5)" },
+              },
+              "& .MuiInputBase-input": {
+                fontSize: "1.2rem",
+                color: "blue",
               },
             }}
           />
 
-          {/* Additional Fields */}
-          <TextField
-            fullWidth
-            size="medium"
-            label="College name"
-            variant="outlined"
-            margin="dense"
-            InputLabelProps={{
-              style: { color: "rgba(255, 255, 255, 0.7)", fontSize: "0.8rem" },
-            }}
-            sx={{
-              mb: 1.5,
-              "& .MuiOutlinedInput-root": {
-                fontSize: "0.8rem",
-                color: "white",
-                "& fieldset": {
-                  borderColor: "rgba(255, 255, 255, 0.3)",
-                },
-                "&:hover fieldset": {
-                  borderColor: "rgba(255, 255, 255, 0.5)",
-                },
-              },
-            }}
-          />
-          <TextField
-            fullWidth
-            size="medium"
-            label="Password"
-            variant="outlined"
-            margin="dense"
-            InputLabelProps={{
-              style: { color: "rgba(255, 255, 255, 0.7)", fontSize: "0.8rem" },
-            }}
-            sx={{
-              mb: 1.5,
-              "& .MuiOutlinedInput-root": {
-                fontSize: "0.8rem",
-                color: "white",
-                "& fieldset": {
-                  borderColor: "rgba(255, 255, 255, 0.3)",
-                },
-                "&:hover fieldset": {
-                  borderColor: "rgba(255, 255, 255, 0.5)",
-                },
-              },
-            }}
-          />
-          <TextField
-            fullWidth
-            size="medium"
-            label="Referral"
-            variant="outlined"
-            margin="dense"
-            InputLabelProps={{
-              style: { color: "rgba(255, 255, 255, 0.7)", fontSize: "0.8rem" },
-            }}
-            sx={{
-              mb: 1.5,
-              "& .MuiOutlinedInput-root": {
-                fontSize: "",
-                color: "white",
-                "& fieldset": {
-                  borderColor: "rgba(255, 255, 255, 0.3)",
-                },
-                "&:hover fieldset": {
-                  borderColor: "rgba(255, 255, 255, 0.5)",
-                },
-              },
-            }}
-          />
+          {/* Team Members Emails Component */}
+          <TeamMembers />
 
           <Button
-           // fullWidth
             variant="outlined"
             sx={{
               mt: 1.5,
@@ -270,6 +313,7 @@ const App = () => {
               "&:hover": {
                 boxShadow: "inset 0 0 10px rgba(255, 255, 255, 0.8)",
                 bgcolor: "black",
+                transform: "scale(1.02)",
               },
             }}
           >
@@ -282,33 +326,3 @@ const App = () => {
 };
 
 export default App;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

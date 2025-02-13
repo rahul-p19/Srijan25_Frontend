@@ -1,0 +1,7 @@
+.cardDiv:hover + .cardText{
+  opacity: 100%;
+}
+
+.cardContainer:hover > div > div > .cardImage{
+  transform: scale(1.15);
+}

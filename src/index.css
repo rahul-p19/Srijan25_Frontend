@@ -26,31 +26,8 @@
   --color-purple: #532e8f;
   --color-lavender: #cd95ff;
   --color-light-pink: #ffbaba;
+  --color-greyBorder: #949494;
   --font-sometypeMono: "Sometype Mono";
+
+  --breakpoint-xms: 29rem;
 }
-
-.infinite-scroll-carousel{
-  animation: infiniteScroll 20s linear infinite;
-}
-
-@keyframes infiniteScroll {
-    0% {
-      transform: translate(0,0)
-    }
-    100%{
-      transform: translate( calc(-50% - 25px), 0)
-    }
-  }
-
-  .infinite-scroll-gallery{
-  animation: infiniteScrollGallery 20s linear infinite;
-}
-
-@keyframes infiniteScrollGallery {
-    0% {
-      transform: translate(0,0)
-    }
-    100%{
-      transform: translate( calc(-50% - 8px), 0)
-    }
-  }
