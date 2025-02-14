@@ -72,7 +72,7 @@ function Hero() {
         </div>
       </div>
       <div></div>
-      <div className='absolute hidden sm:flex flex-col items-center z-[90] bottom-0 left-[5%] h-[37.5%]'>
+      <div className='absolute hidden lg:flex flex-col items-center z-[90] bottom-0 left-[5%] h-[37.5%]'>
         <img src='/fetsu-presents-srijan-glitch.svg' className='h-2/3' />
         <div className='bg-background border-greyBorder border border-b-transparent py-2 px-12 h-1/3 flex flex-col justify-around'>
           <h3>The Annual Techno-Management Fest of</h3>
@@ -80,7 +80,7 @@ function Hero() {
         </div>
       </div>
       <div className='absolute p-3 z-[90] bottom-[47%] sm:bottom-[20%] right-[3%] sm:right-[12%] bg-background border border-greyBorder'>
-        <p className='text-base sm:text-3xl'><span className='text-transparent bg-clip-text bg-gradient-to-r from-blue via-red to-red'>20-23</span> MARCH <br className='sm:hidden' /> 2025</p>
+        <p className='text-base sm:text-lg md:text-xl lg:text-3xl'><span className='text-transparent bg-clip-text bg-gradient-to-r from-blue via-red to-red'>20-23</span> MARCH <br className='sm:hidden' /> 2025</p>
       </div>
       {/*<img src='/mascot.svg' className='absolute z-[100] top-[32%] sm:top-[20%] left-[50%] -translate-x-[50%] h-3/4 mascot-animation'
         onMouseOut={(e) => { e.target.style.animationPlayState = "paused"; }}

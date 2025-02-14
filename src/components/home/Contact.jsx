@@ -65,19 +65,19 @@ function Contact() {
   }
 
   return (
-    <form className='min-h-[40vh] border-greyBorder border-t grid grid-cols-7 grid-rows-10 sm:grid-rows-1 sm:grid-cols-5'
+    <form className='min-h-[40vh] border-greyBorder border-t grid grid-cols-7 grid-rows-10 lg:grid-rows-1 lg:grid-cols-5'
       onSubmit={(e) => {
         e.preventDefault();
         notify();
         //handleSubmit(e);
       }}>
-      <div className='relative row-span-4 border-greyBorder border-b sm:border-b-transparent col-span-7 sm:col-span-1'>
+      <div className='relative row-span-4 border-greyBorder border-b lg:border-b-transparent col-span-7 lg:col-span-1'>
         <h2 className='absolute text-center text-2xl xl:text-3xl top-[50%] left-[50%] -translate-[50%]'>Get in Touch</h2>
         <img src='heading-outline.svg' className='px-2 absolute top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%]' />
-        <div className='absolute left-[50%] top-[50%] -translate-[50%] w-5/7 h-full border-greyBorder border-l border-r sm:hidden'></div>
+        <div className='absolute left-[50%] top-[50%] -translate-[50%] w-5/7 h-full border-greyBorder border-l border-r lg:hidden'></div>
       </div>
-      <div className='row-span-5 col-span-7 sm:col-span-3 border-greyBorder sm:border-l sm:border-r grid grid-cols-1 sm:grid-cols-2 sm:grid-rows-5'>
-        <div className='row-span-3 sm:row-span-4 border-greyBorder sm:border-r border-b sm:border-b-transparent flex flex-col items-center justify-center gap-4 sm:pt-8 text-sm xl:text-base'>
+      <div className='row-span-5 col-span-7 lg:col-span-3 border-greyBorder lg:border-l lg:border-r grid grid-cols-1 lg:grid-cols-2 lg:grid-rows-5'>
+        <div className='row-span-3 lg:row-span-4 border-greyBorder lg:border-r border-b lg:border-b-transparent flex flex-col items-center justify-center gap-4 lg:pt-8 text-sm xl:text-base'>
           <div className='flex gap-2'>
             <EmailOutlined />
             <a href='mailto:srijan.ju@jadavpuruniversity.in'>srijan.ju@jadavpuruniversity.in</a>
@@ -87,19 +87,19 @@ function Contact() {
             <p>+917980623712</p>
           </div>
         </div>
-        <div className='w-full row-span-1 sm:row-span-4 sm:pb-2 grid place-items-center sm:items-end'>
-          <p className='text-center sm:p-1 w-5/7 sm:w-full sm:text-xl border-greyBorder'>SUBSCRIBE TO OUR NEWSLETTER</p>
+        <div className='w-full row-span-1 lg:row-span-4 lg:pb-2 grid place-items-center lg:items-end'>
+          <p className='text-center lg:p-1 w-5/7 lg:w-full lg:text-xl border-greyBorder'>SUBSCRIBE TO OUR NEWSLETTER</p>
         </div>
-        <div className='border-greyBorder hidden sm:block sm:border-r sm:border-t'></div>
+        <div className='border-greyBorder hidden lg:block lg:border-r lg:border-t'></div>
         <div className='border-greyBorder border-t w-full grid place-items-center'>
-          <input className={`outline-none h-full w-5/7 sm:w-full border-r border-l sm:border-l-transparent sm:border-r-transparent px-4 placeholder:text-center`} type='text' placeholder='youremail@gmail.com' value={email} onChange={(e) => handleEmailChange(e)}
+          <input className={`outline-none h-full w-5/7 sm:w-3/5 lg:w-full border-r border-l lg:border-l-transparent lg:border-r-transparent px-4 placeholder:text-center`} type='text' placeholder='youremail@gmail.com' value={email} onChange={(e) => handleEmailChange(e)}
           />
         </div>
       </div>
-      <div className='grid row-span-1 sm:grid-rows-5 col-span-7 sm:col-span-1'>
+      <div className='grid row-span-1 lg:grid-rows-5 col-span-7 lg:col-span-1'>
         <div className='row-span-4'></div>
         <div className='w-full grid place-items-center'>
-          <button className={`w-5/7 sm:w-full ${loading || validEmail !== 1 ? 'bg-greyBorder' : 'bg-white'} text-center text-background h-full p-1 border-greyBorder border border-b-transparent border-t sm:border-l-transparent sm:border-r-transparent text-xl`} type='submit' disabled={loading || validEmail !== 1}>SUBSCRIBE</button>
+          <button className={`w-5/7 sm:w-3/5 lg:w-full ${loading ? 'bg-greyBorder' : 'bg-white'} text-center text-background h-full p-1 border-greyBorder border border-b-transparent border-t lg:border-l-transparent lg:border-r-transparent text-xl`} type='submit' disabled={loading}>SUBSCRIBE</button>
         </div>
       </div>
     </form >
