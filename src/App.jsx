@@ -1,4 +1,5 @@
 import "./App.css";
+import React, { useEffect } from "react";
 import { LandingPage } from "./components/home/LandingPage";
 import MerchandisePage from "./components/MerchandisePage";
 import Eventpage from "./components/Events/Eventpage";
@@ -13,9 +14,8 @@ import PageNotFound from "./components/PageNotFound";
 
 import { ProtectedRoute } from "./components/protected_routes/AuthRoutes";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { useState, useEffect } from "react";
-// import jwt from 'jsonwebtoken';
-// import { verifyToken } from "./components/protected_routes/verifytoken";
+import { useState } from "react";
+import { verifyToken } from "./components/protected_routes/verifytoken";
 
 function App() {
   /**
@@ -42,7 +42,7 @@ function App() {
 
   const handleLogout = () => setUser(null);
 
-  
+
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
   useEffect(() => {
@@ -80,11 +80,11 @@ function App() {
           </Route>
           <Route>
             <Route path="/merchandise" element={
-             <ProtectedRoute isAuthenticated={isAuthenticated}>
-             <MerchandisePage />
-           </ProtectedRoute>
-              } />
-            </Route>
+              <ProtectedRoute isAuthenticated={isAuthenticated}>
+                <MerchandisePage />
+              </ProtectedRoute>
+            } />
+          </Route>
           <Route path="/events" element={<Eventpage />} />
           <Route path="/eventregistration" element={<EventRegistration />} />
           <Route path="/signup" element={<Signup />} />
