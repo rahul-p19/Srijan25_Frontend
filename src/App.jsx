@@ -10,7 +10,6 @@ import { ProtectedRoute } from "./components/protected_routes/AuthRoutes";
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { useState } from "react";
-import jwt from 'jsonwebtoken';
 import { verifyToken } from "./components/protected_routes/verifytoken";
 
 function App() {
@@ -38,7 +37,7 @@ function App() {
 
   const handleLogout = () => setUser(null);
 
-  
+
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
   useEffect(() => {
@@ -76,11 +75,11 @@ function App() {
           </Route>
           <Route>
             <Route path="/merchandise" element={
-             <ProtectedRoute isAuthenticated={isAuthenticated}>
-             <MerchandisePage />
-           </ProtectedRoute>
-              } />
-            </Route>
+              <ProtectedRoute isAuthenticated={isAuthenticated}>
+                <MerchandisePage />
+              </ProtectedRoute>
+            } />
+          </Route>
           <Route path="/events" element={<Eventpage />} />
           <Route path="/eventregistration" element={<EventRegistration />} />
           <Route path="*" element={<PageNotFound />} />
