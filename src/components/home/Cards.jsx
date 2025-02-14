@@ -10,7 +10,7 @@ function Card({ card }) {
   return <>
     {
       live ? <a href={card.link
-      } className='flex relative flex-col items-center gap-y-2 w-4/5 sm:w-full h-full cardContainer' >
+      } className='flex relative flex-col items-center gap-y-2 w-4/5 sm:w-full aspect-square h-auto cardContainer' >
         < div className='bg-gradient-to-b from-red via-lavender to-white p-0.5 overflow-hidden aspect-square h-full w-full cardDiv' >
           <div className='h-full w-full overflow-hidden'>
             <img src={card.image} className='object-cover aspect-square h-full w-full bg-background p-2 transition-all duration-500 cardImage' />

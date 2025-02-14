@@ -169,7 +169,7 @@ function Sponsors() {
             &rsaquo;
           </button>
         </div>
-        <img src='heading-outline.svg' className='scrollAnimatedOutline absolute top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%] px-2' />
+        <img src='heading-outline.svg' loading="lazy" className='scrollAnimatedOutline absolute top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%] px-2' />
       </div>
       <div className='relative col-span-3 border-greyBorder border-t sm:border-t-transparent sm:border-l sm:border-r grid grid-cols-2 row-span-3 h-full'>
         <div className='sm:hidden absolute left-[50%] -translate-x-[50%] h-full border-greyBorder border-l border-r w-5/7'></div>

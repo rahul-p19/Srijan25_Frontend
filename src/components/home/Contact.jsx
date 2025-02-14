@@ -73,7 +73,7 @@ function Contact() {
       }}>
       <div className='relative row-span-4 border-greyBorder border-b lg:border-b-transparent col-span-7 lg:col-span-1'>
         <h2 className='absolute text-center text-2xl xl:text-3xl top-[50%] left-[50%] -translate-[50%]'>Get in Touch</h2>
-        <img src='heading-outline.svg' className='px-2 absolute top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%]' />
+        <img src='heading-outline.svg' loading="lazy" className='px-2 absolute top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%]' />
         <div className='absolute left-[50%] top-[50%] -translate-[50%] w-5/7 h-full border-greyBorder border-l border-r lg:hidden'></div>
       </div>
       <div className='row-span-5 col-span-7 lg:col-span-3 border-greyBorder lg:border-l lg:border-r grid grid-cols-1 lg:grid-cols-2 lg:grid-rows-5'>

@@ -1,48 +1,15 @@
 import "./hero.css";
-import React, { useRef } from 'react'
-import MascotAnimation from './MascotAnimation'
-import gsap from "gsap";
-import { useGSAP } from "@gsap/react";
-import ScrollTrigger from 'gsap/dist/ScrollTrigger';
+import React, { lazy, useRef } from 'react'
 import toast from "react-hot-toast";
 
 const notify = () => toast("Coming soon!");
 
-gsap.registerPlugin(useGSAP, ScrollTrigger);
+const LazyMascotAnimation = lazy(() => import("./MascotAnimation"))
 
 function Hero() {
 
   const container = useRef();
   const mascot = useRef();
-  const mascotIncreasedHeight = window.innerWidth > 600 ? "200vh" : "150vh";
-
-  /*useGSAP(() => {
-
-    gsap.to(mascot.current, {
-      height: mascotIncreasedHeight,
-      y: "80vh",
-      scrollTrigger: {
-        trigger: container.current,
-        start: "bottom bottom",
-        end: "+=300",
-        scrub: 1
-      }
-    })
-
-    gsap.to(mascot.current, {
-      y: "90vh",
-      opacity: 0,
-      display: "none",
-      scrollTrigger: {
-        trigger: container.current,
-        start: "bottom bottom",
-        end: "+=600",
-        scrub: 1
-      }
-    })
-  }, {
-    scope: container
-  })*/
 
   return (
     <div ref={container} className='h-[90vh] w-screen max-w-full grid grid-cols-7 sm:grid-cols-5 relative overflow-x-clip'>
@@ -87,7 +54,7 @@ function Hero() {
         onMouseEnter={(e) => { e.target.style.animationPlayState = "running"; }}
       />*/}
       <div ref={mascot} className='absolute -bottom-8 sm:-bottom-2 left-[50%] -translate-x-[50%] h-4/5 sm:h-full w-full z-[102]'>
-        <MascotAnimation />
+        <LazyMascotAnimation />
       </div>
     </div>
   )

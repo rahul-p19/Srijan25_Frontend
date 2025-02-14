@@ -88,7 +88,7 @@ function Gallery() {
           <ul className='flex h-full gap-x-3 infinite-scroll-gallery border-greyBorder border-t border-b'>
             {[...photos, ...photos].map((photo, ind) => (
               <li key={ind} className='h-full w-[80vw] sm:w-[35vw] grid place-items-center transition-all duration-1000'>
-                <img src={photo} className='h-full w-full aspect-video object-cover object-top' />
+                <img src={photo} loading="lazy" className='h-full w-full aspect-video object-cover object-top' />
               </li>
             ))}
           </ul>
