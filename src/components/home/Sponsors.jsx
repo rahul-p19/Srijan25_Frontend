@@ -158,7 +158,7 @@ function Sponsors() {
       </div>
       <div className='relative bg-background z-[100] h-full border-r -mr-[1px] row-span-2'>
         <div className='sm:hidden absolute left-[50%] -translate-x-[50%] h-full border-greyBorder border-l border-r w-5/7'></div>
-        <h2 className='scrollAnimatedText absolute text-3xl text-center top-[50%] left-[50%] -translate-[50%]'>{heading}</h2>
+        <h2 className='scrollAnimatedText absolute text-2xl sm:text-xl xl:text-3xl text-center top-[50%] left-[50%] -translate-[50%]'>{heading}</h2>
         <div className='hidden absolute top-[65%] left-[50%] -translate-x-[50%] gap-x-3'>
           <button onClick={() => setHeading("Past Sponsors")}
             className={`text-7xl font-bold ${heading === "Past Sponsors" ? 'opacity-40' : ''}`}>
@@ -178,11 +178,11 @@ function Sponsors() {
           <ul className='flex items-center infinite-scroll-carousel bg-background border-greyBorder border-t border-b h-full'>
             {heading === "Sponsors" ? [...currentSponsors, ...currentSponsors].map((sponsor, ind) => (
               <li key={ind} className='w-[40vw] sm:w-[30vw] h-full px-4 sm:px-0 grid place-items-center transition-all duration-1000s border-greyBorder border-l'>
-                <img src={sponsor.image} className='w-72 py-6' />
+                <img loading="lazy" src={sponsor.image} className='w-72 py-6' />
               </li>
             )) : [...pastSponsors, ...pastSponsors].map((sponsor, ind) => (
               <li key={ind} className='w-[40vw] sm:w-[30vw] px-4 sm:px-0 grid place-items-center transition-all duration-1000s border-greyBorder border-l h-full'>
-                <img src={sponsor.image} alt={sponsor.text} className='h-1/2 w-1/2 object-contain' />
+                <img loading="lazy" src={sponsor.image} alt={sponsor.text} className='h-1/2 w-1/2 object-contain' />
               </li>
             ))}
           </ul>

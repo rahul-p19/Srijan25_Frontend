@@ -26,7 +26,7 @@ function Card({ card }) {
               <img src={card.image} className='object-cover aspect-square h-full w-full bg-background p-2 transition-all duration-500 cardImage' />
             </div>
           </div >
-          <div className='opacity-100 sm:opacity-0 transition-opacity duration-500 hover:opacity-100 absolute grid place-items-center bottom-[2px] left-1 sm:left-0.5 right-1 sm:right-0.5 bg-background/90 py-6 text-xl cardText'>
+          <div className='opacity-100 sm:opacity-0 transition-opacity duration-500 hover:opacity-100 absolute grid place-items-center bottom-[2px] left-1 sm:left-0.5 right-1 sm:right-0.5 bg-background/90 py-6 text-xl text-center cardText'>
             <h2>{card.text}</h2>
           </div>
         </div >
