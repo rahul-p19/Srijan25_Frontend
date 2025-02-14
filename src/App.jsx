@@ -1,4 +1,5 @@
 import "./App.css";
+import React, { useEffect } from "react";
 import { LandingPage } from "./components/home/LandingPage";
 import MerchandisePage from "./components/MerchandisePage";
 import Eventpage from "./components/Events/Eventpage";
