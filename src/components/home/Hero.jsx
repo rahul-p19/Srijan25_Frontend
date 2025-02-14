@@ -54,7 +54,7 @@ function Hero() {
         onMouseEnter={(e) => { e.target.style.animationPlayState = "running"; }}
       />*/}
       <div ref={mascot} className='absolute -bottom-8 sm:-bottom-2 left-[50%] -translate-x-[50%] h-4/5 sm:h-full w-full z-[102]'>
-        <Suspense fallback={<img src="/srijan-mascot.webp" alt="Mascot" className="absolute h-2/3 w-auto bottom-8 left-[50%] -translate-x-[50%]" />}>
+        <Suspense fallback={<img src="/srijan-mascot_enhanced.webp" alt="Mascot" className="absolute h-2/3 w-auto bottom-8 left-[50%] -translate-x-[50%]" />}>
           <LazyMascotAnimation />
         </Suspense>
       </div>
