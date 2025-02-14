@@ -54,7 +54,7 @@ function PageReveal() {
         <h2 className="text-xl md:text-3xl font-bold">JADAVPUR UNIVERSITY</h2>
       </div>
       <div ref={loader} className="absolute top-[75%] left-[50%] -translate-[50%] p-3 animate-spin bg-gradient-to-bl from-red via-purple to-lavender h-24 w-24 aspect-square rounded-full">
-        <div className="rounded-full h-full w-full bg-slate-100 dark:bg-zinc-900 background-blur-md"></div>
+        <div className="rounded-full h-full w-full bg-background"></div>
       </div>
     </div>
 

@@ -1,5 +1,5 @@
 import "./hero.css";
-import React, { lazy, useRef } from 'react'
+import React, { Suspense, lazy, useRef } from 'react'
 import toast from "react-hot-toast";
 
 const notify = () => toast("Coming soon!");
@@ -46,7 +46,7 @@ function Hero() {
           <h2 className='uppercase font-bold text-2xl text-center'>Jadavpur University</h2>
         </div>
       </div>
-      <div className='absolute p-3 z-[90] bottom-[47%] sm:bottom-[20%] right-[3%] sm:right-[12%] bg-background border border-greyBorder'>
+      <div className='hidden absolute p-3 z-[90] bottom-[47%] sm:bottom-[20%] right-[3%] sm:right-[12%] bg-background border border-greyBorder'>
         <p className='text-base sm:text-lg md:text-xl lg:text-3xl'><span className='text-transparent bg-clip-text bg-gradient-to-r from-blue via-red to-red'>20-23</span> MARCH <br className='sm:hidden' /> 2025</p>
       </div>
       {/*<img src='/mascot.svg' className='absolute z-[100] top-[32%] sm:top-[20%] left-[50%] -translate-x-[50%] h-3/4 mascot-animation'
@@ -54,7 +54,9 @@ function Hero() {
         onMouseEnter={(e) => { e.target.style.animationPlayState = "running"; }}
       />*/}
       <div ref={mascot} className='absolute -bottom-8 sm:-bottom-2 left-[50%] -translate-x-[50%] h-4/5 sm:h-full w-full z-[102]'>
-        <LazyMascotAnimation />
+        <Suspense fallback={<img src="/srijan-mascot.webp" alt="Mascot" className="absolute h-2/3 w-auto bottom-8 left-[50%] -translate-x-[50%]" />}>
+          <LazyMascotAnimation />
+        </Suspense>
       </div>
     </div>
   )
