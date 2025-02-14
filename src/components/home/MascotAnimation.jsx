@@ -10,7 +10,7 @@ function ModelFallback() {
 function MascotAnimation() {
 
   return (
-    <Canvas frameloop="demand" className="h-full w-full" fallback={<ModelFallback />}>
+    <Canvas className="h-full w-full" fallback={<ModelFallback />}>
       <ambientLight />
       <directionalLight position={[-5, 5, 5]} intensity={2} color={"#ffffff"} />
       <directionalLight position={[5, 5, 5]} intensity={2} color={"#ffffff"} />
