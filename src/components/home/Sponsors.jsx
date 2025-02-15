@@ -1,4 +1,12 @@
-import React, { useState } from 'react'
+import "./infiniteScroll.css"
+import React, { useState, useRef } from 'react'
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger"
+import { CustomEase } from 'gsap/dist/CustomEase';
+
+gsap.registerPlugin(useGSAP, ScrollTrigger, CustomEase);
+
 
 const currentSponsors = [
   {
@@ -28,42 +36,130 @@ const currentSponsors = [
 ]
 
 const pastSponsors = [
+  { image: "/past-sponsors/4th-street-logo.png", text: " " },
+  { image: "/past-sponsors/air-india-logo.png", text: " " },
+  { image: "/past-sponsors/british-council-logo.png", text: " " },
+  { image: "/past-sponsors/bsnl-logo.png", text: " " },
+  { image: "/past-sponsors/cesc-logo.png", text: " " },
+  { image: "/past-sponsors/crescent-electric-logo.png", text: " " },
+  { image: "/past-sponsors/eillm-logo.png", text: " " },
+  { image: "/past-sponsors/friendsfm-logo.png", text: " " },
+  { image: "/past-sponsors/holiday-inn-logo.png", text: " " },
+  { image: "/past-sponsors/hyundai-logo.png", text: " " },
+  { image: "/past-sponsors/id0if2F9r8_1739452523011.svg", text: " " },
+  { image: "/past-sponsors/id2Y4NR5gs_1739453947719.png", text: " " },
+  {
+    image: "/past-sponsors/bbq-nation-logo.png", text: " "
+  },
+  { image: "/past-sponsors/id8bItcgXR_1739453080609.png", text: " " },
+  { image: "/past-sponsors/idAhC7tCYI_1739453384521.png", text: " " },
+  { image: "/past-sponsors/idD0kDPd8T_1739453299036.png", text: " " },
+  { image: "/past-sponsors/idKtU5gOEj_1739452469668.svg", text: " " },
+  { image: "/past-sponsors/idN3OdcTG__1739452699673.svg", text: " " },
+  { image: "/past-sponsors/idOwOceQMf_1739453110810.png", text: " " },
+  { image: "/past-sponsors/ida9N-7Ufo_1739453004521.png", text: " " },
+  { image: "/past-sponsors/idbWRcSAtt_logos.png", text: " " },
+  { image: "/past-sponsors/ideFUBvQnK_1739452592554.svg", text: " " },
+  { image: "/past-sponsors/ideI48Dyrt_1739453978333.jpeg", text: " " },
+  { image: "/past-sponsors/idg5PoFoon_1739453676690.png", text: " " },
+  { image: "/past-sponsors/idhciyiwM8_1739454052174.png", text: " " },
+  { image: "/past-sponsors/idnINEeqNC_1739452933876.png", text: " " },
+  { image: "/past-sponsors/idqB2cat2f_1739454152164.png", text: " " },
+  { image: "/past-sponsors/mobilewalla-logo.png", text: " " },
+  { image: "/past-sponsors/no-distance-logo.png", text: " " },
+  { image: "/past-sponsors/pizza-hut-logo.png", text: " " },
+  { image: "/past-sponsors/wow-momo-logo.png", text: " " },
+]
+
+const primarySponsors = [
   {
     image: "/fetsu-presents-srijan-glitch.svg",
-    text: ""
+    text: "",
+    link: ""
   },
   {
     image: "/fetsu-presents-srijan-glitch.svg",
-    text: ""
+    text: "",
+    link: ""
   },
   {
     image: "/fetsu-presents-srijan-glitch.svg",
-    text: ""
-  },
-  {
-    image: "/fetsu-presents-srijan-glitch.svg",
-    text: ""
-  },
-  {
-    image: "/fetsu-presents-srijan-glitch.svg",
-    text: ""
-  },
-  {
-    image: "/fetsu-presents-srijan-glitch.svg",
-    text: ""
+    text: "",
+    link: ""
   },
 ]
 
 function Sponsors() {
 
-  const [heading, setHeading] = useState("Sponsors");
+  const [heading, setHeading] = useState("Past Sponsors");
+  const container = useRef();
+
+  useGSAP(() => {
+    const mm = gsap.matchMedia();
+
+    mm.add({
+      isDesktop: '(min-width: 640px)',
+      isMobile: '(max-width: 639px)',
+      reduceMotion: '(prefers-reduced-motion: reduce)'
+    },
+      (context) => {
+        let { isDesktop, reduceMotion } = context.conditions;
+
+        gsap.set(".scrollAnimatedText", {
+          y: 75,
+          opacity: 0,
+        })
+
+        gsap.to(".scrollAnimatedText", {
+          y: 0,
+          yPercent: -50,
+          opacity: 1,
+          duration: reduceMotion ? 0 : 1,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: container.current,
+            start: isDesktop ? "top 45%" : "top 80%",
+          }
+        })
+
+        gsap.set(".scrollAnimatedOutline", {
+          y: 75,
+          xPercent: -50,
+          opacity: 0,
+        })
+
+        gsap.to(".scrollAnimatedOutline", {
+          y: 0,
+          yPercent: -50,
+          xPercent: -50,
+          opacity: 1,
+          duration: reduceMotion ? 0 : 1,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: container.current,
+            start: isDesktop ? "top 45%" : "top 80%",
+          }
+        })
+
+      })
+
+  }, {
+    scope: container
+  })
+
 
   return (
-    <div className='w-full relative border-white border-t grid grid-cols-1 sm:grid-cols-5 grid-rows-5 sm:grid-rows-1 h-[80vh] overflow-x-hidden'>
+    <div ref={container} className='w-full relative border-greyBorder border-t grid grid-cols-1 sm:grid-cols-5 grid-rows-5 sm:grid-rows-1 h-[80vh] overflow-x-hidden'>
+      <div className={`absolute top-[40%] sm:top-4 right-0 h-1/4 w-full sm:w-4/5 flex justify-between items-center ${heading === "Sponsors" ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"} transition-opacity duration-500`}>
+        <div className="grid place-items-center grid-cols-2 w-2/3 sm:w-3/4 h-full gap-4 px-2">
+          {primarySponsors.filter((sponsor, ind) => ind < 2).map((sponsor, ind) => <img alt={sponsor.text} src={sponsor.image} key={ind} className="sm:w-1/2 border border-greyBorder px-2" />)}
+        </div>
+        <div className="grid place-items-center h-full w-1/3 sm:w-1/4 p-2 sm:p-4"><img alt={primarySponsors[2].text} src={primarySponsors[2].image} className="w-48 border border-greyBorder px-2" /></div>
+      </div>
       <div className='relative bg-background z-[100] h-full border-r -mr-[1px] row-span-2'>
-        <div className='sm:hidden absolute left-[50%] -translate-x-[50%] h-full border-white border-l border-r w-5/7'></div>
-        <h2 className='absolute text-3xl top-[50%] left-[50%] -translate-[50%]'>{heading}</h2>
-        <div className='absolute top-[65%] left-[50%] -translate-x-[50%] flex gap-x-3'>
+        <div className='sm:hidden absolute left-[50%] -translate-x-[50%] h-full border-greyBorder border-l border-r w-5/7'></div>
+        <h2 className='scrollAnimatedText absolute text-2xl sm:text-xl xl:text-3xl text-center top-[50%] left-[50%] -translate-[50%]'>{heading}</h2>
+        <div className='hidden absolute top-[65%] left-[50%] -translate-x-[50%] gap-x-3'>
           <button onClick={() => setHeading("Past Sponsors")}
             className={`text-7xl font-bold ${heading === "Past Sponsors" ? 'opacity-40' : ''}`}>
             &lsaquo;
@@ -73,20 +169,20 @@ function Sponsors() {
             &rsaquo;
           </button>
         </div>
-        <img src='heading-outline.svg' className='absolute top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%]' />
+        <img src='heading-outline.svg' loading="lazy" className='scrollAnimatedOutline absolute top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%] px-2' />
       </div>
-      <div className='relative col-span-3 border-white border-t sm:border-t-transparent sm:border-l sm:border-r grid grid-cols-2 row-span-3'>
-        <div className='sm:hidden absolute left-[50%] -translate-x-[50%] h-full border-white border-l border-r w-5/7'></div>
-        <div className='border-white sm:border-r'></div>
-        <div className='absolute top-[50%] -translate-y-[50%] flex'>
-          <ul className='flex infinite-scroll-carousel bg-background border-white border-t border-b'>
+      <div className='relative col-span-3 border-greyBorder border-t sm:border-t-transparent sm:border-l sm:border-r grid grid-cols-2 row-span-3 h-full'>
+        <div className='sm:hidden absolute left-[50%] -translate-x-[50%] h-full border-greyBorder border-l border-r w-5/7'></div>
+        <div className='border-greyBorder sm:border-r'></div>
+        <div className='absolute top-[50%] -translate-y-[50%] flex h-1/2'>
+          <ul className='flex items-center infinite-scroll-carousel bg-background border-greyBorder border-t border-b h-full'>
             {heading === "Sponsors" ? [...currentSponsors, ...currentSponsors].map((sponsor, ind) => (
-              <li key={ind} className='w-[40vw] sm:w-[30vw] px-4 sm:px-0 grid place-items-center transition-all duration-1000s border-white border-l'>
-                <img src={sponsor.image} className='w-72 py-6' />
+              <li key={ind} className='w-[40vw] sm:w-[30vw] h-full px-4 sm:px-0 grid place-items-center transition-all duration-1000s border-greyBorder border-l'>
+                <img loading="lazy" src={sponsor.image} className='w-72 py-6' />
               </li>
             )) : [...pastSponsors, ...pastSponsors].map((sponsor, ind) => (
-              <li key={ind} className='w-[40vw] sm:w-[30vw] px-4 sm:px-0 grid place-items-center transition-all duration-1000s border-white border-l'>
-                <img src={sponsor.image} className='w-72 py-6' />
+              <li key={ind} className='w-[40vw] sm:w-[30vw] px-4 sm:px-0 grid place-items-center transition-all duration-1000s border-greyBorder border-l h-full'>
+                <img loading="lazy" src={sponsor.image} alt={sponsor.text} className='h-1/2 w-1/2 object-contain' />
               </li>
             ))}
           </ul>
