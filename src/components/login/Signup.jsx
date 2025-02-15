@@ -5,11 +5,12 @@ import { useNavigate } from "react-router-dom";
 import GridLines from '../GridLines';
 import { authController, serviceController } from "../../services/http"
 import { CONST } from "../../config"
+import MascotAnimation from '../home/MascotAnimation';
 
 const Signup = () => {
     const navigate = useNavigate();
     
-    const [imageSrc, setImageSrc] = useState("/mascot.svg");
+    const [imageSrc, setImageSrc] = useState("");
     const [message, setMessage] = useState("");
     const [loading, setLoading] = useState(false); 
 
@@ -45,11 +46,11 @@ const Signup = () => {
     };
     
     const handleInputFocus = () => {
-        setImageSrc("/mascot_right.svg");
+        setImageSrc("/mascot_right.png");
     };
 
     const handleInputBlur = () => {
-        setImageSrc("/mascot.svg");
+        setImageSrc("");
     };
 
     useEffect(() => {
@@ -214,14 +215,19 @@ const Signup = () => {
                             </form>
                         </div>
 
-                        <div className="hidden lg:flex mt-10 w-1/2 flex-col items-center robot-container">
+                        {imageSrc && (<div className="hidden lg:flex mt-10 w-1/2 flex-col items-center robot-container">
                             <img
                                 src={imageSrc} 
                                 alt="Robot mascot"
-                                className="w-96 h-96 object-contain transition-all duration-900"
+                                className="w-98 h-98 pt-10 object-contain transition-all duration-900"
                             />
+                        </div>)}
+                        
+                        <div className={`hidden lg:block ${imageSrc ? "lg:hidden" : ""}`}>
+                            <MascotAnimation scale={5} wave={false} />
                         </div>
 
+                        
                         <div className="w-full mt-4">
                         <TextInput 
                                 labelContent={<><span className="text-[#8420FF]">Would you like to receive </span>updates <span className="text-[#8420FF]">and</span> announcements <span className="text-[#8420FF]">via</span> email<span className="text-[#8420FF]">?</span>
