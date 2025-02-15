@@ -226,7 +226,7 @@ const Signup = () => {
                             </div>)}
                             
                             <div className={`w-full h-full hidden  ${imageSrc ? "hidden" : "lg:block"}`}>
-                                <MascotAnimation scale={5} wave={false} />
+                                <MascotAnimation scale={4.8} wave={false} />
                             </div>
                         </div>
                         
