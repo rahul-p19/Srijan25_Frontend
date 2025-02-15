@@ -4,6 +4,7 @@ import { SignUpButton} from './ui/buttons';
 import { useParams, useNavigate } from "react-router-dom";
 import GridLines from '../GridLines';
 import { resetPassword } from "../../services/http/auth";
+import MascotAnimation from "../home/MascotAnimation";
 
 const ResetPassword = () => {
     const { token } = useParams(); // Get token from URL
@@ -20,7 +21,7 @@ const ResetPassword = () => {
         confirmPassword: '',
         consent: ''
     });
-    const [imageSrc, setImageSrc] = useState("/mascot.svg");
+    const [imageSrc, setImageSrc] = useState("");
     const [success, setSuccess] = useState(false);
     const [loading, setLoading] = useState(false);
 
@@ -50,11 +51,11 @@ const ResetPassword = () => {
     };
 
     const handleInputFocus = () => {
-        setImageSrc("/mascot_right.svg");
+        setImageSrc("/mascot_right.png");
     };
 
     const handleInputBlur = () => {
-        setImageSrc("/mascot.svg");
+        setImageSrc("");
     };
 
     return (
@@ -69,7 +70,7 @@ const ResetPassword = () => {
                     <br/>
                     <div className="mb-4 flex flex-wrap">
                         <div className="w-full lg:w-1/2 flex flex-col text-sm">
-                            <form id="passwordResetForm" className="space-y-4 mt-4" onSubmit={handleSubmit}>                                  
+                            <form id="passwordResetForm" className="space-y-4 mt-4 mb-10" onSubmit={handleSubmit}>                                  
 
                                 <PasswordInput 
                                     labelContent={<><span className="text-[#8420FF]">Enter new</span> password</>}
@@ -100,13 +101,16 @@ const ResetPassword = () => {
                                 </div>
                             </form>
                         </div>
-                        {/* ROBOT IMAGE */}
-                        <div className="hidden lg:flex w-1/2 flex-col items-center robot-container h-auto">
+                        {imageSrc && (<div className="hidden lg:flex w-1/2 flex-col items-center robot-container">
                             <img
                                 src={imageSrc} 
                                 alt="Robot mascot"
-                                className="w-84 h-84 lg:w-84 lg:h-84 object-contain transition-all duration-900"
+                                className="w-56 h-56 mt-4 object-contain transition-all duration-900"
                             />
+                        </div>)}
+                        
+                        <div className={`hidden lg:block ${imageSrc ? "lg:hidden" : ""}`}>
+                            <MascotAnimation scale={5.5} wave={false} />
                         </div>
                         {success && <h1 className="text-bold w-1/2 justify-center">Password Reset succesfully. Redirecting to Login...</h1>}
                     </div>
