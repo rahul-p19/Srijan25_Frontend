@@ -40,26 +40,62 @@ function App() {
   
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
-  useEffect(() => {
-    const token = localStorage.getItem('token');
-    if (token) {
-      verifyToken(token);
-    }
-  }, []);
-
-  const verifyToken = async (token) => {
+  const checkUserSession = async () => {
     try {
-      const response = await fetch('/api/verify', {
+      const response = await fetch('/api/getUserSession', {
+        method: 'GET',
+        credentials: 'include',
         headers: {
-          'Authorization': `Bearer ${token}`
+          'Content-Type': 'application/json'
         }
       });
-      setIsAuthenticated(response.ok);
+      
+      const data = await response.json();
+      return data;
     } catch (err) {
-      setIsAuthenticated(false);
-      localStorage.removeItem('token');
+      return {
+        status: false,
+        message: err.message
+      };
     }
   };
+
+  const login = async (credentials) => {
+    try {
+      const response = await fetch('/api/login', {
+        method: 'POST',
+        credentials: 'include',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(credentials)
+      });
+      
+      return await response.json();
+    } catch (err) {
+      return {
+        status: false,
+        message: 'Login request failed',
+        error: err.message
+      };
+    }
+  };
+
+  const logout = async () => {
+    try {
+      const response = await fetch('/api/logout', {
+        method: 'POST',
+        credentials: 'include'
+      });
+
+      return await response.json();
+    } catch (err) {
+      return {
+        status: false,
+        message: 'Logout request failed',
+        error: err.message
+      };
+    }
+  };
+
 
 
   return (
@@ -75,7 +111,7 @@ function App() {
           </Route>
           <Route>
             <Route path="/merchandise" element={
-             <ProtectedRoute isAuthenticated={isAuthenticated}>
+             <ProtectedRoute checkUserSession={checkUserSession} logout={logout}>
              <MerchandisePage />
            </ProtectedRoute>
               } />
