@@ -5,11 +5,12 @@ import { useNavigate } from "react-router-dom";
 import GridLines from '../GridLines';
 import { authController, serviceController } from "../../services/http"
 import { CONST } from "../../config"
+import MascotAnimation from '../home/MascotAnimation';
 
 const Login = () => {
     const navigate = useNavigate();
     
-    const [imageSrc, setImageSrc] = useState("/mascot.svg");
+    const [imageSrc, setImageSrc] = useState("");
     const [message, setMessage] = useState("");
     const [loading, setLoading] = useState(false); 
 
@@ -29,11 +30,11 @@ const Login = () => {
     };
     
     const handleInputFocus = () => {
-        setImageSrc("/mascot_right.svg");
+        setImageSrc("/mascot_right.png");
     };
 
     const handleInputBlur = () => {
-        setImageSrc("/mascot.svg");
+        setImageSrc("");
     };
 
     const handleForgotPassword = async (e) => {
@@ -194,13 +195,16 @@ const Login = () => {
                             </div>
                         </div>
 
-                        {/* ROBOT IMAGE */}
-                        <div className="hidden lg:flex w-1/2 flex-col items-center robot-container h-auto">
+                        {imageSrc && (<div className="hidden lg:flex mt-10 w-1/2 flex-col items-center robot-container">
                             <img
                                 src={imageSrc} 
                                 alt="Robot mascot"
-                                className="w-84 h-84 lg:w-84 lg:h-84 object-contain transition-all duration-900"
+                                className="w-72 h-72 object-contain transition-all duration-900"
                             />
+                        </div>)}
+                        
+                        <div className={`hidden lg:block ${imageSrc ? "lg:hidden" : ""}`}>
+                            <MascotAnimation scale={5} wave={false} />
                         </div>
                     </div>
                 </div>

@@ -7,7 +7,7 @@ function SignUpButton({ onClick, textContent }) {
         <BasicButton
             type="submit"
             text={textContent || "SIGN UP"}
-            className="border-green-500 text-white w-36"
+            className="border-green-500 text-white w-36 cursor-pointer"
             onClick={onClick}
         />
     );
@@ -18,7 +18,7 @@ function GoogleSignInButton({ onClick, textContent }) {
         <BasicButton
             text={textContent || "Sign in with Google"}
             IconElement={() => <FcGoogle className="mx-2 size-6" />}
-            className="bg-[#000000] w-6/7 flex items-center justify-center py-3 rounded-lg"
+            className="bg-[#000000] w-6/7 flex items-center justify-center py-3 rounded-lg cursor-pointer"
             onClick={onClick}
         />
     );
