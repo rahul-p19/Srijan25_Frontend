@@ -2,9 +2,8 @@ import React, { useRef } from 'react'
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger"
-import { CustomEase } from 'gsap/dist/CustomEase';
 
-gsap.registerPlugin(useGSAP, ScrollTrigger, CustomEase);
+gsap.registerPlugin(useGSAP, ScrollTrigger);
 
 
 function About() {
