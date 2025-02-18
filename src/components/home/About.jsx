@@ -102,10 +102,10 @@ function About() {
     <div ref={container} className='min-h-screen border-greyBorder border-t grid grid-cols-1 sm:grid-cols-5'>
       <div className='relative h-[20vh] sm:h-screen border-greyBorder border-b sm:border-b-transparent'>
         <h2 className='aboutJadavpur text-2xl sm:text-xl xl:text-3xl absolute text-center top-[35%] sm:top-[22%] left-[50%] -translate-x-[50%] sm:-translate-y-[50%]'>About JU</h2>
-        <img src='heading-outline.svg' loading="lazy" className='px-2 aboutJadavpurOutline absolute top-[20%] left-[50%] -translate-x-[50%] sm:-translate-y-[50%]' />
+        <img src='heading-outline.svg' alt="Outline for header" height="auto" width="auto" loading="lazy" className='px-2 aboutJadavpurOutline absolute top-[20%] left-[50%] -translate-x-[50%] sm:-translate-y-[50%]' />
         <div className='absolute sm:hidden left-[50%] -translate-x-[50%] h-full w-5/7 border-greyBorder border-l border-r'></div>
         <h2 className='aboutSrijan hidden sm:block text-xl xl:text-3xl absolute text-center top-[71%] left-[50%] -translate-x-[50%] -translate-y-[50%]'>About Srijan</h2>
-        <img src='heading-outline.svg' loading="lazy" className='px-2 aboutSrijanOutline hidden sm:block absolute top-[70%] left-[50%] -translate-x-[50%] -translate-y-[50%]' />
+        <img src='heading-outline.svg' alt="Outline for header" height="auto" width="auto" loading="lazy" className='px-2 aboutSrijanOutline hidden sm:block absolute top-[70%] left-[50%] -translate-x-[50%] -translate-y-[50%]' />
       </div>
       <div className='col-span-3 border-greyBorder sm:border-l sm:border-r grid row-span-5'>
         <div className='row-span-2 grid place-items-center px-8 py-4 text-left sm:text-justify'>
@@ -116,7 +116,7 @@ function About() {
         </div>
         <div className='sm:hidden relative h-[20vh] border-greyBorder border-t sm:border-t-transparent'>
           <h2 className='scrollAnimatedText text-2xl absolute text-center top-[25%] left-[50%] -translate-x-[50%] w-1/3 aboutSrijan'>About Srijan</h2>
-          <img src='heading-outline.svg' loading="lazy" className='px-2 aboutSrijanOutline absolute top-[20%] left-[50%] -translate-x-[50%]' />
+          <img src='heading-outline.svg' alt="Outline for header" height="auto" width="auto" loading="lazy" className='px-2 aboutSrijanOutline absolute top-[20%] left-[50%] -translate-x-[50%]' />
           <div className='absolute left-[50%] -translate-x-[50%] h-full w-5/7 border-greyBorder border-l border-r'></div>
         </div>
         <div className='grid grid-cols-2 sm:border-greyBorder border-t sm:border-b'>

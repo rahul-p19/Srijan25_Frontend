@@ -11,6 +11,7 @@ import EmailVerify from './components/login/EmailVerify'
 import ResetPassword from './components/login/ResetPassword'
 import ForgotPassword from './components/login/ForgotPassword'
 import PageNotFound from "./components/PageNotFound";
+import { WorkshopPage } from "./components/workshop/WorkshopPage";
 
 import { ProtectedRoute } from "./components/protected_routes/AuthRoutes";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
@@ -92,6 +93,7 @@ function App() {
           <Route path="/verify" element={<EmailVerify />} />
           <Route path="/reset-password/:token" element={<ResetPassword />} />
           <Route path="/forgotPassword" element={<ForgotPassword />} />
+          <Route path="/workshop" element={<WorkshopPage />} />
           <Route path="*" element={<PageNotFound />} />
         </Routes >
       </Router >
