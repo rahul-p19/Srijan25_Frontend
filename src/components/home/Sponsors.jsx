@@ -155,7 +155,7 @@ function Sponsors() {
         </div>
         <div className="grid place-items-center h-full w-1/3 sm:w-1/4 p-2 sm:p-4"><img alt={primarySponsors[2].text} src={primarySponsors[2].image} className="w-48 border border-greyBorder px-2" /></div>
       </div>
-      <div className='relative bg-background z-[100] h-full border-r -mr-[1px] row-span-2'>
+      <div className='relative bg-background z-[100] h-full border-greyBorder border-r -mr-[1px] row-span-2'>
         <div className='sm:hidden absolute left-[50%] -translate-x-[50%] h-full border-greyBorder border-l border-r w-5/7'></div>
         <h2 className='scrollAnimatedText absolute text-2xl sm:text-xl xl:text-3xl text-center top-[50%] left-[50%] -translate-[50%]'>{heading}</h2>
         <div className='hidden absolute top-[65%] left-[50%] -translate-x-[50%] gap-x-3'>

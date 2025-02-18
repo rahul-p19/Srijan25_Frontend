@@ -46,8 +46,8 @@ function Cards() {
     {
       image: "/cards/workshop.jpg",
       text: "Workshop",
-      link: "https://docs.google.com/forms/d/e/1FAIpQLScaGsa7rJHbWpdAjYpkRlDERtwvnZzR-1ocx3HIQi03S4GxUw/viewform",
-      live: false
+      link: "/workshop",
+      live: true
     },
     {
       image: "/cards/campus-ambassadors.jpg",
