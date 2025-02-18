@@ -19,18 +19,18 @@ function Navbar(props) {
     <nav className='sticky top-0 grid grid-cols-7 sm:grid-cols-5 w-full border-b border-b-greyBorder bg-background z-[200]'>
       <div className='flex justify-around p-3'>
         <a href='/' className='hidden sm:block'>
-          <img src='/srijan-logo-white.svg' />
+          <img src='/srijan-logo-white.svg' alt="Srijan Logo" width="auto" height="auto" />
         </a>
         <a href='/' className='hidden sm:block'>
-          <img src='/fetsu-presents-srijan25.svg' />
+          <img src='/fetsu-presents-srijan25.svg' alt="Srijan Text Logo" width="auto" height="auto" />
         </a>
       </div>
       <div className='col-span-5 sm:col-span-3 text-center p-2 sm:p-0 flex items-center justify-around border-r border-r-greyBorder border-l-greyBorder border-l text-xl'>
         <a href='/' className='sm:hidden'>
-          <img src='/srijan-logo-white.svg' />
+          <img src='/srijan-logo-white.svg' alt="Srijan Logo" width="auto" height="auto" />
         </a>
         <a href='/' className='sm:hidden'>
-          <img src='/fetsu-presents-srijan25.svg' />
+          <img src='/fetsu-presents-srijan25.svg' alt="Srijan Text Logo" width="auto" height="auto" />
         </a>
         <a href='/' className={`relative hidden sm:block w-fit`}>Home
           <div className={`absolute h-[2px] bg-gradient-to-l from-red to-purple bottom-0 ${pathname == "" ? 'w-full' : 'w-0'}`}></div>
@@ -72,8 +72,8 @@ function Navbar(props) {
         }}><CloseIcon /></button>
         <div className={`flex flex-col gap-y-6 transition-all duration-100 w-4/5`}>
           <div className='flex justify-around w-full pl-6'>
-            <img src='/srijan-logo-white.svg' />
-            <img src='/fetsu-presents-srijan25.svg' />
+            <img src='/srijan-logo-white.svg' alt="Srijan Logo" width="auto" height="auto" />
+            <img src='/fetsu-presents-srijan25.svg' alt="Srijan Text Logo" width="auto" height="auto" />
           </div>
           {/*
           <a href='/' className='text-left border-greyBorder/30 border-b w-full py-1'>Home</a>

@@ -116,7 +116,7 @@ function Timeline() {
             &rsaquo;
           </button>
         </div>
-        <img src='heading-outline.svg' loading="lazy" className='px-2 scrollAnimatedText absolute top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%]' />
+        <img src='heading-outline.svg' alt="Outline for header" width="auto" height="auto" loading="lazy" className='px-2 scrollAnimatedText absolute top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%]' />
       </div>
       <div className='grid border-greyBorder lg:border-r-transparent lg:border-l col-span-3 lg:grid-cols-2 row-span-2 relative'>
         <div className='lg:hidden absolute left-[50%] -translate-x-[50%] h-full w-5/7'></div>

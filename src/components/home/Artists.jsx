@@ -44,7 +44,7 @@ function SpeakerCard({ artist }) {
   return (
     <div className='flex flex-col items-center gap-y-2 w-[87.5vw] sm:w-[25vw] h-auto aspect-square'>
       <div className='bg-gradient-to-b from-red via-lavender to-white p-0.5 h-full'>
-        <img loading="lazy" src={artist.image} className='object-cover aspect-square h-full bg-background p-1.5' />
+        <img loading="lazy" src={artist.image} alt={artist.name} height="auto" width="auto" className='object-cover aspect-square h-full bg-background p-1.5' />
       </div>
       <div className='flex justify-between gap-x-4 w-full text-xl sm:text-sm lg:text-case xl:text-xl'>
         <h2>{artist.name}</h2>
@@ -167,7 +167,7 @@ function Artists() {
             &rsaquo;
           </button>
         </div>
-        <img src='heading-outline.svg' loading="lazy" className='px-2 scrollAnimatedImage absolute top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%]' />
+        <img src='heading-outline.svg' alt="Outline for header" width="auto" height="auto" loading="lazy" className='px-2 scrollAnimatedImage absolute top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%]' />
       </div>
       <div className='border-greyBorder sm:border-r sm:border-l col-span-3 grid grid-cols-2 row-span-2'>
         <div className='border-greyBorder border-r'></div>

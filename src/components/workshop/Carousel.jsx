@@ -115,7 +115,7 @@ function Carousel({ workshop }) {
             &rsaquo;
           </button>
         </div>
-        <img src='heading-outline.svg' loading="lazy" className='px-2 scrollAnimatedImage absolute top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%]' />
+        <img src='heading-outline.svg' alt="Outline for header" width="auto" height="auto" loading="lazy" className='px-2 scrollAnimatedImage absolute top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%]' />
       </div>
       <div className='border-greyBorder sm:border-r sm:border-l col-span-3 grid grid-cols-2 row-span-2'>
         <div className='border-greyBorder border-r'></div>
@@ -130,7 +130,7 @@ function Carousel({ workshop }) {
               className={`h-3/5 text-left text-nowrap absolute transition-all duration-1000 top-[50%] -translate-y-[20%] xl:-translate-y-[55%] p-2 ${carouselStart === ind * -50 ? '' : 'opacity-0 pointer-events-none sm:pointer-events-auto sm:opacity-100'}`} style={{ left: `${left}%` }}>
               <div className='flex flex-col items-center gap-y-2 w-[87.5vw] sm:w-[25vw] aspect-square h-auto'>
                 <div className='bg-gradient-to-b from-red via-lavender to-white p-0.5 h-full'>
-                  <img loading="lazy" src={`/workshops/${src}`} className='object-cover aspect-square h-full bg-background p-1.5' />
+                  <img loading="lazy" src={`/workshops/${src}`} alt={workshop.name} height="auto" width="auto" className='object-cover aspect-square h-full bg-background p-1.5' />
                 </div>
               </div >
             </div>

@@ -48,8 +48,8 @@ function PageReveal() {
     <div ref={container} className="h-screen w-screen fixed z-[300]">
       <div ref={leftBlock} className='absolute bg-background h-screen w-full right-[45%]'></div>
       <div ref={rightBlock} className='absolute bg-background h-screen w-full left-[45%]'></div>
-      <img ref={logo} src="/fetsu-presents-srijan25.svg" alt="Srijan 25 Logo" className="absolute top-[30%] left-[51%] -translate-[50%] h-36 w-auto" />
-      <img src="/techno-management-fest.webp" alt="The Annual Techno-Management Fest of Jadavpur University" ref={technoManagementFest} className="text-center absolute top-[52.5%] left-[50%] -translate-[50%] border border-white p-2 w-2/3 sm:w-1/3" />
+      <img ref={logo} src="/fetsu-presents-srijan25.svg" alt="Srijan 25 Logo" height="auto" width="auto" className="absolute top-[30%] left-[51%] -translate-[50%] h-36 w-auto" />
+      <img src="/techno-management-fest.webp" alt="The Annual Techno-Management Fest of Jadavpur University" width="auto" height="auto" ref={technoManagementFest} className="text-center absolute top-[52.5%] left-[50%] -translate-[50%] border border-white p-2 w-2/3 sm:w-1/3" />
       <div ref={loader} className="absolute top-[75%] left-[50%] -translate-[50%] p-3 animate-spin bg-gradient-to-bl from-red via-purple to-lavender h-24 w-24 aspect-square rounded-full">
         <div className="rounded-full h-full w-full bg-background"></div>
       </div>
