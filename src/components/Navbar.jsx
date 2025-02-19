@@ -86,7 +86,7 @@ function Navbar(props) {
           */}
           <a href='/' className='text-left border-greyBorder/30 border-b w-full py-1'>Home</a>
           <div className='text-left border-greyBorder/30 border-b w-full py-1' onClick={notify}>Events</div>
-          <div className='text-left border-greyBorder/30 border-b w-full py-1' onClick={notify}>Notifications</div>
+          <a href='/notifications' className='text-left border-greyBorder/30 border-b w-full py-1' onClick={notify}>Notifications</a>
           <a href='https://docs.google.com/forms/d/e/1FAIpQLSe-zoCeE50FR2dUzauh7wfvHxfHczPwgziqYhRju2zMLH164A/viewform' className='text-left border-greyBorder/30 border-b w-full py-1'>Campus Ambassadors</a>
           <div className='text-left border-greyBorder/30 border-b w-full py-1' onClick={() => toast("More Coming Soon!")}>Workshop</div>
           <div className='text-left border-greyBorder/30 border-b w-full py-1' onClick={notify}>Merchandise</div>
