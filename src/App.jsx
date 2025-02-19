@@ -16,7 +16,7 @@ import { ProtectedRoute } from "./components/protected_routes/AuthRoutes";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { useState } from "react";
 import { verifyToken } from "./components/protected_routes/verifytoken";
-import Notifications from "./components/home/Notifications";
+import Notifications from "./components/protected_routes/Notifications";
 
 function App() {
   /**
@@ -88,9 +88,9 @@ function App() {
           </Route>
            <Route>
             <Route path="/notifications" element={
-            <ProtectedRoute isAuthenticated={isAuthenticated}>
+            // <ProtectedRoute isAuthenticated={isAuthenticated}>
               <Notifications user={user}/>
-            </ProtectedRoute>
+            // </ProtectedRoute>
            }/>
             </Route>
           <Route path="/events" element={<Eventpage />} />
