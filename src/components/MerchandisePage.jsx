@@ -111,8 +111,8 @@ export default function MerchandisePage() {
                     />
                     <span
                       className={`w-4 h-4 inline-block border rounded-full ${
-                        selectedColor.toLowerCase() === color.toLowerCase() ? "ring-2 ring-white" : ""
-                      } ${color.toLowerCase() === 'white' ? "bg-white" : "bg-black"}`}
+                        selectedColor.toLowerCase() === color.toLowerCase() ? "bg-white ring-2 ring-white" : "bg-black"
+                      }`}
                     />
                     <span>{color}</span>
                   </label>
