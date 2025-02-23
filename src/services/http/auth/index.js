@@ -88,6 +88,15 @@ export const forgotPassword = async (email) => {
     })
 }
 
+export const logoutCall = async () => {
+    return axios({
+        method: "post",
+        url: CONST.uri.auth.LOGOUT,
+        withCredentials: true,
+        headers: { "Content-Type": "application/json" },
+    });
+}
+
 export const resendOTP = async (email) => {
     return axios({
         method: "post",

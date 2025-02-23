@@ -1,11 +1,13 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
 import toast from "react-hot-toast";
+import { useNavigate } from 'react-router-dom';
 
 const notify = () => toast("Coming soon!");
 
-function Navbar(props) {
+function Navbar() {
+  const navigate = useNavigate()
 
   const [navbarOpen, setNavbarOpen] = useState(false);
   const [loggedIn, setLoggedIn] = useState(false);
@@ -13,7 +15,12 @@ function Navbar(props) {
 
   useEffect(() => {
     setPathname((window.location.pathname).slice(1));
-  }, [window.location.pathname])
+  }, [window.location.pathname]);
+
+  useEffect(() => {
+    const userID = localStorage.getItem("sid");
+    if (userID !== "") setLoggedIn(true);
+  }, []);
 
   return (
     <nav className='sticky top-0 grid grid-cols-7 sm:grid-cols-5 w-full border-b border-b-greyBorder bg-background z-[200]'>
@@ -57,7 +64,7 @@ function Navbar(props) {
         {/*<a href={`${loggedIn ? '/dashboard' : '/login'}`} className='hidden relative sm:block'> {loggedIn ? 'Dashboard' : 'Login'}
           <div className={`absolute h-[2px] bg-gradient-to-l from-red to-purple bottom-0 ${pathname == "dashboard" || pathname == "login" ? 'w-full' : 'w-0'}`}></div>
         </a>*/}
-        <div className='hidden relative sm:block cursor-pointer' onClick={notify}> {loggedIn ? 'Dashboard' : 'Login'}
+        <div className='hidden relative sm:block cursor-pointer' onClick={() => navigate("/login")}> {loggedIn ? 'Dashboard' : 'Login'}
           <div className={`absolute h-[2px] bg-gradient-to-l from-red to-purple bottom-0 ${pathname == "dashboard" || pathname == "login" ? 'w-full' : 'w-0'}`}></div>
         </div>
         <button className='sm:hidden' onClick={() => {
@@ -89,7 +96,7 @@ function Navbar(props) {
           <a href='https://docs.google.com/forms/d/e/1FAIpQLSe-zoCeE50FR2dUzauh7wfvHxfHczPwgziqYhRju2zMLH164A/viewform' className='text-left border-greyBorder/30 border-b w-full py-1'>Campus Ambassadors</a>
           <a href='/workshop' className='text-left border-greyBorder/30 border-b w-full py-1'>Workshop</a>
           <div className='text-left border-greyBorder/30 border-b w-full py-1' onClick={notify}>Merchandise</div>
-          <div className='text-left border-greyBorder/30 border-b w-full py-1' onClick={notify}>Dashboard</div>
+          <div className='text-left border-greyBorder/30 border-b w-full py-1' onClick={() => navigate("/login")}>Dashboard</div>
         </div>
       </nav>
     </nav>

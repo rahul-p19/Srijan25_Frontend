@@ -10,6 +10,7 @@ export const uri = {
         RESET_PASSWORD: env.API_SERVER + "/password/reset",
         FORGOT_PASSWORD: env.API_SERVER + "/forgotPassword",
         RESEND_OTP: env.API_SERVER + "/resendOtp",
+        LOGOUT: env.API_SERVER + "/logout",
     },
     resources: {
         USERS: env.API_SERVER + "/users/"
