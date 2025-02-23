@@ -52,8 +52,8 @@ export const LandingPage = () => (
         }}
         containerStyle={{
           top: "15vh",
-          right: "40vw",
-          left: "40vw",
+          right: "35vw",
+          left: "35vw",
         }}
       />
       <PageReveal />

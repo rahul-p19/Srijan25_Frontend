@@ -2,7 +2,9 @@ import React, { useEffect, useState } from 'react'
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
 import toast from "react-hot-toast";
+import { uri } from "../config/endpoints";
 
+const verifyUserEndpoint = uri.auth.GET_USER_SESSION;
 const notify = () => toast("Coming soon!");
 
 function Navbar(props) {
@@ -13,7 +15,19 @@ function Navbar(props) {
 
   useEffect(() => {
     setPathname((window.location.pathname).slice(1));
-  }, [window.location.pathname])
+    const token = localStorage.getItem('token');
+    if (token) verifyToken(token);
+  }, [])
+
+  const verifyToken = async (token) => {
+    try {
+      const response = await fetch(verifyUserEndpoint);
+      if (response.error) setLoggedIn(false);
+      else setLoggedIn(true);
+    } catch (err) {
+      setLoggedIn(false);
+    }
+  };
 
   return (
     <nav className='sticky top-0 grid grid-cols-7 sm:grid-cols-5 w-full border-b border-b-greyBorder bg-background z-[200]'>
@@ -54,12 +68,12 @@ function Navbar(props) {
         </a>
       </div>
       <div className='grid place-items-center text-xl'>
-        {/*<a href={`${loggedIn ? '/dashboard' : '/login'}`} className='hidden relative sm:block'> {loggedIn ? 'Dashboard' : 'Login'}
+        <a href={`${loggedIn ? '/dashboard' : '/login'}`} className='hidden relative sm:block'> {loggedIn ? 'Dashboard' : 'Login'}
           <div className={`absolute h-[2px] bg-gradient-to-l from-red to-purple bottom-0 ${pathname == "dashboard" || pathname == "login" ? 'w-full' : 'w-0'}`}></div>
-        </a>*/}
-        <div className='hidden relative sm:block cursor-pointer' onClick={notify}> {loggedIn ? 'Dashboard' : 'Login'}
-          <div className={`absolute h-[2px] bg-gradient-to-l from-red to-purple bottom-0 ${pathname == "dashboard" || pathname == "login" ? 'w-full' : 'w-0'}`}></div>
-        </div>
+        </a>
+        {/* <div className='hidden relative sm:block cursor-pointer' onClick={notify}> {loggedIn ? 'Dashboard' : 'Login'} */}
+        {/*   <div className={`absolute h-[2px] bg-gradient-to-l from-red to-purple bottom-0 ${pathname == "dashboard" || pathname == "login" ? 'w-full' : 'w-0'}`}></div> */}
+        {/* </div> */}
         <button className='sm:hidden' onClick={() => {
           setNavbarOpen(true);
         }}><MenuIcon /></button>
@@ -81,7 +95,6 @@ function Navbar(props) {
           <a href='/' className='text-left border-greyBorder/30 border-b w-full py-1'>Notifications</a>
           <a href='/' className='text-left border-greyBorder/30 border-b w-full py-1'>Campus Ambassadors</a>
           <a href='/' className='text-left border-greyBorder/30 border-b w-full py-1'>Merchandise</a>
-          <a href='/' className='text-left border-greyBorder/30 border-b w-full py-1'>Dashboard</a>
           */}
           <a href='/' className='text-left border-greyBorder/30 border-b w-full py-1'>Home</a>
           <div className='text-left border-greyBorder/30 border-b w-full py-1' onClick={notify}>Events</div>
@@ -89,7 +102,7 @@ function Navbar(props) {
           <a href='https://docs.google.com/forms/d/e/1FAIpQLSe-zoCeE50FR2dUzauh7wfvHxfHczPwgziqYhRju2zMLH164A/viewform' className='text-left border-greyBorder/30 border-b w-full py-1'>Campus Ambassadors</a>
           <a href='/workshop' className='text-left border-greyBorder/30 border-b w-full py-1'>Workshop</a>
           <div className='text-left border-greyBorder/30 border-b w-full py-1' onClick={notify}>Merchandise</div>
-          <div className='text-left border-greyBorder/30 border-b w-full py-1' onClick={notify}>Dashboard</div>
+          <a href={`${loggedIn ? '/dashboard' : '/login'}`} className='text-left border-greyBorder/30 border-b w-full py-1'>{loggedIn ? 'Dashboard' : 'Login'}</a>
         </div>
       </nav>
     </nav>
