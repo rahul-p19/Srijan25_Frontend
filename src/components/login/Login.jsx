@@ -58,7 +58,7 @@ const Login = () => {
                 console.log(`${serviceName} status: ${isActive ? "Available" : "Not available"}`);
             })
             .catch(error => {
-                // console.error("Error checking Google OAuth availability:", error);
+                console.error("Error checking Google OAuth availability:", error);
             });
     }, [navigate]);
     
@@ -126,6 +126,10 @@ const Login = () => {
                 email: formData.email,
                 password: formData.loginPassword
             })
+
+            const { sid } = response.data;
+            
+            localStorage.setItem("sid", JSON.stringify(sid))
     
             // Redirect to EmailVerify page with formData (including email)
             navigate("/", { state: { userData: response.data } });
