@@ -79,7 +79,8 @@ const Login = () => {
             setMessageError(error)
             return
         }
-        localStorage.setItem("sid", JSON.stringify(sid))
+        localStorage.setItem("sid", JSON.stringify(sid.id))
+        localStorage.setItem("providerID", JSON.stringify(sid.providerId[0].providerUserId))
         navigate("/")
     }
 
@@ -129,7 +130,7 @@ const Login = () => {
 
             const { sid } = response.data;
             
-            localStorage.setItem("sid", JSON.stringify(sid))
+            localStorage.setItem("sid", JSON.stringify(sid.id))
     
             // Redirect to EmailVerify page with formData (including email)
             navigate("/", { state: { userData: response.data } });

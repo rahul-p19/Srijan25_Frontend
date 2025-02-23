@@ -87,7 +87,8 @@ const Signup = () => {
             setMessageError(error)
             return
         }
-        localStorage.setItem("sid", JSON.stringify(sid))
+        localStorage.setItem("sid", JSON.stringify(sid.id))
+        localStorage.setItem("providerID", JSON.stringify(sid.providerId[0].providerUserId))
         navigate("/", {replace: true})
     }
 
@@ -117,7 +118,7 @@ const Signup = () => {
             const response = await authController.registerUser(formData)
             const { sid } = response.data;
             
-            localStorage.setItem("sid", JSON.stringify(sid))
+            localStorage.setItem("sid", JSON.stringify(sid.id))
             // Redirect to EmailVerify page with formData (including email)
             navigate("/verify", { state: { formData } });
 
