@@ -114,8 +114,10 @@ const Signup = () => {
         setLoading(true);
 
         try {
-            const response = authController.registerUser(formData)
-    
+            const response = await authController.registerUser(formData)
+            const { sid } = response.data;
+            
+            localStorage.setItem("sid", JSON.stringify(sid))
             // Redirect to EmailVerify page with formData (including email)
             navigate("/verify", { state: { formData } });
 
