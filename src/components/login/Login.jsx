@@ -9,7 +9,7 @@ import { CONST } from "../../config";
 import MascotAnimation from "../home/MascotAnimation";
 import toast from "react-hot-toast";
 
-const Login = ({ user, setUser }) => {
+const Login = ({ user }) => {
   const navigate = useNavigate();
 
   const [imageSrc, setImageSrc] = useState("");
@@ -80,7 +80,7 @@ const Login = ({ user, setUser }) => {
 
   const onSuccessLogin = function ({ data }) {
     let { sid } = data;
-    console.log("hello");
+    console.log(sid);
     if (!sid) {
       let error = "An error occurred during the login process";
       console.log(error);
@@ -88,12 +88,8 @@ const Login = ({ user, setUser }) => {
       return;
     }
 
-    localStorage.setItem("sid", JSON.stringify(sid));
-    localStorage.setItem(
-      "providerID",
-      JSON.stringify(sid.providers[0].providerUserId),
-    );
-    setUser(sid.id);
+    localStorage.setItem("sid", sid.id);
+    localStorage.setItem("providerID", sid.providerId);
     navigate("/");
   };
 
@@ -143,8 +139,7 @@ const Login = ({ user, setUser }) => {
 
       const { sid } = response.data;
 
-      localStorage.setItem("sid", JSON.stringify(sid));
-      setUser(sid.id);
+      localStorage.setItem("sid", sid.id);
 
       // Redirect to EmailVerify page with formData (including email)
       navigate("/", { state: { userData: response.data } });

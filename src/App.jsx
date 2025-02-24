@@ -30,7 +30,7 @@ function App() {
   };
 
   useEffect(() => {
-    const token = localStorage.getItem("sid");
+    const token = localStorage.getItem("token");
     if (token) verifyToken(token);
   }, [user]);
 
@@ -49,11 +49,11 @@ function App() {
     <>
       <Router>
         <Routes>
-          <Route index element={<LandingPage />} />
+          <Route index element={<LandingPage setUser={setUser} />} />
           <Route element={<ProtectedRoute accessAllowed={!!user} />}>
             <Route
               path="/dashboard"
-              element={<DashboardPage logout={handleLogout} />}
+              element={<DashboardPage userID={user} logout={handleLogout} />}
             />
           </Route>
           <Route>
@@ -78,7 +78,10 @@ function App() {
           </Route>
           <Route path="/events" element={<Eventpage />} />
           <Route path="/eventregistration" element={<EventRegistration />} />
-          <Route path="/signup" element={<Signup />} />
+          <Route
+            path="/signup"
+            element={<Signup user={user} setUser={setUser} />}
+          />
           <Route
             path="/login"
             element={<Login user={user} setUser={setUser} />}

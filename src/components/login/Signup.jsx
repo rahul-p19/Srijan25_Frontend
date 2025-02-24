@@ -9,7 +9,7 @@ import MascotAnimation from "../home/MascotAnimation";
 import toast from "react-hot-toast";
 
 // eslint-disable-next-line react/prop-types
-const Signup = ({ user, setUser }) => {
+const Signup = ({ user }) => {
   const navigate = useNavigate();
 
   const [imageSrc, setImageSrc] = useState("");
@@ -99,12 +99,8 @@ const Signup = ({ user, setUser }) => {
       return;
     }
 
-    localStorage.setItem("sid", JSON.stringify(sid));
-    localStorage.setItem(
-      "providerID",
-      JSON.stringify(sid.providers[0].providerUserId),
-    );
-    setUser(sid.id);
+    localStorage.setItem("sid", sid.id);
+    localStorage.setItem("providerID", sid.providerId);
     navigate("/");
   };
 
@@ -134,8 +130,7 @@ const Signup = ({ user, setUser }) => {
       const response = await authController.registerUser(formData);
       const { sid } = response.data;
 
-      localStorage.setItem("sid", JSON.stringify(sid));
-      setUser(sid.id);
+      localStorage.setItem("sid", sid.id);
       // Redirect to EmailVerify page with formData (including email)
       navigate("/verify", { state: { formData } });
     } catch (error) {
@@ -155,6 +150,7 @@ const Signup = ({ user, setUser }) => {
           }));
         }
       } else {
+        console.log(error);
         setMessage("Error registering user. Try again.");
       }
     } finally {

@@ -13,7 +13,8 @@ export const uri = {
         LOGOUT: env.API_SERVER + "/logout",
     },
     resources: {
-        USERS: env.API_SERVER + "/users/"
+        USERS: env.API_SERVER + "/users/",
+        EDIT_USERS: env.API_SERVER + "/updateDetails",
     },
     services: {
         OAUTH2_GOOGLE_STATUS: env.API_SERVER + "/login/google/status",
