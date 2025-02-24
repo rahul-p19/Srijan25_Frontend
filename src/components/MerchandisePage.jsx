@@ -256,24 +256,15 @@ export default function MerchandisePage() {
               QR code
             </label>
 
-            {selectedImage && (
-              <div className="mb-4 flex justify-center">
-                <div className="w-40 h-40 border border-gray-500 rounded-md overflow-hidden">
-                  <img src={selectedImage} alt="Uploaded" className="w-full h-full object-cover" />
-                </div>
-              </div>
-            )}
 
-            <input
-              type="file"
-              accept="image/*"
-              onChange={handleImageChange}
-              className="block w-full text-sm text-gray-400
+            <img
+            src="./qr.jpeg"
+              className="block w-full text-sm text-gray-100
                          file:mr-4 file:py-2 file:px-4
                          file:rounded-lg file:border-0
                          file:text-sm file:font-semibold
-                         file:bg-green-500 file:text-white
-                         hover:file:bg-green-600"
+                         file:bg-green-100 file:text-white
+                         hover:file:bg-green-200"
             />
           </div>
           
