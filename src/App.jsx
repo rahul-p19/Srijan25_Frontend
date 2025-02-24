@@ -38,7 +38,7 @@ function App() {
   }, [user]);
 
   const verifyToken = async (token) => {
-    const response = await fetch(`http://localhost:3080/api/v1/users/${token}`, {
+    const response = await fetch(`${uri.resources.USERS}/${token}`, {
       credentials: 'include'
     });
     if (response.ok) {
