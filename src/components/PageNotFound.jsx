@@ -1,33 +1,9 @@
 import React from 'react'
 import Navbar from "./Navbar"
-import { Toaster } from "react-hot-toast"
 
 function PageNotFound() {
   return (
     <div className='bg-background h-screen relative font-sometypeMono'>
-      <Toaster
-        toastOptions={{
-          duration: 2000,
-          style: {
-            backgroundColor: "#141414",
-            borderRadius: "0px",
-            fontSize: "24px",
-            padding: "12px",
-            color: "white",
-            borderTop: "1px solid #b60000",
-            borderLeft: "1px solid #b60000",
-            borderBottom: "1px solid #532e8f",
-            borderRight: "1px solid #532e8f",
-            zIndex: 1005,
-            textAlign: "center"
-          }
-        }}
-        containerStyle={{
-          top: "15vh",
-          right: "40vw",
-          left: "40vw",
-        }}
-      />
       <div className='absolute w-full'>
         <Navbar />
       </div>
