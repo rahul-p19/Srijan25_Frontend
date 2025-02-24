@@ -89,7 +89,7 @@ const Login = ({ user }) => {
     }
 
     localStorage.setItem("sid", sid.id);
-    localStorage.setItem("providerID", sid.providerId);
+    localStorage.setItem("providerID", sid.providerId[0].providerUserId);
     navigate("/");
   };
 

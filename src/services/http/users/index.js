@@ -2,17 +2,14 @@ import axios from "axios";
 import { CONST } from "../../../config";
 
 export const getUserById = (id, providerId = null) => {
-  if (!id) {
-    throw "id cannot be null or undefined";
+  if (!id || typeof id !== "string") {
+    throw new Error("id must be a valid string");
   }
 
-  let uri = CONST.uri.resources.USERS + id;
-
-  if (providerId) {
-    uri = `${uri}?providerId=${providerId}`;
-  }
-
-  return axios.get(uri, { withCredentials: true });
+  return axios.get(`${CONST.uri.resources.USERS}/${id}`, {
+    params: providerId ? { providerId } : {},
+    withCredentials: true,
+  });
 };
 
 export const editUser = (data) => {
@@ -23,9 +20,7 @@ export const editUser = (data) => {
     throw "Enter a valid phone";
   }
 
-  return axios.put(CONST.uri.resources.EDIT_USERS, {
-    data,
-    withCredentials: true,
-    headers: { "Content-Type": "application/json" },
+  return axios.put(CONST.uri.resources.EDIT_USERS, data, {  
+    withCredentials: true, 
   });
 };
