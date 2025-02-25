@@ -191,7 +191,7 @@ const FancyButton = ({ active, onClick, children }) => {
   };
 
   return (
-    <div className="relative inline-block overflow-hidden rounded-md">
+    <div className="relative inline-block overflow-hidden rounded-md font-sometypeMono">
       <button
         onClick={createRipple}
         className={`relative px-6 py-2 rounded-md font-semibold transition-all duration-300 focus:outline-none border border-transparent ${
@@ -313,7 +313,7 @@ const Events = () => {
       <Navbar />
 
       {/* Relative container for background and grid lines */}
-      <div className="relative bg-gradient-to-r from-background  to-background text-white min-h-screen py-2 px-2">
+      <div className="relative bg-gradient-to-r from-background  to-background text-white min-h-screen py-2 px-2 ">
         <GridLines />
         {/* Content container with higher z-index */}
         <div className="relative z-10">
