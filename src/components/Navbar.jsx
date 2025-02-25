@@ -35,17 +35,17 @@ function Navbar(props) {
         <a href='/' className={`relative hidden sm:block w-fit`}>Home
           <div className={`absolute h-[2px] bg-gradient-to-l from-red to-purple bottom-0 ${pathname == "" ? 'w-full' : 'w-0'}`}></div>
         </a>
-        {/*
+        
         <a href='/events' className={`relative hidden sm:block w-fit`}>Events
           <div className={`absolute h-[2px] bg-gradient-to-l from-red to-purple bottom-0 ${pathname == "events" ? 'w-full' : 'w-0'}`}></div>
         </a>
-        <a href='/notifications' className={`relative hidden sm:block w-fit`}>Notifications
+        {/* <a href='/notifications' className={`relative hidden sm:block w-fit`}>Notifications
           <div className={`absolute h-[2px] bg-gradient-to-l from-red to-purple bottom-0 ${pathname == "notifications" ? 'w-full' : 'w-0'}`}></div>
-        </a>
-        */}
-        <div className={`relative hidden sm:block w-fit cursor-pointer`} onClick={notify}>Events
+        </a> */}
+       
+        {/* <div className={`relative hidden sm:block w-fit cursor-pointer`} onClick={notify}>Events
           <div className={`absolute h-[2px] bg-gradient-to-l from-red to-purple bottom-0 ${pathname == "events" ? 'w-full' : 'w-0'}`}></div>
-        </div>
+        </div> */}
         <div className={`relative hidden sm:block w-fit cursor-pointer`} onClick={notify}>Notifications
           <div className={`absolute h-[2px] bg-gradient-to-l from-red to-purple bottom-0 ${pathname == "notifications" ? 'w-full' : 'w-0'}`}></div>
         </div>

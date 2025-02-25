@@ -1,31 +1,52 @@
-
 import React, { useState } from "react";
-import { TextField, Button, Box, Typography, Paper } from "@mui/material";
-
-// (Optional) Simple email validation regex for future use
-const isValidEmail = (email) => {
-  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-};
+import {
+  TextField,
+  Button,
+  Box,
+  Typography,
+  Paper,
+  InputAdornment,
+  IconButton,
+} from "@mui/material";
+import toast, { Toaster } from "react-hot-toast";
+import { useParams } from "react-router-dom";
+import CheckCircleIcon from "@mui/icons-material/CheckCircle";
+import CancelIcon from "@mui/icons-material/Cancel";
+import DeleteIcon from "@mui/icons-material/Delete";
+//import Confetti from "react-confetti";
+import { useWindowSize } from "react-use";
+import image from "/src/assets/icons/mascot.svg";
 
 // TeamMembers Component for dynamically adding/removing team member email fields
-const TeamMembers = () => {
-  const [members, setMembers] = useState([""]);
+const TeamMembers = ({ membersEmails, setMembersEmails }) => {
+  // Email validation using a basic regex
+  const isValidEmail = (email) => {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  };
+
+  // Check if the current email is a duplicate (case insensitive)
+  const isDuplicate = (email, index) => {
+    return (
+      membersEmails.filter(
+        (e) => e.trim().toLowerCase() === email.trim().toLowerCase()
+      ).length > 1
+    );
+  };
 
   const handleMemberChange = (index, event) => {
-    const newMembers = [...members];
+    const newMembers = [...membersEmails];
     newMembers[index] = event.target.value;
-    setMembers(newMembers);
+    setMembersEmails(newMembers);
   };
 
   const handleAddMember = () => {
-    setMembers([...members, ""]);
+    setMembersEmails([...membersEmails, ""]);
   };
 
   const handleRemoveMember = (index) => {
-    // Remove the member at the specified index
-    const newMembers = [...members];
+    const newMembers = [...membersEmails];
     newMembers.splice(index, 1);
-    setMembers(newMembers);
+    setMembersEmails(newMembers);
   };
 
   return (
@@ -33,58 +54,88 @@ const TeamMembers = () => {
       <Typography variant="subtitle1" color="white" sx={{ mb: 1 }}>
         Team Members Emails:
       </Typography>
-      {members.map((email, index) => (
-        <Box
-          key={index}
-          sx={{ display: "flex", alignItems: "center", mb: 1.5 }}
-        >
-          <TextField
-            fullWidth
-            size="medium"
-            label={`Team Member ${index + 1} Email`}
-            variant="outlined"
-            margin="dense"
-            value={email}
-            onChange={(e) => handleMemberChange(index, e)}
-            InputLabelProps={{
-              style: { color: "rgba(25, 255, 55, 0.7)", fontSize: "0.8rem" },
-            }}
-            sx={{
-              bgcolor: "black",
-              boxShadow: 51,
-              fontWeight: "bold",
-              fontFamily: "Roboto, sans-serif",
-              "& .MuiOutlinedInput-root": {
-                backgroundColor: "rgba(255, 255, 255, 0.1)",
-                borderRadius: "4px",
-                transition: "all 0.3s ease",
-                "& fieldset": { borderColor: "rgba(255, 255, 255, 0.3)" },
-                "&:hover fieldset": {
-                  borderColor: "rgba(255, 255, 255, 0.5)",
-                },
-              },
-              "& .MuiInputBase-input": {
-                fontSize: "1.2rem",
-                color: "blue",
-              },
-            }}
-          />
-          <Button
-            variant="outlined"
-            onClick={() => handleRemoveMember(index)}
-            sx={{
-              ml: 1,
-              color: "white",
-              borderColor: "white",
-              fontWeight: "bold",
-              bgcolor: "black",
-              "&:hover": { bgcolor: "black" },
-            }}
+      {membersEmails.map((email, index) => {
+        const valid = email && isValidEmail(email);
+        const duplicate = email && isDuplicate(email, index);
+        const showSuccess = email && valid && !duplicate;
+        return (
+          <Box
+            key={index}
+            sx={{ display: "flex", alignItems: "center", mb: 1.5 }}
           >
-            Remove
-          </Button>
-        </Box>
-      ))}
+            <TextField
+              fullWidth
+              size="medium"
+              label={`Team Member ${index + 1} Email`}
+              variant="outlined"
+              margin="dense"
+              value={email}
+              onChange={(e) => handleMemberChange(index, e)}
+              error={!!email && (!valid || duplicate)}
+              helperText={
+                email && !valid
+                  ? "Invalid email format."
+                  : email && duplicate
+                  ? "Duplicate email."
+                  : ""
+              }
+              InputLabelProps={{
+                style: { color: "rgba(25, 255, 55, 0.7)", fontSize: "0.8rem" },
+              }}
+              InputProps={{
+                startAdornment: email ? (
+                  showSuccess ? (
+                    <InputAdornment position="start">
+                      <CheckCircleIcon sx={{ color: "green", mr: 1 }} />
+                    </InputAdornment>
+                  ) : (
+                    <InputAdornment position="start">
+                      <CancelIcon sx={{ color: "red", mr: 1 }} />
+                    </InputAdornment>
+                  )
+                ) : null,
+              }}
+              sx={{
+                bgcolor: "black",
+                boxShadow: 51,
+                fontWeight: "bold",
+                fontFamily: "Roboto, sans-serif",
+                "& .MuiOutlinedInput-root": {
+                  backgroundColor: "rgba(255, 255, 255, 0.1)",
+                  borderRadius: "4px",
+                  transition: "all 0.3s ease",
+                  "& fieldset": {
+                    borderColor: email
+                      ? showSuccess
+                        ? "green"
+                        : "red"
+                      : "rgba(255, 255, 255, 0.3)",
+                  },
+                  "&:hover fieldset": {
+                    borderColor: email
+                      ? showSuccess
+                        ? "green"
+                        : "red"
+                      : "rgba(255, 255, 255, 0.5)",
+                  },
+                },
+                "& .MuiInputBase-input": {
+                  fontSize: "1.2rem",
+                  color: "white",
+                },
+              }}
+            />
+            {membersEmails.length > 1 && (
+              <IconButton
+                onClick={() => handleRemoveMember(index)}
+                sx={{ color: "red", ml: 1 }}
+              >
+                <DeleteIcon />
+              </IconButton>
+            )}
+          </Box>
+        );
+      })}
       <Button
         variant="outlined"
         onClick={handleAddMember}
@@ -104,11 +155,73 @@ const TeamMembers = () => {
 };
 
 const App = () => {
-  const [email, setEmail] = useState("");
+  const { width, height } = useWindowSize();
+  const [teamName, setTeamName] = useState("");
+  const [teamLeaderName, setTeamLeaderName] = useState("");
+  const [membersEmails, setMembersEmails] = useState([""]);
+  // Store the complete response from the backend.
+  const [registrationResponse, setRegistrationResponse] = useState(null);
 
-  // Update the email state as the user types in the main email field.
-  const handleEmailChange = (event) => {
-    setEmail(event.target.value);
+  // Retrieve the event slug from the URL parameters
+  const { eventID } = useParams();
+
+  // Function to register
+  const handleRegister = async () => {
+    const payload = {
+      userId: "67b201fb012d176009da4d6f", // Adjust this as needed
+      membersEmails: membersEmails,
+      groupName: teamName,
+    };
+
+    try {
+      const response = await fetch(
+        `http://localhost:3000/api/v1/events/${eventID}/register`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(payload),
+        }
+      );
+      const data = await response.json();
+      toast.success("Successfully registered, now please confirm your team members", {
+        removeDelay: 8000,
+      });
+      setRegistrationResponse(data);
+    } catch (error) {
+      console.error("Error during registration:", error);
+      setRegistrationResponse({
+        success: false,
+        message: error.message || "An error occurred during registration.",
+      });
+    }
+  };
+
+  // Function to unregister
+  const handleUnregister = async () => {
+    try {
+      const response = await fetch(
+        `http://localhost:3000/api/v1/events/${eventID}/unregister`,
+        {
+          method: "POST", // or DELETE depending on your backend implementation
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ userId: "67b201fb012d176009da4d6f" }),
+        }
+      );
+      const data = await response.json();
+      if (data.success) {
+        toast.success("Successfully unregistered");
+        setRegistrationResponse(null);
+      } else {
+        toast.error("Failed to unregister: " + data.message);
+      }
+    } catch (error) {
+      console.error("Error during unregister:", error);
+      toast.error("Error during unregister: " + error.message);
+    }
   };
 
   return (
@@ -137,7 +250,6 @@ const App = () => {
           zIndex: -1,
         }}
       />
-
       {/* Background Lines */}
       <Box
         sx={{
@@ -170,7 +282,6 @@ const App = () => {
           right: "20%",
         }}
       />
-
       {/* Registration Box */}
       <Paper
         elevation={6}
@@ -188,7 +299,7 @@ const App = () => {
           boxShadow: "0px 0px 20px rgba(0,0,0,0.5)",
         }}
       >
-        {/* Robot Image */}
+        {/* Image Section */}
         <Box
           sx={{
             width: { xs: "100%", sm: "90%", md: "50%" },
@@ -200,7 +311,7 @@ const App = () => {
         >
           <Box
             component="img"
-            src="https://s3-alpha-sig.figma.com/img/859d/4657/f0a900f634d163ac50ea76555f4f2f42?Expires=1739750400&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=sIUYfd1LRJqU12uyyj0NgeSVBKkUSsj4iQs4GJcG~MtsDHdWb8ExpKdlkR33zFTuWAFjtxGH~IKjpowHV-0VG63cKFYOALhxlqDG~4jDpw8pcfoWAAlfYwXHPgBw7w4nWIALmVoi18j1ZHFYLbqa2fWw5XesxB4nVMAK74oVWsSdFyN~dWcB6b0dhnmlFE4dKdIPkWN~Ac4Mf5TTe7AFz5bP0u4gTAIds45Yl29pOC-2onF1mXLir45JzAQdKr-y7cTQovEtTEaRg5nA0pr1iZ32-OPHaCeF3tkulMXeKyGpC3VnQ20dZo3ZF8axGMppO~MTCxmJ0H17vmG9SDbTIQ__"
+            src={image}
             alt="Robot"
             sx={{
               width: "100%",
@@ -212,14 +323,8 @@ const App = () => {
             }}
           />
         </Box>
-
         {/* Form Section */}
-        <Box
-          sx={{
-            width: "100%",
-            maxWidth: "400px",
-          }}
-        >
+        <Box sx={{ width: "100%", maxWidth: "400px" }}>
           <Typography
             variant="h4"
             color="white"
@@ -233,14 +338,14 @@ const App = () => {
           >
             REGISTRATION
           </Typography>
-
-          {/* Team Name Field */}
           <TextField
             fullWidth
             size="medium"
             label="Team Name"
             variant="outlined"
             margin="dense"
+            value={teamName}
+            onChange={(e) => setTeamName(e.target.value)}
             InputLabelProps={{
               style: { color: "rgba(25, 255, 55, 0.7)", fontSize: "0.8rem" },
             }}
@@ -255,22 +360,24 @@ const App = () => {
                 borderRadius: "4px",
                 transition: "all 0.3s ease",
                 "& fieldset": { borderColor: "rgba(255, 255, 255, 0.3)" },
-                "&:hover fieldset": { borderColor: "rgba(255, 255, 255, 0.5)" },
+                "&:hover fieldset": {
+                  borderColor: "rgba(255, 255, 255, 0.5)",
+                },
               },
               "& .MuiInputBase-input": {
                 fontSize: "1.2rem",
-                color: "blue",
+                color: "white",
               },
             }}
           />
-
-          {/* Team Leader Name Field */}
           <TextField
             fullWidth
             size="medium"
             label="Team Leader Name"
             variant="outlined"
             margin="dense"
+            value={teamLeaderName}
+            onChange={(e) => setTeamLeaderName(e.target.value)}
             InputLabelProps={{
               style: { color: "rgba(25, 255, 55, 0.7)", fontSize: "0.8rem" },
             }}
@@ -285,20 +392,24 @@ const App = () => {
                 borderRadius: "4px",
                 transition: "all 0.3s ease",
                 "& fieldset": { borderColor: "rgba(255, 255, 255, 0.3)" },
-                "&:hover fieldset": { borderColor: "rgba(255, 255, 255, 0.5)" },
+                "&:hover fieldset": {
+                  borderColor: "rgba(255, 255, 255, 0.5)",
+                },
               },
               "& .MuiInputBase-input": {
                 fontSize: "1.2rem",
-                color: "blue",
+                color: "white",
               },
             }}
           />
-
-          {/* Team Members Emails Component */}
-          <TeamMembers />
-
+          <TeamMembers
+            membersEmails={membersEmails}
+            setMembersEmails={setMembersEmails}
+          />
+          {/* REGISTER Button */}
           <Button
             variant="outlined"
+            onClick={handleRegister}
             sx={{
               mt: 1.5,
               py: { xs: 1, md: 1.5 },
@@ -319,8 +430,67 @@ const App = () => {
           >
             REGISTER
           </Button>
+          {/* UNREGISTER Button: Only show if registration is successful */}
+          {registrationResponse && registrationResponse.success && (
+            <Button
+              variant="outlined"
+              onClick={handleUnregister}
+              sx={{
+                mt: 1.5,
+                ml: 1,
+                py: { xs: 1, md: 1.5 },
+                color: "white",
+                borderColor: "white",
+                fontWeight: "bold",
+                fontSize: { xs: "0.9rem", md: "0.8rem" },
+                bgcolor: "black",
+                position: "relative",
+                transition: "all 0.3s ease-in-out",
+                boxShadow: "inset 0 0 0px rgba(255, 255, 255, 0)",
+                "&:hover": {
+                  boxShadow: "inset 0 0 10px rgba(255, 255, 255, 0.8)",
+                  bgcolor: "black",
+                  transform: "scale(1.02)",
+                },
+              }}
+            >
+              UNREGISTER
+            </Button>
+          )}
+          {registrationResponse && (
+            <Typography
+              variant="body1"
+              align="center"
+              sx={{
+                mt: 2,
+                color: registrationResponse.success ? "green" : "red",
+              }}
+            >
+              {registrationResponse.message}
+            </Typography>
+          )}
         </Box>
       </Paper>
+      <Toaster
+        toastOptions={{
+          // Define default options
+          className: "",
+          duration: 9000,
+          removeDelay: 9000,
+          style: {
+            background: "#363636",
+            color: "#fff",
+          },
+          // Default options for specific types
+          success: {
+            duration: 5000,
+            iconTheme: {
+              primary: "green",
+              secondary: "black",
+            },
+          },
+        }}
+      />
     </Box>
   );
 };

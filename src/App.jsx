@@ -11,7 +11,7 @@ import EmailVerify from './components/login/EmailVerify'
 import ResetPassword from './components/login/ResetPassword'
 import ForgotPassword from './components/login/ForgotPassword'
 import PageNotFound from "./components/PageNotFound";
-
+import PasstheBaton from "./components/Events/allevents/AllinoneEvents"
 import { ProtectedRoute } from "./components/protected_routes/AuthRoutes";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { useState } from "react";
@@ -78,6 +78,9 @@ function App() {
               element={<DashboardPage user={user} logout={handleLogout} />}
             />
           </Route>
+          <Route path="/events" element={<Eventpage />} />
+          <Route path="/events/:category/:eventID" element={<PasstheBaton />} />
+          <Route path="/events/:category/:eventID/:registration" element={<EventRegistration/>}/>
           <Route>
             <Route path="/merchandise" element={
               <ProtectedRoute isAuthenticated={isAuthenticated}>
@@ -85,7 +88,7 @@ function App() {
               </ProtectedRoute>
             } />
           </Route>
-          <Route path="/events" element={<Eventpage />} />
+          {/* <Route path="/events" element={<Eventpage />} /> */}
           <Route path="/eventregistration" element={<EventRegistration />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/login" element={<Login />} />
