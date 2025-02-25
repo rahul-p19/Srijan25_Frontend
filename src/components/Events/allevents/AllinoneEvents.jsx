@@ -846,7 +846,7 @@ import { useWindowSize } from "react-use";
 import { Button } from "@mui/material";
 import toast, { Toaster } from "react-hot-toast";
 
-const Passthebaton = () => {
+const AllEvents = () => {
   const { width, height } = useWindowSize();
   const { category, eventID } = useParams();
   const navigate = useNavigate();
@@ -1233,4 +1233,4 @@ const Passthebaton = () => {
   );
 };
 
-export default Passthebaton;
+export default AllEvents;

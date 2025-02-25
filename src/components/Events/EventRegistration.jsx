@@ -166,16 +166,51 @@ const App = () => {
   const { eventID } = useParams();
 
   // Function to register
+  // const handleRegister = async () => {
+  //   const payload = {
+  //     userId: "67b201fb012d176009da4d6f", // Adjust this as needed
+  //     membersEmails: membersEmails,
+  //     groupName: teamName,
+  //   };
+
+  //   try {
+  //     const response = await fetch(
+  //       `http://localhost:3000/api/v1/events/${eventID}/register`,
+  //       {
+  //         method: "POST",
+  //         headers: {
+  //           "Content-Type": "application/json",
+  //         },
+  //         body: JSON.stringify(payload),
+  //       }
+  //     );
+  //     const data = await response.json();
+  //     toast.success("Successfully registered, now please confirm your team members", {
+  //       removeDelay: 8000,
+  //     });
+  //     setRegistrationResponse(data);
+  //   } catch (error) {
+  //     console.error("Error during registration:", error);
+  //     setRegistrationResponse({
+  //       success: false,
+  //       message: error.message || "An error occurred during registration.",
+  //     });
+  //   }
+  // };
+
+
+
+
   const handleRegister = async () => {
     const payload = {
       userId: "67b201fb012d176009da4d6f", // Adjust this as needed
       membersEmails: membersEmails,
       groupName: teamName,
     };
-
+  
     try {
       const response = await fetch(
-        `http://localhost:3000/api/v1/events/${eventID}/register`,
+        `${import.meta.env.VITE_BACKEND_URL}/${eventID}/register`,
         {
           method: "POST",
           headers: {
@@ -185,24 +220,39 @@ const App = () => {
         }
       );
       const data = await response.json();
-      toast.success("Successfully registered, now please confirm your team members", {
-        removeDelay: 8000,
-      });
+  
+      // If the response status is not OK, throw an error with the backend message.
+      if (!response.ok) {
+        throw new Error(data.message || "Registration failed.");
+      }
+  
+      // If registration was successful, show the success toast.
+      toast.success(
+        "Successfully registered, now please confirm your team members",
+        {
+          removeDelay: 8000,
+        }
+      );
       setRegistrationResponse(data);
     } catch (error) {
       console.error("Error during registration:", error);
+      toast.error("Registration failed: " + error.message, {
+        removeDelay: 8000,
+      });
       setRegistrationResponse({
         success: false,
         message: error.message || "An error occurred during registration.",
       });
     }
   };
+  
+  
 
   // Function to unregister
   const handleUnregister = async () => {
     try {
       const response = await fetch(
-        `http://localhost:3000/api/v1/events/${eventID}/unregister`,
+        `${import.meta.env.VITE_BACKEND_URL}/events/${eventID}/unregister`,
         {
           method: "POST", // or DELETE depending on your backend implementation
           headers: {

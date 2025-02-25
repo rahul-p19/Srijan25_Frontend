@@ -11,7 +11,7 @@ import EmailVerify from "./components/login/EmailVerify";
 import ResetPassword from "./components/login/ResetPassword";
 import ForgotPassword from "./components/login/ForgotPassword";
 import PageNotFound from "./components/PageNotFound";
-import PasstheBaton from "./components/Events/allevents/AllinoneEvents"
+import AllEvents from "./components/Events/allevents/AllinoneEvents"
 import { WorkshopPage } from "./components/workshop/WorkshopPage";
 
 import { ProtectedRoute } from "./components/protected_routes/AuthRoutes";
@@ -58,7 +58,7 @@ function App() {
             />
           </Route>
           <Route path="/events" element={<Eventpage />} />
-          <Route path="/events/:category/:eventID" element={<PasstheBaton />} />
+          <Route path="/events/:category/:eventID" element={<AllEvents />} />
           <Route path="/events/:category/:eventID/:registration" element={<EventRegistration/>}/>
           <Route>
             <Route
