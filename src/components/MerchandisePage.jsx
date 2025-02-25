@@ -171,7 +171,15 @@ export default function MerchandisePage() {
 
           {/* Contact Us - Full width on mobile */}
           <div className="w-full md:w-1/6 px-2 md:px-0 sm:absolute right-14 -bottom-[30%]">
-            <h3 className="text-xl mb-3 text-center md:text-left">Contact Us</h3>
+            {/* Replaced text with SVG */}
+            <div className="mb-3 text-center md:text-left">
+              <img 
+                src="/contacts.svg" 
+                alt="Contact Us" 
+                className="h-8 inline-block"
+                style={{height:"150px",width:"150px", marginTop:"100px", marginBottom:"-40px"}}
+              />
+            </div>
             <div className="flex justify-center md:justify-start space-x-4 md:flex-row">
               {contacts.map((contact) => (
                 <div key={contact.id} className="flex flex-col items-center">
