@@ -155,6 +155,7 @@ const TeamMembers = ({ membersEmails, setMembersEmails }) => {
 };
 
 const App = () => {
+ 
   const { width, height } = useWindowSize();
   const [teamName, setTeamName] = useState("");
   const [teamLeaderName, setTeamLeaderName] = useState("");
@@ -199,18 +200,19 @@ const App = () => {
   // };
 
 
-
+  const userId=localStorage.getItem("sid");
+  console.log(userId);
 
   const handleRegister = async () => {
     const payload = {
-      userId: "67b201fb012d176009da4d6f", // Adjust this as needed
+      userId: userId, // Adjust this as needed
       membersEmails: membersEmails,
       groupName: teamName,
     };
   
     try {
       const response = await fetch(
-        `${import.meta.env.VITE_BACKEND_URL}/${eventID}/register`,
+        `${import.meta.env.VITE_BACKEND_URL}/api/v1/events/${eventID}/register`,
         {
           method: "POST",
           headers: {
