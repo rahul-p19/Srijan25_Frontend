@@ -57,25 +57,13 @@ function App() {
             />
           </Route>
           <Route>
-            <Route
-              path="/merchandise"
-              element={
-                <ProtectedRoute accessAllowed={!!user}>
-                  <MerchandisePage />
-                </ProtectedRoute>
-              }
-            />
-          </Route>
-          <Route>
-            <Route
-              path="/notifications"
-              element={
-                // <ProtectedRoute isAuthenticated={isAuthenticated}>
-                <Notifications user={user} />
-                // </ProtectedRoute>
-              }
-            />
-          </Route>
+            {/*<Route path="/merchandise" element={
+             <ProtectedRoute checkUserSession={checkUserSession} logout={logout}>
+             <MerchandisePage />
+           </ProtectedRoute>
+              } />*/}
+              <Route path="/merchandise" element={ <MerchandisePage />}/>
+            </Route>
           <Route path="/events" element={<Eventpage />} />
           <Route path="/eventregistration" element={<EventRegistration />} />
           <Route
