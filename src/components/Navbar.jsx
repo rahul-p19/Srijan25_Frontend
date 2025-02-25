@@ -1,11 +1,13 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
 import toast from "react-hot-toast";
+import { useNavigate } from 'react-router-dom';
 
 const notify = () => toast("Coming soon!");
 
-function Navbar(props) {
+function Navbar() {
+  const navigate = useNavigate()
 
   const [navbarOpen, setNavbarOpen] = useState(false);
   const [loggedIn, setLoggedIn] = useState(false);
@@ -13,24 +15,29 @@ function Navbar(props) {
 
   useEffect(() => {
     setPathname((window.location.pathname).slice(1));
-  }, [window.location.pathname])
+  }, [window.location.pathname]);
+
+  useEffect(() => {
+    const userID = localStorage.getItem("sid");
+    if (userID !== null && userID !== "") setLoggedIn(true);
+  }, []);
 
   return (
     <nav className='sticky top-0 grid grid-cols-7 sm:grid-cols-5 w-full border-b border-b-greyBorder bg-background z-[200]'>
       <div className='flex justify-around p-3'>
         <a href='/' className='hidden sm:block'>
-          <img src='/srijan-logo-white.svg' />
+          <img src='/srijan-logo-white.svg' alt="Srijan Logo" width="auto" height="auto" />
         </a>
         <a href='/' className='hidden sm:block'>
-          <img src='/fetsu-presents-srijan25.svg' />
+          <img src='/fetsu-presents-srijan25.svg' alt="Srijan Text Logo" width="auto" height="auto" />
         </a>
       </div>
       <div className='col-span-5 sm:col-span-3 text-center p-2 sm:p-0 flex items-center justify-around border-r border-r-greyBorder border-l-greyBorder border-l text-xl'>
         <a href='/' className='sm:hidden'>
-          <img src='/srijan-logo-white.svg' />
+          <img src='/srijan-logo-white.svg' alt="Srijan Logo" width="auto" height="auto" />
         </a>
         <a href='/' className='sm:hidden'>
-          <img src='/fetsu-presents-srijan25.svg' />
+          <img src='/fetsu-presents-srijan25.svg' alt="Srijan Text Logo" width="auto" height="auto" />
         </a>
         <a href='/' className={`relative hidden sm:block w-fit`}>Home
           <div className={`absolute h-[2px] bg-gradient-to-l from-red to-purple bottom-0 ${pathname == "" ? 'w-full' : 'w-0'}`}></div>
@@ -49,7 +56,7 @@ function Navbar(props) {
         <div className={`relative hidden sm:block w-fit cursor-pointer`} onClick={notify}>Notifications
           <div className={`absolute h-[2px] bg-gradient-to-l from-red to-purple bottom-0 ${pathname == "notifications" ? 'w-full' : 'w-0'}`}></div>
         </div>
-        <a href='https://docs.google.com/forms/d/e/1FAIpQLScaGsa7rJHbWpdAjYpkRlDERtwvnZzR-1ocx3HIQi03S4GxUw/viewform' className={`relative hidden sm:block w-fit`}>Workshop
+        <a href="/workshop" className={`relative hidden sm:block w-fit`}>Workshop
           <div className={`absolute h-[2px] bg-gradient-to-l from-red to-purple bottom-0 ${pathname == "workshop" ? 'w-full' : 'w-0'}`}></div>
         </a>
       </div>
@@ -57,7 +64,7 @@ function Navbar(props) {
         {/*<a href={`${loggedIn ? '/dashboard' : '/login'}`} className='hidden relative sm:block'> {loggedIn ? 'Dashboard' : 'Login'}
           <div className={`absolute h-[2px] bg-gradient-to-l from-red to-purple bottom-0 ${pathname == "dashboard" || pathname == "login" ? 'w-full' : 'w-0'}`}></div>
         </a>*/}
-        <div className='hidden relative sm:block cursor-pointer' onClick={notify}> {loggedIn ? 'Dashboard' : 'Login'}
+        <div className='hidden relative sm:block cursor-pointer' onClick={() => navigate(loggedIn ? '/dashboard' : '/login')}> {loggedIn ? 'Dashboard' : 'Login'}
           <div className={`absolute h-[2px] bg-gradient-to-l from-red to-purple bottom-0 ${pathname == "dashboard" || pathname == "login" ? 'w-full' : 'w-0'}`}></div>
         </div>
         <button className='sm:hidden' onClick={() => {
@@ -72,25 +79,24 @@ function Navbar(props) {
         }}><CloseIcon /></button>
         <div className={`flex flex-col gap-y-6 transition-all duration-100 w-4/5`}>
           <div className='flex justify-around w-full pl-6'>
-            <img src='/srijan-logo-white.svg' />
-            <img src='/fetsu-presents-srijan25.svg' />
+            <img src='/srijan-logo-white.svg' alt="Srijan Logo" width="auto" height="auto" />
+            <img src='/fetsu-presents-srijan25.svg' alt="Srijan Text Logo" width="auto" height="auto" />
           </div>
           {/*
           <a href='/' className='text-left border-greyBorder/30 border-b w-full py-1'>Home</a>
           <a href='/' className='text-left border-greyBorder/30 border-b w-full py-1'>Events</a>
           <a href='/' className='text-left border-greyBorder/30 border-b w-full py-1'>Notifications</a>
           <a href='/' className='text-left border-greyBorder/30 border-b w-full py-1'>Campus Ambassadors</a>
-          <a href='/' className='text-left border-greyBorder/30 border-b w-full py-1'>Workshops</a>
           <a href='/' className='text-left border-greyBorder/30 border-b w-full py-1'>Merchandise</a>
           <a href='/' className='text-left border-greyBorder/30 border-b w-full py-1'>Dashboard</a>
           */}
           <a href='/' className='text-left border-greyBorder/30 border-b w-full py-1'>Home</a>
           <div className='text-left border-greyBorder/30 border-b w-full py-1' onClick={notify}>Events</div>
-          <div className='text-left border-greyBorder/30 border-b w-full py-1' onClick={notify}>Notifications</div>
+          <a href='/notifications' className='text-left border-greyBorder/30 border-b w-full py-1' onClick={notify}>Notifications</a>
           <a href='https://docs.google.com/forms/d/e/1FAIpQLSe-zoCeE50FR2dUzauh7wfvHxfHczPwgziqYhRju2zMLH164A/viewform' className='text-left border-greyBorder/30 border-b w-full py-1'>Campus Ambassadors</a>
-          <a href='https://docs.google.com/forms/d/e/1FAIpQLScaGsa7rJHbWpdAjYpkRlDERtwvnZzR-1ocx3HIQi03S4GxUw/viewform' className='text-left border-greyBorder/30 border-b w-full py-1'>Workshops</a>
+          <a href='/workshop' className='text-left border-greyBorder/30 border-b w-full py-1'>Workshop</a>
           <div className='text-left border-greyBorder/30 border-b w-full py-1' onClick={notify}>Merchandise</div>
-          <div className='text-left border-greyBorder/30 border-b w-full py-1' onClick={notify}>Dashboard</div>
+          <div className='text-left border-greyBorder/30 border-b w-full py-1' onClick={() => navigate(loggedIn ? '/dashboard' : '/login')}>{loggedIn ? 'Dashboard' : 'Login'}</div>
         </div>
       </nav>
     </nav>

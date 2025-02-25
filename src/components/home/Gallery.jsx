@@ -3,37 +3,36 @@ import React, { useRef } from 'react'
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger"
-import { CustomEase } from 'gsap/dist/CustomEase';
 
-gsap.registerPlugin(useGSAP, ScrollTrigger, CustomEase);
+gsap.registerPlugin(useGSAP, ScrollTrigger);
 
 
 const photos = [
-  "/gallery/1.png",
-  "/gallery/2.png",
-  "/gallery/3.png",
-  "/gallery/4.png",
-  "/gallery/5.png",
-  "/gallery/6.png",
-  "/gallery/7.png",
-  "/gallery/8.png",
-  "/gallery/9.png",
-  "/gallery/10.png",
-  "/gallery/11.png",
-  "/gallery/12.png",
-  "/gallery/13.png",
-  "/gallery/14.png",
-  "/gallery/15.png",
-  "/gallery/16.png",
-  "/gallery/17.png",
-  "/gallery/18.png",
-  "/gallery/19.png",
-  "/gallery/20.png",
-  "/gallery/21.png",
-  "/gallery/22.png",
-  "/gallery/23.png",
-  "/gallery/24.png",
-  "/gallery/25.png",
+  "/gallery/1.webp",
+  "/gallery/2.webp",
+  "/gallery/3.webp",
+  "/gallery/4.webp",
+  "/gallery/5.webp",
+  "/gallery/6.webp",
+  "/gallery/7.webp",
+  "/gallery/8.webp",
+  "/gallery/9.webp",
+  "/gallery/10.webp",
+  "/gallery/11.webp",
+  "/gallery/12.webp",
+  "/gallery/13.webp",
+  "/gallery/14.webp",
+  "/gallery/15.webp",
+  "/gallery/16.webp",
+  "/gallery/17.webp",
+  "/gallery/18.webp",
+  "/gallery/19.webp",
+  "/gallery/20.webp",
+  "/gallery/21.webp",
+  "/gallery/22.webp",
+  "/gallery/23.webp",
+  "/gallery/24.webp",
+  "/gallery/25.webp",
 ];
 
 function Gallery() {
@@ -79,8 +78,8 @@ function Gallery() {
     <div ref={container} className='w-full relative border-greyBorder border-t grid grid-cols-1 grid-rows-4 sm:grid-rows-1 sm:grid-cols-5 h-[80vh] sm:h-screen overflow-x-hidden'>
       <div className='absolute left-[50%] -translate-x-[50%] sm:hidden w-5/7 border-greyBorder border-r border-l h-full'></div>
       <div className='relative sm:bg-background z-[100] h-full border-r -mr-[1px] row-span-1 border-greyBorder border-b sm:border-b-transparent'>
-        <h2 className='scrollAnimatedText absolute text-3xl top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%]'>Gallery</h2>
-        <img src='heading-outline.svg' className='px-2 scrollAnimatedText absolute top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%]' />
+        <h2 className='scrollAnimatedText absolute text-2xl sm:text-xl xl:text-3xl top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%]'>Gallery</h2>
+        <img src='heading-outline.svg' alt="Outline for Header" height="auto" width="auto" loading="lazy" className='px-2 scrollAnimatedText absolute top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%]' />
       </div>
       <div className='relative sm:col-span-3 border-greyBorder sm:border-l sm:border-r grid grid-cols-2 row-span-3'>
         <div className='border-greyBorder sm:border-r'></div>
@@ -88,7 +87,7 @@ function Gallery() {
           <ul className='flex h-full gap-x-3 infinite-scroll-gallery border-greyBorder border-t border-b'>
             {[...photos, ...photos].map((photo, ind) => (
               <li key={ind} className='h-full w-[80vw] sm:w-[35vw] grid place-items-center transition-all duration-1000'>
-                <img src={photo} className='h-full w-full aspect-video object-cover object-top' />
+                <img loading="lazy" src={photo} alt="Picture from a previous edition of Srijan" height="auto" width="auto" className='h-full w-full aspect-video object-cover object-top' />
               </li>
             ))}
           </ul>

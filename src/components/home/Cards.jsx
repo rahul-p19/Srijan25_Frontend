@@ -10,23 +10,23 @@ function Card({ card }) {
   return <>
     {
       live ? <a href={card.link
-      } className='flex relative flex-col items-center gap-y-2 w-4/5 sm:w-full h-full cardContainer' >
+      } className='flex relative flex-col items-center gap-y-2 w-[75vw] sm:w-full aspect-square h-auto cardContainer' >
         < div className='bg-gradient-to-b from-red via-lavender to-white p-0.5 overflow-hidden aspect-square h-full w-full cardDiv' >
           <div className='h-full w-full overflow-hidden'>
-            <img src={card.image} className='object-cover aspect-square h-full w-full bg-background p-2 transition-all duration-500 cardImage' />
+            <img src={card.image} alt={card.text} height="auto" width="auto" className='object-cover aspect-square h-full w-full bg-background p-2 transition-all duration-500 cardImage' />
           </div>
         </div >
         <div className='opacity-100 sm:opacity-0 transition-opacity duration-500 hover:opacity-100 absolute grid place-items-center bottom-[2px] left-1 sm:left-0.5 right-1 sm:right-0.5 bg-background/90 py-6 text-xl cardText'>
           <h2>{card.text}</h2>
         </div>
       </a >
-        : <div onClick={notify} className='flex relative flex-col items-center gap-y-2 w-4/5 sm:w-full h-full cardContainer'>
+        : <div onClick={notify} className='flex relative flex-col items-center gap-y-2 w-[75vw] sm:w-full h-auto cardContainer'>
           < div className='bg-gradient-to-b from-red via-lavender to-white p-0.5 overflow-hidden aspect-square h-full w-full cardDiv' >
             <div className='h-full w-full overflow-hidden'>
-              <img src={card.image} className='object-cover aspect-square h-full w-full bg-background p-2 transition-all duration-500 cardImage' />
+              <img src={card.image} alt={card.text} height="auto" width="auto" className='object-cover aspect-square h-full w-full bg-background p-2 transition-all duration-500 cardImage' />
             </div>
           </div >
-          <div className='opacity-100 sm:opacity-0 transition-opacity duration-500 hover:opacity-100 absolute grid place-items-center bottom-[2px] left-1 sm:left-0.5 right-1 sm:right-0.5 bg-background/90 py-6 text-xl cardText'>
+          <div className='opacity-100 sm:opacity-0 transition-opacity duration-500 hover:opacity-100 absolute grid place-items-center bottom-[2px] left-1 sm:left-0.5 right-1 sm:right-0.5 bg-background/90 py-6 text-xl text-center cardText'>
             <h2>{card.text}</h2>
           </div>
         </div >
@@ -46,8 +46,8 @@ function Cards() {
     {
       image: "/cards/workshop.jpg",
       text: "Workshop",
-      link: "https://docs.google.com/forms/d/e/1FAIpQLScaGsa7rJHbWpdAjYpkRlDERtwvnZzR-1ocx3HIQi03S4GxUw/viewform",
-      live: false
+      link: "/workshop",
+      live: true
     },
     {
       image: "/cards/campus-ambassadors.jpg",

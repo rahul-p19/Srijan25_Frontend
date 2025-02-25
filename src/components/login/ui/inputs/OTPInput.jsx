@@ -66,7 +66,7 @@ const OTPInput = ({ email, length = 6, onVerifySuccess }) => {
             const verifyResponse = await authController.verifyEmail(email, otp.join(''))
 
             if (verifyResponse.data.success) {
-              navigate('/', { state: { formData } });
+              navigate('/dashboard', { state: { formData } });
             } else {
                 console.error('OTP verification failed:', verifyResponse.data.message);
                 setErrorMessage('Incorrect OTP. Please try again.');

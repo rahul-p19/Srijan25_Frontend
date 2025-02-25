@@ -3,11 +3,11 @@ import Model from "./SrijanModel";
 
 function ModelFallback() {
   return <>
-    <img src='/mascot.svg' className='absolute z-[100] top-[32%] sm:top-[20%] left-[50%] -translate-x-[50%] h-3/4' />
+    <img src='/srijan-mascot_enhanced.webp' alt="Fallback for 3D mascot" width="auto" height="auto" className='absolute z-[100] top-[32%] sm:top-[20%] left-[50%] -translate-x-[50%] h-3/4' />
   </>
 }
 
-function MascotAnimation({scale=4, wave=true}) {
+function MascotAnimation({ scale = 4, wave = true }) {
 
   return (
     <Canvas className="h-full w-full" fallback={<ModelFallback />}>
