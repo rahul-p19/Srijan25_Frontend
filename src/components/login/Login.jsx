@@ -160,7 +160,7 @@ const Login = ({ user }) => {
           }));
         }
       } else {
-        setMessage("Error registering user. Try again.");
+        setMessage("Error logging the user in. Try again.");
       }
     } finally {
       // Set loading state to false once the request is complete (success or error)
