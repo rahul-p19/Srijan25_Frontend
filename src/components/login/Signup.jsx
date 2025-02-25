@@ -60,7 +60,7 @@ const Signup = ({ user }) => {
 
   useEffect(() => {
     if (user !== "") {
-      navigate("/");
+      navigate("/dashboard");
       return;
     }
 
@@ -101,7 +101,7 @@ const Signup = ({ user }) => {
 
     localStorage.setItem("sid", sid.id);
     localStorage.setItem("providerID", sid.providerId[0].providerUserId);
-    navigate("/");
+    navigate("/dashboard");
   };
 
   const onFailLogin = function (error) {
