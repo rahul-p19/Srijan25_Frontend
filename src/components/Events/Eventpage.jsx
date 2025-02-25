@@ -224,9 +224,9 @@ const GridLines = () => {
   return (
     <div className="absolute top-0 left-0 w-full h-full pointer-events-none">
       {/* Vertical Lines */}
-      <div className="absolute top-0 left-[20%] w-[1px] h-full bg-white"></div>
-      <div className="absolute top-0 left-[50%] w-[1px] h-full bg-white"></div>
-      <div className="absolute top-0 left-[80%] w-[1px] h-full bg-white"></div>
+      <div className="absolute top-0 left-[20%] w-[0.1px] h-full bg-white"></div>
+      <div className="absolute top-0 left-[50%] w-[0.1px] h-full bg-white"></div>
+      <div className="absolute top-0 left-[80%] w-[0.1px] h-full bg-white"></div>
     </div>
   );
 };
@@ -313,7 +313,7 @@ const Events = () => {
       <Navbar />
 
       {/* Relative container for background and grid lines */}
-      <div className="relative bg-gradient-to-r from-gray-800 via-gray-900 to-black text-white min-h-screen py-2 px-2">
+      <div className="relative bg-gradient-to-r from-background  to-background text-white min-h-screen py-2 px-2">
         <GridLines />
         {/* Content container with higher z-index */}
         <div className="relative z-10">
