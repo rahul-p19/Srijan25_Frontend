@@ -3,10 +3,11 @@ import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
 import toast from "react-hot-toast";
 import { useNavigate } from 'react-router-dom';
-
+import { useLocation } from 'react-router-dom';
 const notify = () => toast("Coming soon!");
 
 function Navbar() {
+  
   const navigate = useNavigate()
 
   const [navbarOpen, setNavbarOpen] = useState(false);
