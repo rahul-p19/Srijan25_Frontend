@@ -214,19 +214,21 @@ const Signup = () => {
                             />
                             </form>
                         </div>
-
-                        {imageSrc && (<div className="hidden lg:flex mt-10 w-1/2 flex-col items-center robot-container">
-                            <img
-                                src={imageSrc} 
-                                alt="Robot mascot"
-                                className="w-98 h-98 pt-10 object-contain transition-all duration-900"
-                            />
-                        </div>)}
                         
-                        <div className={`hidden lg:block ${imageSrc ? "lg:hidden" : ""}`}>
-                            <MascotAnimation scale={5} wave={false} />
-                        </div>
+                        <div className="w-full lg:w-1/2 flex flex-col items-center">
 
+                            {imageSrc && (<div className="hidden lg:flex mt-10 w-1/2 flex-col items-center robot-container">
+                                <img
+                                    src={imageSrc} 
+                                    alt="Robot mascot"
+                                    className="w-98 h-98 pt-10 object-contain transition-all duration-900"
+                                />
+                            </div>)}
+                            
+                            <div className={`w-full h-full hidden  ${imageSrc ? "hidden" : "lg:block"}`}>
+                                <MascotAnimation scale={4.8} wave={false} />
+                            </div>
+                        </div>
                         
                         <div className="w-full mt-4">
                         <TextInput 

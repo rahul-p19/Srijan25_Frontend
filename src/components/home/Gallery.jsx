@@ -3,9 +3,8 @@ import React, { useRef } from 'react'
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger"
-import { CustomEase } from 'gsap/dist/CustomEase';
 
-gsap.registerPlugin(useGSAP, ScrollTrigger, CustomEase);
+gsap.registerPlugin(useGSAP, ScrollTrigger);
 
 
 const photos = [
@@ -80,7 +79,7 @@ function Gallery() {
       <div className='absolute left-[50%] -translate-x-[50%] sm:hidden w-5/7 border-greyBorder border-r border-l h-full'></div>
       <div className='relative sm:bg-background z-[100] h-full border-r -mr-[1px] row-span-1 border-greyBorder border-b sm:border-b-transparent'>
         <h2 className='scrollAnimatedText absolute text-2xl sm:text-xl xl:text-3xl top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%]'>Gallery</h2>
-        <img src='heading-outline.svg' loading="lazy" className='px-2 scrollAnimatedText absolute top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%]' />
+        <img src='heading-outline.svg' alt="Outline for Header" height="auto" width="auto" loading="lazy" className='px-2 scrollAnimatedText absolute top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%]' />
       </div>
       <div className='relative sm:col-span-3 border-greyBorder sm:border-l sm:border-r grid grid-cols-2 row-span-3'>
         <div className='border-greyBorder sm:border-r'></div>
@@ -88,7 +87,7 @@ function Gallery() {
           <ul className='flex h-full gap-x-3 infinite-scroll-gallery border-greyBorder border-t border-b'>
             {[...photos, ...photos].map((photo, ind) => (
               <li key={ind} className='h-full w-[80vw] sm:w-[35vw] grid place-items-center transition-all duration-1000'>
-                <img loading="lazy" src={photo} className='h-full w-full aspect-video object-cover object-top' />
+                <img loading="lazy" src={photo} alt="Picture from a previous edition of Srijan" height="auto" width="auto" className='h-full w-full aspect-video object-cover object-top' />
               </li>
             ))}
           </ul>

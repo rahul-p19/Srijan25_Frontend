@@ -101,16 +101,19 @@ const ResetPassword = () => {
                                 </div>
                             </form>
                         </div>
-                        {imageSrc && (<div className="hidden lg:flex w-1/2 flex-col items-center robot-container">
-                            <img
-                                src={imageSrc} 
-                                alt="Robot mascot"
-                                className="w-56 h-56 mt-4 object-contain transition-all duration-900"
-                            />
-                        </div>)}
-                        
-                        <div className={`hidden lg:block ${imageSrc ? "lg:hidden" : ""}`}>
-                            <MascotAnimation scale={5.5} wave={false} />
+                        <div className="w-full lg:w-1/2 flex flex-col items-center">
+
+                            {imageSrc && (<div className="hidden lg:flex w-1/2 flex-col items-center robot-container">
+                                <img
+                                    src={imageSrc} 
+                                    alt="Robot mascot"
+                                    className="w-56 h-56 object-contain transition-all duration-900"
+                                />
+                            </div>)}
+                            
+                            <div className={`w-full h-full hidden  ${imageSrc ? "hidden" : "lg:block"}`}>
+                                <MascotAnimation scale={5.5} wave={false} />
+                            </div>
                         </div>
                         {success && <h1 className="text-bold w-1/2 justify-center">Password Reset succesfully. Redirecting to Login...</h1>}
                     </div>

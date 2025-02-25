@@ -1,13 +1,13 @@
 import React, { useRef, useEffect } from 'react'
 import { useGLTF, useAnimations } from '@react-three/drei'
 
-export default function Model({ wave = true, ...props })  {
+export default function Model({ wave = true, ...props }) {
   const group = useRef()
   const { nodes, materials, animations } = useGLTF('/mascot/Srijan_2025_mascot_pose-updated.glb')
   const { actions } = useAnimations(animations, group)
 
   useEffect(() => {
-    if(wave){
+    if (wave) {
       actions['Armature.001|mixamo.com|Layer0.002'].reset().fadeIn(.5).setDuration(2.7).play();
       setTimeout(() => {
         actions['Armature.001|mixamo.com|Layer0.002'].fadeOut(0.5).halt(0.5);
