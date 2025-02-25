@@ -845,7 +845,7 @@ import "./Event.css";
 import { useWindowSize } from "react-use";
 import { Button } from "@mui/material";
 import toast, { Toaster } from "react-hot-toast";
-
+import Navbar from "../../Navbar"
 const AllEvents = () => {
   const { width, height } = useWindowSize();
   const { category, eventID } = useParams();
@@ -964,6 +964,9 @@ const AllEvents = () => {
   const notice = () => toast.success("Added to Wishlist successfully");
 
   return (
+    <>
+    <div className="font-sometypeMono">
+     <Navbar/> </div>
     <div
       ref={containerRef}
       className="relative bg-black text-white p-4 md:p-6 min-h-screen font-mono overflow-x-hidden"
@@ -1230,6 +1233,7 @@ const AllEvents = () => {
       {/* React Hot Toast Toaster */}
       <Toaster />
     </div>
+    </>
   );
 };
 

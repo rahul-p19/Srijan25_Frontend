@@ -310,6 +310,7 @@ const Events = () => {
 
   return (
     <>
+        <div className="font-sometypeMono">
       <Navbar />
 
       {/* Relative container for background and grid lines */}
@@ -399,7 +400,9 @@ const Events = () => {
       </div>
       {/* <Snowfall snowflakeCount={200} color="red" /> */}
       <Footer />
+      </div>
     </>
+    
   );
 };
 
