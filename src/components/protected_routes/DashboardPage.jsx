@@ -88,7 +88,7 @@ export const DashboardPage = ({ userID, logout }) => {
 
   useEffect(() => {
     const sid = localStorage.getItem("sid");
-    const providerID = JSON.parse(localStorage.getItem("providerID"));
+    const providerID = localStorage.getItem("providerID");
     getUserById(sid, providerID).then((r) => {
       setUser(r.data);
     });

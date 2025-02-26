@@ -1,0 +1,104 @@
+[
+  {
+    "eventID": "pass_the_baton",
+    "eventName": "Pass the baton",
+    "eventDate": {
+      "prelims": ["TBD"],
+      "finals": "TBD"
+    },
+    "eventType": "coding",
+    "eventHashtags": ["hackathon", "machinelearning", "ai", "openaimer"],
+    "registrationOpen": false,
+    "eventCoordinators": [
+      "Irfan Habeeb Gazi [ 9007130066 ]",
+      "Syamantak Sengupta [ 6290457904]",
+      "Soumyadipto Pal [ 8100145170 ]"
+    ],
+    "prize": ["1st : TBD     ", "2nd : TBD     ", "3rd : TBD "],
+    "minMembers": 1,
+    "maxMembers": 3,
+    "eventPoster": "/src/assets/icons/ptb.png",
+    "registrationType": "Srijan'24 Website",
+    "eventShortDescription": "Embark on the ML adventure in 'OpenAImer'! Unleash your algorithms, analyse data, and spark innovation!",
+    "eventDescription": [
+      "A team-based competitive programming contest, with a unique twist where in each team member gets a shot at solving the same problem, relying only on clues left behind by the previous solver. It's a refreshing take on the traditional programming competition, challenging your algorithmic prowess, quick thinking and teamwork capabilities."
+    ],
+    "eventRules": {
+      "Online Preliminary Round ": [
+        "For Prelims:- 1. All participants must form a team on Codeforces and participate under the same team for the contest. A team leader must provide the Codeforces account handle for each member during the registration for the contest, and the team formed should consist of the same accounts.\n\n  2. All teams must submit their own solutions for each problem. Any team found guilty of plagiarism will face disqualification.\n\n       3. There will be a 20-minute time penalty for each wrong submission. All three team members can make submissions for the problems in any order, but only the first correct submission for a problem will be considered.",
+        "For Finals:-\n         1. Participants can only use the online IDE on Hackerrank platform, while solving the problems. Changing to another tab or window during the contest is strictly prohibited.\n2. Team members will be seated away from each other at their own desktops, and will not be able to directly communicate with each other during the contest (except for the bonus part in the last 30 mins). They can only view the code submissions made by the previous team member, for each problem. It is encouraged to leave comments in your code, so that you can share your approach/intended solution more effectively with the next team member.\n3. During the bonus part at the last 30 mins, team members will be seated together and will be assigned a single desktop. The team can communicate and solve the problems together during this part.\n4. There will be no time penalty for wrong submissions, and only the first correct submission for a problem, made by any of the three team members, will be considered."
+      ]
+    },
+
+    "eventFormat": "Event Format:-\nThe event will consist of an online preliminary round and an on-site final round.\nThe prelims will be conducted on Codeforces and this will be an ICPC-style contest consisting of 6-8 problems, which must be solved in a 2 hour time frame.\nThe top 20-25 teams from the prelims will qualify to the finals.\nThe final round will be hosted on Hackerrank and will be conducted on-site. Each of the three team members will be assigned a separate desktop. The duration of this contest will be 2 hours.\nFor the final round, the entire problem set will be divided into three parts and each team member will get exactly 30 minutes to work on each part, alternately. For example, in the first 30 minutes the three team members will be solving parts A, B and C respectively, in the next 30 minutes they will be solving parts C, A, B respectively, and so forth. Each part will consist of exactly 2 problems.\nAdditionally, a bonus part consisting of 1-2 problems will be available in the last 30 minutes, and unlike previous parts, all 3 teammates can communicate and work together for these problems.\nThus, three parts of 30 minutes each and one bonus part of 30 minutes for a total of 2 hours.",
+    "category": "coding"
+  },
+  {
+    "eventID": "h42",
+    "eventName": "H42",
+    "eventDate": {
+      "prelims": [" 18th March"],
+      "finals": "22nd March"
+    },
+    "eventType": "coding",
+    "eventHashtags": ["hackathon", "machinelearning", "ai", "openaimer"],
+    "registrationOpen": false,
+    "eventCoordinators": [
+      "Anupam Ghosh  [ 7548005727 ]",
+      "Hrishikesh Majumder  [ 8017287092]",
+      "Vikash Sangai [ 9432140409]"
+    ],
+    "prize": ["1st : TBH     ", "2nd : TBH     ", "3rd : TBH "],
+    "minMembers": 1,
+    "maxMembers": 3,
+    "eventPoster": "/src/assets/icons/h42.png",
+    "registrationType": "Srijan'24 Website",
+    "eventShortDescription": "Embark on the ML adventure in 'OpenAImer'! Unleash your algorithms, analyse data, and spark innovation!",
+    "eventDescription": [
+      "Do you enjoy coding but fail to realize its significance in the real world? Do you get bored with the mundane problems you get to solve? Do you yearn to do more? Do you want to rack your head and find the best suited algorithm? Do you have the patience to do so? H42, brought to you by Srijan, Jadavpur University, offers a splendid chance to prove your coding skills and end the boredom. Come, be a part of this coding event and code to glory."
+    ],
+
+    "eventRules": [
+      "This is a team event. Each team comprises 1-3 members. Inter-college teams are also allowed.",
+      "There will be 2 rounds. Both the rounds will have 4 programming questions.",
+      "Only one prelims will be conducted which will be in Online mode.",
+      "The timing of the event will be notified later.",
+      "Top 20 teams from the preliminary round will make it to the finals.",
+      "The decisions of Code Club Officials are final and binding."
+    ],
+    "category": "coding"
+  },
+  {
+    "eventID": "biznez_plan ",
+    "eventName": "Biznez Plan ",
+    "eventDate": {
+      "prelims": [" 18th March"],
+      "finals": " 21st March,2025"
+    },
+    "eventType": "business",
+    "eventHashtags": ["hackathon", "machinelearning", "ai", "openaimer"],
+    "registrationOpen": false,
+    "eventCoordinators": [
+      "Aishani Roy [8653121414]",
+      "Aditya Anand  [8961313886]",
+      "Apurba Nandi  [ 9749237190]"
+    ],
+    "prize": ["1st : 2000    ", "2nd : 1000    ", "3rd : 500"],
+    "minMembers": 1,
+    "maxMembers": 3,
+    "eventPoster": "/src/assets/icons/biznezplan.png",
+    "registrationType": "Srijan'24 Website",
+    "eventShortDescription": "Embark on the ML adventure in 'OpenAImer'! Unleash your algorithms, analyse data, and spark innovation!",
+    "eventDescription": [
+      "The best way to predict the future is to create it.”Are you ready to unleash your entrepreneurial spirit? Here's your chance! Join Biznez Plan – the platform where brilliant minds converge, brainstorm, and transform innovative ideas into industry-ready solutions. Pitch your vision, and watch it come to life in the real world! Now's the time to make that passion your reality. Take the first step toward turning your vision into a thriving business!"
+    ],
+
+    "eventRules": [
+      "Cross-College Teams: Teams can comprise members from different colleges or universities, promoting collaboration and diverse perspectives.",
+      "Original Ideas: Participants are encouraged to develop and present original business ideas that demonstrate creativity, feasibility, and potential for success.",
+      "Pre-registration: Each participating team must register in advance to secure their spot in the competition.",
+      "Fair Play: The use of unfair means or plagiarism in any form will result in immediate disqualification."
+    ],
+    "category": "business"
+  }
+]

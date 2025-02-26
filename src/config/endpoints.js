@@ -11,6 +11,7 @@ export const uri = {
     FORGOT_PASSWORD: env.API_SERVER + "/forgotPassword",
     RESEND_OTP: env.API_SERVER + "/resendOtp",
     LOGOUT: env.API_SERVER + "/logout",
+    ADD_REFERRAL: env.API_SERVER + "/addReferral",
   },
   resources: {
     USERS: env.API_SERVER + "/users",

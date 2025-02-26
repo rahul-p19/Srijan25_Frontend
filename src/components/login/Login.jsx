@@ -49,7 +49,7 @@ const Login = ({ user }) => {
 
   useEffect(() => {
     if (user !== "") {
-      navigate("/");
+      navigate("/dashboard");
       return;
     }
 
@@ -89,8 +89,12 @@ const Login = ({ user }) => {
     }
 
     localStorage.setItem("sid", sid.id);
-    localStorage.setItem("providerID", sid.providerId);
-    navigate("/");
+    localStorage.setItem("providerID", sid.providerId[0].providerUserId);
+    if(sid.isNewUser == true){
+      navigate("/referral", { state: { allowed: true } });
+    }else{
+      navigate("/dashboard");
+    }
   };
 
   const onFailLogin = function (error) {
@@ -142,7 +146,7 @@ const Login = ({ user }) => {
       localStorage.setItem("sid", sid.id);
 
       // Redirect to EmailVerify page with formData (including email)
-      navigate("/", { state: { userData: response.data } });
+      navigate("/dashboard", { state: { userData: response.data } });
     } catch (error) {
       if (error.response && error.response.data.error) {
         const { keyPattern } = error.response.data.error;
@@ -160,7 +164,7 @@ const Login = ({ user }) => {
           }));
         }
       } else {
-        setMessage("Error registering user. Try again.");
+        setMessage("Error logging the user in. Try again.");
       }
     } finally {
       // Set loading state to false once the request is complete (success or error)
