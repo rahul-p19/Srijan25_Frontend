@@ -23,11 +23,11 @@ const dataFetcher = async (setLoading, setQrLink, setShowOrderForm )=>{
 }
 
 function OrderForm({setShowOrderForm,size , color}){
-  const [loading, setLoading] = useState(true);
-  const [qrLink, setQrLink] = useState("");
-  useEffect(()=>{
-    dataFetcher(setLoading,setQrLink, setShowOrderForm);
-  },[])
+  const [loading, setLoading] = useState(false); // change to true if loading image dynamically
+  const [qrLink, setQrLink] = useState("/merch-early-bird-qr.jpg");
+  // useEffect(()=>{
+  //   dataFetcher(setLoading,setQrLink, setShowOrderForm);
+  // },[])
 
   const handleSubmitOrder = async (e) => {
     e.preventDefault();
