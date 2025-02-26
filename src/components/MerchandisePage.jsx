@@ -35,7 +35,7 @@ const priceFetcher = async (setPrice) => {
 }
 
 
-const sizes = ['S', 'M', 'L', 'XL', 'XXL'];
+const sizes = ['XS','S', 'M', 'L', 'XL', 'XXL','XXXL'];
 const colors = ['White', 'Black'];
 
 export default function MerchandisePage() {
