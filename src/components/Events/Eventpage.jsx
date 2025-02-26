@@ -160,16 +160,25 @@
 
 // export default Events;
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, Suspense } from "react";
 import { ReactTyped } from "react-typed";
 import Navbar from "../Navbar";
 //import Snowfall from "react-snowfall";
 import { useWindowSize } from "react-use";
 //import Confetti from "react-confetti";
 import Footer from "../Footer";
+import PageReveal from "../PageReveal";
 import "./styles.css";
 import eventData from "../Events/allevents/data.json"; // Adjust path if necessary
-
+function Loading() {
+  return <div className="h-screen w-screen bg-background fixed z-[300]">
+    <img src="/fetsu-presents-srijan25.svg" alt="Srijan 25 Logo" height="auto" width="auto" className="absolute top-[30%] left-[51%] -translate-[50%] h-36 w-auto" />
+    <div className="absolute top-[75%] left-[50%] -translate-[50%] p-3 animate-spin bg-gradient-to-bl from-red via-purple to-lavender h-24 w-24 aspect-square rounded-full">
+      <img src="/techno-management-fest.webp" alt="The Annual Techno-Management Fest of Jadavpur University" height="auto" width="auto" className="text-center absolute top-[52.5%] left-[50%] -translate-[50%] border border-white p-2 w-2/3 sm:w-1/3" />
+      <div className="rounded-full h-full w-full bg-background"></div>
+    </div>
+  </div>
+}
 // FancyButton component for animated buttons
 const FancyButton = ({ active, onClick, children }) => {
   const [ripples, setRipples] = useState([]);
@@ -308,10 +317,13 @@ const Events = () => {
     window.location.href = `/events/${eventData.category}/${eventData.eventID}`;
   };
 
+  
   return (
     <>
+       <Suspense fallback={<Loading />}>
         <div className="font-sometypeMono">
       <Navbar />
+      <PageReveal/>
 
       {/* Relative container for background and grid lines */}
       <div className="relative bg-gradient-to-r from-background  to-background text-white min-h-screen py-2 px-2 ">
@@ -401,6 +413,7 @@ const Events = () => {
       {/* <Snowfall snowflakeCount={200} color="red" /> */}
       <Footer />
       </div>
+      </Suspense>
     </>
     
   );
