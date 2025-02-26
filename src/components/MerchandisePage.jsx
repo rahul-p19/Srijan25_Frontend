@@ -7,7 +7,8 @@ import Navbar from './Navbar';
 import Footer from './Footer';
 import GridLines from './GridLines';
 import QRCodeHolder from './QRCodeHolder';
-
+import OrderForm from './merchandise/OrderForm'
+import SrijanMerchandiseAnnouncement from './merchandise/Decor'
 
 const sizes = ['S', 'M', 'L', 'XL', 'XXL'];
 const colors = ['White', 'Black'];
@@ -17,8 +18,7 @@ export default function MerchandisePage() {
   const [selectedColor, setSelectedColor] = useState('Black');
   const [showOrderForm, setShowOrderForm] = useState(false);
   const contacts = [
-    { id: 1, upi: "user1@upi" },
-    { id: 2, upi: "user2@upi" },
+    { id: 1, name: "SK Mujtahid Hossain",dept: "Power Eng (UG3)",number :"9832944933"},
   ];
   const qrValue = "upi://pay?pa=user@upi&pn=User&mc=123456&tid=9876543210";
 
@@ -183,8 +183,12 @@ export default function MerchandisePage() {
             <div className="flex justify-center md:justify-start space-x-4 md:flex-row">
               {contacts.map((contact) => (
                 <div key={contact.id} className="flex flex-col items-center">
-                  <div className="w-16 h-16 bg-gray-400 rounded-md"></div>
-                  <span className="text-white text-sm mt-2">{contact.upi}</span>
+                {
+                  //<div className="w-16 h-16 bg-gray-400 rounded-md"></div>
+                  }
+                  <span className="text-white text-sm mt-2">{contact.name}</span>
+                  <span className="text-white text-sm mt-2">{contact.dept}</span>
+                  <span className="text-white text-sm mt-2">{contact.number}</span>
                 </div>
               ))}
             </div>
@@ -204,114 +208,14 @@ export default function MerchandisePage() {
           </div>
           {/* Text - centered on both mobile and desktop */}
           <p className="text-sm sm:text-base text-white mt-4 sm:mt-12 text-center max-w-3xl mx-auto px-4">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-            veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-            commodo consequat
+    <SrijanMerchandiseAnnouncement/>
           </p>
         </section>
       </div>
 
       {/* Order Form Overlay - Shows on same page with blurred background */}
       {
-        showOrderForm && (
-          <div className="fixed inset-0 bg-opacity-60 backdrop-blur-sm flex justify-center items-center z-50 p-4">
-            <div className="border border-gray-500 bg-background rounded-md w-full max-w-md mx-4 max-h-[80vh] mt-16 flex flex-col">
-              <div className="p-6 overflow-y-auto">
-                <h2 className="text-xl font-bold mb-4 text-center">Complete Your Order</h2>
-
-                <form onSubmit={handleSubmitOrder}>
-                  <div className="mb-4">
-                    <label className="block text-sm font-medium mb-2" htmlFor="name">
-                      Full Name
-                    </label>
-                    <input
-                      type="text"
-                      id="name"
-                      className="w-full p-2 bg-[#1c1c1c] border border-gray-500 rounded focus:outline-none focus:ring-1 focus:ring-white"
-                      required
-                    />
-                  </div>
-
-                  <div className="mb-4">
-                    <label className="block text-sm font-medium mb-2" htmlFor="email">
-                      Email Address
-                    </label>
-                    <input
-                      type="email"
-                      id="email"
-                      className="w-full p-2 bg-[#1c1c1c] border border-gray-500 rounded focus:outline-none focus:ring-1 focus:ring-white"
-                      required
-                    />
-                  </div>
-
-                  <div className="mb-4">
-                    <label className="block text-sm font-medium mb-2" htmlFor="nameonshirt">
-                      Name on Shirt(Max 10 Chars)
-                    </label>
-                    <input
-                      type="text"
-                      id="nameonshirt"
-                      className="w-full p-2 bg-[#1c1c1c] border border-gray-500 rounded focus:outline-none focus:ring-1 focus:ring-white"
-                      maxLength={10}
-                      required
-                    />
-                  </div>
-
-                  <div className="mb-4">
-                    <label className="block text-sm font-medium mb-2" htmlFor="qr">
-                      QR code
-                    </label>
-
-
-                    <img
-                      src="./qr.jpeg"
-                      className="block w-full text-sm text-gray-100
-                         file:mr-4 file:py-2 file:px-4
-                         file:rounded-lg file:border-0
-                         file:text-sm file:font-semibold
-                         file:bg-green-100 file:text-white
-                         hover:file:bg-green-200"
-                    />
-                  </div>
-
-                  {/* <div className="mb-6"> */}
-                  {/*   <label className="block text-sm font-medium mb-2" htmlFor="paymentProof"> */}
-                  {/*     Payment Proof */}
-                  {/*   </label> */}
-                  {/*   <input */}
-                  {/*     type="file" */}
-                  {/*     accept="image/*" */}
-                  {/*     id="paymentProof" */}
-                  {/*     className="block w-full text-sm text-gray-400 */}
-                  {/*          file:mr-4 file:py-2 file:px-4 */}
-                  {/*          file:rounded-lg file:border-0 */}
-                  {/*          file:text-sm file:font-semibold */}
-                  {/*          file:bg-green-500 file:text-white */}
-                  {/*          hover:file:bg-green-600" */}
-                  {/*   /> */}
-                  {/* </div> */}
-
-                  <div className="flex justify-between">
-                    <button
-                      type="button"
-                      className="px-4 py-2 border border-gray-500 rounded hover:bg-gray-700"
-                      onClick={handleCloseForm}
-                    >
-                      Cancel
-                    </button>
-                    <button
-                      type="submit"
-                      className="px-4 py-2 bg-[#1c1c1c] border border-gray-500 rounded hover:bg-gray-700"
-                    >
-                      Submit Order
-                    </button>
-                  </div>
-                </form>
-              </div>
-            </div>
-          </div>
-        )
+        showOrderForm &&  <OrderForm setShowOrderForm={setShowOrderForm}></OrderForm>
       }
 
 
