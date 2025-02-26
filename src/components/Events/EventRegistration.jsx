@@ -20,6 +20,7 @@ import { env } from "../../config/config";
 import axios from "axios";
 import { useEffect } from "react";
 import data from "./allevents/data.json";
+import MascotAnimation from "../home/MascotAnimation";
 
 // TeamMembers Component for dynamically adding/removing team member email fields
 const TeamMembers = ({ membersEmails, setMembersEmails }) => {
