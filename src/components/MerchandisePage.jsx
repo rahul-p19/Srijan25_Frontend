@@ -53,7 +53,7 @@ export default function MerchandisePage() {
   ];
   const qrValue = "upi://pay?pa=user@upi&pn=User&mc=123456&tid=9876543210";
 
-  const [price, setPrice] = useState(319);
+  const [price, setPrice] = useState(349);
   // useEffect(() => {
   //   priceFetcher(setPrice);
   // }, [])

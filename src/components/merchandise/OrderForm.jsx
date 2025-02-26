@@ -24,7 +24,7 @@ const dataFetcher = async (setLoading, setQrLink, setShowOrderForm )=>{
 
 function OrderForm({setShowOrderForm,size , color}){
   const [loading, setLoading] = useState(false); // change to true if loading image dynamically
-  const [qrLink, setQrLink] = useState("/updatedQR.jpeg");
+  const [qrLink, setQrLink] = useState("/updatedRegularQR.jpeg");
   // useEffect(()=>{
   //   dataFetcher(setLoading,setQrLink, setShowOrderForm);
   // },[])
