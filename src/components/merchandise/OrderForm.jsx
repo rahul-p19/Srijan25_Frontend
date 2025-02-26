@@ -74,10 +74,10 @@ function OrderForm({setShowOrderForm, size , color}){
      const response = await fetch(`${backendUrl}/api/v1/merch/submitImage`, {
         method: "POST",
         body: uploadFormData,
+        credentials: "include"
       });
 
       const responseBody = {size,color};
-      console.log(responseBody);
 
       const updateUserMerch = await fetch(`${backendUrl}/api/v1/users/merchandise`,{
         method: "POST",
