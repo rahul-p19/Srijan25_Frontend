@@ -11,7 +11,7 @@ import EmailVerify from "./components/login/EmailVerify";
 import ResetPassword from "./components/login/ResetPassword";
 import ForgotPassword from "./components/login/ForgotPassword";
 import PageNotFound from "./components/PageNotFound";
-import AllEvents from "./components/Events/allevents/AllinoneEvents";
+import AllEvents from "./components/Events/allevents/AllinoneEvents"
 import { WorkshopPage } from "./components/workshop/WorkshopPage";
 import Loading from "./components/Loading"
 
@@ -34,30 +34,38 @@ function App() {
     await logoutCall();
   };
 
-  const setActiveUser = () => {
-    const sid = localStorage.getItem("sid");
-    setUser(sid ?? "");
-  };
+  useEffect(() => {
+    const token = localStorage.getItem("sid");
+    if (token) verifyToken(token);
+  }, [user]);
 
-  useEffect(setActiveUser, [user]);
+  const verifyToken = async (token) => {
+    const response = await fetch(`${uri.resources.USERS}/${token}`, {
+      credentials: 'include'
+    });
+    if (response.ok) {
+      setUser(token);
+    } else {
+      setUser("");
+      localStorage.removeItem("sid");
+    }
+    setChecking(false);
+  };
 
   return (
     <>
       <Router>
         <Routes>
-          <Route index element={<LandingPage />} />
-          <Route element={<ProtectedRoute accessAllowed={!!user} />}>
+          <Route index element={<LandingPage setUser={setUser} />} />
+          <Route element={checking ? <Loading /> : <ProtectedRoute accessAllowed={!!user} />}>
             <Route
               path="/dashboard"
-              element={<DashboardPage logout={handleLogout} />}
+              element={<DashboardPage userID={user} logout={handleLogout} />}
             />
           </Route>
           <Route path="/events" element={<Eventpage />} />
           <Route path="/events/:category/:eventID" element={<AllEvents />} />
-          <Route
-            path="/events/:category/:eventID/:registration"
-            element={<EventRegistration />}
-          />
+          <Route path="/events/:category/:eventID/:registration" element={<EventRegistration />} />
           <Route>
             {/* <Route path="/merchandise" element={
              <ProtectedRoute checkUserSession={checkUserSession} logout={logout}>
@@ -70,11 +78,11 @@ function App() {
           <Route path="/eventregistration" element={<EventRegistration />} />
           <Route
             path="/signup"
-            element={<Signup user={user} setActiveUser={setActiveUser} />}
+            element={<Signup user={user} setUser={setUser} />}
           />
           <Route
             path="/login"
-            element={<Login user={user} setActiveUser={setActiveUser} />}
+            element={<Login user={user} setUser={setUser} />}
           />
           <Route path="/referral" element={<Referral />} />
           <Route path="/verify" element={<EmailVerify />} />
@@ -89,9 +97,9 @@ function App() {
           duration: 2000,
           style: {
             backgroundColor: "#141414",
-            borderRadius: "6px",
-            fontSize: "16px",
-            padding: "6px",
+            borderRadius: "0px",
+            fontSize: "24px",
+            padding: "12px",
             color: "white",
             borderTop: "1px solid #b60000",
             borderLeft: "1px solid #b60000",
@@ -99,7 +107,13 @@ function App() {
             borderRight: "1px solid #532e8f",
             zIndex: 1005,
             textAlign: "center",
-          },
+            fontFamily: "var(--font-sometypeMono)"
+          }
+        }}
+        containerStyle={{
+          top: "15vh",
+          right: "40vw",
+          left: "40vw",
         }}
       />
     </>
