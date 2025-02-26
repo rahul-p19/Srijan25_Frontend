@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useNavigate } from "react-router-dom";
 import { Button } from '../components/ui/button'
 import { Card } from '../components/ui/card';
 import { CardContent } from '../components/ui/card-content';
@@ -23,7 +24,14 @@ export default function MerchandisePage() {
   const qrValue = "upi://pay?pa=user@upi&pn=User&mc=123456&tid=9876543210";
 
 
+    const navigate = useNavigate();
   const handleOrderClick = () => {
+    const userId = localStorage.getItem("sid");
+    console.log({ userId });
+    if (!userId) {
+      navigate("/signup");
+      // return;
+    }
     setShowOrderForm(true);
   };
 
@@ -215,7 +223,7 @@ export default function MerchandisePage() {
 
       {/* Order Form Overlay - Shows on same page with blurred background */}
       {
-        showOrderForm &&  <OrderForm setShowOrderForm={setShowOrderForm}></OrderForm>
+        showOrderForm &&  <OrderForm setShowOrderForm={setShowOrderForm} size={selectedSize} color={selectedColor}></OrderForm>
       }
 
 

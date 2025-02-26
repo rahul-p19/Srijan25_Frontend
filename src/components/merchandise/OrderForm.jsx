@@ -1,8 +1,11 @@
 import { useState ,useEffect} from 'react';
-const dataFetcher = async (setLoading, setQrLink, setShowOrderForm)=>{
+
+const backendUrl = import.meta.env.VITE_BACKEND_URL;
+
+const dataFetcher = async (setLoading, setQrLink, setShowOrderForm )=>{
   setLoading(true);
   try{
-    const response = await fetch("http://localhost:3080/api/v1/merch/checkDiscount");
+    const response = await fetch(`${backendUrl}/api/V1/merch/checkDiscount`);
     if(response.ok){
       setQrLink("./discountedQR.jpeg")
       setLoading(false);
@@ -18,7 +21,7 @@ const dataFetcher = async (setLoading, setQrLink, setShowOrderForm)=>{
   }
 }
 
-function OrderForm({setShowOrderForm}){
+function OrderForm({setShowOrderForm,size , color}){
   const [loading, setLoading] = useState(true);
   const [qrLink, setQrLink] = useState("");
   useEffect(()=>{
@@ -37,6 +40,8 @@ function OrderForm({setShowOrderForm}){
     const college=formData.get("college");
     const department=formData.get("department");
     const year=formData.get("year");
+    const color=formData.get("color");
+    const size=formData.get("size");
 
     // Validate the input
     if (!nameOnShirt.trim()) {
@@ -59,10 +64,12 @@ function OrderForm({setShowOrderForm}){
       uploadFormData.append("college", college);
       uploadFormData.append("department", department);
       uploadFormData.append("year", year);
+      uploadFormData.append("size", size);
+      uploadFormData.append("color", color);
       console.log(uploadFormData);
 
       // Send the image to your backend API
-     const response = await fetch("http://localhost:3080/api/v1/merch/submitImage", {
+     const response = await fetch(`${backendUrl}/api/v1/merch/submitImage`, {
         method: "POST",
         body: uploadFormData,
       });
@@ -167,6 +174,32 @@ function OrderForm({setShowOrderForm}){
     name="department"
     className="w-full p-2 bg-[#1c1c1c] border border-gray-500 rounded focus:outline-none focus:ring-1 focus:ring-white"
     required
+    />
+    </div>
+
+    <div className="mb-4">
+    <label className="block text-sm font-medium mb-2" htmlFor="name">
+    Size
+    </label>
+    <input
+    type="text"
+    name="size"
+    defaultValue={size}
+    className="w-full p-2 bg-[#1c1c1c] border border-gray-500 rounded focus:outline-none focus:ring-1 focus:ring-white"
+    disabled
+    />
+    </div>
+
+    <div className="mb-4">
+    <label className="block text-sm font-medium mb-2" htmlFor="name">
+    Colour
+    </label>
+    <input
+    type="text"
+    name="color"
+    className="w-full p-2 bg-[#1c1c1c] border border-gray-500 rounded focus:outline-none focus:ring-1 focus:ring-white"
+    disabled
+    defaultValue={color}
     />
     </div>
 
