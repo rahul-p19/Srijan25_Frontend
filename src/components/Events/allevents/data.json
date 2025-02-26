@@ -17,7 +17,7 @@
     "prize": ["1st : TBD     ", "2nd : TBD     ", "3rd : TBD "],
     "minMembers": 1,
     "maxMembers": 3,
-    "eventPoster": "/src/assets/icons/ptb.png",
+    "eventPoster": "ptb.png",
     "registrationType": "Srijan'24 Website",
     "eventShortDescription": "Embark on the ML adventure in 'OpenAImer'! Unleash your algorithms, analyse data, and spark innovation!",
     "eventDescription": [
@@ -51,7 +51,7 @@
     "prize": ["1st : TBH     ", "2nd : TBH     ", "3rd : TBH "],
     "minMembers": 1,
     "maxMembers": 3,
-    "eventPoster": "/src/assets/icons/h42.png",
+    "eventPoster": "h42.png",
     "registrationType": "Srijan'24 Website",
     "eventShortDescription": "Embark on the ML adventure in 'OpenAImer'! Unleash your algorithms, analyse data, and spark innovation!",
     "eventDescription": [
@@ -69,7 +69,7 @@
     "category": "coding"
   },
   {
-    "eventID": "biznez_plan ",
+    "eventID": "biznez_plan",
     "eventName": "Biznez Plan ",
     "eventDate": {
       "prelims": [" 18th March"],
@@ -86,7 +86,7 @@
     "prize": ["1st : 2000    ", "2nd : 1000    ", "3rd : 500"],
     "minMembers": 1,
     "maxMembers": 3,
-    "eventPoster": "/src/assets/icons/biznezplan.png",
+    "eventPoster": "biznezsplan.png",
     "registrationType": "Srijan'24 Website",
     "eventShortDescription": "Embark on the ML adventure in 'OpenAImer'! Unleash your algorithms, analyse data, and spark innovation!",
     "eventDescription": [
