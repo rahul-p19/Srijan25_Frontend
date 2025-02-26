@@ -45,9 +45,12 @@ function Navbar() {
           <div className={`absolute h-[2px] bg-gradient-to-l from-red to-purple bottom-0 ${pathname == "notifications" ? 'w-full' : 'w-0'}`}></div>
         </a>
         */}
-        <a href='/events' className={`relative hidden sm:block w-fit`}>Events
+        {/* <a href='/events' className={`relative hidden sm:block w-fit`}>Events
           <div className={`absolute h-[2px] bg-gradient-to-l from-red to-purple bottom-0 ${pathname == "events" ? 'w-full' : 'w-0'}`}></div>
-        </a>
+        </a> */}
+        <div className={`relative hidden sm:block w-fit`} onClick={notify}>Events
+          <div className={`absolute h-[2px] bg-gradient-to-l from-red to-purple bottom-0 ${pathname == "events" ? 'w-full' : 'w-0'}`}></div>
+        </div>
         <div className={`relative hidden sm:block w-fit cursor-pointer`} onClick={notify}>Notifications
           <div className={`absolute h-[2px] bg-gradient-to-l from-red to-purple bottom-0 ${pathname == "notifications" ? 'w-full' : 'w-0'}`}></div>
         </div>
@@ -81,15 +84,14 @@ function Navbar() {
           <a href='/' className='text-left border-greyBorder/30 border-b w-full py-1'>Home</a>
           <a href='/' className='text-left border-greyBorder/30 border-b w-full py-1'>Notifications</a>
           <a href='/' className='text-left border-greyBorder/30 border-b w-full py-1'>Campus Ambassadors</a>
-          <a href='/' className='text-left border-greyBorder/30 border-b w-full py-1'>Merchandise</a>
           */}
           <a href='/' className='text-left border-greyBorder/30 border-b w-full py-1'>Home</a>
-          <a href='/events' className='text-left border-greyBorder/30 border-b w-full py-1'>Events</a>
-          {/* <div className='text-left border-greyBorder/30 border-b w-full py-1' onClick={notify}>Events</div> */}
+          {/* <a href='/events' className='text-left border-greyBorder/30 border-b w-full py-1'>Events</a> */}
+          <div className='text-left border-greyBorder/30 border-b w-full py-1' onClick={notify}>Events</div>
           <a href='/notifications' className='text-left border-greyBorder/30 border-b w-full py-1' onClick={notify}>Notifications</a>
           <a href='https://docs.google.com/forms/d/e/1FAIpQLSe-zoCeE50FR2dUzauh7wfvHxfHczPwgziqYhRju2zMLH164A/viewform' className='text-left border-greyBorder/30 border-b w-full py-1'>Campus Ambassadors</a>
           <a href='/workshop' className='text-left border-greyBorder/30 border-b w-full py-1'>Workshop</a>
-          <div className='text-left border-greyBorder/30 border-b w-full py-1' onClick={notify}>Merchandise</div>
+          <a href='/' className='text-left border-greyBorder/30 border-b w-full py-1'>Merchandise</a>
           <a href={`${loggedIn ? '/dashboard' : '/login'}`} className='text-left border-greyBorder/30 border-b w-full py-1'>{loggedIn ? 'Dashboard' : 'Login'}</a>
         </div >
       </nav >

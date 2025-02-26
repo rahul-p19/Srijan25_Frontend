@@ -224,9 +224,12 @@ function OrderForm({setShowOrderForm,size , color}){
     }
     </div>
     <div className="mb-6"> 
-    <label className="block text-sm font-medium mb-2" htmlFor="paymentProof"> 
-    Payment Proof 
+    <label className="block text-sm font-medium mb-1" htmlFor="paymentProof"> 
+    Payment Proof
     </label> 
+    <p className='text-xs mb-2'>
+    (The file size should be less than 2MB.)
+    </p>
     <input 
     type="file" 
     accept="image/*" 
