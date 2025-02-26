@@ -19,7 +19,8 @@ import image from "/src/assets/icons/mascot.svg";
 import { env } from "../../config/config";
 import axios from "axios";
 import { useEffect } from "react";
-import MascotAnimation from "../home/MascotAnimation"
+import data from "./allevents/data.json";
+import MascotAnimation from "../home/MascotAnimation";
 
 // TeamMembers Component for dynamically adding/removing team member email fields
 const TeamMembers = ({ membersEmails, setMembersEmails }) => {
@@ -430,6 +431,13 @@ const App = () => {
 
   useEffect(() => {
     fetchParticipationStatusForUseEffect();
+    for (const event of data) {
+      if (event.eventID == eventID) {
+        console.log("Event found");
+        setIsSoloEvent(event.maxMembers == 1);
+        break;
+      }
+    }
   }, []);
 
   useEffect(() => {
@@ -578,7 +586,7 @@ const App = () => {
           >
             REGISTRATION
           </Typography>
-          {participationStatus == "not-participating" && (
+          {participationStatus == "not-participating" && !isSoloEvent && (
             <>
               <TextField
                 fullWidth
@@ -645,6 +653,35 @@ const App = () => {
               </Button>
             </>
           )}
+          {participationStatus == "not-participating" && isSoloEvent && (
+            <div className="flex gap-2 text-white flex-col">
+              Confirming once more before registering for solo event!
+              {/* REGISTER Button */}
+              <Button
+                variant="outlined"
+                onClick={handleRegister}
+                sx={{
+                  "mt": 1.5,
+                  "py": { xs: 1, md: 1.5 },
+                  "color": "white",
+                  "borderColor": "white",
+                  "fontWeight": "bold",
+                  "fontSize": { xs: "0.9rem", md: "0.8rem" },
+                  "bgcolor": "black",
+                  "position": "relative",
+                  "transition": "all 0.3s ease-in-out",
+                  "boxShadow": "inset 0 0 0px rgba(255, 255, 255, 0)",
+                  "&:hover": {
+                    boxShadow: "inset 0 0 10px rgba(255, 255, 255, 0.8)",
+                    bgcolor: "black",
+                    transform: "scale(1.02)",
+                  },
+                }}
+              >
+                REGISTER - Solo
+              </Button>
+            </div>
+          )}
           {participationStatus != "not-participating" && !isSoloEvent && (
             <GroupInfo
               userId={userId}
@@ -652,6 +689,11 @@ const App = () => {
               refresh={refreshGroupInfo}
               setRefresh={setRefreshGroupInfo}
             />
+          )}
+          {participationStatus != "not-participating" && isSoloEvent && (
+            <div className="flex gap-2 text-white flex-col">
+              You are already registered for this event!
+            </div>
           )}
           {/* UNREGISTER Button: Only show if registration is successful */}
           {canUnregisterStatus && (

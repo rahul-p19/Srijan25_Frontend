@@ -35,7 +35,7 @@ const priceFetcher = async (setPrice) => {
 }
 
 
-const sizes = ['S', 'M', 'L', 'XL', 'XXL'];
+const sizes = ['XS','S', 'M', 'L', 'XL', 'XXL','XXXL'];
 const colors = ['White', 'Black'];
 
 export default function MerchandisePage() {
@@ -49,11 +49,11 @@ export default function MerchandisePage() {
     "./tshirt4.png",
   ]
   const contacts = [
-    { id: 1, name: "SK Mujtahid Hossain",dept: "Power Engineering (UG3)",number :"9832944933"},
+    { id: 1, name: "Adipto Ghosh Dastidar",dept: "Civil Engineering (UG4)",number :"6290764395"},
   ];
   const qrValue = "upi://pay?pa=user@upi&pn=User&mc=123456&tid=9876543210";
 
-  const [price, setPrice] = useState(319);
+  const [price, setPrice] = useState(349);
   // useEffect(() => {
   //   priceFetcher(setPrice);
   // }, [])

@@ -55,7 +55,7 @@ const Signup = ({ user }) => {
 
   useEffect(() => {
     if (user !== "") {
-      navigate("/dashboard");
+      navigate("/");
       return;
     }
 
@@ -99,7 +99,7 @@ const Signup = ({ user }) => {
     if(sid.isNewUser == true){
       navigate("/referral", { state: { allowed: true } });
     }else{
-      navigate("/dashboard");
+      navigate("/");
     }
   };
 
