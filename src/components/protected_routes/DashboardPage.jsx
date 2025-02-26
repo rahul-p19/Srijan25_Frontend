@@ -14,6 +14,7 @@ import { PhoneInput, TextInput } from "../login/ui/inputs";
 import { SignUpButton } from "../login/ui/buttons";
 import toast from "react-hot-toast";
 import { usersController } from "../../services/http";
+import { env } from "../../config/config";
 
 const style = {
   position: "absolute",
@@ -29,6 +30,9 @@ const style = {
 
 export const DashboardPage = ({ userID, logout }) => {
   const [user, setUser] = useState(undefined);
+  const [merchStatus, setMerchStatus] = useState("Fetching Order Status..");
+  const [merchColour, setMerchColour] = useState("");
+  const [merchSize, setMerchSize] = useState("");
 
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
@@ -84,6 +88,23 @@ export const DashboardPage = ({ userID, logout }) => {
     }
   };
 
+  const getMerchandise = async () => {
+    try{
+      const res = await fetch(`${env.API_SERVER}/users/get/Merchandise`,{
+        credentials: "include"
+      });
+      const data = await res.json();
+      if(data.success){
+        setMerchStatus(data.merchandise.status);
+        setMerchColour(data.merchandise.color);
+        setMerchSize(data.merchandise.size);
+      }
+      else setMerchStatus("No merchandise orders. If you think this is incorrect, please contact us.");
+      }catch(_err){
+        setMerchStatus("An error occurred while fetching your merch status, please try again later.");
+      }
+  }
+
   // const navigate = useNavigate();
 
   useEffect(() => {
@@ -92,6 +113,7 @@ export const DashboardPage = ({ userID, logout }) => {
     getUserById(sid, providerID).then((r) => {
       setUser(r.data);
     });
+    getMerchandise();
   }, []);
 
   return (
@@ -132,6 +154,9 @@ export const DashboardPage = ({ userID, logout }) => {
                   src="/merch-in-dashboard.svg"
                   alt="Merchandise placeholder"
                 />
+                              <p className="flex text-lg">Status: {merchStatus}</p>
+              <p className="flex text-lg">{merchColour && `Colour: ${merchColour}`}</p>
+              <p className="flex text-lg">{merchSize && `Size: ${merchSize}`}</p>
               </section>
             </div>
           </div>

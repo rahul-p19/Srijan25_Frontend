@@ -22,7 +22,9 @@ const dataFetcher = async (setLoading, setQrLink, setShowOrderForm )=>{
   }
 }
 
-function OrderForm({setShowOrderForm,size , color}){
+function OrderForm({setShowOrderForm, size , color}){
+  alert(size);
+  alert(color);
   const [loading, setLoading] = useState(false); // change to true if loading image dynamically
   const [qrLink, setQrLink] = useState("/merch-early-bird-qr.jpg");
   // useEffect(()=>{
@@ -73,6 +75,18 @@ function OrderForm({setShowOrderForm,size , color}){
         method: "POST",
         body: uploadFormData,
       });
+
+      const responseBody = {size,color};
+      console.log(responseBody);
+
+      const updateUserMerch = await fetch(`${backendUrl}/api/v1/users/merchandise`,{
+        method: "POST",
+        body: JSON.stringify(responseBody),
+        credentials: "include",
+        headers: {
+          "Content-Type": "application/json"
+        }
+      })
 
       if (response.ok) {
         toast("Order submitted successfully!");
