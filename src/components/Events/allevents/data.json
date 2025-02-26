@@ -86,7 +86,7 @@
     "prize": ["1st : 2000    ", "2nd : 1000    ", "3rd : 500"],
     "minMembers": 1,
     "maxMembers": 3,
-    "eventPoster": "/src/assets/icons/biznez.png",
+    "eventPoster": "biznez.png",
     "registrationType": "Srijan'24 Website",
     "eventShortDescription": "Embark on the ML adventure in 'OpenAImer'! Unleash your algorithms, analyse data, and spark innovation!",
     "eventDescription": [
