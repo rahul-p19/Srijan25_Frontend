@@ -1,10 +1,11 @@
 import { Call, EmailOutlined } from '@mui/icons-material'
 import React, { useState } from 'react'
 import toast from "react-hot-toast";
+import { uri } from "../../config/endpoints";
 
-const notify = () => toast("Coming soon!");
+// const notify = () => toast("Coming soon!");
 
-const backendUrl = import.meta.env.VITE_BACKEND_URL;
+const newsletterEndpoint = uri.newsletter.SUBSCRIBE;
 
 function Contact() {
 
@@ -21,9 +22,18 @@ function Contact() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (!isValidEmail(email)) toast.error("Please enter a valid email");
+    if (!isValidEmail(email)) {
+      toast.error("Please enter a valid email", {
+        style: {
+          fontSize: "16px",
+          textAlign: "center",
+          padding: "8px"
+        }
+      });
+      return;
+    }
     setLoading(true);
-    fetch(`${backendUrl}/newsletter`, {
+    fetch(newsletterEndpoint, {
       method: "POST",
       body: JSON.stringify({ email }),
       headers: {
@@ -58,18 +68,14 @@ function Contact() {
         });
         setLoading(false);
       })
-    /*console.log(backendUrl);
-    console.log(email);*/
-
-    {/*onSubmit={(e) => handleSubmit(e)}>*/ }
   }
 
   return (
     <form className='min-h-[40vh] border-greyBorder border-t grid grid-cols-7 grid-rows-10 lg:grid-rows-1 lg:grid-cols-5'
       onSubmit={(e) => {
-        e.preventDefault();
-        notify();
-        //handleSubmit(e);
+        // e.preventDefault();
+        // notify();
+        handleSubmit(e);
       }}>
       <div className='relative row-span-4 border-greyBorder border-b lg:border-b-transparent col-span-7 lg:col-span-1'>
         <h2 className='absolute text-center text-2xl xl:text-3xl top-[50%] left-[50%] -translate-[50%]'>Get in Touch</h2>

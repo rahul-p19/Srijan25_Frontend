@@ -161,25 +161,170 @@
 // export default Events;
 
 import React, { useState, useEffect, Suspense } from "react";
+// import { ReactTyped } from "react-typed";
+// import Navbar from "../Navbar";
+// import Footer from "../Footer";
+// import PageReveal from "../PageReveal";
+// import "./styles.css";
+// import eventData from "../Events/allevents/data.json"; // Adjust path if necessary
+// import { getImageUrl } from "../../utils/image-util"; // Import your utility
+
+// function Loading() {
+//   return (
+//     <div className="h-screen w-screen bg-background fixed z-[300]">
+//       <img
+//         src="/fetsu-presents-srijan25.svg"
+//         alt="Srijan 25 Logo"
+//         className="absolute top-[30%] left-[51%] -translate-[50%] h-36 w-auto"
+//       />
+//       <div className="absolute top-[75%] left-[50%] -translate-[50%] p-3 animate-spin bg-gradient-to-bl from-red via-purple to-lavender h-24 w-24 aspect-square rounded-full">
+//         <img
+//           src="/techno-management-fest.webp"
+//           alt="The Annual Techno-Management Fest of Jadavpur University"
+//           className="absolute top-[52.5%] left-[50%] -translate-[50%] border border-white p-2 w-2/3 sm:w-1/3"
+//         />
+//         <div className="rounded-full h-full w-full bg-background"></div>
+//       </div>
+//     </div>
+//   );
+// }
+
+// const Events = () => {
+//   // Helper function to truncate text if it's too long
+//   const truncateText = (text, maxLength = 310) => {
+//     if (!text) return "";
+//     return text.length > maxLength ? text.slice(0, maxLength) + "..." : text;
+//   };
+
+//   const [activeCategory, setActiveCategory] = useState("all");
+//   const [events, setEvents] = useState([]);
+//   const [loading, setLoading] = useState(true);
+
+//   useEffect(() => {
+//     const transformed = eventData.map((item) => ({
+//       eventID: item.eventID,
+//       category: item.category,
+//       title: item.eventName,
+//       imageUrl: item.eventPoster, // Now this is just the filename (e.g., "ptb.png")
+//       description: Array.isArray(item.eventDescription)
+//         ? item.eventDescription.join(" ")
+//         : item.eventDescription,
+//       // Other fields can be added as needed
+//     }));
+
+//     setEvents(transformed);
+//     setLoading(false);
+//   }, []);
+
+//   const filteredEvents =
+//     activeCategory === "all"
+//       ? events
+//       : events.filter((event) => event.category === activeCategory);
+
+//   const handleCardClick = (eventData) => {
+//     window.location.href = `/events/${eventData.category}/${eventData.eventID}`;
+//   };
+
+//   return (
+//     <>
+//       <Suspense fallback={<Loading />}>
+//         <div className="font-sometypeMono">
+//           <Navbar />
+//           <PageReveal />
+//           {/* Background and grid lines */}
+//           <div className="relative bg-gradient-to-r from-background to-background text-white min-h-screen py-2 px-2">
+//             {/* ... Your GridLines and Header Code ... */}
+//             <nav className="max-w-6xl mx-auto flex flex-wrap justify-center gap-8 mb-10">
+//               {[
+//                 "all",
+//                 "coding",
+//                 "circuits",
+//                 "business",
+//                 "brainstorming",
+//                 "misc",
+//                 "gaming",
+//               ].map((category) => (
+//                 <button
+//                   key={category}
+//                   onClick={() => setActiveCategory(category)}
+//                   className={`px-6 py-2 rounded-md font-semibold transition-all duration-300 focus:outline-none ${
+//                     activeCategory === category
+//                       ? "bg-gradient-to-r from-black-500 to-green-600 text-white shadow-xl transform scale-105"
+//                       : "bg-gray-800 text-gray-300 hover:bg-gray-700 hover:shadow-lg"
+//                   }`}
+//                 >
+//                   {category.charAt(0).toUpperCase() + category.slice(1)}
+//                 </button>
+//               ))}
+//             </nav>
+
+//             {loading ? (
+//               <div className="text-center text-xl">Loading events...</div>
+//             ) : (
+//               <div className="max-w-[1500px] mx-auto p-20 border-4 border-gray-600 rounded-2xl shadow-2xl">
+//                 <main className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-15">
+//                   {filteredEvents.map((event) => (
+//                     <div
+//                       key={event.eventID}
+//                       onClick={() => handleCardClick(event)}
+//                       className="card group relative rounded-2xl overflow-hidden shadow-xl transform transition-all duration-300 hover:scale-105 cursor-pointer"
+//                     >
+//                       <img
+//                         src={getImageUrl(event.imageUrl)} // Dynamically get the image URL
+//                         alt={event.title}
+//                         className="w-auto h-auto object-contain transition-transform duration-300 group-hover:scale-110"
+//                       />
+//                       <div className="absolute left-0 right-0 bottom-0 p-4 bg-gradient-to-t from-black to-transparent text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+//                         <h3 className="text-xl font-bold mb-1">{event.title}</h3>
+//                         <p className="text-sm">{truncateText(event.description, 310)}</p>
+//                       </div>
+//                     </div>
+//                   ))}
+//                 </main>
+//               </div>
+//             )}
+//           </div>
+//           <Footer />
+//         </div>
+//       </Suspense>
+//     </>
+//   );
+// };
+
+// const App = () => <Events />;
+// export default App;
+
+// import React, { useState, useEffect, Suspense } from "react";
 import { ReactTyped } from "react-typed";
 import Navbar from "../Navbar";
-//import Snowfall from "react-snowfall";
-import { useWindowSize } from "react-use";
-//import Confetti from "react-confetti";
 import Footer from "../Footer";
 import PageReveal from "../PageReveal";
 import "./styles.css";
 import eventData from "../Events/allevents/data.json"; // Adjust path if necessary
+import { getImageUrl } from "../../utils/image-util"; // Utility to load images dynamically
+
+// Loading component for fallback during lazy load
 function Loading() {
-  return <div className="h-screen w-screen bg-background fixed z-[300]">
-    <img src="/fetsu-presents-srijan25.svg" alt="Srijan 25 Logo" height="auto" width="auto" className="absolute top-[30%] left-[51%] -translate-[50%] h-36 w-auto" />
-    <div className="absolute top-[75%] left-[50%] -translate-[50%] p-3 animate-spin bg-gradient-to-bl from-red via-purple to-lavender h-24 w-24 aspect-square rounded-full">
-      <img src="/techno-management-fest.webp" alt="The Annual Techno-Management Fest of Jadavpur University" height="auto" width="auto" className="text-center absolute top-[52.5%] left-[50%] -translate-[50%] border border-white p-2 w-2/3 sm:w-1/3" />
-      <div className="rounded-full h-full w-full bg-background"></div>
+  return (
+    <div className="h-screen w-screen bg-background fixed z-[300]">
+      <img
+        src="/fetsu-presents-srijan25.svg"
+        alt="Srijan 25 Logo"
+        className="absolute top-[30%] left-[51%] -translate-x-1/2 h-36 w-auto"
+      />
+      <div className="absolute top-[75%] left-[50%] -translate-x-1/2 p-3 animate-spin bg-gradient-to-bl from-red via-purple to-lavender h-24 w-24 aspect-square rounded-full">
+        <img
+          src="/techno-management-fest.webp"
+          alt="The Annual Techno-Management Fest of Jadavpur University"
+          className="absolute top-[52.5%] left-[50%] -translate-x-1/2 border border-white p-2 w-2/3 sm:w-1/3"
+        />
+        <div className="rounded-full h-full w-full bg-background"></div>
+      </div>
     </div>
-  </div>
+  );
 }
-// FancyButton component for animated buttons
+
+// FancyButton for animated category filter buttons with ripple effect
 const FancyButton = ({ active, onClick, children }) => {
   const [ripples, setRipples] = useState([]);
 
@@ -191,7 +336,6 @@ const FancyButton = ({ active, onClick, children }) => {
     const y = event.clientY - rect.top - size / 2;
     const newRipple = { x, y, size, key: Date.now() };
     setRipples((prev) => [...prev, newRipple]);
-
     if (onClick) onClick(event);
   };
 
@@ -215,7 +359,7 @@ const FancyButton = ({ active, onClick, children }) => {
         <span
           key={ripple.key}
           onAnimationEnd={() => handleRippleAnimationEnd(ripple.key)}
-          className="absolute bg-white opacity-30 text-yellow-500 rounded-full pointer-events-none animate-ripple"
+          className="absolute bg-white opacity-30 rounded-full pointer-events-none animate-ripple"
           style={{
             width: ripple.size,
             height: ripple.size,
@@ -228,11 +372,11 @@ const FancyButton = ({ active, onClick, children }) => {
   );
 };
 
-// GridLines component for decorative grid background lines
+// GridLines component for decorative vertical lines in the background
 const GridLines = () => {
   return (
     <div className="absolute top-0 left-0 w-full h-full pointer-events-none">
-      {/* Vertical Lines */}
+      {/* Vertical decorative lines */}
       <div className="absolute top-0 left-[20%] w-[0.1px] h-full bg-white"></div>
       <div className="absolute top-0 left-[50%] w-[0.1px] h-full bg-white"></div>
       <div className="absolute top-0 left-[80%] w-[0.1px] h-full bg-white"></div>
@@ -241,186 +385,145 @@ const GridLines = () => {
 };
 
 const Events = () => {
-  // Helper function to truncate text if it's too long
+  // Helper function to truncate long text
   const truncateText = (text, maxLength = 310) => {
     if (!text) return "";
     return text.length > maxLength ? text.slice(0, maxLength) + "..." : text;
   };
 
-  //const { width, height } = useWindowSize();
-
   const [activeCategory, setActiveCategory] = useState("all");
   const [events, setEvents] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  // useEffect(() => {
-  //   fetch("http://localhost:3001/mapped-events")
-  //     .then((res) => res.json())
-  //     .then((data) => {
-  //       // Transform each fetched event to match our card properties.
-  //       const transformed = data.map((item) => {
-  //         // Get the nested details using the eventID key.
-  //         const details = item[item.eventID];
-  //         return {
-  //           eventID: item.eventID,
-  //           category: item.category,
-  //           title: details.title, // from the nested object
-  //           registrationDeadline: details.registrationDeadline,
-  //           // Use the nested 'image' property as imageUrl
-  //           imageUrl:details.eventPoster,
-  //           eventDetails: details.eventDetails,
-  //           prizePool: details.prizePool,
-  //           // Join the eventDescription array if necessary
-  //           description: Array.isArray(details.eventDescription)
-  //             ? details.eventDescription.join(" ")
-  //             : details.eventDescription,
-  //           eventRules: details.eventRules,
-  //           organizersTitle: details.organizersTitle,
-  //           eventOrganizers: details.eventOrganizers,
-  //         };
-  //       });
-  //       setEvents(transformed);
-  //       setLoading(false);
-  //     })
-  //     .catch((error) => {
-  //       console.error("Error fetching events:", error);
-  //       setLoading(false);
-  //     });
-  // }, []);
-
+  // Transform and load event data from JSON once component mounts
   useEffect(() => {
     const transformed = eventData.map((item) => ({
       eventID: item.eventID,
       category: item.category,
       title: item.eventName,
-      registrationDeadline: item.registrationDeadline,
-      imageUrl: item.eventPoster,
-      eventDetails: item.eventDetails,
-      prizePool: item.prizePool,
+      imageUrl: item.eventPoster, // This should be the filename (e.g., "ptb.png")
       description: Array.isArray(item.eventDescription)
         ? item.eventDescription.join(" ")
         : item.eventDescription,
-      eventRules: item.eventRules,
-      organizersTitle: item.organizersTitle,
-      eventOrganizers: item.eventOrganizers,
+      // Add any additional fields as needed
     }));
-
     setEvents(transformed);
     setLoading(false);
   }, []);
+
+  // Filter events based on selected category
   const filteredEvents =
     activeCategory === "all"
       ? events
       : events.filter((event) => event.category === activeCategory);
 
+  // Handle event card click to navigate to event detail page
   const handleCardClick = (eventData) => {
     window.location.href = `/events/${eventData.category}/${eventData.eventID}`;
   };
 
-  
   return (
     <>
-       <Suspense fallback={<Loading />}>
+      <Suspense fallback={<Loading />}>
         <div className="font-sometypeMono">
-      <Navbar />
-      <PageReveal/>
+          {/* Navbar and Page Reveal components */}
+          <Navbar />
+          <PageReveal />
 
-      {/* Relative container for background and grid lines */}
-      <div className="relative bg-gradient-to-r from-background  to-background text-white min-h-screen py-2 px-2 ">
-        <GridLines />
-        {/* Content container with higher z-index */}
-        <div className="relative z-10">
-          <header className="max-w-9xl mx-auto text-center mb-6">
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-green-400 via-red-500 to-blue-600 drop-shadow-2xl">
-              <ReactTyped
-                strings={["Find The Best Workshops", "Join Our amazing Events"]}
-                typeSpeed={120}
-                backSpeed={60}
-                loop
-              />
-            </h1>
+          {/* Main container with gradient background */}
+          <div className="relative bg-gradient-to-r from-background to-background text-white min-h-screen py-2 px-2">
+            {/* GridLines Component for decorative vertical lines */}
+            <GridLines />
 
-            {/* <p className="mt-4 text-lg md:text-xl text-gray-300 mb-3">
-              Explore workshops, bootcamps, and conferences curated for developers,
-              designers, startups, and more!
-            </p> */}
-          </header>
+            {/* Header Section with animated ReactTyped heading */}
+            <header className="max-w-9xl mx-auto text-center mb-6">
+              <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-green-400 via-red-500 to-blue-600 drop-shadow-2xl">
+                <ReactTyped
+                  strings={[
+                    "Find The Best Workshops",
+                    "Join Our Amazing Events",
+                  ]}
+                  typeSpeed={120}
+                  backSpeed={60}
+                  loop
+                />
+              </h1>
+            </header>
 
-          <nav className="max-w-6xl mx-auto flex flex-wrap justify-center gap-8 mb-10">
-            {[
-              "all",
-              "coding",
-              "circuits",
-              "business",
-              "brainstorming",
-              "misc",
-              "gaming",
-            ].map((category) => (
-              <FancyButton
-                key={category}
-                active={activeCategory === category}
-                onClick={() => setActiveCategory(category)}
-              >
-                {category.charAt(0).toUpperCase() + category.slice(1)}
-              </FancyButton>
-            ))}
-          </nav>
+            {/* Navigation: Category Filter Buttons */}
+            <nav className="max-w-6xl mx-auto flex flex-wrap justify-center gap-8 mb-10">
+              {[
+                "all",
+                "coding",
+                "circuits",
+                "business",
+                "brainstorming",
+                "misc",
+                "gaming",
+              ].map((category) => (
+                <FancyButton
+                  key={category}
+                  active={activeCategory === category}
+                  onClick={() => setActiveCategory(category)}
+                >
+                  {category.charAt(0).toUpperCase() + category.slice(1)}
+                </FancyButton>
+              ))}
+            </nav>
 
-          {loading ? (
-            <div className="text-center text-xl">Loading events...</div>
-          ) : (
-            <div className="max-w-[1500px] mx-auto p-20 border-4 border-gray-600 rounded-2xl shadow-2xl">
-              <main className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-15">
-                {filteredEvents.map((event) => (
-                  <div
-                    key={event.eventID}
-                    onClick={() => handleCardClick(event)}
-                    className="card group relative rounded-2xl overflow-hidden shadow-xl transform transition-all duration-300 hover:scale-105 cursor-pointer"
-                  >
-                    <img
-                      src={event.imageUrl}
-                      alt={event.title}
-                      className="w-auto h-auto object-contain transition-transform duration-300 group-hover:scale-110"
-                    />
+            {/* Events Grid Section */}
+            {loading ? (
+              <div className="text-center text-xl">Loading events...</div>
+            ) : (
+              <div className="max-w-[1500px] mx-auto p-20 border-4 border-gray-600 rounded-2xl shadow-2xl">
+                <main className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-15">
+                  {filteredEvents.map((event) => (
                     <div
-                      className="
-                        absolute 
-                        left-0 
-                        right-0 
-                        bottom-0 
-                        p-4 
-                        bg-gradient-to-t from-black to-transparent 
-                        text-white 
-                        opacity-0 
-                        group-hover:opacity-100 
-                        transition-opacity 
-                        duration-300
-                      "
+                      key={event.eventID}
+                      onClick={() => handleCardClick(event)}
+                      className="card group relative rounded-2xl overflow-hidden shadow-xl transform transition-all duration-300 hover:scale-105 cursor-pointer"
                     >
-                      <h3 className="text-xl font-bold mb-1">{event.title}</h3>
-
-                      <p className="text-sm">
-                        {truncateText(event.description, 310)}
-                      </p>
+                      {/* Use the image utility to dynamically load the event image */}
+                      <img
+                        src={getImageUrl(event.imageUrl)}
+                        alt={event.title}
+                        className="w-auto h-auto object-contain transition-transform duration-300 group-hover:scale-110"
+                      />
+                      <div
+                        className="
+                          absolute 
+                          left-0 
+                          right-0 
+                          bottom-0 
+                          p-4 
+                          bg-gradient-to-t from-black to-transparent 
+                          text-white 
+                          opacity-0 
+                          group-hover:opacity-100 
+                          transition-opacity 
+                          duration-300
+                        "
+                      >
+                        <h3 className="text-xl font-bold mb-1">
+                          {event.title}
+                        </h3>
+                        <p className="text-sm">
+                          {truncateText(event.description, 310)}
+                        </p>
+                      </div>
                     </div>
-                  </div>
-                ))}
-              </main>
-            </div>
-          )}
+                  ))}
+                </main>
+              </div>
+            )}
+          </div>
+          <Footer />
         </div>
-      </div>
-      {/* <Snowfall snowflakeCount={200} color="red" /> */}
-      <Footer />
-      </div>
       </Suspense>
     </>
-    
   );
 };
 
-const App = () => {
-  return <Events />;
-};
-
+const App = () => <Events />;
 export default App;
+

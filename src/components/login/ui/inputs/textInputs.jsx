@@ -35,7 +35,7 @@ function EmailInput({ labelContent, name, value, onChange, error, setErrors, onF
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         setErrors(prev => ({
                 ...prev,
-                email: emailRegex.test(value) ? "" : "Enter a valid email"
+                email: emailRegex.test(email) ? "" : "Enter a valid email"
             }));
     };
     const handleChange = (e) => {
@@ -93,11 +93,21 @@ function PhoneInput({ labelContent, name, value, onChange, error, setErrors, onF
 function PasswordInput({ labelContent, name, placeholder, value, error, setErrors, password, onChange, onFocus, onBlur }) {
 
     const validatePassword = (password) => {
-        const passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/;
+        let message = "";
+        if (password.length < 8) {
+            message = "Password must be at least 8 characters long.";
+        } else if (!/[A-Z]/.test(password)) {
+            message = "Password must contain at least one uppercase letter.";
+        } else if (!/[a-z]/.test(password)) {
+            message = "Password must contain at least one lowercase letter.";
+        } else if (!/\d/.test(password)) {
+            message = "Password must contain at least one digit.";
+        }
+
         setErrors(prev => ({
-                ...prev,
-                password: passwordRegex.test(password) ? "" : "Create a stronger password"
-            }));
+            ...prev,
+            password: message
+        }));
     };
 
     const validateConfirmPassword = (confirmPassword) => {
