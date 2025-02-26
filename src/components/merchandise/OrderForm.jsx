@@ -40,9 +40,8 @@ function OrderForm({setShowOrderForm,size , color}){
     const college=formData.get("college");
     const department=formData.get("department");
     const year=formData.get("year");
-    const color=formData.get("color");
-    const size=formData.get("size");
 
+    alert([color, size]);
     // Validate the input
     if (!nameOnShirt.trim()) {
       alert("Please enter a name for the shirt.");
@@ -183,8 +182,9 @@ function OrderForm({setShowOrderForm,size , color}){
     </label>
     <input
     type="text"
+    id="size"
     name="size"
-    defaultValue={size}
+    value={size}
     className="w-full p-2 bg-[#1c1c1c] border border-gray-500 rounded focus:outline-none focus:ring-1 focus:ring-white"
     disabled
     />
@@ -196,10 +196,11 @@ function OrderForm({setShowOrderForm,size , color}){
     </label>
     <input
     type="text"
+    id="color"
     name="color"
     className="w-full p-2 bg-[#1c1c1c] border border-gray-500 rounded focus:outline-none focus:ring-1 focus:ring-white"
     disabled
-    defaultValue={color}
+    value={color}
     />
     </div>
 

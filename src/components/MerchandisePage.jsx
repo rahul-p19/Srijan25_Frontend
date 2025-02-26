@@ -18,6 +18,12 @@ export default function MerchandisePage() {
   const [selectedSize, setSelectedSize] = useState('M');
   const [selectedColor, setSelectedColor] = useState('Black');
   const [showOrderForm, setShowOrderForm] = useState(false);
+  const imgLink = [
+    "./tshirt1.png",
+    "./tshirt2.png",
+    "./tshirt3.png",
+    "./tshirt4.png",
+  ]
   const contacts = [
     { id: 1, name: "SK Mujtahid Hossain",dept: "Power Eng (UG3)",number :"9832944933"},
   ];
@@ -79,7 +85,7 @@ export default function MerchandisePage() {
                 Price
               </div>
               <div className="w-2/3 bg-[#141414] text-white text-lg flex justify-center items-center p-2">
-                Rs. xxx/-
+                Rs. 349/-
               </div>
             </div>
           </div>
@@ -89,7 +95,7 @@ export default function MerchandisePage() {
             {/* Image Container */}
             <div className="w-4/5 md:w-1/2 mb-8 sm:mb-0 flex justify-center">
               <img
-                src="/shirt.svg"
+                src={imgLink[1]}
                 alt="T-Shirt"
                 className="w-full max-w-md ml-5 sm:ml-0"
               />
