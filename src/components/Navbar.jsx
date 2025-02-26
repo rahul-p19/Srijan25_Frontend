@@ -2,12 +2,10 @@ import { useEffect, useState } from 'react'
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
 import toast from "react-hot-toast";
-import { useNavigate } from 'react-router-dom';
 
 const notify = () => toast("Coming soon!");
 
 function Navbar() {
-  const navigate = useNavigate()
 
   const [navbarOpen, setNavbarOpen] = useState(false);
   const [loggedIn, setLoggedIn] = useState(false);
@@ -43,14 +41,14 @@ function Navbar() {
           <div className={`absolute h-[2px] bg-gradient-to-l from-red to-purple bottom-0 ${pathname == "" ? 'w-full' : 'w-0'}`}></div>
         </a>
         {/*
-        <a href='/events' className={`relative hidden sm:block w-fit`}>Events
-          <div className={`absolute h-[2px] bg-gradient-to-l from-red to-purple bottom-0 ${pathname == "events" ? 'w-full' : 'w-0'}`}></div>
-        </a>
         <a href='/notifications' className={`relative hidden sm:block w-fit`}>Notifications
           <div className={`absolute h-[2px] bg-gradient-to-l from-red to-purple bottom-0 ${pathname == "notifications" ? 'w-full' : 'w-0'}`}></div>
         </a>
         */}
-        <div className={`relative hidden sm:block w-fit cursor-pointer`} onClick={notify}>Events
+        {/* <a href='/events' className={`relative hidden sm:block w-fit`}>Events
+          <div className={`absolute h-[2px] bg-gradient-to-l from-red to-purple bottom-0 ${pathname == "events" ? 'w-full' : 'w-0'}`}></div>
+        </a> */}
+        <div className={`relative hidden sm:block w-fit`} onClick={notify}>Events
           <div className={`absolute h-[2px] bg-gradient-to-l from-red to-purple bottom-0 ${pathname == "events" ? 'w-full' : 'w-0'}`}></div>
         </div>
         <div className={`relative hidden sm:block w-fit cursor-pointer`} onClick={notify}>Notifications
@@ -61,16 +59,16 @@ function Navbar() {
         </a>
       </div>
       <div className='grid place-items-center text-xl'>
-        {/*<a href={`${loggedIn ? '/dashboard' : '/login'}`} className='hidden relative sm:block'> {loggedIn ? 'Dashboard' : 'Login'}
+        <a href={`${loggedIn ? '/dashboard' : '/login'}`} className='hidden relative sm:block'> {loggedIn ? 'Dashboard' : 'Login'}
           <div className={`absolute h-[2px] bg-gradient-to-l from-red to-purple bottom-0 ${pathname == "dashboard" || pathname == "login" ? 'w-full' : 'w-0'}`}></div>
-        </a>*/}
-        <div className='hidden relative sm:block cursor-pointer' onClick={() => navigate(loggedIn ? '/dashboard' : '/login')}> {loggedIn ? 'Dashboard' : 'Login'}
-          <div className={`absolute h-[2px] bg-gradient-to-l from-red to-purple bottom-0 ${pathname == "dashboard" || pathname == "login" ? 'w-full' : 'w-0'}`}></div>
-        </div>
+        </a >
+        {/* <div className='hidden relative sm:block cursor-pointer' onClick={notify}> {loggedIn ? 'Dashboard' : 'Login'} */}
+        {/*   <div className={`absolute h-[2px] bg-gradient-to-l from-red to-purple bottom-0 ${pathname == "dashboard" || pathname == "login" ? 'w-full' : 'w-0'}`}></div> */}
+        {/* </div> */}
         <button className='sm:hidden' onClick={() => {
           setNavbarOpen(true);
         }}><MenuIcon /></button>
-      </div>
+      </div >
       <nav
         className={`bg-background transition-all duration-700 z-[200] p-6 pt-10 fixed flex flex-col items-center gap-y-12 right-0 left-0 shadow-2xl shadow-hray-800/60 ${navbarOpen ? `bottom-0 top-0` : `bottom-[100%] -top-[100%]`
           }`}>
@@ -84,22 +82,20 @@ function Navbar() {
           </div>
           {/*
           <a href='/' className='text-left border-greyBorder/30 border-b w-full py-1'>Home</a>
-          <a href='/' className='text-left border-greyBorder/30 border-b w-full py-1'>Events</a>
           <a href='/' className='text-left border-greyBorder/30 border-b w-full py-1'>Notifications</a>
           <a href='/' className='text-left border-greyBorder/30 border-b w-full py-1'>Campus Ambassadors</a>
-          <a href='/' className='text-left border-greyBorder/30 border-b w-full py-1'>Merchandise</a>
-          <a href='/' className='text-left border-greyBorder/30 border-b w-full py-1'>Dashboard</a>
           */}
           <a href='/' className='text-left border-greyBorder/30 border-b w-full py-1'>Home</a>
+          {/* <a href='/events' className='text-left border-greyBorder/30 border-b w-full py-1'>Events</a> */}
           <div className='text-left border-greyBorder/30 border-b w-full py-1' onClick={notify}>Events</div>
           <a href='/notifications' className='text-left border-greyBorder/30 border-b w-full py-1' onClick={notify}>Notifications</a>
           <a href='https://docs.google.com/forms/d/e/1FAIpQLSe-zoCeE50FR2dUzauh7wfvHxfHczPwgziqYhRju2zMLH164A/viewform' className='text-left border-greyBorder/30 border-b w-full py-1'>Campus Ambassadors</a>
           <a href='/workshop' className='text-left border-greyBorder/30 border-b w-full py-1'>Workshop</a>
-          <div className='text-left border-greyBorder/30 border-b w-full py-1' onClick={notify}>Merchandise</div>
-          <div className='text-left border-greyBorder/30 border-b w-full py-1' onClick={() => navigate(loggedIn ? '/dashboard' : '/login')}>{loggedIn ? 'Dashboard' : 'Login'}</div>
-        </div>
-      </nav>
-    </nav>
+          <a href='/' className='text-left border-greyBorder/30 border-b w-full py-1'>Merchandise</a>
+          <a href={`${loggedIn ? '/dashboard' : '/login'}`} className='text-left border-greyBorder/30 border-b w-full py-1'>{loggedIn ? 'Dashboard' : 'Login'}</a>
+        </div >
+      </nav >
+    </nav >
   )
 }
 

@@ -3,6 +3,7 @@ import { OTPInput } from './ui/inputs';
 import { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import {authController} from '../../services/http';
+import toast from "react-hot-toast";
 
 const EmailVerify = () => {
     const location = useLocation();
@@ -32,7 +33,7 @@ const EmailVerify = () => {
                 setCountdown(50); // Restart countdown
                 setCanResend(false);
             } else {
-                alert("Failed to resend OTP. Please try again.");
+                toast("Failed to resend OTP. Please try again.");
             }
         } catch (error) {
             console.error("Error resending OTP:", error);

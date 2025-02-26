@@ -1,0 +1,44 @@
+/* @keyframes colorCycle {
+  0% {
+    color: #ff0000;
+  }
+  25% {
+    color: #ff8c00;
+  }
+  50% {
+    color: #ffff00;
+  }
+  75% {
+    color: #008000;
+  }
+  100% {
+    color: #ff0000;
+  }
+}
+
+.animate-colorful {
+  animation: colorCycle 4s linear infinite;
+} */
+ /* Rainbow animation for headings */
+@keyframes rainbow {
+  0% { color: #ff0000; }
+  16% { color: #ff7f00; }
+  33% { color: #ffff00; }
+  50% { color: #00ff00; }
+  66% { color: #0000ff; }
+}
+
+.animate-rainbow {
+  animation: rainbow 3s linear infinite;
+}
+
+/* Green pulse animation for prize pool text */
+@keyframes greenPulse {
+  0%, 100% { color: #00ff00; }
+  50% { color: #008000; }
+}
+
+.animate-greenPulse {
+  animation: greenPulse 2s ease-in-out infinite;
+}
+
