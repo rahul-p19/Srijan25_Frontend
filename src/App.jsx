@@ -11,6 +11,7 @@ import EmailVerify from "./components/login/EmailVerify";
 import ResetPassword from "./components/login/ResetPassword";
 import ForgotPassword from "./components/login/ForgotPassword";
 import PageNotFound from "./components/PageNotFound";
+import AllEvents from "./components/Events/allevents/AllinoneEvents"
 import { WorkshopPage } from "./components/workshop/WorkshopPage";
 
 import { ProtectedRoute } from "./components/protected_routes/AuthRoutes";
@@ -57,6 +58,9 @@ function App() {
               element={<DashboardPage userID={user} logout={handleLogout} />}
             />
           </Route>
+          <Route path="/events" element={<Eventpage />} />
+          <Route path="/events/:category/:eventID" element={<AllEvents />} />
+          <Route path="/events/:category/:eventID/:registration" element={<EventRegistration/>}/>
           <Route>
             <Route
               path="/merchandise"
@@ -77,7 +81,7 @@ function App() {
               }
             />
           </Route>
-          <Route path="/events" element={<Eventpage />} />
+          {/* <Route path="/events" element={<Eventpage />} /> */}
           <Route path="/eventregistration" element={<EventRegistration />} />
           <Route
             path="/signup"
