@@ -19,6 +19,7 @@ import image from "/src/assets/icons/mascot.svg";
 import { env } from "../../config/config";
 import axios from "axios";
 import { useEffect } from "react";
+import MascotAnimation from "../home/MascotAnimation"
 
 // TeamMembers Component for dynamically adding/removing team member email fields
 const TeamMembers = ({ membersEmails, setMembersEmails }) => {
@@ -538,30 +539,31 @@ const App = () => {
         }}
       >
         {/* Image Section */}
-        <Box
-          sx={{
-            width: { xs: "100%", sm: "90%", md: "50%" },
-            display: "flex",
-            justifyContent: "center",
-            mb: { xs: 3, md: 0 },
-            mr: { md: 3 },
-          }}
-        >
-          <Box
-            component="img"
-            src={image}
-            alt="Robot"
-            sx={{
-              width: "100%",
-              height: "auto",
-              maxHeight: { xs: "200px", md: "calc(100vh - 100px)" },
-              objectFit: "contain",
-              objectPosition: "top",
-              display: "block",
-            }}
-          />
-        </Box>
+        {/* <Box */}
+        {/*   sx={{ */}
+        {/*     width: { xs: "100%", sm: "90%", md: "50%" }, */}
+        {/*     display: "flex", */}
+        {/*     justifyContent: "center", */}
+        {/*     mb: { xs: 3, md: 0 }, */}
+        {/*     mr: { md: 3 }, */}
+        {/*   }} */}
+        {/* > */}
+        {/*   <Box */}
+        {/*     component="img" */}
+        {/*     src={image} */}
+        {/*     alt="Robot" */}
+        {/*     sx={{ */}
+        {/*       width: "100%", */}
+        {/*       height: "auto", */}
+        {/*       maxHeight: { xs: "200px", md: "calc(100vh - 100px)" }, */}
+        {/*       objectFit: "contain", */}
+        {/*       objectPosition: "top", */}
+        {/*       display: "block", */}
+        {/*     }} */}
+        {/*   /> */}
+        {/* </Box> */}
         {/* Form Section */}
+        <MascotAnimation />
         <Box sx={{ width: "100%", maxWidth: "400px" }}>
           <Typography
             variant="h4"
