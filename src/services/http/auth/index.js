@@ -107,6 +107,16 @@ export const resendOTP = async (email) => {
     })
 }
 
+export const addReferral = async(code) => {
+    return axios({
+        method: "post",
+        url: CONST.uri.auth.ADD_REFERRAL,
+        withCredentials: true,
+        data: {code},
+        headers: { "Content-Type": "application/json" },
+    })
+}
+
 export const startWithOAuth2 = (providerUrl) => {
 
     let timer = null

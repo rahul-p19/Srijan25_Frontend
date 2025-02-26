@@ -110,7 +110,7 @@ const OTPInput = ({ email, length = 6, onVerifySuccess }) => {
           <BasicButton 
             type="submit" 
             disabled={!isFormValid}  
-            className="border-green-500 text-white w-36" 
+            className="border-green-500 text-white w-36 cursor-pointer" 
             onClick={handleSubmit} 
             text="Verify"
           />

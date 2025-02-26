@@ -18,6 +18,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Notifications from "./components/protected_routes/Notifications";
 import { Toaster } from "react-hot-toast";
 import { logoutCall } from "./services/http/auth";
+import Referral from "./components/login/Referral";
 
 function App() {
   const [user, setUser] = useState("");
@@ -86,6 +87,7 @@ function App() {
             path="/login"
             element={<Login user={user} setUser={setUser} />}
           />
+          <Route path="/referral" element={<Referral />} />
           <Route path="/verify" element={<EmailVerify />} />
           <Route path="/reset-password/:token" element={<ResetPassword />} />
           <Route path="/forgotPassword" element={<ForgotPassword />} />
