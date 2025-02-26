@@ -90,7 +90,11 @@ const Login = ({ user }) => {
 
     localStorage.setItem("sid", sid.id);
     localStorage.setItem("providerID", sid.providerId[0].providerUserId);
-    navigate("/dashboard");
+    if(sid.isNewUser == true){
+      navigate("/referral", { state: { allowed: true } });
+    }else{
+      navigate("/dashboard");
+    }
   };
 
   const onFailLogin = function (error) {
