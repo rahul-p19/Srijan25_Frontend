@@ -9,13 +9,16 @@ import {
   IconButton,
 } from "@mui/material";
 import toast, { Toaster } from "react-hot-toast";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import CancelIcon from "@mui/icons-material/Cancel";
 import DeleteIcon from "@mui/icons-material/Delete";
 //import Confetti from "react-confetti";
 import { useWindowSize } from "react-use";
 import image from "/src/assets/icons/mascot.svg";
+import { env } from "../../config/config";
+import axios from "axios";
+import { useEffect } from "react";
 
 // TeamMembers Component for dynamically adding/removing team member email fields
 const TeamMembers = ({ membersEmails, setMembersEmails }) => {
@@ -28,7 +31,7 @@ const TeamMembers = ({ membersEmails, setMembersEmails }) => {
   const isDuplicate = (email, index) => {
     return (
       membersEmails.filter(
-        (e) => e.trim().toLowerCase() === email.trim().toLowerCase()
+        (e) => e.trim().toLowerCase() === email.trim().toLowerCase(),
       ).length > 1
     );
   };
@@ -76,8 +79,8 @@ const TeamMembers = ({ membersEmails, setMembersEmails }) => {
                 email && !valid
                   ? "Invalid email format."
                   : email && duplicate
-                  ? "Duplicate email."
-                  : ""
+                    ? "Duplicate email."
+                    : ""
               }
               InputLabelProps={{
                 style: { color: "rgba(25, 255, 55, 0.7)", fontSize: "0.8rem" },
@@ -96,14 +99,14 @@ const TeamMembers = ({ membersEmails, setMembersEmails }) => {
                 ) : null,
               }}
               sx={{
-                bgcolor: "black",
-                boxShadow: 51,
-                fontWeight: "bold",
-                fontFamily: "Roboto, sans-serif",
+                "bgcolor": "black",
+                "boxShadow": 51,
+                "fontWeight": "bold",
+                "fontFamily": "Roboto, sans-serif",
                 "& .MuiOutlinedInput-root": {
-                  backgroundColor: "rgba(255, 255, 255, 0.1)",
-                  borderRadius: "4px",
-                  transition: "all 0.3s ease",
+                  "backgroundColor": "rgba(255, 255, 255, 0.1)",
+                  "borderRadius": "4px",
+                  "transition": "all 0.3s ease",
                   "& fieldset": {
                     borderColor: email
                       ? showSuccess
@@ -140,11 +143,11 @@ const TeamMembers = ({ membersEmails, setMembersEmails }) => {
         variant="outlined"
         onClick={handleAddMember}
         sx={{
-          mt: 1,
-          color: "white",
-          borderColor: "white",
-          fontWeight: "bold",
-          bgcolor: "black",
+          "mt": 1,
+          "color": "white",
+          "borderColor": "white",
+          "fontWeight": "bold",
+          "bgcolor": "black",
           "&:hover": { bgcolor: "black" },
         }}
       >
@@ -154,54 +157,150 @@ const TeamMembers = ({ membersEmails, setMembersEmails }) => {
   );
 };
 
+const GroupInfo = ({ userId, eventID, refresh, setRefresh }) => {
+  console.log({ userId, eventID });
+  const [groupInfo, setGroupInfo] = useState({});
+  const getGroupInfoForEvent = async () => {
+    try {
+      const response = await axios.get(
+        `${env.API_SERVER}/users/group-info-for-event/${eventID}`,
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+          withCredentials: true,
+        },
+      );
+      const data = await response.data;
+      console.log(data);
+      return data;
+    } catch (error) {
+      console.error("Error during registration:", error);
+    }
+  };
+  useEffect(() => {
+    const fetchGroupInfo = async () => {
+      let groupInfo = await getGroupInfoForEvent();
+      setGroupInfo(groupInfo.data);
+      setRefresh(false);
+    };
+    fetchGroupInfo();
+  }, [refresh]);
+
+  return (
+    <div className="w-full h-full items-center p-4 text-white">
+      <h1>Group Info</h1>
+      {groupInfo ? (
+        <div>
+          <h2>Group Name: {groupInfo.name}</h2>
+          <h2>
+            Creator: {groupInfo?.creator?.name} - {groupInfo?.creator?.email}
+          </h2>
+          <h2>Members:</h2>
+          <ul>
+            {groupInfo?.members?.map(({ user, status }, index) => (
+              <li key={index}>
+                {user.name} - {user.email} - {status}
+              </li>
+            ))}
+          </ul>
+          <div>
+            <h2>Group Status: {groupInfo.status}</h2>
+          </div>
+        </div>
+      ) : (
+        <p>No group info available</p>
+      )}
+    </div>
+  );
+};
+
 const App = () => {
- 
   const { width, height } = useWindowSize();
+  const userId = localStorage.getItem("sid");
+  console.log({ userId });
+  const navigate = useNavigate();
+  if (!userId) {
+    navigate("/login");
+    // return;
+  }
   const [teamName, setTeamName] = useState("");
-  const [teamLeaderName, setTeamLeaderName] = useState("");
   const [membersEmails, setMembersEmails] = useState([""]);
+  const [loading, setLoading] = useState(true);
+  const [isSoloEvent, setIsSoloEvent] = useState(false); // TODO: Implement this
+  const [participationStatus, setParticipationStatus] =
+    useState("not-participating");
+  const [canUnregisterStatus, setCanUnregisterStatus] = useState(null);
+  const [invitationInfo, setInvitationInfo] = useState(null);
+  const [refreshGroupInfo, setRefreshGroupInfo] = useState(false);
+
   // Store the complete response from the backend.
   const [registrationResponse, setRegistrationResponse] = useState(null);
 
   // Retrieve the event slug from the URL parameters
   const { eventID } = useParams();
 
-  // Function to register
-  // const handleRegister = async () => {
-  //   const payload = {
-  //     userId: "67b201fb012d176009da4d6f", // Adjust this as needed
-  //     membersEmails: membersEmails,
-  //     groupName: teamName,
-  //   };
+  const getParticipationStatus = async () => {
+    try {
+      const response = await axios.get(
+        `${env.API_SERVER}/users/get-participation-status/${eventID}`,
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+          withCredentials: true,
+        },
+      );
+      const data = await response.data;
+      console.log(data);
+      return data;
+    } catch (error) {
+      console.error("Error during registration:", error);
+      if (error?.response?.data?.error.includes("Event not found")) {
+        alert("Event not found");
+        navigate("/events");
+      }
+    }
+  };
 
-  //   try {
-  //     const response = await fetch(
-  //       `http://localhost:3000/api/v1/events/${eventID}/register`,
-  //       {
-  //         method: "POST",
-  //         headers: {
-  //           "Content-Type": "application/json",
-  //         },
-  //         body: JSON.stringify(payload),
-  //       }
-  //     );
-  //     const data = await response.json();
-  //     toast.success("Successfully registered, now please confirm your team members", {
-  //       removeDelay: 8000,
-  //     });
-  //     setRegistrationResponse(data);
-  //   } catch (error) {
-  //     console.error("Error during registration:", error);
-  //     setRegistrationResponse({
-  //       success: false,
-  //       message: error.message || "An error occurred during registration.",
-  //     });
-  //   }
-  // };
+  const canUnregister = async () => {
+    try {
+      let response = await axios.get(
+        `${env.API_SERVER}/users/can-unregister/${eventID}`,
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+          withCredentials: true,
+        },
+      );
+      console.log({ canUnregister: response.data });
+      return response.data?.canUnregister;
+    } catch (error) {
+      console.error("Error during registration:", error);
+    }
+  };
 
-
-  const userId=localStorage.getItem("sid");
-  console.log(userId);
+  const isInvited = async () => {
+    try {
+      let response = await axios.get(`${env.API_SERVER}/users/invitations`, {
+        withCredentials: true,
+      });
+      let invitations = response.data;
+      console.log({ invitations });
+      for (const invitation of invitations.data) {
+        if (invitation.event.slug == eventID)
+          return {
+            invited: true,
+            group: invitation.group._id,
+            status: invitation.status,
+          };
+      }
+      return false;
+    } catch (error) {
+      console.error("Error during registration:", error);
+    }
+  };
 
   const handleRegister = async () => {
     const payload = {
@@ -209,36 +308,31 @@ const App = () => {
       membersEmails: membersEmails,
       groupName: teamName,
     };
-  
+
     try {
-      const response = await fetch(
-        `${import.meta.env.VITE_BACKEND_URL}/api/v1/events/${eventID}/register`,
+      const response = await axios.post(
+        `${env.API_SERVER}/events/${eventID}/register`,
+        payload,
         {
-          method: "POST",
           headers: {
             "Content-Type": "application/json",
           },
-          body: JSON.stringify(payload),
-        }
+          withCredentials: true,
+        },
       );
-      const data = await response.json();
-  
-      // If the response status is not OK, throw an error with the backend message.
-      if (!response.ok) {
-        throw new Error(data.message || "Registration failed.");
-      }
-  
+      const data = await response.data;
+
       // If registration was successful, show the success toast.
       toast.success(
         "Successfully registered, now please confirm your team members",
         {
           removeDelay: 8000,
-        }
+        },
       );
       setRegistrationResponse(data);
     } catch (error) {
       console.error("Error during registration:", error);
-      toast.error("Registration failed: " + error.message, {
+      toast.error("Registration failed: " + error.response?.data?.message, {
         removeDelay: 8000,
       });
       setRegistrationResponse({
@@ -247,26 +341,26 @@ const App = () => {
       });
     }
   };
-  
-  
 
   // Function to unregister
   const handleUnregister = async () => {
     try {
-      const response = await fetch(
-        `${import.meta.env.VITE_BACKEND_URL}/events/${eventID}/unregister`,
+      const response = await axios.post(
+        `${env.API_SERVER}/events/${eventID}/cancel-registration`,
+        { userId },
         {
-          method: "POST", // or DELETE depending on your backend implementation
           headers: {
             "Content-Type": "application/json",
           },
-          body: JSON.stringify({ userId: "67b201fb012d176009da4d6f" }),
-        }
+          withCredentials: true,
+        },
       );
-      const data = await response.json();
+      const data = await response.data;
       if (data.success) {
         toast.success("Successfully unregistered");
         setRegistrationResponse(null);
+        setParticipationStatus("not-participating");
+        setCanUnregisterStatus(false);
       } else {
         toast.error("Failed to unregister: " + data.message);
       }
@@ -275,6 +369,98 @@ const App = () => {
       toast.error("Error during unregister: " + error.message);
     }
   };
+  const acceptInvitation = async () => {
+    try {
+      const response = await axios.post(
+        `${env.API_SERVER}/users/accept-invitation`,
+        { groupId: invitationInfo.group },
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+          withCredentials: true,
+        },
+      );
+      const data = await response.data;
+      if (data.success) {
+        toast.success("Successfully accepted invitation");
+        setInvitationInfo({ ...invitationInfo, status: "accepted" });
+        setRefreshGroupInfo(true);
+      } else {
+        toast.error("Failed to accept invitation: " + data.message);
+      }
+    } catch (error) {
+      console.error("Error during accept invitation:", error);
+      toast.error("Error during accept invitation: " + error.message);
+    }
+  };
+  const declineInvitation = async () => {
+    try {
+      const response = await axios.post(
+        `${env.API_SERVER}/users/reject-invitation`,
+        { groupId: invitationInfo.group },
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+          withCredentials: true,
+        },
+      );
+      const data = await response.data;
+      if (data.success) {
+        toast.success("Successfully declined invitation");
+        setInvitationInfo({ ...invitationInfo, status: "declined" });
+        setRefreshGroupInfo(true);
+      } else {
+        toast.error("Failed to decline invitation: " + data.message);
+      }
+    } catch (error) {
+      console.error("Error during decline invitation:", error);
+      toast.error("Error during decline invitation: " + error.message);
+    }
+  };
+  const fetchParticipationStatusForUseEffect = async () => {
+    setLoading(true);
+    let status = await getParticipationStatus();
+    console.log(status);
+    setParticipationStatus(status);
+    setLoading(false);
+  };
+
+  useEffect(() => {
+    fetchParticipationStatusForUseEffect();
+  }, []);
+
+  useEffect(() => {
+    if (registrationResponse && registrationResponse.success) {
+      fetchParticipationStatusForUseEffect();
+    }
+  }, [registrationResponse]);
+
+  useEffect(() => {
+    const fetchCanUnregister = async () => {
+      console.log({ participationStatus });
+      if (participationStatus != "not-participating") {
+        let resp = await canUnregister();
+        setCanUnregisterStatus(resp);
+      }
+    };
+    fetchCanUnregister();
+    const fetchIsInvited = async () => {
+      let invited = await isInvited();
+      console.log({ invited });
+      setInvitationInfo(invited);
+    };
+    fetchIsInvited();
+  }, [participationStatus]);
+
+  if (loading) {
+    return (
+      <div className="flex w-screen h-screen items-center justify-center">
+        Loading...
+      </div>
+    );
+  }
 
   return (
     <Box
@@ -390,115 +576,98 @@ const App = () => {
           >
             REGISTRATION
           </Typography>
-          <TextField
-            fullWidth
-            size="medium"
-            label="Team Name"
-            variant="outlined"
-            margin="dense"
-            value={teamName}
-            onChange={(e) => setTeamName(e.target.value)}
-            InputLabelProps={{
-              style: { color: "rgba(25, 255, 55, 0.7)", fontSize: "0.8rem" },
-            }}
-            sx={{
-              mb: 1.5,
-              bgcolor: "black",
-              boxShadow: 51,
-              fontWeight: "bold",
-              fontFamily: "Roboto, sans-serif",
-              "& .MuiOutlinedInput-root": {
-                backgroundColor: "rgba(255, 255, 255, 0.1)",
-                borderRadius: "4px",
-                transition: "all 0.3s ease",
-                "& fieldset": { borderColor: "rgba(255, 255, 255, 0.3)" },
-                "&:hover fieldset": {
-                  borderColor: "rgba(255, 255, 255, 0.5)",
-                },
-              },
-              "& .MuiInputBase-input": {
-                fontSize: "1.2rem",
-                color: "white",
-              },
-            }}
-          />
-          <TextField
-            fullWidth
-            size="medium"
-            label="Team Leader Name"
-            variant="outlined"
-            margin="dense"
-            value={teamLeaderName}
-            onChange={(e) => setTeamLeaderName(e.target.value)}
-            InputLabelProps={{
-              style: { color: "rgba(25, 255, 55, 0.7)", fontSize: "0.8rem" },
-            }}
-            sx={{
-              mb: 1.5,
-              bgcolor: "black",
-              boxShadow: 51,
-              fontWeight: "bold",
-              fontFamily: "Roboto, sans-serif",
-              "& .MuiOutlinedInput-root": {
-                backgroundColor: "rgba(255, 255, 255, 0.1)",
-                borderRadius: "4px",
-                transition: "all 0.3s ease",
-                "& fieldset": { borderColor: "rgba(255, 255, 255, 0.3)" },
-                "&:hover fieldset": {
-                  borderColor: "rgba(255, 255, 255, 0.5)",
-                },
-              },
-              "& .MuiInputBase-input": {
-                fontSize: "1.2rem",
-                color: "white",
-              },
-            }}
-          />
-          <TeamMembers
-            membersEmails={membersEmails}
-            setMembersEmails={setMembersEmails}
-          />
-          {/* REGISTER Button */}
-          <Button
-            variant="outlined"
-            onClick={handleRegister}
-            sx={{
-              mt: 1.5,
-              py: { xs: 1, md: 1.5 },
-              color: "white",
-              borderColor: "white",
-              fontWeight: "bold",
-              fontSize: { xs: "0.9rem", md: "0.8rem" },
-              bgcolor: "black",
-              position: "relative",
-              transition: "all 0.3s ease-in-out",
-              boxShadow: "inset 0 0 0px rgba(255, 255, 255, 0)",
-              "&:hover": {
-                boxShadow: "inset 0 0 10px rgba(255, 255, 255, 0.8)",
-                bgcolor: "black",
-                transform: "scale(1.02)",
-              },
-            }}
-          >
-            REGISTER
-          </Button>
+          {participationStatus == "not-participating" && (
+            <>
+              <TextField
+                fullWidth
+                size="medium"
+                label="Team Name"
+                variant="outlined"
+                margin="dense"
+                value={teamName}
+                onChange={(e) => setTeamName(e.target.value)}
+                InputLabelProps={{
+                  style: {
+                    color: "rgba(25, 255, 55, 0.7)",
+                    fontSize: "0.8rem",
+                  },
+                }}
+                sx={{
+                  "mb": 1.5,
+                  "bgcolor": "black",
+                  "boxShadow": 51,
+                  "fontWeight": "bold",
+                  "fontFamily": "Roboto, sans-serif",
+                  "& .MuiOutlinedInput-root": {
+                    "backgroundColor": "rgba(255, 255, 255, 0.1)",
+                    "borderRadius": "4px",
+                    "transition": "all 0.3s ease",
+                    "& fieldset": { borderColor: "rgba(255, 255, 255, 0.3)" },
+                    "&:hover fieldset": {
+                      borderColor: "rgba(255, 255, 255, 0.5)",
+                    },
+                  },
+                  "& .MuiInputBase-input": {
+                    fontSize: "1.2rem",
+                    color: "white",
+                  },
+                }}
+              />
+              <TeamMembers
+                membersEmails={membersEmails}
+                setMembersEmails={setMembersEmails}
+              />
+              {/* REGISTER Button */}
+              <Button
+                variant="outlined"
+                onClick={handleRegister}
+                sx={{
+                  "mt": 1.5,
+                  "py": { xs: 1, md: 1.5 },
+                  "color": "white",
+                  "borderColor": "white",
+                  "fontWeight": "bold",
+                  "fontSize": { xs: "0.9rem", md: "0.8rem" },
+                  "bgcolor": "black",
+                  "position": "relative",
+                  "transition": "all 0.3s ease-in-out",
+                  "boxShadow": "inset 0 0 0px rgba(255, 255, 255, 0)",
+                  "&:hover": {
+                    boxShadow: "inset 0 0 10px rgba(255, 255, 255, 0.8)",
+                    bgcolor: "black",
+                    transform: "scale(1.02)",
+                  },
+                }}
+              >
+                REGISTER
+              </Button>
+            </>
+          )}
+          {participationStatus != "not-participating" && !isSoloEvent && (
+            <GroupInfo
+              userId={userId}
+              eventID={eventID}
+              refresh={refreshGroupInfo}
+              setRefresh={setRefreshGroupInfo}
+            />
+          )}
           {/* UNREGISTER Button: Only show if registration is successful */}
-          {registrationResponse && registrationResponse.success && (
+          {canUnregisterStatus && (
             <Button
               variant="outlined"
               onClick={handleUnregister}
               sx={{
-                mt: 1.5,
-                ml: 1,
-                py: { xs: 1, md: 1.5 },
-                color: "white",
-                borderColor: "white",
-                fontWeight: "bold",
-                fontSize: { xs: "0.9rem", md: "0.8rem" },
-                bgcolor: "black",
-                position: "relative",
-                transition: "all 0.3s ease-in-out",
-                boxShadow: "inset 0 0 0px rgba(255, 255, 255, 0)",
+                "mt": 1.5,
+                "ml": 1,
+                "py": { xs: 1, md: 1.5 },
+                "color": "white",
+                "borderColor": "white",
+                "fontWeight": "bold",
+                "fontSize": { xs: "0.9rem", md: "0.8rem" },
+                "bgcolor": "black",
+                "position": "relative",
+                "transition": "all 0.3s ease-in-out",
+                "boxShadow": "inset 0 0 0px rgba(255, 255, 255, 0)",
                 "&:hover": {
                   boxShadow: "inset 0 0 10px rgba(255, 255, 255, 0.8)",
                   bgcolor: "black",
@@ -509,17 +678,21 @@ const App = () => {
               UNREGISTER
             </Button>
           )}
-          {registrationResponse && (
-            <Typography
-              variant="body1"
-              align="center"
-              sx={{
-                mt: 2,
-                color: registrationResponse.success ? "green" : "red",
-              }}
-            >
-              {registrationResponse.message}
-            </Typography>
+          {invitationInfo?.status == "pending" && (
+            <div className="flex gap-2">
+              <button
+                className="bg-gray-800 text-white p-2 rounded-md mt-2 border border-gray-600"
+                onClick={acceptInvitation}
+              >
+                Accept Invitation
+              </button>
+              <button
+                className="bg-gray-800 text-white p-2 rounded-md mt-2 border border-gray-600"
+                onClick={declineInvitation}
+              >
+                Decline Invitation
+              </button>
+            </div>
           )}
         </Box>
       </Paper>
