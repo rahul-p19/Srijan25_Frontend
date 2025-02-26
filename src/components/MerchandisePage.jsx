@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useNavigate } from "react-router-dom";
 import { Button } from '../components/ui/button'
 import { Card } from '../components/ui/card';
@@ -18,6 +18,22 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel"
 
+const priceFetcher = async (setPrice) => {
+  const backendUrl = import.meta.env.VITE_BACKEND_URL;
+  try{
+    const response = await fetch(`${backendUrl}/api/V1/merch/checkDiscount`);
+    if(response.ok){
+      setPrice(319)
+      return;
+    }
+    setPrice(349)
+  }
+  catch(err){
+    console.log(err);
+    setPrice(349)
+  }
+}
+
 
 const sizes = ['S', 'M', 'L', 'XL', 'XXL'];
 const colors = ['White', 'Black'];
@@ -36,6 +52,11 @@ export default function MerchandisePage() {
     { id: 1, name: "SK Mujtahid Hossain",dept: "Power Engineering (UG3)",number :"9832944933"},
   ];
   const qrValue = "upi://pay?pa=user@upi&pn=User&mc=123456&tid=9876543210";
+
+  const [price, setPrice] = useState(349);
+  useEffect(() => {
+    priceFetcher(setPrice);
+  }, [])
 
 
     const navigate = useNavigate();
@@ -93,7 +114,7 @@ export default function MerchandisePage() {
                 Price
               </div>
               <div className="w-2/3 bg-[#141414] text-white text-lg flex justify-center items-center p-2">
-                Rs. 349/-
+                Rs. {price}/-
               </div>
             </div>
           </div>
@@ -209,7 +230,7 @@ export default function MerchandisePage() {
                 Price
               </div>
               <div className="w-2/3 bg-[#141414] text-white text-lg flex justify-center items-center p-2">
-                Rs. xxx/-
+                Rs. {price}/-
               </div>
             </div>
           </div>
