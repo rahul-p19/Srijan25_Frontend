@@ -187,12 +187,13 @@ export default function MerchandisePage() {
           <div className="w-full md:w-1/6 px-2 md:px-0 sm:absolute right-14 -bottom-[30%]">
             {/* Replaced text with SVG */}
             <div className="mb-3 text-center md:text-left">
-              <img 
+              {/*<img 
                 src="/contacts.svg" 
                 alt="Contact Us" 
                 className="h-8 inline-block"
                 style={{height:"150px",width:"150px", marginTop:"100px", marginBottom:"-40px"}}
-              />
+              />*/}
+            <h2 className='text-2xl text-center'>Contact Us</h2>
             </div>
             <div className="flex justify-center md:justify-start space-x-4 md:flex-row">
               {contacts.map((contact) => (
