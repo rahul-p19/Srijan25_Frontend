@@ -325,7 +325,7 @@ function Loading() {
 }
 
 // FancyButton for animated category filter buttons with ripple effect
-const FancyButton = ({ active, onClick, children }) => {
+export const FancyButton = ({ active, onClick, children }) => {
   const [ripples, setRipples] = useState([]);
 
   const createRipple = (event) => {

@@ -9,12 +9,13 @@ import MascotAnimation from "../home/MascotAnimation";
 import toast from "react-hot-toast";
 
 // eslint-disable-next-line react/prop-types
-const Signup = ({ user }) => {
+const Signup = ({ user, setActiveUser }) => {
   const navigate = useNavigate();
 
   const [imageSrc, setImageSrc] = useState("");
   const [message, setMessage] = useState("");
   const [loading, setLoading] = useState(false);
+  const [timeoutID, setTimeoutID] = useState("");
 
   const [formData, setFormData] = useState({
     name: "",
@@ -54,11 +55,6 @@ const Signup = ({ user }) => {
   };
 
   useEffect(() => {
-    if (user !== "") {
-      navigate("/dashboard");
-      return;
-    }
-
     serviceController
       .isOAuth2GoogleAvailable()
       .then((response) => {
@@ -70,7 +66,7 @@ const Signup = ({ user }) => {
       .catch((error) => {
         console.error("Error checking Google OAuth availability:", error);
       });
-  }, [navigate, user]);
+  }, [navigate]);
 
   useEffect(() => {
     if (message !== "") toast.error(message, { position: "bottom-right" });
@@ -78,6 +74,19 @@ const Signup = ({ user }) => {
 
   const startWithGoogle = function (e) {
     e.preventDefault();
+
+    if (user !== "") {
+      toast("You are already logged in! Redirecting you to your dashboard.");
+      setTimeoutID(
+        setTimeout(() => {
+          if (timeoutID !== "") clearTimeout(timeoutID);
+          navigate("/dashboard");
+        }, 3000),
+      );
+
+      return;
+    }
+
     authController
       .startWithOAuth2(CONST.uri.auth.GOOGLE_LOGIN)
       .then(onSuccessLogin)
@@ -96,9 +105,10 @@ const Signup = ({ user }) => {
 
     localStorage.setItem("sid", sid.id);
     localStorage.setItem("providerID", sid.providerId[0].providerUserId);
-    if(sid.isNewUser == true){
+    setActiveUser();
+    if (sid.isNewUser == true) {
       navigate("/referral", { state: { allowed: true } });
-    }else{
+    } else {
       navigate("/dashboard");
     }
   };
@@ -119,36 +129,52 @@ const Signup = ({ user }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Prevent submission if there are errors
-    if (!Object.values(errors).every((error) => error === "")) return;
-
-    // Set loading state to true while the API request is in progress
     setLoading(true);
+
+    if (user !== "") {
+      toast("You are already logged in! Redirecting you to your dashboard.");
+      setTimeoutID(
+        setTimeout(() => {
+          if (timeoutID !== "") clearTimeout(timeoutID);
+          navigate("/dashboard");
+        }, 3000),
+      );
+
+      return;
+    }
+
+    // Prevent submission if there are errors
+    if (!Object.values(errors).every((error) => error === "")) {
+      toast.error("Please fill out the details properly!");
+      setLoading(false);
+      return;
+    }
 
     try {
       const response = await authController.registerUser(formData);
       const { sid } = response.data;
 
       localStorage.setItem("sid", sid.id);
+      setActiveUser();
       // Redirect to EmailVerify page with formData (including email)
       navigate("/verify", { state: { formData } });
     } catch (error) {
       if (error.response && error.response.data.error) {
         const { keyPattern } = error.response.data.error;
 
-        if (keyPattern.email) {
+        if (keyPattern?.email) {
           setErrors((prev) => ({
             ...prev,
             email: "This email is already registered",
           }));
         }
-        if (keyPattern.phone) {
+        if (keyPattern?.phone) {
           setErrors((prev) => ({
             ...prev,
             phone: "This phone number is already registered",
           }));
         }
-        if (keyPattern.campusReferralCode) {
+        if (keyPattern?.campusReferralCode) {
           setErrors((prev) => ({
             ...prev,
             campusReferralCode: "Invalid referral code",
@@ -165,11 +191,10 @@ const Signup = ({ user }) => {
   };
 
   const isFormValid =
-  Object.entries(formData)
-    .filter(([key]) => key !== "campusReferralCode") // Exclude campusReferralCode from validation
-    .every(([_, value]) => value.trim() !== "") &&
-  Object.values(errors).every((error) => error === "");
-
+    Object.entries(formData)
+      .filter(([key]) => key !== "campusReferralCode") // Exclude campusReferralCode from validation
+      .every(([, value]) => value.trim() !== "") &&
+    Object.values(errors).every((error) => error === "");
 
   return (
     <div className="w-full relative">
@@ -307,16 +332,16 @@ const Signup = ({ user }) => {
               <TextInput
                 labelContent={
                   <>
-                    <span className="text-[#8420FF]">
-                      Enter{" "}
-                    </span>
-                    Campus Referral <span className="text-[#8420FF]">Code</span>{" "}
-                    {"(if any)"} 
+                    <span className="text-[#8420FF]">Enter </span>
+                    Campus Referral <span className="text-[#8420FF]">
+                      Code
+                    </span>{" "}
+                    {"(if any)"}
                   </>
                 }
                 name="campusReferralCode"
                 type="text"
-                placeholder='Enter Referral Code'
+                placeholder="Enter Referral Code"
                 value={formData.campusReferralCode}
                 className="lg:w-2/5"
                 error={errors.campusReferralCode}

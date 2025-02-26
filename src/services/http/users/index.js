@@ -19,8 +19,12 @@ export const editUser = (data) => {
   if (!data.phone) {
     throw "Enter a valid phone";
   }
+  const formData = new FormData();
+  formData.set("name", data.name);
+  formData.set("phone", data.phone);
+  if (data.photo !== null) formData.set("file", data.photo);
 
-  return axios.put(CONST.uri.resources.EDIT_USERS, data, {  
-    withCredentials: true, 
+  return axios.put(CONST.uri.resources.EDIT_USERS, formData, {
+    withCredentials: true,
   });
 };

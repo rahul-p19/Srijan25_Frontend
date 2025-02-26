@@ -14,6 +14,8 @@ import { PhoneInput, TextInput } from "../login/ui/inputs";
 import { SignUpButton } from "../login/ui/buttons";
 import toast from "react-hot-toast";
 import { usersController } from "../../services/http";
+import { FancyButton } from "../Events/Eventpage";
+import eventData from "../Events/allevents/data.json"; // Adjust path if necessary
 
 const style = {
   position: "absolute",
@@ -27,7 +29,7 @@ const style = {
   p: 4,
 };
 
-export const DashboardPage = ({ userID, logout }) => {
+export const DashboardPage = ({ logout }) => {
   const [user, setUser] = useState(undefined);
 
   const [open, setOpen] = useState(false);
@@ -37,6 +39,7 @@ export const DashboardPage = ({ userID, logout }) => {
   const [formData, setFormData] = useState({
     name: user?.name ?? "",
     phone: user?.phone ?? "",
+    photo: null,
   });
 
   const [errors, setErrors] = useState({
@@ -51,9 +54,26 @@ export const DashboardPage = ({ userID, logout }) => {
 
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState("");
+  const [activeCategory, setActiveCategory] = useState("Registered Events");
+
+  const filterTypeEvent = (type) => {
+    if (type === "Registered Events") {
+      return user?.registeredEvents ?? [];
+    } else if (type === "WishlistedEvents") {
+      return user?.wishlist ?? [];
+    } else {
+      return user?.pendingEvents ?? [];
+    }
+  };
+
+  useEffect(() => {
+    setFormData({ name: user?.name, phone: user?.phone });
+  }, [user]);
 
   const isFormValid =
-    Object.values(formData).every((field) => field.trim() !== "") &&
+    Object.entries(formData)
+      .filter(([key]) => key !== "photo")
+      .every(([, value]) => value?.trim() !== "") &&
     Object.values(errors).every((error) => error === "");
 
   const handleSubmit = async (e) => {
@@ -65,13 +85,16 @@ export const DashboardPage = ({ userID, logout }) => {
       const response = await usersController.editUser({
         name: formData.name,
         phone: formData.phone,
+        photo: formData.photo,
       });
 
       setUser((d) => ({
         name: response.data.name,
         phone: response.data.phone,
+        photo: { ...d.photo, url: response.data.photourl },
         ...d,
       }));
+      console.log(user);
       setMessage("Your details were edited successfully!");
       toast.success(message);
       // eslint-disable-next-line no-unused-vars
@@ -93,6 +116,15 @@ export const DashboardPage = ({ userID, logout }) => {
       setUser(r.data);
     });
   }, []);
+
+  const handleCardClick = (eventData) => {
+    window.location.href = `/events/${eventData?.category}/${eventData?.slug}`;
+  };
+
+  const truncateText = (text, maxLength = 310) => {
+    if (!text) return "";
+    return text.length > maxLength ? text.slice(0, maxLength) + "..." : text;
+  };
 
   return (
     <div className="font-sometypeMono">
@@ -144,7 +176,7 @@ export const DashboardPage = ({ userID, logout }) => {
                   onClick={handleOpen}
                   className="cursor-pointer py-2 px-3 rounded-xs transition-all hover:shadow-md hover:-translate-y-0.5 active:translate-y-0 focus:outline-none"
                 >
-                  <img src={EditIcon} alt="edit your profile picture" />
+                  <img src={EditIcon} alt="edit your profile" />
                 </button>
                 <Modal
                   open={open}
@@ -159,6 +191,21 @@ export const DashboardPage = ({ userID, logout }) => {
                       className="space-y-4 mt-4"
                       onSubmit={handleSubmit}
                     >
+                      <div>
+                        <div className="text-white font-extrabold text-sm sm:text-base">
+                          <span className="text-[#8420FF]">Upload a</span>{" "}
+                          profile picture
+                        </div>
+                        <div className="rounded-md bg-gradient-to-r from-red-700 via-purple-800 to-blue-900 p-px">
+                          <input
+                            accept="image/*"
+                            className="w-full rounded-md bg-[var(--color-background)] p-4 file:mr-2 file:rounded-full file:border-0 file:bg-violet-50 file:px-3 file:p-2 file:text-sm file:font-semibold file:text-violet-700 hover:file:bg-violet-100"
+                            name="photo"
+                            type="file"
+                            onChange={handleChange}
+                          />
+                        </div>
+                      </div>
                       <TextInput
                         labelContent={
                           <>
@@ -200,14 +247,20 @@ export const DashboardPage = ({ userID, logout }) => {
                 src={user?.photo?.url ?? "/empty-user.svg"}
                 alt="User profile picture"
               />
-              <div className="flex flex-col items-start">
-                <p>Name: {user?.name}</p>
-                <p>Email: {user?.email}</p>
-                <p>Phone No.: {user?.phone ?? "Not available"}</p>
+              <div className="flex flex-col items-start text-base">
+                <p className="relative after:absolute after:left-0 after:bottom-[0.3em] after:h-[0.1em] after:w-full after:bg-gradient-to-r after:from-red-700 after:via-purple-800 after:to-blue-900">
+                  NAME: {user?.name}
+                </p>
+                <p className="relative after:absolute after:left-0 after:bottom-[0.3em] after:h-[0.1em] after:w-full after:bg-gradient-to-r after:from-red-700 after:via-purple-800 after:to-blue-900">
+                  EMAIL: {user?.email}
+                </p>
+                <p className="relative after:absolute after:left-0 after:bottom-[0.3em] after:h-[0.1em] after:w-full after:bg-gradient-to-r after:from-red-700 after:via-purple-800 after:to-blue-900">
+                  PHONE NO.: {user?.phone ?? "Not available"}
+                </p>
               </div>
             </section>
           </div>
-          <div className="col-span-full rounded-md bg-gradient-to-r from-red-700 via-purple-800 to-blue-900 p-px order-3">
+          {/* <div className="col-span-full rounded-md bg-gradient-to-r from-red-700 via-purple-800 to-blue-900 p-px order-3">
             <section className="flex flex-col gap-6 md:gap-8 rounded-md h-full w-full bg-[#141414] py-6 md:py-8 px-[6vw]">
               <p className="text-2xl flex">Registered Events</p>
               <p className="flex text-lg">
@@ -227,6 +280,70 @@ export const DashboardPage = ({ userID, logout }) => {
             <section className="flex flex-col gap-6 md:gap-8 rounded-md h-full w-full bg-[#141414] py-6 md:py-8 px-[6vw]">
               <p className="text-2xl flex">Pending Events</p>
               <p className="flex text-lg">No events are pending, yet!</p>
+            </section>
+          </div> */}
+          <nav className="col-span-full flex flex-wrap justify-center gap-8 mb-10 order-4">
+            {["Registered Events", "Wishlisted Events", "Pending Events"].map(
+              (category) => (
+                <FancyButton
+                  key={category}
+                  active={activeCategory === category}
+                  onClick={() => setActiveCategory(category)}
+                >
+                  {category.charAt(0).toUpperCase() + category.slice(1)}
+                </FancyButton>
+              ),
+            )}
+          </nav>
+          <div className="col-span-full rounded-md bg-gradient-to-r from-red-700 via-purple-800 to-blue-900 p-px order-5">
+            <section className="flex flex-col gap-6 md:gap-8 rounded-md h-full w-full bg-[#141414] py-6 md:py-8 px-[6vw]">
+              {filterTypeEvent(activeCategory).length === 0 ? (
+                <p className="flex text-lg">No events in this section, yet!</p>
+              ) : (
+                filterTypeEvent(activeCategory).map((item) => (
+                  <div
+                    key={item?.slug}
+                    onClick={() => handleCardClick(item)}
+                    className="card group relative rounded-2xl overflow-hidden shadow-xl transform transition-all duration-300 hover:scale-105 cursor-pointer"
+                  >
+                    <img
+                      src={
+                        eventData
+                          .filter((f) => f.eventName === item?.name)
+                          .at(0)?.eventPoster
+                      }
+                      alt={item?.name}
+                      className="w-auto h-auto object-contain transition-transform duration-300 group-hover:scale-110"
+                    />
+                    <div
+                      className="
+                      absolute 
+                      left-0 
+                      right-0 
+                      bottom-0 
+                      p-4 
+                      bg-gradient-to-t from-black to-transparent 
+                      text-white 
+                      opacity-0 
+                      group-hover:opacity-100 
+                      transition-opacity 
+                      duration-300
+                    "
+                    >
+                      <h3 className="text-xl font-bold mb-1">{item?.name}</h3>
+
+                      <p className="text-sm">
+                        {truncateText(
+                          Array.isArray(item?.description)
+                            ? item?.description.join(" ")
+                            : item?.description,
+                          310,
+                        )}
+                      </p>
+                    </div>
+                  </div>
+                ))
+              )}
             </section>
           </div>
         </div>

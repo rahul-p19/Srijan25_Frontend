@@ -9,12 +9,13 @@ import { CONST } from "../../config";
 import MascotAnimation from "../home/MascotAnimation";
 import toast from "react-hot-toast";
 
-const Login = ({ user }) => {
+const Login = ({ user, setActiveUser }) => {
   const navigate = useNavigate();
 
   const [imageSrc, setImageSrc] = useState("");
   const [message, setMessage] = useState("");
   const [loading, setLoading] = useState(false);
+  const [timeoutID, setTimeoutID] = useState("");
 
   const [formData, setFormData] = useState({
     email: "",
@@ -48,11 +49,6 @@ const Login = ({ user }) => {
   };
 
   useEffect(() => {
-    if (user !== "") {
-      navigate("/dashboard");
-      return;
-    }
-
     serviceController
       .isOAuth2GoogleAvailable()
       .then((response) => {
@@ -64,7 +60,7 @@ const Login = ({ user }) => {
       .catch((error) => {
         console.error("Error checking Google OAuth availability:", error);
       });
-  }, [navigate, user]);
+  }, [navigate]);
 
   useEffect(() => {
     if (message !== "") toast.error(message, { position: "bottom-right" });
@@ -72,6 +68,19 @@ const Login = ({ user }) => {
 
   const startWithGoogle = function (e) {
     e.preventDefault();
+
+    if (user !== "") {
+      toast("You are already logged in! Redirecting you to your dashboard.");
+      setTimeoutID(
+        setTimeout(() => {
+          if (timeoutID !== "") clearTimeout(timeoutID);
+          navigate("/dashboard");
+        }, 3000),
+      );
+
+      return;
+    }
+
     authController
       .startWithOAuth2(CONST.uri.auth.GOOGLE_LOGIN)
       .then(onSuccessLogin)
@@ -90,9 +99,10 @@ const Login = ({ user }) => {
 
     localStorage.setItem("sid", sid.id);
     localStorage.setItem("providerID", sid.providerId[0].providerUserId);
-    if(sid.isNewUser == true){
+    setActiveUser();
+    if (sid.isNewUser == true) {
       navigate("/referral", { state: { allowed: true } });
-    }else{
+    } else {
       navigate("/dashboard");
     }
   };
@@ -113,6 +123,21 @@ const Login = ({ user }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    // Set loading state to true while the API request is in progress
+    setLoading(true);
+
+    if (user !== "") {
+      toast("You are already logged in! Redirecting you to your dashboard.");
+      setTimeoutID(
+        setTimeout(() => {
+          if (timeoutID !== "") clearTimeout(timeoutID);
+          navigate("/dashboard");
+        }, 3000),
+      );
+
+      return;
+    }
+
     let newErrors = { ...errors };
 
     if (!formData.loginPassword) {
@@ -130,10 +155,11 @@ const Login = ({ user }) => {
     setErrors(newErrors);
 
     // Prevent submission if there are errors
-    if (!Object.values(errors).every((error) => error === "")) return;
-
-    // Set loading state to true while the API request is in progress
-    setLoading(true);
+    if (!Object.values(errors).every((error) => error === "")) {
+      toast.error("Please fill out the details properly!");
+      setLoading(false);
+      return;
+    }
 
     try {
       const response = await authController.startWithCredentials({
@@ -145,24 +171,26 @@ const Login = ({ user }) => {
 
       localStorage.setItem("sid", sid.id);
 
+      setActiveUser();
       // Redirect to EmailVerify page with formData (including email)
       navigate("/dashboard", { state: { userData: response.data } });
     } catch (error) {
       if (error.response && error.response.data.error) {
         const { keyPattern } = error.response.data.error;
 
-        if (keyPattern.email) {
+        if (keyPattern?.email) {
           setErrors((prev) => ({
             ...prev,
             email: "This email is not registered",
           }));
         }
-        if (keyPattern.password) {
+        if (keyPattern?.password) {
           setErrors((prev) => ({
             ...prev,
             loginPassword: "Incorrect password",
           }));
         }
+        setMessage("Please register first!");
       } else {
         setMessage("Error logging the user in. Try again.");
       }
