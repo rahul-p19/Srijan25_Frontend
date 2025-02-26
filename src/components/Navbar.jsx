@@ -3,10 +3,11 @@ import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
 import toast from "react-hot-toast";
 import { useNavigate } from 'react-router-dom';
-
+import { useLocation } from 'react-router-dom';
 const notify = () => toast("Coming soon!");
 
 function Navbar() {
+  
   const navigate = useNavigate()
 
   const [navbarOpen, setNavbarOpen] = useState(false);
@@ -42,17 +43,17 @@ function Navbar() {
         <a href='/' className={`relative hidden sm:block w-fit`}>Home
           <div className={`absolute h-[2px] bg-gradient-to-l from-red to-purple bottom-0 ${pathname == "" ? 'w-full' : 'w-0'}`}></div>
         </a>
-        {/*
+        
         <a href='/events' className={`relative hidden sm:block w-fit`}>Events
           <div className={`absolute h-[2px] bg-gradient-to-l from-red to-purple bottom-0 ${pathname == "events" ? 'w-full' : 'w-0'}`}></div>
         </a>
-        <a href='/notifications' className={`relative hidden sm:block w-fit`}>Notifications
+        {/* <a href='/notifications' className={`relative hidden sm:block w-fit`}>Notifications
           <div className={`absolute h-[2px] bg-gradient-to-l from-red to-purple bottom-0 ${pathname == "notifications" ? 'w-full' : 'w-0'}`}></div>
-        </a>
-        */}
-        <div className={`relative hidden sm:block w-fit cursor-pointer`} onClick={notify}>Events
+        </a> */}
+       
+        {/* <div className={`relative hidden sm:block w-fit cursor-pointer`} onClick={notify}>Events
           <div className={`absolute h-[2px] bg-gradient-to-l from-red to-purple bottom-0 ${pathname == "events" ? 'w-full' : 'w-0'}`}></div>
-        </div>
+        </div> */}
         <div className={`relative hidden sm:block w-fit cursor-pointer`} onClick={notify}>Notifications
           <div className={`absolute h-[2px] bg-gradient-to-l from-red to-purple bottom-0 ${pathname == "notifications" ? 'w-full' : 'w-0'}`}></div>
         </div>
