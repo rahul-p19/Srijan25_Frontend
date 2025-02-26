@@ -842,6 +842,8 @@ import { Button } from "@mui/material";
 import toast, { Toaster } from "react-hot-toast";
 import Navbar from "../../Navbar";
 import PageReveal from "../../PageReveal";
+import { getImageUrl } from "../../../utils/image-util"; // Import the image utility
+
 function Loading() {
   return (
     <div className="h-screen w-screen bg-background fixed z-[300]">
@@ -865,6 +867,7 @@ function Loading() {
     </div>
   );
 }
+
 const AllEvents = () => {
   const { width, height } = useWindowSize();
   const { category, eventID } = useParams();
@@ -898,7 +901,7 @@ const AllEvents = () => {
     };
   }, []);
 
-  // Fetch event data based on URL parameters using the new structure
+  // Fetch event data based on URL parameters
   useEffect(() => {
     if (!eventID || !category) {
       console.error("Missing eventID or category from URL parameters");
@@ -907,7 +910,7 @@ const AllEvents = () => {
     const eventItem = eventsData.find(
       (item) =>
         item.eventID === eventID &&
-        item.eventType.toLowerCase() === category.toLowerCase(),
+        item.eventType.toLowerCase() === category.toLowerCase()
     );
     if (eventItem) {
       setEventData(eventItem);
@@ -922,9 +925,7 @@ const AllEvents = () => {
     return <div className="text-center text-white">Loading...</div>;
   }
 
-  // Derived values
-
-  // Event details: join prelims and build team size string
+  // Derived values for event details
   const eventDetails = {
     prelims: Array.isArray(eventData.eventDate.prelims)
       ? eventData.eventDate.prelims.join(" ")
@@ -955,12 +956,12 @@ const AllEvents = () => {
     ? eventData.eventDescription.join(" ")
     : eventData.eventDescription;
 
-  // Merge event rules (flatten the arrays from each round)
+  // Merge event rules (flatten arrays)
   const mergedRules = eventData.eventRules
     ? Object.values(eventData.eventRules).flat()
     : [];
 
-  // Parse event coordinators into organizer objects
+  // Parse event coordinators
   const eventOrganizers = eventData.eventCoordinators
     ? eventData.eventCoordinators.map((coordinator) => {
         const match = coordinator.match(/(.*)\[\s*([^\]]+)\s*\]/);
@@ -971,14 +972,12 @@ const AllEvents = () => {
       })
     : [];
 
-  // Default organizers title if not provided in the data
   const organizersTitle = "EVENT ORGANIZERS";
 
-  // Classes for static vertical lines
+  // Static vertical line classes
   const staticLineClasses =
     "absolute top-0 h-full w-px bg-white opacity-50 z-0 transition duration-300";
 
-  // Function to show toast notification when link is copied
   const notify = () => toast.success("Link copied to clipboard!");
   const notice = () => toast.success("Added to Wishlist successfully");
 
@@ -986,7 +985,7 @@ const AllEvents = () => {
     <>
       <Suspense fallback={<Loading />}>
         <div className="font-sometypeMono">
-          <Navbar />{" "}
+          <Navbar />
         </div>
         <PageReveal />
         <div
@@ -995,9 +994,7 @@ const AllEvents = () => {
         >
           {/* Static Vertical Lines */}
           <div className={`${staticLineClasses} left-[5%] sm:left-[10%]`}></div>
-          <div
-            className={`${staticLineClasses} right-[5%] sm:right-[10%]`}
-          ></div>
+          <div className={`${staticLineClasses} right-[5%] sm:right-[10%]`}></div>
 
           {/* Overlay Element */}
           <div
@@ -1030,37 +1027,38 @@ const AllEvents = () => {
 
             {/* Registration Deadline */}
             <h2 className="font-bold text-center mb-4 text-red-700 text-xl md:text-2xl">
-              LAST DATE FOR REGISTRATION {eventDetails.finals}
+              LAST DATE FOR REGISTRATION: TBH
             </h2>
 
             {/* Grid for Left & Right Sections */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
               {/* Left: Registration Card */}
               <div className="border p-8 rounded-lg text-center">
+                {/* Use getImageUrl to dynamically load the event poster */}
                 <img
-                  src={eventData.eventPoster}
+                  src={getImageUrl(eventData.eventPoster)}
                   alt={eventData.eventName}
                   className="w-full rounded-lg"
                 />
-                {/* Centered Registration Button */}
+                {/* Registration Button */}
                 <Button
                   variant="outlined"
                   onClick={() =>
                     navigate(`/events/${category}/${eventID}/registration`)
                   }
                   sx={{
-                    "mt": 2.5,
-                    "py": { xs: 2, md: 1 },
-                    "color": "white",
-                    "borderColor": "white",
-                    "fontWeight": "bold",
-                    "fontSize": { xs: "1.2rem", md: "1.1rem" },
-                    "bgcolor": "black",
-                    "position": "relative",
-                    "transition": "all 0.3s ease-in-out",
-                    "boxShadow": "inset 0 0 0px rgba(255, 255, 255, 0)",
-                    "mx": "auto",
-                    "display": "block",
+                    mt: 2.5,
+                    py: { xs: 2, md: 1 },
+                    color: "white",
+                    borderColor: "white",
+                    fontWeight: "bold",
+                    fontSize: { xs: "1.2rem", md: "1.1rem" },
+                    bgcolor: "black",
+                    position: "relative",
+                    transition: "all 0.3s ease-in-out",
+                    boxShadow: "inset 0 0 0px rgba(255, 255, 255, 0)",
+                    mx: "auto",
+                    display: "block",
                     "&:hover": {
                       boxShadow: "inset 0 0 10px rgba(255, 255, 255, 0.8)",
                       bgcolor: "black",
@@ -1071,7 +1069,6 @@ const AllEvents = () => {
                   REGISTER
                 </Button>
                 <div className="flex flex-col sm:flex-row justify-center gap-4 mt-6">
-                  {/* Share Button opens the share modal */}
                   <button
                     className="flex items-center justify-center bg-gradient-to-r from-green-400 to-blue-500 text-white font-bold text-lg px-6 py-3 rounded-full shadow-md hover:shadow-xl transform hover:scale-105 transition duration-300"
                     onClick={() => setShowShareOptions(true)}
@@ -1186,79 +1183,74 @@ const AllEvents = () => {
                     <p className="flex items-center gap-2">
                       <FaPhoneAlt /> {organizer.phone}
                     </p>
-                    <p className="flex items-center gap-2">
-                      {/* <FaEnvelope /> {organizer.email} */}
-                    </p>
                   </div>
                 ))}
               </div>
             </div>
 
-            {/* Conditionally render Event Format if available */}
-          </div>
-
-          {/* Share Options Modal with blurred dark background */}
-          {showShareOptions && (
-            <div
-              className="fixed inset-0 flex items-center justify-center z-50"
-              style={{
-                background: "rgba(0, 0, 0, 0.8)",
-                backdropFilter: "blur(10px)",
-              }}
-            >
-              <div className="bg-white text-black rounded p-4 w-80">
-                <h3 className="text-xl font-bold mb-4">Share this event</h3>
-                <div className="flex flex-col gap-4">
-                  <a
-                    href={`mailto:?subject=${encodeURIComponent(
-                      eventData.eventName,
-                    )}&body=${encodeURIComponent(window.location.href)}`}
-                    className="flex items-center gap-2 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
-                  >
-                    <FaEnvelope size={20} /> Email
-                  </a>
-                  <a
-                    href={`https://api.whatsapp.com/send?text=${encodeURIComponent(
-                      eventData.eventName + " " + window.location.href,
-                    )}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-2 px-4 py-2 bg-green-500 text-white rounded hover:bg-green-600"
-                  >
-                    <FaWhatsapp size={20} /> WhatsApp
-                  </a>
-                  <a
-                    href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(
-                      window.location.href,
-                    )}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-2 px-4 py-2 bg-blue-700 text-white rounded hover:bg-blue-800"
-                  >
-                    <FaFacebookF size={20} /> Facebook
-                  </a>
+            {/* Share Options Modal */}
+            {showShareOptions && (
+              <div
+                className="fixed inset-0 flex items-center justify-center z-50"
+                style={{
+                  background: "rgba(0, 0, 0, 0.8)",
+                  backdropFilter: "blur(10px)",
+                }}
+              >
+                <div className="bg-white text-black rounded p-4 w-80">
+                  <h3 className="text-xl font-bold mb-4">Share this event</h3>
+                  <div className="flex flex-col gap-4">
+                    <a
+                      href={`mailto:?subject=${encodeURIComponent(
+                        eventData.eventName
+                      )}&body=${encodeURIComponent(window.location.href)}`}
+                      className="flex items-center gap-2 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
+                    >
+                      <FaEnvelope size={20} /> Email
+                    </a>
+                    <a
+                      href={`https://api.whatsapp.com/send?text=${encodeURIComponent(
+                        eventData.eventName + " " + window.location.href
+                      )}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 px-4 py-2 bg-green-500 text-white rounded hover:bg-green-600"
+                    >
+                      <FaWhatsapp size={20} /> WhatsApp
+                    </a>
+                    <a
+                      href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(
+                        window.location.href
+                      )}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 px-4 py-2 bg-blue-700 text-white rounded hover:bg-blue-800"
+                    >
+                      <FaFacebookF size={20} /> Facebook
+                    </a>
+                    <button
+                      onClick={() => {
+                        navigator.clipboard.writeText(window.location.href);
+                        notify();
+                      }}
+                      className="flex items-center gap-2 px-4 py-2 bg-gray-500 text-white rounded hover:bg-gray-600"
+                    >
+                      <MdShare size={20} /> Copy Link
+                    </button>
+                  </div>
                   <button
-                    onClick={() => {
-                      navigator.clipboard.writeText(window.location.href);
-                      notify();
-                    }}
-                    className="flex items-center gap-2 px-4 py-2 bg-gray-500 text-white rounded hover:bg-gray-600"
+                    onClick={() => setShowShareOptions(false)}
+                    className="mt-4 text-red-500 hover:underline"
                   >
-                    <MdShare size={20} /> Copy Link
+                    Close
                   </button>
-                </div>
-                <button
-                  onClick={() => setShowShareOptions(false)}
-                  className="mt-4 text-red-500 hover:underline"
-                >
-                  Close
-                </button>
               </div>
             </div>
           )}
 
           {/* React Hot Toast Toaster */}
           <Toaster />
+          </div>
         </div>
       </Suspense>
     </>

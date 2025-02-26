@@ -258,7 +258,7 @@ const App = () => {
     } catch (error) {
       console.error("Error during registration:", error);
       if (error?.response?.data?.error.includes("Event not found")) {
-        alert("Event not found");
+        toast("Event not found");
         navigate("/events");
       }
     }
