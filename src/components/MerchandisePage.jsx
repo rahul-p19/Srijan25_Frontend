@@ -10,6 +10,14 @@ import GridLines from './GridLines';
 import QRCodeHolder from './QRCodeHolder';
 import OrderForm from './merchandise/OrderForm'
 import SrijanMerchandiseAnnouncement from './merchandise/Decor'
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel"
+
 
 const sizes = ['S', 'M', 'L', 'XL', 'XXL'];
 const colors = ['White', 'Black'];
@@ -25,7 +33,7 @@ export default function MerchandisePage() {
     "./tshirt4.png",
   ]
   const contacts = [
-    { id: 1, name: "SK Mujtahid Hossain",dept: "Power Eng (UG3)",number :"9832944933"},
+    { id: 1, name: "SK Mujtahid Hossain",dept: "Power Engineering (UG3)",number :"9832944933"},
   ];
   const qrValue = "upi://pay?pa=user@upi&pn=User&mc=123456&tid=9876543210";
 
@@ -94,12 +102,35 @@ export default function MerchandisePage() {
           <div className="w-full md:w-2/3 flex flex-col md:flex-row items-center mb-6 md:mb-0 relative">
             {/* Image Container */}
             <div className="w-4/5 md:w-1/2 mb-8 sm:mb-0 flex justify-center">
-              <img
+              {/* <img
                 src={imgLink[1]}
                 alt="T-Shirt"
                 className="w-full max-w-md ml-5 sm:ml-0"
+              /> */}
+              <Carousel
+              opts={{
+                loop: true,
+              }}>
+  <CarouselContent>
+    {/* <CarouselItem>...</CarouselItem>
+    <CarouselItem>...</CarouselItem>
+    <CarouselItem>...</CarouselItem> */}
+    {imgLink.map((img,ind)=>{
+      return <CarouselItem key={ind}>
+    <img
+                src={imgLink[ind]}
+                alt="T-Shirt"
+                className="w-full max-w-md"
               />
+      </CarouselItem>
+      })}
+  </CarouselContent>
+  <CarouselPrevious className="bg-transparent hover:bg-transparent hover:cursor-pointer mr-8" />
+  <CarouselNext className="bg-transparent hover:bg-transparent hover:cursor-pointer mr-8" />
+</Carousel>
+
             </div>
+
 
             {/* 4-row Grid between image and vertical line - ADJUSTED POSITIONING */}
             <div className="w-full md:w-1/2 flex flex-col border border-gray-500 bg-background mt-4 md:mt-0 md:ml-12" style={{ maxWidth: "290px" }}>

@@ -13,10 +13,8 @@ function Footer() {
             <h2 className='text-3xl text-transparent bg-clip-text bg-gradient-to-r from-white to-light-pink'>Explore</h2>
             <div className='flex flex-col text-left sm:text-lg underline underline-offset-2'>
               <a href='/'>Home</a>
-              {/*<a href='/events'>Events</a>*/}
-              <div className='cursor-pointer' onClick={notify}>Events</div>
-              <div className='cursor-pointer' onClick={notify}>Merchandise</div>
-              {/*<a href='/merchandise'>Merchandise</a>*/}
+              <a href='/events'>Events</a>
+              <a href='/merchandise'>Merchandise</a>
               <a href='https://docs.google.com/forms/d/e/1FAIpQLSe-zoCeE50FR2dUzauh7wfvHxfHczPwgziqYhRju2zMLH164A/viewform'>Ambassador</a>
             </div>
           </div>

@@ -16,7 +16,7 @@ const SrijanMerchandiseAnnouncement = () => {
           <Calendar className="text-blue-300 mr-3 mt-1 flex-shrink-0" size={24} />
           <div>
             <h2 className="font-bold text-lg text-blue-300">Important Dates</h2>
-            <ul className="ml-2 space-y-2 mt-2">
+            <ul className="sm:ml-2 space-y-2 mt-2">
               <li className="flex items-center">
                 <span className="border border-blue-500 text-blue-200 px-2 py-1 rounded mr-2 text-sm font-medium w-24 text-center">By March 8</span>
                 <span>Receive by March 20</span>
@@ -41,14 +41,16 @@ const SrijanMerchandiseAnnouncement = () => {
           </div>
         </div>
 
-        <div className="flex items-start">
-          <BadgeDollarSign className="text-blue-300 mr-3 mt-1 flex-shrink-0" size={24} />
-          <div>
+        <div className="flex flex-col items-center">
+          <div className='flex justify-center relative w-full'>
+          <BadgeDollarSign className="text-blue-300 mr-3 mt-1 absolute left-0 flex-shrink-0" size={24} />
             <h2 className="font-bold text-lg text-blue-300">Pricing</h2>
-            <ul className="ml-2 space-y-1 mt-1">
+          </div>
+          <div>
+            <ul className="sm:ml-2 space-y-3 mt-3">
               <li className="flex items-center">
-                <span className="font-bold">Early Bird:</span>
-                <span className="ml-2">₹319 (first 100 orders only)</span>
+                <span className="font-bold text-left">Early Bird:</span>
+                <span className="ml-2 text-left">₹319 (first 100 orders only)</span>
               </li>
               <li className="flex items-center">
                 <span className="font-bold">Regular Price:</span>

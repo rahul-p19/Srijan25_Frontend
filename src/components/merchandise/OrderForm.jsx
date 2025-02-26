@@ -1,4 +1,5 @@
 import { useState ,useEffect} from 'react';
+import toast from "react-hot-toast";
 
 const backendUrl = import.meta.env.VITE_BACKEND_URL;
 
@@ -41,14 +42,14 @@ function OrderForm({setShowOrderForm,size , color}){
     const department=formData.get("department");
     const year=formData.get("year");
 
-    alert([color, size]);
+    // toast([color, size]);
     // Validate the input
     if (!nameOnShirt.trim()) {
-      alert("Please enter a name for the shirt.");
+      toast("Please enter a name for the shirt.");
       return;
     }
     if (!paymentProof || paymentProof.size === 0) {
-      alert("Please upload a payment proof image.");
+      toast("Please upload a payment proof image.");
       return;
     }
 
@@ -74,14 +75,14 @@ function OrderForm({setShowOrderForm,size , color}){
       });
 
       if (response.ok) {
-        alert("Order submitted successfully!");
+        toast("Order submitted successfully!");
         setShowOrderForm(false); // Close the form after submission
       } else {
-        alert("Failed to upload payment proof.");
+        toast("Failed to upload payment proof.");
       }
     } catch (error) {
       console.error("Error submitting order:", error);
-      alert("An error occurred while submitting your order.");
+      toast("An error occurred while submitting your order.");
     }
   };
   const handleCloseForm = () => {
