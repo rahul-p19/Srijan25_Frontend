@@ -150,20 +150,13 @@ const Login = ({ user }) => {
       navigate("/", { state: { userData: response.data } });
     } catch (error) {
       if (error.response && error.response.data.error) {
-        const { keyPattern } = error.response.data.error;
-
-        if (keyPattern.email) {
-          setErrors((prev) => ({
-            ...prev,
-            email: "This email is not registered",
-          }));
-        }
-        if (keyPattern.password) {
-          setErrors((prev) => ({
-            ...prev,
-            loginPassword: "Incorrect password",
-          }));
-        }
+        const { message, field } = error.response.data.error;
+        
+        // Set the error message for the specific field
+        setErrors((prev) => ({
+          ...prev,
+          [field]: message,
+        }));
       } else {
         setMessage("Error logging the user in. Try again.");
       }
