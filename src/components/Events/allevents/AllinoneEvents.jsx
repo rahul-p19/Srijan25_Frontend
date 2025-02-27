@@ -870,7 +870,9 @@ function Loading() {
 
 const AllEvents = () => {
   const { width, height } = useWindowSize();
-  const { category, eventID } = useParams();
+  // const { category, eventID } = useParams();
+   const { eventID } = useParams();
+
   const navigate = useNavigate();
 
   const containerRef = useRef(null);
@@ -903,14 +905,19 @@ const AllEvents = () => {
 
   // Fetch event data based on URL parameters
   useEffect(() => {
-    if (!eventID || !category) {
+    // if (!eventID || !category) {
+    //   console.error("Missing eventID or category from URL parameters");
+    //   return;
+    // }
+        if (!eventID) {
       console.error("Missing eventID or category from URL parameters");
       return;
     }
     const eventItem = eventsData.find(
       (item) =>
-        item.eventID === eventID &&
-        item.eventType.toLowerCase() === category.toLowerCase()
+        item.eventID === eventID 
+        //&&
+        // item.eventType.toLowerCase() === category.toLowerCase()
     );
     if (eventItem) {
       setEventData(eventItem);
@@ -919,7 +926,7 @@ const AllEvents = () => {
         `Event with eventId '${eventID}' and category '${category}' not found`
       );
     }
-  }, [eventID, category]);
+  }, [eventID]);
 
   if (!eventData) {
     return <div className="text-center text-white">Loading...</div>;
@@ -1044,7 +1051,7 @@ const AllEvents = () => {
                 <Button
                   variant="outlined"
                   onClick={() =>
-                    navigate(`/events/${category}/${eventID}/registration`)
+                    navigate(`/events/${eventID}/registration`)
                   }
                   sx={{
                     mt: 2.5,
