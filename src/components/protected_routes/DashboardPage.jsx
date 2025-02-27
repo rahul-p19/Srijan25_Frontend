@@ -304,7 +304,7 @@ export const DashboardPage = ({ userDetails, logout }) => {
             <section className="flex flex-col gap-6 md:gap-8 rounded-md h-full w-full bg-[#141414] py-6 md:py-8 px-[6vw]">
               <p className="text-2xl flex">Registered Events</p>
               {registeredEvents && registeredEvents.length > 0 ? 
-              <ul className="flex flex-cols gap-y-3">
+              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                 {registeredEvents.map((event,ind)=> <Link key={ind} to={`/events/${event.slug}`} className="border border-greyBorder p-3 shadow-lg rounded-md">{event.name}</Link>)}
               </ul> : 
               <p className="flex text-lg">
@@ -312,18 +312,18 @@ export const DashboardPage = ({ userDetails, logout }) => {
               </p>}
             </section>
           </div>
-          {/* <div className="col-span-full rounded-md bg-gradient-to-r from-red-700 via-purple-800 to-blue-900 p-px order-4">
+          <div className="col-span-full rounded-md bg-gradient-to-r from-red-700 via-purple-800 to-blue-900 p-px order-4">
             <section className="flex flex-col gap-6 md:gap-8 rounded-md h-full w-full bg-[#141414] py-6 md:py-8 px-[6vw]">
               <p className="text-2xl flex">Wishlisted Events</p>
               {wishlist && wishlist.length > 0 ? 
-              <ul className="flex flex-col gap-y-3">
+              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                 {wishlist.map((event,ind)=> <Link key={ind} to={`/events/${event.slug}`} className="border border-greyBorder p-3 shadow-lg rounded-md">{event.name}</Link>)}
               </ul> : 
               <p className="flex text-lg">
                 No events are in your wishlist, as of now!
               </p>}
             </section>
-          </div> */}
+          </div>
           <div className="col-span-full rounded-md bg-gradient-to-r from-red-700 via-purple-800 to-blue-900 p-px order-5">
             <section className="flex flex-col gap-6 md:gap-8 rounded-md h-full w-full bg-[#141414] py-6 md:py-8 px-[6vw]">
               <p className="text-2xl flex">Pending Events</p>
