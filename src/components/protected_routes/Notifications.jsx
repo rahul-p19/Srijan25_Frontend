@@ -1,7 +1,8 @@
-// import { useEffect, useState } from 'react';
-// import axios from 'axios';
+import { useEffect, useState } from 'react';
+import axios from 'axios';
 import Navbar from '../Navbar';
 import Footer from '../Footer';
+import { useNavigate } from 'react-router-dom';
 
 /**
  * @typedef {object} NotificationItem
@@ -15,27 +16,38 @@ import Footer from '../Footer';
  * Mock Data (Fallback if API is empty)
  * @type {NotificationItem[]}
  */
-const items = [
-  { id: 1, title: 'Barcelona vs Real Madrid', description: 'Barcelona defeated 5-2 yesterday', timestamp: Date.now() - 100000 },
-  { id: 2, title: 'Barcelona vs Bayern Munich', description: 'Barcelona defeated 4-0 last month', timestamp: Date.now() - 5000000 },
-  { id: 3, title: 'Athletico Madrid vs Real Madrid', description: 'Match Finished 1-1 tonight', timestamp: Date.now() - 3600000 },
-  { id: 4, title: 'Athletico Madrid vs Real Madrid', description: 'Match Finished 1-1 tonight', timestamp: Date.now() - 7200000 },
-  { id: 5, title: 'Bablu Badmos sent you a friend request!', description: 'Mele Babu ne thana thaya? :p', timestamp: Date.now() - 20000 },
-];
 
+
+const getNotification = async (setItems)=>{
+  const backendUrl = import.meta.env.VITE_BACKEND_URL;
+  const response = await fetch(`${backendUrl}/api/v1/notifications/getAll`, {
+    credentials: 'include'
+  })
+  const {data} = await response.json();
+  const notifications = data.map(noti => {
+    return {
+      id: noti._id,
+      title: noti.title,
+      description: noti.description,
+      timestamp: new Date(noti.createdAt)
+    }
+  });
+  
+  setItems(notifications.reverse());
+}
 const Notifications = ({ user }) => {
-  // const [item, setItems] = useState(items); // Use fallback data initially
+    const userId = localStorage.getItem("sid");
+    console.log( userId );
+    if (!userId) {
+      window.location.href = "/login";
+      // return;
+    }
 
-  // useEffect(() => {
-  //   axios.get('http://localhost:3000/api/notifications')
-  //     .then(response => {
-  //       console.log("Fetched Notifications:", response.data);
-  //       if (response.data.length > 0) {
-  //         setItems(response.data); // Use API data if available
-  //       }
-  //     })
-  //     .catch(error => console.error("Error fetching notifications:", error));
-  // }, []);
+   const [items, setItems] = useState([]); // Use fallback data initially
+
+   useEffect(() => {
+     getNotification(setItems);
+   }, []);
 
   // Function to format timestamp
   const getTimeDifference = (timestamp) => {
