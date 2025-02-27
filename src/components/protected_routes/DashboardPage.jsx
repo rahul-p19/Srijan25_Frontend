@@ -97,6 +97,8 @@ export const DashboardPage = ({ userDetails, logout }) => {
       });
     }
 
+    // console.log("events: ",{registeredEvents,pendingEvents,wishlist});
+
   },[])
 
   const [open, setOpen] = useState(false);
