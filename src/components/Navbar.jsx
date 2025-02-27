@@ -53,7 +53,7 @@ function Navbar() {
         {/* <div className={`relative hidden sm:block w-fit`} onClick={notify}>Events
           <div className={`absolute h-[2px] bg-gradient-to-l from-red to-purple bottom-0 ${pathname == "events" ? 'w-full' : 'w-0'}`}></div>
         </div> */}
-        <a className={`relative hidden sm:block w-fit cursor-pointer`} href="/merchandise">Merchandise
+        <a className={`relative hidden sm:block w-fit cursor-pointer`} href="/notifications">Notifications
           <div className={`absolute h-[2px] bg-gradient-to-l from-red to-purple bottom-0 ${pathname == "notifications" ? 'w-full' : 'w-0'}`}></div>
         </a>
         <a href="/workshop" className={`relative hidden sm:block w-fit`}>Workshop
