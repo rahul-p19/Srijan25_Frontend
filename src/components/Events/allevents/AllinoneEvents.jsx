@@ -1234,9 +1234,9 @@ const AllEvents = () => {
               <h3 className="text-2xl md:text-3xl font-bold text-center animate-rainbow">
                 EVENT RULES
               </h3>
-              <h4 className="text-lg md:text-xl font-bold mt-4 animate-rainbow">
+{/*               <h4 className="text-lg md:text-xl font-bold mt-4 animate-rainbow">
                 CRITERIA
-              </h4>
+              </h4> */}
               <ul className="list-disc pl-6 space-y-2">
                 {mergedRules.map((rule, index) => (
                   <li key={index}>{rule}</li>
