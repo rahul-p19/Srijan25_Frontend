@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import eventData from "../Events/allevents/data.json"; // Adjust path if necessary
 import {
   TextField,
   Button,
@@ -21,6 +22,7 @@ import axios from "axios";
 import { useEffect } from "react";
 import data from "./allevents/data.json";
 import MascotAnimation from "../home/MascotAnimation";
+import { getImageUrl } from "../../utils/image-util";
 
 // TeamMembers Component for dynamically adding/removing team member email fields
 const TeamMembers = ({ membersEmails, setMembersEmails, maxMembers }) => {
@@ -246,7 +248,7 @@ const App = () => {
 
   // Retrieve the event slug from the URL parameters
   const { eventID } = useParams();
-
+  const eventDetails = eventData.find(e=>e.eventID===eventID);
   const getUserById = async (userId) => {
     try {
       const response = await axios.get(`${env.API_SERVER}/users/${userId}`, {
@@ -580,6 +582,11 @@ const App = () => {
           boxShadow: "0px 0px 20px rgba(0,0,0,0.5)",
         }}
       >
+        <img
+          src={getImageUrl(eventDetails.eventPoster)}
+          alt={eventDetails.eventName}
+          className="hidden lg:block w-100 px-4 pt-3.5 h-fit rounded-3xl object-contain transition-transform duration-300 group-hover:scale-110"
+        /> 
         {/* Image Section */}
         {/* <Box */}
         {/*   sx={{ */}
@@ -605,7 +612,7 @@ const App = () => {
         {/*   /> */}
         {/* </Box> */}
         {/* Form Section */}
-        <MascotAnimation />
+        {/* <MascotAnimation /> */}
         <Box sx={{ width: "100%", maxWidth: "400px" }}>
           <Typography
             variant="h4"

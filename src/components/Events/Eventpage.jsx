@@ -140,7 +140,8 @@
 
 //       <style jsx global>{`
 //         html,
-//         body {
+//         
+    slug: {body {
 //           background-color: #000;
 //           margin: 0;
 //           padding: 0;
@@ -162,7 +163,8 @@
 
 import React, { useState, useEffect, Suspense } from "react";
 // import { ReactTyped } from "react-typed";
-// import Navbar from "../Navbar";
+// import N
+    slug: {avbar from "../Navbar";
 // import Footer from "../Footer";
 // import PageReveal from "../PageReveal";
 // import "./styles.css";
@@ -248,7 +250,8 @@ import React, { useState, useEffect, Suspense } from "react";
 //                   key={category}
 //                   onClick={() => setActiveCategory(category)}
 //                   className={`px-6 py-2 rounded-md font-semibold transition-all duration-300 focus:outline-none ${
-//                     activeCategory === category
+//         
+    slug: {            activeCategory === category
 //                       ? "bg-gradient-to-r from-black-500 to-green-600 text-white shadow-xl transform scale-105"
 //                       : "bg-gray-800 text-gray-300 hover:bg-gray-700 hover:shadow-lg"
 //                   }`}
