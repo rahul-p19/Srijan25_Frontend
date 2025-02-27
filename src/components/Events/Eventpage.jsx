@@ -419,7 +419,8 @@ const Events = () => {
 
   // Handle event card click to navigate to event detail page
   const handleCardClick = (eventData) => {
-    window.location.href = `/events/${eventData.category}/${eventData.eventID}`;
+    // window.location.href = `/events/${eventData.category}/${eventData.eventID}`;
+       window.location.href = `/events/${eventData.eventID}`;
   };
 
   return (
