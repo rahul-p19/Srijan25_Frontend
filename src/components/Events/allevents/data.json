@@ -1,7 +1,7 @@
 [
   {
     "eventID": "ptb",
-    "eventName": "Pass the baton",
+    "eventName": "Pass the Baton",
     "eventDate": {
       "prelims": ["TBD"],
       "finals": "TBD"
@@ -17,7 +17,7 @@
     "prize": ["1st : TBD     ", "2nd : TBD     ", "3rd : TBD "],
     "minMembers": 1,
     "maxMembers": 3,
-    "eventPoster": "ptb.png",
+    "eventPoster": "ptb.webp",
     "registrationType": "Srijan'24 Website",
     "eventShortDescription": "Embark on the ML adventure in 'OpenAImer'! Unleash your algorithms, analyse data, and spark innovation!",
     "eventDescription": [
@@ -51,7 +51,7 @@
     "prize": ["1st : TBH     ", "2nd : TBH     ", "3rd : TBH "],
     "minMembers": 1,
     "maxMembers": 3,
-    "eventPoster": "h42.png",
+    "eventPoster": "h42.webp",
     "registrationType": "Srijan'24 Website",
     "eventShortDescription": "Embark on the ML adventure in 'OpenAImer'! Unleash your algorithms, analyse data, and spark innovation!",
     "eventDescription": [
@@ -86,7 +86,7 @@
     "prize": ["1st : 2000    ", "2nd : 1000    ", "3rd : 500"],
     "minMembers": 1,
     "maxMembers": 3,
-    "eventPoster": "biznezplan.png",
+    "eventPoster": "biznezplan.webp",
     "registrationType": "Srijan'24 Website",
     "eventShortDescription": "Embark on the ML adventure in 'OpenAImer'! Unleash your algorithms, analyse data, and spark innovation!",
     "eventDescription": [

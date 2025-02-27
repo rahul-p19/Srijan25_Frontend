@@ -58,9 +58,9 @@ const Login = ({ user }) => {
       .isOAuth2GoogleAvailable()
       .then((response) => {
         let { serviceName, isActive } = response.data;
-        console.log(
-          `${serviceName} status: ${isActive ? "Available" : "Not available"}`,
-        );
+        // console.log(
+        //   `${serviceName} status: ${isActive ? "Available" : "Not available"}`,
+        // );
       })
       .catch((error) => {
         console.error("Error checking Google OAuth availability:", error);
@@ -81,10 +81,10 @@ const Login = ({ user }) => {
 
   const onSuccessLogin = function ({ data }) {
     let { sid } = data;
-    console.log(sid);
+    //console.log(sid);
     if (!sid) {
       let error = "An error occurred during the login process";
-      console.log(error);
+      //console.log(error);
       setMessage(error);
       return;
     }

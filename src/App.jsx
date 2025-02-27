@@ -16,7 +16,7 @@ import { WorkshopPage } from "./components/workshop/WorkshopPage";
 import Loading from "./components/Loading"
 
 import { ProtectedRoute } from "./components/protected_routes/AuthRoutes";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, redirect } from "react-router-dom";
 import Notifications from "./components/protected_routes/Notifications";
 import { Toaster } from "react-hot-toast";
 import { logoutCall } from "./services/http/auth";
@@ -35,19 +35,26 @@ function App() {
   };
 
   useEffect(() => {
+    getToken();
+  }, []);
+  
+  const getToken = async() => {
     const token = localStorage.getItem("sid");
-    if (token) verifyToken(token);
-  }, [user]);
+    if (token) await verifyToken(token);
+    setChecking(false);
+  }
 
   const verifyToken = async (token) => {
     const response = await fetch(`${uri.resources.USERS}/${token}`, {
       credentials: 'include'
     });
+    const data = await response.json();
     if (response.ok) {
-      setUser(token);
+      setUser(data);
     } else {
       setUser("");
       localStorage.removeItem("sid");
+      redirect("/login");
     }
     setChecking(false);
   };
@@ -57,10 +64,10 @@ function App() {
       <Router>
         <Routes>
           <Route index element={<LandingPage setUser={setUser} />} />
-          <Route element={checking ? <Loading /> : <ProtectedRoute accessAllowed={!!user} />}>
+          <Route element={checking ? <Loading /> : <ProtectedRoute accessAllowed={!!user} redirectTo="/login" />}>
             <Route
               path="/dashboard"
-              element={<DashboardPage userID={user} logout={handleLogout} />}
+              element={<DashboardPage userDetails={user} logout={handleLogout} />}
             />
           </Route>
           <Route path="/events" element={<Eventpage />} />
@@ -78,6 +85,7 @@ function App() {
             </Route>
           <Route path="/events" element={<Eventpage />} />
           <Route path="/eventregistration" element={<EventRegistration />} />
+          <Route path="/notifications" element={<Notifications user={user}/>} />
           <Route
             path="/signup"
             element={<Signup user={user} setUser={setUser} />}

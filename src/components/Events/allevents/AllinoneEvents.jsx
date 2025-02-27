@@ -843,6 +843,8 @@ import toast, { Toaster } from "react-hot-toast";
 import Navbar from "../../Navbar";
 import PageReveal from "../../PageReveal";
 import { getImageUrl } from "../../../utils/image-util"; // Import the image utility
+import { env } from "../../../config/config";
+import axios from "axios";
 
 function Loading() {
   return (
@@ -871,7 +873,7 @@ function Loading() {
 const AllEvents = () => {
   const { width, height } = useWindowSize();
   // const { category, eventID } = useParams();
-   const { eventID } = useParams();
+  const { eventID } = useParams();
 
   const navigate = useNavigate();
 
@@ -881,6 +883,64 @@ const AllEvents = () => {
   const [overlayStyle, setOverlayStyle] = useState({ top: 0, height: 0 });
   const [eventData, setEventData] = useState(null);
   const [showShareOptions, setShowShareOptions] = useState(false);
+  const [wishlist, setWishlist] = useState([]);
+
+  const getWishlist = async () => {
+    try {
+      let response = await axios.get(`${env.API_SERVER}/users/wishlist`, {
+        headers: {
+          "Content-Type": "application/json",
+        },
+        withCredentials: true,
+      });
+      console.log({ wishlist: response.data });
+      setWishlist(response.data.data);
+      return response.data;
+    } catch (error) {
+      console.error("Error during fetching wishlist:", error);
+    }
+  };
+  
+  const addToWishlist = async () => {
+    try {
+      let response = await axios.post(
+        `${env.API_SERVER}/users/wishlist/${eventID}`,
+        {},
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+          withCredentials: true,
+        },
+      );
+      console.log({ wishlist: response.data });
+      await getWishlist();
+      toast.success("Added to Wishlist successfully");
+      return response.data;
+    } catch (error) {
+      console.error("Error during adding to wishlist:", error);
+    }
+  };
+
+  const removeFromWishlist = async () => {
+    try {
+      let response = await axios.delete(
+        `${env.API_SERVER}/users/wishlist/${eventID}`,
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+          withCredentials: true,
+        },
+      );
+      console.log({ wishlist: response.data });
+      await getWishlist();
+      toast.success("Removed from Wishlist successfully");
+      return response.data;
+    } catch (error) {
+      console.error("Error during removing from wishlist:", error);
+    }
+  };
 
   // Update overlay position based on the rules section
   useEffect(() => {
@@ -909,21 +969,21 @@ const AllEvents = () => {
     //   console.error("Missing eventID or category from URL parameters");
     //   return;
     // }
-        if (!eventID) {
+    if (!eventID) {
       console.error("Missing eventID or category from URL parameters");
       return;
     }
     const eventItem = eventsData.find(
-      (item) =>
-        item.eventID === eventID 
-        //&&
-        // item.eventType.toLowerCase() === category.toLowerCase()
+      (item) => item.eventID === eventID,
+      //&&
+      // item.eventType.toLowerCase() === category.toLowerCase()
     );
     if (eventItem) {
       setEventData(eventItem);
+      getWishlist();
     } else {
       console.error(
-        `Event with eventId '${eventID}' and category '${category}' not found`
+        `Event with eventId '${eventID}' and category '${category}' not found`,
       );
     }
   }, [eventID]);
@@ -986,7 +1046,7 @@ const AllEvents = () => {
     "absolute top-0 h-full w-px bg-white opacity-50 z-0 transition duration-300";
 
   const notify = () => toast.success("Link copied to clipboard!");
-  const notice = () => toast.success("Added to Wishlist successfully");
+  // const notice = () => toast.success("Added to Wishlist successfully");
 
   return (
     <>
@@ -1001,7 +1061,9 @@ const AllEvents = () => {
         >
           {/* Static Vertical Lines */}
           <div className={`${staticLineClasses} left-[5%] sm:left-[10%]`}></div>
-          <div className={`${staticLineClasses} right-[5%] sm:right-[10%]`}></div>
+          <div
+            className={`${staticLineClasses} right-[5%] sm:right-[10%]`}
+          ></div>
 
           {/* Overlay Element */}
           <div
@@ -1050,22 +1112,20 @@ const AllEvents = () => {
                 {/* Registration Button */}
                 <Button
                   variant="outlined"
-                  onClick={() =>
-                    navigate(`/events/${eventID}/registration`)
-                  }
+                  onClick={() => navigate(`/events/${eventID}/registration`)}
                   sx={{
-                    mt: 2.5,
-                    py: { xs: 2, md: 1 },
-                    color: "white",
-                    borderColor: "white",
-                    fontWeight: "bold",
-                    fontSize: { xs: "1.2rem", md: "1.1rem" },
-                    bgcolor: "black",
-                    position: "relative",
-                    transition: "all 0.3s ease-in-out",
-                    boxShadow: "inset 0 0 0px rgba(255, 255, 255, 0)",
-                    mx: "auto",
-                    display: "block",
+                    "mt": 2.5,
+                    "py": { xs: 2, md: 1 },
+                    "color": "white",
+                    "borderColor": "white",
+                    "fontWeight": "bold",
+                    "fontSize": { xs: "1.2rem", md: "1.1rem" },
+                    "bgcolor": "black",
+                    "position": "relative",
+                    "transition": "all 0.3s ease-in-out",
+                    "boxShadow": "inset 0 0 0px rgba(255, 255, 255, 0)",
+                    "mx": "auto",
+                    "display": "block",
                     "&:hover": {
                       boxShadow: "inset 0 0 10px rgba(255, 255, 255, 0.8)",
                       bgcolor: "black",
@@ -1083,13 +1143,24 @@ const AllEvents = () => {
                     <MdShare className="mr-2" size={28} />
                     Share
                   </button>
-                  <button
-                    className="flex items-center justify-center bg-gradient-to-r from-pink-500 to-red-500 text-white font-bold text-lg px-6 py-3 rounded-full shadow-md hover:shadow-xl transform hover:scale-105 transition duration-300"
-                    onClick={notice}
-                  >
-                    <FaHeart className="mr-2" size={24} />
-                    Add to Wishlist
-                  </button>
+                  {wishlist.filter((item) => item.slug === eventID).length >
+                  0 ? (
+                    <button
+                      className="flex items-center justify-center bg-gradient-to-r from-pink-500 to-red-500 text-white font-bold text-lg px-6 py-3 rounded-full shadow-md hover:shadow-xl transform hover:scale-105 transition duration-300"
+                      onClick={removeFromWishlist}
+                    >
+                      <FaHeart className="mr-2" size={24} />
+                      Remove from Wishlist
+                    </button>
+                  ) : (
+                    <button
+                      className="flex items-center justify-center bg-gradient-to-r from-pink-500 to-red-500 text-white font-bold text-lg px-6 py-3 rounded-full shadow-md hover:shadow-xl transform hover:scale-105 transition duration-300"
+                      onClick={addToWishlist}
+                    >
+                      <FaHeart className="mr-2" size={24} />
+                      Add to Wishlist
+                    </button>
+                  )}
                 </div>
               </div>
 
@@ -1209,7 +1280,7 @@ const AllEvents = () => {
                   <div className="flex flex-col gap-4">
                     <a
                       href={`mailto:?subject=${encodeURIComponent(
-                        eventData.eventName
+                        eventData.eventName,
                       )}&body=${encodeURIComponent(window.location.href)}`}
                       className="flex items-center gap-2 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
                     >
@@ -1217,7 +1288,7 @@ const AllEvents = () => {
                     </a>
                     <a
                       href={`https://api.whatsapp.com/send?text=${encodeURIComponent(
-                        eventData.eventName + " " + window.location.href
+                        eventData.eventName + " " + window.location.href,
                       )}`}
                       target="_blank"
                       rel="noopener noreferrer"
@@ -1227,7 +1298,7 @@ const AllEvents = () => {
                     </a>
                     <a
                       href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(
-                        window.location.href
+                        window.location.href,
                       )}`}
                       target="_blank"
                       rel="noopener noreferrer"
@@ -1251,12 +1322,12 @@ const AllEvents = () => {
                   >
                     Close
                   </button>
+                </div>
               </div>
-            </div>
-          )}
+            )}
 
-          {/* React Hot Toast Toaster */}
-          <Toaster />
+            {/* React Hot Toast Toaster */}
+            {/* <Toaster /> */}
           </div>
         </div>
       </Suspense>
