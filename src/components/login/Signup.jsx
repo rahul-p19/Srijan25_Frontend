@@ -291,7 +291,7 @@ const Signup = ({ user }) => {
                   <img
                     src={imageSrc}
                     alt="Robot mascot"
-                    className="w-98 h-98 pt-10 object-contain transition-all duration-900"
+                    className="w-100 h-100 pt-10 object-contain transition-all duration-900"
                   />
                 </div>
               )}
@@ -299,7 +299,7 @@ const Signup = ({ user }) => {
               <div
                 className={`w-full h-full hidden  ${imageSrc ? "hidden" : "lg:block"}`}
               >
-                <MascotAnimation scale={4.8} wave={false} />
+                <MascotAnimation scale={4.7} wave={false} />
               </div>
             </div>
 
