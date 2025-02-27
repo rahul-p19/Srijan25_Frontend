@@ -137,14 +137,12 @@ const TeamMembers = ({ membersEmails, setMembersEmails, maxMembers }) => {
 
               }}
             />
-            {membersEmails.length > 1 && (
-              <IconButton
+            <IconButton
                 onClick={() => handleRemoveMember(index)}
                 sx={{ color: "red", ml: 1 }}
-              >
-                <DeleteIcon />
-              </IconButton>
-            )}
+            >
+              <DeleteIcon />
+            </IconButton>      
           </Box>
         );
       })}
@@ -397,7 +395,7 @@ const App = () => {
   }
   const [teamName, setTeamName] = useState("");
   const [email, setEmail] = useState("");
-  const [membersEmails, setMembersEmails] = useState([""]);
+  const [membersEmails, setMembersEmails] = useState([]);
   const [loading, setLoading] = useState(true);
   const [isSoloEvent, setIsSoloEvent] = useState(false);
   const [maxMembersAllowed, setMaxMembersAllowed] = useState(1);

@@ -36,7 +36,7 @@ function App() {
 
   useEffect(() => {
     getToken();
-  });
+  }, []);
   
   const getToken = async() => {
     const token = localStorage.getItem("sid");
