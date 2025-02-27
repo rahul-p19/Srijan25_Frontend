@@ -444,7 +444,7 @@ const Events = () => {
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-green-400 via-red-500 to-blue-600 drop-shadow-2xl">
                 <ReactTyped
                   strings={[
-                    "Find The Best Workshops",
+                    // "Find The Best Workshops",
                     "Join Our Amazing Events",
                   ]}
                   typeSpeed={120}
