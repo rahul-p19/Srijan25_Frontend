@@ -11,33 +11,37 @@ const SrijanMerchandiseAnnouncement = () => {
         </div>
       </div> */}
 
-      <div className="space-y-4">
-        <div className="flex items-start">
-          <Calendar className="text-blue-300 mr-3 mt-1 flex-shrink-0" size={24} />
-          <div>
+      <div className="space-y-6">
+        <div className="flex flex-col items-center">
+          <div className='flex justify-center relative w-full'>
+          <Calendar className="text-blue-300 mr-3 mt-1 flex-shrink-0 absolute left-0" size={24} />
             <h2 className="font-bold text-lg text-blue-300">Important Dates</h2>
-            <ul className="sm:ml-2 space-y-2 mt-2">
-              <li className="flex items-center">
-                <span className="border border-blue-500 text-blue-200 px-2 py-1 rounded mr-2 text-sm font-medium w-24 text-center">Order by March 8</span>
-                <span>Receive by March 20</span>
+          </div>
+          <div className='w-full sm:w-5/6 mt-4'>
+            <ul className="sm:ml-2 space-y-2 mt-2 w-full">
+              <li className="flex items-center justify-between w-full">
+                <span className="border border-blue-500 text-blue-200 px-2 py-1 rounded mr-2 text-sm font-medium w-20 sm:w-32 text-center">Order by March 8</span>
+                <span className='text-right'>Receive by March 20</span>
               </li>
-              <li className="flex items-center">
-                <span className="border border-blue-500 text-blue-200 px-2 py-1 rounded mr-2 text-sm font-medium w-24 text-center">Order by March 9-15</span>
-                <span>Delivered during Srijan'25 (March 21-23)</span>
+              <li className="flex items-center justify-between w-full">
+                <span className="border border-blue-500 text-blue-200 px-2 py-1 rounded mr-2 text-sm font-medium w-36 sm:w-32 text-center">Order by March 9-15</span>
+                <span className='text-right'>Delivered during Srijan'25 (March 21-23)</span>
               </li>
-              <li className="flex items-center">
-                <span className="border border-blue-500 text-blue-200 px-2 py-1 rounded mr-2 text-sm font-medium w-24 text-center">Order after March 15</span>
-                <span>Collect from campus on a later date</span>
+              <li className="flex items-center justify-between">
+                <span className="border border-blue-500 text-blue-200 px-2 py-1 rounded mr-2 text-sm font-medium w-32 text-center">Order after March 15</span>
+                <span className='text-right'>Collect from campus on a later date</span>
               </li>
             </ul>
           </div>
         </div>
 
-        <div className="flex items-start">
-          <ShoppingBag className="text-blue-300 mr-3 mt-1 flex-shrink-0" size={24} />
+        <div className="flex flex-col items-center">
+          <div className='flex justify-center relative w-full'>
+          <ShoppingBag className="text-blue-300 mr-3 mt-1 flex-shrink-0 absolute left-0" size={24} />
+            <h2 className="font-bold text-lg text-blue-300 ml-3 sm:ml-0">T-shirt Availability</h2>
+          </div>
           <div>
-            <h2 className="font-bold text-lg text-blue-300">T-shirt Availability</h2>
-            <p className="ml-2 mt-1">T-shirts will be available from March 20 onwards based on your order date.</p>
+            <p className="ml-2 mt-1 sm:mt-3">T-shirts will be available from March 20 onwards based on your order date.</p>
           </div>
         </div>
 

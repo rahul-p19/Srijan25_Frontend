@@ -41,10 +41,10 @@ export default function MerchandisePage() {
   const [selectedColor, setSelectedColor] = useState("Black");
   const [showOrderForm, setShowOrderForm] = useState(false);
   const imgLink = [
-    "./tshirt1.png",
-    "./tshirt2.png",
-    "./tshirt3.png",
-    "./tshirt4.png",
+    "/merchandise/tshirt1.png",
+    "/merchandise/tshirt2.png",
+    "/merchandise/tshirt3.png",
+    "/merchandise/tshirt4.png",
   ];
   const contacts = [
     {
@@ -52,6 +52,12 @@ export default function MerchandisePage() {
       name: "Manosrija Nasrin",
       dept: "Information Technology (UG4)",
       number: "+918100448852",
+    },
+    {
+      id: 2,
+      name: "Dipayan Bhattacharyya",
+      dept: "Power Engineering (UG4)",
+      number: "+917044836127",
     },
   ];
   const qrValue = "upi://pay?pa=user@upi&pn=User&mc=123456&tid=9876543210";
@@ -105,7 +111,7 @@ export default function MerchandisePage() {
         {/* Header - Center on mobile, left on desktop */}
         <div className="mb-6 md:mb-12 mt-2 md:mt-4 flex justify-center md:justify-start md:ml-6">
           <img
-            src="/merchicon.svg"
+            src="/merchandise/merchicon.svg"
             alt="Merchandise Icon"
             className="h-30 md:h-30"
             style={{ marginLeft: "20px" }}
@@ -159,8 +165,8 @@ export default function MerchandisePage() {
                     );
                   })}
                 </CarouselContent>
-                <CarouselPrevious className="bg-transparent hover:bg-transparent hover:cursor-pointer mr-8" />
-                <CarouselNext className="bg-transparent hover:bg-transparent hover:cursor-pointer mr-8" />
+                <CarouselPrevious className="bg-transparent hover:bg-transparent hover:cursor-pointer mr-8 pl-2 border border-white" />
+                <CarouselNext className="bg-transparent hover:bg-transparent hover:cursor-pointer mr-8 pl-2 border border-white" />
               </Carousel>
             </div>
 
@@ -243,7 +249,7 @@ export default function MerchandisePage() {
           <div className="flex justify-center md:justify-start md:absolute md:top-80 md:left-2/5">
             <button className="focus:outline-none" onClick={handleOrderClick}>
               <img
-                src="/orderbutton.svg"
+                src="/merchandise/orderbutton.svg"
                 alt="Place Your Order"
                 className="w-40 md:w-48 h-auto"
                 style={{
@@ -268,7 +274,7 @@ export default function MerchandisePage() {
           </div>
 
           {/* Contact Us - Full width on mobile */}
-          <div className="w-full md:w-1/6 px-2 md:px-0 sm:absolute right-14 -bottom-[30%]">
+          <div className="w-full md:w-1/6 px-2 md:px-0 sm:absolute right-14 -bottom-[50%]">
             {/* Replaced text with SVG */}
             <div className="mb-3 text-center md:text-left">
               {/*<img 
@@ -279,14 +285,14 @@ export default function MerchandisePage() {
               />*/}
               <h2 className="text-2xl text-center">Contact Us</h2>
             </div>
-            <div className="flex justify-center md:justify-start space-x-4 md:flex-row">
+            <div className="flex flex-col gap-y-4 justify-center md:justify-start space-x-4">
               {contacts.map((contact) => (
-                <div key={contact.id} className="flex flex-col items-center">
+                <div key={contact.id} className="flex flex-col items-center text-center">
                   {
                     //<div className="w-16 h-16 bg-gray-400 rounded-md"></div>
                   }
                   <span className="text-white text-sm mt-2">
-                    {contact.name}
+                    {contact.id}.{contact.name}
                   </span>
                   <span className="text-white text-sm mt-2">
                     {contact.dept}
@@ -305,7 +311,7 @@ export default function MerchandisePage() {
           {/* Image container - centered on mobile, left-aligned on desktop */}
           <div className="flex justify-center md:justify-start">
             <img
-              src="/orderimage.svg"
+              src="/merchandise/orderimage.svg"
               alt="How to Order"
               className="w-full max-w-lg md:max-w-2xl ml-8 sm:-ml-18"
               style={{ height: "110px" }}
