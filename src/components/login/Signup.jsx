@@ -7,6 +7,7 @@ import { authController, serviceController } from "../../services/http";
 import { CONST } from "../../config";
 import MascotAnimation from "../home/MascotAnimation";
 import toast from "react-hot-toast";
+import Navbar from "../Navbar";
 
 // eslint-disable-next-line react/prop-types
 const Signup = ({ user }) => {
@@ -172,9 +173,9 @@ const Signup = ({ user }) => {
 
 
   return (
-    <div className="w-full relative">
+    <div className="w-full relative font-sometypeMono">
       <GridLines />
-
+      <Navbar />
       <div className="min-h-screen flex items-center justify-center p-4 font-['Source_Code_Pro']">
         <div className="w-full max-w-2xl bg-black/20 rounded-2xl backdrop-blur-sm border border-white flex flex-col p-8 text-left">
           <h1 className="font-bold lg:text-2xl">
@@ -208,7 +209,7 @@ const Signup = ({ user }) => {
                 <TextInput
                   labelContent={
                     <>
-                      <span className="text-[#8420FF]">Enter your</span> name
+                      <span className="text-[#8420FF] text-md">Enter your</span> name
                     </>
                   }
                   name="name"
@@ -291,7 +292,7 @@ const Signup = ({ user }) => {
                   <img
                     src={imageSrc}
                     alt="Robot mascot"
-                    className="w-98 h-98 pt-10 object-contain transition-all duration-900"
+                    className="w-100 h-100 pt-10 object-contain transition-all duration-900"
                   />
                 </div>
               )}
@@ -299,7 +300,7 @@ const Signup = ({ user }) => {
               <div
                 className={`w-full h-full hidden  ${imageSrc ? "hidden" : "lg:block"}`}
               >
-                <MascotAnimation scale={4.8} wave={false} />
+                <MascotAnimation scale={4.7} wave={false} />
               </div>
             </div>
 
@@ -316,7 +317,7 @@ const Signup = ({ user }) => {
                 }
                 name="campusReferralCode"
                 type="text"
-                placeholder='Enter Referral Code'
+                placeholder='Enter Referral Code...'
                 value={formData.campusReferralCode}
                 className="lg:w-2/5"
                 error={errors.campusReferralCode}
