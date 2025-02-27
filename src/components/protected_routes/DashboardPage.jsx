@@ -33,6 +33,7 @@ export const DashboardPage = ({ userID, logout }) => {
   const [merchStatus, setMerchStatus] = useState("Fetching Order Status..");
   const [merchColour, setMerchColour] = useState("");
   const [merchSize, setMerchSize] = useState("");
+  const [merchPlaceholder, setMerchPlaceholder] = useState("/merchandise/merch-in-dashboard.svg");
 
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
@@ -98,6 +99,7 @@ export const DashboardPage = ({ userID, logout }) => {
         setMerchStatus(data.merchandise.status);
         setMerchColour(data.merchandise.color);
         setMerchSize(data.merchandise.size);
+        setMerchPlaceholder(data.merchandise.color === "black" ? "/merchandise/tshirt2.png" : "/merchandise/tshirt1.png")
       }
       else setMerchStatus("No merchandise orders. If you think this is incorrect, please contact us.");
       }catch(_err){
@@ -151,10 +153,10 @@ export const DashboardPage = ({ userID, logout }) => {
                 <p className="py-2 text-xl">My Merchandise</p>
                 <img
                   className="w-full max-w-3xs transition-all hover:-translate-y-0.5 active:translate-y-0"
-                  src="/merch-in-dashboard.svg"
+                  src={merchPlaceholder}
                   alt="Merchandise placeholder"
                 />
-                              <p className="flex text-lg">Status: {merchStatus}</p>
+              <p className="flex text-lg">Status: {merchStatus}</p>
               <p className="flex text-lg">{merchColour && `Colour: ${merchColour}`}</p>
               <p className="flex text-lg">{merchSize && `Size: ${merchSize}`}</p>
               </section>
