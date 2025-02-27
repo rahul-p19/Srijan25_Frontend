@@ -1,55 +1,58 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { Button } from '../components/ui/button'
-import { Card } from '../components/ui/card';
-import { CardContent } from '../components/ui/card-content';
-import { cn } from '../../src/lib/utils';
-import Navbar from './Navbar';
-import Footer from './Footer';
-import GridLines from './GridLines';
-import QRCodeHolder from './QRCodeHolder';
-import OrderForm from './merchandise/OrderForm'
-import SrijanMerchandiseAnnouncement from './merchandise/Decor'
+import { Button } from "../components/ui/button";
+import { Card } from "../components/ui/card";
+import { CardContent } from "../components/ui/card-content";
+import { cn } from "../../src/lib/utils";
+import Navbar from "./Navbar";
+import Footer from "./Footer";
+import GridLines from "./GridLines";
+import QRCodeHolder from "./QRCodeHolder";
+import OrderForm from "./merchandise/OrderForm";
+import SrijanMerchandiseAnnouncement from "./merchandise/Decor";
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
-} from "@/components/ui/carousel"
+} from "@/components/ui/carousel";
 
 const priceFetcher = async (setPrice) => {
   const backendUrl = import.meta.env.VITE_BACKEND_URL;
-  try{
+  try {
     const response = await fetch(`${backendUrl}/api/V1/merch/checkDiscount`);
-    if(response.ok){
-      setPrice(319)
+    if (response.ok) {
+      setPrice(319);
       return;
     }
-    setPrice(349)
-  }
-  catch(err){
+    setPrice(349);
+  } catch (err) {
     console.log(err);
-    setPrice(349)
+    setPrice(349);
   }
-}
+};
 
-
-const sizes = ['XS','S', 'M', 'L', 'XL', 'XXL','XXXL'];
-const colors = ['White', 'Black'];
+const sizes = ["XS", "S", "M", "L", "XL", "XXL", "XXXL"];
+const colors = ["White", "Black"];
 
 export default function MerchandisePage() {
-  const [selectedSize, setSelectedSize] = useState('M');
-  const [selectedColor, setSelectedColor] = useState('Black');
+  const [selectedSize, setSelectedSize] = useState("M");
+  const [selectedColor, setSelectedColor] = useState("Black");
   const [showOrderForm, setShowOrderForm] = useState(false);
   const imgLink = [
     "./tshirt1.png",
     "./tshirt2.png",
     "./tshirt3.png",
     "./tshirt4.png",
-  ]
+  ];
   const contacts = [
-    { id: 1, name: "Adipto Ghosh Dastidar",dept: "Civil Engineering (UG4)",number :"6290764395"},
+    {
+      id: 1,
+      name: "Manosrija Nasrin",
+      dept: "Information Technology (UG4)",
+      number: "+918100448852",
+    },
   ];
   const qrValue = "upi://pay?pa=user@upi&pn=User&mc=123456&tid=9876543210";
 
@@ -58,8 +61,7 @@ export default function MerchandisePage() {
   //   priceFetcher(setPrice);
   // }, [])
 
-
-    const navigate = useNavigate();
+  const navigate = useNavigate();
   const handleOrderClick = () => {
     const userId = localStorage.getItem("sid");
     console.log({ userId });
@@ -102,13 +104,21 @@ export default function MerchandisePage() {
 
         {/* Header - Center on mobile, left on desktop */}
         <div className="mb-6 md:mb-12 mt-2 md:mt-4 flex justify-center md:justify-start md:ml-6">
-          <img src='/merchicon.svg' alt="Merchandise Icon" className="h-30 md:h-30" style={{ marginLeft: "20px" }} />
+          <img
+            src="/merchicon.svg"
+            alt="Merchandise Icon"
+            className="h-30 md:h-30"
+            style={{ marginLeft: "20px" }}
+          />
         </div>
 
         {/* Main Product Container */}
         <div className="flex flex-col md:flex-row md:justify-between relative mb-16">
           {/* Desktop Price Tag - Hidden on mobile */}
-          <div className="hidden md:block md:w-1/6" style={{ marginTop: "120px", marginLeft: "80px" }}>
+          <div
+            className="hidden md:block md:w-1/6"
+            style={{ marginTop: "120px", marginLeft: "80px" }}
+          >
             <div className="flex border border-gray-500 w-full mt-48">
               <div className="w-1/3 bg-[#1c1c1c] text-white text-lg flex justify-center items-center p-2 border-r border-gray-500">
                 Price
@@ -129,32 +139,36 @@ export default function MerchandisePage() {
                 className="w-full max-w-md ml-5 sm:ml-0"
               /> */}
               <Carousel
-              opts={{
-                loop: true,
-              }}>
-  <CarouselContent>
-    {/* <CarouselItem>...</CarouselItem>
+                opts={{
+                  loop: true,
+                }}
+              >
+                <CarouselContent>
+                  {/* <CarouselItem>...</CarouselItem>
     <CarouselItem>...</CarouselItem>
     <CarouselItem>...</CarouselItem> */}
-    {imgLink.map((img,ind)=>{
-      return <CarouselItem key={ind}>
-    <img
-                src={imgLink[ind]}
-                alt="T-Shirt"
-                className="w-full max-w-md"
-              />
-      </CarouselItem>
-      })}
-  </CarouselContent>
-  <CarouselPrevious className="bg-transparent hover:bg-transparent hover:cursor-pointer mr-8" />
-  <CarouselNext className="bg-transparent hover:bg-transparent hover:cursor-pointer mr-8" />
-</Carousel>
-
+                  {imgLink.map((img, ind) => {
+                    return (
+                      <CarouselItem key={ind}>
+                        <img
+                          src={imgLink[ind]}
+                          alt="T-Shirt"
+                          className="w-full max-w-md"
+                        />
+                      </CarouselItem>
+                    );
+                  })}
+                </CarouselContent>
+                <CarouselPrevious className="bg-transparent hover:bg-transparent hover:cursor-pointer mr-8" />
+                <CarouselNext className="bg-transparent hover:bg-transparent hover:cursor-pointer mr-8" />
+              </Carousel>
             </div>
 
-
             {/* 4-row Grid between image and vertical line - ADJUSTED POSITIONING */}
-            <div className="w-full md:w-1/2 flex flex-col border border-gray-500 bg-background mt-4 md:mt-0 md:ml-12" style={{ maxWidth: "290px" }}>
+            <div
+              className="w-full md:w-1/2 flex flex-col border border-gray-500 bg-background mt-4 md:mt-0 md:ml-12"
+              style={{ maxWidth: "290px" }}
+            >
               {/* Row 1: Size Label */}
               <div className="border-b border-gray-500 p-2">
                 <p className="text-lg text-right font-medium">Size</p>
@@ -166,8 +180,9 @@ export default function MerchandisePage() {
                   {sizes.map((size) => (
                     <button
                       key={size}
-                      className={`px-2 py-1 text-white text-sm text-center ${selectedSize === size ? "bg-gray-800" : "bg-zinc-800"
-                        }`}
+                      className={`px-2 py-1 text-white text-sm text-center ${
+                        selectedSize === size ? "bg-gray-800" : "bg-zinc-800"
+                      }`}
                       onClick={() => setSelectedSize(size)}
                     >
                       {size}
@@ -184,21 +199,34 @@ export default function MerchandisePage() {
               {/* Row 4: Color Checkboxes */}
               <div className="p-2">
                 <div className="grid grid-cols-2 place-items-center gap-4">
-                  {colors.map(color => (
-                    <label key={color} className="flex items-center space-x-2 cursor-pointer">
+                  {colors.map((color) => (
+                    <label
+                      key={color}
+                      className="flex items-center space-x-2 cursor-pointer"
+                    >
                       <input
                         type="radio"
                         name="color"
                         value={color.toLowerCase()}
-                        checked={selectedColor.toLowerCase() === color.toLowerCase()}
+                        checked={
+                          selectedColor.toLowerCase() === color.toLowerCase()
+                        }
                         onChange={() => setSelectedColor(color)}
                         className="sr-only"
                       />
                       <span
-                        className={`w-4 h-4 inline-block border rounded-full ${selectedColor.toLowerCase() === color.toLowerCase() ? "bg-white" : "bg-transparent"
-                          }`}
+                        className={`w-4 h-4 inline-block border rounded-full ${
+                          selectedColor.toLowerCase() === color.toLowerCase()
+                            ? "bg-white"
+                            : "bg-transparent"
+                        }`}
                       />
-                      <span className={`${selectedColor.toLowerCase() === color.toLowerCase() ? "underline underline-offset-3" : ""}`}> {color}</span>
+                      <span
+                        className={`${selectedColor.toLowerCase() === color.toLowerCase() ? "underline underline-offset-3" : ""}`}
+                      >
+                        {" "}
+                        {color}
+                      </span>
                     </label>
                   ))}
                 </div>
@@ -218,7 +246,11 @@ export default function MerchandisePage() {
                 src="/orderbutton.svg"
                 alt="Place Your Order"
                 className="w-40 md:w-48 h-auto"
-                style={{ marginTop: "60px", marginBottom: "50px", marginLeft: "160px" }}
+                style={{
+                  marginTop: "60px",
+                  marginBottom: "50px",
+                  marginLeft: "160px",
+                }}
               />
             </button>
           </div>
@@ -245,17 +277,23 @@ export default function MerchandisePage() {
                 className="h-8 inline-block"
                 style={{height:"150px",width:"150px", marginTop:"100px", marginBottom:"-40px"}}
               />*/}
-            <h2 className='text-2xl text-center'>Contact Us</h2>
+              <h2 className="text-2xl text-center">Contact Us</h2>
             </div>
             <div className="flex justify-center md:justify-start space-x-4 md:flex-row">
               {contacts.map((contact) => (
                 <div key={contact.id} className="flex flex-col items-center">
-                {
-                  //<div className="w-16 h-16 bg-gray-400 rounded-md"></div>
+                  {
+                    //<div className="w-16 h-16 bg-gray-400 rounded-md"></div>
                   }
-                  <span className="text-white text-sm mt-2">{contact.name}</span>
-                  <span className="text-white text-sm mt-2">{contact.dept}</span>
-                  <span className="text-white text-sm mt-2">{contact.number}</span>
+                  <span className="text-white text-sm mt-2">
+                    {contact.name}
+                  </span>
+                  <span className="text-white text-sm mt-2">
+                    {contact.dept}
+                  </span>
+                  <span className="text-white text-sm mt-2">
+                    {contact.number}
+                  </span>
                 </div>
               ))}
             </div>
@@ -267,7 +305,7 @@ export default function MerchandisePage() {
           {/* Image container - centered on mobile, left-aligned on desktop */}
           <div className="flex justify-center md:justify-start">
             <img
-              src='/orderimage.svg'
+              src="/orderimage.svg"
               alt="How to Order"
               className="w-full max-w-lg md:max-w-2xl ml-8 sm:-ml-18"
               style={{ height: "110px" }}
@@ -275,18 +313,21 @@ export default function MerchandisePage() {
           </div>
           {/* Text - centered on both mobile and desktop */}
           <p className="text-sm sm:text-base text-white mt-4 sm:mt-12 text-center max-w-3xl mx-auto px-4">
-    <SrijanMerchandiseAnnouncement/>
+            <SrijanMerchandiseAnnouncement />
           </p>
         </section>
       </div>
 
       {/* Order Form Overlay - Shows on same page with blurred background */}
-      {
-        showOrderForm &&  <OrderForm setShowOrderForm={setShowOrderForm} size={selectedSize} color={selectedColor}></OrderForm>
-      }
-
+      {showOrderForm && (
+        <OrderForm
+          setShowOrderForm={setShowOrderForm}
+          size={selectedSize}
+          color={selectedColor}
+        ></OrderForm>
+      )}
 
       <Footer />
-    </div >
+    </div>
   );
 }

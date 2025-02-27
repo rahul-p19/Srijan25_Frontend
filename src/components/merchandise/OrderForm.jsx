@@ -1,4 +1,4 @@
-import { useState ,useEffect} from 'react';
+import { useState } from 'react';
 import toast from "react-hot-toast";
 
 const backendUrl = import.meta.env.VITE_BACKEND_URL;
@@ -26,7 +26,7 @@ function OrderForm({setShowOrderForm, size , color}){
   // alert(size);
   // alert(color);
   const [loading, setLoading] = useState(false); // change to true if loading image dynamically
-  const [qrLink, setQrLink] = useState("/updatedRegularQR.jpeg");
+  const [qrLink, setQrLink] = useState("/merch-qr-27-02.jpg");
   // useEffect(()=>{
   //   dataFetcher(setLoading,setQrLink, setShowOrderForm);
   // },[])
