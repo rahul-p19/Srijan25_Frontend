@@ -56,7 +56,7 @@ function Cards() {
       live: true
     },
     {
-      image: "/tshirt2.png",
+      image: "/merchandise/tshirt2.png",
       text: "Merchandise",
       link: "/merchandise",
       live: true
