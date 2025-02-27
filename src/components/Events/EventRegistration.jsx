@@ -471,7 +471,7 @@ const App = () => {
       let invitations = response.data;
       //console.log({ invitations });
       for (const invitation of invitations.data) {
-        if (invitation.event.slug == eventID)
+        if (invitation.event.slug == eventID && invitation.status != "rejected")
           return {
             invited: true,
             group: invitation.group._id,
