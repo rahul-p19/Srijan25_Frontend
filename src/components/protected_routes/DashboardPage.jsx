@@ -99,7 +99,7 @@ export const DashboardPage = ({ userID, logout }) => {
         setMerchStatus(data.merchandise.status);
         setMerchColour(data.merchandise.color);
         setMerchSize(data.merchandise.size);
-        setMerchPlaceholder(data.merchandise.color === "black" ? "/merchandise/tshirt2.png" : "/merchandise/tshirt1.png")
+        setMerchPlaceholder(data.merchandise.color.toLowerCase() === "black" ? "/merchandise/tshirt2.png" : "/merchandise/tshirt1.png")
       }
       else setMerchStatus("No merchandise orders. If you think this is incorrect, please contact us.");
       }catch(_err){
