@@ -198,29 +198,132 @@ const GroupInfo = ({ userId, eventID, refresh, setRefresh }) => {
     fetchGroupInfo();
   }, [refresh]);
 
+  const navigate = useNavigate();
   return (
-    <div className="w-full h-full items-center p-4 text-white">
-      <h1>Group Info</h1>
+    <div className="w-full h-full p-3 md:p-5 bg-gray-900 text-gray-100">
+      {/* Back button */}
+      <button 
+        onClick={() => navigate(`/events/${eventID}`)}
+        className="flex items-center text-sm text-gray-300 hover:text-gray-100 mb-4 md:mb-6 transition-colors duration-200"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+        </svg>
+        Back to Event
+      </button>
+  
+      <div className="mb-4 md:mb-6">
+        <h1 className="text-lg md:text-xl font-medium tracking-wide">
+          Group Information
+        </h1>
+      </div>
+  
       {groupInfo ? (
-        <div>
-          <h2>Group Name: {groupInfo.name}</h2>
-          <h2>
-            Creator: {groupInfo?.creator?.name} - {groupInfo?.creator?.email}
-          </h2>
-          <h2>Members:</h2>
-          <ul>
-            {groupInfo?.members?.map(({ user, status }, index) => (
-              <li key={index}>
-                {user.name} - {user.email} - {status}
-              </li>
-            ))}
-          </ul>
-          <div>
-            <h2>Group Status: {groupInfo.status}</h2>
+        <div className="space-y-3 md:space-y-4 bg-gray-800 rounded-lg p-3 md:p-5 border border-gray-700 shadow-md">
+          {/* Group Name */}
+          <div className="bg-gray-750 rounded-lg p-3 md:p-4 border-l-2 border-blue-500">
+            <div className="flex items-center">
+              <div className="mr-2 md:mr-3 text-blue-400 flex-shrink-0">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                </svg>
+              </div>
+              <div className="min-w-0 w-full">
+                <p className="text-xs text-gray-400 font-medium">GROUP NAME</p>
+                <p className="text-base font-medium text-gray-100 break-words">{groupInfo.name}</p>
+              </div>
+            </div>
+          </div>
+  
+          {/* Creator Info */}
+          <div className="bg-gray-750 rounded-lg p-3 md:p-4 border-l-2 border-blue-500">
+            <div className="flex items-center">
+              <div className="mr-2 md:mr-3 text-blue-400 flex-shrink-0">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                </svg>
+              </div>
+              <div className="min-w-0 w-full">
+                <p className="text-xs text-gray-400 font-medium">TEAM LEADER</p>
+                <p className="font-medium text-gray-100 break-words">{groupInfo?.creator?.name}</p>
+                <p className="text-xs text-gray-400 break-words">{groupInfo?.creator?.email}</p>
+              </div>
+            </div>
+          </div>
+  
+          {/* Members List */}
+          <div className="bg-gray-750 rounded-lg p-3 md:p-4 border-l-2 border-blue-500">
+            <div className="flex items-center mb-2 md:mb-3">
+              <div className="mr-2 md:mr-3 text-blue-400 flex-shrink-0">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
+                </svg>
+              </div>
+              <p className="text-xs text-gray-400 font-medium">TEAM MEMBERS</p>
+            </div>
+  
+            <ul className="space-y-2 mt-2">
+              {groupInfo?.members?.map(({ user, status }, index) => (
+                <li 
+                  key={index} 
+                  className={`flex flex-col sm:flex-row sm:items-center justify-between p-2 sm:p-3 rounded-md ${
+                    status === 'accepted' 
+                      ? 'bg-green-900/20 border border-green-800' 
+                      : status === 'pending' 
+                      ? 'bg-yellow-900/20 border border-yellow-800' 
+                      : 'bg-red-900/20 border border-red-800'
+                  }`}
+                >
+                  <div className="flex items-center overflow-hidden mb-1 sm:mb-0">
+                    <div className={`h-2 w-2 rounded-full mr-2 md:mr-3 flex-shrink-0 ${
+                      status === 'accepted' ? 'bg-green-500' : 
+                      status === 'pending' ? 'bg-yellow-500' : 'bg-red-500'
+                    } ${status === 'pending' ? 'animate-pulse' : ''}`}></div>
+                    <div className="min-w-0">
+                      <p className="font-medium text-gray-100 truncate">{user.name}</p>
+                      <p className="text-xs text-gray-400 truncate">{user.email}</p>
+                    </div>
+                  </div>
+                  <div className={`text-xs font-medium px-2 py-1 rounded self-start sm:self-center flex-shrink-0 sm:ml-2 ${
+                    status === 'accepted' ? 'text-green-400 bg-green-900/40' :
+                    status === 'pending' ? 'text-yellow-400 bg-yellow-900/40' : 'text-red-400 bg-red-900/40'
+                  }`}>
+                    {status.toUpperCase()}
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </div>
+  
+          {/* Group Status */}
+          <div className="bg-gray-750 rounded-lg p-3 md:p-4 border-l-2 border-blue-500">
+            <div className="flex items-center justify-between">
+              <div className="flex items-center">
+                <div className="mr-2 md:mr-3 text-blue-400 flex-shrink-0">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                </div>
+                <div>
+                  <p className="text-xs text-gray-400 font-medium">GROUP STATUS</p>
+                </div>
+              </div>
+              <div className="bg-blue-900/60 px-3 py-1 rounded-full text-xs font-medium">
+                {groupInfo.status}
+              </div>
+            </div>
           </div>
         </div>
       ) : (
-        <p>No group info available</p>
+        <div className="flex flex-col items-center justify-center p-5 md:p-8 bg-gray-800 rounded-lg border border-gray-700 shadow-md">
+          <div className="text-blue-400 mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10 md:h-12 md:w-12 opacity-60" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+          </div>
+          <p className="text-base md:text-lg font-medium text-gray-300 text-center">No group information available</p>
+          <p className="text-sm text-gray-400 mt-2 text-center">You haven't joined a group yet or the data is still loading.</p>
+        </div>
       )}
     </div>
   );
