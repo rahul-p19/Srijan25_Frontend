@@ -37,8 +37,8 @@
     "eventID": "h42",
     "eventName": "H42",
     "eventDate": {
-      "prelims": [" 18th March"],
-      "finals": "22nd March"
+      "prelims": [" TBD"],
+      "finals": "TBD"
     },
     "eventType": "coding",
     "eventHashtags": ["hackathon", "machinelearning", "ai", "openaimer"],
@@ -48,7 +48,7 @@
       "Hrishikesh Majumder  [ 8017287092]",
       "Vikash Sangai [ 9432140409]"
     ],
-    "prize": ["1st : TBH     ", "2nd : TBH     ", "3rd : TBH "],
+    "prize": ["1st : TBD     ", "2nd : TBD     ", "3rd : TBD "],
     "minMembers": 1,
     "maxMembers": 3,
     "eventPoster": "h42.webp",
@@ -72,8 +72,8 @@
     "eventID": "biznez-plan",
     "eventName": "Biznez Plan ",
     "eventDate": {
-      "prelims": [" 18th March"],
-      "finals": " 21st March,2025"
+      "prelims": [" TBD"],
+      "finals": " TBD"
     },
     "eventType": "business",
     "eventHashtags": ["hackathon", "machinelearning", "ai", "openaimer"],
@@ -83,7 +83,7 @@
       "Aditya Anand  [8961313886]",
       "Apurba Nandi  [ 9749237190]"
     ],
-    "prize": ["1st : 2000    ", "2nd : 1000    ", "3rd : 500"],
+    "prize": ["1st : TBD    ", "2nd : TBD    ", "3rd : TBD"],
     "minMembers": 1,
     "maxMembers": 3,
     "eventPoster": "biznezplan.webp",
