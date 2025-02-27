@@ -35,7 +35,7 @@ function OrderForm({ setShowOrderForm, size, color }) {
 
     try {
       // Simulate uploading the file (Replace with actual API call)
-      console.log(nameOnShirt, paymentProof);
+      // console.log(nameOnShirt, paymentProof);
       const uploadFormData = new FormData();
       uploadFormData.append("image", paymentProof);
       uploadFormData.append("fullname", fullname);
@@ -46,7 +46,7 @@ function OrderForm({ setShowOrderForm, size, color }) {
       uploadFormData.append("year", year);
       uploadFormData.append("size", size);
       uploadFormData.append("color", color);
-      console.log(uploadFormData);
+      // console.log(uploadFormData);
 
       // Send the image to your backend API
       const response = await fetch(`${backendUrl}/api/v1/merch/submitImage`, {

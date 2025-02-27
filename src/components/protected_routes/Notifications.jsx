@@ -37,7 +37,7 @@ const getNotification = async (setItems)=>{
 }
 const Notifications = ({ user }) => {
     const userId = localStorage.getItem("sid");
-    console.log( userId );
+    // console.log( userId );
     if (!userId) {
       window.location.href = "/login";
       // return;

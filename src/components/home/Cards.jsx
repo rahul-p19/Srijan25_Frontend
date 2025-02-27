@@ -41,7 +41,7 @@ function Cards() {
       image: "/cards/events.png",
       text: "Events",
       link: "/events",
-      live: false
+      live: true
     },
     {
       image: "/cards/workshop.jpg",
