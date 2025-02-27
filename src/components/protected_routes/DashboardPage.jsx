@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Footer from "../Footer";
 import Contact from "../home/Contact";
 import Navbar from "../Navbar";
+import eventData from "../Events/allevents/event-ids";
 
 import LogoutIcon from "../../assets/icons/logout.svg";
 import NotifsIcon from "../../assets/icons/notifications.svg";
@@ -15,6 +16,7 @@ import { SignUpButton } from "../login/ui/buttons";
 import toast from "react-hot-toast";
 import { usersController } from "../../services/http";
 import { env } from "../../config/config";
+import { Link } from "react-router-dom";
 
 const style = {
   position: "absolute",
@@ -28,12 +30,76 @@ const style = {
   p: 4,
 };
 
-export const DashboardPage = ({ userID, logout }) => {
-  const [user, setUser] = useState(undefined);
-  const [merchStatus, setMerchStatus] = useState("Fetching Order Status..");
-  const [merchColour, setMerchColour] = useState("");
-  const [merchSize, setMerchSize] = useState("");
-  const [merchPlaceholder, setMerchPlaceholder] = useState("/merchandise/merch-in-dashboard.svg");
+export const DashboardPage = ({ userDetails, logout }) => {
+  // console.log(userDetails);
+  const [user, setUser] = useState(userDetails);
+  const merchStatus = user.merchandise.status;
+  const merchColour = user.merchandise.color;
+  const merchSize = user.merchandise.size;
+  const merchPlaceholder = (user.merchandise && user.merchandise.color) ? user.merchandise.color.toLowerCase() === "black" ? "/merchandise/tshirt2.png" : "/merchandise/tshirt1.png" : "/merchandise/merch-in-dashboard.svg";
+
+  // const registeredEvents = user.registeredEvents.length > 0 ? user.registeredEvents.map((eventId)=>await getEventById(eventId)) : [];
+  // const pendingEvents = user.pendingEvents;
+  // const wishlist = user.wishlist;
+
+  const [registeredEvents, setRegisteredEvents] = useState([]);
+  const [pendingEvents, setPendingEvents] = useState([]);
+  const [wishlist, setWishlist] = useState([]);
+
+  useEffect(()=>{
+
+    if(user.registeredEvents.length > 0){
+      // user.registeredEvents.map(eventId => {
+      //   // getEventById(eventId)
+      //   fetch(`${env.API_SERVER}/events/getEventById/${eventId}`,{
+      //     credentials: "include"
+      //   })
+      //   .then(res=>res.json())
+      //   .then(event=>event && setRegisteredEvents(prev=>[...prev,event]))
+      // })
+      user.registeredEvents.map(eventId => {
+
+        const newEvent = eventData.find((event) => event.id === eventId);
+
+        setRegisteredEvents(prev=>[...prev,newEvent])
+      });
+    }
+    if(user.pendingEvents.length > 0){
+      // user.pendingEvents.map(eventId => {
+      //   // getEventById(eventId)
+      //   fetch(`${env.API_SERVER}/events/getEventById/${eventId}`,{
+      //     credentials: 'include'
+      //   })
+      //   .then(res=>res.json())
+      //   .then(event=>event && setPendingEvents(prev=>[...prev,event]))
+      // })
+      user.pendingEvents.map(eventId => {
+
+        const newEvent = eventData.find((event) => event.id === eventId);
+
+        setPendingEvents(prev=>[...prev,newEvent])
+      });
+    }
+    if(user.wishlist.length > 0){
+      // user.wishlist.map(eventId => {
+      //   // getEventById(eventId)
+      //   fetch(`${env.API_SERVER}/events/getEventById/${eventId}`,{
+      //     credentials: 'include'
+      //   })
+      //   .then(res=>res.json())
+      //   .then(event=>event && setWishlist(prev=>[...prev,event]))
+      // })
+      user.wishlist.map(eventId => {
+
+        const newEvent = eventData.find((event) => event.id === eventId);
+
+        setWishlist(prev=>[...prev,newEvent])
+      });
+    }
+
+    console.log("events: ",{registeredEvents,pendingEvents,wishlist});
+
+  },[])
 
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
@@ -89,34 +155,34 @@ export const DashboardPage = ({ userID, logout }) => {
     }
   };
 
-  const getMerchandise = async () => {
-    try{
-      const res = await fetch(`${env.API_SERVER}/users/get/Merchandise`,{
-        credentials: "include"
-      });
-      const data = await res.json();
-      if(data.success){
-        setMerchStatus(data.merchandise.status);
-        setMerchColour(data.merchandise.color);
-        setMerchSize(data.merchandise.size);
-        setMerchPlaceholder(data.merchandise.color.toLowerCase() === "black" ? "/merchandise/tshirt2.png" : "/merchandise/tshirt1.png")
-      }
-      else setMerchStatus("No merchandise orders. If you think this is incorrect, please contact us.");
-      }catch(_err){
-        setMerchStatus("An error occurred while fetching your merch status, please try again later.");
-      }
-  }
+  // const getMerchandise = async () => {
+  //   try{
+  //     const res = await fetch(`${env.API_SERVER}/users/get/Merchandise`,{
+  //       credentials: "include"
+  //     });
+  //     const data = await res.json();
+  //     if(data.success){
+  //       setMerchStatus(data.merchandise.status);
+  //       setMerchColour(data.merchandise.color);
+  //       setMerchSize(data.merchandise.size);
+  //       setMerchPlaceholder(data.merchandise.color.toLowerCase() === "black" ? "/merchandise/tshirt2.png" : "/merchandise/tshirt1.png")
+  //     }
+  //     else setMerchStatus("No merchandise orders. If you think this is incorrect, please contact us.");
+  //     }catch(_err){
+  //       setMerchStatus("An error occurred while fetching your merch status, please try again later.");
+  //     }
+  // }
 
   // const navigate = useNavigate();
 
-  useEffect(() => {
-    const sid = localStorage.getItem("sid");
-    const providerID = localStorage.getItem("providerID");
-    getUserById(sid, providerID).then((r) => {
-      setUser(r.data);
-    });
-    getMerchandise();
-  }, []);
+  // useEffect(() => {
+  //   const sid = localStorage.getItem("sid");
+  //   const providerID = localStorage.getItem("providerID");
+  //   getUserById(sid, providerID).then((r) => {
+  //     setUser(r.data);
+  //   });
+  //   getMerchandise();
+  // }, []);
 
   return (
     <div className="font-sometypeMono">
@@ -237,23 +303,37 @@ export const DashboardPage = ({ userID, logout }) => {
           <div className="col-span-full rounded-md bg-gradient-to-r from-red-700 via-purple-800 to-blue-900 p-px order-3">
             <section className="flex flex-col gap-6 md:gap-8 rounded-md h-full w-full bg-[#141414] py-6 md:py-8 px-[6vw]">
               <p className="text-2xl flex">Registered Events</p>
+              {registeredEvents && registeredEvents.length > 0 ? 
+              <ul className="flex flex-cols gap-y-3">
+                {registeredEvents.map((event,ind)=> <Link key={ind} to={`/events/${event.slug}`} className="border border-greyBorder p-3 shadow-lg rounded-md">{event.name}</Link>)}
+              </ul> : 
               <p className="flex text-lg">
-                No events have been registered to, yet!
-              </p>
+                No events have been registered to, as of now!
+              </p>}
             </section>
           </div>
-          <div className="col-span-full rounded-md bg-gradient-to-r from-red-700 via-purple-800 to-blue-900 p-px order-4">
+          {/* <div className="col-span-full rounded-md bg-gradient-to-r from-red-700 via-purple-800 to-blue-900 p-px order-4">
             <section className="flex flex-col gap-6 md:gap-8 rounded-md h-full w-full bg-[#141414] py-6 md:py-8 px-[6vw]">
               <p className="text-2xl flex">Wishlisted Events</p>
+              {wishlist && wishlist.length > 0 ? 
+              <ul className="flex flex-col gap-y-3">
+                {wishlist.map((event,ind)=> <Link key={ind} to={`/events/${event.slug}`} className="border border-greyBorder p-3 shadow-lg rounded-md">{event.name}</Link>)}
+              </ul> : 
               <p className="flex text-lg">
-                No events have been wishlisted, yet!
-              </p>
+                No events are in your wishlist, as of now!
+              </p>}
             </section>
-          </div>
+          </div> */}
           <div className="col-span-full rounded-md bg-gradient-to-r from-red-700 via-purple-800 to-blue-900 p-px order-5">
             <section className="flex flex-col gap-6 md:gap-8 rounded-md h-full w-full bg-[#141414] py-6 md:py-8 px-[6vw]">
               <p className="text-2xl flex">Pending Events</p>
-              <p className="flex text-lg">No events are pending, yet!</p>
+              {pendingEvents && pendingEvents.length > 0 ? 
+              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                {pendingEvents.map((event,ind)=> <Link key={ind} to={`/events/${event.slug}`} className="border border-greyBorder p-3 shadow-lg rounded-md">{event.name}</Link>)}
+              </ul> : 
+              <p className="flex text-lg">
+                No events are pending, as of now!
+              </p>}
             </section>
           </div>
         </div>

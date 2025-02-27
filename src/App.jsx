@@ -37,14 +37,15 @@ function App() {
   useEffect(() => {
     const token = localStorage.getItem("sid");
     if (token) verifyToken(token);
-  }, [user]);
+  }, []);
 
   const verifyToken = async (token) => {
     const response = await fetch(`${uri.resources.USERS}/${token}`, {
       credentials: 'include'
     });
+    const data = await response.json();
     if (response.ok) {
-      setUser(token);
+      setUser(data);
     } else {
       setUser("");
       localStorage.removeItem("sid");
@@ -60,7 +61,7 @@ function App() {
           <Route element={checking ? <Loading /> : <ProtectedRoute accessAllowed={!!user} />}>
             <Route
               path="/dashboard"
-              element={<DashboardPage userID={user} logout={handleLogout} />}
+              element={<DashboardPage userDetails={user} logout={handleLogout} />}
             />
           </Route>
           <Route path="/events" element={<Eventpage />} />
