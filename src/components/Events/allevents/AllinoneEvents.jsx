@@ -503,8 +503,7 @@ const AllEvents = () => {
               </div>
             )}
 
-            {/* React Hot Toast Toaster */}
-            {/* <Toaster /> */}
+
           </div>
         </div>
       </Suspense>
