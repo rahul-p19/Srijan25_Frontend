@@ -1,6 +1,6 @@
 [
   {
-    "eventID": "pass_the_baton",
+    "eventID": "ptb",
     "eventName": "Pass the baton",
     "eventDate": {
       "prelims": ["TBD"],
