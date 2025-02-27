@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Footer from "../Footer";
 import Contact from "../home/Contact";
 import Navbar from "../Navbar";
+import eventData from "../Events/allevents/event-ids";
 
 import LogoutIcon from "../../assets/icons/logout.svg";
 import NotifsIcon from "../../assets/icons/notifications.svg";
@@ -30,7 +31,7 @@ const style = {
 };
 
 export const DashboardPage = ({ userDetails, logout }) => {
-  console.log(userDetails);
+  // console.log(userDetails);
   const [user, setUser] = useState(userDetails);
   const merchStatus = user.merchandise.status;
   const merchColour = user.merchandise.color;
@@ -48,34 +49,52 @@ export const DashboardPage = ({ userDetails, logout }) => {
   useEffect(()=>{
 
     if(user.registeredEvents.length > 0){
+      // user.registeredEvents.map(eventId => {
+      //   // getEventById(eventId)
+      //   fetch(`${env.API_SERVER}/events/getEventById/${eventId}`,{
+      //     credentials: "include"
+      //   })
+      //   .then(res=>res.json())
+      //   .then(event=>event && setRegisteredEvents(prev=>[...prev,event]))
+      // })
       user.registeredEvents.map(eventId => {
-        // getEventById(eventId)
-        fetch(`${env.API_SERVER}/events/getEventById/${eventId}`,{
-          credentials: "include"
-        })
-        .then(res=>res.json())
-        .then(event=>event && setRegisteredEvents(prev=>[...prev,event]))
-      })
+
+        const newEvent = eventData.find((event) => event.id === eventId);
+
+        setRegisteredEvents(prev=>[...prev,newEvent])
+      });
     }
     if(user.pendingEvents.length > 0){
+      // user.pendingEvents.map(eventId => {
+      //   // getEventById(eventId)
+      //   fetch(`${env.API_SERVER}/events/getEventById/${eventId}`,{
+      //     credentials: 'include'
+      //   })
+      //   .then(res=>res.json())
+      //   .then(event=>event && setPendingEvents(prev=>[...prev,event]))
+      // })
       user.pendingEvents.map(eventId => {
-        // getEventById(eventId)
-        fetch(`${env.API_SERVER}/events/getEventById/${eventId}`,{
-          credentials: 'include'
-        })
-        .then(res=>res.json())
-        .then(event=>event && setPendingEvents(prev=>[...prev,event]))
-      })
+
+        const newEvent = eventData.find((event) => event.id === eventId);
+
+        setPendingEvents(prev=>[...prev,newEvent])
+      });
     }
     if(user.wishlist.length > 0){
+      // user.wishlist.map(eventId => {
+      //   // getEventById(eventId)
+      //   fetch(`${env.API_SERVER}/events/getEventById/${eventId}`,{
+      //     credentials: 'include'
+      //   })
+      //   .then(res=>res.json())
+      //   .then(event=>event && setWishlist(prev=>[...prev,event]))
+      // })
       user.wishlist.map(eventId => {
-        // getEventById(eventId)
-        fetch(`${env.API_SERVER}/events/getEventById/${eventId}`,{
-          credentials: 'include'
-        })
-        .then(res=>res.json())
-        .then(event=>event && setWishlist(prev=>[...prev,event]))
-      })
+
+        const newEvent = eventData.find((event) => event.id === eventId);
+
+        setWishlist(prev=>[...prev,newEvent])
+      });
     }
 
     console.log("events: ",{registeredEvents,pendingEvents,wishlist});
@@ -286,7 +305,7 @@ export const DashboardPage = ({ userDetails, logout }) => {
               <p className="text-2xl flex">Registered Events</p>
               {registeredEvents && registeredEvents.length > 0 ? 
               <ul className="flex flex-cols gap-y-3">
-                {registeredEvents.map((event,ind)=> <Link key={ind} to={`/events/${event.link}`} className="border border-greyBorder p-3 shadow-lg rounded-md">{event.name}</Link>)}
+                {registeredEvents.map((event,ind)=> <Link key={ind} to={`/events/${event.slug}`} className="border border-greyBorder p-3 shadow-lg rounded-md">{event.name}</Link>)}
               </ul> : 
               <p className="flex text-lg">
                 No events have been registered to, as of now!
@@ -298,7 +317,7 @@ export const DashboardPage = ({ userDetails, logout }) => {
               <p className="text-2xl flex">Wishlisted Events</p>
               {wishlist && wishlist.length > 0 ? 
               <ul className="flex flex-col gap-y-3">
-                {wishlist.map((event,ind)=> <Link key={ind} to={`/events/${event.link}`} className="border border-greyBorder p-3 shadow-lg rounded-md">{event.name}</Link>)}
+                {wishlist.map((event,ind)=> <Link key={ind} to={`/events/${event.slug}`} className="border border-greyBorder p-3 shadow-lg rounded-md">{event.name}</Link>)}
               </ul> : 
               <p className="flex text-lg">
                 No events are in your wishlist, as of now!
@@ -310,7 +329,7 @@ export const DashboardPage = ({ userDetails, logout }) => {
               <p className="text-2xl flex">Pending Events</p>
               {pendingEvents && pendingEvents.length > 0 ? 
               <ul className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                {pendingEvents.map((event,ind)=> <Link key={ind} to={`/events/${event.link}`} className="border border-greyBorder p-3 shadow-lg rounded-md">{event.name}</Link>)}
+                {pendingEvents.map((event,ind)=> <Link key={ind} to={`/events/${event.slug}`} className="border border-greyBorder p-3 shadow-lg rounded-md">{event.name}</Link>)}
               </ul> : 
               <p className="flex text-lg">
                 No events are pending, as of now!
