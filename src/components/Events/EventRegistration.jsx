@@ -220,6 +220,7 @@ const GroupInfo = ({ userId, eventID, refresh, setRefresh }) => {
 };
 
 const App = () => {
+  const [isLoading , setIsLoading] = useState(false);
   const { width, height } = useWindowSize();
   const userId = localStorage.getItem("sid");
   console.log({ userId });
@@ -329,6 +330,7 @@ const App = () => {
     };
 
     try {
+      setIsLoading(true);
       const response = await axios.post(
         `${env.API_SERVER}/events/${eventID}/register`,
         payload,
@@ -349,6 +351,7 @@ const App = () => {
         },
       );
       setRegistrationResponse(data);
+      setIsLoading(false);
     } catch (error) {
       console.error("Error during registration:", error);
       toast.error("Registration failed: " + error.response?.data?.message, {
@@ -358,12 +361,14 @@ const App = () => {
         success: false,
         message: error.message || "An error occurred during registration.",
       });
+      setIsLoading(false);
     }
   };
 
   // Function to unregister
   const handleUnregister = async () => {
     try {
+      setIsLoading(true);
       const response = await axios.post(
         `${env.API_SERVER}/events/${eventID}/cancel-registration`,
         { userId },
@@ -380,8 +385,10 @@ const App = () => {
         setRegistrationResponse(null);
         setParticipationStatus("not-participating");
         setCanUnregisterStatus(false);
+      setIsLoading(false);
       } else {
         toast.error("Failed to unregister: " + data.message);
+      setIsLoading(false);
       }
     } catch (error) {
       console.error("Error during unregister:", error);
@@ -390,6 +397,7 @@ const App = () => {
   };
   const acceptInvitation = async () => {
     try {
+      setIsLoading(true);
       const response = await axios.post(
         `${env.API_SERVER}/users/accept-invitation`,
         { groupId: invitationInfo.group },
@@ -405,16 +413,20 @@ const App = () => {
         toast.success("Successfully accepted invitation");
         setInvitationInfo({ ...invitationInfo, status: "accepted" });
         setRefreshGroupInfo(true);
+      setIsLoading(false);
       } else {
         toast.error("Failed to accept invitation: " + data.message);
+      setIsLoading(false);
       }
     } catch (error) {
       console.error("Error during accept invitation:", error);
       toast.error("Error during accept invitation: " + error.message);
+      setIsLoading(false);
     }
   };
   const declineInvitation = async () => {
     try {
+      setIsLoading(true);
       const response = await axios.post(
         `${env.API_SERVER}/users/reject-invitation`,
         { groupId: invitationInfo.group },
@@ -433,9 +445,11 @@ const App = () => {
       } else {
         toast.error("Failed to decline invitation: " + data.message);
       }
+      setIsLoading(false);
     } catch (error) {
       console.error("Error during decline invitation:", error);
       toast.error("Error during decline invitation: " + error.message);
+      setIsLoading(false);
     }
   };
   const fetchParticipationStatusForUseEffect = async () => {
@@ -699,6 +713,7 @@ const App = () => {
               <Button
                 variant="outlined"
                 onClick={handleRegister}
+                disabled={isLoading}
                 sx={{
                   "mt": 1.5,
                   "py": { xs: 1, md: 1.5 },
@@ -727,6 +742,7 @@ const App = () => {
               {/* REGISTER Button */}
               <Button
                 variant="outlined"
+                disabled={isLoading}
                 onClick={handleRegister}
                 sx={{
                   "mt": 1.5,
@@ -768,6 +784,7 @@ const App = () => {
             <Button
               variant="outlined"
               onClick={handleUnregister}
+              disabled={isLoading}
               sx={{
                 "mt": 1.5,
                 "ml": 1,
@@ -801,6 +818,7 @@ const App = () => {
               <button
                 className="bg-gray-800 text-white p-2 rounded-md mt-2 border border-gray-600"
                 onClick={declineInvitation}
+                disabled={isLoading}
               >
                 Decline Invitation
               </button>
