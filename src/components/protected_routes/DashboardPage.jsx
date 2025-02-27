@@ -14,6 +14,7 @@ import { PhoneInput, TextInput } from "../login/ui/inputs";
 import { SignUpButton } from "../login/ui/buttons";
 import toast from "react-hot-toast";
 import { usersController } from "../../services/http";
+import { env } from "../../config/config";
 
 const style = {
   position: "absolute",
@@ -29,6 +30,10 @@ const style = {
 
 export const DashboardPage = ({ userID, logout }) => {
   const [user, setUser] = useState(undefined);
+  const [merchStatus, setMerchStatus] = useState("Fetching Order Status..");
+  const [merchColour, setMerchColour] = useState("");
+  const [merchSize, setMerchSize] = useState("");
+  const [merchPlaceholder, setMerchPlaceholder] = useState("/merchandise/merch-in-dashboard.svg");
 
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
@@ -84,6 +89,24 @@ export const DashboardPage = ({ userID, logout }) => {
     }
   };
 
+  const getMerchandise = async () => {
+    try{
+      const res = await fetch(`${env.API_SERVER}/users/get/Merchandise`,{
+        credentials: "include"
+      });
+      const data = await res.json();
+      if(data.success){
+        setMerchStatus(data.merchandise.status);
+        setMerchColour(data.merchandise.color);
+        setMerchSize(data.merchandise.size);
+        setMerchPlaceholder(data.merchandise.color.toLowerCase() === "black" ? "/merchandise/tshirt2.png" : "/merchandise/tshirt1.png")
+      }
+      else setMerchStatus("No merchandise orders. If you think this is incorrect, please contact us.");
+      }catch(_err){
+        setMerchStatus("An error occurred while fetching your merch status, please try again later.");
+      }
+  }
+
   // const navigate = useNavigate();
 
   useEffect(() => {
@@ -92,6 +115,7 @@ export const DashboardPage = ({ userID, logout }) => {
     getUserById(sid, providerID).then((r) => {
       setUser(r.data);
     });
+    getMerchandise();
   }, []);
 
   return (
@@ -129,9 +153,12 @@ export const DashboardPage = ({ userID, logout }) => {
                 <p className="py-2 text-xl">My Merchandise</p>
                 <img
                   className="w-full max-w-3xs transition-all hover:-translate-y-0.5 active:translate-y-0"
-                  src="/merch-in-dashboard.svg"
+                  src={merchPlaceholder}
                   alt="Merchandise placeholder"
                 />
+              <p className="flex text-lg">Status: {merchStatus}</p>
+              <p className="flex text-lg">{merchColour && `Colour: ${merchColour}`}</p>
+              <p className="flex text-lg">{merchSize && `Size: ${merchSize}`}</p>
               </section>
             </div>
           </div>

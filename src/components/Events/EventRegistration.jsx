@@ -19,10 +19,11 @@ import image from "/src/assets/icons/mascot.svg";
 import { env } from "../../config/config";
 import axios from "axios";
 import { useEffect } from "react";
-import MascotAnimation from "../home/MascotAnimation"
+import data from "./allevents/data.json";
+import MascotAnimation from "../home/MascotAnimation";
 
 // TeamMembers Component for dynamically adding/removing team member email fields
-const TeamMembers = ({ membersEmails, setMembersEmails }) => {
+const TeamMembers = ({ membersEmails, setMembersEmails, maxMembers }) => {
   // Email validation using a basic regex
   const isValidEmail = (email) => {
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
@@ -70,7 +71,7 @@ const TeamMembers = ({ membersEmails, setMembersEmails }) => {
             <TextField
               fullWidth
               size="medium"
-              label={`Team Member ${index + 1} Email`}
+              label={`Team Member ${index + 2} Email`}
               variant="outlined"
               margin="dense"
               value={email}
@@ -140,20 +141,22 @@ const TeamMembers = ({ membersEmails, setMembersEmails }) => {
           </Box>
         );
       })}
-      <Button
-        variant="outlined"
-        onClick={handleAddMember}
-        sx={{
-          "mt": 1,
-          "color": "white",
-          "borderColor": "white",
-          "fontWeight": "bold",
-          "bgcolor": "black",
-          "&:hover": { bgcolor: "black" },
-        }}
-      >
-        Add Member
-      </Button>
+      {maxMembers - 1 > membersEmails.length && (
+        <Button
+          variant="outlined"
+          onClick={handleAddMember}
+          sx={{
+            "mt": 1,
+            "color": "white",
+            "borderColor": "white",
+            "fontWeight": "bold",
+            "bgcolor": "black",
+            "&:hover": { bgcolor: "black" },
+          }}
+        >
+          Add Member
+        </Button>
+      )}
     </Box>
   );
 };
@@ -226,9 +229,11 @@ const App = () => {
     // return;
   }
   const [teamName, setTeamName] = useState("");
+  const [email, setEmail] = useState("");
   const [membersEmails, setMembersEmails] = useState([""]);
   const [loading, setLoading] = useState(true);
-  const [isSoloEvent, setIsSoloEvent] = useState(false); // TODO: Implement this
+  const [isSoloEvent, setIsSoloEvent] = useState(false);
+  const [maxMembersAllowed, setMaxMembersAllowed] = useState(1);
   const [participationStatus, setParticipationStatus] =
     useState("not-participating");
   const [canUnregisterStatus, setCanUnregisterStatus] = useState(null);
@@ -240,6 +245,19 @@ const App = () => {
 
   // Retrieve the event slug from the URL parameters
   const { eventID } = useParams();
+
+  const getUserById = async (userId) => {
+    try {
+      const response = await axios.get(`${env.API_SERVER}/users/${userId}`, {
+        withCredentials: true,
+      });
+      const data = await response.data;
+      console.log(data);
+      return data;
+    } catch (error) {
+      console.error("Error during getting user info:", error);
+    }
+  };
 
   const getParticipationStatus = async () => {
     try {
@@ -423,6 +441,8 @@ const App = () => {
   const fetchParticipationStatusForUseEffect = async () => {
     setLoading(true);
     let status = await getParticipationStatus();
+    let { email } = await getUserById(userId);
+    setEmail(email);
     console.log(status);
     setParticipationStatus(status);
     setLoading(false);
@@ -430,6 +450,14 @@ const App = () => {
 
   useEffect(() => {
     fetchParticipationStatusForUseEffect();
+    for (const event of data) {
+      if (event.eventID == eventID) {
+        console.log("Event found");
+        setIsSoloEvent(event.maxMembers == 1);
+        setMaxMembersAllowed(event.maxMembers);
+        break;
+      }
+    }
   }, []);
 
   useEffect(() => {
@@ -578,7 +606,7 @@ const App = () => {
           >
             REGISTRATION
           </Typography>
-          {participationStatus == "not-participating" && (
+          {participationStatus == "not-participating" && !isSoloEvent && (
             <>
               <TextField
                 fullWidth
@@ -615,9 +643,57 @@ const App = () => {
                   },
                 }}
               />
+              <TextField
+                fullWidth
+                size="medium"
+                label={`Team Member 1 (Leader) Email`}
+                variant="outlined"
+                margin="dense"
+                disabled={true}
+                value={email}
+                InputProps={{
+                  startAdornment: email ? (
+                    <InputAdornment position="start">
+                      <CheckCircleIcon sx={{ color: "green", mr: 1 }} />
+                    </InputAdornment>
+                  ) : null,
+                }}
+                sx={{
+                  "bgcolor": "black",
+                  "boxShadow": 51,
+                  "fontWeight": "bold",
+                  "fontFamily": "Roboto, sans-serif",
+                  "fontColor": "white",
+                  "& .MuiOutlinedInput-root": {
+                    "backgroundColor": "rgba(255, 255, 255, 0.1)",
+                    "borderRadius": "4px",
+                    "transition": "all 0.3s ease",
+                    "& fieldset": {
+                      borderColor: email ? "green" : "rgba(255, 255, 255, 0.3)",
+                    },
+                    "&:hover fieldset": {
+                      borderColor: email ? "green" : "rgba(255, 255, 255, 0.5)",
+                    },
+                  },
+                  "& .MuiInputBase-input": {
+                    fontSize: "1.2rem",
+                    color: "white",
+                  },
+                  input : {
+                    color: "white",
+                  }
+                }}
+                InputLabelProps={{
+                  style: {
+                    color: "rgba(25, 255, 55, 0.7)",
+                    fontSize: "0.8rem",
+                  },
+                }}
+              />
               <TeamMembers
                 membersEmails={membersEmails}
                 setMembersEmails={setMembersEmails}
+                maxMembers={maxMembersAllowed}
               />
               {/* REGISTER Button */}
               <Button
@@ -645,6 +721,35 @@ const App = () => {
               </Button>
             </>
           )}
+          {participationStatus == "not-participating" && isSoloEvent && (
+            <div className="flex gap-2 text-white flex-col">
+              Confirming once more before registering for solo event!
+              {/* REGISTER Button */}
+              <Button
+                variant="outlined"
+                onClick={handleRegister}
+                sx={{
+                  "mt": 1.5,
+                  "py": { xs: 1, md: 1.5 },
+                  "color": "white",
+                  "borderColor": "white",
+                  "fontWeight": "bold",
+                  "fontSize": { xs: "0.9rem", md: "0.8rem" },
+                  "bgcolor": "black",
+                  "position": "relative",
+                  "transition": "all 0.3s ease-in-out",
+                  "boxShadow": "inset 0 0 0px rgba(255, 255, 255, 0)",
+                  "&:hover": {
+                    boxShadow: "inset 0 0 10px rgba(255, 255, 255, 0.8)",
+                    bgcolor: "black",
+                    transform: "scale(1.02)",
+                  },
+                }}
+              >
+                REGISTER - Solo
+              </Button>
+            </div>
+          )}
           {participationStatus != "not-participating" && !isSoloEvent && (
             <GroupInfo
               userId={userId}
@@ -652,6 +757,11 @@ const App = () => {
               refresh={refreshGroupInfo}
               setRefresh={setRefreshGroupInfo}
             />
+          )}
+          {participationStatus != "not-participating" && isSoloEvent && (
+            <div className="flex gap-2 text-white flex-col">
+              You are already registered for this event!
+            </div>
           )}
           {/* UNREGISTER Button: Only show if registration is successful */}
           {canUnregisterStatus && (

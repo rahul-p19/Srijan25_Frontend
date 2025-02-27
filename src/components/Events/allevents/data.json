@@ -1,6 +1,6 @@
 [
   {
-    "eventID": "pass_the_baton",
+    "eventID": "ptb",
     "eventName": "Pass the baton",
     "eventDate": {
       "prelims": ["TBD"],
@@ -69,7 +69,7 @@
     "category": "coding"
   },
   {
-    "eventID": "biznez_plan",
+    "eventID": "biznez-plan",
     "eventName": "Biznez Plan ",
     "eventDate": {
       "prelims": [" 18th March"],
