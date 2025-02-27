@@ -1,3 +1,3 @@
 export const env = {
-    API_SERVER: "http://localhost:3080/api/v1"
+    API_SERVER: import.meta.env.VITE_BACKEND_URL + "/api/v1"
 };
