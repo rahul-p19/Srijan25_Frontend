@@ -36,7 +36,7 @@ function App() {
 
   useEffect(() => {
     getToken();
-  });
+  }, []);
   
   const getToken = async() => {
     const token = localStorage.getItem("sid");
@@ -85,6 +85,7 @@ function App() {
             </Route>
           <Route path="/events" element={<Eventpage />} />
           <Route path="/eventregistration" element={<EventRegistration />} />
+          <Route path="/notifications" element={<Notifications user={user}/>} />
           <Route
             path="/signup"
             element={<Signup user={user} setUser={setUser} />}

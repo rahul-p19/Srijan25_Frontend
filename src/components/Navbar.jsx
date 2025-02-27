@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
 import toast from "react-hot-toast";
+import { redirect, useNavigate } from 'react-router-dom';
 
 const notify = () => toast("Coming soon!");
 
@@ -10,6 +11,7 @@ function Navbar() {
   const [navbarOpen, setNavbarOpen] = useState(false);
   const [loggedIn, setLoggedIn] = useState(false);
   const [pathname, setPathname] = useState((window.location.pathname).slice(1));
+  const navigate = useNavigate();
 
   useEffect(() => {
     setPathname((window.location.pathname).slice(1));
@@ -40,20 +42,20 @@ function Navbar() {
         <a href='/' className={`relative hidden sm:block w-fit`}>Home
           <div className={`absolute h-[2px] bg-gradient-to-l from-red to-purple bottom-0 ${pathname == "" ? 'w-full' : 'w-0'}`}></div>
         </a>
-        {/*
+{/* 
         <a href='/notifications' className={`relative hidden sm:block w-fit`}>Notifications
           <div className={`absolute h-[2px] bg-gradient-to-l from-red to-purple bottom-0 ${pathname == "notifications" ? 'w-full' : 'w-0'}`}></div>
-        </a>
-        */}
-        {/* <a href='/events' className={`relative hidden sm:block w-fit`}>Events
-          <div className={`absolute h-[2px] bg-gradient-to-l from-red to-purple bottom-0 ${pathname == "events" ? 'w-full' : 'w-0'}`}></div>
         </a> */}
-        <div className={`relative hidden sm:block w-fit`} onClick={notify}>Events
+
+        <a href='/events' className={`relative hidden sm:block w-fit`}>Events
           <div className={`absolute h-[2px] bg-gradient-to-l from-red to-purple bottom-0 ${pathname == "events" ? 'w-full' : 'w-0'}`}></div>
-        </div>
-        <div className={`relative hidden sm:block w-fit cursor-pointer`} onClick={notify}>Notifications
+        </a>
+        {/* <div className={`relative hidden sm:block w-fit`} onClick={notify}>Events
+          <div className={`absolute h-[2px] bg-gradient-to-l from-red to-purple bottom-0 ${pathname == "events" ? 'w-full' : 'w-0'}`}></div>
+        </div> */}
+        <a className={`relative hidden sm:block w-fit cursor-pointer`} href="/merchandise">Merchandise
           <div className={`absolute h-[2px] bg-gradient-to-l from-red to-purple bottom-0 ${pathname == "notifications" ? 'w-full' : 'w-0'}`}></div>
-        </div>
+        </a>
         <a href="/workshop" className={`relative hidden sm:block w-fit`}>Workshop
           <div className={`absolute h-[2px] bg-gradient-to-l from-red to-purple bottom-0 ${pathname == "workshop" ? 'w-full' : 'w-0'}`}></div>
         </a>

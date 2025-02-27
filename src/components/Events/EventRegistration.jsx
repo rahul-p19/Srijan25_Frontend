@@ -137,14 +137,12 @@ const TeamMembers = ({ membersEmails, setMembersEmails, maxMembers }) => {
 
               }}
             />
-            {membersEmails.length > 1 && (
-              <IconButton
+            <IconButton
                 onClick={() => handleRemoveMember(index)}
                 sx={{ color: "red", ml: 1 }}
-              >
-                <DeleteIcon />
-              </IconButton>
-            )}
+            >
+              <DeleteIcon />
+            </IconButton>      
           </Box>
         );
       })}
@@ -169,7 +167,6 @@ const TeamMembers = ({ membersEmails, setMembersEmails, maxMembers }) => {
 };
 
 const GroupInfo = ({ userId, eventID, refresh, setRefresh }) => {
-  console.log({ userId, eventID });
   const [groupInfo, setGroupInfo] = useState({});
   const getGroupInfoForEvent = async () => {
     try {
@@ -183,7 +180,6 @@ const GroupInfo = ({ userId, eventID, refresh, setRefresh }) => {
         },
       );
       const data = await response.data;
-      console.log(data);
       return data;
     } catch (error) {
       console.error("Error during registration:", error);
@@ -389,7 +385,7 @@ const App = () => {
   const [isLoading , setIsLoading] = useState(false);
   const { width, height } = useWindowSize();
   const userId = localStorage.getItem("sid");
-  console.log({ userId });
+  //console.log({ userId });
   const navigate = useNavigate();
   if (!userId) {
     navigate("/login");
@@ -397,7 +393,7 @@ const App = () => {
   }
   const [teamName, setTeamName] = useState("");
   const [email, setEmail] = useState("");
-  const [membersEmails, setMembersEmails] = useState([""]);
+  const [membersEmails, setMembersEmails] = useState([]);
   const [loading, setLoading] = useState(true);
   const [isSoloEvent, setIsSoloEvent] = useState(false);
   const [maxMembersAllowed, setMaxMembersAllowed] = useState(1);
@@ -419,7 +415,7 @@ const App = () => {
         withCredentials: true,
       });
       const data = await response.data;
-      console.log(data);
+      //console.log(data);
       return data;
     } catch (error) {
       console.error("Error during getting user info:", error);
@@ -438,7 +434,7 @@ const App = () => {
         },
       );
       const data = await response.data;
-      console.log(data);
+      //console.log(data);
       return data;
     } catch (error) {
       console.error("Error during registration:", error);
@@ -460,7 +456,7 @@ const App = () => {
           withCredentials: true,
         },
       );
-      console.log({ canUnregister: response.data });
+      //console.log({ canUnregister: response.data });
       return response.data?.canUnregister;
     } catch (error) {
       console.error("Error during registration:", error);
@@ -473,9 +469,9 @@ const App = () => {
         withCredentials: true,
       });
       let invitations = response.data;
-      console.log({ invitations });
+      //console.log({ invitations });
       for (const invitation of invitations.data) {
-        if (invitation.event.slug == eventID)
+        if (invitation.event.slug == eventID && invitation.status != "rejected")
           return {
             invited: true,
             group: invitation.group._id,
@@ -632,7 +628,7 @@ const App = () => {
     fetchParticipationStatusForUseEffect();
     for (const event of data) {
       if (event.eventID == eventID) {
-        console.log("Event found");
+        //console.log("Event found");
         setIsSoloEvent(event.maxMembers == 1);
         setMaxMembersAllowed(event.maxMembers);
         break;
@@ -648,7 +644,7 @@ const App = () => {
 
   useEffect(() => {
     const fetchCanUnregister = async () => {
-      console.log({ participationStatus });
+      //console.log({ participationStatus });
       if (participationStatus != "not-participating") {
         let resp = await canUnregister();
         setCanUnregisterStatus(resp);
@@ -657,7 +653,7 @@ const App = () => {
     fetchCanUnregister();
     const fetchIsInvited = async () => {
       let invited = await isInvited();
-      console.log({ invited });
+      //console.log({ invited });
       setInvitationInfo(invited);
     };
     fetchIsInvited();
