@@ -808,7 +808,7 @@ const App = () => {
           )}
         </Box>
       </Paper>
-      <Toaster
+      {/* <Toaster
         toastOptions={{
           // Define default options
           className: "",
@@ -827,7 +827,7 @@ const App = () => {
             },
           },
         }}
-      />
+      /> */}
     </Box>
   );
 };

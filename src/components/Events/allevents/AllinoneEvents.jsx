@@ -986,7 +986,8 @@ const AllEvents = () => {
     "absolute top-0 h-full w-px bg-white opacity-50 z-0 transition duration-300";
 
   const notify = () => toast.success("Link copied to clipboard!");
-  const notice = () => toast.success("Added to Wishlist successfully");
+  // const notice = () => toast.success("Added to Wishlist successfully");
+  const notice = () => toast.success("Coming Soon!");
 
   return (
     <>
@@ -1256,7 +1257,7 @@ const AllEvents = () => {
           )}
 
           {/* React Hot Toast Toaster */}
-          <Toaster />
+          {/* <Toaster /> */}
           </div>
         </div>
       </Suspense>
