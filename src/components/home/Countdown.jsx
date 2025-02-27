@@ -33,18 +33,18 @@ export default function Countdown() {
     <>
       <div className="bg-transparent flex flex-col items-center justify-center space-y-4 px-0.5 backdrop-blur-lg w-full h-full font-sometypeMono ">
 
-        <div className="grid lg:grid-cols-4 grid-cols-4 gap-3 sm:gap-4 text-center">
-          {Object.entries(timeLeft).map(([unit, value]) => (
+        <div className="flex items-center text-center">
+          {Object.entries(timeLeft).map(([unit, value],ind) => (
             <div
               key={unit}
               className="flex flex-col items-center justify-center"
             >
-              <span className="text-xl text-transparent bg-clip-text bg-gradient-to-r from-purple to-red">
-                {value.toString().padStart(2, "0")}
+              <span className="text-base lg:text-2xl xl:text-3xl text-transparent bg-clip-text bg-gradient-to-r from-purple to-red text-nowrap">
+                {value.toString().padStart(2, "0")}{ind!==3 ? " :\u2002" : ""}
               </span>
 
-              <span className="text-sm text-white capitalize hidden sm:block">{unit}</span>
-              <span className="text-sm text-white capitalize sm:hidden">{unit.charAt(0)}</span>
+              {/* <span className="text-sm text-white capitalize hidden sm:block">{unit}</span>
+              <span className="text-sm text-white capitalize sm:hidden">{unit.charAt(0)}</span> */}
             </div>
           ))}
         </div>
