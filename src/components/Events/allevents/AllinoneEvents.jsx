@@ -19,7 +19,7 @@ import { Button } from "@mui/material";
 import toast, { Toaster } from "react-hot-toast";
 import Navbar from "../../Navbar";
 import PageReveal from "../../PageReveal";
-import { getImageUrl } from "../../../utils/image-util"; // Import the image utility
+import { getImageUrl } from "../../../utils/image-util"; 
 import { env } from "../../../config/config";
 import axios from "axios";
 
