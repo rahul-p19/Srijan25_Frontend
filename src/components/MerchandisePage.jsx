@@ -72,7 +72,7 @@ export default function MerchandisePage() {
     const userId = localStorage.getItem("sid");
     console.log({ userId });
     if (!userId) {
-      navigate("/signup");
+      navigate("/login");
       // return;
     }
     setShowOrderForm(true);
