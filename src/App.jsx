@@ -16,7 +16,7 @@ import { WorkshopPage } from "./components/workshop/WorkshopPage";
 import Loading from "./components/Loading"
 
 import { ProtectedRoute } from "./components/protected_routes/AuthRoutes";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, redirect } from "react-router-dom";
 import Notifications from "./components/protected_routes/Notifications";
 import { Toaster } from "react-hot-toast";
 import { logoutCall } from "./services/http/auth";
@@ -35,9 +35,14 @@ function App() {
   };
 
   useEffect(() => {
+    getToken();
+  });
+  
+  const getToken = async() => {
     const token = localStorage.getItem("sid");
-    if (token) verifyToken(token);
-  }, []);
+    if (token) await verifyToken(token);
+    setChecking(false);
+  }
 
   const verifyToken = async (token) => {
     const response = await fetch(`${uri.resources.USERS}/${token}`, {
@@ -49,6 +54,7 @@ function App() {
     } else {
       setUser("");
       localStorage.removeItem("sid");
+      redirect("/login");
     }
     setChecking(false);
   };
@@ -58,7 +64,7 @@ function App() {
       <Router>
         <Routes>
           <Route index element={<LandingPage setUser={setUser} />} />
-          <Route element={checking ? <Loading /> : <ProtectedRoute accessAllowed={!!user} />}>
+          <Route element={checking ? <Loading /> : <ProtectedRoute accessAllowed={!!user} redirectTo="/login" />}>
             <Route
               path="/dashboard"
               element={<DashboardPage userDetails={user} logout={handleLogout} />}

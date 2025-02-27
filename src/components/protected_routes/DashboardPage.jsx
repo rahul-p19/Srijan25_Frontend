@@ -16,7 +16,7 @@ import { SignUpButton } from "../login/ui/buttons";
 import toast from "react-hot-toast";
 import { usersController } from "../../services/http";
 import { env } from "../../config/config";
-import { Link } from "react-router-dom";
+import { Link, redirect } from "react-router-dom";
 
 const style = {
   position: "absolute",
@@ -31,11 +31,11 @@ const style = {
 };
 
 export const DashboardPage = ({ userDetails, logout }) => {
-  // console.log(userDetails);
+  if(!userDetails || userDetails==="") redirect("/login");
   const [user, setUser] = useState(userDetails);
-  const merchStatus = user.merchandise.status;
-  const merchColour = user.merchandise.color;
-  const merchSize = user.merchandise.size;
+  const merchStatus = user.merchandise?.status ?? "Not ordered.";
+  const merchColour = user.merchandise?.color;
+  const merchSize = user.merchandise?.size;
   const merchPlaceholder = (user.merchandise && user.merchandise.color) ? user.merchandise.color.toLowerCase() === "black" ? "/merchandise/tshirt2.png" : "/merchandise/tshirt1.png" : "/merchandise/merch-in-dashboard.svg";
 
   // const registeredEvents = user.registeredEvents.length > 0 ? user.registeredEvents.map((eventId)=>await getEventById(eventId)) : [];
@@ -48,7 +48,7 @@ export const DashboardPage = ({ userDetails, logout }) => {
 
   useEffect(()=>{
 
-    if(user.registeredEvents.length > 0){
+    if(user.registeredEvents && user.registeredEvents.length > 0){
       // user.registeredEvents.map(eventId => {
       //   // getEventById(eventId)
       //   fetch(`${env.API_SERVER}/events/getEventById/${eventId}`,{
@@ -64,7 +64,7 @@ export const DashboardPage = ({ userDetails, logout }) => {
         setRegisteredEvents(prev=>[...prev,newEvent])
       });
     }
-    if(user.pendingEvents.length > 0){
+    if(user.pendingEvents && user.pendingEvents.length > 0){
       // user.pendingEvents.map(eventId => {
       //   // getEventById(eventId)
       //   fetch(`${env.API_SERVER}/events/getEventById/${eventId}`,{
@@ -80,7 +80,7 @@ export const DashboardPage = ({ userDetails, logout }) => {
         setPendingEvents(prev=>[...prev,newEvent])
       });
     }
-    if(user.wishlist.length > 0){
+    if(user.wishlist && user.wishlist.length > 0){
       // user.wishlist.map(eventId => {
       //   // getEventById(eventId)
       //   fetch(`${env.API_SERVER}/events/getEventById/${eventId}`,{
@@ -96,8 +96,6 @@ export const DashboardPage = ({ userDetails, logout }) => {
         setWishlist(prev=>[...prev,newEvent])
       });
     }
-
-    console.log("events: ",{registeredEvents,pendingEvents,wishlist});
 
   },[])
 
