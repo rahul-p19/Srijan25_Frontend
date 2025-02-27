@@ -88,8 +88,8 @@ function Navbar() {
           <a href='/' className='text-left border-greyBorder/30 border-b w-full py-1'>Campus Ambassadors</a>
           */}
           <a href='/' className='text-left border-greyBorder/30 border-b w-full py-1'>Home</a>
-          {/* <a href='/events' className='text-left border-greyBorder/30 border-b w-full py-1'>Events</a> */}
-          <div className='text-left border-greyBorder/30 border-b w-full py-1' onClick={notify}>Events</div>
+          <a href='/events' className='text-left border-greyBorder/30 border-b w-full py-1'>Events</a>
+          {/* <div className='text-left border-greyBorder/30 border-b w-full py-1' onClick={notify}>Events</div> */}
           <a href='/notifications' className='text-left border-greyBorder/30 border-b w-full py-1' onClick={notify}>Notifications</a>
           <a href='https://docs.google.com/forms/d/e/1FAIpQLSe-zoCeE50FR2dUzauh7wfvHxfHczPwgziqYhRju2zMLH164A/viewform' className='text-left border-greyBorder/30 border-b w-full py-1'>Campus Ambassadors</a>
           <a href='/workshop' className='text-left border-greyBorder/30 border-b w-full py-1'>Workshop</a>
