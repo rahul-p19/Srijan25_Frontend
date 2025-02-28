@@ -15,7 +15,7 @@
       "Soumyadipto Pal [ 8100145170 ]"
     ],
     "prize": ["1st : TBD     ", "2nd : TBD     ", "3rd : TBD "],
-    "minMembers": 3,
+    "minMembers": 1,
     "maxMembers": 3,
     "eventPoster": "ptb.webp",
     "registrationType": "Srijan'24 Website",
@@ -99,7 +99,68 @@
       "Pre-registration: Each participating team must register in advance to secure their spot in the competition.",
       "Fair Play: The use of unfair means or plagiarism in any form will result in immediate disqualification."
     ],
-    "eventFormat": "Round 1: Prelims\nFormat: Pitch deck Submission\nNo. of slides: 5-slide presentation\nPresentation: Teams submit a concise pitch deck based on their business idea.\nRound 2: Finals\nFormat: Presentation and Q&A\nDuration: 8 minutes total (5 minutes pitching + 3 minutes Q&A)\nPresentation: The top 10 teams from the Prelims qualify for the Finals\nContent: Teams present their business idea in-depth using a maximum of 10 slides (excluding introduction and conclusion)\nQuestionnaire: Judges have 3 minutes to ask questions and seek clarification on various aspects of the business plan",
+    "eventFormat": "Format: The competition is structured in two rounds, designed to test participants' ability to present, refine, and defend their business ideas effectively.\n\nRound 1: Prelims\n\nIn the preliminary round, teams are required to submit a concise pitch deck that outlines their business idea. The submission should be a 5-slide presentation, covering key aspects of the concept in a structured and impactful manner. This round serves as the initial evaluation, where teams must present their ideas clearly and convincingly to move forward in the competition.\n\nRound 2: Finals\n\nThe top 10 teams from the Prelims will qualify for the Finals, where they will present their business ideas in a live session. Each team will have a total of 8 minutes, comprising 5 minutes for pitching their idea and 3 minutes for a Q&A session with the judges. The final presentation must be detailed and structured within a maximum of 10 slides (excluding introduction and conclusion).\n\nDuring the Q&A session, judges will have the opportunity to ask questions, seek clarifications, and assess the feasibility, innovation and scalability of the business plan.\n\nParticipants are encouraged to focus on innovation and real-world applicability to make a lasting impression on the judges.",
     "category": "business"
+  },
+  {
+    "eventID": "btm",
+    "eventName": "Beat the Market",
+    "eventDate": {
+      "prelims": ["17-21 March 2025"],
+      "finals": "17-21 March 2025"
+    },
+    "eventType": "business",
+    "eventHashtags": ["hackathon", "machinelearning", "ai", "openaimer"],
+    "registrationOpen": false,
+    "eventCoordinators": [
+      "Abir Sen[8017778006]",
+      "Arnesh Roy Chowdhury[9051871038]"
+    ],
+    "prize": ["1st : TBD    ", "2nd : TBD    ", "3rd : TBD"],
+    "minMembers": 1,
+    "maxMembers": 1,
+    "eventPoster": "btm.webp",
+    "registrationType": "Srijan'24 Website",
+    "eventShortDescription": "Embark on the ML adventure in 'OpenAImer'! Unleash your algorithms, analyse data, and spark innovation!",
+    "eventDescription": [
+      "Beat the Market is a 5 days mock trading competition which will be conducted corresponding to the real stock market and along its timing (9:30 - 15:30). The virtual money  amount will be disclosed before the event."
+    ],
+
+    "eventRules": [
+     "A 5 days mock trading event that will be conducted corresponding to the real stock market timing from 9:30 to 15:30."
+
+    ],
+"eventFormat": "TBH",
+    "category": "business"
+  },
+  {
+    "eventID": "myst",
+    "eventName": "Mysterio",
+    "eventDate": {
+      "prelims": ["22nd March 2025"],
+      "finals": ["23rd March 2025"]
+    },
+    "eventType": "brainstorming",
+    "eventHashtags": ["hackathon", "machinelearning", "ai", "openaimer"],
+    "registrationOpen": false,
+    "eventCoordinators": [
+      "Tamal Panda[7679105899]",
+      "Supratim Mukherjee[8584094708]",
+      "Anjishnu Chakraborty[8100131738]"
+    ],
+    "prize": ["1st : 2000+Certification    ", "2nd : 1500+Certification    ", "3rd : 500+Certification"],
+    "minMembers": 2,
+    "maxMembers": 3,
+    "eventPoster": "myst.webp",
+    "registrationType": "Srijan'24 Website",
+    "eventDescription": [
+      "Mysterio is a team-based astro science challenge where participants solve astrophysical scenarios using analytical and scientific reasoning. Teams of two or three members will answer theoretical and scenario-based questions on paper, with access to books but no electronic devices. They will also use Universe Sandbox for simulations, and on the final day, judges will evaluate their solutions through live simulations. Points will be awarded based on accuracy, creativity, and application of theoretical knowledge, making Mysterio a test of both logic and scientific thinking."
+    ],
+    "eventRules": [
+     "TBH"
+    ],
+"eventFormat": "Mysterio is a team-based astro science challenge designed to test participants' analytical and scientific reasoning skills. In this offline Q&A session, teams of up to three members will engage with intriguing astrophysical and astronomical scenarios, and they will solve problems based on that or describe the past and future of the scenarios through logical analysis and intuitive reasoning. There will also be some theoretical questions for which points will be provided and they might serve as hints for the scenario. Participants will document their solutions on paper. Hints and supplementary modules will be provided, and participants are permitted to bring books. The use of phones, laptops, or internet access is strictly prohibited to maintain the integrity of the challenge. To further enhance their understanding, teams will be granted access to our Universe Sandbox simulator for a stipulated amount of time, allowing them to experiment with the mechanics of the simulator. The event will take place under the supervision of the organizing team, ensuring that guidance from the curated content and activity teams is available when needed. Day 3 - The Final Verdict (23rd March 2025) Your solutions will come to life! Using live simulations in Universe Sandbox, the judges will verify your theories and evaluate how well your models align with astrophysical laws. Points will be awarded based on: Accuracy and scientific validity. Creativity and logical reasoning. Application of theoretical knowledge. Mysterio is not just a test of knowledge but an opportunity to think like a scientist, applying theoretical insights to practical cosmic mysteries. Do you have what it takes to navigate the mysteries of space?",
+    "category": "brainstorming"
   }
+
 ]
