@@ -20,7 +20,7 @@ import { Button } from "@mui/material";
 import toast, { Toaster } from "react-hot-toast";
 import Navbar from "../../Navbar";
 import PageReveal from "../../PageReveal";
-import { getImageUrl } from "../../../utils/image-util"; 
+import { getImageUrl } from "../../../utils/image-util";
 import { env } from "../../../config/config";
 import axios from "axios";
 
@@ -78,7 +78,7 @@ const AllEvents = () => {
       console.error("Error during fetching wishlist:", error);
     }
   };
-  
+
   const addToWishlist = async () => {
     try {
       let response = await axios.post(
@@ -209,12 +209,12 @@ const AllEvents = () => {
   // Parse event coordinators
   const eventOrganizers = eventData.eventCoordinators
     ? eventData.eventCoordinators.map((coordinator) => {
-        const match = coordinator.match(/(.*)\[\s*([^\]]+)\s*\]/);
-        if (match) {
-          return { name: match[1].trim(), phone: match[2].trim(), email: "" };
-        }
-        return { name: coordinator, phone: "", email: "" };
-      })
+      const match = coordinator.match(/(.*)\[\s*([^\]]+)\s*\]/);
+      if (match) {
+        return { name: match[1].trim(), phone: match[2].trim(), email: "" };
+      }
+      return { name: coordinator, phone: "", email: "" };
+    })
     : [];
 
   const organizersTitle = "EVENT ORGANIZERS";
@@ -235,7 +235,7 @@ const AllEvents = () => {
         <PageReveal />
         <Helmet>
           <link rel="canonical" href="https://srijanju.in/events" />
-          <title>Events | Srijan'25</title>
+          <title>{eventData.eventName} | Srijan'25</title>
           <meta
             name="description"
             content="Event Details for Srijan'25 - The Annual Techno-Management Fest of Jadavpur University"
@@ -330,7 +330,7 @@ const AllEvents = () => {
                     Share
                   </button>
                   {wishlist.filter((item) => item.slug === eventID).length >
-                  0 ? (
+                    0 ? (
                     <button
                       className="flex items-center justify-center bg-gradient-to-r from-pink-500 to-red-500 text-white font-bold text-lg px-6 py-3 rounded-full shadow-md hover:shadow-xl transform hover:scale-105 transition duration-300"
                       onClick={removeFromWishlist}
@@ -420,7 +420,7 @@ const AllEvents = () => {
               <h3 className="text-2xl md:text-3xl font-bold text-center animate-rainbow">
                 EVENT RULES
               </h3>
-{/*               <h4 className="text-lg md:text-xl font-bold mt-4 animate-rainbow">
+              {/*               <h4 className="text-lg md:text-xl font-bold mt-4 animate-rainbow">
                 CRITERIA
               </h4> */}
               <ul className="list-disc pl-6 space-y-2">
