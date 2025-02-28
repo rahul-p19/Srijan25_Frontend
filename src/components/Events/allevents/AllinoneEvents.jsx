@@ -141,12 +141,9 @@ const AllEvents = () => {
     };
   }, []);
 
-  // Fetch event data based on URL parameters
+ 
   useEffect(() => {
-    // if (!eventID || !category) {
-    //   console.error("Missing eventID or category from URL parameters");
-    //   return;
-    // }
+
     if (!eventID) {
       console.error("Missing eventID or category from URL parameters");
       return;
