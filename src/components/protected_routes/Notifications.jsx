@@ -3,6 +3,7 @@ import axios from 'axios';
 import Navbar from '../Navbar';
 import Footer from '../Footer';
 import { useNavigate } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 
 /**
  * @typedef {object} NotificationItem
@@ -64,7 +65,12 @@ const Notifications = ({ user }) => {
   };
 
   return (
-    <div className="font-mono min-h-screen w-full bg-background text-white p-6 flex flex-col">
+    <div className="font-mono min-h-screen w-full bg-background text-white flex flex-col">
+      <Helmet>
+                <link rel="canonical" href="https://srijanju.in/workshop" />
+                <title>Notifications | Srijan'25</title>
+                <meta name="description" content="Your notifications for Srijan'25 - The Annual Techno-Management Fest of Jadavpur University" />
+      </Helmet>
     <Navbar />
     <div className="text-center m-2">
       <h1 className="text-2xl sm:text-xl mt-2 xl:text-3xl font-semibold">
