@@ -1,4 +1,5 @@
 import React, { Suspense, useEffect, useRef, useState } from "react";
+import { Helmet } from "react-helmet-async";
 import {
   FaTrophy,
   FaCalendarAlt,
@@ -232,6 +233,14 @@ const AllEvents = () => {
           <Navbar />
         </div>
         <PageReveal />
+        <Helmet>
+          <link rel="canonical" href="https://srijanju.in/events" />
+          <title>Events | Srijan'25</title>
+          <meta
+            name="description"
+            content="Event Details for Srijan'25 - The Annual Techno-Management Fest of Jadavpur University"
+          />
+        </Helmet>
         <div
           ref={containerRef}
           className="relative bg-black text-white p-4 md:p-6 min-h-screen font-mono overflow-x-hidden"

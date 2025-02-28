@@ -10,6 +10,7 @@ import GridLines from "./GridLines";
 import QRCodeHolder from "./QRCodeHolder";
 import OrderForm from "./merchandise/OrderForm";
 import SrijanMerchandiseAnnouncement from "./merchandise/Decor";
+import { Helmet } from "react-helmet-async";
 import {
   Carousel,
   CarouselContent,
@@ -103,7 +104,14 @@ export default function MerchandisePage() {
   return (
     <div className="bg-background font-sometypeMono text-white min-h-screen flex flex-col">
       <Navbar />
-
+      <Helmet>
+                <link rel="canonical" href="https://srijanju.in/merchandise" />
+                <title>Merchandise | Srijan'25</title>
+                <meta
+                  name="description"
+                  content="Get your merchandise for Srijan'25 - The Annual Techno-Management Fest of Jadavpur University"
+                />
+      </Helmet>
       <div className="flex-grow flex flex-col px-4 md:px-8 py-6 md:py-8 relative">
         {/* Add GridLines component here */}
         <GridLines />
