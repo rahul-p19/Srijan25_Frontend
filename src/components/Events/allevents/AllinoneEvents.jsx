@@ -1429,7 +1429,7 @@ const AllEvents = () => {
                   </p>
                 </div>
                 <div className="border p-8 rounded-lg">
-                  <h3 className="text-lg md:text-xl font-bold text-purple-400 flex items-center gap-2">
+                  <h3 className="text-lg md:text-xl font-bold text-blue-400 flex items-center gap-2">
                     <FaGamepad /> EVENT DESCRIPTION
                   </h3>
                   <p>{description}</p>
@@ -1440,7 +1440,7 @@ const AllEvents = () => {
             {/* Event Format */}
             {eventData.eventFormat && (
               <div className="border p-8 mt-6 md:mt-8 rounded-lg">
-                <h3 className="text-lg md:text-2xl font-bold text-center text-purple-400">
+                <h3 className="text-lg md:text-2xl font-bold text-center text-blue-400">
                   EVENT FORMAT
                 </h3>
                 <p>{eventData.eventFormat}</p>
@@ -1450,7 +1450,7 @@ const AllEvents = () => {
             {/* Submission Criteria */}
             {eventData.submissionCriteria && (
               <div className="border p-8 mt-6 md:mt-8 rounded-lg">
-                <h3 className="text-lg md:text-2xl font-bold text-center text-purple-400">
+                <h3 className="text-lg md:text-2xl font-bold text-center text-blue-400">
                   SUBMISSION CRITERIA
                 </h3>
                 {eventData.submissionCriteria.submissionInstructions && (
@@ -1501,7 +1501,7 @@ const AllEvents = () => {
 
             {/* Event Organizers */}
             <div className="border p-8 mt-6 md:mt-8 rounded-lg">
-              <h3 className="text-lg md:text-2xl font-bold text-center text-purple-400">
+              <h3 className="text-lg md:text-2xl font-bold text-center text-blue-400">
                 {organizersTitle}
               </h3>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4">
