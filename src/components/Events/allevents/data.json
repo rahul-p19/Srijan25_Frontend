@@ -223,5 +223,39 @@
     "Code Quality (20% Weightage): The cleanliness, organization, and adherence to best practices in the HTML and CSS code used to recreate the web page."
   ]
 }
+  },
+  {
+    "eventID": "uncode",
+    "eventName": "Uncode",
+    "eventDate": {
+      "prelims": ["16th March 2025 "],
+      "finals": ["22/23 March 2025"]
+    },
+    "eventType": "coding",
+    "eventHashtags": ["hackathon", "machinelearning", "ai", "openaimer"],
+    "registrationOpen": false,
+    "eventCoordinators": [
+      "Soumyadeep Singh[9046431718]",
+      "Rohit Shee[9679827536]",
+      "Siddhartha Mondal[6290463059]"
+    ],
+    "prize": ["1st : 2500  ", "2nd : 1500   ", "3rd : 1000"],
+    "minMembers": 1,
+    "maxMembers": 2,
+    "eventPoster": "uncode.webp",
+    "registrationType": "Srijan'24 Website",
+    "eventDescription": [
+      "Unlock the secrets of binary executables and decode your way to victory at our Reverse Engineering Event as part of this Srijan'25! This thrilling competition invites tech buffs to showcase their prowess in unraveling the mysteries of executable files. Gather your team of 1-2 members, as we welcome all the participants to embark on this intellectual journey. Brace yourselves for a two-round challenge where the online Prelims will test your mental mettle, with the top teams advancing to the gripping offline Finals. Join us in this riveting exploration of reverse engineering and leave your imprint in the realm of binary brilliance!"
+    ],
+    "eventRules":[
+      "The contest will consist of a number of problems of increasing difficulty.",
+      "Each question will have a specific input and output format which will be specified in the question itself. The contestant will have to decode the logic used in the question to generate the output for each input.",
+      "You will be required to write a program (in C/C++/Python/Java) that behaves indistinguishably from the given executable for all inputs in the domain.",
+      "Teams indulging in plagiarism will be disqualified."
+    ]
+,
+
+    "category": "coding"
+
   }
 ]
