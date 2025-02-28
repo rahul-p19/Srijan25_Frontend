@@ -148,7 +148,11 @@
       "Supratim Mukherjee[8584094708]",
       "Anjishnu Chakraborty[8100131738]"
     ],
-    "prize": ["1st : 2000+Certification    ", "2nd : 1500+Certification    ", "3rd : 500+Certification"],
+    "prize": [
+      "1st : Certificate + Gold Medal+ Rs 2,000 cash prize+annual membership of JMS and JUASCI Society ",
+      "2nd : Certificate + Silver Medal + Rs 1,500 cash prize+quarterly membership of JMS and JUASCI Society",
+      "3rd : Certificate+ Bronze Medal+ Rs 500 cash prize+quarterly membership of JMS and JUASCI Society."
+    ],
     "minMembers": 2,
     "maxMembers": 3,
     "eventPoster": "myst.webp",
@@ -157,10 +161,16 @@
       "Mysterio is a team-based astro science challenge where participants solve astrophysical scenarios using analytical and scientific reasoning. Teams of two or three members will answer theoretical and scenario-based questions on paper, with access to books but no electronic devices. They will also use Universe Sandbox for simulations, and on the final day, judges will evaluate their solutions through live simulations. Points will be awarded based on accuracy, creativity, and application of theoretical knowledge, making Mysterio a test of both logic and scientific thinking."
     ],
 
-    "eventRules": [
-     "TBH"
+"eventRules": [
+  "Possession of any and all electronic gadgets (mobile phones, tablets, personal computers, etc.) is strictly prohibited.",
+  "The event would be organized in an Open Book format. Every participating team is thereby encouraged to bring with them as many books and physical documents as they can conveniently carry with themselves. They shall also be provided with physical documents and books as required from the organizing committee’s end.",
+  "No inter-team communications are allowed. Any communication channel may only be established through the members of the organizing committee. The following point should be noted that the members of the same team are allowed to communicate with one another, i.e., intra-team communications are allowed.",
+  "Any team caught indulging in any unprofessional activity (resorting to unfair means, communicating with members of other teams, etc.) shall be immediately and indiscriminately disqualified on the spot.",
+  "Every team would be allowed to approach the members of the organizing committee if they so wish to opt for receiving any aid from our end. Conveniences include features like using the committee member’s personal computer (for running the simulation on or checking any feature in Universe Sandbox) or physical documents for a duration of five minutes at a stretch (under the supervision of the organizing members). Please note that every team is allowed to approach us for any number of time(s), subject to the condition that they form an orderly queue and patiently wait for their turn to arrive.",
+  "For the final round of the event, the participating teams may opt to receive the help of any other software to prove the correctness of their solution, or to demonstrate the correctness of their solution, provided the software used by the participating team is licensed and has past and proven records of proper performance. They shall also be allowed to bring their own personal computers to demonstrate their solutions. However, we would urge the teams to opt for the demonstration to be displayed on the personal computers of the organizing committee.",
+  "No illicit substances may be brought into the event centre."
 
-    ],
+], 
 "eventFormat": "Mysterio is a team-based astro science challenge designed to test participants' analytical and scientific reasoning skills. In this offline Q&A session, teams of up to three members will engage with intriguing astrophysical and astronomical scenarios, and they will solve problems based on that or describe the past and future of the scenarios through logical analysis and intuitive reasoning. There will also be some theoretical questions for which points will be provided and they might serve as hints for the scenario. Participants will document their solutions on paper. Hints and supplementary modules will be provided, and participants are permitted to bring books. The use of phones, laptops, or internet access is strictly prohibited to maintain the integrity of the challenge. To further enhance their understanding, teams will be granted access to our Universe Sandbox simulator for a stipulated amount of time, allowing them to experiment with the mechanics of the simulator. The event will take place under the supervision of the organizing team, ensuring that guidance from the curated content and activity teams is available when needed. Day 3 - The Final Verdict (23rd March 2025) Your solutions will come to life! Using live simulations in Universe Sandbox, the judges will verify your theories and evaluate how well your models align with astrophysical laws. Points will be awarded based on: Accuracy and scientific validity. Creativity and logical reasoning. Application of theoretical knowledge. Mysterio is not just a test of knowledge but an opportunity to think like a scientist, applying theoretical insights to practical cosmic mysteries. Do you have what it takes to navigate the mysteries of space?",
     "category": "brainstorming"
   } ,
