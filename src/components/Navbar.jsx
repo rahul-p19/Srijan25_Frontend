@@ -39,20 +39,13 @@ function Navbar() {
         <a href='/' className='sm:hidden'>
           <img src='/fetsu-presents-srijan25.svg' alt="Srijan Text Logo" width="auto" height="auto" />
         </a>
-        <a href='/' className={`relative hidden sm:block w-fit`}>Home
-          <div className={`absolute h-[2px] bg-gradient-to-l from-red to-purple bottom-0 ${pathname == "" ? 'w-full' : 'w-0'}`}></div>
-        </a>
-{/* 
-        <a href='/notifications' className={`relative hidden sm:block w-fit`}>Notifications
-          <div className={`absolute h-[2px] bg-gradient-to-l from-red to-purple bottom-0 ${pathname == "notifications" ? 'w-full' : 'w-0'}`}></div>
-        </a> */}
 
         <a href='/events' className={`relative hidden sm:block w-fit`}>Events
           <div className={`absolute h-[2px] bg-gradient-to-l from-red to-purple bottom-0 ${pathname == "events" ? 'w-full' : 'w-0'}`}></div>
         </a>
-        {/* <div className={`relative hidden sm:block w-fit`} onClick={notify}>Events
-          <div className={`absolute h-[2px] bg-gradient-to-l from-red to-purple bottom-0 ${pathname == "events" ? 'w-full' : 'w-0'}`}></div>
-        </div> */}
+        <a href='/merchandise' className={`relative hidden sm:block w-fit`}>Merchandise
+          <div className={`absolute h-[2px] bg-gradient-to-l from-red to-purple bottom-0 ${pathname == "merchandise" ? 'w-full' : 'w-0'}`}></div>
+        </a>
         <a className={`relative hidden sm:block w-fit cursor-pointer`} href="/notifications">Notifications
           <div className={`absolute h-[2px] bg-gradient-to-l from-red to-purple bottom-0 ${pathname == "notifications" ? 'w-full' : 'w-0'}`}></div>
         </a>
@@ -64,9 +57,6 @@ function Navbar() {
         <a href={`${loggedIn ? '/dashboard' : '/login'}`} className='hidden relative sm:block'> {loggedIn ? 'Dashboard' : 'Login'}
           <div className={`absolute h-[2px] bg-gradient-to-l from-red to-purple bottom-0 ${pathname == "dashboard" || pathname == "login" || pathname == "signup" ? 'w-full' : 'w-0'}`}></div>
         </a >
-        {/* <div className='hidden relative sm:block cursor-pointer' onClick={notify}> {loggedIn ? 'Dashboard' : 'Login'} */}
-        {/*   <div className={`absolute h-[2px] bg-gradient-to-l from-red to-purple bottom-0 ${pathname == "dashboard" || pathname == "login" ? 'w-full' : 'w-0'}`}></div> */}
-        {/* </div> */}
         <button className='sm:hidden' onClick={() => {
           setNavbarOpen(true);
         }}><MenuIcon /></button>
@@ -82,15 +72,9 @@ function Navbar() {
             <img src='/srijan-logo-white.svg' alt="Srijan Logo" width="auto" height="auto" />
             <img src='/fetsu-presents-srijan25.svg' alt="Srijan Text Logo" width="auto" height="auto" />
           </div>
-          {/*
-          <a href='/' className='text-left border-greyBorder/30 border-b w-full py-1'>Home</a>
-          <a href='/' className='text-left border-greyBorder/30 border-b w-full py-1'>Notifications</a>
-          <a href='/' className='text-left border-greyBorder/30 border-b w-full py-1'>Campus Ambassadors</a>
-          */}
           <a href='/' className='text-left border-greyBorder/30 border-b w-full py-1'>Home</a>
           <a href='/events' className='text-left border-greyBorder/30 border-b w-full py-1'>Events</a>
-          {/* <div className='text-left border-greyBorder/30 border-b w-full py-1' onClick={notify}>Events</div> */}
-          <a href='/notifications' className='text-left border-greyBorder/30 border-b w-full py-1' onClick={notify}>Notifications</a>
+          <a href='/notifications' className='text-left border-greyBorder/30 border-b w-full py-1'>Notifications</a>
           <a href='https://docs.google.com/forms/d/e/1FAIpQLSe-zoCeE50FR2dUzauh7wfvHxfHczPwgziqYhRju2zMLH164A/viewform' className='text-left border-greyBorder/30 border-b w-full py-1'>Campus Ambassadors</a>
           <a href='/workshop' className='text-left border-greyBorder/30 border-b w-full py-1'>Workshop</a>
           <a href='/' className='text-left border-greyBorder/30 border-b w-full py-1'>Merchandise</a>
