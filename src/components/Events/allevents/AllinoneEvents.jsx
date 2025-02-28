@@ -191,7 +191,7 @@ const AllEvents = () => {
 
   
 
-  // Parse prize pool from prize array
+
   const parsedPrizePool = { first: "", second: "", third: "" };
   if (Array.isArray(eventData.prize)) {
     eventData.prize.forEach((prizeStr) => {
