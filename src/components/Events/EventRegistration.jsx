@@ -21,8 +21,8 @@ import { env } from "../../config/config";
 import axios from "axios";
 import { useEffect } from "react";
 import data from "./allevents/data.json";
-import MascotAnimation from "../home/MascotAnimation";
 import { getImageUrl } from "../../utils/image-util";
+import GridLines from "../GridLines";
 
 // TeamMembers Component for dynamically adding/removing team member email fields
 const TeamMembers = ({ membersEmails, setMembersEmails, maxMembers }) => {
@@ -57,10 +57,10 @@ const TeamMembers = ({ membersEmails, setMembersEmails, maxMembers }) => {
   };
 
   return (
-    <Box sx={{ mb: 1.5 }}>
-      <Typography variant="subtitle1" color="white" sx={{ mb: 1 }}>
+    <div>
+      <h3>
         Team Members Emails:
-      </Typography>
+      </h3>
       {membersEmails.map((email, index) => {
         const valid = email && isValidEmail(email);
         const duplicate = email && isDuplicate(email, index);
@@ -68,7 +68,7 @@ const TeamMembers = ({ membersEmails, setMembersEmails, maxMembers }) => {
         return (
           <Box
             key={index}
-            sx={{ display: "flex", alignItems: "center", mb: 1.5 }}
+            sx={{ display: "flex", alignItems: "center", mb: 1 }}
           >
             <TextField
               fullWidth
@@ -87,7 +87,10 @@ const TeamMembers = ({ membersEmails, setMembersEmails, maxMembers }) => {
                     : ""
               }
               InputLabelProps={{
-                style: { color: "rgba(25, 255, 55, 0.7)", fontSize: "0.8rem" },
+                style: {
+                  "fontFamily": "var(--font-sometypeMono)",
+                  color: "#fff", fontSize: "1rem"
+                },
               }}
               InputProps={{
                 startAdornment: email ? (
@@ -103,66 +106,59 @@ const TeamMembers = ({ membersEmails, setMembersEmails, maxMembers }) => {
                 ) : null,
               }}
               sx={{
-                  "mb": 2,
+                "mb": 1,
+                "transition": "all 0.3s ease",
+                "& .MuiOutlinedInput-root": {
+                  "backgroundColor": "#141414",
+                  "borderRadius": "5px",
+                  "fontFamily": "var(--font-sometypeMono)",
                   "transition": "all 0.3s ease",
-                  "& .MuiOutlinedInput-root": {
-                    "backgroundColor": "rgba(0, 0, 0, 0.6)",
-                    "borderRadius": "8px",
-                    "transition": "all 0.3s ease",
-                    "boxShadow": "0 0 10px rgba(0, 0, 0, 0.3), inset 0 0 10px rgba(25, 255, 55, 0.05)",
-                    "& fieldset": { 
-                      borderColor: "rgba(25, 255, 55, 0.3)",
-                      borderWidth: "2px",
-                      transition: "all 0.3s ease"
-                    },
-                    "&:hover fieldset": {
-                      borderColor: "rgba(25, 255, 55, 0.5)",
-                    },
-                    "&.Mui-focused fieldset": {
-                      borderColor: "rgba(25, 255, 55, 0.8)",
-                      boxShadow: "0 0 8px rgba(25, 255, 55, 0.3)",
-                    },
+                  "boxShadow": "0 0 10px rgba(0, 0, 0, 0.3), inset 0 0 10px rgba(25, 255, 55, 0.05)",
+                  "& fieldset": {
+                    borderColor: "#94949440",
+                    borderWidth: "2px",
+                    transition: "all 0.3s ease"
                   },
-                  "& .MuiInputBase-input": {
-                    fontSize: "1.1rem",
-                    color: "white",
-                    padding: "14px 16px",
-                    "&::placeholder": {
-                      color: "rgba(255, 255, 255, 0.5)",
-                    },
+                  "&:hover fieldset": {
+                    borderColor: "#94949470",
                   },
-                  "&:hover": {
-                    transform: "translateY(-2px)",
+                  "&.Mui-focused fieldset": {
+                    borderColor: "#949494",
+                    boxShadow: "0 0 8px rgba(25, 255, 55, 0.3)",
                   },
+                },
+                "& .MuiInputBase-input": {
+                  fontSize: "1.1rem",
+                  color: "white",
+                  padding: "14px 16px",
+                  "&::placeholder": {
+                    color: "#949494",
+                  },
+                },
+                "&:hover": {
+                  transform: "translateY(-2px)",
+                },
 
               }}
             />
             <IconButton
-                onClick={() => handleRemoveMember(index)}
-                sx={{ color: "red", ml: 1 }}
+              onClick={() => handleRemoveMember(index)}
+              sx={{ color: "red", ml: 1 }}
             >
               <DeleteIcon />
-            </IconButton>      
+            </IconButton>
           </Box>
         );
       })}
       {maxMembers - 1 > membersEmails.length && (
-        <Button
-          variant="outlined"
+        <button
           onClick={handleAddMember}
-          sx={{
-            "mt": 1,
-            "color": "white",
-            "borderColor": "white",
-            "fontWeight": "bold",
-            "bgcolor": "black",
-            "&:hover": { bgcolor: "black" },
-          }}
+          className="text-white border border-greyBorder py-1 px-3 rounded-sm my-3"
         >
           Add Member
-        </Button>
+        </button>
       )}
-    </Box>
+    </div>
   );
 };
 
@@ -196,43 +192,63 @@ const GroupInfo = ({ userId, eventID, refresh, setRefresh }) => {
 
   const navigate = useNavigate();
   return (
-    <div className="w-full h-full p-3 md:p-5 bg-gray-900 text-gray-100">
+    <div className="w-full h-full p-3 md:p-5 text-gray-100">
       {/* Back button */}
-      <button 
-        onClick={() => navigate(`/events/${eventID}`)}
-        className="flex items-center text-sm text-gray-300 hover:text-gray-100 mb-4 md:mb-6 transition-colors duration-200"
-      >
-        <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
-        </svg>
-        Back to Event
-      </button>
-  
-      <div className="mb-4 md:mb-6">
+      <div className="mb-4 md:mb-6 flex justify-between items-center">
         <h1 className="text-lg md:text-xl font-medium tracking-wide">
-          Group Information
+          Team Information
         </h1>
+
+        <button
+          onClick={() => navigate(`/events/${eventID}`)}
+          className="ml-3 flex items-center text-sm text-gray-300 hover:text-gray-100 transition-colors duration-200"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+          </svg>
+          Back to Event
+        </button>
       </div>
-  
+
       {groupInfo ? (
-        <div className="space-y-3 md:space-y-4 bg-gray-800 rounded-lg p-3 md:p-5 border border-gray-700 shadow-md">
+        <div className="space-y-3 md:space-y-2 rounded-sm px-3 md:px-5 border border-greyBorder shadow-md">
           {/* Group Name */}
-          <div className="bg-gray-750 rounded-lg p-3 md:p-4 border-l-2 border-blue-500">
-            <div className="flex items-center">
-              <div className="mr-2 md:mr-3 text-blue-400 flex-shrink-0">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-                </svg>
+          <div className="flex gap-x-4">
+            <div className="bg-gray-750 rounded-lg p-3 md:p-4">
+              <div className="flex items-center">
+                <div className="mr-2 md:mr-3 text-blue-400 flex-shrink-0">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                  </svg>
+                </div>
+                <div className="min-w-0 w-full">
+                  <p className="text-xs text-gray-400 font-medium">TEAM NAME</p>
+                  <p className="text-base font-medium text-gray-100 break-words">{groupInfo.name}</p>
+                </div>
               </div>
-              <div className="min-w-0 w-full">
-                <p className="text-xs text-gray-400 font-medium">GROUP NAME</p>
-                <p className="text-base font-medium text-gray-100 break-words">{groupInfo.name}</p>
+            </div>
+            {/* Group Status */}
+            <div className="bg-gray-750 rounded-lg p-3 md:p-4">
+              <div className="flex flex-col gap-2">
+                <div className="flex items-center">
+                  <div className="mr-2 md:mr-3 text-blue-400 flex-shrink-0">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="text-xs text-gray-400 font-medium">TEAM STATUS</p>
+                  </div>
+                </div>
+                <div className="bg-blue-900/40 px-3 py-1 rounded-sm text-xs font-medium uppercase text-center">
+                  {groupInfo.status}
+                </div>
               </div>
             </div>
           </div>
-  
+
           {/* Creator Info */}
-          <div className="bg-gray-750 rounded-lg p-3 md:p-4 border-l-2 border-blue-500">
+          <div className="bg-gray-750 rounded-lg p-3 md:p-4">
             <div className="flex items-center">
               <div className="mr-2 md:mr-3 text-blue-400 flex-shrink-0">
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -246,9 +262,9 @@ const GroupInfo = ({ userId, eventID, refresh, setRefresh }) => {
               </div>
             </div>
           </div>
-  
+
           {/* Members List */}
-          <div className="bg-gray-750 rounded-lg p-3 md:p-4 border-l-2 border-blue-500">
+          <div className="bg-gray-750 rounded-lg p-3 md:p-4">
             <div className="flex items-center mb-2 md:mb-3">
               <div className="mr-2 md:mr-3 text-blue-400 flex-shrink-0">
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -257,58 +273,37 @@ const GroupInfo = ({ userId, eventID, refresh, setRefresh }) => {
               </div>
               <p className="text-xs text-gray-400 font-medium">TEAM MEMBERS</p>
             </div>
-  
+
             <ul className="space-y-2 mt-2">
               {groupInfo?.members?.map(({ user, status }, index) => (
-                <li 
-                  key={index} 
-                  className={`flex flex-col sm:flex-row sm:items-center justify-between p-2 sm:p-3 rounded-md ${
-                    status === 'accepted' 
-                      ? 'bg-green-900/20 border border-green-800' 
-                      : status === 'pending' 
-                      ? 'bg-yellow-900/20 border border-yellow-800' 
+                <li
+                  key={index}
+                  className={`flex flex-col sm:flex-row sm:items-center justify-between p-2 sm:p-3 rounded-md ${status === 'accepted'
+                    ? 'bg-green-900/20 border border-green-800'
+                    : status === 'pending'
+                      ? 'bg-yellow-900/20 border border-yellow-800'
                       : 'bg-red-900/20 border border-red-800'
-                  }`}
+                    }`}
                 >
                   <div className="flex items-center overflow-hidden mb-1 sm:mb-0">
-                    <div className={`h-2 w-2 rounded-full mr-2 md:mr-3 flex-shrink-0 ${
-                      status === 'accepted' ? 'bg-green-500' : 
+                    <div className={`h-2 w-2 rounded-full mr-2 md:mr-3 flex-shrink-0 ${status === 'accepted' ? 'bg-green-500' :
                       status === 'pending' ? 'bg-yellow-500' : 'bg-red-500'
-                    } ${status === 'pending' ? 'animate-pulse' : ''}`}></div>
+                      } ${status === 'pending' ? 'animate-pulse' : ''}`}></div>
                     <div className="min-w-0">
                       <p className="font-medium text-gray-100 truncate">{user.name}</p>
                       <p className="text-xs text-gray-400 truncate">{user.email}</p>
                     </div>
                   </div>
-                  <div className={`text-xs font-medium px-2 py-1 rounded self-start sm:self-center flex-shrink-0 sm:ml-2 ${
-                    status === 'accepted' ? 'text-green-400 bg-green-900/40' :
+                  <div className={`text-xs font-medium px-2 py-1 rounded self-start sm:self-center flex-shrink-0 sm:ml-2 ${status === 'accepted' ? 'text-green-400 bg-green-900/40' :
                     status === 'pending' ? 'text-yellow-400 bg-yellow-900/40' : 'text-red-400 bg-red-900/40'
-                  }`}>
+                    }`}>
                     {status.toUpperCase()}
                   </div>
                 </li>
               ))}
             </ul>
           </div>
-  
-          {/* Group Status */}
-          <div className="bg-gray-750 rounded-lg p-3 md:p-4 border-l-2 border-blue-500">
-            <div className="flex items-center justify-between">
-              <div className="flex items-center">
-                <div className="mr-2 md:mr-3 text-blue-400 flex-shrink-0">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
-                </div>
-                <div>
-                  <p className="text-xs text-gray-400 font-medium">GROUP STATUS</p>
-                </div>
-              </div>
-              <div className="bg-blue-900/60 px-3 py-1 rounded-full text-xs font-medium">
-                {groupInfo.status}
-              </div>
-            </div>
-          </div>
+
         </div>
       ) : (
         <div className="flex flex-col items-center justify-center p-5 md:p-8 bg-gray-800 rounded-lg border border-gray-700 shadow-md">
@@ -325,64 +320,23 @@ const GroupInfo = ({ userId, eventID, refresh, setRefresh }) => {
   );
 };
 
-const BackButton = ({eventSlug})=>{
+const BackButton = ({ eventSlug }) => {
   const navigate = useNavigate();
-  const handleBack = ()=>{
+  const handleBack = () => {
     navigate(`/events/${eventSlug}`)
   }
-  return(
-              <Button
-                variant="outlined"
-                onClick={handleBack}
-                sx={{
-                  "mt": 3,
-                  "py": 1.5,
-                  "width": "100%",
-                  "color": "white",
-                  "borderColor": "rgba(25, 255, 55, 0.5)",
-                  "borderWidth": "2px",
-                  "fontWeight": "bold",
-                  "fontSize": "1rem",
-                  "letterSpacing": "3px",
-                  "backgroundColor": "rgba(0, 0, 0, 0.6)",
-                  "position": "relative",
-                  "transition": "all 0.4s ease",
-                  "overflow": "hidden",
-                  "zIndex": 1,
-                  "&:before": {
-                    content: '""',
-                    position: "absolute",
-                    top: 0,
-                    left: "-100%",
-                    width: "100%",
-                    height: "100%",
-                    background: "linear-gradient(90deg, transparent, rgba(25, 255, 55, 0.2), transparent)",
-                    transition: "all 0.5s",
-                    zIndex: -1,
-                  },
-                  "&:hover": {
-                    borderColor: "rgba(25, 255, 55, 0.8)",
-                    boxShadow: "0 0 20px rgba(25, 255, 55, 0.3)",
-                    transform: "translateY(-3px)",
-                    letterSpacing: "4px",
-                    bgcolor: "rgba(25, 255, 55, 0.1)",
-                    "&:before": {
-                      left: "100%",
-                    },
-                  },
-                  "&:active": {
-                    transform: "translateY(0)",
-                    boxShadow: "0 0 10px rgba(25, 255, 55, 0.2)",
-                  }
-                }}
-              >
-                BACK
-              </Button>
+  return (
+    <button
+      variant="outlined"
+      onClick={handleBack}
+      className="text-lg border border-greyBorder px-2 py-3 rounded-sm self-end">
+      Back
+    </button >
   )
 
 }
 const App = () => {
-  const [isLoading , setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   const { width, height } = useWindowSize();
   const userId = localStorage.getItem("sid");
   //console.log({ userId });
@@ -408,7 +362,7 @@ const App = () => {
 
   // Retrieve the event slug from the URL parameters
   const { eventID } = useParams();
-  const eventDetails = eventData.find(e=>e.eventID===eventID);
+  const eventDetails = eventData.find(e => e.eventID === eventID);
   const getUserById = async (userId) => {
     try {
       const response = await axios.get(`${env.API_SERVER}/users/${userId}`, {
@@ -547,10 +501,10 @@ const App = () => {
         setRegistrationResponse(null);
         setParticipationStatus("not-participating");
         setCanUnregisterStatus(false);
-      setIsLoading(false);
+        setIsLoading(false);
       } else {
         toast.error("Failed to unregister: " + data.message);
-      setIsLoading(false);
+        setIsLoading(false);
       }
     } catch (error) {
       console.error("Error during unregister:", error);
@@ -575,10 +529,10 @@ const App = () => {
         toast.success("Successfully accepted invitation");
         setInvitationInfo({ ...invitationInfo, status: "accepted" });
         setRefreshGroupInfo(true);
-      setIsLoading(false);
+        setIsLoading(false);
       } else {
         toast.error("Failed to accept invitation: " + data.message);
-      setIsLoading(false);
+        setIsLoading(false);
       }
     } catch (error) {
       console.error("Error during accept invitation:", error);
@@ -667,202 +621,23 @@ const App = () => {
     );
   }
   return (
-    <Box
-      sx={{
-        width: "100vw",
-        height: "100vh",
-        bgcolor: "#000",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        position: "relative",
-        overflowY: "auto",
-        p: 2,
-        transition: "all 0.5s ease-in-out",
-      }}
+    <div className="w-full min-h-screen bg-background flex flex-col lg:flex-row items-center lg:items-start justify-center gap-8 relative p-2 pt-8 transition-all duration-500"
     >
-      {/* Background Gradient Overlay with improved gradient */}
-      <Box
-        sx={{
-          position: "absolute",
-          top: 0,
-          left: 0,
-          width: "100%",
-          height: "100%",
-          background: "radial-gradient(circle at center, #1a1a1a 0%, #000000 100%)",
-          opacity: 0.9,
-          animation: "pulse 15s infinite alternate",
-          "@keyframes pulse": {
-            "0%": { opacity: 0.7 },
-            "50%": { opacity: 0.9 },
-            "100%": { opacity: 0.7 }
-          },
-          zIndex: -1,
-        }}
+      <GridLines />
+      <img
+        src={getImageUrl(eventDetails.eventPoster)}
+        alt={eventDetails.eventName}
+        className="w-auto md:h-[70vh] lg:h-[90vh] max-w-[90%] lg:max-w-[45%] rounded-sm object-contain z-50"
       />
-      
-      {/* Animated Background Grid Lines */}
-      <Box
-        sx={{
-          position: "absolute",
-          zIndex: 0,
-          width: "1px",
-          height: "100%",
-          bgcolor: "rgba(128, 128, 128, 0.15)",
-          left: "50%",
-          transform: "translateX(-50%)",
-          boxShadow: "0 0 15px rgba(255, 255, 255, 0.1)",
-          animation: "fadeInOut 8s infinite alternate",
-          "@keyframes fadeInOut": {
-            "0%": { opacity: 0.3 },
-            "100%": { opacity: 0.7 }
-          },
-        }}
-      />
-      <Box
-        sx={{
-          position: "absolute",
-          zIndex: 0,
-          width: "1px",
-          height: "100%",
-          borderRight: "1px solid rgba(128, 128, 128, 0.15)",
-          boxShadow: "0 0 15px rgba(255, 255, 255, 0.1)",
-          left: "20%",
-          animation: "fadeInOut 10s infinite alternate-reverse",
-        }}
-      />
-      <Box
-        sx={{
-          position: "absolute",
-          zIndex: 0,
-          width: "1px",
-          height: "100%",
-          borderLeft: "1px solid rgba(128, 128, 128, 0.15)",
-          boxShadow: "0 0 15px rgba(255, 255, 255, 0.1)",
-          right: "20%",
-          animation: "fadeInOut 12s infinite alternate",
-        }}
-      />
-      
-      {/* Horizontal grid lines for added depth */}
-      <Box
-        sx={{
-          position: "absolute",
-          zIndex: 0,
-          width: "100%",
-          height: "1px",
-          borderTop: "1px solid rgba(128, 128, 128, 0.15)",
-          boxShadow: "0 0 15px rgba(255, 255, 255, 0.1)",
-          top: "30%",
-          animation: "fadeInOut 9s infinite alternate",
-        }}
-      />
-      <Box
-        sx={{
-          position: "absolute",
-          zIndex: 0,
-          width: "100%",
-          height: "1px",
-          borderBottom: "1px solid rgba(128, 128, 128, 0.15)",
-          boxShadow: "0 0 15px rgba(255, 255, 255, 0.1)",
-          bottom: "30%",
-          animation: "fadeInOut 11s infinite alternate-reverse",
-        }}
-      />
-      
-      {/* Registration Box with improved styling and animations */}
-      <Paper
-        elevation={6}
-        sx={{
-          zIndex: 10,
-          width: { xs: "95%", sm: "80%", md: "60%", lg: "50%" },
-          p: { xs: 3, sm: 4, md: 5 },
-          display: "flex",
-          flexDirection: { xs: "column", md: "row" },
-          alignItems: "center",
-          bgcolor: "rgba(20, 20, 20, 0.6)",
-          backdropFilter: "blur(15px)",
-          borderRadius: 3,
-          border: "1px solid rgba(255, 255, 255, 0.1)",
-          boxShadow: "0px 0px 30px rgba(0, 0, 0, 0.7), inset 0 0 20px rgba(255, 255, 255, 0.05)",
-          transition: "all 0.3s ease-in-out",
-          "&:hover": {
-            boxShadow: "0px 0px 40px rgba(0, 0, 0, 0.8), inset 0 0 25px rgba(255, 255, 255, 0.08)",
-            transform: "translateY(-5px)",
-          },
-          animation: "fadeIn 0.8s ease-out",
-          "@keyframes fadeIn": {
-            "0%": { opacity: 0, transform: "translateY(20px)" },
-            "100%": { opacity: 1, transform: "translateY(0)" }
-          },
-        }}
-      >
-        {/* Event poster image with improved styling and animation */}
-        <img
-          src={getImageUrl(eventDetails.eventPoster)}
-          alt={eventDetails.eventName}
-          style={{
-            display: { xs: "none", lg: "block" },
-            width: "auto",
-            maxWidth: "45%",
-            padding: "14px",
-            height: "fit-content",
-            borderRadius: "24px",
-            objectFit: "contain",
-            transition: "all 0.5s ease",
-            transform: "perspective(1000px) rotateY(-5deg)",
-            boxShadow: "10px 10px 30px rgba(0, 0, 0, 0.3)",
-            filter: "drop-shadow(0 0 10px rgba(255, 255, 255, 0.1))",
-          }}
-          className="group-hover:scale-105 group-hover:rotate-2 transition-all duration-500"
-        />
-        
+      {/*      {/* Registration Box with improved styling and animations */}
+      <div className="z-10 backdrop-blur-md bg-zinc-800/50 px-3 md:px-5 py-8 w-[95%] sm:w-[80%] md:w-[60%] lg:w-2/5 h-fit lg:min-h-9/10 font-sometypeMono rounded-md flex flex-col items-center">
+
         {/* Form Section with improved styling */}
-        <Box 
-          sx={{ 
-            width: "100%", 
-            maxWidth: "400px",
-            ml: { md: 4 },
-            animation: "slideIn 0.8s ease-out forwards",
-            "@keyframes slideIn": {
-              "0%": { opacity: 0, transform: "translateX(20px)" },
-              "100%": { opacity: 1, transform: "translateX(0)" }
-            }
-          }}
-        >
-          <Typography
-            variant="h4"
-            color="white"
-            align="center"
-            fontWeight="bold"
-            sx={{
-              mb: 3,
-              fontSize: { xs: "1.6rem", md: "2.2rem" },
-              textShadow: "3px 3px 6px rgba(0, 0, 0, 0.8), 0 0 30px rgba(20, 220, 50, 0.2)",
-              letterSpacing: "3px",
-              textTransform: "uppercase",
-              position: "relative",
-              "&:after": {
-                content: '""',
-                position: "absolute",
-                width: "60px",
-                height: "3px",
-                bottom: "-10px",
-                left: "calc(50% - 30px)",
-                backgroundColor: "rgba(25, 255, 55, 0.5)",
-                boxShadow: "0 0 10px rgba(25, 255, 55, 0.5)",
-                transition: "all 0.3s ease",
-              },
-              "&:hover:after": {
-                width: "100px",
-                left: "calc(50% - 50px)",
-                backgroundColor: "rgba(25, 255, 55, 0.7)",
-              },
-            }}
-          >
-            REGISTRATION
-          </Typography>
-          
+        <div className="w-full max-w-[400px] flex flex-col gap-y-3">
+          <h1 className="text-4xl font-semibold w-full text-center text-white">
+            {eventDetails.eventName}
+          </h1>
+
           {participationStatus == "not-participating" && !isSoloEvent && (
             <>
               <TextField
@@ -875,30 +650,31 @@ const App = () => {
                 onChange={(e) => setTeamName(e.target.value)}
                 InputLabelProps={{
                   style: {
-                    color: "rgba(25, 255, 55, 0.8)",
-                    fontSize: "0.9rem",
+                    color: "#fff",
+                    fontSize: "1rem",
                     fontWeight: "bold",
-                    textShadow: "0 0 5px rgba(25, 255, 55, 0.3)",
+                    "fontFamily": "var(--font-sometypeMono)",
                   },
                 }}
                 sx={{
-                  "mb": 2,
+                  "mb": 1,
                   "transition": "all 0.3s ease",
                   "& .MuiOutlinedInput-root": {
-                    "backgroundColor": "rgba(0, 0, 0, 0.6)",
-                    "borderRadius": "8px",
+                    "backgroundColor": "#141414",
+                    "fontFamily": "var(--font-sometypeMono)",
+                    "borderRadius": "5px",
                     "transition": "all 0.3s ease",
                     "boxShadow": "0 0 10px rgba(0, 0, 0, 0.3), inset 0 0 10px rgba(25, 255, 55, 0.05)",
-                    "& fieldset": { 
-                      borderColor: "rgba(25, 255, 55, 0.3)",
+                    "& fieldset": {
+                      borderColor: "#94949440",
                       borderWidth: "2px",
                       transition: "all 0.3s ease"
                     },
                     "&:hover fieldset": {
-                      borderColor: "rgba(25, 255, 55, 0.5)",
+                      borderColor: "#94949470",
                     },
                     "&.Mui-focused fieldset": {
-                      borderColor: "rgba(25, 255, 55, 0.8)",
+                      borderColor: "#949494",
                       boxShadow: "0 0 8px rgba(25, 255, 55, 0.3)",
                     },
                   },
@@ -915,7 +691,7 @@ const App = () => {
                   },
                 }}
               />
-              
+
               <TextField
                 fullWidth
                 size="medium"
@@ -926,9 +702,9 @@ const App = () => {
                 InputProps={{
                   startAdornment: email ? (
                     <InputAdornment position="start">
-                      <CheckCircleIcon 
-                        sx={{ 
-                          color: "rgba(25, 255, 55, 0.8)", 
+                      <CheckCircleIcon
+                        sx={{
+                          color: "rgba(25, 255, 55, 0.8)",
                           mr: 1,
                           animation: "pulse 2s infinite",
                           "@keyframes pulse": {
@@ -936,7 +712,7 @@ const App = () => {
                             "50%": { opacity: 1 },
                             "100%": { opacity: 0.7 }
                           }
-                        }} 
+                        }}
                       />
                     </InputAdornment>
                   ) : null,
@@ -945,19 +721,20 @@ const App = () => {
                   "mb": 2,
                   "transition": "all 0.3s ease",
                   "& .MuiOutlinedInput-root": {
-                    "backgroundColor": "rgba(0, 0, 0, 0.6)",
-                    "borderRadius": "8px",
+                    "fontFamily": "var(--font-sometypeMono)",
+                    "backgroundColor": "#141414",
+                    "borderRadius": "5px",
                     "transition": "all 0.3s ease",
                     "boxShadow": "0 0 10px rgba(0, 0, 0, 0.3), inset 0 0 10px rgba(25, 255, 55, 0.05)",
                     "& fieldset": {
-                      borderColor: email ? "rgba(25, 255, 55, 0.5)" : "rgba(255, 255, 255, 0.3)",
+                      borderColor: email ? "#94949440" : "rgba(255, 255, 255, 0.3)",
                       borderWidth: "2px"
                     },
                     "&:hover fieldset": {
-                      borderColor: email ? "rgba(25, 255, 55, 0.7)" : "rgba(255, 255, 255, 0.5)",
+                      borderColor: email ? "#94949470" : "rgba(255, 255, 255, 0.5)",
                     },
                     "&.Mui-focused fieldset": {
-                      borderColor: email ? "rgba(25, 255, 55, 0.8)" : "rgba(255, 255, 255, 0.6)",
+                      borderColor: email ? "#949494" : "rgba(255, 255, 255, 0.6)",
                     },
                   },
                   "& .MuiInputBase-input": {
@@ -971,87 +748,48 @@ const App = () => {
                 }}
                 InputLabelProps={{
                   style: {
-                    color: "rgba(25, 255, 55, 0.8)",
-                    fontSize: "0.9rem",
+                    color: "#fff",
+                    fontSize: "1rem",
                     fontWeight: "bold",
+                    "fontFamily": "var(--font-sometypeMono)",
                     textShadow: "0 0 5px rgba(25, 255, 55, 0.3)",
                   },
                 }}
               />
-              
+
               <TeamMembers
                 membersEmails={membersEmails}
                 setMembersEmails={setMembersEmails}
                 maxMembers={maxMembersAllowed}
               />
-              
+
               {/* REGISTER Button with improved styling */}
-              <Button
-                variant="outlined"
-                onClick={handleRegister}
-                disabled={isLoading}
-                sx={{
-                  "mt": 3,
-                  "py": 1.5,
-                  "width": "100%",
-                  "color": "white",
-                  "borderColor": "rgba(25, 255, 55, 0.5)",
-                  "borderWidth": "2px",
-                  "fontWeight": "bold",
-                  "fontSize": "1rem",
-                  "letterSpacing": "3px",
-                  "backgroundColor": "rgba(0, 0, 0, 0.6)",
-                  "position": "relative",
-                  "transition": "all 0.4s ease",
-                  "overflow": "hidden",
-                  "zIndex": 1,
-                  "&:before": {
-                    content: '""',
-                    position: "absolute",
-                    top: 0,
-                    left: "-100%",
-                    width: "100%",
-                    height: "100%",
-                    background: "linear-gradient(90deg, transparent, rgba(25, 255, 55, 0.2), transparent)",
-                    transition: "all 0.5s",
-                    zIndex: -1,
-                  },
-                  "&:hover": {
-                    borderColor: "rgba(25, 255, 55, 0.8)",
-                    boxShadow: "0 0 20px rgba(25, 255, 55, 0.3)",
-                    transform: "translateY(-3px)",
-                    letterSpacing: "4px",
-                    bgcolor: "rgba(25, 255, 55, 0.1)",
-                    "&:before": {
-                      left: "100%",
-                    },
-                  },
-                  "&:active": {
-                    transform: "translateY(0)",
-                    boxShadow: "0 0 10px rgba(25, 255, 55, 0.2)",
-                  }
-                }}
-              >
-                REGISTER
-              </Button>
-              <BackButton eventSlug={eventID}></BackButton>
+              <div className="grid grid-cols-4 gap-5 w-full">
+                <button
+                  onClick={handleRegister}
+                  disabled={isLoading}
+                  className="col-span-3 text-2xl border border-greyBorder bg-white text-background py-2 rounded-sm">
+                  Register
+                </button>
+                <BackButton eventSlug={eventID}></BackButton>
+              </div>
             </>
           )}
-          
+
           {participationStatus == "not-participating" && isSoloEvent && (
             <div className="flex gap-2 text-white flex-col">
-              <Typography 
-                variant="body1" 
-                sx={{ 
-                  color: "white", 
-                  mb: 2, 
+              <Typography
+                variant="body1"
+                sx={{
+                  color: "white",
+                  mb: 2,
                   textAlign: "center",
                   textShadow: "0 0 5px rgba(255, 255, 255, 0.3)"
                 }}
               >
                 Confirming once more before registering for solo event!
               </Typography>
-              
+
               {/* REGISTER Solo Button with improved styling */}
               <Button
                 variant="outlined"
@@ -1103,7 +841,7 @@ const App = () => {
               </Button>
             </div>
           )}
-          
+
           {participationStatus != "not-participating" && !isSoloEvent && (
             <GroupInfo
               userId={userId}
@@ -1112,14 +850,14 @@ const App = () => {
               setRefresh={setRefreshGroupInfo}
             />
           )}
-          
+
           {participationStatus != "not-participating" && isSoloEvent && (
             <div className="flex gap-2 text-white flex-col">
-              <Typography 
-                variant="body1" 
-                sx={{ 
-                  color: "white", 
-                  p: 2, 
+              <Typography
+                variant="body1"
+                sx={{
+                  color: "white",
+                  p: 2,
                   textAlign: "center",
                   borderRadius: "8px",
                   background: "rgba(25, 255, 55, 0.1)",
@@ -1137,7 +875,7 @@ const App = () => {
               </Typography>
             </div>
           )}
-          
+
           {/* UNREGISTER Button with improved styling */}
           {canUnregisterStatus && (
             <Button
@@ -1154,10 +892,11 @@ const App = () => {
                 "fontWeight": "bold",
                 "fontSize": "1rem",
                 "letterSpacing": "3px",
-                "backgroundColor": "rgba(0, 0, 0, 0.6)",
+                "backgroundColor": "rgba(255, 0, 0, 0.2)",
                 "position": "relative",
                 "transition": "all 0.4s ease",
                 "overflow": "hidden",
+                "fontFamily": "var(--font-sometypeMono)",
                 "zIndex": 1,
                 "&:before": {
                   content: '""',
@@ -1189,7 +928,7 @@ const App = () => {
               UNREGISTER
             </Button>
           )}
-          
+
           {invitationInfo?.status == "pending" && (
             <div className="flex gap-3 mt-4 justify-center">
               <Button
@@ -1199,15 +938,15 @@ const App = () => {
                   "px": 3,
                   "color": "white",
                   "borderColor": "rgba(25, 255, 55, 0.5)",
-                  "borderWidth": "2px",
-                  "fontWeight": "bold",
+                  "borderWidth": "1px",
                   "fontSize": "0.9rem",
+                  "fontFamily": "var(--font-sometypeMono)",
                   "bgcolor": "rgba(25, 255, 55, 0.1)",
                   "borderRadius": "6px",
                   "transition": "all 0.3s ease",
                   "&:hover": {
                     bgcolor: "rgba(25, 255, 55, 0.2)",
-                    boxShadow: "0 0 15px rgba(25, 255, 55, 0.3)",
+                    boxShadow: "0 0 5px rgba(25, 255, 55, 0.3)",
                     transform: "translateY(-2px)",
                   },
                 }}
@@ -1223,15 +962,15 @@ const App = () => {
                   "px": 3,
                   "color": "white",
                   "borderColor": "rgba(255, 80, 80, 0.5)",
-                  "borderWidth": "2px",
-                  "fontWeight": "bold",
+                  "borderWidth": "1px",
+                  "fontFamily": "var(--font-sometypeMono)",
                   "fontSize": "0.9rem",
                   "bgcolor": "rgba(255, 80, 80, 0.1)",
                   "borderRadius": "6px",
                   "transition": "all 0.3s ease",
                   "&:hover": {
                     bgcolor: "rgba(255, 80, 80, 0.2)",
-                    boxShadow: "0 0 15px rgba(255, 80, 80, 0.3)",
+                    boxShadow: "0 0 5px rgba(255, 80, 80, 0.3)",
                     transform: "translateY(-2px)",
                   },
                 }}
@@ -1241,29 +980,9 @@ const App = () => {
               </Button>
             </div>
           )}
-        </Box>
-      </Paper>
-      {/* <Toaster
-        toastOptions={{
-          // Define default options
-          className: "",
-          duration: 9000,
-          removeDelay: 9000,
-          style: {
-            background: "#363636",
-            color: "#fff",
-          },
-          // Default options for specific types
-          success: {
-            duration: 5000,
-            iconTheme: {
-              primary: "green",
-              secondary: "black",
-            },
-          },
-        }}
-      /> */}
-    </Box>
+        </div>
+      </div>
+    </div>
   )
 };
 
