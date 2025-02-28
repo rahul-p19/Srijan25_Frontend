@@ -141,7 +141,7 @@
 //       <style jsx global>{`
 //         html,
 //         
-    //slug: {body {
+//slug: {body {
 //           background-color: #000;
 //           margin: 0;
 //           padding: 0;
@@ -164,7 +164,7 @@
 import React, { useState, useEffect, Suspense } from "react";
 // import { ReactTyped } from "react-typed";
 // import N
-    //slug: {avbar from "../Navbar";
+//slug: {avbar from "../Navbar";
 // import Footer from "../Footer";
 // import PageReveal from "../PageReveal";
 // import "./styles.css";
@@ -251,7 +251,7 @@ import React, { useState, useEffect, Suspense } from "react";
 //                   onClick={() => setActiveCategory(category)}
 //                   className={`px-6 py-2 rounded-md font-semibold transition-all duration-300 focus:outline-none ${
 //         
-    //slug: {            activeCategory === category
+//slug: {            activeCategory === category
 //                       ? "bg-gradient-to-r from-black-500 to-green-600 text-white shadow-xl transform scale-105"
 //                       : "bg-gray-800 text-gray-300 hover:bg-gray-700 hover:shadow-lg"
 //                   }`}
@@ -302,6 +302,7 @@ import { ReactTyped } from "react-typed";
 import Navbar from "../Navbar";
 import Footer from "../Footer";
 import PageReveal from "../PageReveal";
+import { Helmet } from "react-helmet-async";
 import "./styles.css";
 import eventData from "../Events/allevents/data.json"; // Adjust path if necessary
 import { getImageUrl } from "../../utils/image-util"; // Utility to load images dynamically
@@ -350,11 +351,10 @@ const FancyButton = ({ active, onClick, children }) => {
     <div className="relative inline-block overflow-hidden rounded-md font-sometypeMono">
       <button
         onClick={createRipple}
-        className={`relative px-6 py-2 rounded-md font-semibold transition-all duration-300 focus:outline-none border border-transparent ${
-          active
-            ? "bg-gradient-to-r from-black-500 to-green-600 text-white shadow-xl transform scale-105"
-            : "bg-gray-800 text-gray-300 hover:bg-gray-700 hover:shadow-lg"
-        }`}
+        className={`relative px-6 py-2 rounded-md font-semibold transition-all duration-300 focus:outline-none border border-transparent ${active
+          ? "bg-gradient-to-r from-black-500 to-green-600 text-white shadow-xl transform scale-105"
+          : "bg-gray-800 text-gray-300 hover:bg-gray-700 hover:shadow-lg"
+          }`}
       >
         {children}
       </button>
@@ -423,7 +423,7 @@ const Events = () => {
   // Handle event card click to navigate to event detail page
   const handleCardClick = (eventData) => {
     // window.location.href = `/events/${eventData.category}/${eventData.eventID}`;
-       window.location.href = `/events/${eventData.eventID}`;
+    window.location.href = `/events/${eventData.eventID}`;
   };
 
   return (
@@ -434,6 +434,14 @@ const Events = () => {
           <Navbar />
           <PageReveal />
 
+          <Helmet>
+            <link rel="canonical" href="https://srijanju.in/events" />
+            <title>Events | Srijan'25</title>
+            <meta
+              name="description"
+              content="Event Details for Srijan'25 - The Annual Techno-Management Fest of Jadavpur University"
+            />
+          </Helmet>
           {/* Main container with gradient background */}
           <div className="relative bg-gradient-to-r from-background to-background text-white min-h-screen py-2 px-2">
             {/* GridLines Component for decorative vertical lines */}
@@ -528,6 +536,6 @@ const Events = () => {
   );
 };
 
-function App (){return <Events />};
+function App() { return <Events /> };
 export default App;
 

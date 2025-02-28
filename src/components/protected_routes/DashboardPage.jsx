@@ -31,7 +31,7 @@ const style = {
 };
 
 export const DashboardPage = ({ userDetails, logout }) => {
-  if(!userDetails || userDetails==="") redirect("/login");
+  if (!userDetails || userDetails === "") redirect("/login");
   const [user, setUser] = useState(userDetails);
   const merchStatus = user.merchandise?.status ?? "Not ordered.";
   const merchColour = user.merchandise?.color;
@@ -46,60 +46,38 @@ export const DashboardPage = ({ userDetails, logout }) => {
   const [pendingEvents, setPendingEvents] = useState([]);
   const [wishlist, setWishlist] = useState([]);
 
-  useEffect(()=>{
+  useEffect(() => {
 
-    if(user.registeredEvents && user.registeredEvents.length > 0){
-      // user.registeredEvents.map(eventId => {
-      //   // getEventById(eventId)
-      //   fetch(`${env.API_SERVER}/events/getEventById/${eventId}`,{
-      //     credentials: "include"
-      //   })
-      //   .then(res=>res.json())
-      //   .then(event=>event && setRegisteredEvents(prev=>[...prev,event]))
-      // })
+    if (user.registeredEvents && user.registeredEvents.length > 0) {
       user.registeredEvents.map(eventId => {
 
-        const newEvent = eventData.find((event) => event.id === eventId);
+        const newEvent = eventData.find((event) => event._id === eventId);
 
-        setRegisteredEvents(prev=>[...prev,newEvent])
+        setRegisteredEvents(prev => [...prev, newEvent])
       });
     }
-    if(user.pendingEvents && user.pendingEvents.length > 0){
-      // user.pendingEvents.map(eventId => {
-      //   // getEventById(eventId)
-      //   fetch(`${env.API_SERVER}/events/getEventById/${eventId}`,{
-      //     credentials: 'include'
-      //   })
-      //   .then(res=>res.json())
-      //   .then(event=>event && setPendingEvents(prev=>[...prev,event]))
-      // })
+    if (user.pendingEvents && user.pendingEvents.length > 0) {
       user.pendingEvents.map(eventId => {
 
-        const newEvent = eventData.find((event) => event.id === eventId);
+        const newEvent = eventData.find((event) => event._id === eventId);
 
-        setPendingEvents(prev=>[...prev,newEvent])
+        setPendingEvents(prev => [...prev, newEvent])
       });
     }
-    if(user.wishlist && user.wishlist.length > 0){
-      // user.wishlist.map(eventId => {
-      //   // getEventById(eventId)
-      //   fetch(`${env.API_SERVER}/events/getEventById/${eventId}`,{
-      //     credentials: 'include'
-      //   })
-      //   .then(res=>res.json())
-      //   .then(event=>event && setWishlist(prev=>[...prev,event]))
-      // })
+    if (user.wishlist && user.wishlist.length > 0) {
       user.wishlist.map(eventId => {
 
-        const newEvent = eventData.find((event) => event.id === eventId);
+        const newEvent = eventData.find((event) => {
+          return event._id === eventId;
+        });
 
-        setWishlist(prev=>[...prev,newEvent])
+        if (newEvent) setWishlist(prev => [...prev, newEvent])
       });
     }
 
     // console.log("events: ",{registeredEvents,pendingEvents,wishlist});
 
-  },[])
+  }, [])
 
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
@@ -222,9 +200,9 @@ export const DashboardPage = ({ userDetails, logout }) => {
                   src={merchPlaceholder}
                   alt="Merchandise placeholder"
                 />
-              <p className="flex text-lg">Status: {merchStatus}</p>
-              <p className="flex text-lg">{merchColour && `Colour: ${merchColour}`}</p>
-              <p className="flex text-lg">{merchSize && `Size: ${merchSize}`}</p>
+                <p className="flex text-lg">Status: {merchStatus}</p>
+                <p className="flex text-lg">{merchColour && `Colour: ${merchColour}`}</p>
+                <p className="flex text-lg">{merchSize && `Size: ${merchSize}`}</p>
               </section>
             </div>
           </div>
@@ -303,37 +281,37 @@ export const DashboardPage = ({ userDetails, logout }) => {
           <div className="col-span-full rounded-md bg-gradient-to-r from-red-700 via-purple-800 to-blue-900 p-px order-3">
             <section className="flex flex-col gap-6 md:gap-8 rounded-md h-full w-full bg-[#141414] py-6 md:py-8 px-[6vw]">
               <p className="text-2xl flex">Registered Events</p>
-              {registeredEvents && registeredEvents.length > 0 ? 
-              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                {registeredEvents.map((event,ind)=> <Link key={ind} to={`/events/${event.slug}`} className="border border-greyBorder p-3 shadow-lg rounded-md">{event.name}</Link>)}
-              </ul> : 
-              <p className="flex text-lg">
-                No events have been registered to, as of now!
-              </p>}
+              {registeredEvents && registeredEvents.length > 0 ?
+                <ul className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                  {registeredEvents.map((event, ind) => <Link key={ind} to={`/events/${event.slug}`} className="border border-greyBorder p-3 shadow-lg rounded-md">{event.name}</Link>)}
+                </ul> :
+                <p className="flex text-lg">
+                  No events have been registered to, as of now!
+                </p>}
             </section>
           </div>
           <div className="col-span-full rounded-md bg-gradient-to-r from-red-700 via-purple-800 to-blue-900 p-px order-4">
             <section className="flex flex-col gap-6 md:gap-8 rounded-md h-full w-full bg-[#141414] py-6 md:py-8 px-[6vw]">
               <p className="text-2xl flex">Wishlisted Events</p>
-              {wishlist && wishlist.length > 0 ? 
-              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                {wishlist.map((event,ind)=> <Link key={ind} to={`/events/${event.slug}`} className="border border-greyBorder p-3 shadow-lg rounded-md">{event.name}</Link>)}
-              </ul> : 
-              <p className="flex text-lg">
-                No events are in your wishlist, as of now!
-              </p>}
+              {wishlist && wishlist.length > 0 ?
+                <ul className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                  {wishlist.map((event, ind) => <Link key={ind} to={`/events/${event.slug}`} className="border border-greyBorder p-3 shadow-lg rounded-md">{event.name}</Link>)}
+                </ul> :
+                <p className="flex text-lg">
+                  No events are in your wishlist, as of now!
+                </p>}
             </section>
           </div>
           <div className="col-span-full rounded-md bg-gradient-to-r from-red-700 via-purple-800 to-blue-900 p-px order-5">
             <section className="flex flex-col gap-6 md:gap-8 rounded-md h-full w-full bg-[#141414] py-6 md:py-8 px-[6vw]">
               <p className="text-2xl flex">Pending Events</p>
-              {pendingEvents && pendingEvents.length > 0 ? 
-              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                {pendingEvents.map((event,ind)=> <Link key={ind} to={`/events/${event.slug}`} className="border border-greyBorder p-3 shadow-lg rounded-md">{event.name}</Link>)}
-              </ul> : 
-              <p className="flex text-lg">
-                No events are pending, as of now!
-              </p>}
+              {pendingEvents && pendingEvents.length > 0 ?
+                <ul className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                  {pendingEvents.map((event, ind) => <Link key={ind} to={`/events/${event.slug}`} className="border border-greyBorder p-3 shadow-lg rounded-md">{event.name}</Link>)}
+                </ul> :
+                <p className="flex text-lg">
+                  No events are pending, as of now!
+                </p>}
             </section>
           </div>
         </div>
