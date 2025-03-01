@@ -375,7 +375,6 @@
     "category": "circuits and robotics"
   },
   {
-    
     "eventID": "hxh",
     "eventName": "HUNTER X HUNTER",
     "eventDate": {
@@ -419,7 +418,19 @@
       "In order to win this game, participants need to hunt down all the pieces and piece them together faster than others. No worries, everyone will be provided a rough map of the entire area & The riddles will NOT be anime based. EVERYONE AND ANYONE CAN participate."
     ],
     "eventRules":[
-      "To be declared soon"
+
+    "HUNT DOWN ALL THE JIGSAW PUZZLE PIECES AND PIECE THEM TOGETHER FASTER THAN REST HUNTERS",
+      "The co-ordinator will announce the first riddle to everyone. Example Riddle: I am tall, when I am young and I am short when I am old. What am I?",
+      "The team which solves the riddle first, will tell the co-ordinator their answer in his/her ears, making sure no one else hears the answer.",
+      "If their answer is correct, they will receive the clue to proceed to the location of the next stage, alongside a piece of a jigsaw puzzle.",
+      "To the teams, which are unable to solve the riddle, further clues will be revealed after intervals of 5 minutes.",
+      "The same process will be repeated for the next 3 stages.",
+      "At the 5th stage, the team will be given a choice gamble their chance with a minigame.",
+      "Minigames may be: Stone-paper-scissors, Blackjack, Memory, etc. Each stage will have a different minigame.",
+      "If they succeed at the minigame, they can skip 3 stages and receive 4 jigsaw puzzle pieces. Or else they can choose not to Gamble & be on regular path",
+      "Failure to solve the puzzle will make them play the previous round again, albeit with a different riddle, this time.",
+      "Hence, the option to Gamble will be available at the 5th, 10th, 15th... stages.",
+      "This process will repeat until a team has received all the jigsaw puzzle pieces, upon which they shall return back to the room and submit the solved jigsaw puzzle. The first team to do it is the WINNER!"
     ],
     "driveLink": "https://drive.google.com/file/d/1t-OCqnap5Zt9tM3o0e00r9X9V4DroyNg/view",
     "category": "misc"
