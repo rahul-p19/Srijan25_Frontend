@@ -710,17 +710,32 @@ const AllEvents = () => {
     return <div className="text-center text-white">Loading...</div>;
   }
 
+  
+  // const eventDetails = {
+  //   prelims: Array.isArray(eventData.eventDate.prelims)
+  //     ? eventData.eventDate.prelims.join(" ")
+  //     : eventData.eventDate.prelims,
+  //   finals: eventData.eventDate.finals || "__-__-2025",
+  //   teamSize:
+  //     eventData.minMembers === eventData.maxMembers
+  //       ? "individual event"
+  //       : `${eventData.minMembers}-${eventData.maxMembers} members`,
+  // };
   const eventDetails = {
-    prelims: Array.isArray(eventData.eventDate.prelims)
-      ? eventData.eventDate.prelims.join(" ")
-      : eventData.eventDate.prelims,
-    finals: eventData.eventDate.finals || "__-__-2025",
-    teamSize:
-      eventData.minMembers === eventData.maxMembers
-        ? "individual event"
-        : `${eventData.minMembers}-${eventData.maxMembers} members`,
-  };
+  prelims: Array.isArray(eventData.eventDate.prelims)
+    ? eventData.eventDate.prelims.join(" ")
+    : eventData.eventDate.prelims,
+  finals: eventData.eventDate.finals || "__-__-2025",
+  teamSize:
+    eventData.minMembers === eventData.maxMembers
+      ? (eventData.minMembers === 1
+          ? "individual event"
+          : `${eventData.minMembers} members`)
+      : `${eventData.minMembers}-${eventData.maxMembers} members`,
+};
 
+
+  
   // Parse prize pool from prize array
   const parsedPrizePool = { first: "", second: "", third: "" };
   if (Array.isArray(eventData.prize)) {
