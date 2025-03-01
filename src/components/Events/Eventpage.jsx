@@ -467,7 +467,7 @@ const Events = () => {
               {[
                 "all",
                 "coding",
-                "circuits",
+                "circuits and robotics",
                 "business",
                 "brainstorming",
                 "misc",
