@@ -264,7 +264,7 @@
       "prelims": ["21st March 2025"],
       "finals": ["21st March 2025"]
     },
-    "eventType": "coding",
+    "eventType": "circuits",
     "eventHashtags": ["hackathon", "machinelearning", "ai", "openaimer"],
     "registrationOpen": false,
     "eventCoordinators": [
@@ -296,7 +296,7 @@
 
     ],
     "driveLink":"https://drive.google.com/file/d/1wHk5s697AaZPn2ZCXNHCZDRKjYfDRsnY/view",
-    "category": "coding"
+    "category": "circuits"
   }
   
 
