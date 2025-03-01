@@ -287,17 +287,13 @@
 "Equip your robot with a reliable four-wheel roving mechanism & a pick-and-place manipulator mechanism.",
 "Implement a Wired or Wireless communication to control the robot's motion and pick and place mechanism. [everything will be manually controlled]",
 "The length of the wire (for wired bots) should be long enough so as to avoid tangling.",
-"Maximum permissible weight including the manipulator must not exceed 4kgs.",
+"Maximum permissible weight including the manipulator must not exceed 4kg.",
 "Teams have to compete in this event by making its path through a specified track or arena.",
 "Participants are not supposed to use any readymade Lego components or readymade gripping mechanism. However, the participants are allowed to use ready-made gear assemblies.",
 "In the case of an electric power supply, the voltage between any two points should be less than or equal to 12V DC at all times during the run.",
 "AC power supply will be provided if needed for wired bots."
-
-
     ],
     "driveLink":"https://drive.google.com/file/d/1wHk5s697AaZPn2ZCXNHCZDRKjYfDRsnY/view",
     "category": "circuits"
   }
-  
-
 ]
