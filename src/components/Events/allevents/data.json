@@ -223,7 +223,7 @@
   },
   {
     "eventID": "snapsyntax",
-    "eventName": "Snapsyntax",
+    "eventName": "SnapSyntax",
     "eventDate": {
       "prelims": [
         "22nd March 2025"
@@ -278,7 +278,8 @@
         "Time Taken (20% Weightage): The time taken by the participants to make the submission will be considered while evaluating.",
         "Code Quality (20% Weightage): The cleanliness, organization, and adherence to best practices in the HTML and CSS code used to recreate the web page."
       ]
-    }
+    },
+    "driveLink":"https://drive.google.com/file/d/1BAVtEqx8B3tEKv0jVT_x1QL2xcLD1Xzi/view"
   },
   {
     "eventID": "uncode",
