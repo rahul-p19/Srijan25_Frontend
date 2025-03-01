@@ -13,8 +13,7 @@ function Hero() {
   // checking user authenticated
   let registerRedirectLink = "/signup";
   const userId = localStorage.getItem("sid");
-  console.log({ userId });
-  if (!userId) {
+  if (userId) {
     registerRedirectLink = "/events"
   }
 
