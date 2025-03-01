@@ -435,5 +435,54 @@
     ],
     "driveLink": "https://drive.google.com/file/d/1t-OCqnap5Zt9tM3o0e00r9X9V4DroyNg/view",
     "category": "misc"
+  },
+    {
+    "eventID": "mathe",
+    "eventName": "Math-e-Magician",
+    "eventDate": {
+      "prelims": [
+        "21st March 2025"
+      ],
+      "finals": [
+        "23rd March 2025"
+      ]
+    },
+    "eventType": "brainstorming",
+    "eventHashtags": [
+      "hackathon",
+      "machinelearning",
+      "ai",
+      "openaimer"
+    ],
+    "registrationOpen": true,
+    "eventCoordinators": [
+      "Md. Farshid Hossain[8420019028]",
+      "Somnath Chattaraj[9382054930]",
+      "Shinjan Roy[6289997084]"
+    ],
+    "prize": [
+      "1st : Certificate, Rs 1,500 cash prize, annual membership for JMS and JUASCI Society for 1 year for each member of the team, with free passes for all Telescopic Events for this duration (worth Rs 500 per member) ",
+      "2nd : Certificate, Rs 1,000 cash prize, quarterly membership for JMS and JUASCI Society for 4 months for each member of the team, with free passes for all Telescopic Events for this duration (worth Rs 250 per member)",
+      "3rd : Certificate, Rs 500 cash prize, quarterly membership for JMS and JUASCI Society for 4 months for each member of the team, with free passes for all Telescopic Events for this duration (worth Rs 250 per member)"
+    ],
+    "minMembers": 2,
+    "maxMembers": 3,
+    "eventPoster": "math.webp",
+    "registrationType": "Srijan'24 Website",
+    "eventDescription": [
+      "Math-e-Magician is a team-based mathematical challenge where teams of two to three members solve analytical and reasoning-based problems. The first round is conducted in an offline mode in two slots, where teams solve three intriguing questions in two hours, in either of the two slots, while the second round is an online alternative with higher difficulty for those who did not participate in round one. The top 15 teams (10 from round one and 5 from round two) advance to the final round, where they create and present a hypothesis based on a unique mathematical concept, and shall be judged on that before being presented with an award if they so happen to excel."
+    ],
+"eventRules": [
+      "Each team must not preceed 2 members or exceed 3 members. Members can be from any department and any year from the same or different institutions.",
+      "Posession of any and all electronic gadgets (mobile phones, tablets, personal computers, etc) is strictly prohobited.",
+      "The event would be organized in an Open Book format. Every participating team is thereby  encouraged to bring with them as many books and physical documents as they can conviniently carry with themselves. They shall also be provided with an assortment of physical documents and books from the organizing committee’s end",
+      "No inter-team communications are allowed. Any communication channel may only be  established through the members of the organizing committee. The following point should noted that the members of the same team are allowed to communicate with one another, i.e. intra-team communications are allowed.",
+      " Any team caught indulging in any unprofessional activity (resorting to unfair means, communicating with members of other teams etc.) shall be immediately and indiscriminately disqualified on the spot",
+      "No illicit substances may be brought in to the event centre",
+      " For the final round of the event, the participating teams may opt to receive the help of any software to prove the correctness of their solution, or to demonstrate the correctness  of thier solution, provided the software used by the participating team is a licensed and has past and proven records of proper perfoamnce. They shall also be allowed to bring their own  personal computers to demonstrate their solutions. However, we would urge the teams to opt for the demonstration to be displayed on the personal computers of the organzing committee",
+      "For any instance of any kind of discrepancies, the judgement of the Organizing committee shall be deemed as the final decision."
+    ],
+    "driveLink": "https://drive.google.com/file/d/1zZ8zsNgTeCJERfzuhVkD3HxOnrlyl6Ni/view?usp=sharing",
+    "category": "brainstorming"
   }
 ]
