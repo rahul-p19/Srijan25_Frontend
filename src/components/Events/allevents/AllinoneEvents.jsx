@@ -1279,8 +1279,9 @@ const AllEvents = () => {
           className="relative bg-black text-white p-4 md:p-6 min-h-screen font-mono overflow-x-hidden"
         >
           {/* Static Vertical Lines */}
-          <div className={`${staticLineClasses} left-[5%] sm:left-[10%]`}></div>
-          <div className={`${staticLineClasses} right-[5%] sm:right-[10%]`}></div>
+          <div className={`${staticLineClasses} left-[5%] sm:left-[3%]`}></div>
+          <div className={`${staticLineClasses} right-[5%] sm:right-[3%]`}></div>
+
 
           {/* Overlay Element */}
           <div
