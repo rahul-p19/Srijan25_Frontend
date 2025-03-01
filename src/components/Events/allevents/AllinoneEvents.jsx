@@ -994,7 +994,7 @@ const AllEvents = () => {
             {eventData.driveLink && (
               <div className="border p-8 mt-6 md:mt-8 rounded-lg text-center shadow-2xl bg-gradient-to-brtransform hover:scale-105 transition duration-500 ease-in-out">
                 <h3 className="text-lg md:text-xl font-bold text-green-700 flex items-center justify-center gap-2 animate-pulse">
-                  <SiGoogledrive className="text-green-600" /> GOOGLE DRIVE LINK
+                  <SiGoogledrive className="text-green-600" /> Event Brochure
                 </h3>
                 <p className="mt-4">
                   <a
