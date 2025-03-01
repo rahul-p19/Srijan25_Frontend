@@ -10,6 +10,14 @@ function Hero() {
   const container = useRef();
   const mascot = useRef();
 
+  // checking user authenticated
+  let registerRedirectLink = "/signup";
+  const userId = localStorage.getItem("sid");
+  console.log({ userId });
+  if (!userId) {
+    registerRedirectLink = "/events"
+  }
+
   return (
     <div ref={container} className='h-[90vh] w-screen max-w-full grid grid-cols-7 sm:grid-cols-5 relative overflow-x-clip'>
       <div></div>
@@ -31,7 +39,7 @@ function Hero() {
         <div className='row-span-[0] col-span-[0] sm:row-span-4 sm:col-span-1 border-r-greyBorder sm:border-r flex p-6'>
         </div>
         <div className='row-span-1 col-span-2 sm:row-span-4 sm:col-span-1 flex items-end justify-center sm:justify-end'>
-          <Link className='p-3 border-greyBorder border sm:border-r-transparent sm:border-b-transparent text-lg sm:text-2xl z-[103] text-background bg-white' to='/signup'>Register Now</Link>
+          <Link className='p-3 border-greyBorder border sm:border-r-transparent sm:border-b-transparent text-lg sm:text-2xl z-[103] text-background bg-white' to={registerRedirectLink}>Register Now</Link>
           {/* <div onClick={notify} className='p-3 border-greyBorder border sm:border-r-transparent sm:border-b-transparent text-lg sm:text-2xl z-[103] text-background bg-white cursor-pointer' >Register Now</div> */}
         </div>
       </div>
