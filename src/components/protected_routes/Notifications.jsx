@@ -4,6 +4,7 @@ import Navbar from '../Navbar';
 import Footer from '../Footer';
 import { useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
+import clsx from 'clsx';
 
 /**
  * @typedef {object} NotificationItem
@@ -64,6 +65,19 @@ const Notifications = ({ user }) => {
     return `${diffInDays} days ago`;
   };
 
+const colors = [
+  'text-[#b60000]', 
+  'text-green-500', 
+  'text-yellow-300',
+  'text-[#6762ff]', 
+  'text-cyan-500', 
+  'text-[#532e8f]', 
+  'text-[#cd95ff]',
+  'text-[#ffbaba]'
+];
+
+let randomColorIndex = Math.round(Math.random()*colors.length)
+
   return (
     <div className="font-mono min-h-screen w-full bg-background text-white flex flex-col">
       <Helmet>
@@ -73,32 +87,33 @@ const Notifications = ({ user }) => {
       </Helmet>
     <Navbar />
     <div className="text-center m-2">
-      <h1 className="text-2xl sm:text-xl mt-2 xl:text-3xl font-semibold">
-        {user.name}&apos;s Notifications
-      </h1>
-    </div>
-
-    <div className="flex-grow overflow-auto mt-4">
-      <div className="border-gray-900 overflow-hidden rounded-md">
-        <ul role="list" className="divide-y divide-gray-800">
-          {items.length > 0 ? (
-            items.map((item) => (
-              <div key={item.id} className="border-2 border-gray-500 overflow-hidden rounded-md gap-1 m-1">
-                <li className="px-6 py-4 hover:bg-black focus:outline-none focus:border-gray-500">
-                  <div className="flex justify-between items-center">
-                    <h2 className="text-lg font-medium">{item.title}</h2>
-                    <span className="text-gray-500 text-sm">{getTimeDifference(item.timestamp)}</span>
-                  </div>
-                  <p className="text-gray-300">{item.description}</p>
-                </li>
-              </div>
-            ))
-          ) : (
-            <p className="text-center text-gray-400">No notifications available.</p>
-          )}
-        </ul>
+      <h1 className={clsx(`text-2xl sm:text-xl mt-2 xl:text-3xl font-semibold`, colors[randomColorIndex])}>
+       {user.name}&apos;s Notifications
+        </h1>
       </div>
-    </div>
+
+      <div className="flex-grow overflow-auto mt-4 px-4 lg:px-8">
+        <div className="border-none overflow-hidden rounded-md">
+          <ul role="list" className="divide-y divide-gray-800">
+            {items.length > 0 ? (
+              items.map((item) => ( 
+                <div key={item.id} className="border-1 border-[#94949450] overflow-hidden rounded-xs gap-1 m-1">
+                  <li className="px-6 py-4 hover:bg-black focus:outline-none focus:border-gray-500">
+                    <div className="flex justify-between items-center">
+                      <h2 className={clsx(`text-lg font-medium`, colors[item.id % colors.length])}>
+                        {item.title}</h2>
+                      <span className="text-gray-500 text-sm">{getTimeDifference(item.timestamp)}</span>
+                    </div>
+                    <p className="text-gray-300">{item.description}</p>
+                  </li>
+                </div>
+              ))
+            ) : (
+              <p className="text-center text-gray-400">No notifications available.</p>
+            )}
+          </ul>
+        </div>
+      </div>
     <Footer />
   </div>
   );
