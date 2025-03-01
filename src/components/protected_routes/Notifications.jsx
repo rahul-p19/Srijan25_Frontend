@@ -65,7 +65,7 @@ const Notifications = ({ user }) => {
     return `${diffInDays} days ago`;
   };
 
-const colors = [
+  const colors = [
   'text-[#b60000]', 
   'text-green-500', 
   'text-yellow-300',
@@ -74,9 +74,9 @@ const colors = [
   'text-[#532e8f]', 
   'text-[#cd95ff]',
   'text-[#ffbaba]'
-];
+  ];
 
-let randomColorIndex = Math.round(Math.random()*colors.length)
+   let randomColorIndex = Math.round(Math.random()*colors.length)
 
   return (
     <div className="font-mono min-h-screen w-full bg-background text-white flex flex-col">
@@ -96,11 +96,11 @@ let randomColorIndex = Math.round(Math.random()*colors.length)
         <div className="border-none overflow-hidden rounded-md">
           <ul role="list" className="divide-y divide-gray-800">
             {items.length > 0 ? (
-              items.map((item) => ( 
+              items.map((item,index) => ( 
                 <div key={item.id} className="border-1 border-[#94949450] overflow-hidden rounded-xs gap-1 m-1">
                   <li className="px-6 py-4 hover:bg-black focus:outline-none focus:border-gray-500">
                     <div className="flex justify-between items-center">
-                      <h2 className={clsx(`text-lg font-medium`, colors[item.id % colors.length])}>
+                      <h2 className={clsx(`text-lg font-medium`, colors[index% colors.length])}>
                         {item.title}</h2>
                       <span className="text-gray-500 text-sm">{getTimeDifference(item.timestamp)}</span>
                     </div>

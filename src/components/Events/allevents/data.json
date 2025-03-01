@@ -485,5 +485,48 @@
     ],
     "driveLink": "https://drive.google.com/file/d/1zZ8zsNgTeCJERfzuhVkD3HxOnrlyl6Ni/view?usp=sharing",
     "category": "brainstorming"
+  },
+  {
+    "eventID": "cypher3331",
+    "eventName": "Cypher 3331",
+    "eventDate": {
+      "prelims": [
+        "22nd March 2025"
+      ],
+      "finals": [
+        "23rd March 2025"
+      ]
+    },
+    "eventType": "brainstorming",
+    "eventHashtags": [
+      "encryption",
+      "problem-solving",
+      "case-solving",
+      "clue-based"
+    ],
+    "registrationOpen": true,
+    "eventCoordinators": [
+      "Nazmus Saqib[7478766863]",
+      "Ahnik Purkait[8777098463]",
+      "Mayukh Roy[7278972359]"
+    ],
+    "prize": [
+      "1st : Certificate, Rs 2,500 cash prize",
+      "2nd : Certificate, Rs 1,500 cash prize",
+      "3rd : Certificate, Rs 1,000 cash prize"
+    ],
+    "minMembers": 3,
+    "maxMembers": 3,
+    "eventPoster": "cypher3331.webp",
+    "registrationType": "Srijan'24 Website",
+    "eventDescription": [
+      "Participants will dive into an exciting journey of brainstorming, ciphering, and Cryptography with no prior experience needed! Just a device on which A short crash course will equip you with all the essential of cryptographic techniques you'll need to crack the code. Using this knowledge and your presence of mind, you need to battle through 4 thrilling stages in prelims to secure your spot at the dream finals of Cypher 3331. Ready to crack the code? Then let the game of cipher begin!"
+    ],
+"eventRules": [
+      "Prelims :  A 3-hour Brainstorming Quiz designed to test participants' analytical and observational skills will be conducted on our own platform. Before the quiz, a short introductory session on cryptography and ciphering techniques will be provided, ensuring that no prior knowledge is required.",
+      "Finals :  A more intense and challenging quiz session, designed to push participants further and test their mastery of the concepts learned."
+    ],
+    "driveLink": "https://docs.google.com/document/d/154zO0bxZir7fp8X-9UB8CjRD5yZUhQFum7jidovAxG8/edit?usp=sharing",
+    "category": "brainstorming"
   }
 ]
