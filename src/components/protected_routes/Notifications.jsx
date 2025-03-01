@@ -46,6 +46,8 @@ const Notifications = ({ user }) => {
     }
 
    const [items, setItems] = useState([]); // Use fallback data initially
+   const [currentPage, setCurrentPage] = useState(1); // Track the current page
+   const [itemsPerPage] = useState(10); // Number of items per page
 
    useEffect(() => {
      getNotification(setItems);
@@ -78,11 +80,24 @@ const Notifications = ({ user }) => {
 
    let randomColorIndex = Math.round(Math.random()*colors.length)
 
+     // Paginates all notifications
+  const indexOfLastItem = currentPage * itemsPerPage;
+  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+  const currentItems = items.slice(indexOfFirstItem, indexOfLastItem);
+
+  // Handle page change
+  const handlePageChange = (pageNumber) => {
+    setCurrentPage(pageNumber);
+  };
+
+  // Calculates total pages
+  const totalPages = Math.ceil(items.length / itemsPerPage);
+
   return (
     <div className="font-mono min-h-screen w-full bg-background text-white flex flex-col">
       <Helmet>
                 <link rel="canonical" href="https://srijanju.in/workshop" />
-                <title>Notifications | Srijan'25</title>
+                <title>Notifications | Srijan&apos;25</title>
                 <meta name="description" content="Your notifications for Srijan'25 - The Annual Techno-Management Fest of Jadavpur University" />
       </Helmet>
     <Navbar />
@@ -92,11 +107,11 @@ const Notifications = ({ user }) => {
         </h1>
       </div>
 
-      <div className="flex-grow overflow-auto mt-4 px-4 lg:px-8">
-        <div className="border-none overflow-hidden rounded-md">
-          <ul role="list" className="divide-y divide-gray-800">
-            {items.length > 0 ? (
-              items.map((item,index) => ( 
+       <div className="flex-grow overflow-auto mt-4 px-4 lg:px-8">
+         <div className="border-none overflow-hidden rounded-md">
+           <ul role="list" className="divide-y divide-gray-800">
+             {currentItems.length > 0 ? (
+              currentItems.map((item,index) => ( 
                 <div key={item.id} className="border-1 border-[#94949450] overflow-hidden rounded-xs gap-1 m-1">
                   <li className="px-6 py-4 hover:bg-black focus:outline-none focus:border-gray-500">
                     <div className="flex justify-between items-center">
@@ -113,6 +128,26 @@ const Notifications = ({ user }) => {
             )}
           </ul>
         </div>
+      </div>
+       {/* Pagination controls */}
+       <div className="flex items-center justify-end mt-4 mr-4 text-lg">
+        <button
+          onClick={() => handlePageChange(currentPage - 1)}
+          disabled={currentPage === 1}
+          className="px-4 py-2 mx-1 text-gray-200 rounded-xs"
+        >
+          &lt;
+        </button>
+        <span className="text-gray-400">
+          {currentPage} of {totalPages}
+        </span>
+        <button
+          onClick={() => handlePageChange(currentPage + 1)}
+          disabled={currentPage === totalPages}
+          className="px-4 py-2 mx-1 text-gray-100 rounded-xs"
+        >
+          &gt;
+        </button>
       </div>
     <Footer />
   </div>
