@@ -651,13 +651,12 @@
         "Hritaban Goswami[+91 9330013204]"
     ],
     "prize": [
-        "Total Prize Pool: ₹3,000",
-        "1st Prize: ₹1,500",
-        "2nd Prize: ₹1,000",
-        "3rd Prize: ₹500"
+      "1st : Certificate, Rs 2,500 cash prize",
+      "2nd : Certificate, Rs 1,500 cash prize",
+      "3rd : Certificate, Rs 1,000 cash prize"
     ],
     "minMembers": 2,
-    "maxMembers": 4,
+    "maxMembers": 3,
     "eventPoster": "sgv.webp",
     "registrationType": "Srijan'24 Website",
     "eventDescription": [
@@ -781,5 +780,57 @@
   ],
   "driveLink": "https://drive.google.com/file/d/1OQdr2y7q9H0PqggDkC1BeOkINVJo-HVm/view",
   "category": "business"
+},
+{
+  "eventID": "chp",
+  "eventName": "Chip-o-Mania",
+  "eventDate": {
+    "prelims": [
+      "TBD"
+    ],
+    "finals": [
+      "TBD"
+    ]
+  },
+  "eventType": "circuits and robotics",
+  "eventHashtags": [
+    "VLSI",
+    "IoT",
+    "innovation",
+    "technology"
+  ],
+  "registrationOpen": true,
+  "eventCoordinators": [
+    "Subha Bhattacharya[+91 9073701438]",
+    "Adway Paul[+91 8240384498]",
+    "Aayush Konar[+91 9972095077]"
+  ],
+  "prize": [
+    "1st : TBD ",
+    "2nd : TBD ",
+    "3rd : TBD "
+  ],
+  "minMembers": 2,
+  "maxMembers": 4,
+  "eventPoster": "chp.webp",
+  "registrationType": "Srijan'25 Website",
+  "eventDescription": [
+    "Step into the world of Chip-o-Mania, a dynamic hackathon and idea presentation event where cutting-edge VLSI (Very Large Scale Integration) challenges await. Guided by Digital VLSI Club professors and industry experts, you’ll tackle real-world problems and propose innovative solutions backed by software simulations.\nShow off your creativity, problem-solving skills, and technical expertise as you help shape the future of semiconductor technology. Ready to push the limits of what’s possible? Let’s revolutionize VLSI together!"
+  ],
+  "eventRules": [
+    "Round 1: Abstract Submission (Online Screening)",
+    "Teams will submit an abstract (max. 4 pages) outlining their approach to the given problem statement. Format will be shared in the form of submission itself.",
+    "The problem Statement would be in the domain of Analog, Digital VLSI or Mixed Signal. The Problem Statement would go live 15 days before Day 0 of Srijan 2025.",
+    "Teams need to choose their domain of submission i.e Analog, Digital or Mixed Signals during filling of form. The forms would close at EOD on Day 0 as per IST.",
+    "The abstract should include a problem analysis, proposed methodology, tools/software to be used, and expected outcomes with relevant block diagrams and simulation results using EDA tools like Cadence, Synopsys, Xilinx Vivado, Iverilog, Mentor Graphics, etc.",
+    "Any Simulations or Proposals based on direct implementation on a Raspberry Pi or Arduino will be eliminated. However, implementations based on FPGAs would be credited. Teams can use online FPGA simulators or use in-built simulators in Xilinx Vivado for Digital ideas for Chip-o-Mania.",
+    "Top 10 teams will be shortlisted for the next round.",
+    "Round 2: Onsite Idea Presentation",
+    "Shortlisted teams will work on their proposed solutions and develop software-based simulations using EDA tools such as Cadence, Synopsys, Xilinx Vivado, Iverilog, Mentor Graphics, etc.",
+    "Each team will be allotted 15 mins for idea presentation and/or any live simulation of results.",
+    "Teams will present their ideas and simulation results to a panel of industry experts and professors who will judge the teams."
+  ],
+  "driveLink": "https://docs.google.com/document/d/1a0Ju2kPx0Giwk07fIfT_-ggxBMGqqBsa/edit#heading=h.30j0zll",
+  "category": "circuits and robotics"
 }
 ]
