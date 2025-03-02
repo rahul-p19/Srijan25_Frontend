@@ -571,5 +571,215 @@
     ],
     "driveLink": "https://drive.google.com/file/d/1sPBywAVbdiqht0izJ8Y2aGNc5blBaFC0/view?ts=67c3e20e",
     "category": "misc"
-  }
+  },
+  {
+    "eventID": "ple",
+    "eventName": "PIXELLENSE",
+    "eventDate": {
+        "prelims": [
+            "TBD"
+        ],
+        "finals": [
+            "TBD"
+        ]
+    },
+    "eventType": "misc",
+    "eventHashtags": [
+        "photography",
+        "creativity",
+        "visual-art",
+        "tech-fest"
+    ],
+    "registrationOpen": true,
+    "eventCoordinators": [
+        "Ankan Pal[+91 8900397266]",
+        "Anindya Karmakar[+91 9674782427]",
+        "Satadru Das[+91 8240064430]"
+    ],
+    "prize": [
+        "1st : Tripod",
+        "2nd : Lens Cleaning Kit",
+        "3rd : Lens Cleaning Kit"
+    ],
+    "minMembers": 1,
+    "maxMembers": 1,
+    "eventPoster": "ple.webp",
+    "registrationType": "Srijan'24 Website",
+    "eventDescription": [
+        "Jadavpur University Photographic Club is thrilled to announce PixelLense, a mesmerizing photography event at Tech Fest Srijan! Get ready for a visual feast. As a talented shutterbug, showcase your creativity and skill. Click stunning pictures, showcase your aesthetic skillset and much more. So, what are you waiting for? Grab your camera and start capturing amazing shots."
+    ],
+    "eventRules": [
+        "Photographs can be clicked using any device (mobile, DSLR, mirrorless, etc.)",
+        "Metadata of the photograph should be present. Absence of metadata will lead to disqualification of the entry.",
+        "The theme for the photograph will be given at 11 am on the event day. Participants will have to click relevant photos on the given theme.",
+        "All photographs must be clicked AFTER commencement of the event, INSIDE Jadavpur University Salt Lake Campus.",
+        "Minimum post-processing is allowed, including cropping, colour correction, conversion to grayscale, reasonable exposure/contrast adjustments, etc.",
+        "Image manipulation of any kind, or use of Artificial Intelligence is strictly prohibited. Doing so will lead to disqualification.",
+        "The photograph should not contain a watermark. Entries will not be disqualified, but a watermark will be counted as a discredit.",
+        "There will be ONE entry per participant. All entries must be emailed by 9 AM of Day 2.",
+        "Top 30 photographs will be chosen by our judge by 4 pm of Day 2, and they will be printed and displayed in the exhibition area by end of day.",
+        "Each photograph will have a serial number written on it, along with a voting QR. People can vote for the best picture by scanning the QR code and typing the serial number of the picture. One person will be allowed one vote.",
+        "Voting will end on 4 PM of Day 3.",
+        "Weightage of 40% of votes and 60% of judges score will be considered when calculating the final score for the top 30 photographs.",
+        "Top 3 winners will be selected on the basis of the total score."
+    ],
+    "driveLink": "https://drive.google.com/file/d/1MNxhmYoRsTENWJwPbv7MB-bBVr7e6SH4/view",
+    "category": "misc"
+  },
+  {
+    "eventID": "sgv",
+    "eventName": "SquidGame VoltEdged",
+    "eventDate": {
+        "prelims": [
+            "TBD"
+        ],
+        "finals": [
+            "TBD"
+        ]
+    },
+    "eventType": "circuits and robotics",
+    "eventHashtags": [
+        "squid-game",
+        "power-engineering",
+        "circuit-design",
+        "arduino"
+    ],
+    "registrationOpen": true,
+    "eventCoordinators": [
+        "Rohit Pal[+91 9748202494]",
+        "Mainak Goswami[+91 9748538376]",
+        "Hritaban Goswami[+91 9330013204]"
+    ],
+    "prize": [
+        "Total Prize Pool: ₹3,000",
+        "1st Prize: ₹1,500",
+        "2nd Prize: ₹1,000",
+        "3rd Prize: ₹500"
+    ],
+    "minMembers": 2,
+    "maxMembers": 4,
+    "eventPoster": "sgv.webp",
+    "registrationType": "Srijan'24 Website",
+    "eventDescription": [
+        "Ramp up your skills one volt at a time. Participate in SquidGame VoltEdged, a squid game themed hands-on event presented by the Department of Power Engineering to showcase your technical 'POWER' in topics ranging from circuit design to Arduino to power transfer systems and a whole bunch of things that will definitely keep you at the 'EDGE' of your seats. Excellent learning opportunities and cash prizes await you!"
+    ],
+    "eventRules": [
+        "Round 1: Red Light - Green Light",
+        "A rapid-fire quiz on concepts ranging from electrical, electronics, mechanical and power transfer systems which closely corresponds to the scope of Power Engineering.",
+        "25 questions with a time limit (An additional of 10 questions in the case of tie breakers).",
+        "After this round, 12 teams will qualify to the 2nd round.",
+        "Round 2: Glass Bridge",
+        "Hands-on round. This round will demand the participants to build an Arduino and electronics-based power transfer circuit system.",
+        "(In every team, one laptop must be present and all other electronic components will be provided).",
+        "Basic knowledge of Arduino and power electronics is required.",
+        "Only 6 teams qualify to the final round.",
+        "Whosoever completes the circuit faster secures the top spots (points will be given by the judges according to the progress of the team).",
+        "Round 3: Ppopgi",
+        "This event involves a lucky draw with certain circuit problems that the teams will have to build on a breadboard.",
+        "This event involves electronic circuits of various use cases.",
+        "Whosoever completes the circuit faster secures the top spots (points will be given by the judges according to the progress of the team).",
+        "For further details, please refer to the attachment at the following link: https://drive.google.com/file/d/1UFduh89sCfl6vrvfy9NXzU-7RbZY-NJG/view"
+    ],
+    "driveLink": "https://drive.google.com/file/d/1UFduh89sCfl6vrvfy9NXzU-7RbZY-NJG/view",
+    "category": "circuits and robotics"
+},
+{
+  "eventID": "rnr",
+  "eventName": "Rook n Roll",
+  "eventDate": {
+    "prelims": [
+      "March 15, 2025"
+    ],
+    "finals": [
+      "March 23, 2025"
+    ]
+  },
+  "eventType": "gaming",
+  "eventHashtags": [
+    "chess",
+    "strategy",
+    "competition",
+    "srijan25"
+  ],
+  "registrationOpen": true,
+  "eventCoordinators": [
+    "Anshuman Banik[+91 79771 06418]",
+    "Navaneel Chakroborty[+91 90519 29490]",
+    "Arka Dhar[+91 78729 80084]"
+  ],
+  "prize": [
+    "1st Place: ₹800",
+    "2nd Place: ₹500",
+    "3rd Place: ₹200"
+  ],
+  "minMembers": 1,
+  "maxMembers": 1,
+  "eventPoster": "rnr.webp",
+  "registrationType": "Srijan'25 Website",
+  "eventDescription": [
+    "♟️ Rook n Roll : The Ultimate Chess Showdown! ♟️","Think fast, plan ahead, and outplay your opponents in Rook n Roll, the premier chess competition at SRIJAN'25, presented by F.E.T.S.U., Jadavpur University. Whether you're a seasoned player or a rising tactician, brace yourself for intense battles where strategy meets skill. The stakes are high, the board is set—will you claim the checkmate?"
+  ],
+  "eventRules": [
+    "Tournament Structure:",
+    "Mode: Hybrid (Online + Offline)",
+    "Total Rounds: 3 stages : Online Qualifiers, Offline Semi-Finals, and Finals",
+    "• Finals : 3 minutes + 3 seconds increment per move",
+    " Platform for Online Rounds: Lichess",
+    "Offline Venue: To be announced before the event",
+    "Tiebreak Rules:",
+    " Blitz Playoff (3+2, Best-of-2 games)",
+    " Sudden Death Blitz (3+2, must-win game)"
+  ],
+  "driveLink": "https://drive.google.com/file/d/1WBUgSqyxKqFpro57ay0vYpxY2fKqet2j/view",
+  "category": "gaming"
+},
+{
+  "eventID": "ace-the-case",
+  "eventName": "Ace The Case",
+  "eventDate": {
+    "prelims": [
+      "March 11, 2025"
+    ],
+    "finals": [
+      "March 22, 2025"
+    ]
+  },
+  "eventType": "business",
+  "eventHashtags": [
+    "business",
+    "case-study",
+    "strategy",
+    "competition"
+  ],
+  "registrationOpen": true,
+  "eventCoordinators": [
+    "Anubrata Karmakar[+91 6295825907]",
+    "Arka Dhar[+91 7872980084]",
+    "Rahul Pandey[+91 8961716604]"
+  ],
+  "prize": [
+    "1st : Certificate, Rs 2,500 cash prize",
+    "2nd : Certificate, Rs 1,500 cash prize",
+    "3rd : Certificate, Rs 1,000 cash prize"
+  ],
+  "minMembers": 2,
+  "maxMembers": 3,
+  "eventPoster": "ace-the-case.webp",
+  "registrationType": "Srijan'25 Website",
+  "eventDescription": [
+    "Do you have an aptitude for brainstorming and a knack for finding solutions to problems?\nUnleash your problem-solving prowess in 'Ace the Case'!\nHop in for a thrilling opportunity to analyze real-world challenges, develop innovative solutions, and showcase your strategic acumen in this case study competition.\nEmbrace the chance to network, interact, and rise to the challenge!"
+  ],
+  "eventRules": [
+    "Team size: 2 to 3 members.",
+    "Cross-college teams are allowed.",
+    "Judge's decision is final and irrevocable.",
+    "The event is to be conducted in two rounds: Selection Round and Finale.",
+    "Join the group using the links provided by email for all required communication.",
+    "Strictly adhere to the slide limit and provide data sources for all rounds.",
+    "Selection Round - Online (Unstop), 11th March.",
+    "Final Round - Offline, 22nd March."
+  ],
+  "driveLink": "https://drive.google.com/file/d/1OQdr2y7q9H0PqggDkC1BeOkINVJo-HVm/view",
+  "category": "business"
+}
 ]
