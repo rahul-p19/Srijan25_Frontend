@@ -529,5 +529,47 @@
     ],
     "driveLink": "https://docs.google.com/document/d/154zO0bxZir7fp8X-9UB8CjRD5yZUhQFum7jidovAxG8/edit?usp=sharing",
     "category": "brainstorming"
+  },
+  {
+    "eventID": "climbOn",
+    "eventName": "Climb-On",
+    "eventDate": {
+      "prelims": [
+        "TBD"
+      ],
+      "finals": [
+        "TBD"
+      ]
+    },
+    "eventType": "misc",
+    "eventHashtags": [
+      "rock-climbing",
+      "mountaneering",
+      "adventure"
+    ],
+    "registrationOpen": true,
+    "eventCoordinators": [
+      "Rohan Biswas[+91 81678 58937]",
+      "Sk Mainul Alam[+91 7427906367]",
+      "Pradhumna Roy[+91 89183 05926]"
+    ],
+    "prize": [
+      "1st : TBD ",
+      "2nd : TBD ",
+      "3rd : TBD"
+    ],
+    "minMembers": 1,
+    "maxMembers": 1,
+    "eventPoster": "climbOn.webp",
+    "registrationType": "Srijan'24 Website",
+    "eventDescription": [
+      "Climb On is a climbing competition for individuals who want to challenge themselves and compete with other climbers. The event has two rounds: Prelims and Finals. The participants are divided into two categories: Men and Women. They have to climb as high as they can, and their scores are based on height and time. The event is open for all ages and levels of climbers."
+    ],
+"eventRules": [
+      "1.: The competition consists of two rounds - Prelims and Final.","2. Participants must qualify in the prelims first to advance to the final round.","3. Participation is open to all, regardless of affiliation with Jadavpur University, as long as you have a valid Aadhar card.",
+      "4. Each participant will get only one chance per round to climb.","5. All safety gears will be provided at the event place.","6. Points are provided based on the highest hold touched or reached.","7. The participants with the top three highest scores in the final round will be declared winners.","8. Any participant not following safety rules will be disqualified.","9. There will be a prize pool of ₹6000.","10. In case of any discrepancies, final decision will be made by the judge(s) and event staff."
+    ],
+    "driveLink": "https://docs.google.com/document/d/154zO0bxZir7fp8X-9UB8CjRD5yZUhQFum7jidovAxG8/edit?usp=sharing",
+    "category": "misc"
   }
 ]
