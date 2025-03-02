@@ -453,7 +453,7 @@ const Events = () => {
   // Applied to the canvas element
  
   // Controls the number of snowflakes that are created (default 150)
-  snowflakeCount={230}
+  snowflakeCount={90}
 />
 
             {/* Header Section with animated ReactTyped heading */}
