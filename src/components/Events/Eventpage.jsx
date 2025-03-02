@@ -299,6 +299,7 @@ import React, { useState, useEffect, Suspense } from "react";
 
 // import React, { useState, useEffect, Suspense } from "react";
 import { ReactTyped } from "react-typed";
+import Snowfall from 'react-snowfall'
 import Navbar from "../Navbar";
 import Footer from "../Footer";
 import PageReveal from "../PageReveal";
@@ -446,6 +447,14 @@ const Events = () => {
           <div className="relative bg-gradient-to-r from-background to-background text-white min-h-screen py-2 px-2">
             {/* GridLines Component for decorative vertical lines */}
             <GridLines />
+                                   <Snowfall
+  // Changes the snowflake color
+  color="white"
+  // Applied to the canvas element
+ 
+  // Controls the number of snowflakes that are created (default 150)
+  snowflakeCount={230}
+/>
 
             {/* Header Section with animated ReactTyped heading */}
             <header className="max-w-9xl mx-auto text-center mb-6">
