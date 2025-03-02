@@ -462,7 +462,7 @@ const Events = () => {
                 <ReactTyped
                   strings={[
                     // "Find The Best Workshops",
-                    "Join Our Amazing Events",
+                    " Explore Events",
                   ]}
                   typeSpeed={120}
                   backSpeed={60}
