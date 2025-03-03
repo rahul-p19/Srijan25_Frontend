@@ -881,5 +881,37 @@
     ],
     "category": "coding",
     "driveLink":"https://unstop.com/p/hackforge-forging-the-future-code-club-jusl-jadavpur-university-salt-lake-campus-juslcc-1415836"
-}
+}  
+  ,
+   {
+    "eventID": "coldcase",
+    "eventName": "Coldcase",
+    "eventDate": {
+      "prelims": ["21st, 22nd, 23rd March 2025"],
+      "finals": ["21st, 22nd, 23rd March 2025"]
+    },
+    "eventType": "brainstorming",
+    "eventHashtags": ["hackathon", "machinelearning", "ai", "openaimer"],
+    "registrationOpen": true,
+    "eventCoordinators": [
+      "Spandan Saha Roy[9775591123]",
+      "Swastick Sarkar[8100447132]",
+      "Md. Farhan Alam[6290802177]"
+    ],
+    "prize": ["1st : 3000", "2nd : 2000", "3rd : 1000"],
+    "minMembers": 1,
+    "maxMembers": 1,
+    "eventPoster": "cold.webp",
+    "registrationType": "Srijan'24 Website",
+    "eventFormat": [
+      "Round 1: Participants will be presented with a mystery-based case study (e.g., a murder mystery, a heist, or an unsolved crime). They must analyse clues, identify inconsistencies, and deduce the most logical solution within a given time frame. The fastest and most accurate teams will qualify for the final round.\n",
+      "Round 2 (Finals): A more complex case study will be given, with deeper layers of deception, multiple suspects, and hidden clues. Teams will have to connect evidence, build logical arguments, and present their final conclusion. The team demonstrating the best analytical thinking and speed will be declared the winner."
+    ],
+    "eventDescription": [
+      "This event will consist of two offline rounds, each presenting a case study. Participants are required to provide the most accurate solution in the shortest possible time. The team demonstrating the fastest and most accurate analysis will be declared the winner and awarded attractive prizes."
+    ],
+    "eventRules": ["TBD"],
+    "driveLink": "https://drive.google.com/file/d/1xafd_ldmJjauS3n19PGs_t0UB5tAcPBl/view?usp=sharing",
+    "category": "brainstorming"
+  }
 ]
