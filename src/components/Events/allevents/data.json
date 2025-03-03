@@ -1056,7 +1056,7 @@
       "finance",
       "market"
     ],
-    "registrationOpen": false,
+    "registrationOpen": true,
     "eventCoordinators": [
       "Sanmitra Nath[+91 8272962528]",
       "Ujjwal Kumar[+91 9110985538]"
@@ -1153,7 +1153,7 @@
       "competition",
       "innovation"
     ],
-    "registrationOpen": false,
+    "registrationOpen": true,
     "eventCoordinators": [
       "Anirban Sarkar[+91 8100429194]",
       "Srijan Banerjee[+91 9073766110]",

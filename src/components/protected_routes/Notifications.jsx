@@ -1,10 +1,11 @@
-import { useEffect, useState } from 'react';
+import { Suspense, useEffect, useState } from 'react';
 import axios from 'axios';
 import Navbar from '../Navbar';
 import Footer from '../Footer';
 import { useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import clsx from 'clsx';
+import Loading from '../Loading';
 
 /**
  * @typedef {object} NotificationItem
@@ -94,6 +95,8 @@ const Notifications = ({ user }) => {
   const totalPages = Math.ceil(items.length / itemsPerPage);
 
   return (
+    <>
+    <Suspense fallback={<Loading />}>
     <div className="font-mono min-h-screen w-full bg-background text-white flex flex-col">
       <Helmet>
                 <link rel="canonical" href="https://srijanju.in/workshop" />
@@ -151,6 +154,8 @@ const Notifications = ({ user }) => {
       </div>
     <Footer />
   </div>
+  </Suspense>
+  </>
   );
 };
 
