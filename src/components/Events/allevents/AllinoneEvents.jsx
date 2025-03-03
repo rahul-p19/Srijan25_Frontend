@@ -846,30 +846,35 @@ const AllEvents = () => {
                   alt={eventData.eventName}
                   className="w-full rounded-lg"
                 />
-                <Button
+                              <Button
                   variant="outlined"
-                  onClick={() =>
-                    navigate(`/events/${eventID}/registration`)
-                  }
+                  onClick={() => {
+                    if (eventID === "HackForge") {
+                      window.location.href =
+                        "https://unstop.com/p/hackforge-forging-the-future-code-club-jusl-jadavpur-university-salt-lake-campus-juslcc-1415836"; // Replace with your specific URL for HackForge events
+                    } else {
+                      navigate(`/events/${eventID}/registration`);
+                    }
+                  }}
                   sx={{
-                    mt: 2.5,
-                    py: { xs: 2, md: 1 },
-                    color: "white",
-                    borderColor: "white",
-                    fontWeight: "bold",
-                    fontSize: { xs: "1.2rem", md: "1.1rem" },
-                    bgcolor: "black",
-                    position: "relative",
-                    transition: "all 0.3s ease-in-out",
-                    boxShadow: "inset 0 0 0px rgba(255, 255, 255, 0)",
-                    mx: "auto",
-                    display: "block",
+                    "mt": 2.5,
+                    "py": { xs: 2, md: 1 },
+                    "color": "white",
+                    "borderColor": "white",
+                    "fontWeight": "bold",
+                    "fontSize": { xs: "1.2rem", md: "1.1rem" },
+                    "bgcolor": "black",
+                    "position": "relative",
+                    "transition": "all 0.3s ease-in-out",
+                    "boxShadow": "inset 0 0 0px rgba(255, 255, 255, 0)",
+                    "mx": "auto",
+                    "display": "block",
                     "&:hover": {
-                      boxShadow: "inset 0 0 10px rgba(255, 255, 255, 0.8)",
+                      boxShadow: "0 0 10px rgba(255, 255, 255, 0.8)",
                       bgcolor: "black",
                       transform: "scale(1.02)",
                     },
-                  }}
+                }}
                 >
                   REGISTER
                 </Button>
