@@ -885,7 +885,7 @@
   ,
    {
     "eventID": "coldcase",
-    "eventName": "Coldcase",
+    "eventName": "Cold Case",
     "eventDate": {
       "prelims": ["21st, 22nd, 23rd March 2025"],
       "finals": ["21st, 22nd, 23rd March 2025"]
@@ -913,7 +913,42 @@
     "eventRules": ["TBD"],
     "driveLink": "https://drive.google.com/file/d/1xafd_ldmJjauS3n19PGs_t0UB5tAcPBl/view?usp=sharing",
     "category": "brainstorming"
-  },{
+  },
+  {
+    
+      "eventID": "jal-astra",
+      "eventName": "JAL ASTRA",
+      "eventDate": {
+        "prelims": ["TBD"],
+        "finals": "TBD"
+      },
+      "eventType": "misc",
+      "eventHashtags": ["hackathon", "machinelearning", "ai", "openaimer"],
+      "registrationOpen": false,
+      "eventCoordinators": [
+        " Kaulik Das [9830669894 ]",
+        "Avipso Sinha [9433243651]",
+        "Shayan Charan [9163123389]"
+      ],
+      "prize": ["1st : 2500    ", "2nd : 1500    ", "3rd : 1000"],
+      "minMembers": 2,
+      "maxMembers": 3,
+      "eventPoster": "jalastra.webp",
+      "registrationType": "Srijan'24 Website",
+      "eventShortDescription": "Embark on the ML adventure in 'OpenAImer'! Unleash your algorithms, analyse data, and spark innovation!",
+      "eventDescription": [
+          " Jal Astra paves the way for an exciting journey to design and construct a high-performance water rocket, aimed at achieving maximum range and precision landing. This event will focus on creating a streamlined body to minimize air resistance, featuring an optimized nose cone and stable fins for enhanced stability."
+      ],
+      "eventRules": [
+        "Only applicants within the registration time frame will be accepted. Late or incomplete registrations will not be entertained.",
+        "All teams must strictly adhere to the competition guidelines and design constraints outlined in this event documentation.",
+        "Any deviation or violation of the rules will result in immediate disqualification.",
+        "Teams are expected to maintain professionalism. Any form of misconduct will lead to immediate disqualification.",
+        "The Decision of the Event Coordinator will be final and NO Arguments  shall be entertained."
+      ],
+      "category": "misc",
+      "driveLink": "https://drive.google.com/file/d/1XEOn9iZWAaGBGwkQfWvI7G0w0NHScmH4/view?usp=sharing"
+    },{
     "eventID": "rbs",
     "eventName": "Robosoccer",
     "eventDate": {
