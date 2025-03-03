@@ -913,5 +913,278 @@
     "eventRules": ["TBD"],
     "driveLink": "https://drive.google.com/file/d/1xafd_ldmJjauS3n19PGs_t0UB5tAcPBl/view?usp=sharing",
     "category": "brainstorming"
+  },{
+    "eventID": "rbs",
+    "eventName": "Robosoccer",
+    "eventDate": {
+      "prelims": [
+        "TBD"
+      ],
+      "finals": [
+        "TBD"
+      ]
+    },
+    "eventType": "circuits and robotics",
+    "eventHashtags": [
+      "robotics",
+      "soccer",
+      "innovation",
+      "competition"
+    ],
+    "registrationOpen": true,
+    "eventCoordinators": [
+      "Sukalyan Bisui[+91 8697488984]",
+      "Ankita Bhattacharya[+91 7980006741]"
+    ],
+    "prize": [
+      "1st : TBD ",
+      "2nd : TBD ",
+      "3rd : TBD "
+    ],
+    "minMembers": 4,
+    "maxMembers": 5,
+    "eventPoster": "rbs.webp",
+    "registrationType": "Srijan'25 Website",
+    "eventDescription": [
+      "Jadavpur University Science Club proudly presents Robosoccer – where robotics and soccer merge for an electrifying showdown! Watch cutting-edge bots battle it out in a dynamic, high-energy arena. Experience the perfect blend of innovation, strategy, and competitive spirit. Join us for a groundbreaking event that redefines the thrill of tech sports!"
+    ],
+    "eventRules": [
+      "Each team can consist of a maximum of 5 members.",
+      "The decision of the JUSC match officials is final and binding.",
+      "The competition will be bisected into wired and wireless categories. The prize money will be separate for the winners of these two categories."
+    ],
+    "driveLink": "https://drive.google.com/file/d/1cQQCUKzbsvf3PLPAihGyOa5w5kh0LKcU/view",
+    "category": "circuits and robotics"
+  },
+  {
+    "eventID": "stratedgex",
+    "eventName": "StratedgeX",
+    "eventDate": {
+      "prelims": [
+        "N/A"
+      ],
+      "finals": [
+        "TBD"
+      ]
+    },
+    "eventType": "business",
+    "eventHashtags": [
+      "strategy",
+      "innovation",
+      "competition",
+      "productdevelopment"
+    ],
+    "registrationOpen": true,
+    "eventCoordinators": [
+      "Om Karmakar[+91 6297127298]",
+      "Meghna Das[+91 9874576453]",
+      "Dipjyoti Dash[+91 8158066614]"
+    ],
+    "prize": [
+      "1st : Certificate, Rs 2,500 cash prize",
+      "2nd : Certificate, Rs 1,500 cash prize",
+      "3rd : Certificate, Rs 1,000 cash prize"
+    ],
+    "minMembers": 2,
+    "maxMembers": 3,
+    "eventPoster": "stratedgex.webp",
+    "registrationType": "Srijan'25 Website",
+    "eventDescription": [
+      "StratEdgeX: The Ultimate Strategy Challenge\n\nDo you have what it takes to create the best product for the market? Do you want to test your skills in analysis, design, and execution? Do you dream of winning the glory of innovation and strategy?\n\nIf yes, then StratEdgeX is the competition for you. You and your team will be given a product to optimize according to the needs and wants of your target audience. You will have to balance quality and cost, and present your strategy in a convincing way.\n\nStratEdgeX is not just a competition, it is a learning experience. You will get to explore new ideas, collaborate with others, and challenge yourself. You will also get feedback from experts and peers, and a chance to win exciting prizes.\n\nDon't miss this opportunity to showcase your talent and creativity. Join StratEdgeX today and shape the future of strategic brilliance."
+    ],
+    "eventRules": [
+      "Teams must consist of 1 to 3 members.",
+      "Cross-college teams are allowed.",
+      "The judges' decision is final and irrevocable.",
+      "Participants must strictly adhere to the slide limit and time constraints.",
+      "All participants must join the communication group (link provided via email).",
+      "Walk-in participants are welcome! Volunteers will assist in forming teams."
+    ],
+    "driveLink": "https://drive.google.com/file/d/1EMgYjbCy8v_dSNfU8qgqQ_aqisbXvcGy/view",
+    "category": "business"
+  },
+  {
+    "eventID": "cc1",
+    "eventName": "Capital Clash",
+    "eventDate": {
+      "prelims": [
+        "TBD"
+      ],
+      "finals": [
+        "TBD"
+      ]
+    },
+    "eventType": "business",
+    "eventHashtags": [
+      "stocks",
+      "investment",
+      "finance",
+      "market"
+    ],
+    "registrationOpen": false,
+    "eventCoordinators": [
+      "Sanmitra Nath[+91 8272962528]",
+      "Ujjwal Kumar[+91 9110985538]"
+    ],
+    "prize": [
+      "1st : TBD ",
+      "2nd : TBD ",
+      "3rd : TBD "
+    ],
+    "minMembers": 2,
+    "maxMembers": 3,
+    "eventPoster": "cc1.webp",
+    "registrationType": "Srijan'25 Website",
+    "eventDescription": [
+      "Unleash your stock savvy with Capital Clash. Present your case for the most investable stocks and compete for financial aristocracy. Don't miss out on the ultimate showdown of market mastery!"
+    ],
+    "eventRules": [
+    "There will be 2 rounds: Preliminary round and Final round.",
+    "Preliminary round - Online; Final round - Offline.",
+    "Preliminary round - You have to select the most investable stocks among different companies listed. Final round - You have to pitch a presentation with around 10 slides in front of judges.",
+    "Certificates for winners.",
+    "Online PPT submission by 21st March; Offline competition on 23rd March."
+    ],
+    "driveLink": "https://drive.google.com/file/d/1-E3vES1_Q4o_MTWp4uxxee-xi9jgeBgv/view?usp=drivesdk",
+    "category": "business"
+  },
+  {
+    "eventID": "eqbX",
+    "eventName": "EquilibriX",
+    "eventDate": {
+      "prelims": [
+        "TBD"
+      ],
+      "finals": [
+        "TBD"
+      ]
+    },
+    "eventType": "circuits and robotics",
+    "eventHashtags": [
+      "robotics",
+      "balance",
+      "innovation",
+      "competition"
+    ],
+    "registrationOpen": true,
+    "eventCoordinators": [
+      "Anirban Das[+91 8100652687]",
+      "Abhirup Guha Roy[+91 8910232532]",
+      "Soumalya Nandi[+91 6394686862]"
+    ],
+    "prize": [
+      "1st : TBD ",
+      "2nd : TBD ",
+      "3rd : TBD "
+    ],
+    "minMembers": 2,
+    "maxMembers": 5,
+    "eventPoster": "eqbX.webp",
+    "registrationType": "Srijan'25 Website",
+    "eventDescription": [
+      "EquilibriX, a unique, revolutionary and never-before-seen event by Jadavpur University Mechatronics Club, challenges you to create a machine that defies the odds and stays upright against all forces trying to tip it over. This isn’t just about robotics; it’s about control, precision, and the art of balance. Can you crack the code of perfect equilibrium and push yourself to the limit? Build, test, and compete to prove that your bot has what it takes to master the impossible!"
+    ],
+    "eventRules": [
+      "There should be only 2 points of contact with the ground at all times, and a penalty will be levied on failure to do so.",
+      "Wired control is NOT allowed.",
+      "Dimensions of the Bot: Width (Maximum): 20cm.",
+      "The Cup dimensions are as follows: 7cm height, 7cm diameter (max) [Can vary - paper coffee cup].",
+      "They will be provided by the organisers, to help maintain fairness across all the competitors. All the competitors will be given the same amount of water.",
+      "At the finishing line, only the water remaining in the cup will be considered for measurement, not any water that may be present on the bot.",
+      "There will be an evaluation procedure to ensure that the given criteria are matched.",
+      "There will be 2 rounds - Qualifier and Final round. The details of the rounds will be discussed below.",
+      "The bot has to start from the starting region and move at least 10 cm down the course to be considered; otherwise, they will be disqualified.",
+      "The participants will qualify for the final round based on a minimum point criteria.",
+      "The decision of the organizers will be final and binding at all times."
+    ],
+    "driveLink": "https://drive.google.com/file/d/17gnVS6eZl2k40WdNnJXbHHanOuJxMHeP/view",
+    "category": "circuits and robotics"
+  },
+  {
+    "eventID": "deathrace",
+    "eventName": "Death Race",
+    "eventDate": {
+      "prelims": [
+        "TBD"
+      ],
+      "finals": [
+        "TBD"
+      ]
+    },
+    "eventType": "circuits and robotics",
+    "eventHashtags": [
+      "botracing",
+      "engineering",
+      "competition",
+      "innovation"
+    ],
+    "registrationOpen": false,
+    "eventCoordinators": [
+      "Anirban Sarkar[+91 8100429194]",
+      "Srijan Banerjee[+91 9073766110]",
+      "Soham Sharma Sarkar[+91 9836937267]"
+    ],
+    "prize": [
+      "1st : TBD ",
+      "2nd : TBD ",
+      "3rd : TBD "
+    ],
+    "minMembers": 3,
+    "maxMembers": 4,
+    "eventPoster": "deathrace.webp",
+    "registrationType": "Srijan'25 Website",
+    "eventDescription": [
+      "Unleash your engineering skills in the most intense bot-racing showdown! Participants must design and build a custom racing bot capable of navigating a dynamic, obstacle-laden track while adhering to design, material, and cost constraints. The competition spans multiple stages, from technical inspections to high-speed qualifying races, testing innovation, durability, and race performance. The grand finale—The Death Race—pushes bots to their limits in a head-to-head endurance battle featuring steep inclines, rotating hammers, and unpredictable hazards. Only the toughest and most resilient bot will emerge victorious!"
+    ],
+    "eventRules": [
+      "Refer to the attachment for the guidelines."
+    ],
+    "driveLink": "https://drive.google.com/file/d/1b-8aN2m66sF4J-85_0v9NCEryAbHPpA8/view?usp=sharing",
+    "category": "circuits and robotics"
+  },
+  {
+    "eventID": "investomania",
+    "eventName": "Investomania",
+    "eventDate": {
+      "prelims": [
+        "TBD"
+      ],
+      "finals": [
+        "TBD"
+      ]
+    },
+    "eventType": "business",
+    "eventHashtags": [
+      "investment",
+      "stockmarket",
+      "finance",
+      "portfolio"
+    ],
+    "registrationOpen": true,
+    "eventCoordinators": [
+      "Taufique Ali[+91 6291254793]",
+      "Sombrata Biswas[+91 9051468777]",
+      "Sabyasachi Sen[+91 9614618995]"
+    ],
+    "prize": [
+      "1st : TBD ",
+      "2nd : TBD ",
+      "3rd : TBD "
+    ],
+    "minMembers": 1,
+    "maxMembers": 4,
+    "eventPoster": "investomania.webp",
+    "registrationType": "Srijan'25 Website",
+    "eventDescription": [
+      "Participants will be performing the role of a mutual fund manager and create a portfolio of 1 crore using a prerequisite given company list and analyze the real market data among them. Companies are from diverse sectors of the Indian Stock Market. They have to analyze the companies and predict future potential in particular companies, through real-life data. They have to define which sector and company they have chosen and fund allocation strategies, using real-life metrics used by fund managers."
+    ],
+    "eventRules": [
+      "Cross-college teams are allowed.",
+      "Judges’ decision is final and irrevocable.",
+      "Join the group using the links provided by email for all required communication.",
+      "Strictly adhere to the slide limit and provide data sources for all rounds."
+    ],
+    "driveLink": "https://docs.google.com/document/d/1RSGmDikWcUddXtkDxZ-Dt1xKXFCUD4h0VTKH0l9TaL0/edit?tab=t.0",
+    "category": "business"
   }
 ]
