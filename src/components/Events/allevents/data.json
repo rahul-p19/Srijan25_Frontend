@@ -1160,9 +1160,9 @@
       "Soham Sharma Sarkar[+91 9836937267]"
     ],
     "prize": [
-      "1st : TBD ",
-      "2nd : TBD ",
-      "3rd : TBD "
+      "1st : Certificate, Rs 10,000 cash prize",
+      "2nd : Certificate, Rs 8,000 cash prize ",
+      "3rd : Certificate, Rs 5,000 cash prize"
     ],
     "minMembers": 3,
     "maxMembers": 4,
@@ -1221,5 +1221,240 @@
     ],
     "driveLink": "https://docs.google.com/document/d/1RSGmDikWcUddXtkDxZ-Dt1xKXFCUD4h0VTKH0l9TaL0/edit?tab=t.0",
     "category": "business"
+  },
+  {
+    "eventID": "skysprint",
+    "eventName": "Sky Sprint",
+    "eventDate": {
+      "prelims": [
+        "TBD"
+      ],
+      "finals": [
+        "TBD"
+      ]
+    },
+    "eventType": "misc",
+    "eventHashtags": [
+      "flight-challenge",
+      "problem-solving",
+      "physics",
+      "aerodynamics"
+    ],
+    "registrationOpen": true,
+    "eventCoordinators": [
+      "Debadrita Hazra[+91 9883311422]",
+      "Navoneel Karmaker[+91 9123351787]",
+      "Koustav Das[+91 8348217647]"
+    ],
+    "prize": [
+      "1st : Certificate, Rs 4,000 cash prize",
+      "2nd : Certificate, Rs 3,000 cash prize",
+      "3rd : Certificate, Rs 2,000 cash prize",
+      "Best Design Award: Rs 1,000"
+    ],
+    "minMembers": 2,
+    "maxMembers": 3,
+    "eventPoster": "skysprint.webp",
+    "registrationType": "Srijan'24 Website",
+    "eventDescription": [
+      "SkySprint is a glider-building competition where students showcase creativity, engineering skills, and teamwork by designing, building, and launching gliders for maximum distance and flight time. With at-home preparation, participants can refine their designs, applying aerodynamics in a hands-on, problem-solving challenge. "   ],
+    "eventRules": [
+      "SKYSPRINT is a glider building competition aimed at providing students with an opportunity to demonstrate their creativity, engineering acumen, and teamwork by designing, building, and launching gliders for maximum distance and flight time. Participants can prepare their gliders at home, enabling thorough experimentation and refinement. This competition serves as a practical application of aerodynamic principles, fostering problem-solving skills in an engaging and educational environment.",
+      "Problem Statement:  Teams are required to design, build, and showcase a hand glider capable of completing the tasks outlined in the following rounds while adhering to the specified constraints.",
+      "QUALIFIERS:",
+      "ROUND 1 (DESIGN SHOWCASE) : In this round, each team is required to submit a technical report in either PDF or PPT format. The report must specify the dimensions, materials, and design features of the glider. Any structural or aerodynamic innovations should be clearly highlighted and explained.",
+      "ROUND 2 (JAVELIN THROW ROUND) : The objective of this round is to achieve the maximum possible gliding distance. Teams will launch their glider in a javelin-style motion, ensuring smooth, aerodynamic flight. Ballistic trajectories (e.g., shot-put style throws) are prohibited and will result in disqualification for the attempt. Scoring Formula: Score = Glide Distance (in meters) Each team will be allowed two attempts, with the best distance being recorded for scoring.",
+      "ROUND 3 (STAY IN THE AIR) : The goal of this round is to achieve the maximum glide time for the glider. Points will be awarded based on the recorded glide time. Scoring Formula: SCORE= Glide time (in seconds) Each team will be given two attempts, and the best recorded glide time will contribute to the final score.",
+      "Participants are requested to refer to the attachments for further details."
+    ],
+    "driveLink": "https://drive.google.com/file/d/13jdB5-83Iuuo8fuhH_ZQO5dlfGkQvNpB/view?usp=sharing",
+    "category": "misc"
+  },
+  {
+    "eventID": "sherlocked",
+    "eventName": "Sherlocked",
+    "eventDate": {
+      "prelims": [
+        "16th March 2025 (Online)"
+      ],
+      "finals": [
+        "22nd March 2025 (On campus)"
+      ]
+    },
+    "eventType": "coding",
+    "eventHashtags": [
+      "murder-mystery",
+      "cryptography",
+      "data-analysis"
+    ],
+    "registrationOpen": true,
+    "eventCoordinators": [
+      "Subhayan Roy Chowdhury[+91 6289955350]",
+      "Atmik Goswami[+91 8910425255]",
+      "Kaji Manirul Islam[+91 7865060015]"
+    ],
+    "prize": [
+      "1st : TBD ",
+      "2nd : TBD ",
+      "3rd : TBD"
+    ],
+    "minMembers": 2,
+    "maxMembers": 3,
+    "eventPoster": "sherlocked.webp",
+    "registrationType": "Srijan'24 Website",
+    "eventDescription": [
+      "Welcome to Sherlocked, a thrilling battle of intellect where participants must unravel encrypted secrets, decode perplexing ciphers, and expose concealed truths to solve a gripping murder mystery across 2 intense rounds. This challenge will push your analytical thinking, logical reasoning, and technical expertise to their limits in a world full of digital deception."
+    ],
+    "eventRules": [
+      "Hosted on HackerRank.",
+      "Includes puzzles including but not limited to cryptography and data analysis.",
+      "Time limit: 1 hour.",
+      "Each question carries points, with partial marking for partially solved answers.",
+      "Accuracy matters—incorrect submissions will result in penalties.",
+      "Hints to be provided at certain time intervals.",
+      "Specific rules related to individual questions will be mentioned in the contest platform.",
+      "Date: (Date to be announced) :  Online Mode.",
+      "About 20 teams qualify for the finals."
+    ],
+    "driveLink": "https://drive.google.com/file/d/1DO0lq0ujAYc2VzcODyyvtDZOf3Y1OAHu/view?usp=sharing",
+    "category": "coding"
+  },
+  {
+    "eventID": "lotr",
+    "eventName": "Lord of The Ring",
+    "eventDate": {
+      "prelims": [
+        "TBD"
+      ],
+      "finals": [
+        "TBD"
+      ]
+    },
+    "eventType": "circuits and robotics",
+    "eventHashtags": [
+      "robotics",
+      "innovation",
+      "strategy"
+    ],
+    "registrationOpen": true,
+    "eventCoordinators": [
+      "Anish Chanda[+91-6290875571]",
+      "Saptarshi Garai[+91-89727 44365]",
+      "Soham Sengupta[+91-93309 51626]"
+    ],
+    "prize": [
+      "1st : TBD ",
+      "2nd : TBD ",
+      "3rd : TBD "
+    ],
+    "minMembers": 3,
+    "maxMembers": 5,
+    "eventPoster": "lotr.webp",
+    "registrationType": "Srijan'24 Website",
+    "eventDescription": [
+      "Welcome to the pinnacle of robotic competition, where innovation meets strategy in the exhilarating arena of Robo Sumo! With teams of up to 5 members each, our event celebrates the collaboration of engineering brilliance and tactical mind. Under the watchful eyes of the IoTA Club members, participants navigate through wired and wireless categories, each offering its unique path to glory. Every round of the elimination matches promises electrifying showdowns, testing the limits of design and control. Join us as we witness the fusion of technology and sportsmanship in this spectacle."
+    ],
+    "eventRules": [
+      "Teams, comprising up to 5 members, compete by making their own Remote Controlled Vehicle which can be wired or wireless. The bots must fall within defined parameters.",
+      "Match officials exercise authority to ensure fairness and adherence to rules.",
+      "The competition is segregated into wired and wireless categories, each with distinct rewards.",
+      "Matches proceed through elimination rounds.",
+      "Three rounds, lasting a minute each, determine winners based on strategic moves.",
+      "Points are awarded for specific achievements: 2 for the green zone, 5 for complete displacement.",
+      "Victory requires securing 2 rounds.",
+      "Violations may result in disqualification."
+    ],
+    "driveLink": "https://drive.google.com/drive/folders/1Vy_S-3jZz1ImJz2kG3RdsOTNaVEfpubQ?usp=sharing",
+    "category": "circuits and robotics"
+  },
+  {
+    "eventID": "rat",
+    "eventName": "REEL-A-TION",
+    "eventDate": {
+      "prelims": [
+        "TBD"
+      ],
+      "finals": [
+        "TBD"
+      ]
+    },
+    "eventType": "misc",
+    "eventHashtags": [
+      "photography",
+      "storytelling",
+      "creativity"
+    ],
+    "registrationOpen": true,
+    "eventCoordinators": [
+      "DEBASISH PAL[+91 9749493061]",
+      "Srija Ata[+91 8777572456]",
+      "Kajari Roy[+91 9330599595]"
+    ],
+    "prize": [
+      "1st: Gorilla Pod",
+      "2nd: Lens Cleaning Kit",
+      "3rd: Lens Cleaning Kit"
+    ],
+    "minMembers": 2,
+    "maxMembers": 2,
+    "eventPoster": "rat.webp",
+    "registrationType": "Srijan'24 Website",
+    "eventDescription": [
+      "Get ready to roll with 'Reel-a-tion,' the reel-making competition organized by Jadavpur University Photographic Club! Unleash your storytelling prowess through the lens and create cinematic wonders. Lights, camera, creativity - it's your time to shine!"
+    ],
+    "eventRules": [
+      "A team must consist of 2 members to participate in the event.",
+      "Teams must register with their team name, and the Instagram ID for the account from which the reel will be posted.",
+      "The topic for the reel will be declared at the start of the day of the event.",
+      "Participants must create a reel of minimum 15 seconds, and maximum 30 seconds, on the given topic.",
+      "The reel must be recorded inside Jadavpur University Salt Lake Campus.",
+      "After it is created, participants must post the reel from the Instagram account with which the team has registered.",
+      "The faster the reel is posted, the more time it will have to gather likes, shares, and comments.",
+      "Recording the reel, posting it, and gathering reach on the reel, must be done by the end of Day 2.",
+      "Number of likes, comments and shares on each reel will be counted at the end of Day 2."
+    ],
+    "driveLink": "https://drive.google.com/file/d/19SNwpTh4R7KP2ZcH2FBPxbT8-wFG7jlK/view?usp=sharing",
+    "category": "misc"
+  },
+  {
+    "eventID": "aba",
+    "eventName": "ArtByteArena",
+    "eventDate": {
+      "prelims": [
+        "TBD"
+      ],
+      "finals": [
+        "TBD"
+      ]
+    },
+    "eventType": "misc",
+    "eventHashtags": [
+      "art",
+      "creativity",
+      "illustration"
+    ],
+    "registrationOpen": true,
+    "eventCoordinators": [
+      "Apurba Nandi[+91 9749237190]",
+      "Prama Ray[+91 82933 31677]"
+    ],
+    "prize": [
+      "1st: Rs 3000",
+      "2nd: Rs 2000",
+      "3rd: Rs 1000"
+    ],
+    "minMembers": 1,
+    "maxMembers": 1,
+    "eventPoster": "aba.webp",
+    "registrationType": "Srijan'24 Website",
+    "eventDescription": [
+      "Participants receive a curated set of stock images and assets. They are free to manipulate, combine, or transform these assets to create an original illustration that tells a compelling story."
+    ],
+    "eventRules": [
+      "AI-Free Zone: The use of AI tools or generative fill techniques is strictly prohibited.",
+      "Submission Requirements: Participants must submit their completed artwork along with a concise description detailing their creative process in a pdf or a .jpeg/.jpg format."
+    ],
+    "driveLink": "https://docs.google.com/document/d/1eYvP_CnMV1Z9ufvDcpb5fCstSEKSsqQINbVgxBaPvRg/edit?usp=sharing",
+    "category": "misc"
   }
 ]
