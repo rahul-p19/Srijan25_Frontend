@@ -1104,7 +1104,7 @@
       "2nd : Certificate, Rs 1,500 cash prize",
       "3rd : Certificate, Rs 1,000 cash prize"
     ],
-    "minMembers": 2,
+    "minMembers": 1,
     "maxMembers": 3,
     "eventPoster": "stratedgex.webp",
     "registrationType": "Srijan'25 Website",
