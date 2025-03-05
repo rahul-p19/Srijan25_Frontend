@@ -30,7 +30,7 @@ const style = {
   p: 4,
 };
 
-export const DashboardPage = ({ userDetails, logout }) => {
+const DashboardPage = ({ userDetails, logout }) => {
   if (!userDetails || userDetails === "") redirect("/login");
   const [user, setUser] = useState(userDetails);
   const merchStatus = user.merchandise?.status ?? "Not ordered.";
@@ -321,3 +321,5 @@ export const DashboardPage = ({ userDetails, logout }) => {
     </div>
   );
 };
+
+export default DashboardPage;
