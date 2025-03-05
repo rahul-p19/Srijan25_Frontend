@@ -15,7 +15,7 @@ function OrderForm({ setShowOrderForm, size, color }) {
     // Extract form data
     const formData = new FormData(e.target);
     const fullname = formData.get("name");
-    const email = formData.get("email");
+    // const email = formData.get("email");
     const nameOnShirt = formData.get("nameonshirt");
     const paymentProof = formData.get("paymentProof");
     const college = formData.get("college");
@@ -39,7 +39,7 @@ function OrderForm({ setShowOrderForm, size, color }) {
       const uploadFormData = new FormData();
       uploadFormData.append("image", paymentProof);
       uploadFormData.append("fullname", fullname);
-      uploadFormData.append("email", email);
+      // uploadFormData.append("email", email);
       uploadFormData.append("nameOnShirt", nameOnShirt);
       uploadFormData.append("college", college);
       uploadFormData.append("department", department);
@@ -109,7 +109,7 @@ function OrderForm({ setShowOrderForm, size, color }) {
                 />
               </div>
 
-              <div className="mb-4">
+              {/* <div className="mb-4">
                 <label
                   className="block text-sm font-medium mb-2"
                   htmlFor="email"
@@ -123,7 +123,7 @@ function OrderForm({ setShowOrderForm, size, color }) {
                   className="w-full p-2 bg-[#1c1c1c] border border-gray-500 rounded focus:outline-none focus:ring-1 focus:ring-white"
                   required
                 />
-              </div>
+              </div> */}
 
               <div className="mb-4">
                 <label

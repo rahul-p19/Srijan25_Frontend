@@ -59,8 +59,6 @@ const DashboardPage = ({ userDetails, logout }) => {
       user.merchandise2.map((merch) => setMerchandise(prev => [...prev, merch]));
     }
 
-    console.log(allMerch);
-
     if (user.registeredEvents && user.registeredEvents.length > 0) {
       user.registeredEvents.map(eventId => {
 
