@@ -49,7 +49,7 @@ const DashboardPage = ({ userDetails, logout }) => {
   const [pendingEvents, setPendingEvents] = useState([]);
   const [wishlist, setWishlist] = useState([]);
   const [merchandise, setMerchandise] = useState([]);
-  const allMerch = user.merchandise? (user.merchandise && user.merchandise2.length > 0) ? [user.merchandise, ...user.merchandise2] : [user.merchandise] : [];
+  const allMerch = user.merchandise? (user.merchandise2 && user.merchandise2.length > 0) ? [user.merchandise, ...user.merchandise2] : [user.merchandise] : [];
 
   useEffect(() => {
 
