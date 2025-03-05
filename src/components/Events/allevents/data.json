@@ -1493,5 +1493,129 @@
     ],
     "driveLink": "https://docs.google.com/document/d/1eYvP_CnMV1Z9ufvDcpb5fCstSEKSsqQINbVgxBaPvRg/edit?usp=sharing",
     "category": "misc"
+  },
+  {
+      "eventID": "logocity",
+      "eventName": "Logocity",
+      "eventDate": {
+        "prelims": [
+          "TBD"
+        ],
+        "finals": [
+          "TBD"
+        ]
+      },
+      "eventType": "misc",
+      "eventHashtags": [
+        "doodles",
+        "creativity",
+        "design"
+      ],
+      "registrationOpen": true,
+      "eventCoordinators": [
+        "Sneha Debnath[+91 6290544740]",
+        "Aindree Chatterjee[+91 62918 96539]",
+        "Sneha Ghosh[+91 75968 83862]"
+      ],
+      "prize": [
+        "1st : TBD ",
+        "2nd : TBD ",
+        "3rd : TBD "
+      ],
+      "minMembers": 1,
+      "maxMembers": 1,
+      "eventPoster": "logocity.webp",
+      "registrationType": "Srijan'25 Website",
+      "eventDescription": [
+        "Are your lecture notes interjected with doodles? Do you have flair of translating your ideas into images? Do you think you can identify the most elusive logos whenever you see them? Wait no more!"
+      ],
+      "eventRules": [
+        "Refer to the attachments for further details regarding dates and rules."
+      ],
+      "driveLink": "NA",
+      "category": "misc"
+   },
+  {
+      "eventID": "pov",
+      "eventName": "PACK-O-VATION",
+      "eventDate": {
+        "prelims": [
+          "TBD"
+        ],
+        "finals": [
+          "TBD"
+        ]
+      },
+      "eventType": "business",
+      "eventHashtags": [
+        "packaging",
+        "innovation",
+        "sustainability"
+      ],
+      "registrationOpen": true,
+      "eventCoordinators": [
+        "Ritankar Saha[+91 7595875833]",
+        "Manideep Das[+91 7980287030]",
+        "Rajiv Mishra[+91 9330136532]"
+      ],
+      "prize": [
+        "1st : TBD ",
+        "2nd : TBD ",
+        "3rd : TBD "
+      ],
+      "minMembers": 2,
+      "maxMembers": 3,
+      "eventPoster": "pov.webp",
+      "registrationType": "Srijan'25 Website",
+      "eventDescription": [
+        "Packovation is a team-based competition aimed at inspiring innovative and sustainable packaging solutions. It challenges participants to integrate design, branding, and user experience into practical packaging improvements while considering environmental and market impacts."
+      ],
+      "eventRules": [
+        "Refer to the attachments for further details regarding dates and rules."
+      ],
+      "driveLink": "https://drive.google.com/drive/folders/1rx3rJrtxCTfNiY1PaVUYg_FD6ixYTLaI?usp=sharing",
+      "category": "business"
+   },
+   {
+    "eventID": "escaperoom",
+    "eventName": "Escape Room",
+    "eventDate": {
+      "prelims": [
+        "TBD"
+      ],
+      "finals": [
+        "TBD"
+      ]
+    },
+    "eventType": "brainstorming",
+    "eventHashtags": [
+      "puzzles",
+      "teamwork",
+      "creativity"
+    ],
+    "registrationOpen": true,
+    "eventCoordinators": [
+      "Agnish Paul[+91 8910499325]",
+      "Bonny Molla[+91 98297 04920]"
+    ],
+    "prize": [ "1st : TBD ",
+    "2nd : TBD ",
+    "3rd : TBD "],
+    "minMembers": 3,
+    "maxMembers": 4,
+    "eventPoster": "escaperoom.webp",
+    "registrationType": "Srijan'25 Website",
+    "eventDescription": [
+      "Escape Room at SRIJAN'25 is an immersive challenge where participants solve puzzles and riddles to 'escape' within a set time. It tests teamwork, creativity, and problem-solving skills in a thrilling environment. Designed for all levels, it promises excitement and fun for every participant. Join us for an unforgettable adventure!"
+    ],
+    "eventRules": [
+      "Format: Teams will be presented with an 8x8 matrix filled with challenging questions.",
+      "How it works: Each element in the matrix contains two questions. The answers to these questions will give the next row and column addresses for the subsequent element in the matrix. Teams must proceed step by step.",
+      "Warning: Teams should solve the questions accurately; guessing is prohibited. Incorrect guesses will lead to disqualification.",
+      "Objective: Solve each matrix element and collect keys after each correct answer. These keys will help unscramble a jumbled puzzle. Once the puzzle is solved, the team can submit the final answer.",
+      "Advancement: The first four teams to submit the correct final answer will qualify for the Finale."
+    ],
+    "driveLink": "https://drive.google.com/file/d/1qoZZ_FY63aD9QtG1FtW5hJ3QTamqFOcx/view?usp=sharing",
+    "category": "brainstorming"
   }
 ]
