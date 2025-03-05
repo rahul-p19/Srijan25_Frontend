@@ -1,112 +1,172 @@
 [
-	{ "_id": "67bf56ca62ddfb1c453a926e", "name": "ArtByteArena", "slug": "aba" },
-	{ "_id": "67bf571462ddfb1c453a92a4", "name": "PACK-O-VATION", "slug": "pov" },
-	{ "_id": "67bf576162ddfb1c453a92de", "name": "Climb-On", "slug": "climbOn" },
-	{ "_id": "67bf578962ddfb1c453a92f7", "name": "FlashFrames", "slug": "flfr" },
-	{ "_id": "67bf589762ddfb1c453a93c0", "name": "Rook n Roll", "slug": "rnr" },
-	{ "_id": "67bf59dd62ddfb1c453a9453", "name": "PIXELLENSE", "slug": "ple" },
-	{
-		"_id": "67bf59f762ddfb1c453a9472",
-		"name": "Beat the Market",
-		"slug": "btm"
-	},
-	{ "_id": "67bf5aa062ddfb1c453a94df", "name": "Entropy", "slug": "entropy" },
-	{ "_id": "67bf5ac762ddfb1c453a94f5", "name": "UNCODE", "slug": "uncode" },
-	{
-		"_id": "67bf5b0862ddfb1c453a951e",
-		"name": "Sherlocked",
-		"slug": "sherlocked"
-	},
-	{
-		"_id": "67bf5b5362ddfb1c453a9548",
-		"name": "Pass The Baton",
-		"slug": "ptb"
-	},
-	{
-		"_id": "67bf5b9462ddfb1c453a957e",
-		"name": "Ace the Case",
-		"slug": "ace-the-case"
-	},
-	{
-		"_id": "67bf5bba62ddfb1c453a9593",
-		"name": "HUNTER X HUNTER",
-		"slug": "hxh"
-	},
-	{
-		"_id": "67bf5be662ddfb1c453a95b3",
-		"name": "openAImer",
-		"slug": "openaimer"
-	},
-	{
-		"_id": "67bf5c2462ddfb1c453a95e1",
-		"name": "Biznez Plan",
-		"slug": "biznez-plan"
-	},
-	{
-		"_id": "67bf5c6262ddfb1c453a9635",
-		"name": "SquidGame VoltEdged",
-		"slug": "sgv"
-	},
-	{
-		"_id": "67bf5c9962ddfb1c453a9672",
-		"name": "StratEdgeX",
-		"slug": "stratedgex"
-	},
-	{ "_id": "67bf5d5f62ddfb1c453a972c", "name": "EquilibriX", "slug": "eqbX" },
-	{ "_id": "67bf5d9e62ddfb1c453a9742", "name": "Control-Craft", "slug": "ctc" },
-	{ "_id": "67bf5dcb62ddfb1c453a9761", "name": "Mysterio", "slug": "myst" },
-	{
-		"_id": "67bf5df662ddfb1c453a976e",
-		"name": "Math-e-Magician",
-		"slug": "mathe"
-	},
-	{
-		"_id": "67bf5e3362ddfb1c453a9793",
-		"name": "SkySprint",
-		"slug": "skysprint"
-	},
-	{
-		"_id": "67bf5e5062ddfb1c453a97a2",
-		"name": "JAL ASTRA",
-		"slug": "jal-astra"
-	},
-	{
-		"_id": "67bf5ee562ddfb1c453a97d9",
-		"name": "Case-o-mania",
-		"slug": "caseomania"
-	},
-	{ "_id": "67bf5f2262ddfb1c453a97f2", "name": "REEL-A-TION", "slug": "rat" },
-	{ "_id": "67bf5f7562ddfb1c453a980d", "name": "Pack-O-Vation", "slug": "pkv" },
-	{
-		"_id": "67bf5f9a62ddfb1c453a9819",
-		"name": "Cypher3331",
-		"slug": "cypher3331"
-	},
-	{
-		"_id": "67bf5fd762ddfb1c453a983b",
-		"name": "Investomania",
-		"slug": "investomania"
-	},
-	{ "_id": "67bf603f62ddfb1c453a9867", "name": "H42", "slug": "h42" },
-	{
-		"_id": "67bf605a62ddfb1c453a9877",
-		"name": "SnapSyntax",
-		"slug": "snapsyntax"
-	},
-	{
-		"_id": "67bf608a62ddfb1c453a988a",
-		"name": "Bridge the Gap",
-		"slug": "btg25"
-	},
-	{
-		"_id": "67bf60a662ddfb1c453a98a5",
-		"name": "DATA DRIFT",
-		"slug": "data-drift"
-	},
-	{
-		"_id": "67bf60e362ddfb1c453a98c8",
-		"name": "Escape Room",
-		"slug": "escaperoom"
-	},
-	{ "_id": "67bf611662ddfb1c453a98df", "name": "Chip-o-Mania", "slug": "chp" }
+  {
+    "_id": "67bf56ca62ddfb1c453a926e",
+    "name": "ArtByteArena",
+    "slug": "aba"
+  },
+  {
+    "_id": "67bf571462ddfb1c453a92a4",
+    "name": "PACK-O-VATION",
+    "slug": "pov"
+  },
+  {
+    "_id": "67bf576162ddfb1c453a92de",
+    "name": "Climb-On",
+    "slug": "climbOn"
+  },
+  {
+    "_id": "67bf578962ddfb1c453a92f7",
+    "name": "FlashFrames",
+    "slug": "flfr"
+  },
+  {
+    "_id": "67bf589762ddfb1c453a93c0",
+    "name": "Rook n Roll",
+    "slug": "rnr"
+  },
+  {
+    "_id": "67bf59dd62ddfb1c453a9453",
+    "name": "PIXELLENSE",
+    "slug": "ple"
+  },
+  {
+    "_id": "67bf59f762ddfb1c453a9472",
+    "name": "Beat the Market",
+    "slug": "btm"
+  },
+  {
+    "_id": "67bf5aa062ddfb1c453a94df",
+    "name": "Entropy",
+    "slug": "entropy"
+  },
+  {
+    "_id": "67bf5ac762ddfb1c453a94f5",
+    "name": "UNCODE",
+    "slug": "uncode"
+  },
+  {
+    "_id": "67bf5b0862ddfb1c453a951e",
+    "name": "Sherlocked",
+    "slug": "sherlocked"
+  },
+  {
+    "_id": "67bf5b5362ddfb1c453a9548",
+    "name": "Pass The Baton",
+    "slug": "ptb"
+  },
+  {
+    "_id": "67bf5b9462ddfb1c453a957e",
+    "name": "Ace the Case",
+    "slug": "ace-the-case"
+  },
+  {
+    "_id": "67bf5bba62ddfb1c453a9593",
+    "name": "HUNTER X HUNTER",
+    "slug": "hxh"
+  },
+  {
+    "_id": "67bf5be662ddfb1c453a95b3",
+    "name": "openAImer",
+    "slug": "openaimer"
+  },
+  {
+    "_id": "67bf5c2462ddfb1c453a95e1",
+    "name": "Biznez Plan",
+    "slug": "biznez-plan"
+  },
+  {
+    "_id": "67bf5c6262ddfb1c453a9635",
+    "name": "SquidGame VoltEdged",
+    "slug": "sgv"
+  },
+  {
+    "_id": "67bf5c9962ddfb1c453a9672",
+    "name": "StratEdgeX",
+    "slug": "stratedgex"
+  },
+  {
+    "_id": "67bf5d5f62ddfb1c453a972c",
+    "name": "EquilibriX",
+    "slug": "eqbX"
+  },
+  {
+    "_id": "67bf5d9e62ddfb1c453a9742",
+    "name": "Control-Craft",
+    "slug": "ctc"
+  },
+  {
+    "_id": "67bf5dcb62ddfb1c453a9761",
+    "name": "Mysterio",
+    "slug": "myst"
+  },
+  {
+    "_id": "67bf5df662ddfb1c453a976e",
+    "name": "Math-e-Magician",
+    "slug": "mathe"
+  },
+  {
+    "_id": "67bf5e3362ddfb1c453a9793",
+    "name": "SkySprint",
+    "slug": "skysprint"
+  },
+  {
+    "_id": "67bf5e5062ddfb1c453a97a2",
+    "name": "JAL ASTRA",
+    "slug": "jal-astra"
+  },
+  {
+    "_id": "67bf5ee562ddfb1c453a97d9",
+    "name": "Case-o-mania",
+    "slug": "caseomania"
+  },
+  {
+    "_id": "67bf5f2262ddfb1c453a97f2",
+    "name": "REEL-A-TION",
+    "slug": "rat"
+  },
+  {
+    "_id": "67bf5f7562ddfb1c453a980d",
+    "name": "Pack-O-Vation",
+    "slug": "pkv"
+  },
+  {
+    "_id": "67bf5f9a62ddfb1c453a9819",
+    "name": "Cypher3331",
+    "slug": "cypher3331"
+  },
+  {
+    "_id": "67bf5fd762ddfb1c453a983b",
+    "name": "Investomania",
+    "slug": "investomania"
+  },
+  {
+    "_id": "67bf603f62ddfb1c453a9867",
+    "name": "H42",
+    "slug": "h42"
+  },
+  {
+    "_id": "67bf605a62ddfb1c453a9877",
+    "name": "SnapSyntax",
+    "slug": "snapsyntax"
+  },
+  {
+    "_id": "67bf608a62ddfb1c453a988a",
+    "name": "Bridge the Gap",
+    "slug": "btg25"
+  },
+  {
+    "_id": "67bf60a662ddfb1c453a98a5",
+    "name": "DATA DRIFT",
+    "slug": "data-drift"
+  },
+  {
+    "_id": "67bf60e362ddfb1c453a98c8",
+    "name": "Escape Room",
+    "slug": "escaperoom"
+  },
+  {
+    "_id": "67bf611662ddfb1c453a98df",
+    "name": "Chip-o-Mania",
+    "slug": "chp"
+  }
 ]
