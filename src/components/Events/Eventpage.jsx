@@ -507,6 +507,7 @@ const Events = () => {
                       {/* Use the image utility to dynamically load the event image */}
                       <img
                         src={getImageUrl(event.imageUrl)}
+                        loading="lazy"
                         alt={event.title}
                         className="w-auto h-auto object-contain transition-transform duration-300 group-hover:scale-110"
                       />
