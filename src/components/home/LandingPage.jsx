@@ -39,7 +39,7 @@ function Loading() {
   );
 }
 
-export const LandingPage = ({ setUser }) => {
+const LandingPage = ({ setUser }) => {
   useEffect(() => {
     const sid = localStorage.getItem("sid");
     setUser(sid ?? "");
@@ -72,3 +72,5 @@ export const LandingPage = ({ setUser }) => {
     </Suspense>
   );
 };
+
+export default LandingPage;
