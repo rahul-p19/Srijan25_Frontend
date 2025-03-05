@@ -55,19 +55,19 @@ function OrderForm({ setShowOrderForm, size, color }) {
         credentials: "include",
       });
 
-      const responseBody = { size, color };
+      // const responseBody = { size, color };
 
-      const updateUserMerch = await fetch(
-        `${backendUrl}/api/v1/users/merchandise`,
-        {
-          method: "POST",
-          body: JSON.stringify(responseBody),
-          credentials: "include",
-          headers: {
-            "Content-Type": "application/json",
-          },
-        },
-      );
+      // const updateUserMerch = await fetch(
+      //   `${backendUrl}/api/v1/users/merchandise`,
+      //   {
+      //     method: "POST",
+      //     body: JSON.stringify(responseBody),
+      //     credentials: "include",
+      //     headers: {
+      //       "Content-Type": "application/json",
+      //     },
+      //   },
+      // );
 
       if (response.ok) {
         toast("Order submitted successfully!");
@@ -245,12 +245,13 @@ function OrderForm({ setShowOrderForm, size, color }) {
               </div>
               <div className="flex flex-col justify-around gap-y-1 text-sm mb-2">
                 <p>Having issues with payment?</p>
-                <button 
-                className="w-fit bg-green-500 hover:bg-green-600 px-4 py-2 rounded-sm"
-                onClick={(e)=>{
-                  e.preventDefault();
-                  setQrLink(prev=>prev===QR1 ? QR2 : QR1)}
-                }
+                <button
+                  className="w-fit bg-green-500 hover:bg-green-600 px-4 py-2 rounded-sm"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    setQrLink(prev => prev === QR1 ? QR2 : QR1)
+                  }
+                  }
                 >Get Alternate QR
                 </button>
               </div>
