@@ -3,7 +3,7 @@ import toast from "react-hot-toast";
 
 const backendUrl = import.meta.env.VITE_BACKEND_URL;
 const QR1 = "/merchandise/merch-qr-27-02.jpg";
-const QR2 = "/merchandise/merch-alternate-qr-27-02.jpg";
+const QR2 = "/merchandise/regularQR.jpeg";
 
 function OrderForm({ setShowOrderForm, size, color }) {
   const [loading, setLoading] = useState(false); // change to true if loading image dynamically
