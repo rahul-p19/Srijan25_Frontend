@@ -23,14 +23,23 @@ const Referral = () => {
         setErrors({ code: "" });
 
         if (!formData.code) {
-            navigate("/");
-            return;  
+            if(location.state?.redirect) {
+                navigate(location.state.redirect);
+                return;
+            }else{
+                navigate("/dashboard");
+                return;  
+            }
         }
 
         try {
             const response = await  addReferral(formData.code)
             setSuccess(true);
-            navigate("/dashboard");
+            if(location.state?.redirect) {
+                navigate(location.state.redirect);
+            }else{
+                navigate("/dashboard");
+            }
         } catch (err) {
             console.error("Error submitting referral code:", err);
             setErrors({ code: "Invalid referral code" });

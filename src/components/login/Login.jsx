@@ -2,7 +2,7 @@
 import { useState, useEffect } from "react";
 import { SignUpButton, GoogleSignInButton } from "./ui/buttons";
 import { EmailInput, PasswordInput } from "./ui/inputs";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import GridLines from "../GridLines";
 import { authController, serviceController } from "../../services/http";
 import { CONST } from "../../config";
@@ -10,12 +10,13 @@ import MascotAnimation from "../home/MascotAnimation";
 import toast from "react-hot-toast";
 import Navbar from "../Navbar";
 
-const Login = ({ user }) => {
+const Login = ({ user, setUser }) => {
   const navigate = useNavigate();
-
+  const location = useLocation();
   const [imageSrc, setImageSrc] = useState("");
   const [message, setMessage] = useState("");
   const [loading, setLoading] = useState(false);
+  const [redirecting, setRedirecting] = useState(false);
 
   const [formData, setFormData] = useState({
     email: "",
@@ -49,8 +50,8 @@ const Login = ({ user }) => {
   };
 
   useEffect(() => {
-    if (user !== "") {
-      navigate("/");
+    if (user !== "" && !redirecting) {
+      navigate("/dashboard");
       return;
     }
 
@@ -92,9 +93,15 @@ const Login = ({ user }) => {
     localStorage.setItem("sid", sid.id);
     localStorage.setItem("providerID", sid.providerId[0].providerUserId);
     if(sid.isNewUser == true){
-      navigate("/referral", { state: { allowed: true } });
+      setRedirecting(true);
+      setUser(sid.user);
+      navigate("/referral", { state: { allowed: true, redirect: location.state?.redirect ?? null } });
+    }else if(location.state?.redirect){
+      setRedirecting(true);
+      setUser(sid.user);
+      navigate(location.state.redirect);
     }else{
-      navigate("/");
+      setUser(sid.user);
     }
   };
 
@@ -144,10 +151,13 @@ const Login = ({ user }) => {
 
       const { sid } = response.data;
 
-      localStorage.setItem("sid", sid.id);
-
-      // Redirect to EmailVerify page with formData (including email)
-      navigate("/", { state: { userData: response.data } });
+      localStorage.setItem("sid", sid.user.id);
+      if(location.state?.redirect){
+        setRedirecting(true);
+        setUser(sid.user);
+        navigate(location.state.redirect);
+      }
+      setUser(sid.user);
     } catch (error) {
       if (error.response && error.response.data.error) {
         const { message, field } = error.response.data.error;
