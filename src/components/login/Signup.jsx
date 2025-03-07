@@ -10,12 +10,13 @@ import toast from "react-hot-toast";
 import Navbar from "../Navbar";
 
 // eslint-disable-next-line react/prop-types
-const Signup = ({ user }) => {
+const Signup = ({ user, setUser }) => {
   const navigate = useNavigate();
 
   const [imageSrc, setImageSrc] = useState("");
   const [message, setMessage] = useState("");
   const [loading, setLoading] = useState(false);
+  const [redirecting, setRedirecting] = useState(false);
 
   const [formData, setFormData] = useState({
     name: "",
@@ -55,8 +56,8 @@ const Signup = ({ user }) => {
   };
 
   useEffect(() => {
-    if (user !== "") {
-      navigate("/");
+    if (user !== "" && !redirecting) {
+      navigate("/dashboard");
       return;
     }
 
@@ -98,9 +99,11 @@ const Signup = ({ user }) => {
     localStorage.setItem("sid", sid.id);
     localStorage.setItem("providerID", sid.providerId[0].providerUserId);
     if(sid.isNewUser == true){
+      setRedirecting(true);
+      setUser(sid.user);
       navigate("/referral", { state: { allowed: true } });
     }else{
-      navigate("/");
+      setUser(sid.user);
     }
   };
 
@@ -131,7 +134,8 @@ const Signup = ({ user }) => {
       const { sid } = response.data;
 
       localStorage.setItem("sid", sid.id);
-      // Redirect to EmailVerify page with formData (including email)
+      setRedirecting(true);
+      setUser(sid.user);
       navigate("/verify", { state: { formData } });
     } catch (error) {
       if (error.response && error.response.data.error) {
