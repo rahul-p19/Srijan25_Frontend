@@ -13,15 +13,14 @@ import "./styles.css";
 import eventData from "../Events/allevents/data.json"; // Adjust path if necessary
 import { getImageUrl } from "../../utils/image-util"; // Utility to load images dynamically
 
-
 const Navbar = lazy(() => import("../Navbar"));
 const Footer = lazy(() => import("../Footer"));
 const PageReveal = lazy(() => import("../PageReveal"));
 
-
+/* Loading Component */
 function Loading() {
   return (
-    <div className="h-screen w-screen bg-background fixed z-[300]">
+    <div className="h-screen w-screen bg-background fixed z-[300] flex items-center justify-center">
       <img
         src="/fetsu-presents-srijan25.svg"
         alt="Srijan 25 Logo"
@@ -39,10 +38,10 @@ function Loading() {
   );
 }
 
-
+/* FancyButton Component */
 const FancyButton = React.memo(({ active, onClick, children }) => {
   const [ripples, setRipples] = useState([]);
-
+ 
   const createRipple = (event) => {
     const button = event.currentTarget;
     const rect = button.getBoundingClientRect();
@@ -64,8 +63,8 @@ const FancyButton = React.memo(({ active, onClick, children }) => {
         onClick={createRipple}
         className={`relative px-6 py-2 rounded-md font-semibold transition-all duration-300 focus:outline-none border border-transparent ${
           active
-            ? "bg-gradient-to-r from-black-500 to-green-600 text-white shadow-xl transform scale-105"
-            : "bg-gray-800 text-gray-300 hover:bg-gray-700 hover:shadow-lg"
+            ? "bg-gradient-to-r from-black to-black text-green-300 shadow-xl transform scale-105"
+            : " hover:shadow-lg"
         }`}
       >
         {children}
@@ -87,20 +86,75 @@ const FancyButton = React.memo(({ active, onClick, children }) => {
   );
 });
 
+/* GridLines Component */
+const GridLines = React.memo(() => (
+  <div className="absolute top-0 left-0 w-full h-full pointer-events-none">
+    {/* Vertical decorative lines */}
+    <div className="absolute top-0 left-[20%] w-[0.1px] h-full bg-white"></div>
+    <div className="absolute top-0 left-[50%] w-[0.1px] h-full bg-white"></div>
+    <div className="absolute top-0 left-[80%] w-[0.1px] h-full bg-white"></div>
+  </div>
+));
 
-const GridLines = React.memo(() => {
+/* CategoryTabs Component with blurred background */
+const CategoryTabs = ({ activeCategory, onCategoryChange }) => {
+  const categories = [
+    "all",
+    "coding",
+    "circuits and robotics",
+    "business",
+    "brainstorming",
+    "misc",
+    "gaming",
+  ];
   return (
-    <div className="absolute top-0 left-0 w-full h-full pointer-events-none">
-      {/* Vertical decorative lines */}
-      <div className="absolute top-0 left-[20%] w-[0.1px] h-full bg-white"></div>
-      <div className="absolute top-0 left-[50%] w-[0.1px] h-full bg-white"></div>
-      <div className="absolute top-0 left-[80%] w-[0.1px] h-full bg-white"></div>
+    <div className="max-w-6xl mx-auto mb-7 p-4 rounded-xl bg-white/4 backdrop-blur-md ">
+      <nav className="flex flex-wrap justify-center gap-7 ">
+        {categories.map((category) => (
+          <FancyButton
+            className="cursor-pointer"
+            key={category}
+            active={activeCategory === category}
+            onClick={() => onCategoryChange(category)}
+          >
+            {category.charAt(0).toUpperCase() + category.slice(1)}
+          </FancyButton>
+        ))}
+      </nav>
     </div>
   );
-});
+};
 
+/* EventCardGrid Component with glassmorphism container */
+const EventCardGrid = ({ events, truncateText, onCardClick }) => {
+  return (
+    <div className="max-w-[1500px] mx-auto p-20 rounded-2xl shadow-2xl bg-white/2 backdrop-blur-sm border ">
+      <main className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-15">
+        {events.map((event) => (
+          <div
+            key={event.eventID}
+            onClick={() => onCardClick(event)}
+            className="card group relative rounded-2xl overflow-hidden shadow-xl transform transition-all duration-300 hover:scale-105 cursor-pointer"
+          >
+            <img
+              src={getImageUrl(event.imageUrl)}
+              loading="lazy"
+              alt={event.title}
+              className="w-auto h-auto object-contain transition-transform duration-300 group-hover:scale-110"
+            />
+            <div className="absolute left-0 right-0 bottom-0 p-4 bg-gradient-to-t from-black to-transparent text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <h3 className="text-xl font-bold mb-1">{event.title}</h3>
+              <p className="text-sm">{truncateText(event.description, 310)}</p>
+            </div>
+          </div>
+        ))}
+      </main>
+    </div>
+  );
+};
+
+/* Main Events Component */
 const Events = () => {
-
   const truncateText = useCallback((text, maxLength = 310) => {
     if (!text) return "";
     return text.length > maxLength ? text.slice(0, maxLength) + "..." : text;
@@ -117,7 +171,7 @@ const Events = () => {
       eventID: item.eventID,
       category: item.category,
       title: item.eventName,
-      imageUrl: item.eventPoster, 
+      imageUrl: item.eventPoster,
       description: Array.isArray(item.eventDescription)
         ? item.eventDescription.join(" ")
         : item.eventDescription,
@@ -125,7 +179,6 @@ const Events = () => {
     setEvents(transformed);
     setLoading(false);
   }, []);
-
 
   const filteredEvents = useMemo(() => {
     return events.filter((event) => {
@@ -137,7 +190,6 @@ const Events = () => {
           const regex = new RegExp(searchQuery, "i");
           matchesSearch = regex.test(event.title);
         } catch (e) {
-   
           matchesSearch = false;
         }
       }
@@ -145,11 +197,9 @@ const Events = () => {
     });
   }, [activeCategory, events, searchQuery]);
 
-
   const handleCardClick = useCallback((eventData) => {
     window.location.href = `/events/${eventData.eventID}`;
   }, []);
-
 
   const handleCategoryChange = useCallback((category) => {
     setActiveCategory(category);
@@ -171,7 +221,7 @@ const Events = () => {
         </Helmet>
         <div className="relative bg-gradient-to-r from-background to-background text-white min-h-screen py-2 px-2">
           <GridLines />
-          <Snowfall color="white" snowflakeCount={90} />
+          <Snowfall color="white" snowflakeCount={100} />
 
           <header className="max-w-9xl mx-auto text-center mb-6">
             <h1 className="text-4xl md:text-xl lg:text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-green-400 via-red-500 to-blue-600 drop-shadow-2xl">
@@ -184,70 +234,41 @@ const Events = () => {
             </h1>
           </header>
 
-          {/* Category Filter and Regex Search */}
-          <nav className="max-w-6xl mx-auto flex flex-wrap justify-center gap-7 mb-7">
-            {[
-              "all",
-              "coding",
-              "circuits and robotics",
-              "business",
-              "brainstorming",
-              "misc",
-              "gaming",
-            ].map((category) => (
-              <FancyButton
-                key={category}
-                active={activeCategory === category}
-                onClick={() => handleCategoryChange(category)}
-              >
-                {category.charAt(0).toUpperCase() + category.slice(1)}
-              </FancyButton>
-            ))}
-          </nav>
+          {/* Category Tabs with Blur Background */}
+          <CategoryTabs
+            activeCategory={activeCategory}
+            onCategoryChange={handleCategoryChange}
+          />
 
-        
-          <div className="max-w-4xl mx-auto mb-10">
-            <input
-              type="text"
-              placeholder="Search events by name (regex supported)..."
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full p-3 rounded-md bg-gray-800 text-gray-200 focus:outline-none focus:ring-2 focus:ring-green-600"
-            />
-          </div>
+          {/* Search Input */}
+          <section className="max-w-md mx-auto mb-10">
+            <div className="relative">
+              <input
+                type="text"
+                placeholder="Search events by name..."
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                className="w-full p-3 rounded-full  text-gray-100 focus:outline-none focus:ring-2 focus:ring-green-500 transition-all"
+                aria-label="Search Events"
+              />
+              <span className="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-400">
+                🔍
+              </span>
+            </div>
+          </section>
 
           {loading ? (
             <div className="text-center text-xl">Loading events...</div>
           ) : filteredEvents.length === 0 ? (
             <div className="text-center text-red-500 text-xl">
-              No events found. Please select the category of event correctly or
-              check the spelling.
+              No events found. Please select the category correctly or check the spelling.
             </div>
           ) : (
-            <div className="max-w-[1500px] mx-auto p-20 border-4 border-gray-600 rounded-2xl shadow-2xl">
-              <main className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-15">
-                {filteredEvents.map((event) => (
-                  <div
-                    key={event.eventID}
-                    onClick={() => handleCardClick(event)}
-                    className="card group relative rounded-2xl overflow-hidden shadow-xl transform transition-all duration-300 hover:scale-105 cursor-pointer"
-                  >
-                    <img
-                      src={getImageUrl(event.imageUrl)}
-                      loading="lazy"
-                      alt={event.title}
-                      className="w-auto h-auto object-contain transition-transform duration-300 group-hover:scale-110"
-                    />
-                    <div className="absolute left-0 right-0 bottom-0 p-4 bg-gradient-to-t from-black to-transparent text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                      <h3 className="text-xl font-bold mb-1">{event.title}</h3>
-                      <p className="text-sm">
-                        {truncateText(event.description, 310)}
-                      </p>
-                    </div>
-                  </div>
-                ))}
-              </main>
-            </div>
+            <EventCardGrid
+              events={filteredEvents}
+              truncateText={truncateText}
+              onCardClick={handleCardClick}
+            />
           )}
         </div>
         <Footer />
@@ -257,5 +278,3 @@ const Events = () => {
 };
 
 export default Events;
-
-
