@@ -10,14 +10,14 @@ import { ReactTyped } from "react-typed";
 import Snowfall from "react-snowfall";
 import { Helmet } from "react-helmet-async";
 import "./styles.css";
-import eventData from "../Events/allevents/data.json"; // Adjust path if necessary
-import { getImageUrl } from "../../utils/image-util"; // Utility to load images dynamically
+import eventData from "../Events/allevents/data.json"; 
+import { getImageUrl } from "../../utils/image-util"; //
 
 const Navbar = lazy(() => import("../Navbar"));
 const Footer = lazy(() => import("../Footer"));
 const PageReveal = lazy(() => import("../PageReveal"));
 
-/* Loading Component */
+
 function Loading() {
   return (
     <div className="h-screen w-screen bg-background fixed z-[300] flex items-center justify-center">
