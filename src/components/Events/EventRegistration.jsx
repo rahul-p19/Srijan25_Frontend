@@ -340,10 +340,9 @@ const App = () => {
   const { width, height } = useWindowSize();
   const userId = localStorage.getItem("sid");
   //console.log({ userId });
-  const { eventID } = useParams();
   const navigate = useNavigate();
   if (!userId) {
-    navigate("/login", { state: { allowed: true, redirect: `/events/${eventID}` } });
+    navigate("/login");
     // return;
   }
   const [teamName, setTeamName] = useState("");
@@ -362,7 +361,7 @@ const App = () => {
   const [registrationResponse, setRegistrationResponse] = useState(null);
 
   // Retrieve the event slug from the URL parameters
-  // const { eventID } = useParams();
+  const { eventID } = useParams();
   const eventDetails = eventData.find(e => e.eventID === eventID);
   const getUserById = async (userId) => {
     try {
