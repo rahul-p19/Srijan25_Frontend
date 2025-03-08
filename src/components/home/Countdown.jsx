@@ -8,7 +8,7 @@ export default function Countdown() {
   });
 
   useEffect(() => {
-    const eventDate = new Date("2025-03-20T00:00:00").getTime();
+    const eventDate = new Date("2025-04-17T00:00:00").getTime();
 
     const timer = setInterval(() => {
       const now = new Date().getTime();
