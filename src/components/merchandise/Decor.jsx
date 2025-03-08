@@ -25,7 +25,7 @@ const SrijanMerchandiseAnnouncement = () => {
               </li>
               <li className="flex items-center justify-between w-full">
                 <span className="border border-blue-500 text-blue-200 px-2 py-1 rounded mr-2 text-sm font-medium w-36 sm:w-32 text-center">Order by March 9-15</span>
-                <span className='text-right'>Delivered during Srijan'25 (March 21-23)</span>
+                <span className='text-right'>Delivered during Srijan'25 (April 17-20)</span>
               </li>
               <li className="flex items-center justify-between">
                 <span className="border border-blue-500 text-blue-200 px-2 py-1 rounded mr-2 text-sm font-medium w-32 text-center">Order after March 15</span>
