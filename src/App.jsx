@@ -22,6 +22,8 @@ import { Toaster } from "react-hot-toast";
 import { logoutCall } from "./services/http/auth";
 import { uri } from "./config/endpoints";
 import Referral from "./components/login/Referral";
+import AdminPage from "./components/Admin/AdminPage";
+import AdminLogin from "./components/Admin/AdminLogin";
 
 function App() {
   const [user, setUser] = useState("");
@@ -100,6 +102,8 @@ function App() {
           <Route path="/forgotPassword" element={<ForgotPassword />} />
           <Route path="/workshop" element={<WorkshopPage />} />
           <Route path="*" element={<PageNotFound />} />
+          <Route path="/admin" element={<AdminLogin/>}/>
+          <Route path="/admin/details" element={<AdminPage/>}/>
         </Routes>
       </Router>
       <Toaster
