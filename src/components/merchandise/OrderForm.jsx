@@ -3,7 +3,7 @@ import toast from "react-hot-toast";
 
 const backendUrl = import.meta.env.VITE_BACKEND_URL;
 const QR1 = "/merchandise/merch-qr-27-02.jpg";
-const QR2 = "/merchandise/merch-alternate-qr-27-02.jpg";
+const QR2 = "/merchandise/regularQR.jpeg";
 
 function OrderForm({ setShowOrderForm, size, color }) {
   const [loading, setLoading] = useState(false); // change to true if loading image dynamically
@@ -15,7 +15,7 @@ function OrderForm({ setShowOrderForm, size, color }) {
     // Extract form data
     const formData = new FormData(e.target);
     const fullname = formData.get("name");
-    const email = formData.get("email");
+    // const email = formData.get("email");
     const nameOnShirt = formData.get("nameonshirt");
     const paymentProof = formData.get("paymentProof");
     const college = formData.get("college");
@@ -39,7 +39,7 @@ function OrderForm({ setShowOrderForm, size, color }) {
       const uploadFormData = new FormData();
       uploadFormData.append("image", paymentProof);
       uploadFormData.append("fullname", fullname);
-      uploadFormData.append("email", email);
+      // uploadFormData.append("email", email);
       uploadFormData.append("nameOnShirt", nameOnShirt);
       uploadFormData.append("college", college);
       uploadFormData.append("department", department);
@@ -55,19 +55,19 @@ function OrderForm({ setShowOrderForm, size, color }) {
         credentials: "include",
       });
 
-      const responseBody = { size, color };
+      // const responseBody = { size, color };
 
-      const updateUserMerch = await fetch(
-        `${backendUrl}/api/v1/users/merchandise`,
-        {
-          method: "POST",
-          body: JSON.stringify(responseBody),
-          credentials: "include",
-          headers: {
-            "Content-Type": "application/json",
-          },
-        },
-      );
+      // const updateUserMerch = await fetch(
+      //   `${backendUrl}/api/v1/users/merchandise`,
+      //   {
+      //     method: "POST",
+      //     body: JSON.stringify(responseBody),
+      //     credentials: "include",
+      //     headers: {
+      //       "Content-Type": "application/json",
+      //     },
+      //   },
+      // );
 
       if (response.ok) {
         toast("Order submitted successfully!");
@@ -109,7 +109,7 @@ function OrderForm({ setShowOrderForm, size, color }) {
                 />
               </div>
 
-              <div className="mb-4">
+              {/* <div className="mb-4">
                 <label
                   className="block text-sm font-medium mb-2"
                   htmlFor="email"
@@ -123,7 +123,7 @@ function OrderForm({ setShowOrderForm, size, color }) {
                   className="w-full p-2 bg-[#1c1c1c] border border-gray-500 rounded focus:outline-none focus:ring-1 focus:ring-white"
                   required
                 />
-              </div>
+              </div> */}
 
               <div className="mb-4">
                 <label
@@ -245,12 +245,13 @@ function OrderForm({ setShowOrderForm, size, color }) {
               </div>
               <div className="flex flex-col justify-around gap-y-1 text-sm mb-2">
                 <p>Having issues with payment?</p>
-                <button 
-                className="w-fit bg-green-500 hover:bg-green-600 px-4 py-2 rounded-sm"
-                onClick={(e)=>{
-                  e.preventDefault();
-                  setQrLink(prev=>prev===QR1 ? QR2 : QR1)}
-                }
+                <button
+                  className="w-fit bg-green-500 hover:bg-green-600 px-4 py-2 rounded-sm"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    setQrLink(prev => prev === QR1 ? QR2 : QR1)
+                  }
+                  }
                 >Get Alternate QR
                 </button>
               </div>

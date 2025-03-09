@@ -1,29 +1,31 @@
 import "./App.css";
-import { useState, useEffect } from "react";
-import { LandingPage } from "./components/home/LandingPage";
-import MerchandisePage from "./components/MerchandisePage";
-import Eventpage from "./components/Events/Eventpage";
-import EventRegistration from "./components/Events/EventRegistration";
-import { DashboardPage } from "./components/protected_routes/DashboardPage";
-import Signup from "./components/login/Signup";
-import Login from "./components/login/Login";
-import EmailVerify from "./components/login/EmailVerify";
-import ResetPassword from "./components/login/ResetPassword";
-import ForgotPassword from "./components/login/ForgotPassword";
-import PageNotFound from "./components/PageNotFound";
-import AllEvents from "./components/Events/allevents/AllinoneEvents"
-import { WorkshopPage } from "./components/workshop/WorkshopPage";
+import { useState, useEffect, lazy } from "react";
+const LandingPage = lazy(() => import("./components/home/LandingPage"));
+const MerchandisePage = lazy(() => import("./components/MerchandisePage"));
+const Eventpage = lazy(() => import("./components/Events/Eventpage"));
+const EventRegistration = lazy(() => import("./components/Events/EventRegistration"));
+const DashboardPage = lazy(() => import("./components/protected_routes/DashboardPage"));
+const Signup = lazy(() => import("./components/login/Signup"));
+const Login = lazy(() => import("./components/login/Login"));
+const EmailVerify = lazy(() => import("./components/login/EmailVerify"));
+const ResetPassword = lazy(() => import("./components/login/ResetPassword"));
+const ForgotPassword = lazy(() => import("./components/login/ForgotPassword"));
+const PageNotFound = lazy(() => import("./components/PageNotFound"));
+const AllEvents = lazy(() => import("./components/Events/allevents/AllinoneEvents"));
+const WorkshopPage = lazy(() => import("./components/workshop/WorkshopPage"));
 import Loading from "./components/Loading"
 
 import { ProtectedRoute } from "./components/protected_routes/AuthRoutes";
 import { BrowserRouter as Router, Routes, Route, redirect } from "react-router-dom";
-import Notifications from "./components/protected_routes/Notifications";
+const Notifications = lazy(() => import("./components/protected_routes/Notifications"));
 import { Toaster } from "react-hot-toast";
 import { logoutCall } from "./services/http/auth";
 import { uri } from "./config/endpoints";
-import Referral from "./components/login/Referral";
 import AdminPage from "./components/Admin/AdminPage";
 import AdminLogin from "./components/Admin/AdminLogin";
+
+const Referral = lazy(() => import("./components/login/Referral"));
+
 
 function App() {
   const [user, setUser] = useState("");
@@ -39,8 +41,8 @@ function App() {
   useEffect(() => {
     getToken();
   }, []);
-  
-  const getToken = async() => {
+
+  const getToken = async () => {
     const token = localStorage.getItem("sid");
     if (token) await verifyToken(token);
     setChecking(false);
@@ -73,9 +75,9 @@ function App() {
             />
           </Route>
           <Route path="/events" element={<Eventpage />} />
-{/*           <Route path="/events/:category/:eventID" element={<AllEvents />} />
+          {/*           <Route path="/events/:category/:eventID" element={<AllEvents />} />
           <Route path="/events/:category/:eventID/:registration" element={<EventRegistration />} /> */}
-                    <Route path="/events/:eventID" element={<AllEvents />} />
+          <Route path="/events/:eventID" element={<AllEvents />} />
           <Route path="/events/:eventID/:registration" element={<EventRegistration />} />
           <Route>
             {/* <Route path="/merchandise" element={
@@ -83,11 +85,11 @@ function App() {
              <MerchandisePage />
            </ProtectedRoute>
               } /> */}
-              <Route path="/merchandise" element={ <MerchandisePage />}/>
-            </Route>
+            <Route path="/merchandise" element={<MerchandisePage />} />
+          </Route>
           <Route path="/events" element={<Eventpage />} />
           <Route path="/eventregistration" element={<EventRegistration />} />
-          <Route path="/notifications" element={<Notifications user={user}/>} />
+          <Route path="/notifications" element={<Notifications user={user} />} />
           <Route
             path="/signup"
             element={<Signup user={user} setUser={setUser} />}

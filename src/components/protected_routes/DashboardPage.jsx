@@ -17,6 +17,13 @@ import toast from "react-hot-toast";
 import { usersController } from "../../services/http";
 import { env } from "../../config/config";
 import { Link, redirect } from "react-router-dom";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 
 const style = {
   position: "absolute",
@@ -30,23 +37,27 @@ const style = {
   p: 4,
 };
 
-export const DashboardPage = ({ userDetails, logout }) => {
+const DashboardPage = ({ userDetails, logout }) => {
   if (!userDetails || userDetails === "") redirect("/login");
   const [user, setUser] = useState(userDetails);
   const merchStatus = user.merchandise?.status ?? "Not ordered.";
   const merchColour = user.merchandise?.color;
   const merchSize = user.merchandise?.size;
-  const merchPlaceholder = (user.merchandise && user.merchandise.color) ? user.merchandise.color.toLowerCase() === "black" ? "/merchandise/tshirt2.png" : "/merchandise/tshirt1.png" : "/merchandise/merch-in-dashboard.svg";
-
-  // const registeredEvents = user.registeredEvents.length > 0 ? user.registeredEvents.map((eventId)=>await getEventById(eventId)) : [];
-  // const pendingEvents = user.pendingEvents;
-  // const wishlist = user.wishlist;
+  const merchPlaceholder = "/merchandise/merch-in-dashboard.svg";
 
   const [registeredEvents, setRegisteredEvents] = useState([]);
   const [pendingEvents, setPendingEvents] = useState([]);
   const [wishlist, setWishlist] = useState([]);
+  const [merchandise, setMerchandise] = useState([]);
+  const allMerch = user.merchandise? (user.merchandise2 && user.merchandise2.length > 0) ? [user.merchandise, ...user.merchandise2] : [user.merchandise] : [];
 
   useEffect(() => {
+
+    if (user.merchandise) setMerchandise(prev => [...prev, user.merchandise]);
+
+    if (user.merchandise2 && user.merchandise2.length > 0) {
+      user.merchandise2.map((merch) => setMerchandise(prev => [...prev, merch]));
+    }
 
     if (user.registeredEvents && user.registeredEvents.length > 0) {
       user.registeredEvents.map(eventId => {
@@ -74,8 +85,6 @@ export const DashboardPage = ({ userDetails, logout }) => {
         if (newEvent) setWishlist(prev => [...prev, newEvent])
       });
     }
-
-    // console.log("events: ",{registeredEvents,pendingEvents,wishlist});
 
   }, [])
 
@@ -133,35 +142,6 @@ export const DashboardPage = ({ userDetails, logout }) => {
     }
   };
 
-  // const getMerchandise = async () => {
-  //   try{
-  //     const res = await fetch(`${env.API_SERVER}/users/get/Merchandise`,{
-  //       credentials: "include"
-  //     });
-  //     const data = await res.json();
-  //     if(data.success){
-  //       setMerchStatus(data.merchandise.status);
-  //       setMerchColour(data.merchandise.color);
-  //       setMerchSize(data.merchandise.size);
-  //       setMerchPlaceholder(data.merchandise.color.toLowerCase() === "black" ? "/merchandise/tshirt2.png" : "/merchandise/tshirt1.png")
-  //     }
-  //     else setMerchStatus("No merchandise orders. If you think this is incorrect, please contact us.");
-  //     }catch(_err){
-  //       setMerchStatus("An error occurred while fetching your merch status, please try again later.");
-  //     }
-  // }
-
-  // const navigate = useNavigate();
-
-  // useEffect(() => {
-  //   const sid = localStorage.getItem("sid");
-  //   const providerID = localStorage.getItem("providerID");
-  //   getUserById(sid, providerID).then((r) => {
-  //     setUser(r.data);
-  //   });
-  //   getMerchandise();
-  // }, []);
-
   return (
     <div className="font-sometypeMono">
       <Navbar />
@@ -175,16 +155,13 @@ export const DashboardPage = ({ userDetails, logout }) => {
             <img src={LogoutIcon} alt="logout of your account" />
           </button>
           <p className="text-2xl grid place-items-center">My Dashboard</p>
-          <button
+          <a
             type="button"
-            onClick={() => {
-              toast("Coming Soon!");
-              // navigate("/notifications");
-            }}
+            href="/notifications"
             className="cursor-pointer p-1 rounded-xs transition-all hover:shadow-md hover:-translate-y-0.5 active:translate-y-0 focus:outline-none"
           >
             <img src={NotifsIcon} alt="check notifications" />
-          </button>
+          </a>
         </header>
         <p className="flex gap-4 py-6 md:py-8 text-2xl md:hidden">
           Hello, {user?.name}!
@@ -193,17 +170,40 @@ export const DashboardPage = ({ userDetails, logout }) => {
           <div className="order-2 md:order-1">
             <p className="md:flex py-4 text-2xl hidden">Hello, {user?.name}!</p>
             <div className="rounded-md bg-gradient-to-r from-red-700 via-purple-800 to-blue-900 p-px">
-              <section className="flex flex-col items-center gap-6 p-6 rounded-md h-full w-full bg-[#141414]">
-                <p className="py-2 text-xl">My Merchandise</p>
-                <img
-                  className="w-full max-w-3xs transition-all hover:-translate-y-0.5 active:translate-y-0"
-                  src={merchPlaceholder}
-                  alt="Merchandise placeholder"
-                />
-                <p className="flex text-lg">Status: {merchStatus}</p>
-                <p className="flex text-lg">{merchColour && `Colour: ${merchColour}`}</p>
-                <p className="flex text-lg">{merchSize && `Size: ${merchSize}`}</p>
-              </section>
+              {allMerch.length === 0 &&
+                <section className="flex flex-col items-center gap-6 p-6 rounded-md h-full w-full bg-[#141414]">
+                  <p className="py-2 text-xl">My Merchandise</p>
+                  <img
+                    className="w-full max-w-3xs transition-all hover:-translate-y-0.5 active:translate-y-0"
+                    src={merchPlaceholder}
+                    alt="Merchandise placeholder"
+                  />
+                  <p className="flex text-lg">Status: Not ordered.</p>
+                </section>}
+              {allMerch.length > 0 &&
+                <Carousel>
+                  <CarouselContent>
+                    {allMerch.map((merch, ind) =>{
+                      console.log(JSON.stringify(merch),"test");
+                      // const {status,color,size} = merch;
+                      return <CarouselItem key={ind} className="flex flex-col items-center gap-6 p-6 rounded-md h-full  bg-[#141414]">
+                        <p className="py-2 text-xl">My Merchandise</p>
+                        <img
+                          className="w-full max-w-3xs transition-all hover:-translate-y-0.5 active:translate-y-0"
+                          src={merch.color.toLowerCase() === "black" ? '/merchandise/tshirt2.png' : '/merchandise/tshirt1.png'}
+                          alt="Merchandise placeholder"
+                        />
+                        <p className="flex text-lg">Status: {merch.status}</p>
+                        <p className="flex text-lg">{merch.color && `Colour: ${merch.color}`}</p>
+                        <p className="flex text-lg">{merch.size && `Size: ${merch.size}`}</p>
+                      </CarouselItem>})}
+                  </CarouselContent>
+                    {merchandise.length > 1 && <>
+                      <CarouselPrevious className="bg-transparent hover:bg-transparent hover:cursor-pointer ml-8 sm:ml-0 pl-2 border border-white" />
+                      <CarouselNext className="bg-transparent hover:bg-transparent hover:cursor-pointer pl-2 mr-8 sm:mr-0 border border-white" />
+                    </>}
+                </Carousel>
+              }
             </div>
           </div>
           <div className="rounded-md bg-gradient-to-r from-red-700 via-purple-800 to-blue-900 p-px order-1 md:order-2">
@@ -321,3 +321,5 @@ export const DashboardPage = ({ userDetails, logout }) => {
     </div>
   );
 };
+
+export default DashboardPage;

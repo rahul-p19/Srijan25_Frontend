@@ -29,18 +29,18 @@
     "minMembers": 3,
     "maxMembers": 3,
     "eventPoster": "ptb.webp",
-    "registrationType": "Srijan'24 Website",
+    "registrationType": "Srijan'25 Website",
     "eventShortDescription": "Embark on the ML adventure in 'OpenAImer'! Unleash your algorithms, analyse data, and spark innovation!",
     "eventDescription": [
       "A team-based competitive programming contest, with a unique twist where in each team member gets a shot at solving the same problem, relying only on clues left behind by the previous solver. It's a refreshing take on the traditional programming competition, challenging your algorithmic prowess, quick thinking and teamwork capabilities."
     ],
     "eventRules": [
-        "This is a team event. Each team comprises exactly 3 members. Inter-college teams are also allowed.",
-        "The prelims will be conducted in online mode on Codeforces and have 6-8 problems.",
-        "The top 15-20 teams from the preliminary round will qualify to the finals.",
-        "The final round  will be conducted onsite. During the final round, team members will not be able to communicate with each other and can only access the code written by the previous teammate.",
-        "The decisions of the Code Club officials will be final and binding."
-      ],
+      "This is a team event. Each team comprises exactly 3 members. Inter-college teams are also allowed.",
+      "The prelims will be conducted in online mode on Codeforces and have 6-8 problems.",
+      "The top 15-20 teams from the preliminary round will qualify to the finals.",
+      "The final round  will be conducted onsite. During the final round, team members will not be able to communicate with each other and can only access the code written by the previous teammate.",
+      "The decisions of the Code Club officials will be final and binding."
+    ],
     "eventFormat": "The event will consist of an online preliminary round and an on-site final round. The prelims will be a 2 hour ICPC-style contest. The final round will be conducted on-site. For the final round, the entire problem set will be divided into three parts (A, B, C) and each team member will get exactly 30 minutes to work on each part, alternately. For example, in the first 30 minutes the three team members will be solving parts A, B and C respectively, in the next 30 minutes they will be solving parts C, A, B respectively, and in the last 30 minutes parts B, C, A respectively. Each part will consist of exactly 2 problems. Additionally, a bonus part consisting of 1-2 problems will be available in the last 30 minutes. Thus, three parts of 30 minutes each and one bonus part of 30 minutes for a total of 2 hours.",
     "category": "coding"
   },
@@ -49,9 +49,9 @@
     "eventName": "H42",
     "eventDate": {
       "prelims": [
-        " TBD"
+        "18th March"
       ],
-      "finals": "TBD"
+      "finals": "22nd March"
     },
     "eventType": "coding",
     "eventHashtags": [
@@ -74,7 +74,7 @@
     "minMembers": 1,
     "maxMembers": 3,
     "eventPoster": "h42.webp",
-    "registrationType": "Srijan'24 Website",
+    "registrationType": "Srijan'25 Website",
     "eventShortDescription": "Embark on the ML adventure in 'OpenAImer'! Unleash your algorithms, analyse data, and spark innovation!",
     "eventDescription": [
       "Do you enjoy coding but fail to realize its significance in the real world? Do you get bored with the mundane problems you get to solve? Do you yearn to do more? Do you want to rack your head and find the best suited algorithm? Do you have the patience to do so? H42, brought to you by Srijan, Jadavpur University, offers a splendid chance to prove your coding skills and end the boredom. Come, be a part of this coding event and code to glory."
@@ -87,6 +87,55 @@
       "Top 20 teams from the preliminary round will make it to the finals.",
       "The decisions of Code Club Officials are final and binding."
     ],
+    "category": "coding"
+  },
+  {
+    "eventID": "sherlocked",
+    "eventName": "Sherlocked",
+    "eventDate": {
+      "prelims": [
+        "16th March 2025 (Online)"
+      ],
+      "finals": [
+        "22nd March 2025 (On campus)"
+      ]
+    },
+    "eventType": "coding",
+    "eventHashtags": [
+      "murder-mystery",
+      "cryptography",
+      "data-analysis"
+    ],
+    "registrationOpen": true,
+    "eventCoordinators": [
+      "Subhayan Roy Chowdhury[+91 6289955350]",
+      "Atmik Goswami[+91 8910425255]",
+      "Kaji Manirul Islam[+91 7865060015]"
+    ],
+    "prize": [
+      "1st : TBD ",
+      "2nd : TBD ",
+      "3rd : TBD"
+    ],
+    "minMembers": 2,
+    "maxMembers": 3,
+    "eventPoster": "sherlocked.webp",
+    "registrationType": "Srijan'25 Website",
+    "eventDescription": [
+      "Welcome to Sherlocked, a thrilling battle of intellect where participants must unravel encrypted secrets, decode perplexing ciphers, and expose concealed truths to solve a gripping murder mystery across 2 intense rounds. This challenge will push your analytical thinking, logical reasoning, and technical expertise to their limits in a world full of digital deception."
+    ],
+    "eventRules": [
+      "Hosted on HackerRank.",
+      "Includes puzzles including but not limited to cryptography and data analysis.",
+      "Time limit: 1 hour.",
+      "Each question carries points, with partial marking for partially solved answers.",
+      "Accuracy matters—incorrect submissions will result in penalties.",
+      "Hints to be provided at certain time intervals.",
+      "Specific rules related to individual questions will be mentioned in the contest platform.",
+      "Date: (Date to be announced) :  Online Mode.",
+      "About 20 teams qualify for the finals."
+    ],
+    "driveLink": "https://drive.google.com/file/d/1DO0lq0ujAYc2VzcODyyvtDZOf3Y1OAHu/view?usp=sharing",
     "category": "coding"
   },
   {
@@ -119,7 +168,7 @@
     "minMembers": 1,
     "maxMembers": 3,
     "eventPoster": "biznezplan.webp",
-    "registrationType": "Srijan'24 Website",
+    "registrationType": "Srijan'25 Website",
     "eventShortDescription": "Embark on the ML adventure in 'OpenAImer'! Unleash your algorithms, analyse data, and spark innovation!",
     "eventDescription": [
       "The best way to predict the future is to create it.”Are you ready to unleash your entrepreneurial spirit? Here's your chance! Join Biznez Plan – the platform where brilliant minds converge, brainstorm, and transform innovative ideas into industry-ready solutions. Pitch your vision, and watch it come to life in the real world! Now's the time to make that passion your reality. Take the first step toward turning your vision into a thriving business!"
@@ -162,7 +211,7 @@
     "minMembers": 1,
     "maxMembers": 1,
     "eventPoster": "btm.webp",
-    "registrationType": "Srijan'24 Website",
+    "registrationType": "Srijan'25 Website",
     "eventShortDescription": "Embark on the ML adventure in 'OpenAImer'! Unleash your algorithms, analyse data, and spark innovation!",
     "eventDescription": [
       "Beat the Market is a 5 days mock trading competition which will be conducted corresponding to the real stock market and along its timing (9:30 - 15:30). The virtual money  amount will be disclosed before the event."
@@ -197,7 +246,7 @@
       "Supratim Mukherjee[8584094708]",
       "Anjishnu Chakraborty[8100131738]"
     ],
-"prize": [
+    "prize": [
       "1st : Certificate, Rs 2,000 cash prize, annual membership for JMS and JUASCI Society for 1 year for each member of the team, with free passes for all Telescopic Events for this duration (worth Rs 500 per member) ",
       "2nd : Certificate, Rs 1,500 cash prize, quarterly membership for JMS and JUASCI Society for 4 months for each member of the team, with free passes for all Telescopic Events for this duration (worth Rs 250 per member)",
       "3rd : Certificate, Rs 500 cash prize, quarterly membership for JMS and JUASCI Society for 4 months for each member of the team, with free passes for all Telescopic Events for this duration (worth Rs 250 per member)"
@@ -205,7 +254,7 @@
     "minMembers": 2,
     "maxMembers": 3,
     "eventPoster": "myst.webp",
-    "registrationType": "Srijan'24 Website",
+    "registrationType": "Srijan'25 Website",
     "eventDescription": [
       "Mysterio is a team-based astro science challenge where participants solve astrophysical scenarios using analytical and scientific reasoning. Teams of two or three members will answer theoretical and scenario-based questions on paper, with access to books but no electronic devices. They will also use Universe Sandbox for simulations, and on the final day, judges will evaluate their solutions through live simulations. Points will be awarded based on accuracy, creativity, and application of theoretical knowledge, making Mysterio a test of both logic and scientific thinking."
     ],
@@ -219,7 +268,7 @@
       "No illicit substances may be brought into the event centre."
     ],
     "eventFormat": "Mysterio is a team-based astro science challenge designed to test participants' analytical and scientific reasoning skills. In this offline Q&A session, teams of up to three members will engage with intriguing astrophysical and astronomical scenarios, and they will solve problems based on that or describe the past and future of the scenarios through logical analysis and intuitive reasoning. There will also be some theoretical questions for which points will be provided and they might serve as hints for the scenario. Participants will document their solutions on paper. Hints and supplementary modules will be provided, and participants are permitted to bring books. The use of phones, laptops, or internet access is strictly prohibited to maintain the integrity of the challenge. To further enhance their understanding, teams will be granted access to our Universe Sandbox simulator for a stipulated amount of time, allowing them to experiment with the mechanics of the simulator. The event will take place under the supervision of the organizing team, ensuring that guidance from the curated content and activity teams is available when needed. Day 3 - The Final Verdict (23rd March 2025) Your solutions will come to life! Using live simulations in Universe Sandbox, the judges will verify your theories and evaluate how well your models align with astrophysical laws. Points will be awarded based on: Accuracy and scientific validity. Creativity and logical reasoning. Application of theoretical knowledge. Mysterio is not just a test of knowledge but an opportunity to think like a scientist, applying theoretical insights to practical cosmic mysteries. Do you have what it takes to navigate the mysteries of space?",
-    "driveLink":"https://drive.google.com/file/d/1B-POkvV3H1MsfnHUHPNByu1-6R0nRlW1/view?usp=sharing",
+    "driveLink": "https://drive.google.com/file/d/1B-POkvV3H1MsfnHUHPNByu1-6R0nRlW1/view?usp=sharing",
     "category": "brainstorming"
   },
   {
@@ -254,7 +303,7 @@
     "minMembers": 2,
     "maxMembers": 3,
     "eventPoster": "snapsyntax.webp",
-    "registrationType": "Srijan'24 Website",
+    "registrationType": "Srijan'25 Website",
     "eventDescription": [
       "Snap Syntax – Where memory, mastery, and innovation collide! Think you have what it takes to recreate a web page using just your recall? This thrilling challenge tests your HTML and CSS skills as you and your team race against time to build a webpage from memory—without direct visual reference! With only brief glimpses to guide you, precision and efficiency are key. But beware—a surprise twist awaits, pushing your creativity and innovation to the limit. No templates, no external help—just your skills, strategy, and adaptability. Are you ready for the ultimate web design showdown?"
     ],
@@ -280,7 +329,7 @@
         "Code Quality (20% Weightage): The cleanliness, organization, and adherence to best practices in the HTML and CSS code used to recreate the web page."
       ]
     },
-    "driveLink":"https://drive.google.com/file/d/1BAVtEqx8B3tEKv0jVT_x1QL2xcLD1Xzi/view"
+    "driveLink": "https://drive.google.com/file/d/1BAVtEqx8B3tEKv0jVT_x1QL2xcLD1Xzi/view"
   },
   {
     "eventID": "uncode",
@@ -314,9 +363,9 @@
     "minMembers": 1,
     "maxMembers": 2,
     "eventPoster": "uncode.webp",
-    "registrationType": "Srijan'24 Website",
+    "registrationType": "Srijan'25 Website",
     "eventDescription": [
-      "Unlock the secrets of binary executables and decode your way to victory at our Reverse Engineering Event as part of this Srijan'25! This thrilling competition invites tech buffs to showcase their prowess in unraveling the mysteries of executable files. Gather your team of 1-2 members, as we welcome all the participants to embark on this intellectual journey. Brace yourselves for a two-round challenge where the online Prelims will test your mental mettle, with the top teams advancing to the gripping offline Finals. Join us in this riveting exploration of reverse engineering and leave your imprint in the realm of binary brilliance!"
+      "Put your problem-solving skills to the test in Uncode, a mind-bending challenge where logic and pattern recognition take center stage! As part of Srijan'25, this event challenges teams to analyze given inputs and outputs, uncover the hidden pattern, and write code that replicates it. Gather your team of 1-2 members and prepare for an exhilarating two-round competition. The online Prelims will test your ability to decipher patterns and think algorithmically, with the best teams advancing to the offline Finals, where you'll face even more intriguing challenges. Think you have what it takes to crack the code? Join Uncode and prove your pattern-solving prowess!"
     ],
     "eventRules": [
       "The contest will consist of a number of problems of increasing difficulty.",
@@ -358,7 +407,7 @@
     "minMembers": 1,
     "maxMembers": 4,
     "eventPoster": "controlcraft.webp",
-    "registrationType": "Srijan'24 Website",
+    "registrationType": "Srijan'25 Website",
     "eventDescription": [
       "Get ready to blast off in the Control Craft Robotics Challenge, a mechatronics spectacle like no other, hosted by the Mechatronics Club. This year, we're pushing the boundaries of manual control mastery and robot-building brilliance! The aim is to construct a Manually controlled, wired or wireless robot capable of moving lightweight blocks from one place to another via picking and placing them in designated places while traversing the arena."
     ],
@@ -381,7 +430,9 @@
     "eventID": "hxh",
     "eventName": "HUNTER X HUNTER",
     "eventDate": {
-      "prelims":[   "22nd March 2025"],
+      "prelims": [
+        "22nd March 2025"
+      ],
       "finals": [
         "22nd March 2025"
       ]
@@ -407,7 +458,7 @@
     "minMembers": 1,
     "maxMembers": 3,
     "eventPoster": "hxh.webp",
-    "registrationType": "Srijan'24 Website",
+    "registrationType": "Srijan'25 Website",
     "eventDescription": [
       "Can you OUTSMART, OUTPLAY & OUTRUN your opponents?",
       "Player have to collect 30 pieces of a puzzle scattered across the campus by solving riddles.",
@@ -420,9 +471,8 @@
       "At certain special stages, participants can play mini games for advancement in stages. If they win the mini-game (it will take only 2 min of their time), they can advance 3 additional stages and skip to the 4th place from that stage to search, accordingly. But, beware! Choose to gamble judiciously, lest you wish your choice to haunt you. ",
       "In order to win this game, participants need to hunt down all the pieces and piece them together faster than others. No worries, everyone will be provided a rough map of the entire area & The riddles will NOT be anime based. EVERYONE AND ANYONE CAN participate."
     ],
-    "eventRules":[
-
-    "HUNT DOWN ALL THE JIGSAW PUZZLE PIECES AND PIECE THEM TOGETHER FASTER THAN REST HUNTERS",
+    "eventRules": [
+      "HUNT DOWN ALL THE JIGSAW PUZZLE PIECES AND PIECE THEM TOGETHER FASTER THAN REST HUNTERS",
       "The co-ordinator will announce the first riddle to everyone. Example Riddle: I am tall, when I am young and I am short when I am old. What am I?",
       "The team which solves the riddle first, will tell the co-ordinator their answer in his/her ears, making sure no one else hears the answer.",
       "If their answer is correct, they will receive the clue to proceed to the location of the next stage, alongside a piece of a jigsaw puzzle.",
@@ -438,7 +488,7 @@
     "driveLink": "https://drive.google.com/file/d/1DsxQ5ByVazbeAVS3NkVjMl0M6rfff_pK/view",
     "category": "misc"
   },
-    {
+  {
     "eventID": "mathe",
     "eventName": "Math-e-Magician",
     "eventDate": {
@@ -470,11 +520,11 @@
     "minMembers": 2,
     "maxMembers": 3,
     "eventPoster": "math.webp",
-    "registrationType": "Srijan'24 Website",
+    "registrationType": "Srijan'25 Website",
     "eventDescription": [
       "Math-e-Magician is a team-based mathematical challenge where teams of two to three members solve analytical and reasoning-based problems. The first round is conducted in an offline mode in two slots, where teams solve three intriguing questions in two hours, in either of the two slots, while the second round is an online alternative with higher difficulty for those who did not participate in round one. The top 15 teams (10 from round one and 5 from round two) advance to the final round, where they create and present a hypothesis based on a unique mathematical concept, and shall be judged on that before being presented with an award if they so happen to excel."
     ],
-"eventRules": [
+    "eventRules": [
       "Each team must not preceed 2 members or exceed 3 members. Members can be from any department and any year from the same or different institutions.",
       "Posession of any and all electronic gadgets (mobile phones, tablets, personal computers, etc) is strictly prohobited.",
       "The event would be organized in an Open Book format. Every participating team is thereby  encouraged to bring with them as many books and physical documents as they can conviniently carry with themselves. They shall also be provided with an assortment of physical documents and books from the organizing committee’s end",
@@ -519,11 +569,11 @@
     "minMembers": 3,
     "maxMembers": 3,
     "eventPoster": "cypher3331.webp",
-    "registrationType": "Srijan'24 Website",
+    "registrationType": "Srijan'25 Website",
     "eventDescription": [
       "Participants will dive into an exciting journey of brainstorming, ciphering, and Cryptography with no prior experience needed! Just a device on which A short crash course will equip you with all the essential of cryptographic techniques you'll need to crack the code. Using this knowledge and your presence of mind, you need to battle through 4 thrilling stages in prelims to secure your spot at the dream finals of Cypher 3331. Ready to crack the code? Then let the game of cipher begin!"
     ],
-"eventRules": [
+    "eventRules": [
       "Prelims :  A 3-hour Brainstorming Quiz designed to test participants' analytical and observational skills will be conducted on our own platform. Before the quiz, a short introductory session on cryptography and ciphering techniques will be provided, ensuring that no prior knowledge is required.",
       "Finals :  A more intense and challenging quiz session, designed to push participants further and test their mastery of the concepts learned."
     ],
@@ -561,13 +611,21 @@
     "minMembers": 1,
     "maxMembers": 1,
     "eventPoster": "climbOn.webp",
-    "registrationType": "Srijan'24 Website",
+    "registrationType": "Srijan'25 Website",
     "eventDescription": [
       "Climb On is a climbing competition for individuals who want to challenge themselves and compete with other climbers. The event has two rounds: Prelims and Finals. The participants are divided into two categories: Men and Women. They have to climb as high as they can, and their scores are based on height and time. The event is open for all ages and levels of climbers."
     ],
-"eventRules": [
-      "1.: The competition consists of two rounds - Prelims and Final.","2. Participants must qualify in the prelims first to advance to the final round.","3. Participation is open to all, regardless of affiliation with Jadavpur University, as long as you have a valid Aadhar card.",
-      "4. Each participant will get only one chance per round to climb.","5. All safety gears will be provided at the event place.","6. Points are provided based on the highest hold touched or reached.","7. The participants with the top three highest scores in the final round will be declared winners.","8. Any participant not following safety rules will be disqualified.","9. There will be a prize pool of ₹6000.","10. In case of any discrepancies, final decision will be made by the judge(s) and event staff."
+    "eventRules": [
+      "1.: The competition consists of two rounds - Prelims and Final.",
+      "2. Participants must qualify in the prelims first to advance to the final round.",
+      "3. Participation is open to all, regardless of affiliation with Jadavpur University, as long as you have a valid Aadhar card.",
+      "4. Each participant will get only one chance per round to climb.",
+      "5. All safety gears will be provided at the event place.",
+      "6. Points are provided based on the highest hold touched or reached.",
+      "7. The participants with the top three highest scores in the final round will be declared winners.",
+      "8. Any participant not following safety rules will be disqualified.",
+      "9. There will be a prize pool of ₹6000.",
+      "10. In case of any discrepancies, final decision will be made by the judge(s) and event staff."
     ],
     "driveLink": "https://drive.google.com/file/d/1sPBywAVbdiqht0izJ8Y2aGNc5blBaFC0/view?ts=67c3e20e",
     "category": "misc"
@@ -576,52 +634,52 @@
     "eventID": "ple",
     "eventName": "PIXELLENSE",
     "eventDate": {
-        "prelims": [
-            "TBD"
-        ],
-        "finals": [
-            "TBD"
-        ]
+      "prelims": [
+        "TBD"
+      ],
+      "finals": [
+        "TBD"
+      ]
     },
     "eventType": "misc",
     "eventHashtags": [
-        "photography",
-        "creativity",
-        "visual-art",
-        "tech-fest"
+      "photography",
+      "creativity",
+      "visual-art",
+      "tech-fest"
     ],
     "registrationOpen": true,
     "eventCoordinators": [
-        "Ankan Pal[+91 8900397266]",
-        "Anindya Karmakar[+91 9674782427]",
-        "Satadru Das[+91 8240064430]"
+      "Ankan Pal[+91 8900397266]",
+      "Anindya Karmakar[+91 9674782427]",
+      "Satadru Das[+91 8240064430]"
     ],
     "prize": [
-        "1st : Tripod",
-        "2nd : Lens Cleaning Kit",
-        "3rd : Lens Cleaning Kit"
+      "1st : Tripod",
+      "2nd : Lens Cleaning Kit",
+      "3rd : Lens Cleaning Kit"
     ],
     "minMembers": 1,
     "maxMembers": 1,
     "eventPoster": "ple.webp",
-    "registrationType": "Srijan'24 Website",
+    "registrationType": "Srijan'25 Website",
     "eventDescription": [
-        "Jadavpur University Photographic Club is thrilled to announce PixelLense, a mesmerizing photography event at Tech Fest Srijan! Get ready for a visual feast. As a talented shutterbug, showcase your creativity and skill. Click stunning pictures, showcase your aesthetic skillset and much more. So, what are you waiting for? Grab your camera and start capturing amazing shots."
+      "Jadavpur University Photographic Club is thrilled to announce PixelLense, a mesmerizing photography event at Tech Fest Srijan! Get ready for a visual feast. As a talented shutterbug, showcase your creativity and skill. Click stunning pictures, showcase your aesthetic skillset and much more. So, what are you waiting for? Grab your camera and start capturing amazing shots."
     ],
     "eventRules": [
-        "Photographs can be clicked using any device (mobile, DSLR, mirrorless, etc.)",
-        "Metadata of the photograph should be present. Absence of metadata will lead to disqualification of the entry.",
-        "The theme for the photograph will be given at 11 am on the event day. Participants will have to click relevant photos on the given theme.",
-        "All photographs must be clicked AFTER commencement of the event, INSIDE Jadavpur University Salt Lake Campus.",
-        "Minimum post-processing is allowed, including cropping, colour correction, conversion to grayscale, reasonable exposure/contrast adjustments, etc.",
-        "Image manipulation of any kind, or use of Artificial Intelligence is strictly prohibited. Doing so will lead to disqualification.",
-        "The photograph should not contain a watermark. Entries will not be disqualified, but a watermark will be counted as a discredit.",
-        "There will be ONE entry per participant. All entries must be emailed by 9 AM of Day 2.",
-        "Top 30 photographs will be chosen by our judge by 4 pm of Day 2, and they will be printed and displayed in the exhibition area by end of day.",
-        "Each photograph will have a serial number written on it, along with a voting QR. People can vote for the best picture by scanning the QR code and typing the serial number of the picture. One person will be allowed one vote.",
-        "Voting will end on 4 PM of Day 3.",
-        "Weightage of 40% of votes and 60% of judges score will be considered when calculating the final score for the top 30 photographs.",
-        "Top 3 winners will be selected on the basis of the total score."
+      "Photographs can be clicked using any device (mobile, DSLR, mirrorless, etc.)",
+      "Metadata of the photograph should be present. Absence of metadata will lead to disqualification of the entry.",
+      "The theme for the photograph will be given at 11 am on the event day. Participants will have to click relevant photos on the given theme.",
+      "All photographs must be clicked AFTER commencement of the event, INSIDE Jadavpur University Salt Lake Campus.",
+      "Minimum post-processing is allowed, including cropping, colour correction, conversion to grayscale, reasonable exposure/contrast adjustments, etc.",
+      "Image manipulation of any kind, or use of Artificial Intelligence is strictly prohibited. Doing so will lead to disqualification.",
+      "The photograph should not contain a watermark. Entries will not be disqualified, but a watermark will be counted as a discredit.",
+      "There will be ONE entry per participant. All entries must be emailed by 9 AM of Day 2.",
+      "Top 30 photographs will be chosen by our judge by 4 pm of Day 2, and they will be printed and displayed in the exhibition area by end of day.",
+      "Each photograph will have a serial number written on it, along with a voting QR. People can vote for the best picture by scanning the QR code and typing the serial number of the picture. One person will be allowed one vote.",
+      "Voting will end on 4 PM of Day 3.",
+      "Weightage of 40% of votes and 60% of judges score will be considered when calculating the final score for the top 30 photographs.",
+      "Top 3 winners will be selected on the basis of the total score."
     ],
     "driveLink": "https://drive.google.com/file/d/1MNxhmYoRsTENWJwPbv7MB-bBVr7e6SH4/view",
     "category": "misc"
@@ -630,25 +688,25 @@
     "eventID": "sgv",
     "eventName": "SquidGame VoltEdged",
     "eventDate": {
-        "prelims": [
-            "TBD"
-        ],
-        "finals": [
-            "TBD"
-        ]
+      "prelims": [
+        "TBD"
+      ],
+      "finals": [
+        "TBD"
+      ]
     },
     "eventType": "circuits and robotics",
     "eventHashtags": [
-        "squid-game",
-        "power-engineering",
-        "circuit-design",
-        "arduino"
+      "squid-game",
+      "power-engineering",
+      "circuit-design",
+      "arduino"
     ],
     "registrationOpen": true,
     "eventCoordinators": [
-        "Rohit Pal[+91 9748202494]",
-        "Mainak Goswami[+91 9748538376]",
-        "Hritaban Goswami[+91 9330013204]"
+      "Rohit Pal[+91 9748202494]",
+      "Mainak Goswami[+91 9748538376]",
+      "Hritaban Goswami[+91 9330013204]"
     ],
     "prize": [
       "1st : Certificate, Rs 2,500 cash prize",
@@ -658,181 +716,183 @@
     "minMembers": 2,
     "maxMembers": 3,
     "eventPoster": "sgv.webp",
-    "registrationType": "Srijan'24 Website",
+    "registrationType": "Srijan'25 Website",
     "eventDescription": [
-        "Ramp up your skills one volt at a time. Participate in SquidGame VoltEdged, a squid game themed hands-on event presented by the Department of Power Engineering to showcase your technical 'POWER' in topics ranging from circuit design to Arduino to power transfer systems and a whole bunch of things that will definitely keep you at the 'EDGE' of your seats. Excellent learning opportunities and cash prizes await you!"
+      "Ramp up your skills one volt at a time. Participate in SquidGame VoltEdged, a squid game themed hands-on event presented by the Department of Power Engineering to showcase your technical 'POWER' in topics ranging from circuit design to Arduino to power transfer systems and a whole bunch of things that will definitely keep you at the 'EDGE' of your seats. Excellent learning opportunities and cash prizes await you!"
     ],
     "eventRules": [
-        "Round 1: Red Light - Green Light",
-        "A rapid-fire quiz on concepts ranging from electrical, electronics, mechanical and power transfer systems which closely corresponds to the scope of Power Engineering.",
-        "25 questions with a time limit (An additional of 10 questions in the case of tie breakers).",
-        "After this round, 12 teams will qualify to the 2nd round.",
-        "Round 2: Glass Bridge",
-        "Hands-on round. This round will demand the participants to build an Arduino and electronics-based power transfer circuit system.",
-        "(In every team, one laptop must be present and all other electronic components will be provided).",
-        "Basic knowledge of Arduino and power electronics is required.",
-        "Only 6 teams qualify to the final round.",
-        "Whosoever completes the circuit faster secures the top spots (points will be given by the judges according to the progress of the team).",
-        "Round 3: Ppopgi",
-        "This event involves a lucky draw with certain circuit problems that the teams will have to build on a breadboard.",
-        "This event involves electronic circuits of various use cases.",
-        "Whosoever completes the circuit faster secures the top spots (points will be given by the judges according to the progress of the team).",
-        "For further details, please refer to the attachment at the following link: https://drive.google.com/file/d/1UFduh89sCfl6vrvfy9NXzU-7RbZY-NJG/view"
+      "Round 1: Red Light - Green Light",
+      "A rapid-fire quiz on concepts ranging from electrical, electronics, mechanical and power transfer systems which closely corresponds to the scope of Power Engineering.",
+      "25 questions with a time limit (An additional of 10 questions in the case of tie breakers).",
+      "After this round, 12 teams will qualify to the 2nd round.",
+      "Round 2: Glass Bridge",
+      "Hands-on round. This round will demand the participants to build an Arduino and electronics-based power transfer circuit system.",
+      "(In every team, one laptop must be present and all other electronic components will be provided).",
+      "Basic knowledge of Arduino and power electronics is required.",
+      "Only 6 teams qualify to the final round.",
+      "Whosoever completes the circuit faster secures the top spots (points will be given by the judges according to the progress of the team).",
+      "Round 3: Ppopgi",
+      "This event involves a lucky draw with certain circuit problems that the teams will have to build on a breadboard.",
+      "This event involves electronic circuits of various use cases.",
+      "Whosoever completes the circuit faster secures the top spots (points will be given by the judges according to the progress of the team).",
+      "For further details, please refer to the attachment at the following link: https://drive.google.com/file/d/1UFduh89sCfl6vrvfy9NXzU-7RbZY-NJG/view"
     ],
     "driveLink": "https://drive.google.com/file/d/1UFduh89sCfl6vrvfy9NXzU-7RbZY-NJG/view",
     "category": "circuits and robotics"
-},
-{
-  "eventID": "rnr",
-  "eventName": "Rook n Roll",
-  "eventDate": {
-    "prelims": [
-      "March 15, 2025"
-    ],
-    "finals": [
-      "March 23, 2025"
-    ]
   },
-  "eventType": "gaming",
-  "eventHashtags": [
-    "chess",
-    "strategy",
-    "competition",
-    "srijan25"
-  ],
-  "registrationOpen": true,
-  "eventCoordinators": [
-    "Anshuman Banik[+91 79771 06418]",
-    "Navaneel Chakroborty[+91 90519 29490]",
-    "Arka Dhar[+91 78729 80084]"
-  ],
-  "prize": [
-    "1st Place: ₹800",
-    "2nd Place: ₹500",
-    "3rd Place: ₹200"
-  ],
-  "minMembers": 1,
-  "maxMembers": 1,
-  "eventPoster": "rnr.webp",
-  "registrationType": "Srijan'25 Website",
-  "eventDescription": [
-    "♟️ Rook n Roll : The Ultimate Chess Showdown! ♟️","Think fast, plan ahead, and outplay your opponents in Rook n Roll, the premier chess competition at SRIJAN'25, presented by F.E.T.S.U., Jadavpur University. Whether you're a seasoned player or a rising tactician, brace yourself for intense battles where strategy meets skill. The stakes are high, the board is set—will you claim the checkmate?"
-  ],
-  "eventRules": [
-    "Tournament Structure:",
-    "Mode: Hybrid (Online + Offline)",
-    "Total Rounds: 3 stages : Online Qualifiers, Offline Semi-Finals, and Finals",
-    "• Finals : 3 minutes + 3 seconds increment per move",
-    " Platform for Online Rounds: Lichess",
-    "Offline Venue: To be announced before the event",
-    "Tiebreak Rules:",
-    " Blitz Playoff (3+2, Best-of-2 games)",
-    " Sudden Death Blitz (3+2, must-win game)"
-  ],
-  "driveLink": "https://drive.google.com/file/d/1WBUgSqyxKqFpro57ay0vYpxY2fKqet2j/view",
-  "category": "gaming"
-},
-{
-  "eventID": "ace-the-case",
-  "eventName": "Ace The Case",
-  "eventDate": {
-    "prelims": [
-      "March 11, 2025"
+  {
+    "eventID": "rnr",
+    "eventName": "Rook n Roll",
+    "eventDate": {
+      "prelims": [
+        "March 15, 2025"
+      ],
+      "finals": [
+        "March 23, 2025"
+      ]
+    },
+    "eventType": "gaming",
+    "eventHashtags": [
+      "chess",
+      "strategy",
+      "competition",
+      "srijan25"
     ],
-    "finals": [
-      "March 22, 2025"
-    ]
-  },
-  "eventType": "business",
-  "eventHashtags": [
-    "business",
-    "case-study",
-    "strategy",
-    "competition"
-  ],
-  "registrationOpen": true,
-  "eventCoordinators": [
-    "Anubrata Karmakar[+91 6295825907]",
-    "Arka Dhar[+91 7872980084]",
-    "Rahul Pandey[+91 8961716604]"
-  ],
-  "prize": [
-    "1st : Certificate, Rs 2,500 cash prize",
-    "2nd : Certificate, Rs 1,500 cash prize",
-    "3rd : Certificate, Rs 1,000 cash prize"
-  ],
-  "minMembers": 2,
-  "maxMembers": 3,
-  "eventPoster": "ace-the-case.webp",
-  "registrationType": "Srijan'25 Website",
-  "eventDescription": [
-    "Do you have an aptitude for brainstorming and a knack for finding solutions to problems?\nUnleash your problem-solving prowess in 'Ace the Case'!\nHop in for a thrilling opportunity to analyze real-world challenges, develop innovative solutions, and showcase your strategic acumen in this case study competition.\nEmbrace the chance to network, interact, and rise to the challenge!"
-  ],
-  "eventRules": [
-    "Team size: 2 to 3 members.",
-    "Cross-college teams are allowed.",
-    "Judge's decision is final and irrevocable.",
-    "The event is to be conducted in two rounds: Selection Round and Finale.",
-    "Join the group using the links provided by email for all required communication.",
-    "Strictly adhere to the slide limit and provide data sources for all rounds.",
-    "Selection Round - Online (Unstop), 11th March.",
-    "Final Round - Offline, 22nd March."
-  ],
-  "driveLink": "https://drive.google.com/file/d/1OQdr2y7q9H0PqggDkC1BeOkINVJo-HVm/view",
-  "category": "business"
-},
-{
-  "eventID": "chp",
-  "eventName": "Chip-o-Mania",
-  "eventDate": {
-    "prelims": [
-      "TBD"
+    "registrationOpen": true,
+    "eventCoordinators": [
+      "Anshuman Banik[+91 79771 06418]",
+      "Navaneel Chakroborty[+91 90519 29490]",
+      "Arka Dhar[+91 78729 80084]"
     ],
-    "finals": [
-      "TBD"
-    ]
+    "prize": [
+      "1st Place: ₹800",
+      "2nd Place: ₹500",
+      "3rd Place: ₹200"
+    ],
+    "minMembers": 1,
+    "maxMembers": 1,
+    "eventPoster": "rnr.webp",
+    "registrationType": "Srijan'25 Website",
+    "eventDescription": [
+      "♟️ Rook n Roll : The Ultimate Chess Showdown! ♟️",
+      "Think fast, plan ahead, and outplay your opponents in Rook n Roll, the premier chess competition at SRIJAN'25, presented by F.E.T.S.U., Jadavpur University. Whether you're a seasoned player or a rising tactician, brace yourself for intense battles where strategy meets skill. The stakes are high, the board is set—will you claim the checkmate?"
+    ],
+    "eventRules": [
+      "Tournament Structure:",
+      "Mode: Hybrid (Online + Offline)",
+      "Total Rounds: 3 stages : Online Qualifiers, Offline Semi-Finals, and Finals",
+      "• Finals : 3 minutes + 3 seconds increment per move",
+      " Platform for Online Rounds: Lichess",
+      "Offline Venue: To be announced before the event",
+      "Tiebreak Rules:",
+      " Blitz Playoff (3+2, Best-of-2 games)",
+      " Sudden Death Blitz (3+2, must-win game)"
+    ],
+    "driveLink": "https://drive.google.com/file/d/1WBUgSqyxKqFpro57ay0vYpxY2fKqet2j/view",
+    "category": "gaming"
   },
-  "eventType": "circuits and robotics",
-  "eventHashtags": [
-    "VLSI",
-    "IoT",
-    "innovation",
-    "technology"
-  ],
-  "registrationOpen": true,
-  "eventCoordinators": [
-    "Subha Bhattacharya[+91 9073701438]",
-    "Adway Paul[+91 8240384498]",
-    "Aayush Konar[+91 9972095077]"
-  ],
-  "prize": [
-    "1st : TBD ",
-    "2nd : TBD ",
-    "3rd : TBD "
-  ],
-  "minMembers": 2,
-  "maxMembers": 4,
-  "eventPoster": "chp.webp",
-  "registrationType": "Srijan'25 Website",
-  "eventDescription": [
-    "*PROBLEM STATEMENT RELEASES ON MARCH 5!* Step into the world of Chip-o-Mania, a dynamic hackathon and idea presentation event where cutting-edge VLSI (Very Large Scale Integration) challenges await. Guided by Digital VLSI Club professors and industry experts, you’ll tackle real-world problems and propose innovative solutions backed by software simulations.\nShow off your creativity, problem-solving skills, and technical expertise as you help shape the future of semiconductor technology. Ready to push the limits of what’s possible? Let’s revolutionize VLSI together!"
-  ],
-  "eventRules": [
-    "Round 1: Abstract Submission (Online Screening)",
-    "Teams will submit an abstract (max. 4 pages) outlining their approach to the given problem statement. Format will be shared in the form of submission itself.",
-    "The problem Statement would be in the domain of Analog, Digital VLSI or Mixed Signal. The Problem Statement would go live 15 days before Day 0 of Srijan 2025.",
-    "Teams need to choose their domain of submission i.e Analog, Digital or Mixed Signals during filling of form. The forms would close at EOD on Day 0 as per IST.",
-    "The abstract should include a problem analysis, proposed methodology, tools/software to be used, and expected outcomes with relevant block diagrams and simulation results using EDA tools like Cadence, Synopsys, Xilinx Vivado, Iverilog, Mentor Graphics, etc.",
-    "Any Simulations or Proposals based on direct implementation on a Raspberry Pi or Arduino will be eliminated. However, implementations based on FPGAs would be credited. Teams can use online FPGA simulators or use in-built simulators in Xilinx Vivado for Digital ideas for Chip-o-Mania.",
-    "Top 10 teams will be shortlisted for the next round.",
-    "Round 2: Onsite Idea Presentation",
-    "Shortlisted teams will work on their proposed solutions and develop software-based simulations using EDA tools such as Cadence, Synopsys, Xilinx Vivado, Iverilog, Mentor Graphics, etc.",
-    "Each team will be allotted 15 mins for idea presentation and/or any live simulation of results.",
-    "Teams will present their ideas and simulation results to a panel of industry experts and professors who will judge the teams."
-  ],
-  "driveLink": "https://docs.google.com/document/d/1a0Ju2kPx0Giwk07fIfT_-ggxBMGqqBsa/edit#heading=h.30j0zll",
-  "category": "circuits and robotics"
-},  {
+  {
+    "eventID": "ace-the-case",
+    "eventName": "Ace The Case",
+    "eventDate": {
+      "prelims": [
+        "March 15, 2025"
+      ],
+      "finals": [
+        "March 22, 2025"
+      ]
+    },
+    "eventType": "business",
+    "eventHashtags": [
+      "business",
+      "case-study",
+      "strategy",
+      "competition"
+    ],
+    "registrationOpen": true,
+    "eventCoordinators": [
+      "Anubrata Karmakar[+91 6295825907]",
+      "Arka Dhar[+91 7872980084]",
+      "Rahul Pandey[+91 8961716604]"
+    ],
+    "prize": [
+      "1st : Certificate, Rs 2,500 cash prize",
+      "2nd : Certificate, Rs 1,500 cash prize",
+      "3rd : Certificate, Rs 1,000 cash prize"
+    ],
+    "minMembers": 2,
+    "maxMembers": 3,
+    "eventPoster": "ace-the-case.webp",
+    "registrationType": "Srijan'25 Website",
+    "eventDescription": [
+      "Do you have an aptitude for brainstorming and a knack for finding solutions to problems?\nUnleash your problem-solving prowess in 'Ace the Case'!\nHop in for a thrilling opportunity to analyze real-world challenges, develop innovative solutions, and showcase your strategic acumen in this case study competition.\nEmbrace the chance to network, interact, and rise to the challenge!"
+    ],
+    "eventRules": [
+      "Team size: 2 to 3 members.",
+      "Cross-college teams are allowed.",
+      "Judge's decision is final and irrevocable.",
+      "The event is to be conducted in two rounds: Selection Round and Finale.",
+      "Join the group using the links provided by email for all required communication.",
+      "Strictly adhere to the slide limit and provide data sources for all rounds.",
+      "Selection Round - Online (Unstop), 11th March.",
+      "Final Round - Offline, 22nd March."
+    ],
+    "driveLink": "https://drive.google.com/file/d/1OQdr2y7q9H0PqggDkC1BeOkINVJo-HVm/view",
+    "category": "business"
+  },
+  {
+    "eventID": "chp",
+    "eventName": "Chip-o-Mania",
+    "eventDate": {
+      "prelims": [
+        "TBD"
+      ],
+      "finals": [
+        "TBD"
+      ]
+    },
+    "eventType": "circuits and robotics",
+    "eventHashtags": [
+      "VLSI",
+      "IoT",
+      "innovation",
+      "technology"
+    ],
+    "registrationOpen": true,
+    "eventCoordinators": [
+      "Subha Bhattacharya[+91 9073701438]",
+      "Adway Paul[+91 8240384498]",
+      "Aayush Konar[+91 9972095077]"
+    ],
+    "prize": [
+      "1st : TBD ",
+      "2nd : TBD ",
+      "3rd : TBD "
+    ],
+    "minMembers": 2,
+    "maxMembers": 4,
+    "eventPoster": "chp.webp",
+    "registrationType": "Srijan'25 Website",
+    "eventDescription": [
+      "*PROBLEM STATEMENT RELEASES ON MARCH 5!* Step into the world of Chip-o-Mania, a dynamic hackathon and idea presentation event where cutting-edge VLSI (Very Large Scale Integration) challenges await. Guided by Digital VLSI Club professors and industry experts, you’ll tackle real-world problems and propose innovative solutions backed by software simulations.\nShow off your creativity, problem-solving skills, and technical expertise as you help shape the future of semiconductor technology. Ready to push the limits of what’s possible? Let’s revolutionize VLSI together!"
+    ],
+    "eventRules": [
+      "Round 1: Abstract Submission (Online Screening)",
+      "Teams will submit an abstract (max. 4 pages) outlining their approach to the given problem statement. Format will be shared in the form of submission itself.",
+      "The problem Statement would be in the domain of Analog, Digital VLSI or Mixed Signal. The Problem Statement would go live 15 days before Day 0 of Srijan 2025.",
+      "Teams need to choose their domain of submission i.e Analog, Digital or Mixed Signals during filling of form. The forms would close at EOD on Day 0 as per IST.",
+      "The abstract should include a problem analysis, proposed methodology, tools/software to be used, and expected outcomes with relevant block diagrams and simulation results using EDA tools like Cadence, Synopsys, Xilinx Vivado, Iverilog, Mentor Graphics, etc.",
+      "Any Simulations or Proposals based on direct implementation on a Raspberry Pi or Arduino will be eliminated. However, implementations based on FPGAs would be credited. Teams can use online FPGA simulators or use in-built simulators in Xilinx Vivado for Digital ideas for Chip-o-Mania.",
+      "Top 10 teams will be shortlisted for the next round.",
+      "Round 2: Onsite Idea Presentation",
+      "Shortlisted teams will work on their proposed solutions and develop software-based simulations using EDA tools such as Cadence, Synopsys, Xilinx Vivado, Iverilog, Mentor Graphics, etc.",
+      "Each team will be allotted 15 mins for idea presentation and/or any live simulation of results.",
+      "Teams will present their ideas and simulation results to a panel of industry experts and professors who will judge the teams."
+    ],
+    "driveLink": "https://docs.google.com/document/d/1a0Ju2kPx0Giwk07fIfT_-ggxBMGqqBsa/edit#heading=h.30j0zll",
+    "category": "circuits and robotics"
+  },
+  {
     "eventID": "HackForge",
     "eventName": "HackForge",
     "eventDate": {
@@ -863,14 +923,13 @@
     "minMembers": 3,
     "maxMembers": 4,
     "eventPoster": "hack.webp",
-    "registrationType": "Srijan'24 Website",
+    "registrationType": "Srijan'25 Website",
     "eventShortDescription": "Embark on the ML adventure in 'OpenAImer'! Unleash your algorithms, analyse data, and spark innovation!",
-"eventDescription": [
-  "Welcome to HackForge, an electrifying offline hackathon organized by CodeClub JUSL as part of Srijan'25, the annual techno-management fest of Jadavpur University. HackForge is more than just a competition; it’s a place where creativity meets technology, and where participants can push their boundaries, collaborate, and bring groundbreaking ideas to life.",
-  "Our goal is to ignite a passion for programming and problem-solving among students from diverse academic backgrounds. At HackForge, we believe in fostering an ecosystem where innovation, teamwork, and technological excellence come together. Participants will have the opportunity to network with like-minded peers, showcase their problem-solving abilities, and develop real-world solutions that could make a tangible impact.",
-  "Whether you're an experienced coder or an aspiring tech enthusiast, HackForge offers you the perfect stage to test your skills, learn new technologies, and challenge yourself. Join us for this exciting journey, where innovation has no limits, and let’s work together to shape the future of technology!"
-]
-    ,
+    "eventDescription": [
+      "Welcome to HackForge, an electrifying offline hackathon organized by CodeClub JUSL as part of Srijan'25, the annual techno-management fest of Jadavpur University. HackForge is more than just a competition; it’s a place where creativity meets technology, and where participants can push their boundaries, collaborate, and bring groundbreaking ideas to life.",
+      "Our goal is to ignite a passion for programming and problem-solving among students from diverse academic backgrounds. At HackForge, we believe in fostering an ecosystem where innovation, teamwork, and technological excellence come together. Participants will have the opportunity to network with like-minded peers, showcase their problem-solving abilities, and develop real-world solutions that could make a tangible impact.",
+      "Whether you're an experienced coder or an aspiring tech enthusiast, HackForge offers you the perfect stage to test your skills, learn new technologies, and challenge yourself. Join us for this exciting journey, where innovation has no limits, and let’s work together to shape the future of technology!"
+    ],
     "eventRules": [
       "The Coding + Pitching Round will begin precisely at 10:00 AM. All team members must be present onsite at the scheduled time. Failure to do so will result in disqualification.",
       "Participants are allowed to use any technology stack of their choice to develop their solution.",
@@ -880,29 +939,41 @@
       "Food and beverages will be provided to all team members participating in the onsite round."
     ],
     "category": "coding",
-    "driveLink":"https://unstop.com/p/hackforge-forging-the-future-code-club-jusl-jadavpur-university-salt-lake-campus-juslcc-1415836"
-}  
-  ,
-   {
+    "driveLink": "https://unstop.com/p/hackforge-forging-the-future-code-club-jusl-jadavpur-university-salt-lake-campus-juslcc-1415836"
+  },
+  {
     "eventID": "coldcase",
     "eventName": "Cold Case",
     "eventDate": {
-      "prelims": ["21st, 22nd, 23rd March 2025"],
-      "finals": ["21st, 22nd, 23rd March 2025"]
+      "prelims": [
+        "21st, 22nd, 23rd March 2025"
+      ],
+      "finals": [
+        "21st, 22nd, 23rd March 2025"
+      ]
     },
     "eventType": "brainstorming",
-    "eventHashtags": ["hackathon", "machinelearning", "ai", "openaimer"],
+    "eventHashtags": [
+      "hackathon",
+      "machinelearning",
+      "ai",
+      "openaimer"
+    ],
     "registrationOpen": true,
     "eventCoordinators": [
       "Spandan Saha Roy[9775591123]",
       "Swastick Sarkar[8100447132]",
       "Md. Farhan Alam[6290802177]"
     ],
-    "prize": ["1st : 3000", "2nd : 2000", "3rd : 1000"],
+    "prize": [
+      "1st : 3000",
+      "2nd : 2000",
+      "3rd : 1000"
+    ],
     "minMembers": 1,
     "maxMembers": 1,
     "eventPoster": "cold.webp",
-    "registrationType": "Srijan'24 Website",
+    "registrationType": "Srijan'25 Website",
     "eventFormat": [
       "Round 1: Participants will be presented with a mystery-based case study (e.g., a murder mystery, a heist, or an unsolved crime). They must analyse clues, identify inconsistencies, and deduce the most logical solution within a given time frame. The fastest and most accurate teams will qualify for the final round.\n",
       "Round 2 (Finals): A more complex case study will be given, with deeper layers of deception, multiple suspects, and hidden clues. Teams will have to connect evidence, build logical arguments, and present their final conclusion. The team demonstrating the best analytical thinking and speed will be declared the winner."
@@ -910,45 +981,58 @@
     "eventDescription": [
       "This event will consist of two offline rounds, each presenting a case study. Participants are required to provide the most accurate solution in the shortest possible time. The team demonstrating the fastest and most accurate analysis will be declared the winner and awarded attractive prizes."
     ],
-    "eventRules": ["TBD"],
+    "eventRules": [
+      "TBD"
+    ],
     "driveLink": "https://drive.google.com/file/d/1xafd_ldmJjauS3n19PGs_t0UB5tAcPBl/view?usp=sharing",
     "category": "brainstorming"
   },
   {
-    
-      "eventID": "jal-astra",
-      "eventName": "JAL ASTRA",
-      "eventDate": {
-        "prelims": ["TBD"],
-        "finals": "TBD"
-      },
-      "eventType": "misc",
-      "eventHashtags": ["hackathon", "machinelearning", "ai", "openaimer"],
-      "registrationOpen": false,
-      "eventCoordinators": [
-        " Kaulik Das [9830669894 ]",
-        "Avipso Sinha [9433243651]",
-        "Shayan Charan [9163123389]"
+    "eventID": "jal-astra",
+    "eventName": "JAL ASTRA",
+    "eventDate": {
+      "prelims": [
+        "TBD"
       ],
-      "prize": ["1st : 2500    ", "2nd : 1500    ", "3rd : 1000"],
-      "minMembers": 2,
-      "maxMembers": 3,
-      "eventPoster": "jalastra.webp",
-      "registrationType": "Srijan'24 Website",
-      "eventShortDescription": "Embark on the ML adventure in 'OpenAImer'! Unleash your algorithms, analyse data, and spark innovation!",
-      "eventDescription": [
-          " Jal Astra paves the way for an exciting journey to design and construct a high-performance water rocket, aimed at achieving maximum range and precision landing. This event will focus on creating a streamlined body to minimize air resistance, featuring an optimized nose cone and stable fins for enhanced stability."
-      ],
-      "eventRules": [
-        "Only applicants within the registration time frame will be accepted. Late or incomplete registrations will not be entertained.",
-        "All teams must strictly adhere to the competition guidelines and design constraints outlined in this event documentation.",
-        "Any deviation or violation of the rules will result in immediate disqualification.",
-        "Teams are expected to maintain professionalism. Any form of misconduct will lead to immediate disqualification.",
-        "The Decision of the Event Coordinator will be final and NO Arguments  shall be entertained."
-      ],
-      "category": "misc",
-      "driveLink": "https://drive.google.com/file/d/1XEOn9iZWAaGBGwkQfWvI7G0w0NHScmH4/view?usp=sharing"
-    },{
+      "finals": "TBD"
+    },
+    "eventType": "misc",
+    "eventHashtags": [
+      "hackathon",
+      "machinelearning",
+      "ai",
+      "openaimer"
+    ],
+    "registrationOpen": false,
+    "eventCoordinators": [
+      " Kaulik Das [9830669894 ]",
+      "Avipso Sinha [9433243651]",
+      "Shayan Charan [9163123389]"
+    ],
+    "prize": [
+      "1st : 2500    ",
+      "2nd : 1500    ",
+      "3rd : 1000"
+    ],
+    "minMembers": 2,
+    "maxMembers": 3,
+    "eventPoster": "jalastra.webp",
+    "registrationType": "Srijan'25 Website",
+    "eventShortDescription": "Embark on the ML adventure in 'OpenAImer'! Unleash your algorithms, analyse data, and spark innovation!",
+    "eventDescription": [
+      " Jal Astra paves the way for an exciting journey to design and construct a high-performance water rocket, aimed at achieving maximum range and precision landing. This event will focus on creating a streamlined body to minimize air resistance, featuring an optimized nose cone and stable fins for enhanced stability."
+    ],
+    "eventRules": [
+      "Only applicants within the registration time frame will be accepted. Late or incomplete registrations will not be entertained.",
+      "All teams must strictly adhere to the competition guidelines and design constraints outlined in this event documentation.",
+      "Any deviation or violation of the rules will result in immediate disqualification.",
+      "Teams are expected to maintain professionalism. Any form of misconduct will lead to immediate disqualification.",
+      "The Decision of the Event Coordinator will be final and NO Arguments  shall be entertained."
+    ],
+    "category": "misc",
+    "driveLink": "https://drive.google.com/file/d/1XEOn9iZWAaGBGwkQfWvI7G0w0NHScmH4/view?usp=sharing"
+  },
+  {
     "eventID": "rbs",
     "eventName": "Robosoccer",
     "eventDate": {
@@ -1020,7 +1104,7 @@
       "2nd : Certificate, Rs 1,500 cash prize",
       "3rd : Certificate, Rs 1,000 cash prize"
     ],
-    "minMembers": 2,
+    "minMembers": 1,
     "maxMembers": 3,
     "eventPoster": "stratedgex.webp",
     "registrationType": "Srijan'25 Website",
@@ -1074,11 +1158,11 @@
       "Unleash your stock savvy with Capital Clash. Present your case for the most investable stocks and compete for financial aristocracy. Don't miss out on the ultimate showdown of market mastery!"
     ],
     "eventRules": [
-    "There will be 2 rounds: Preliminary round and Final round.",
-    "Preliminary round - Online; Final round - Offline.",
-    "Preliminary round - You have to select the most investable stocks among different companies listed. Final round - You have to pitch a presentation with around 10 slides in front of judges.",
-    "Certificates for winners.",
-    "Online PPT submission by 21st March; Offline competition on 23rd March."
+      "There will be 2 rounds: Preliminary round and Final round.",
+      "Preliminary round - Online; Final round - Offline.",
+      "Preliminary round - You have to select the most investable stocks among different companies listed. Final round - You have to pitch a presentation with around 10 slides in front of judges.",
+      "Certificates for winners.",
+      "Online PPT submission by 21st March; Offline competition on 23rd March."
     ],
     "driveLink": "https://drive.google.com/file/d/1-E3vES1_Q4o_MTWp4uxxee-xi9jgeBgv/view?usp=drivesdk",
     "category": "business"
@@ -1104,7 +1188,7 @@
     "registrationOpen": true,
     "eventCoordinators": [
       "Anirban Das[+91 8100652687]",
-      "Abhirup Guha Roy[+91 8910232532]",
+      "Shreshtha Karmakar[+91 8389945831]",
       "Soumalya Nandi[+91 6394686862]"
     ],
     "prize": [
@@ -1160,9 +1244,9 @@
       "Soham Sharma Sarkar[+91 9836937267]"
     ],
     "prize": [
-      "1st : TBD ",
-      "2nd : TBD ",
-      "3rd : TBD "
+      "1st : Certificate, Rs 10,000 cash prize",
+      "2nd : Certificate, Rs 8,000 cash prize ",
+      "3rd : Certificate, Rs 5,000 cash prize"
     ],
     "minMembers": 3,
     "maxMembers": 4,
@@ -1221,5 +1305,484 @@
     ],
     "driveLink": "https://docs.google.com/document/d/1RSGmDikWcUddXtkDxZ-Dt1xKXFCUD4h0VTKH0l9TaL0/edit?tab=t.0",
     "category": "business"
+  },
+  {
+    "eventID": "skysprint",
+    "eventName": "Sky Sprint",
+    "eventDate": {
+      "prelims": [
+        "TBD"
+      ],
+      "finals": [
+        "TBD"
+      ]
+    },
+    "eventType": "misc",
+    "eventHashtags": [
+      "flight-challenge",
+      "problem-solving",
+      "physics",
+      "aerodynamics"
+    ],
+    "registrationOpen": true,
+    "eventCoordinators": [
+      "Debadrita Hazra[+91 9883311422]",
+      "Navoneel Karmaker[+91 9123351787]",
+      "Koustav Das[+91 8348217647]"
+    ],
+    "prize": [
+      "1st : Certificate, Rs 4,000 cash prize",
+      "2nd : Certificate, Rs 3,000 cash prize",
+      "3rd : Certificate, Rs 2,000 cash prize",
+      "Best Design Award: Rs 1,000"
+    ],
+    "minMembers": 2,
+    "maxMembers": 3,
+    "eventPoster": "skysprint.webp",
+    "registrationType": "Srijan'25 Website",
+    "eventDescription": [
+      "SkySprint is a glider-building competition where students showcase creativity, engineering skills, and teamwork by designing, building, and launching gliders for maximum distance and flight time. With at-home preparation, participants can refine their designs, applying aerodynamics in a hands-on, problem-solving challenge. "
+    ],
+    "eventRules": [
+      "SKYSPRINT is a glider building competition aimed at providing students with an opportunity to demonstrate their creativity, engineering acumen, and teamwork by designing, building, and launching gliders for maximum distance and flight time. Participants can prepare their gliders at home, enabling thorough experimentation and refinement. This competition serves as a practical application of aerodynamic principles, fostering problem-solving skills in an engaging and educational environment.",
+      "Problem Statement:  Teams are required to design, build, and showcase a hand glider capable of completing the tasks outlined in the following rounds while adhering to the specified constraints.",
+      "QUALIFIERS:",
+      "ROUND 1 (DESIGN SHOWCASE) : In this round, each team is required to submit a technical report in either PDF or PPT format. The report must specify the dimensions, materials, and design features of the glider. Any structural or aerodynamic innovations should be clearly highlighted and explained.",
+      "ROUND 2 (JAVELIN THROW ROUND) : The objective of this round is to achieve the maximum possible gliding distance. Teams will launch their glider in a javelin-style motion, ensuring smooth, aerodynamic flight. Ballistic trajectories (e.g., shot-put style throws) are prohibited and will result in disqualification for the attempt. Scoring Formula: Score = Glide Distance (in meters) Each team will be allowed two attempts, with the best distance being recorded for scoring.",
+      "ROUND 3 (STAY IN THE AIR) : The goal of this round is to achieve the maximum glide time for the glider. Points will be awarded based on the recorded glide time. Scoring Formula: SCORE= Glide time (in seconds) Each team will be given two attempts, and the best recorded glide time will contribute to the final score.",
+      "Participants are requested to refer to the attachments for further details."
+    ],
+    "driveLink": "https://drive.google.com/file/d/13jdB5-83Iuuo8fuhH_ZQO5dlfGkQvNpB/view?usp=sharing",
+    "category": "misc"
+  },
+  
+  {
+    "eventID": "lotr",
+    "eventName": "Lord of The Ring",
+    "eventDate": {
+      "prelims": [
+        "TBD"
+      ],
+      "finals": [
+        "TBD"
+      ]
+    },
+    "eventType": "circuits and robotics",
+    "eventHashtags": [
+      "robotics",
+      "innovation",
+      "strategy"
+    ],
+    "registrationOpen": true,
+    "eventCoordinators": [
+      "Anish Chanda[+91-6290875571]",
+      "Saptarshi Garai[+91-89727 44365]",
+      "Soham Sengupta[+91-93309 51626]"
+    ],
+    "prize": [
+      "1st : TBD ",
+      "2nd : TBD ",
+      "3rd : TBD "
+    ],
+    "minMembers": 3,
+    "maxMembers": 5,
+    "eventPoster": "lotr.webp",
+    "registrationType": "Srijan'25 Website",
+    "eventDescription": [
+      "Welcome to the pinnacle of robotic competition, where innovation meets strategy in the exhilarating arena of Robo Sumo! With teams of up to 5 members each, our event celebrates the collaboration of engineering brilliance and tactical mind. Under the watchful eyes of the IoTA Club members, participants navigate through wired and wireless categories, each offering its unique path to glory. Every round of the elimination matches promises electrifying showdowns, testing the limits of design and control. Join us as we witness the fusion of technology and sportsmanship in this spectacle."
+    ],
+    "eventRules": [
+      "Teams, comprising up to 5 members, compete by making their own Remote Controlled Vehicle which can be wired or wireless. The bots must fall within defined parameters.",
+      "Match officials exercise authority to ensure fairness and adherence to rules.",
+      "The competition is segregated into wired and wireless categories, each with distinct rewards.",
+      "Matches proceed through elimination rounds.",
+      "Three rounds, lasting a minute each, determine winners based on strategic moves.",
+      "Points are awarded for specific achievements: 2 for the green zone, 5 for complete displacement.",
+      "Victory requires securing 2 rounds.",
+      "Violations may result in disqualification."
+    ],
+    "driveLink": "https://drive.google.com/drive/folders/1Vy_S-3jZz1ImJz2kG3RdsOTNaVEfpubQ?usp=sharing",
+    "category": "circuits and robotics"
+  },
+  {
+    "eventID": "rat",
+    "eventName": "REEL-A-TION",
+    "eventDate": {
+      "prelims": [
+        "TBD"
+      ],
+      "finals": [
+        "TBD"
+      ]
+    },
+    "eventType": "misc",
+    "eventHashtags": [
+      "photography",
+      "storytelling",
+      "creativity"
+    ],
+    "registrationOpen": true,
+    "eventCoordinators": [
+      "DEBASISH PAL[+91 9749493061]",
+      "Srija Ata[+91 8777572456]",
+      "Kajari Roy[+91 9330599595]"
+    ],
+    "prize": [
+      "1st: Gorilla Pod",
+      "2nd: Lens Cleaning Kit",
+      "3rd: Lens Cleaning Kit"
+    ],
+    "minMembers": 2,
+    "maxMembers": 2,
+    "eventPoster": "rat.webp",
+    "registrationType": "Srijan'25 Website",
+    "eventDescription": [
+      "Get ready to roll with 'Reel-a-tion,' the reel-making competition organized by Jadavpur University Photographic Club! Unleash your storytelling prowess through the lens and create cinematic wonders. Lights, camera, creativity - it's your time to shine!"
+    ],
+    "eventRules": [
+      "A team must consist of 2 members to participate in the event.",
+      "Teams must register with their team name, and the Instagram ID for the account from which the reel will be posted.",
+      "The topic for the reel will be declared at the start of the day of the event.",
+      "Participants must create a reel of minimum 15 seconds, and maximum 30 seconds, on the given topic.",
+      "The reel must be recorded inside Jadavpur University Salt Lake Campus.",
+      "After it is created, participants must post the reel from the Instagram account with which the team has registered.",
+      "The faster the reel is posted, the more time it will have to gather likes, shares, and comments.",
+      "Recording the reel, posting it, and gathering reach on the reel, must be done by the end of Day 2.",
+      "Number of likes, comments and shares on each reel will be counted at the end of Day 2."
+    ],
+    "driveLink": "https://drive.google.com/file/d/19SNwpTh4R7KP2ZcH2FBPxbT8-wFG7jlK/view?usp=sharing",
+    "category": "misc"
+  },
+  {
+    "eventID": "aba",
+    "eventName": "ArtByteArena",
+    "eventDate": {
+      "prelims": [
+        "TBD"
+      ],
+      "finals": [
+        "TBD"
+      ]
+    },
+    "eventType": "misc",
+    "eventHashtags": [
+      "art",
+      "creativity",
+      "illustration"
+    ],
+    "registrationOpen": true,
+    "eventCoordinators": [
+      "Apurba Nandi[+91 9749237190]",
+      "Prama Ray[+91 82933 31677]"
+    ],
+    "prize": [
+      "1st: Rs 3000",
+      "2nd: Rs 2000",
+      "3rd: Rs 1000"
+    ],
+    "minMembers": 1,
+    "maxMembers": 1,
+    "eventPoster": "aba.webp",
+    "registrationType": "Srijan'25 Website",
+    "eventDescription": [
+      "Participants receive a curated set of stock images and assets. They are free to manipulate, combine, or transform these assets to create an original illustration that tells a compelling story."
+    ],
+    "eventRules": [
+      "AI-Free Zone: The use of AI tools or generative fill techniques is strictly prohibited.",
+      "Submission Requirements: Participants must submit their completed artwork along with a concise description detailing their creative process in a pdf or a .jpeg/.jpg format."
+    ],
+    "driveLink": "https://docs.google.com/document/d/1eYvP_CnMV1Z9ufvDcpb5fCstSEKSsqQINbVgxBaPvRg/edit?usp=sharing",
+    "category": "misc"
+  },
+  {
+      "eventID": "logocity",
+      "eventName": "Logocity",
+      "eventDate": {
+        "prelims": [
+          "TBD"
+        ],
+        "finals": [
+          "TBD"
+        ]
+      },
+      "eventType": "misc",
+      "eventHashtags": [
+        "doodles",
+        "creativity",
+        "design"
+      ],
+      "registrationOpen": true,
+      "eventCoordinators": [
+        "Sneha Debnath[+91 6290544740]",
+        "Aindree Chatterjee[+91 62918 96539]",
+        "Sneha Ghosh[+91 75968 83862]"
+      ],
+      "prize": [
+        "1st : TBD ",
+        "2nd : TBD ",
+        "3rd : TBD "
+      ],
+      "minMembers": 1,
+      "maxMembers": 1,
+      "eventPoster": "logocity.webp",
+      "registrationType": "Srijan'25 Website",
+      "eventDescription": [
+        "Are your lecture notes interjected with doodles? Do you have flair of translating your ideas into images? Do you think you can identify the most elusive logos whenever you see them? Wait no more!"
+      ],
+      "eventRules": [
+        "Refer to the attachments for further details regarding dates and rules."
+      ],
+      "category": "misc"
+   },
+  {
+      "eventID": "pov",
+      "eventName": "PACK-O-VATION",
+      "eventDate": {
+        "prelims": [
+          "TBD"
+        ],
+        "finals": [
+          "TBD"
+        ]
+      },
+      "eventType": "business",
+      "eventHashtags": [
+        "packaging",
+        "innovation",
+        "sustainability"
+      ],
+      "registrationOpen": true,
+      "eventCoordinators": [
+        "Ritankar Saha[+91 7595875833]",
+        "Manideep Das[+91 7980287030]",
+        "Rajiv Mishra[+91 9330136532]"
+      ],
+      "prize": [
+        "1st : TBD ",
+        "2nd : TBD ",
+        "3rd : TBD "
+      ],
+      "minMembers": 2,
+      "maxMembers": 3,
+      "eventPoster": "pov.webp",
+      "registrationType": "Srijan'25 Website",
+      "eventDescription": [
+        "Packovation is a team-based competition aimed at inspiring innovative and sustainable packaging solutions. It challenges participants to integrate design, branding, and user experience into practical packaging improvements while considering environmental and market impacts."
+      ],
+      "eventRules": [
+        "Refer to the attachments for further details regarding dates and rules."
+      ],
+      "driveLink": "https://drive.google.com/drive/folders/1rx3rJrtxCTfNiY1PaVUYg_FD6ixYTLaI?usp=sharing",
+      "category": "business"
+   },
+   {
+    "eventID": "escaperoom",
+    "eventName": "Escape Room",
+    "eventDate": {
+      "prelims": [
+        "TBD"
+      ],
+      "finals": [
+        "TBD"
+      ]
+    },
+    "eventType": "brainstorming",
+    "eventHashtags": [
+      "puzzles",
+      "teamwork",
+      "creativity"
+    ],
+    "registrationOpen": true,
+    "eventCoordinators": [
+      "Agnish Paul[+91 8910499325]",
+      "Bonny Molla[+91 98297 04920]"
+    ],
+    "prize": [ "1st : TBD ",
+    "2nd : TBD ",
+    "3rd : TBD "],
+    "minMembers": 3,
+    "maxMembers": 4,
+    "eventPoster": "escaperoom.webp",
+    "registrationType": "Srijan'25 Website",
+    "eventDescription": [
+      "Escape Room at SRIJAN'25 is an immersive challenge where participants solve puzzles and riddles to 'escape' within a set time. It tests teamwork, creativity, and problem-solving skills in a thrilling environment. Designed for all levels, it promises excitement and fun for every participant. Join us for an unforgettable adventure!"
+    ],
+    "eventRules": [
+      "Format: Teams will be presented with an 8x8 matrix filled with challenging questions.",
+      "How it works: Each element in the matrix contains two questions. The answers to these questions will give the next row and column addresses for the subsequent element in the matrix. Teams must proceed step by step.",
+      "Warning: Teams should solve the questions accurately; guessing is prohibited. Incorrect guesses will lead to disqualification.",
+      "Objective: Solve each matrix element and collect keys after each correct answer. These keys will help unscramble a jumbled puzzle. Once the puzzle is solved, the team can submit the final answer.",
+      "Advancement: The first four teams to submit the correct final answer will qualify for the Finale."
+    ],
+    "driveLink": "https://drive.google.com/file/d/1qoZZ_FY63aD9QtG1FtW5hJ3QTamqFOcx/view?usp=sharing",
+    "category": "brainstorming"
+  },
+  {
+    "eventID": "openaimer",
+    "eventName": "OpenAImer",
+    "eventDate": {
+      "prelims": [
+        "TBD"
+      ],
+      "finals": [
+        "TBD"
+      ]
+    },
+    "eventType": "coding",
+    "eventHashtags": [
+      "AI",
+      "machinelearning",
+      "innovation"
+    ],
+    "registrationOpen": true,
+    "eventCoordinators": [
+      "Soham Bose[9239727821]",
+      "Srinjoy Dutta[9732493728]",
+      "Suman Khara[9123939627]"
+    ],
+    "prize": [
+      "1st : 5,000",
+      "2nd : 3,000",
+      "3rd : 2,000"
+    ],
+    "minMembers": 1,
+    "maxMembers": 4,
+    "eventPoster": "openaimer.webp",
+    "registrationType": "Srijan'25 Website",
+    "eventDescription": [
+      "OpenAImer is a thrilling AI competition that pushes participants to their limits. From core machine learning tasks to cutting-edge, industry-driven challenges, the competition tests model-building, efficiency, and adaptability. Join OpenAImer to redefine what's possible with AI!"
+    ],
+    "eventRules": [
+      "Participants will compete in two distinct tracks. The first track will focus on a core machine learning task, requiring a strong understanding of fundamental concepts.",
+      "The second track will introduce a more innovative and industry-relevant challenge, encouraging participants to explore AI applications beyond traditional beginner-friendly domains."
+    ],
+    "driveLink": "https://drive.google.com/file/d/16Tp3-thEuShy9qpRTUD-p_UUi6qvfI0W/view?usp=sharing",
+    "category": "coding"
+  },
+  {
+    "eventID": "hcg",
+    "eventName": "Homecoming",
+    "eventDate": {
+      "prelims": [
+        "TBD"
+      ],
+      "finals": [
+        "TBD"
+      ]
+    },
+    "eventType": "coding",
+    "eventHashtags": [
+      "robotics",
+      "competition",
+      "innovation"
+    ],
+    "registrationOpen": true,
+    "eventCoordinators": [
+      "Rajobrata Dasgupta[7439319042]",
+      "Borno Banerjee[7478054233]"
+    ],
+    "prize":  [ "1st : TBD ",
+    "2nd : TBD ",
+    "3rd : TBD "],
+    "minMembers": 4,
+    "maxMembers": 5,
+    "eventPoster": "homecoming.webp",
+    "registrationType": "Srijan'25 Website",
+    "eventDescription": [
+      "Embark on a coding odyssey with Homecoming – the ultimate line follower bot race where your creation takes center stage! Will your bot decipher the maze, find the winning path without getting lost, and cross the line of limits faster than the other chasers? Homecoming is not just a race; it's a challenge to push boundaries and innovate. Unleash your creativity, race to victory, and make your bot the star of the show."
+    ],
+    "eventRules": [
+      "Number of rounds - 2",
+      "Mode - Offline",
+      "Event detail - The same track layout will be used for both the Preliminary and Final Rounds to maintain consistency."
+    ],
+    "category": "coding"
+  },
+  {
+    "eventID": "btg25",
+    "eventName": "Bridge the Gap",
+    "eventDate": {
+      "prelims": [
+        "TBD"
+      ],
+      "finals": [
+        "TBD"
+      ]
+    },
+    "eventType": "misc",
+    "eventHashtags": [
+      "engineering",
+      "creativity",
+      "teamwork"
+    ],
+    "registrationOpen": true,
+    "eventCoordinators": [
+      "Nourin Akhter Neha[7679916989]",
+      "Masudur Rahaman[8436003111]",
+      "Dittam Barick[7501073872]"
+    ],
+    "prize":  [ "1st : TBD ",
+    "2nd : TBD ",
+    "3rd : TBD "],
+    "minMembers": 2,
+    "maxMembers": 4,
+    "eventPoster": "btg25.webp",
+    "registrationType": "Srijan'25 Website",
+    "eventDescription": [
+      "\"Bridge the Gap” is a miniature bridge replica challenge prompting participants to construct bridges using the concept of fundamental load transferring mechanism and structural analysis using wooden planks, popsicle sticks, and nails, employing engineering concepts. Through hands-on design and testing, teams foster critical thinking and creativity, refining their designs to meet load-bearing criteria while fostering teamwork and problem-solving abilities. The participants are restricted to a time limit, and the bridges are judged on various parameters which include load criteria along with aesthetic features to which scoring is made."
+    ],
+    "eventRules": [
+      "Once the structure has been weighed, you are not permitted to change it.",
+      "If these constraints are not met, the organizers may impose point deductions or disqualification at their sole discretion.",
+      "Any team that does not arrive on time will be disqualified immediately.",
+      "The decision of the judges shall be final and binding on all.",
+      "The organizers reserve the right to modify any or all of the preceding rules as they see fit.",
+      "Any changes to the rules will be highlighted on the website and emailed to all registered participants."
+    ],
+    "driveLink": "https://drive.google.com/file/d/1HPzgsaNK3JbaipzpSPwD_OppfrznHQGr/view?usp=drivesdk",
+    "category": "misc"
+  },
+  {
+    "eventID": "data-drift",
+    "eventName": "DATA DRIFT",
+    "eventDate": {
+      "prelims": [
+        "TBD"
+      ],
+      "finals": [
+        "TBD"
+      ]
+    },
+    "eventType": "coding",
+    "eventHashtags": [
+      "dataanalysis",
+      "traffic",
+      "insights"
+    ],
+    "registrationOpen": true,
+    "eventCoordinators": [
+      "Sayan Roy[6289846253]",
+      "MD Farhan Alam[629080177]",
+      "Bandhan Barma[9547745496]"
+    ],
+    "prize":  [ "1st : TBD ",
+    "2nd : TBD ",
+    "3rd : TBD "],
+    "minMembers": 1,
+    "maxMembers": 2,
+    "eventPoster": "datadrift.webp",
+    "registrationType": "Srijan'25 Website",
+    "eventDescription": [
+      "Data Drift is a four-hour event where individual participants or teams of up to two members analyze real-time vehicular traffic data. Participants will process the data to generate insights, create a dashboard, and apply an engineering perspective to critically evaluate the given dataset."
+    ],
+    "eventRules": [
+      "The data analysis should be measured with respect to the original dataset and can be done in any software of choice, but must be finally presented in an EXCEL file.",
+      "The graphs/dashboarding/plots must be clearly distinguishable and aesthetically appealing.",
+      "The approach in calculating the parameters must be logical and if there are any assumptions in doing so, that must be clearly mentioned beforehand.",
+      "The inferences drawn from the data analysis must be thought of in terms of improving the traffic flow parameters.",
+      "The conclusions drawn must be insightful and justifiable in terms of the problem statement and not abstract."
+    ],
+    "driveLink": "https://drive.google.com/drive/folders/1Hj89HIkc01UZ0AZV-oHoiT0pKQUKzcSt",
+    "category": "coding"
   }
 ]

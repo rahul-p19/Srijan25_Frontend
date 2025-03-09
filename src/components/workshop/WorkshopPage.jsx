@@ -40,4 +40,4 @@ function WorkshopPage() {
   )
 }
 
-export { WorkshopPage }
+export default WorkshopPage;

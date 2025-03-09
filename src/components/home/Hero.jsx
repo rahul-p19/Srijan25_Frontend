@@ -54,7 +54,7 @@ function Hero() {
         <Countdown />
       </div>
       <div className='absolute p-3 z-[90] bottom-[46.5%] sm:bottom-[20%] right-[3%] sm:right-[8%] bg-background border border-greyBorder sm:w-1/4'>
-        <h2 className='text-base sm:text-lg md:text-xl lg:text-3xl text-center'><span className='text-transparent bg-clip-text bg-gradient-to-r from-blue via-red to-red'>20-23</span> MARCH <br className='sm:hidden' /> 2025</h2>
+        <h2 className='text-base sm:text-lg md:text-xl lg:text-3xl text-center'><span className='text-transparent bg-clip-text bg-gradient-to-r from-blue via-red to-red'>17-20</span> APRIL <br className='sm:hidden' /> 2025</h2>
       </div>
       {/*<img src='/mascot.svg' className='absolute z-[100] top-[32%] sm:top-[20%] left-[50%] -translate-x-[50%] h-3/4 mascot-animation'
         onMouseOut={(e) => { e.target.style.animationPlayState = "paused"; }}
