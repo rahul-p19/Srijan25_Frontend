@@ -218,5 +218,10 @@
     "_id": "67c6b3f156edb6ccc0c3fd34",
     "name": "Homecoming",
     "slug": "hcg"
+  },
+  {
+    "_id": "67c9f0551c3bb642bb03a225",
+    "name": "LogoCity",
+    "slug": "logocity"
   }
 ]
