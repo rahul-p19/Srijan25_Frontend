@@ -10,35 +10,41 @@ gsap.registerPlugin(useGSAP, ScrollTrigger);
 const speakerDetails = [
   {
     name: "Raj Vikramaditya",
+    about: "Founder and CEO, TakeUForward",
     image: "/speakers/raj-vikramaditya.jpg",
     youtube: "https://www.youtube.com/@takeUforward",
     linkedin: "https://www.linkedin.com/in/rajstriver/"
   },
   {
     name: "Aman Dhattarwal",
+    about: "Founder and CEO, Apna College",
     image: "/speakers/aman-dhattarwal.jpg",
     youtube: "https://www.youtube.com/@AmanDhattarwal",
     linkedin: "https://www.linkedin.com/in/dhattarwalaman/"
   },
   {
     name: "Gaurav Sen",
+    about: "Founder, InterviewReady",
     image: "/speakers/gaurav-sen.jpg",
     youtube: "https://www.youtube.com/@gkcs",
     linkedin: "https://www.linkedin.com/in/gkcs/"
   },
   {
     name: "Amitabh",
+    about: "Operations Director, Chandrayaan 3",
     image: "/speakers/Amitabh-Singh.png",
     linkedin: "https://www.linkedin.com/in/amitabh-amitabh-069038bb/"
   },
   {
     name: "Soumita Roy Choudhury",
+    about: "VP APAC Mobilewalla",
     image: "/speakers/soumita-roy-choudhury.jpg",
     youtube: "",
     linkedin: "https://www.linkedin.com/in/soumita-roy-choudhury-5a842120/?originalSubdomain=sg"
   },
   {
     name: "Shibaji Paul",
+    about: "Youtuber, 635K+ Subscribers",
     image: "/speakers/shibaji-paul.jpg",
     youtube: "https://www.youtube.com/@explorershibaji",
     instagram: "https://www.instagram.com/explorer_shibaji/"
@@ -59,6 +65,7 @@ function SpeakerCard({ speaker }) {
           {speaker.youtube && <a href={speaker.youtube} target='_blank'><YouTube /></a>}
         </div>
       </div>
+      <p className='w-full pl-2'>{speaker.about}</p>
     </div >
   )
 }
