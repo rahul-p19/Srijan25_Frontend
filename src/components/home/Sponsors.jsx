@@ -35,39 +35,39 @@ const currentSponsors = [
 ]
 
 const pastSponsors = [
-  { image: "/past-sponsors/4th-street-logo.png", text: " " },
-  { image: "/past-sponsors/air-india-logo.png", text: " " },
-  { image: "/past-sponsors/british-council-logo.png", text: " " },
-  { image: "/past-sponsors/bsnl-logo.png", text: " " },
-  { image: "/past-sponsors/cesc-logo.png", text: " " },
-  { image: "/past-sponsors/crescent-electric-logo.png", text: " " },
-  { image: "/past-sponsors/eillm-logo.png", text: " " },
-  { image: "/past-sponsors/friendsfm-logo.png", text: " " },
-  { image: "/past-sponsors/holiday-inn-logo.png", text: " " },
-  { image: "/past-sponsors/hyundai-logo.png", text: " " },
-  { image: "/past-sponsors/id0if2F9r8_1739452523011.svg", text: " " },
-  { image: "/past-sponsors/id2Y4NR5gs_1739453947719.png", text: " " },
+  { image: "/past-sponsors/4th-street-logo.png", text: "past-sponsor", contrast: false },
+  { image: "/past-sponsors/air-india-logo.png", text: "past-sponsor", contrast: false },
+  { image: "/past-sponsors/british-council-logo.png", text: "past-sponsor", contrast: true },
+  { image: "/past-sponsors/bsnl-logo.png", text: "past-sponsor", contrast: false },
+  { image: "/past-sponsors/cesc-logo.png", text: "past-sponsor", contrast: false },
+  { image: "/past-sponsors/crescent-electric-logo.png", text: "past-sponsor", contrast: true },
+  { image: "/past-sponsors/eillm-logo.png", text: "past-sponsor", contrast: false },
+  { image: "/past-sponsors/friendsfm-logo.png", text: "past-sponsor", contrast: true },
+  { image: "/past-sponsors/holiday-inn-logo.png", text: "past-sponsor", contrast: false },
+  { image: "/past-sponsors/hyundai-logo.png", text: "past-sponsor", contrast: false },
+  { image: "/past-sponsors/id0if2F9r8_1739452523011.svg", text: "past-sponsor", contrast: false },
+  { image: "/past-sponsors/id2Y4NR5gs_1739453947719.png", text: "past-sponsor", contrast: false },
   {
-    image: "/past-sponsors/bbq-nation-logo.png", text: " "
+    image: "/past-sponsors/bbq-nation-logo.png", text: "past-sponsor", contrast: false
   },
-  { image: "/past-sponsors/id8bItcgXR_1739453080609.png", text: " " },
-  { image: "/past-sponsors/idAhC7tCYI_1739453384521.png", text: " " },
-  { image: "/past-sponsors/idD0kDPd8T_1739453299036.png", text: " " },
-  { image: "/past-sponsors/idKtU5gOEj_1739452469668.svg", text: " " },
-  { image: "/past-sponsors/idN3OdcTG__1739452699673.svg", text: " " },
-  { image: "/past-sponsors/idOwOceQMf_1739453110810.png", text: " " },
-  { image: "/past-sponsors/ida9N-7Ufo_1739453004521.png", text: " " },
-  { image: "/past-sponsors/idbWRcSAtt_logos.png", text: " " },
-  { image: "/past-sponsors/ideFUBvQnK_1739452592554.svg", text: " " },
-  { image: "/past-sponsors/ideI48Dyrt_1739453978333.jpeg", text: " " },
-  { image: "/past-sponsors/idg5PoFoon_1739453676690.png", text: " " },
-  { image: "/past-sponsors/idhciyiwM8_1739454052174.png", text: " " },
-  { image: "/past-sponsors/idnINEeqNC_1739452933876.png", text: " " },
-  { image: "/past-sponsors/idqB2cat2f_1739454152164.png", text: " " },
-  { image: "/past-sponsors/mobilewalla-logo.png", text: " " },
-  { image: "/past-sponsors/no-distance-logo.png", text: " " },
-  { image: "/past-sponsors/pizza-hut-logo.png", text: " " },
-  { image: "/past-sponsors/wow-momo-logo.png", text: " " },
+  { image: "/past-sponsors/id8bItcgXR_1739453080609.png", text: "past-sponsor", contrast: false },
+  { image: "/past-sponsors/idAhC7tCYI_1739453384521.png", text: "past-sponsor", contrast: false },
+  { image: "/past-sponsors/idD0kDPd8T_1739453299036.png", text: "past-sponsor", contrast: false },
+  { image: "/past-sponsors/idKtU5gOEj_1739452469668.svg", text: "past-sponsor", contrast: true },
+  { image: "/past-sponsors/idN3OdcTG__1739452699673.svg", text: "past-sponsor", contrast: false },
+  { image: "/past-sponsors/idOwOceQMf_1739453110810.png", text: "past-sponsor", contrast: false },
+  { image: "/past-sponsors/ida9N-7Ufo_1739453004521.png", text: "past-sponsor", contrast: false },
+  { image: "/past-sponsors/idbWRcSAtt_logos.png", text: "past-sponsor", contrast: true },
+  { image: "/past-sponsors/ideFUBvQnK_1739452592554.svg", text: "past-sponsor", contrast: false },
+  { image: "/past-sponsors/ideI48Dyrt_1739453978333.jpeg", text: "past-sponsor", contrast: false },
+  { image: "/past-sponsors/idg5PoFoon_1739453676690.png", text: "past-sponsor", contrast: true },
+  { image: "/past-sponsors/idhciyiwM8_1739454052174.png", text: "past-sponsor", contrast: false },
+  { image: "/past-sponsors/idnINEeqNC_1739452933876.png", text: "past-sponsor", contrast: false },
+  { image: "/past-sponsors/idqB2cat2f_1739454152164.png", text: "past-sponsor", contrast: true },
+  { image: "/past-sponsors/mobilewalla-logo.png", text: "past-sponsor", contrast: false },
+  { image: "/past-sponsors/no-distance-logo.png", text: "past-sponsor", contrast: true },
+  { image: "/past-sponsors/pizza-hut-logo.png", text: "past-sponsor", contrast: true },
+  { image: "/past-sponsors/wow-momo-logo.png", text: "past-sponsor", contrast: false },
 ]
 
 const primarySponsors = [
@@ -181,7 +181,7 @@ function Sponsors() {
               </li>
             )) : [...pastSponsors, ...pastSponsors].map((sponsor, ind) => (
               <li key={ind} className='w-[40vw] sm:w-[30vw] px-4 sm:px-0 grid place-items-center transition-all duration-1000s border-greyBorder border-l h-full'>
-                <img loading="lazy" src={sponsor.image} alt="Past Sponsor of Srijan" height="auto" width="auto" className='h-1/2 w-1/2 object-contain' />
+                <img loading="lazy" src={sponsor.image} alt="Past Sponsor of Srijan" height="auto" width="auto" className={`h-1/2 w-1/2 object-contain ${sponsor.contrast ? 'p-2 bg-white rounded-sm' : ''}`} />
               </li>
             ))}
           </ul>

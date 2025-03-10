@@ -49,7 +49,7 @@ const DashboardPage = ({ userDetails, logout }) => {
   const [pendingEvents, setPendingEvents] = useState([]);
   const [wishlist, setWishlist] = useState([]);
   const [merchandise, setMerchandise] = useState([]);
-  const allMerch = user.merchandise? (user.merchandise2 && user.merchandise2.length > 0) ? [user.merchandise, ...user.merchandise2] : [user.merchandise] : [];
+  const allMerch = user.merchandise ? (user.merchandise2 && user.merchandise2.length > 0) ? [user.merchandise, ...user.merchandise2] : [user.merchandise] : [];
 
   useEffect(() => {
 
@@ -183,8 +183,8 @@ const DashboardPage = ({ userDetails, logout }) => {
               {allMerch.length > 0 &&
                 <Carousel>
                   <CarouselContent>
-                    {allMerch.map((merch, ind) =>{
-                      console.log(JSON.stringify(merch),"test");
+                    {allMerch.map((merch, ind) => {
+                      // console.log(JSON.stringify(merch),"test");
                       // const {status,color,size} = merch;
                       return <CarouselItem key={ind} className="flex flex-col items-center gap-6 p-6 rounded-md h-full  bg-[#141414]">
                         <p className="py-2 text-xl">My Merchandise</p>
@@ -196,12 +196,13 @@ const DashboardPage = ({ userDetails, logout }) => {
                         <p className="flex text-lg">Status: {merch.status}</p>
                         <p className="flex text-lg">{merch.color && `Colour: ${merch.color}`}</p>
                         <p className="flex text-lg">{merch.size && `Size: ${merch.size}`}</p>
-                      </CarouselItem>})}
+                      </CarouselItem>
+                    })}
                   </CarouselContent>
-                    {merchandise.length > 1 && <>
-                      <CarouselPrevious className="bg-transparent hover:bg-transparent hover:cursor-pointer ml-8 sm:ml-0 pl-2 border border-white" />
-                      <CarouselNext className="bg-transparent hover:bg-transparent hover:cursor-pointer pl-2 mr-8 sm:mr-0 border border-white" />
-                    </>}
+                  {merchandise.length > 1 && <>
+                    <CarouselPrevious className="bg-transparent hover:bg-transparent hover:cursor-pointer ml-8 sm:ml-0 pl-2 border border-white" />
+                    <CarouselNext className="bg-transparent hover:bg-transparent hover:cursor-pointer pl-2 mr-8 sm:mr-0 border border-white" />
+                  </>}
                 </Carousel>
               }
             </div>
