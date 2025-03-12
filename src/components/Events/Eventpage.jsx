@@ -12,11 +12,9 @@ import { Helmet } from "react-helmet-async";
 import "./styles.css";
 import eventData from "../Events/allevents/data.json"; 
 import { getImageUrl } from "../../utils/image-util"; //
-
 const Navbar = lazy(() => import("../Navbar"));
 const Footer = lazy(() => import("../Footer"));
 const PageReveal = lazy(() => import("../PageReveal"));
-
 
 function Loading() {
   return (
@@ -64,7 +62,7 @@ const FancyButton = React.memo(({ active, onClick, children }) => {
         className={`relative px-6 py-2 rounded-md font-semibold transition-all duration-300 focus:outline-none border border-transparent ${
           active
             ? "bg-gradient-to-r from-black to-black text-green-300 shadow-xl transform scale-105"
-            : " hover:shadow-lg"
+            : "hover:shadow-lg"
         }`}
       >
         {children}
@@ -108,11 +106,10 @@ const CategoryTabs = ({ activeCategory, onCategoryChange }) => {
     "gaming",
   ];
   return (
-    <div className="max-w-6xl mx-auto mb-7 p-4 rounded-xl bg-white/4 backdrop-blur-md ">
-      <nav className="flex flex-wrap justify-center gap-7 ">
+    <div className="max-w-6xl mx-auto mb-7 p-4 rounded-xl bg-white/4 backdrop-blur-md">
+      <nav className="flex flex-wrap justify-center gap-7">
         {categories.map((category) => (
           <FancyButton
-            className="cursor-pointer"
             key={category}
             active={activeCategory === category}
             onClick={() => onCategoryChange(category)}
@@ -125,11 +122,11 @@ const CategoryTabs = ({ activeCategory, onCategoryChange }) => {
   );
 };
 
-/* EventCardGrid Component with glassmorphism container */
+/* EventCardGrid Component with glassmorphism container and scroll */
 const EventCardGrid = ({ events, truncateText, onCardClick }) => {
   return (
-    <div className="max-w-[1500px] mx-auto p-20 rounded-2xl shadow-2xl bg-white/2 backdrop-blur-sm border ">
-      <main className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-15">
+    <div className="max-w-[1600px] mx-auto p-6 rounded-2xl shadow-2xl bg-white/2 backdrop-blur-sm border h-[80vh] overflow-y-auto">
+      <main className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-17">
         {events.map((event) => (
           <div
             key={event.eventID}
@@ -210,7 +207,6 @@ const Events = () => {
       <div className="font-sometypeMono">
         <Navbar />
         <PageReveal />
-
         <Helmet>
           <link rel="canonical" href="https://srijanju.in/events" />
           <title>Events | Srijan'25</title>
@@ -222,7 +218,6 @@ const Events = () => {
         <div className="relative bg-gradient-to-r from-background to-background text-white min-h-screen py-2 px-2">
           <GridLines />
           <Snowfall color="white" snowflakeCount={100} />
-
           <header className="max-w-9xl mx-auto text-center mb-6">
             <h1 className="text-4xl md:text-xl lg:text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-green-400 via-red-500 to-blue-600 drop-shadow-2xl">
               <ReactTyped
@@ -233,14 +228,10 @@ const Events = () => {
               />
             </h1>
           </header>
-
-          {/* Category Tabs with Blur Background */}
           <CategoryTabs
             activeCategory={activeCategory}
             onCategoryChange={handleCategoryChange}
           />
-
-          {/* Search Input */}
           <section className="max-w-md mx-auto mb-10">
             <div className="relative">
               <input
@@ -248,7 +239,7 @@ const Events = () => {
                 placeholder="Search events by name..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full p-3 rounded-full  text-gray-100 focus:outline-none focus:ring-2 focus:ring-green-500 transition-all"
+                className="w-full p-3 rounded-full text-gray-100 focus:outline-none focus:ring-2 focus:ring-green-500 transition-all"
                 aria-label="Search Events"
               />
               <span className="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-400">
@@ -256,7 +247,6 @@ const Events = () => {
               </span>
             </div>
           </section>
-
           {loading ? (
             <div className="text-center text-xl">Loading events...</div>
           ) : filteredEvents.length === 0 ? (
