@@ -302,7 +302,7 @@ const AllEvents = () => {
                   onClick={() => {
                     if (eventID === "HackForge") {
                       window.location.href =
-                        "https://unstop.com/p/hackforge-forging-the-future-code-club-jusl-jadavpur-university-salt-lake-campus-juslcc-1415836"; // Replace with your specific URL for HackForge events
+                        "https://unstop.com/hackathons/hackforge-forging-the-future-srijan-2025-jadavpur-university-kolkata-1416437"; // Replace with your specific URL for HackForge events
                     } else {
                       navigate(`/events/${eventID}/registration`);
                     }
