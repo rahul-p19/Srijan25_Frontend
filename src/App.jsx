@@ -104,8 +104,8 @@ function App() {
           <Route path="/forgotPassword" element={<ForgotPassword />} />
           <Route path="/workshop" element={<WorkshopPage />} />
           <Route path="*" element={<PageNotFound />} />
-          <Route path="/admin" element={<AdminLogin/>}/>
-          <Route path="/admin/details" element={<AdminPage/>}/>
+          <Route path="/admin" element={<AdminLogin />} />
+          <Route path="/admin/details" element={<AdminPage />} />
         </Routes>
       </Router>
       <Toaster
@@ -114,7 +114,7 @@ function App() {
           style: {
             backgroundColor: "#141414",
             borderRadius: "0px",
-            fontSize: "24px",
+            fontSize: "20px",
             padding: "12px",
             color: "white",
             borderTop: "1px solid #b60000",
@@ -128,8 +128,8 @@ function App() {
         }}
         containerStyle={{
           top: "15vh",
-          right: "40vw",
-          left: "40vw",
+          right: "38vw",
+          left: "38vw",
         }}
       />
     </>
