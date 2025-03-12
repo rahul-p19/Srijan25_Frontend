@@ -105,12 +105,12 @@ export default function MerchandisePage() {
     <div className="bg-background font-sometypeMono text-white min-h-screen flex flex-col">
       <Navbar />
       <Helmet>
-                <link rel="canonical" href="https://srijanju.in/merchandise" />
-                <title>Merchandise | Srijan'25</title>
-                <meta
-                  name="description"
-                  content="Get your merchandise for Srijan'25 - The Annual Techno-Management Fest of Jadavpur University"
-                />
+        <link rel="canonical" href="https://srijanju.in/merchandise" />
+        <title>Merchandise | Srijan'25</title>
+        <meta
+          name="description"
+          content="Get your merchandise for Srijan'25 - The Annual Techno-Management Fest of Jadavpur University"
+        />
       </Helmet>
       <div className="flex-grow flex flex-col px-4 md:px-8 py-6 md:py-8 relative">
         {/* Add GridLines component here */}
@@ -194,9 +194,8 @@ export default function MerchandisePage() {
                   {sizes.map((size) => (
                     <button
                       key={size}
-                      className={`px-2 py-1 text-white text-sm text-center ${
-                        selectedSize === size ? "bg-gray-800" : "bg-zinc-800"
-                      }`}
+                      className={`px-2 py-1 text-white text-sm text-center ${selectedSize === size ? "bg-gray-800" : "bg-zinc-800"
+                        }`}
                       onClick={() => setSelectedSize(size)}
                     >
                       {size}
@@ -221,7 +220,7 @@ export default function MerchandisePage() {
                       <input
                         type="radio"
                         name="color"
-                        value={color.toLowerCase()}
+                        value={color}
                         checked={
                           selectedColor.toLowerCase() === color.toLowerCase()
                         }
@@ -229,11 +228,10 @@ export default function MerchandisePage() {
                         className="sr-only"
                       />
                       <span
-                        className={`w-4 h-4 inline-block border rounded-full ${
-                          selectedColor.toLowerCase() === color.toLowerCase()
-                            ? "bg-white"
-                            : "bg-transparent"
-                        }`}
+                        className={`w-4 h-4 inline-block border rounded-full ${selectedColor.toLowerCase() === color.toLowerCase()
+                          ? "bg-white"
+                          : "bg-transparent"
+                          }`}
                       />
                       <span
                         className={`${selectedColor.toLowerCase() === color.toLowerCase() ? "underline underline-offset-3" : ""}`}
