@@ -1248,7 +1248,7 @@
       "2nd : Certificate, Rs 8,000 cash prize ",
       "3rd : Certificate, Rs 5,000 cash prize"
     ],
-    "minMembers": 3,
+    "minMembers": 1,
     "maxMembers": 4,
     "eventPoster": "deathrace.webp",
     "registrationType": "Srijan'25 Website",
@@ -1670,7 +1670,7 @@
         "TBD"
       ]
     },
-    "eventType": "coding",
+    "eventType": "circuits and robotics",
     "eventHashtags": [
       "robotics",
       "competition",
@@ -1696,7 +1696,7 @@
       "Mode - Offline",
       "Event detail - The same track layout will be used for both the Preliminary and Final Rounds to maintain consistency."
     ],
-    "category": "coding"
+    "category": "circuits and robotics"
   },
   {
     "eventID": "btg25",
