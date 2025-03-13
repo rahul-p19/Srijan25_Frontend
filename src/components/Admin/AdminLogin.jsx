@@ -23,20 +23,23 @@ export default function LoginPage() {
   const handleLogin = async (e) => {
     e.preventDefault();
     setError("");
+    setLoading(true);
 
     try {
       const response = await axios.post(`${CONST.env.API_SERVER}/adminLogin`, {
         username,
         password,
       });
+      setLoading(false);
       localStorage.setItem("SrijanAdminAuthToken", response.data.token);
       navigate("/admin/details", { replace: true });
     } catch (err) {
       if (err.response && err.response.data.error) {
         setError(err.response.data.error.message);
       } else {
-        setError("An unexpected error occurred.");
+        setError("Invalid Event Name or Password.");
       }
+      setLoading(false)
     }
   };
 
@@ -62,7 +65,7 @@ export default function LoginPage() {
               >
                 <div className="mb-4">
                   <label className="block text-[#8420FF]">
-                    Enter username
+                    Enter Event Name
                   </label>
                   <input
                     type="text"
@@ -73,7 +76,7 @@ export default function LoginPage() {
                   />
                 </div>
                 <div className="mb-4">
-                  <label className="block text-[#8420FF]">Enter password</label>
+                  <label className="block text-[#8420FF]">Enter Password</label>
                   <input
                     type="password"
                     className="w-full px-4 py-2 border rounded-lg bg-transparent text-white focus:outline-none focus:ring focus:ring-[#8420FF]"

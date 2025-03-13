@@ -8,7 +8,11 @@ const ParticipantCard = ({ participant }) => {
         Team Members:{}
         {participant.members.map((member) => (
           <span key={member._id}>
-            &nbsp;{member.user.name} &#40;{member.user.email}&#41;,
+            {member.user && (
+              <>
+                &nbsp;{member.user.name} ({member.user.email}),
+              </>
+            )}
           </span>
         ))}
       </div>
