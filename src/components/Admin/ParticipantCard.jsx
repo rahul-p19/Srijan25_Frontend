@@ -2,8 +2,11 @@ import React from "react";
 
 const ParticipantCard = ({ participant }) => {
   return (
-    <div className="text-white my-2 p-5 rounded-md shadow-md border-2 border-white">
-      Team Name: {participant.name}
+    <div className="text-white my-2 p-5 rounded-md shadow-md border-2 border-white ">
+      <div>Team Name: {participant.name}</div>
+      {participant.creator && <div>
+        Team Lead: {participant.creator.name} ({participant.creator.email})
+      </div>}
       <div className="flex flex-wrap">
         Team Members:{}
         {participant.members.map((member) => (
