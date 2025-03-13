@@ -114,7 +114,7 @@ function App() {
           style: {
             backgroundColor: "#141414",
             borderRadius: "0px",
-            fontSize: "20px",
+            fontSize: "18px",
             padding: "12px",
             color: "white",
             borderTop: "1px solid #b60000",
@@ -128,8 +128,8 @@ function App() {
         }}
         containerStyle={{
           top: "15vh",
-          right: "38vw",
-          left: "38vw",
+          right: "35vw",
+          left: "35vw",
         }}
       />
     </>

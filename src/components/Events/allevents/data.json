@@ -542,10 +542,10 @@
     "eventName": "Cypher 3331",
     "eventDate": {
       "prelims": [
-        "22nd March 2025"
+        "TBD"
       ],
       "finals": [
-        "23rd March 2025"
+        "TBD"
       ]
     },
     "eventType": "brainstorming",
@@ -1355,7 +1355,6 @@
     "driveLink": "https://drive.google.com/file/d/13jdB5-83Iuuo8fuhH_ZQO5dlfGkQvNpB/view?usp=sharing",
     "category": "misc"
   },
-  
   {
     "eventID": "lotr",
     "eventName": "Lord of The Ring",
@@ -1495,87 +1494,87 @@
     "category": "misc"
   },
   {
-      "eventID": "logocity",
-      "eventName": "Logocity",
-      "eventDate": {
-        "prelims": [
-          "TBD"
-        ],
-        "finals": [
-          "TBD"
-        ]
-      },
-      "eventType": "misc",
-      "eventHashtags": [
-        "doodles",
-        "creativity",
-        "design"
+    "eventID": "logocity",
+    "eventName": "Logocity",
+    "eventDate": {
+      "prelims": [
+        "TBD"
       ],
-      "registrationOpen": true,
-      "eventCoordinators": [
-        "Sneha Debnath[+91 6290544740]",
-        "Aindree Chatterjee[+91 62918 96539]",
-        "Sneha Ghosh[+91 75968 83862]"
-      ],
-      "prize": [
-        "1st : TBD ",
-        "2nd : TBD ",
-        "3rd : TBD "
-      ],
-      "minMembers": 1,
-      "maxMembers": 1,
-      "eventPoster": "logocity.webp",
-      "registrationType": "Srijan'25 Website",
-      "eventDescription": [
-        "Are your lecture notes interjected with doodles? Do you have flair of translating your ideas into images? Do you think you can identify the most elusive logos whenever you see them? Wait no more!"
-      ],
-      "eventRules": [
-        "Refer to the attachments for further details regarding dates and rules."
-      ],
-      "category": "misc"
-   },
+      "finals": [
+        "TBD"
+      ]
+    },
+    "eventType": "misc",
+    "eventHashtags": [
+      "doodles",
+      "creativity",
+      "design"
+    ],
+    "registrationOpen": true,
+    "eventCoordinators": [
+      "Sneha Debnath[+91 6290544740]",
+      "Aindree Chatterjee[+91 62918 96539]",
+      "Sneha Ghosh[+91 75968 83862]"
+    ],
+    "prize": [
+      "1st : TBD ",
+      "2nd : TBD ",
+      "3rd : TBD "
+    ],
+    "minMembers": 1,
+    "maxMembers": 1,
+    "eventPoster": "logocity.webp",
+    "registrationType": "Srijan'25 Website",
+    "eventDescription": [
+      "Are your lecture notes interjected with doodles? Do you have flair of translating your ideas into images? Do you think you can identify the most elusive logos whenever you see them? Wait no more!"
+    ],
+    "eventRules": [
+      "Refer to the attachments for further details regarding dates and rules."
+    ],
+    "category": "misc"
+  },
   {
-      "eventID": "pov",
-      "eventName": "PACK-O-VATION",
-      "eventDate": {
-        "prelims": [
-          "TBD"
-        ],
-        "finals": [
-          "TBD"
-        ]
-      },
-      "eventType": "business",
-      "eventHashtags": [
-        "packaging",
-        "innovation",
-        "sustainability"
+    "eventID": "pov",
+    "eventName": "PACK-O-VATION",
+    "eventDate": {
+      "prelims": [
+        "TBD"
       ],
-      "registrationOpen": true,
-      "eventCoordinators": [
-        "Ritankar Saha[+91 7595875833]",
-        "Manideep Das[+91 7980287030]",
-        "Rajiv Mishra[+91 9330136532]"
-      ],
-      "prize": [
-        "1st : TBD ",
-        "2nd : TBD ",
-        "3rd : TBD "
-      ],
-      "minMembers": 2,
-      "maxMembers": 3,
-      "eventPoster": "pov.webp",
-      "registrationType": "Srijan'25 Website",
-      "eventDescription": [
-        "Packovation is a team-based competition aimed at inspiring innovative and sustainable packaging solutions. It challenges participants to integrate design, branding, and user experience into practical packaging improvements while considering environmental and market impacts."
-      ],
-      "eventRules": [
-        "Refer to the attachments for further details regarding dates and rules."
-      ],
-      "driveLink": "https://drive.google.com/drive/folders/1rx3rJrtxCTfNiY1PaVUYg_FD6ixYTLaI?usp=sharing",
-      "category": "business"
-   },
-   {
+      "finals": [
+        "TBD"
+      ]
+    },
+    "eventType": "business",
+    "eventHashtags": [
+      "packaging",
+      "innovation",
+      "sustainability"
+    ],
+    "registrationOpen": true,
+    "eventCoordinators": [
+      "Ritankar Saha[+91 7595875833]",
+      "Manideep Das[+91 7980287030]",
+      "Rajiv Mishra[+91 9330136532]"
+    ],
+    "prize": [
+      "1st : TBD ",
+      "2nd : TBD ",
+      "3rd : TBD "
+    ],
+    "minMembers": 2,
+    "maxMembers": 3,
+    "eventPoster": "pov.webp",
+    "registrationType": "Srijan'25 Website",
+    "eventDescription": [
+      "Packovation is a team-based competition aimed at inspiring innovative and sustainable packaging solutions. It challenges participants to integrate design, branding, and user experience into practical packaging improvements while considering environmental and market impacts."
+    ],
+    "eventRules": [
+      "Refer to the attachments for further details regarding dates and rules."
+    ],
+    "driveLink": "https://drive.google.com/drive/folders/1rx3rJrtxCTfNiY1PaVUYg_FD6ixYTLaI?usp=sharing",
+    "category": "business"
+  },
+  {
     "eventID": "escaperoom",
     "eventName": "Escape Room",
     "eventDate": {
@@ -1597,9 +1596,11 @@
       "Agnish Paul[+91 8910499325]",
       "Bonny Molla[+91 98297 04920]"
     ],
-    "prize": [ "1st : TBD ",
-    "2nd : TBD ",
-    "3rd : TBD "],
+    "prize": [
+      "1st : TBD ",
+      "2nd : TBD ",
+      "3rd : TBD "
+    ],
     "minMembers": 3,
     "maxMembers": 4,
     "eventPoster": "escaperoom.webp",
@@ -1681,9 +1682,11 @@
       "Rajobrata Dasgupta[7439319042]",
       "Borno Banerjee[7478054233]"
     ],
-    "prize":  [ "1st : TBD ",
-    "2nd : TBD ",
-    "3rd : TBD "],
+    "prize": [
+      "1st : TBD ",
+      "2nd : TBD ",
+      "3rd : TBD "
+    ],
     "minMembers": 4,
     "maxMembers": 5,
     "eventPoster": "homecoming.webp",
@@ -1721,9 +1724,11 @@
       "Masudur Rahaman[8436003111]",
       "Dittam Barick[7501073872]"
     ],
-    "prize":  [ "1st : TBD ",
-    "2nd : TBD ",
-    "3rd : TBD "],
+    "prize": [
+      "1st : TBD ",
+      "2nd : TBD ",
+      "3rd : TBD "
+    ],
     "minMembers": 2,
     "maxMembers": 4,
     "eventPoster": "btg25.webp",
@@ -1765,9 +1770,11 @@
       "MD Farhan Alam[629080177]",
       "Bandhan Barma[9547745496]"
     ],
-    "prize":  [ "1st : TBD ",
-    "2nd : TBD ",
-    "3rd : TBD "],
+    "prize": [
+      "1st : TBD ",
+      "2nd : TBD ",
+      "3rd : TBD "
+    ],
     "minMembers": 1,
     "maxMembers": 2,
     "eventPoster": "datadrift.webp",
