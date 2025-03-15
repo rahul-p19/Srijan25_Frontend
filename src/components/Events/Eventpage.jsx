@@ -15,7 +15,7 @@ import { getImageUrl } from "../../utils/image-util"; //
 const Navbar = lazy(() => import("../Navbar"));
 const Footer = lazy(() => import("../Footer"));
 const PageReveal = lazy(() => import("../PageReveal"));
-
+const RainbowCursor =lazy(() => import ("./RainbowCursor"));
 function Loading() {
   return (
     <div className="h-screen w-screen bg-background fixed z-[300] flex items-center justify-center">
@@ -206,6 +206,7 @@ const Events = () => {
     <Suspense fallback={<Loading />}>
       <div className="font-sometypeMono">
         <Navbar />
+        <RainbowCursor />
         <PageReveal />
         <Helmet>
           <link rel="canonical" href="https://srijanju.in/events" />
