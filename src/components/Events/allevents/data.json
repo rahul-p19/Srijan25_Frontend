@@ -1483,12 +1483,13 @@
     "maxMembers": 1,
     "eventPoster": "aba.webp",
     "registrationType": "Srijan'25 Website",
-    "eventDescription": [
-      "Participants receive a curated set of stock images and assets. They are free to manipulate, combine, or transform these assets to create an original illustration that tells a compelling story."
+       "eventDescription": [
+"Unleash your creativity and let your imagination take center stage! In this one-of-a-kind visual storytelling event, participants will be provided with a curated selection of stock images and assets. Your challenge? Choose one image as your reference and transform it into a compelling visual narrative—whether through digital manipulation or illustration. This is your opportunity to showcase originality, creativity, and storytelling prowess through visual art. Let your work speak for itself, drawing the audience into a story crafted by your vision."
     ],
     "eventRules": [
       "AI-Free Zone: The use of AI tools or generative fill techniques is strictly prohibited.",
-      "Submission Requirements: Participants must submit their completed artwork along with a concise description detailing their creative process in a pdf or a .jpeg/.jpg format."
+      "Submission Requirements: Participants must submit their completed artwork along with a concise description detailing their creative process in a pdf or a .jpeg/.jpg format.",
+      "Submission Process: A Google Form will be released, where participants must upload their work via a provided drive link."
     ],
     "driveLink": "https://docs.google.com/document/d/1eYvP_CnMV1Z9ufvDcpb5fCstSEKSsqQINbVgxBaPvRg/edit?usp=sharing",
     "category": "misc"
