@@ -15,6 +15,7 @@ import { getImageUrl } from "../../utils/image-util"; //
 const Navbar = lazy(() => import("../Navbar"));
 const Footer = lazy(() => import("../Footer"));
 const PageReveal = lazy(() => import("../PageReveal"));
+//Cursor  effect(Rainbow) here added
 const RainbowCursor =lazy(() => import ("./RainbowCursor"));
 function Loading() {
   return (
