@@ -140,7 +140,7 @@ const EventCardGrid = ({ events, truncateText, onCardClick }) => {
               alt={event.title}
               className="w-auto h-auto object-contain transition-transform duration-300 group-hover:scale-110"
             />
-            <div className="absolute left-0 right-0 bottom-0 p-4 bg-gradient-to-t from-black to-transparent text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <div className="absolute left-0 right-0 bottom-0 p-4 bg-gradient-to-t from-black to-transparent text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-background/60">
               <h3 className="text-xl font-bold mb-1">{event.title}</h3>
               <p className="text-sm">{truncateText(event.description, 310)}</p>
             </div>
