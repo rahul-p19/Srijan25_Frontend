@@ -1,52 +1,50 @@
-
+// SprinkleCursor.jsx
 import React, { useEffect, useRef } from "react";
 
-const RippleCursor = () => {
+const SprinkleCursor = () => {
   const containerRef = useRef(null);
-  const animationFrameRequested = useRef(false);
-  const latestEvent = useRef(null);
+  
+  const colors = ["#FF6B6B", "#FFD93D", "#6BCB77", "#4D96FF", "#FF6EC7"];
 
   useEffect(() => {
-    const createRipple = (x, y) => {
-      const ripple = document.createElement("div");
-      ripple.style.position = "absolute";
-      ripple.style.left = `${x}px`;
-      ripple.style.top = `${y}px`;
-      ripple.style.width = "10px";
-      ripple.style.height = "10px";
-      ripple.style.background = "rgba(0, 255, 0, 5)";
-      ripple.style.borderRadius = "50%";
-      ripple.style.pointerEvents = "none";
-      ripple.style.transform = "translate(-50%, -50%)";
-      ripple.style.transition = "all 0.5s ease-out";
-      
-      containerRef.current.appendChild(ripple);
-      
-      ripple.getBoundingClientRect();
-      
-    
-      ripple.style.width = "50px";
-      ripple.style.height = "50px";
-      ripple.style.opacity = "0";
-      
-      // Remove the ripple after the animation
-      setTimeout(() => {
-        ripple.remove();
-      }, 500);
+    const createSprinkles = (x, y) => {
+      const numParticles = Math.floor(Math.random() * 3) + 3;
+      for (let i = 0; i < numParticles; i++) {
+        const particle = document.createElement("div");
+
+        const offsetX = (Math.random() - 0.5) * 40;
+        const offsetY = (Math.random() - 0.5) * 40;
+        const size = Math.random() * 3 + 2;
+        const color = colors[Math.floor(Math.random() * colors.length)];
+
+        particle.style.position = "absolute";
+        particle.style.left = `${x}px`;
+        particle.style.top = `${y}px`;
+        particle.style.width = `${size}px`;
+        particle.style.height = `${size}px`;
+        particle.style.background = color;
+        particle.style.borderRadius = "50%";
+        particle.style.pointerEvents = "none";
+        particle.style.transform = "translate(-50%, -50%)";
+        particle.style.opacity = "1";
+        particle.style.transition = "all 0.5s ease-out";
+
+        containerRef.current.appendChild(particle);
+
+        particle.getBoundingClientRect();
+
+        particle.style.transform = `translate(${offsetX}px, ${offsetY}px) scale(1.5)`;
+        particle.style.opacity = "0";
+
+        setTimeout(() => {
+          particle.remove();
+        }, 600);
+      }
     };
 
     const handleMouseMove = (e) => {
-      latestEvent.current = e;
-      if (!animationFrameRequested.current) {
-        animationFrameRequested.current = true;
-        requestAnimationFrame(() => {
-          if (latestEvent.current) {
-            const { clientX, clientY } = latestEvent.current;
-            createRipple(clientX, clientY);
-          }
-          animationFrameRequested.current = false;
-        });
-      }
+      const { clientX, clientY } = e;
+      createSprinkles(clientX, clientY);
     };
 
     window.addEventListener("mousemove", handleMouseMove);
@@ -64,10 +62,10 @@ const RippleCursor = () => {
         height: "100%",
         pointerEvents: "none",
         overflow: "hidden",
-        zIndex: 1000,
+        zIndex: 100,
       }}
     />
   );
 };
 
-export default RippleCursor;
+export default SprinkleCursor;
