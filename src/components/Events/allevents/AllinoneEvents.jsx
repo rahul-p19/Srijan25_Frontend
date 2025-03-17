@@ -11,6 +11,7 @@ import {
   FaFacebookF,
   FaWhatsapp,
 } from "react-icons/fa";
+import Confetti from "../Confetti"
 import { MdShare } from "react-icons/md";
 import { ReactTyped } from "react-typed";
 import { useParams, useNavigate } from "react-router-dom";
@@ -236,6 +237,7 @@ const AllEvents = () => {
       <Suspense fallback={<Loading />}>
         <div className="font-sometypeMono">
           <Navbar />
+          <Confetti/>
         </div>
         <PageReveal />
         <Helmet>
@@ -584,4 +586,3 @@ const AllEvents = () => {
 };
 
 export default AllEvents;
-
