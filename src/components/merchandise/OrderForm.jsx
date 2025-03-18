@@ -8,7 +8,7 @@ const QR2 = "/merchandise/regularQR.jpeg";
 function OrderForm({ setShowOrderForm, size, color }) {
   const [loading, setLoading] = useState(false); // change to true if loading image dynamically
   const [qrLink, setQrLink] = useState(QR1);
-  cosnt [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleSubmitOrder = async (e) => {
     e.preventDefault();
