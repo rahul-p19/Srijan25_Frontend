@@ -8,9 +8,11 @@ const QR2 = "/merchandise/regularQR.jpeg";
 function OrderForm({ setShowOrderForm, size, color }) {
   const [loading, setLoading] = useState(false); // change to true if loading image dynamically
   const [qrLink, setQrLink] = useState(QR1);
+  cosnt [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleSubmitOrder = async (e) => {
     e.preventDefault();
+    setIsSubmitting(true);
 
     // Extract form data
     const formData = new FormData(e.target);
@@ -26,10 +28,12 @@ function OrderForm({ setShowOrderForm, size, color }) {
     // Validate the input
     if (!nameOnShirt.trim()) {
       toast("Please enter a name for the shirt.");
+      setIsSubmitting(false);
       return;
     }
     if (!paymentProof || paymentProof.size === 0) {
       toast("Please upload a payment proof image.");
+      setIsSubmitting(false);
       return;
     }
 
@@ -75,9 +79,11 @@ function OrderForm({ setShowOrderForm, size, color }) {
       } else {
         toast("Failed to upload payment proof.");
       }
+      setIsSubmitting(false);
     } catch (error) {
       console.error("Error submitting order:", error);
       toast("An error occurred while submitting your order.");
+      setIsSubmitting(false);
     }
   };
   const handleCloseForm = () => {
@@ -290,6 +296,7 @@ function OrderForm({ setShowOrderForm, size, color }) {
                 <button
                   type="submit"
                   className="px-4 py-2 bg-[#1c1c1c] border border-gray-500 rounded hover:bg-gray-700"
+                  disabled={isSubmitting}
                 >
                   Submit Order
                 </button>
