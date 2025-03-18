@@ -79,10 +79,10 @@ function OrderForm({ setShowOrderForm, size, color }) {
       } else {
         toast("Failed to upload payment proof.");
       }
-      setIsSubmitting(false);
     } catch (error) {
       console.error("Error submitting order:", error);
       toast("An error occurred while submitting your order.");
+    }finally{
       setIsSubmitting(false);
     }
   };
@@ -298,7 +298,7 @@ function OrderForm({ setShowOrderForm, size, color }) {
                   className="px-4 py-2 bg-[#1c1c1c] border border-gray-500 rounded hover:bg-gray-700"
                   disabled={isSubmitting}
                 >
-                  Submit Order
+                {isSubmitting ? 'Submitting...' : 'Submit Order'}
                 </button>
               </div>
             </form>
