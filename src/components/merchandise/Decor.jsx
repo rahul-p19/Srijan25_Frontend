@@ -28,8 +28,8 @@ const SrijanMerchandiseAnnouncement = () => {
                 <span className='text-right'>Delivered during Srijan'25 (April 18-19)</span>
               </li>
               <li className="flex items-center justify-between">
-                <span className="border border-blue-500 text-blue-200 px-2 py-1 rounded mr-2 text-sm font-medium w-32 text-center">Order after April 10</span>
-                <span className='text-right'>Collect from campus on a later date</span>
+                <span className="border border-blue-500 text-blue-200 px-2 py-1 rounded mr-2 text-sm font-medium w-32 text-center">Order after April 11</span>
+                <span className='text-right'>Collect from campus on a later date(Post Srijan 20)</span>
               </li>
             </ul>
           </div>
@@ -41,7 +41,7 @@ const SrijanMerchandiseAnnouncement = () => {
             <h2 className="font-bold text-lg text-blue-300 ml-3 sm:ml-0">T-shirt Availability</h2>
           </div>
           <div>
-            <p className="ml-2 mt-1 sm:mt-3">T-shirts will be available from March 20 onwards based on your order date.</p>
+            <p className="ml-2 mt-1 sm:mt-3">T-shirts will be available from April 14 onwards based on your order date.</p>
           </div>
         </div>
 
