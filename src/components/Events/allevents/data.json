@@ -1792,5 +1792,34 @@
     ],
     "driveLink": "https://drive.google.com/drive/folders/1Hj89HIkc01UZ0AZV-oHoiT0pKQUKzcSt",
     "category": "coding"
+  },
+    {
+    "eventID": "caseomania",
+    "eventName": "Case-o-mania",
+    "eventDate": {
+      "prelims": ["TBD"],
+      "finals": ["TBD"]
+    },
+    "eventType": "brainstorming",
+    "registrationOpen": true,
+    "eventCoordinators": [
+      "Tarpan Roy[7908595400]",
+      "Suresh Pal[9907579432]",
+      "Manjima Bhattacharyya[7029936889]"
+    ],
+    "prize": ["1st : TBD ", "2nd : TBD ", "3rd : TBD "],
+    "minMembers": 2,
+    "maxMembers": 3,
+    "eventPoster": "caseomania.webp",
+    "registrationType": "Srijan'25 Website",
+    "eventDescription": [
+      "Solve real world case study problems of engineering domain.",
+      "Qualify the aptitude round (via UNSTOP) and make a solution PPT of 3-4 slides of any one of the problem statements that will be given (via UNSTOP).",
+      "Qualifiers of the previous round will make a 7-8 slide detailed solution PPT and present it in front of a panel of judges. Winners and runners-up will win exciting rewards."
+    ],
+
+    "eventRules": ["Please follow the drive link carefully"],
+    "driveLink": "https://drive.google.com/file/d/11WSGf0kHSDsuLOFccFROWxSWJpl3Y-HY/view?usp=sharing",
+    "category": "brainstorming"
   }
 ]
