@@ -95,11 +95,13 @@ const DashboardPage = ({ userDetails, logout }) => {
   const [formData, setFormData] = useState({
     name: user?.name ?? "",
     phone: user?.phone ?? "",
+    institution: user?.userInstitution ?? "",
   });
 
   const [errors, setErrors] = useState({
     email: "",
     phone: "",
+    institution: "",
   });
 
   const handleChange = (e) => {
@@ -108,11 +110,10 @@ const DashboardPage = ({ userDetails, logout }) => {
   };
 
   const [loading, setLoading] = useState(false);
-  const [message, setMessage] = useState("");
 
   const isFormValid =
-    Object.values(formData).every((field) => field.trim() !== "") &&
-    Object.values(errors).every((error) => error === "");
+  Object.values(formData).some((field) => field.trim() !== "") &&
+  Object.values(errors).every((error) => error === "");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -123,19 +124,19 @@ const DashboardPage = ({ userDetails, logout }) => {
       const response = await usersController.editUser({
         name: formData.name,
         phone: formData.phone,
+        institution: formData.institution,
       });
 
-      setUser((d) => ({
-        name: response.data.name,
-        phone: response.data.phone,
-        ...d,
+      setUser((prevUser) => ({
+        ...prevUser, 
+        name: response.data.user.name,
+        phone: response.data.user.phone,
+        userInstitution: response.data.user.institution, 
       }));
-      setMessage("Your details were edited successfully!");
-      toast.success(message);
+      toast.success("Your details were edited successfully!");
       // eslint-disable-next-line no-unused-vars
     } catch (e) {
-      setMessage("Error while editing details. Try again.");
-      toast.error(message);
+      toast.error("Error while editing details. Try again.");
     } finally {
       setLoading(false);
       handleClose();
@@ -257,6 +258,19 @@ const DashboardPage = ({ userDetails, logout }) => {
                         setErrors={setErrors}
                         onChange={handleChange}
                       />
+                      <TextInput
+                        labelContent={
+                          <>
+                            <span className="text-[#8420FF]">Enter name of your</span>{" "}
+                            institution
+                          </>
+                        }
+                        name="institution"
+                        type="text"
+                        placeholder="Institution..."
+                        value={formData.institution}
+                        onChange={handleChange}
+                      />
                       <div className="w-full flex justify-center mt-6">
                         <SignUpButton
                           onClick={handleSubmit}
@@ -276,6 +290,7 @@ const DashboardPage = ({ userDetails, logout }) => {
                 <p>Name: {user?.name}</p>
                 <p>Email: {user?.email}</p>
                 <p>Phone No.: {user?.phone ?? "Not available"}</p>
+                <p>Institution.: {user?.userInstitution ?? "Not available"}</p>
               </div>
             </section>
           </div>
