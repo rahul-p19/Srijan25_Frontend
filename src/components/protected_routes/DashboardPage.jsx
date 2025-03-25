@@ -1,11 +1,12 @@
 /* eslint-disable react/prop-types */
 import { useEffect, useState } from "react";
-// import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Footer from "../Footer";
 import Contact from "../home/Contact";
 import Navbar from "../Navbar";
 import eventData from "../Events/allevents/event-ids";
-
+import { CheckIcon } from '@heroicons/react/24/outline';
+import {authController} from '../../services/http';
 import LogoutIcon from "../../assets/icons/logout.svg";
 import NotifsIcon from "../../assets/icons/notifications.svg";
 import EditIcon from "../../assets/icons/pen.svg";
@@ -38,6 +39,25 @@ const style = {
 };
 
 const DashboardPage = ({ userDetails, logout }) => {
+  const navigate = useNavigate();
+
+  const handleVerifyClick = async () => {
+    setOtpLoading(true);
+    try {
+      const response = await authController.resendOTP(user?.email);
+      const result = response.data;
+      if (result.success) {
+        navigate("/verify", { state: { formData: { email: user?.email } } });
+      } else {
+          toast("Failed to Send OTP. Please try again.");
+      }
+    } catch (error) {
+        console.error("Error sending OTP:", error);
+    } finally {
+      setOtpLoading(false);
+    }
+  };
+
   if (!userDetails || userDetails === "") redirect("/login");
   const [user, setUser] = useState(userDetails);
   const merchStatus = user.merchandise?.status ?? "Not ordered.";
@@ -110,6 +130,7 @@ const DashboardPage = ({ userDetails, logout }) => {
   };
 
   const [loading, setLoading] = useState(false);
+  const [Otploading, setOtpLoading] = useState(false);
 
   const isFormValid =
   Object.values(formData).some((field) => field.trim() !== "") &&
@@ -288,7 +309,20 @@ const DashboardPage = ({ userDetails, logout }) => {
               />
               <div className="flex flex-col items-start">
                 <p>Name: {user?.name}</p>
-                <p>Email: {user?.email}</p>
+                <p className="flex items-center gap-2">
+                  Email: {user?.email} 
+                  {user?.emailVerified ? (
+                    <CheckIcon className="h-6 w-6 mb-1 text-green-500" strokeWidth={3} />
+                  ) : (
+                    <button 
+                      onClick={handleVerifyClick} 
+                      disabled={Otploading}
+                      className={`px-2 ml-2 py-1 cursor-pointer rounded-sm text-sm border ${loading ? "opacity-50 cursor-not-allowed" : "text-red-500 border-red-500"}`}
+                    >
+                      {Otploading ? "Sending OTP..." : "Verify"}
+                    </button>
+                  )}
+                </p>
                 <p>Phone No.: {user?.phone ?? "Not available"}</p>
                 <p>Institution.: {user?.userInstitution ?? "Not available"}</p>
               </div>
