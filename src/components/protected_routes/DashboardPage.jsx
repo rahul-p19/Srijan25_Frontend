@@ -309,19 +309,22 @@ const DashboardPage = ({ userDetails, logout }) => {
               />
               <div className="flex flex-col items-start">
                 <p>Name: {user?.name}</p>
-                <p className="flex items-center gap-2">
-                  Email: {user?.email} 
-                  {user?.emailVerified ? (
-                    <CheckIcon className="h-6 w-6 mb-1 text-green-500" strokeWidth={3} />
-                  ) : (
-                    <button 
-                      onClick={handleVerifyClick} 
-                      disabled={Otploading}
-                      className={`px-2 ml-2 py-1 cursor-pointer rounded-sm text-sm border ${loading ? "opacity-50 cursor-not-allowed" : "text-red-500 border-red-500"}`}
-                    >
-                      {Otploading ? "Sending OTP..." : "Verify"}
-                    </button>
-                  )}
+                <p className="flex flex-wrap">
+                  <span>Email:</span>
+                  <span className="inline-flex flex-wrap items-center gap-2 break-all">
+                    {user?.email}
+                    {user?.emailVerified ? (
+                      <CheckIcon className="h-5 w-5 text-green-500 hidden sm:inline" strokeWidth={3} />
+                    ) : (
+                      <button 
+                        onClick={handleVerifyClick} 
+                        disabled={Otploading}
+                        className={`px-2 py-1 cursor-pointer rounded-sm text-sm border ${Otploading ? "opacity-50 cursor-not-allowed" : "text-red-500 border-red-500"}`}
+                      >
+                        {Otploading ? "Sending OTP..." : "Verify"}
+                      </button>
+                    )}
+                  </span>
                 </p>
                 <p>Phone No.: {user?.phone ?? "Not available"}</p>
                 <p>Institution.: {user?.userInstitution ?? "Not available"}</p>
