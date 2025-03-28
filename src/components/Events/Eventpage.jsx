@@ -126,7 +126,7 @@ const CategoryTabs = ({ activeCategory, onCategoryChange }) => {
 /* EventCardGrid Component with glassmorphism container and scroll */
 const EventCardGrid = ({ events, truncateText, onCardClick }) => {
   return (
-    <div className="max-w-[1600px] mx-auto p-6 rounded-2xl shadow-2xl bg-white/2 backdrop-blur-sm border h-[117vh] overflow-y-auto">
+    <div className="max-w-[1600px] mx-auto p-6 rounded-2xl shadow-2xl bg-white/2 backdrop-blur-sm border">
       <main className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-17">
         {events.map((event) => (
           <div
@@ -234,7 +234,7 @@ const Events = () => {
             activeCategory={activeCategory}
             onCategoryChange={handleCategoryChange}
           />
-          <section className="max-w-md mx-auto mb-10">
+          <section className="max-w-md mx-auto mb-10 ">
             <div className="relative">
               <input
                 type="text"
