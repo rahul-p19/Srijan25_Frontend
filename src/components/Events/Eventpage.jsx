@@ -7,7 +7,7 @@ import React, {
   useMemo,
 } from "react";
 import { ReactTyped } from "react-typed";
-import Snowfall from "react-snowfall";
+// import Snowfall from "react-snowfall";
 import { Helmet } from "react-helmet-async";
 import "./styles.css";
 import eventData from "../Events/allevents/data.json"; 
@@ -16,7 +16,7 @@ const Navbar = lazy(() => import("../Navbar"));
 const Footer = lazy(() => import("../Footer"));
 const PageReveal = lazy(() => import("../PageReveal"));
 //Cursor  effect(Rainbow) here added
-const RainbowCursor =lazy(() => import ("./RainbowCursor"));
+// const RainbowCursor =lazy(() => import ("./RainbowCursor"));
 function Loading() {
   return (
     <div className="h-screen w-screen bg-background fixed z-[300] flex items-center justify-center">
@@ -89,9 +89,9 @@ const FancyButton = React.memo(({ active, onClick, children }) => {
 const GridLines = React.memo(() => (
   <div className="absolute top-0 left-0 w-full h-full pointer-events-none">
     {/* Vertical decorative lines */}
-    <div className="absolute top-0 left-[20%] w-[0.1px] h-full bg-white"></div>
-    <div className="absolute top-0 left-[50%] w-[0.1px] h-full bg-white"></div>
-    <div className="absolute top-0 left-[80%] w-[0.1px] h-full bg-white"></div>
+    <div className="absolute top-0 left-[20%] w-[0.1px] h-full bg-greyBorder"></div>
+    <div className="absolute top-0 left-[50%] w-[0.1px] h-full bg-greyBorder"></div>
+    <div className="absolute top-0 right-[20%] mr-[1px] w-[0.1px] h-full bg-greyBorder"></div>
   </div>
 ));
 
@@ -207,7 +207,7 @@ const Events = () => {
     <Suspense fallback={<Loading />}>
       <div className="font-sometypeMono">
         <Navbar />
-        <RainbowCursor />
+        {/* <RainbowCursor /> */}
         <PageReveal />
         <Helmet>
           <link rel="canonical" href="https://srijanju.in/events" />
@@ -219,7 +219,7 @@ const Events = () => {
         </Helmet>
         <div className="relative bg-gradient-to-r from-background to-background text-white min-h-screen py-2 px-2">
           <GridLines />
-          <Snowfall color="white" snowflakeCount={100} />
+          {/* <Snowfall color="white" snowflakeCount={100} /> */}
           <header className="max-w-9xl mx-auto text-center mb-6">
             <h1 className="text-4xl md:text-xl lg:text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-green-400 via-red-500 to-blue-600 drop-shadow-2xl">
               <ReactTyped
