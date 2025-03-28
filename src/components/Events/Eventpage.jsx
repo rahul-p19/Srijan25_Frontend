@@ -95,7 +95,7 @@ const GridLines = React.memo(() => (
   </div>
 ));
 
-/* CategoryTabs Component with blurred background */
+
 const CategoryTabs = ({ activeCategory, onCategoryChange }) => {
   const categories = [
     "all",
@@ -151,7 +151,7 @@ const EventCardGrid = ({ events, truncateText, onCardClick }) => {
   );
 };
 
-/* Main Events Component */
+
 const Events = () => {
   const truncateText = useCallback((text, maxLength = 310) => {
     if (!text) return "";
