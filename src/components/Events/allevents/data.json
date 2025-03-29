@@ -1914,5 +1914,45 @@
     ],
     "driveLink": "https://drive.google.com/file/d/15tTpPFk2IjvAL5RG5QTMT7t8OBJtVwXU/view?usp=sharing",
     "category": "misc"
+  },
+  {
+    "eventID": "entropy",
+    "eventName": "Entropy",
+    "eventDate": {
+      "prelims": [
+        "TBD"
+      ],
+      "finals": [
+        "TBD"
+      ]
+    },
+    "eventType": "misc",
+    "eventHashtags": [
+      "sample",
+      "event"
+    ],
+    "registrationOpen": true,
+    "eventCoordinators": [
+      "Asmita Bagchi [9088025026]",
+      "Arkabrata Das[7449432992]",
+      "Satyam Roy[8101122760]"
+    ],
+    "prize": [
+      "1st : 2,500 ",
+      "2nd : 1,800 ",
+      "3rd : 700 "
+    ],
+    "minMembers": 3,
+    "maxMembers": 4,
+    "eventPoster": "entropy.webp",
+    "registrationType": "Srijan'25 Website",
+    "eventDescription": [
+      "Entropy is the annual case study competition that ISHRAE JU Students’ Chapter organises at Srijan. It’s a one of a kind brain storming competition that focuses on using our academic knowledge in real world problems to get an unique solution."
+    ],
+    "eventRules": [
+       "Follow the brochure for the rules and regulations very carefully."
+    ],
+    "driveLink": "https://drive.google.com/drive/folders/16GGSepXA_MnHHs2TCfbymVOrCOSszunj",
+    "category": "misc"
   }
 ]
