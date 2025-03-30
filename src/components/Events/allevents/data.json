@@ -1954,5 +1954,48 @@
     ],
     "driveLink": "https://drive.google.com/drive/folders/16GGSepXA_MnHHs2TCfbymVOrCOSszunj",
     "category": "misc"
-  }
+  },
+    {
+    "eventID": "qtp",
+    "eventName": "Quizotopia",
+    "eventDate": {
+      "prelims": [
+        "TBD"
+      ],
+      "finals": [
+        "TBD"
+      ]
+    },
+    "eventType": "misc",
+    "eventHashtags": [
+      "sample",
+      "event"
+    ],
+    "registrationOpen": true,
+    "eventCoordinators": [
+      "Rudranshu Sen[9830037680]",
+      "Sreejan Bose[9748877972]",
+      "Ayush Mondal[6290140734]"
+    ],
+    "prize": [
+      "1st : 1000 ",
+      "2nd : 600 ",
+      "3rd : 400 "
+    ],
+    "minMembers": 1,
+    "maxMembers": 3,
+    "eventPoster": "qtp.webp",
+    "registrationType": "Srijan'25 Website",
+    "eventDescription": [
+      "Quizotopia 2025, a JU tradition, is back! Hosted by JUQF, prelims offer 20 varied questions. Top 8 teams advance to finals, settled by starred questions in case of ties. Finals feature 3 rounds led by different QMs, maintaining pounce-bounce format and rules for incomplete answers. An intriguing special round awaits. Stay tuned for venue and prize updates. Join us for an exciting quizzing experience!"
+    ],
+    "eventRules": [
+      "The event will have two stages and will be held entirely in offline mode .",
+      "The Prelims with a total of 20 questions (time taken approximately 45-50 minutes)",
+      "After the prelims, the Top 8 teams advance into the Finals. The finals are to start immediately after the prelims script correction with no break in between. (Volunteer help would be appreciated in the script correction process in case of a large prelims turnout.) Cross-college teams are allowed.",
+      "The Prelims will consist of a total of 20 questions (time taken approximately 45-50 minutes). After the prelims, the Top 8 teams will advance into the Finals. The Finals will have 3 rounds, a combination of verbal and written (time taken approximately 120-150 minutes). Pounce rules will apply in the verbal rounds."
+    ],
+    "driveLink": "https://drive.google.com/file/d/1UpslgvbKYr-oEvocDuUYaEWeBnrYmYQJ/view?usp=sharing",
+    "category": "misc"
+    }
 ]
