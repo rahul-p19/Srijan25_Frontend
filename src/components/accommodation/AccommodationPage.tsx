@@ -61,16 +61,21 @@ function AccommodationPage() {
         <PageReveal />
         <div className="flex flex-col gap-y-4 w-full sm:w-3/5 text-[0.925rem] sm:text-base border-greyBorder border-t-transparent sm:border border-b-transparent pt-4 sm:pt-6 sm:text-justify">
           <h1 className="text-3xl text-center">Accommodation</h1>
-          <div className="grid grid-cols-5 sm:grid-cols-3 gap-2 px-4 sm:px-6">
-            <p className="col-span-2 sm:col-span-1">
-              Address of Accommodation:
-            </p>
-            <p className="col-span-3 sm:col-span-2 text-left">
-              Nava Prajanma State Youth Hostel , HC84+WHW, Eastern Metropolitan
-              Bypass, KA Block, Sector 3, Bidhannagar, Kolkata, West Bengal
-              700010. <br />
-              Entry through Gate number 3 .
-            </p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 place-items-center gap-y-3 px-4 sm:px-6">
+            <div className="flex flex-col gap-y-2 text-center sm:text-left">
+            <p>Address of Accommodation:</p>
+            <p>Nava Prajanma State Youth Hostel , HC84+WHW, Eastern Metropolitan Bypass, KA Block, Sector 3, Bidhannagar, Kolkata, West Bengal 700010.
+            Entry through Gate number 3.</p>
+            </div>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1864.115832365385!2d88.40533588232218!3d22.56690284497539!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a0275d38009a435%3A0xcc4edd682431e9d2!2sState%20Youth%20Hostel!5e1!3m2!1sen!2sin!4v1743450488625!5m2!1sen!2sin"
+              width="300"
+              height="200"
+              style={{ border: "0" }}
+              allowFullScreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
           </div>
           <ul className="flex flex-col gap-y-3 list-disc pl-8 pr-3 sm:px-10 my-4">
             <li>
@@ -107,7 +112,7 @@ function AccommodationPage() {
           <ul className="flex flex-col gap-y-3 list-disc pl-8 pr-3 sm:px-10 mb-4">
             <h2 className="text-xl">Contacts</h2>
             <li>Washim Ahmed: +918335986644</li>
-            <li>Harsham Mishra:  +917980623712</li>
+            <li>Harsham Mishra: +917980623712</li>
             <li>Dipayan Bhattacharyya: +917044836127</li>
           </ul>
         </div>
