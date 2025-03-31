@@ -77,6 +77,7 @@ function Navbar() {
           <a href='/notifications' className='text-left border-greyBorder/30 border-b w-full py-1'>Notifications</a>
           <a href='https://docs.google.com/forms/d/e/1FAIpQLSe-zoCeE50FR2dUzauh7wfvHxfHczPwgziqYhRju2zMLH164A/viewform' className='text-left border-greyBorder/30 border-b w-full py-1'>Campus Ambassadors</a>
           <a href='/workshop' className='text-left border-greyBorder/30 border-b w-full py-1'>Workshop</a>
+          <a href='/accommodation' className='text-left border-greyBorder/30 border-b w-full py-1'>Accommodation</a>
           <a href='/merchandise' className='text-left border-greyBorder/30 border-b w-full py-1'>Merchandise</a>
           <a href={`${loggedIn ? '/dashboard' : '/login'}`} className='text-left border-greyBorder/30 border-b w-full py-1'>{loggedIn ? 'Dashboard' : 'Login'}</a>
         </div >
