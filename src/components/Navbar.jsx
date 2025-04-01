@@ -49,8 +49,8 @@ function Navbar() {
         <a className={`relative hidden sm:block w-fit cursor-pointer`} href="/notifications">Notifications
           <div className={`absolute h-[2px] bg-gradient-to-l from-red to-purple bottom-0 ${pathname == "notifications" ? 'w-full' : 'w-0'}`}></div>
         </a>
-        <a href="/workshop" className={`relative hidden sm:block w-fit`}>Workshop
-          <div className={`absolute h-[2px] bg-gradient-to-l from-red to-purple bottom-0 ${pathname == "workshop" ? 'w-full' : 'w-0'}`}></div>
+        <a href="/accommodation" className={`relative hidden sm:block w-fit`}>Accommodation
+          <div className={`absolute h-[2px] bg-gradient-to-l from-red to-purple bottom-0 ${pathname == "accommodation" ? 'w-full' : 'w-0'}`}></div>
         </a>
       </div>
       <div className='grid place-items-center text-xl'>
