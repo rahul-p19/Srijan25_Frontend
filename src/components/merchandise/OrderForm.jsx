@@ -23,6 +23,8 @@ function OrderForm({ setShowOrderForm, size, color }) {
     const college = formData.get("college");
     const department = formData.get("department");
     const year = formData.get("year");
+    const contact = formData.get("contact");
+    const campus = formData.get("campus");
 
     // toast([color, size]);
     // Validate the input
@@ -50,7 +52,8 @@ function OrderForm({ setShowOrderForm, size, color }) {
       uploadFormData.append("year", year);
       uploadFormData.append("size", size);
       uploadFormData.append("color", color);
-      // console.log(uploadFormData);
+      uploadFormData.append("contact", contact);
+      uploadFormData.append("campus", campus);
 
       // Send the image to your backend API
       const response = await fetch(`${backendUrl}/api/v1/merch/submitImage`, {
@@ -195,6 +198,43 @@ function OrderForm({ setShowOrderForm, size, color }) {
                   required
                 />
               </div>
+              <div className="mb-4">
+                <label
+                  className="block text-sm font-medium mb-2"
+                  htmlFor="department"
+                >
+                  Contact No
+                </label>
+                <input
+                  type="tel"
+                  id="contact"
+                  name="contact"
+                  className="w-full p-2 bg-[#1c1c1c] border border-gray-500 rounded focus:outline-none focus:ring-1 focus:ring-white"
+                  required
+                  minLength={10}
+                  maxLength={10}
+                  pattern="[0-9]{10}"
+                  inputMode="numeric"
+                />
+              </div>
+              <div className="mb-4">
+                <label
+                  className="block text-sm font-medium mb-2"
+                  htmlFor="campus"
+                >
+                  Which campus?
+                </label>
+                <select
+                  id="campus"
+                  name="campus"
+                  className="w-full p-2 bg-[#1c1c1c] border border-gray-500 rounded focus:outline-none focus:ring-1 focus:ring-white"
+                  required
+                >
+                  <option value="">Select a campus</option>
+                  <option value="jadavpur">Jadavpur</option>
+                  <option value="saltlake">Salt Lake</option>
+                </select>
+              </div>
 
               <div className="mb-4">
                 <label
@@ -308,4 +348,4 @@ function OrderForm({ setShowOrderForm, size, color }) {
     </>
   );
 }
-export default OrderForm;
+export default OrderForm;tf 
