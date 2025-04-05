@@ -63,7 +63,7 @@ export default function AdminPage() {
       const headers = ["Name", "Email"];
 
       // Convert data into rows
-      const allParticipants = [...data.participants];
+      const allParticipants = data.participants;
       const rows = allParticipants.map((team) => {
         return [team.name, team.email];
       });
@@ -73,30 +73,33 @@ export default function AdminPage() {
       XLSX.utils.book_append_sheet(wb, ws, "Participants");
     } else {
       const maxMembers = data.maxParticipants - 1;
-      const headers = ["Team Name", "Team Lead Name", "Team Lead Email"];
+      const headers = [
+        "Team Name",
+        "Team Lead Name",
+        "Team Lead Email",
+        "Team Lead Phone",
+      ];
       for (let i = 1; i <= maxMembers; i++) {
-        headers.push(`Member${i} Name`, `Member${i} Email`);
+        headers.push(`Member${i} Name`, `Member${i} Email`, `Member${i} Phone`);
       }
       headers.push("Status");
 
       // Convert data into rows
-      const allParticipants = [
-        ...data.participantGroups,
-        ...data.pendingParticipantGroups,
-        ...data.participants,
-      ];
+      const allParticipants = data.participants;
       const rows = allParticipants.map((team) => {
         const members = team.members || [];
 
         return [
           team.name,
-          team.creator.name,
-          team.creator.email,
+          team.creator.name || "",
+          team.creator.email || "",
+          team.creator.phone || "",
           ...members.flatMap((member) => [
             member.user.name || "",
             member.user.email || "",
+            member.user.phone || "",
           ]),
-          ...Array((maxMembers - members.length) * 2).fill(""), // Fill empty slots if members < max
+          ...Array((maxMembers - members.length) * 3).fill(""), // Fill empty slots if members < max
           team.status,
         ];
       });
@@ -111,8 +114,23 @@ export default function AdminPage() {
   }
 
   const downloadExcelSheet = async () => {
-    if (currentEvent) exportToExcel(currentEvent, currentEvent.name);
-    else alert("Select an event first");
+    if (currentEvent) {
+      setLoading(true);
+      const authToken = localStorage.getItem("SrijanAdminAuthToken");
+      try {
+        const response = await axios.post(
+          `${CONST.env.API_SERVER}/adminFetchEventParticipants`,
+          {
+            authToken: authToken,
+            slug: currentEvent.slug,
+          },
+        );
+        exportToExcel(response.data.updatedEvent, currentEvent.name);
+      } catch (err) {
+        alert(err);
+      }
+      setLoading(false);
+    } else alert("Select an event first");
   };
 
   if (loading) return <Loading />;
@@ -132,7 +150,7 @@ export default function AdminPage() {
           <div>
             <button
               type="button"
-              class="text-green-700 hover:text-white border border-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-lg px-5 py-2.5 text-center me-2 mb-2 dark:border-green-500 dark:text-green-500 dark:hover:text-white dark:hover:bg-green-600 dark:focus:ring-green-800"
+              className="text-green-700 hover:text-white border border-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm md:text-lg px-5 py-2.5 text-center me-2 mb-2 dark:border-green-500 dark:text-green-500 dark:hover:text-white dark:hover:bg-green-600 dark:focus:ring-green-800"
               onClick={downloadExcelSheet}
             >
               Download Excel Sheet
