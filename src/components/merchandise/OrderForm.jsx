@@ -8,7 +8,7 @@ const mujtahid_349 = "/merchandise/mujtahid-hossain-349.jpeg";
 
 function OrderForm({ setShowOrderForm, size, color }) {
   const [loading, setLoading] = useState(false); // change to true if loading image dynamically
-  const [qrLink, setQrLink] = useState(mujtahid_349);
+  const [qrLink, setQrLink] = useState(QR2);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleSubmitOrder = async (e) => {
@@ -296,7 +296,7 @@ function OrderForm({ setShowOrderForm, size, color }) {
                   className="w-fit bg-green-500 hover:bg-green-600 px-4 py-2 rounded-sm"
                   onClick={(e) => {
                     e.preventDefault();
-                    setQrLink(prev => prev === mujtahid_349 ? QR1 : (prev === QR1 ? QR2 : mujtahid_349))
+                    setQrLink(prev => prev === QR1 ? QR2 : QR1)
                   }
                   }
                 >Get Alternate QR
