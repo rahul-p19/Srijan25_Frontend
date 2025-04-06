@@ -296,7 +296,7 @@ function OrderForm({ setShowOrderForm, size, color }) {
                   className="w-fit bg-green-500 hover:bg-green-600 px-4 py-2 rounded-sm"
                   onClick={(e) => {
                     e.preventDefault();
-                    setQrLink(prev => prev === mujtahid_349 ? QR1 : (prev === QR1 ? QR2 : mutjahid_349))
+                    setQrLink(prev => prev === mujtahid_349 ? QR1 : (prev === QR1 ? QR2 : mujtahid_349))
                   }
                   }
                 >Get Alternate QR
