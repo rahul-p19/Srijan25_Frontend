@@ -2022,8 +2022,8 @@
       "2nd : TBD ",
       "3rd : TBD "
     ],
-    "minMembers": 3,
-    "maxMembers": 4,
+    "minMembers": 1,
+    "maxMembers": 1,
     "eventPoster": "rapbattle.webp",
     "registrationType": "Srijan'25 Website",
     "eventRules": [
