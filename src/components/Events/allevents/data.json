@@ -1994,5 +1994,57 @@
     ],
     "driveLink": "https://drive.google.com/file/d/1UpslgvbKYr-oEvocDuUYaEWeBnrYmYQJ/view?usp=sharing",
     "category": "misc"
-    }
+    },
+     {
+    "eventID": "RapBattle",
+    "eventName": "Rap Battle",
+    "eventDate": {
+      "prelims": [
+        "Estimated 20th April 2025"
+      ],
+      "finals": [
+        "Estimated 20th April 2025"
+      ]
+    },
+    "eventType": "misc",
+    "eventHashtags": [
+      "sample",
+      "event"
+    ],
+    "registrationOpen": true,
+    "eventCoordinators": [
+      "Tushar Barman [9091682357 ]",
+      "Partha Das[8927107110]",
+      "Biswadeep Nath[6033298814]"
+    ],
+    "prize": [
+      "1st : TBD ",
+      "2nd : TBD ",
+      "3rd : TBD "
+    ],
+    "minMembers": 3,
+    "maxMembers": 4,
+    "eventPoster": "rapbattle.webp",
+    "registrationType": "Srijan'25 Website",
+    "eventRules": [
+     "Eligibility: Open to all participants registered for the events.",
+     "Languages Allowed: Bengali, English & Hindi.",
+     "Registration: Participants must register before the deadline. No on-spot entries allowed.",
+     "Code of Conduct: Any form of hate speech, explicit content, or personal attacks will lead to disqualification.",
+     "Backing Tracks: Rappers may perform a cappella or with a pre-made beat, but backing vocal tracks are not allowed.",
+     "Time Limits: Exceeding time limits will lead to deductions in scores or on spot   elimination.",
+      "Judging Criteria: Each performance will be judged on technique, originality, crowd engagement,\n cadence and overall stage presence",
+      "Limitations: No personal attacks beyond lyrical jabs. offensive content willlead to disqualification.",
+      "Microphone Handling: Mic drops are cool, but breaking equipment isn’t. Any damage to event gear will result in penalties.",
+      "Decision Making: Judges' decisions will be final and binding."
+
+],
+    "eventDescription": [
+   "SRIJAN'25 presents the ultimate showdown for vocal artistry—Rap Battle! Whether you're a master of percussion with just your mouth or a lyrical genius ready to spit fire, this is your\nchance to prove your spirit. Bring your skills, bring your energy, and let’s see who gets to dominate the stage with only a mic."
+      
+    ],
+    "driveLink": "https://drive.google.com/drive/folders/1hNd8nNjlbh23MHeprD0NV5nZ-n7Z7ZLn",
+    "category": "misc"
+  }
+   
 ]
