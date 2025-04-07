@@ -371,12 +371,14 @@ const AllEvents = () => {
                   <h3 className="text-lg md:text-2xl font-bold flex items-center gap-2 text-red-500">
                     <FaCalendarAlt /> EVENT DETAILS
                   </h3>
-                  <p>
+                  {eventDetails.prelims && 
+                    <p>
                     <span className="text-yellow-400">
                       Event Date (Prelims):{" "}
                     </span>
                     {eventDetails.prelims}
                   </p>
+                  }
                   <p>
                     <span className="text-yellow-400">
                       Event Date (Finals):{" "}
