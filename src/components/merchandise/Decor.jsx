@@ -21,15 +21,15 @@ const SrijanMerchandiseAnnouncement = () => {
             <ul className="sm:ml-2 space-y-2 mt-2 w-full">
               <li className="flex items-center justify-between w-full">
                 <span className="border border-blue-500 text-blue-200 px-2 py-1 rounded mr-2 text-sm font-medium w-20 sm:w-32 text-center">Order by March 28</span>
-                <span className='text-right'>Receive by April 14</span>
+                <span className='text-right'>Expected delivery by April 14</span>
               </li>
               <li className="flex items-center justify-between w-full">
                 <span className="border border-blue-500 text-blue-200 px-2 py-1 rounded mr-2 text-sm font-medium w-36 sm:w-32 text-center">Order by April 10</span>
-                <span className='text-right'>Delivered during Srijan'25 (April 18-19)</span>
+                <span className='text-right'>Expected delivery during Srijan'25 (April 18–19)</span>
               </li>
               <li className="flex items-center justify-between">
                 <span className="border border-blue-500 text-blue-200 px-2 py-1 rounded mr-2 text-sm font-medium w-32 text-center">Order after April 11</span>
-                <span className='text-right'>Collect from campus on a later date(Post Srijan 20)</span>
+                <span className='text-right'>Expected collection from campus on a later date (Post-Srijan, April 20 onwards)</span>
               </li>
             </ul>
           </div>
@@ -38,10 +38,12 @@ const SrijanMerchandiseAnnouncement = () => {
         <div className="flex flex-col items-center">
           <div className='flex justify-center relative w-full'>
             <ShoppingBag className="text-blue-300 mr-3 mt-1 flex-shrink-0 absolute left-0" size={24} />
-            <h2 className="font-bold text-lg text-blue-300 ml-3 sm:ml-0">T-shirt Availability</h2>
+            <h2 className="font-bold text-lg text-blue-300 ml-3 sm:ml-0">T-shirt Availability (Tentative)</h2>
           </div>
           <div>
-            <p className="ml-2 mt-1 sm:mt-3">T-shirts will be available from April 14 onwards based on your order date.</p>
+            <p className="ml-2 mt-1 sm:mt-3">T-shirts will be made available starting April 14, depending on your order date.
+While we will make our best efforts to deliver on time, there may be unexpected delays.
+We sincerely apologize for any inconvenience caused and appreciate your understanding.</p>
           </div>
         </div>
 
