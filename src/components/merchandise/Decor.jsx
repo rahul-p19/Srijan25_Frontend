@@ -41,8 +41,8 @@ const SrijanMerchandiseAnnouncement = () => {
             <h2 className="font-bold text-lg text-blue-300 ml-3 sm:ml-0">T-shirt Availability (Tentative)</h2>
           </div>
           <div>
-            <p className="ml-2 mt-1 sm:mt-3">T-shirts will be made available starting April 14, depending on your order date.
-While we will make our best efforts to deliver on time, there may be unexpected delays.
+            <p className="ml-2 mt-1 sm:mt-3">T-shirts will be made available starting April 14, depending on your order date.<br></br>
+While we will make our best efforts to deliver on time, there may be unexpected delays.<br></br>
 We sincerely apologize for any inconvenience caused and appreciate your understanding.</p>
           </div>
         </div>
