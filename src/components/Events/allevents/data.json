@@ -2091,6 +2091,52 @@
     ],
     "driveLink": "https://drive.google.com/drive/folders/1hCQ2G3q49lSLuc6OFFevKTlbLEzZsB6S",
     "category": "misc"
+  },
+    {
+    "eventID": "beat",
+    "eventName": "Beatboxing",
+    "eventDate": {
+      "prelims": [
+        "Estimated 20th April 2025"
+      ],
+      "finals": [
+        "Estimated 20th April 2025"
+      ]
+    },
+    "eventType": "misc",
+    "eventHashtags": [
+      "sample",
+      "event"
+    ],
+    "registrationOpen": true,
+    "eventCoordinators": [
+      "Tushar Barman[9091682357]",
+      "Partha Das [8927107110]",
+      "Biswadeep Nath [6033298814]"
+    ],
+    "prize": [
+      "1st : TBD ",
+      "2nd : TBD ",
+      "3rd : TBD "
+    ],
+    "minMembers": 1,
+    "maxMembers": 1,
+    "eventPoster": "beat.webp",
+    "registrationType": "Srijan'25 Website",
+    "eventDescription": [
+      "Think you’ve got the skills to drop jaws and set the stage on fire? This is your moment to prove it. No instruments, no backing tracks—just you, a mic, and the raw power of yourvoice. Step up, spit fire, and own the spotlight  "
+    ],
+    "eventRules": [
+      "Eligibility: Open to all participants registered for the events.",
+      "Registration: Participants must register before the deadline. No on-spot entries allowed.",
+      "Judging Criteria: Each performance will be judged based on musicality, control (including skills / techniques), Routine complexity, Crowd engagement, and overall stage presence.",
+      "Time Limits: Exceeding time limits will lead to deductions in scores.",
+      "Backing Tracks: Beatboxers must create their beats live with no backing tracks. Only raw vocal talent will be allowed. Beatboxers must create their beats live, no backing tracks/Instruments will be allowed.",
+       "Decision Making: Judges' decisions will be final and binding.",
+       "Microphone Handling: Mic drops are cool, but breaking equipment isn’t. Anydamage to event gear will result in penalties."
+    ],
+    "driveLink": "https://drive.google.com/drive/folders/1hCQ2G3q49lSLuc6OFFevKTlbLEzZsB6S",
+    "category": "misc"
   }
    
 ]
