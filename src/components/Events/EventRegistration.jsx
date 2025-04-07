@@ -362,6 +362,7 @@ const App = () => {
   // Retrieve the event slug from the URL parameters
   const { eventID } = useParams();
   const eventDetails = eventData.find(e => e.eventID === eventID);
+  if(!eventDetails.registrationOpen) window.location.href = `/events/${eventID}`;
   const getUserById = async (userId) => {
     try {
       const response = await axios.get(`${env.API_SERVER}/users/${userId}`, {
@@ -593,6 +594,9 @@ const App = () => {
   };
 
   useEffect(() => {
+
+    if(!eventDetails.registrationOpen) redirect(`/events/${eventID}`);
+
     fetchParticipationStatusForUseEffect();
     for (const event of data) {
       if (event.eventID == eventID) {

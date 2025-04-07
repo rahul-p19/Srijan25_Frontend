@@ -90,7 +90,7 @@ const Signup = ({ user }) => {
     // console.log(sid);
     if (!sid) {
       let error = "An error occurred during the login process";
-      console.log(error);
+      console.error(error);
       setMessage(error);
       return;
     }
@@ -148,7 +148,7 @@ const Signup = ({ user }) => {
           }));
         }
       } else {
-        console.log(error);
+        console.error(error);
         setMessage("Error registering user. Try again.");
       }
     } finally {

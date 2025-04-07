@@ -15,7 +15,7 @@
       "ai",
       "openaimer"
     ],
-    "registrationOpen": false,
+    "registrationOpen": true,
     "eventCoordinators": [
       "Irfan Habeeb Gazi [ 9007130066 ]",
       "Syamantak Sengupta [ 6290457904]",
@@ -60,7 +60,7 @@
       "ai",
       "openaimer"
     ],
-    "registrationOpen": false,
+    "registrationOpen": true,
     "eventCoordinators": [
       "Anupam Ghosh  [ 7548005727 ]",
       "Hrishikesh Majumder  [ 8017287092]",
@@ -154,7 +154,7 @@
       "ai",
       "openaimer"
     ],
-    "registrationOpen": false,
+    "registrationOpen": true,
     "eventCoordinators": [
       "Aishani Roy [8653121414]",
       "Aditya Anand  [8961313886]",
@@ -186,10 +186,7 @@
     "eventID": "btm",
     "eventName": "Beat the Market",
     "eventDate": {
-      "prelims": [
-        "17-21 March 2025"
-      ],
-      "finals": "17-21 March 2025"
+      "finals": "15-17 March 2025"
     },
     "eventType": "business",
     "eventHashtags": [
@@ -198,7 +195,7 @@
       "ai",
       "openaimer"
     ],
-    "registrationOpen": false,
+    "registrationOpen": true,
     "eventCoordinators": [
       "Abir Sen[8017778006]",
       "Arnesh Roy Chowdhury[9051871038]"
@@ -240,7 +237,7 @@
       "ai",
       "openaimer"
     ],
-    "registrationOpen": false,
+    "registrationOpen": true,
     "eventCoordinators": [
       "Tamal Panda[7679105899]",
       "Supratim Mukherjee[8584094708]",
@@ -289,7 +286,7 @@
       "ai",
       "openaimer"
     ],
-    "registrationOpen": false,
+    "registrationOpen": true,
     "eventCoordinators": [
       "Manosrija Nasrin[8100448852]",
       "Ankush Agarwala[9635609058]",
@@ -349,7 +346,7 @@
       "ai",
       "openaimer"
     ],
-    "registrationOpen": false,
+    "registrationOpen": true,
     "eventCoordinators": [
       "Soumyadeep Singh[9046431718]",
       "Rohit Shee[9679827536]",
@@ -393,7 +390,7 @@
       "ai",
       "openaimer"
     ],
-    "registrationOpen": false,
+    "registrationOpen": true,
     "eventCoordinators": [
       "Soumyadeep Malakar[7439689674]",
       "Md Touhid Alam[7431086857]",
@@ -444,7 +441,7 @@
       "ai",
       "openaimer"
     ],
-    "registrationOpen": false,
+    "registrationOpen": true,
     "eventCoordinators": [
       "Adhyetri Joddar[9831333715]",
       "Kanad Roy[9732432916]",
@@ -758,7 +755,7 @@
       "competition",
       "srijan25"
     ],
-    "registrationOpen": true,
+    "registrationOpen": false,
     "eventCoordinators": [
       "Anshuman Banik[+91 79771 06418]",
       "Navaneel Chakroborty[+91 90519 29490]",
@@ -1003,7 +1000,7 @@
       "ai",
       "openaimer"
     ],
-    "registrationOpen": false,
+    "registrationOpen": true,
     "eventCoordinators": [
       " Kaulik Das [9830669894 ]",
       "Avipso Sinha [9433243651]",

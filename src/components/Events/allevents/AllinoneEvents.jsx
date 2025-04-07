@@ -11,7 +11,6 @@ import {
   FaFacebookF,
   FaWhatsapp,
 } from "react-icons/fa";
-import Confetti from "../Confetti"
 import { MdShare } from "react-icons/md";
 import { ReactTyped } from "react-typed";
 import { useParams, useNavigate } from "react-router-dom";
@@ -19,7 +18,7 @@ import eventsData from "./data.json";
 import "./Event.css";
 import { useWindowSize } from "react-use";
 import { Button } from "@mui/material";
-import toast, { Toaster } from "react-hot-toast";
+import toast from "react-hot-toast";
 import Navbar from "../../Navbar";
 import PageReveal from "../../PageReveal";
 import { getImageUrl } from "../../../utils/image-util";
@@ -71,7 +70,7 @@ const AllEvents = () => {
         },
         withCredentials: true,
       });
-      console.log({ wishlist: response.data });
+      // console.log({ wishlist: response.data });
       // Ensure wishlist is always an array
       setWishlist(response.data.data || []);
       return response.data;
@@ -93,7 +92,7 @@ const AllEvents = () => {
           withCredentials: true,
         }
       );
-      console.log({ wishlist: response.data });
+      // console.log({ wishlist: response.data });
       await getWishlist();
       toast.success("Added to Wishlist successfully");
       return response.data;
@@ -113,7 +112,7 @@ const AllEvents = () => {
           withCredentials: true,
         }
       );
-      console.log({ wishlist: response.data });
+      // console.log({ wishlist: response.data });
       await getWishlist();
       toast.success("Removed from Wishlist successfully");
       return response.data;
@@ -302,6 +301,11 @@ const AllEvents = () => {
                               <Button
                   variant="outlined"
                   onClick={() => {
+                    // console.log(eventData.registrationOpen);
+                    if(!eventData.registrationOpen){
+                      toast("Registrations have been closed for this event.");
+                      return;
+                    }
                     if (eventID === "HackForge") {
                       window.location.href =
                         "https://unstop.com/hackathons/hackforge-forging-the-future-srijan-2025-jadavpur-university-kolkata-1416437"; // Replace with your specific URL for HackForge events
