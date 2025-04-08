@@ -65,7 +65,7 @@ export default function AdminPage() {
       // Convert data into rows
       const allParticipants = data.participants;
       const rows = allParticipants.map((team) => {
-        return [team.name, team.email];
+        return [team.name || "", team.email || ""];
       });
 
       // Create worksheet and workbook
@@ -91,13 +91,13 @@ export default function AdminPage() {
 
         return [
           team.name,
-          team.creator.name || "",
-          team.creator.email || "",
-          team.creator.phone || "",
+          team.creator?.name || "",
+          team.creator?.email || "",
+          team.creator?.phone || "",
           ...members.flatMap((member) => [
-            member.user.name || "",
-            member.user.email || "",
-            member.user.phone || "",
+            member.user?.name || "",
+            member.user?.email || "",
+            member.user?.phone || "",
           ]),
           ...Array((maxMembers - members.length) * 3).fill(""), // Fill empty slots if members < max
           team.status,
