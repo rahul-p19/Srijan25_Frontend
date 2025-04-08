@@ -140,7 +140,7 @@ function OrderForm({ setShowOrderForm, size, color }) {
                   className="block text-sm font-medium mb-2"
                   htmlFor="nameonshirt"
                 >
-                  Name on Shirt(Max 10 Chars)
+                  Name on Shirt(Max. 10 English Chars)
                 </label>
                 <input
                   type="text"
