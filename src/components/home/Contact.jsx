@@ -11,13 +11,11 @@ function Contact() {
 
   const [email, setEmail] = useState("");
   const [loading, setLoading] = useState();
-  const [validEmail, setValidEmail] = useState(0);
 
   const isValidEmail = (email) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 
   const handleEmailChange = (e) => {
     setEmail(e.target.value);
-    email === "" ? setValidEmail(0) : isValidEmail(email) ? setValidEmail(1) : setValidEmail(-1);
   }
 
   const handleSubmit = (e) => {
@@ -88,10 +86,10 @@ function Contact() {
             <EmailOutlined />
             <a href='mailto:srijan.ju@jadavpuruniversity.in'>srijan.ju@jadavpuruniversity.in</a>
           </div>
-          <div className='flex gap-2'>
+          {/* <div className='flex gap-2'>
             <Call />
             <p>+917980623712</p>
-          </div>
+          </div> */}
         </div>
         <div className='w-full row-span-1 lg:row-span-4 lg:pb-2 grid place-items-center lg:items-end'>
           <p className='text-center lg:p-1 w-5/7 lg:w-full lg:text-xl border-greyBorder'>SUBSCRIBE TO OUR NEWSLETTER</p>

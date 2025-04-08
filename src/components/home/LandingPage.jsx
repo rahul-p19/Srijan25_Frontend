@@ -3,6 +3,7 @@ import Footer from "../Footer";
 import Navbar from "../Navbar";
 import About from "./About";
 import Contact from "./Contact";
+import Conveners from "./Conveners";
 import Gallery from "./Gallery";
 import Hero from "./Hero";
 import Speakers from "./Speakers";
@@ -67,6 +68,7 @@ const LandingPage = ({ setUser }) => {
         <About />
         <Gallery />
         <Contact />
+        <Conveners />
         <Footer />
       </main>
     </Suspense>
