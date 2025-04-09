@@ -2091,6 +2091,40 @@
     ],
     "driveLink": "https://drive.google.com/drive/folders/1hCQ2G3q49lSLuc6OFFevKTlbLEzZsB6S",
     "category": "misc"
+  },
+    {
+    "eventID": "h2h",
+    "eventName": "Highway to Hell",
+    "eventDate": {
+      "prelims": ["TBD"],
+      "finals": ["TBD"]
+    },
+    "eventType": "circuits and robotics",
+    "eventHashtags": ["sample", "event"],
+    "registrationOpen": true,
+    "eventCoordinators": [
+      "Raunak Sengupta[8910721083]",
+      "Spandan Saha[9775591123]"
+    ],
+    "prize": ["1st : TBD ", "2nd : TBD ", "3rd : TBD "],
+    "minMembers": 1,
+    "maxMembers": 5,
+    "eventPoster": "high.webp",
+    "registrationType": "Srijan'25 Website",
+    "eventDescription": [
+      "This dynamic and high-energy event captivates opponents at a single glance. So hold your beats and get ready for a robotic odyssey where bots confront challenging terrains, rocky paths, sandy deserts, and fiery roads, no less than a “hell”. It's a thrilling race against time and obstacles, where only the bot demonstrating the ideal mix of speed, agility, and resilience will claim victory. Can your creation conquer the daunting highway to hell?"
+    ],
+    "eventRules": [
+      "Each time the participant bot touches the boundary of the arena, points will be deducted. If the bot continues to touch the boundary for more than 5 seconds, it will be considered equivalent of two touches.",
+      "The robot can be wired or wireless.",
+      "Participants will have to arrange for any other power supplies required for bot.",
+      "No receiver and transmitter will be provided to the participant.",
+      "LEGO kits or spare mechanical parts are not allowed. (http://en.wikipedia.org/wiki/Lego_Mindstorms)",
+      "Decision Making: Judges' decisions will be final and binding.",
+      "Participant can skip any obstacle, up to a certain limit, although for each time, points will be deducted."
+    ],
+    "driveLink": "https://drive.google.com/file/d/1gLZtEFK1ajqww074saWrwEHC8yVrFGyg/view?usp=sharing",
+    "category": "circuits and robotics"
   }
    
 ]
