@@ -2107,8 +2107,8 @@
       "Spandan Saha[9775591123]"
     ],
     "prize": ["1st : TBD ", "2nd : TBD ", "3rd : TBD "],
-    "minMembers": 1,
-    "maxMembers": 5,
+    "minMembers": 4 ,
+    "maxMembers": 5 ,
     "eventPoster": "high.webp",
     "registrationType": "Srijan'25 Website",
     "eventDescription": [
