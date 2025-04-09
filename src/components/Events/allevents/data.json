@@ -2125,6 +2125,38 @@
     ],
     "driveLink": "https://drive.google.com/file/d/1gLZtEFK1ajqww074saWrwEHC8yVrFGyg/view?usp=sharing",
     "category": "circuits and robotics"
+  },
+  {
+    "eventID": "engineered",
+    "eventName": "Engineered",
+    "eventDate": {
+      "prelims": ["15th April 2025"],
+      "finals": ["19th April 2025"]
+    },
+    "eventType": "brainstorming",
+    "eventHashtags": ["sustainability", "sdg","esg","innovation", "event"],
+    "registrationOpen": true,
+    "eventCoordinators": [
+      "Gourab Paul [+917384026853]",
+      "Subhranil Banerjee[+919903006134]",
+      "Arnab Mondal[+918207065687]",
+      "Abhiroop Ghosal [+919836555865]"
+    ],
+    "prize": ["1st : TBD ", "2nd : TBD ", "3rd : TBD "],
+    "minMembers": 4 ,
+    "maxMembers": 5 ,
+    "eventPoster": "engg.webp",
+    "registrationType": "Srijan'25 Website",
+    "eventDescription": [
+      "In the heart of Kolkata, F.E.T.S.U. presents Srijan stands as a symbol of innovation, creativity, and excellence, shaped by the legacy of Jadavpur University. Since 2007, it has grown into one of the city's most dynamic techno-management fests. This year, ENGINEERED joins the lineup—a platform dedicated to the core values of science and engineering. Rooted in the belief that great ideas often begin in academia, ENGINEERED celebrates innovation driven by curiosity and purpose."
+        ],
+    "eventRules": [
+      "As the world faces urgent challenges—climate change, resource scarcity, public health crises—ENGINEERED calls on future engineers, scientists, and changemakers to devise real-world solutions. It bridges the gap between academic thought and practical impact, connecting students with industry experts, researchers, and policymakers. Above all, ENGINEERED seeks to reignite curiosity in the technology we use every day, reminding us of the ingenuity behind it. It’s a celebration of minds that dare to think, build, and transform the world.",
+      "Round 1: ppt submission (5 pages, problem statement-solution-vision): Deadline 15 April",
+      "Round 2: exhibition of product prototype on 19th april"
+    ],
+    "driveLink": null,
+    "category": "brainstorming"
   }
    
 ]
