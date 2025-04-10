@@ -302,7 +302,7 @@ const AllEvents = () => {
                 />
                 <Button
                   variant="outlined"
-                  className={(eventID === "consoleexprience" || eventID === "rbracing" || eventID === "vrexperience") ? "disabled" : "none"}
+                  className={(eventID === "consoleexperience" || eventID === "rbracing" || eventID === "vrexperience") ? "disabled" : "none"}
                   onClick={() => {
                     // console.log(eventData.registrationOpen);
                     if (!eventData.registrationOpen) {
