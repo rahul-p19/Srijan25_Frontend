@@ -306,11 +306,40 @@ const AllEvents = () => {
                       toast("Registrations have been closed for this event.");
                       return;
                     }
-                    if (eventID === "HackForge") {
-                      window.location.href =
-                        "https://unstop.com/hackathons/hackforge-forging-the-future-srijan-2025-jadavpur-university-kolkata-1416437"; // Replace with your specific URL for HackForge events
-                    } else {
-                      navigate(`/events/${eventID}/registration`);
+                    switch (eventID) {
+                      case "HackForge":
+                        window.location.href = "https://unstop.com/hackathons/hackforge-forging-the-future-srijan-2025-jadavpur-university-kolkata-1416437";
+                        break;
+                      case "valo":
+                        window.location.href = "https://forms.gle/PrBugBbkixzcAS4g8";
+                        break;
+                      case "bgmi":
+                        window.location.href = "https://forms.gle/7XDppLv4WGpqnwym9";
+                        break;
+                      case "eafc":
+                        window.location.href = "https://forms.gle/BCCdh5Zb2DxWNhgr5";
+                        break;
+                      case "rleague":
+                        window.location.href = "https://forms.gle/BakgUKDD9PPKsCrZA";
+                        break;
+                      case "pes":
+                        window.location.href = "https://forms.gle/AheeVkkCyJ9PU3Dz5";
+                        break;
+                      case "valorant":
+                        window.location.href = "https://forms.gle/XNG75v9z85wCAe3q7";
+                        break;
+                      case "bgmi-uec":
+                        window.location.href = "https://forms.gle/fSzyAnnvktW5gM1C6";
+                        break;
+                      case "fifa-uec":
+                        window.location.href = "https://forms.gle/ZYsKTB2Y8L7r4ubo8";
+                        break;
+                      case "wtec":
+                        window.location.href = "https://forms.gle/NtbogYBjqsCaifvG6";
+                        break;
+                      default:
+                        navigate(`/events/${eventID}/registration`);
+                        break;
                     }
                   }}
                   sx={{

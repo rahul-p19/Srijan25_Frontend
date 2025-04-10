@@ -2157,6 +2157,381 @@
     ],
     "driveLink": null,
     "category": "brainstorming"
-  }
-   
+  },
+    {
+      "eventID": "valo",
+      "eventName": "NSG ARENA x VALORANT",
+      "eventDate": {
+        "prelims": [],
+        "finals": ["18th April 2025", "19th April 2025"]
+      },
+      "eventType": "gaming",
+      "eventHashtags": ["gaming", "esports", "valorant", "event"],
+      "registrationOpen": true,
+      "eventCoordinators": [
+        "Md Touseef Alam [+919553420701]",
+        "Srish Dutta [+919073992499]"
+      ],
+      "prize": [
+        "1st : TBD     ",
+      "2nd : TBD     ",
+      "3rd : TBD "
+      ],
+      "minMembers": 5,
+      "maxMembers": 5,
+      "eventPoster": "valorant.webp",
+      "registrationType": "Srijan'25 Website",
+      "eventDescription": [
+        "Gear up for two days of intense Valorant action at NSG Arena in our 5v5 LAN tournament, featuring 30+ teams battling for the championship. Experience the thrill of live competition as players go head-to-head in a LAN environment, showcasing precision, strategy, and teamwork. This is not just a tournament; it’s a gaming spectacle where every kill and objective captured reverberates through the room. Join us at NSG Arena for the ultimate Valorant showdown and witness champions rise in this high-stakes LAN event."
+      ],
+      "eventRules": [
+        "Number of Matches: 17",
+        "Mode of conduct: Offline",
+        "Description of Each Match: Best Of 3 for Finals and rest are Knockout",
+        "Prize Pool, Prize pool division: TBA"
+      ],
+      "driveLink": "https://forms.gle/PrBugBbkixzcAS4g8",
+      "category": "gaming"
+    },
+    {
+      "eventID": "bgmi",
+      "eventName": "NSG ARENA x BGMI",
+      "eventDate": {
+        "prelims": [],
+        "finals": ["18th April 2025", "19th April 2025"]
+      },
+      "eventType": "gaming",
+      "eventHashtags": ["gaming", "esports", "bgmi", "event"],
+      "registrationOpen": true,
+      "eventCoordinators": [
+        "Arijit Paul [+919123600332]",
+        "Suvodip Howladar [+919123053665]"
+      ],
+      "prize": [
+        "1st : TBD     ",
+      "2nd : TBD     ",
+      "3rd : TBD "
+      ],
+      "minMembers": 4,
+      "maxMembers": 4,
+      "eventPoster": "bgmi.webp",
+      "registrationType": "Srijan'25 Website",
+      "eventDescription": [
+        "Prepare for an adrenaline-pumping spectacle as NSG Arena brings Battlegrounds Mobile India (BGMI) to the LAN stage! Over two intense days, squads will drop into the battleground, strategizing and surviving to claim the ultimate chicken dinner. With heart-racing rotations, clutch plays, and fierce gunfights, this battle royale tournament is where reflexes meet tactics in a test of true champions. From ambushes in Pochinki to final circle standoffs, witness the drama and glory unfold—live and loud at NSG Arena."
+      ],
+      "eventRules": [
+        "Number of Matches: 12",
+        "Mode of conduct: Offline",
+        "Description of Each Match: 2 Group Matches and 1 Finals",
+        "Prize Pool, Prize pool division: TBA"
+      ],
+      "driveLink": "https://forms.gle/7XDppLv4WGpqnwym9",
+      "category": "gaming"
+    },
+    {
+      "eventID": "eafc",
+      "eventName": "NSG ARENA x EAFC25",
+      "eventDate": {
+        "prelims": [],
+        "finals": ["18th April 2025", "19th April 2025"]
+      },
+      "eventType": "gaming",
+      "eventHashtags": ["gaming", "esports", "eafc", "event"],
+      "registrationOpen": true,
+      "eventCoordinators": [
+        "Md. Mahtabuddin [+916289860853]",
+        "Ronit Sarkar [+916297195058]"
+      ],
+      "prize": ["1st : TBD     ",
+      "2nd : TBD     ",
+      "3rd : TBD "],
+      "minMembers": 1,
+      "maxMembers": 1,
+      "eventPoster": "eafc25.webp",
+      "registrationType": "Srijan'25 Website",
+      "eventDescription": [
+        "Dive into the heart of competition at NSG Arena with our 1v1 EAFC 24 tournament. Over two electrifying days, witness the solo skills of participants as they engage in a fast-paced showdown. With strategic battles and precision moves, players vie for victory and the coveted championship title. This is the stage for individual excellence—be part of the excitement as esports mastery takes centre stage at NSG Arena with EAFC 24."
+      ],
+      "eventRules": [
+        "Number of Matches: 63",
+        "Mode of conduct: Offline",
+        "Description of Each Match: Knockout",
+        "Prize Pool, Prize pool division: TBA"
+      ],
+      "driveLink": "https://forms.gle/BCCdh5Zb2DxWNhgr5",
+      "category": "gaming"
+    },
+    {
+      "eventID": "rleague",
+      "eventName": "NSG ARENA x ROCKET LEAGUE",
+      "eventDate": {
+        "prelims": [],
+        "finals": ["18th April 2025", "19th April 2025"]
+      },
+      "eventType": "gaming",
+      "eventHashtags": ["gaming", "esports", "rocketleague", "event"],
+      "registrationOpen": true,
+      "eventCoordinators": [
+        "Janmajit Bhattacharjee [+919330168927]",
+        "Samanway Mridha [+919088087086]"
+      ],
+      "prize": [
+        "1st : TBD     ",
+      "2nd : TBD     ",
+      "3rd : TBD "
+      ],
+      "minMembers": 2,
+      "maxMembers": 2,
+      "eventPoster": "rocket_league.webp",
+      "registrationType": "Srijan'25 Website",
+      "eventDescription": [
+        "Experience the thrill of Rocket League at NSG Arena in our dynamic 2v2 tournament. Across two action-packed days, teams of two will soar through the arena, showcasing their teamwork, coordination, and precision ball control. The Rocket League 2v2 tournament at NSG Arena promises a visual spectacle of acrobatics and goal-scoring finesse. Join us for an exhilarating competition where duos battle for supremacy and the championship title."
+      ],
+      "eventRules": [
+        "Number of Matches: 31",
+        "Mode of conduct: Offline",
+        "Description of Each Rounds: Knockout",
+        "Prize Pool, Prize pool division: TBA"
+      ],
+      "driveLink": "https://forms.gle/BakgUKDD9PPKsCrZA",
+      "category": "gaming"
+    },
+    {
+      "eventID": "pes",
+      "eventName": "NSG ARENA x eFOOTBALL",
+      "eventDate": {
+        "prelims": [],
+        "finals": ["18th April 2025", "19th April 2025"]
+      },
+      "eventType": "gaming",
+      "eventHashtags": ["gaming", "esports", "efootball", "event"],
+      "registrationOpen": true,
+      "eventCoordinators": [
+        "Nirjhar Roy Sarkar [+917001617800]",
+        "Souparna Kundu [+919800790972]"
+      ],
+      "prize": [
+        "1st : TBD     ",
+      "2nd : TBD     ",
+      "3rd : TBD "
+      ],
+      "minMembers": 1,
+      "maxMembers": 1,
+      "eventPoster": "pes.webp",
+      "registrationType": "Srijan'25 Website",
+      "eventDescription": [
+        "Step onto the digital pitch at NSG Arena and showcase your football finesse in the PES Mobile 1v1 LAN Tournament! Across two thrilling days, players will face off in intense head-to-head matchups where every pass, tackle, and goal could decide their fate. It’s a clash of strategy, timing, and pure skill as competitors battle for glory and the championship crown. Whether it’s a last minute screamer or a tactical masterclass, expect edge-of-the seat action from kick-off to final whistle at NSGArena."
+      ],
+      "eventRules": [
+        "Number of Rounds: 255",
+        "Mode of conduct: Offline",
+        "Description of Each Rounds: Knockout",
+        "Prize Pool, Prize pool division: TBA"
+      ],
+      "driveLink": "https://forms.gle/AheeVkkCyJ9PU3Dz5",
+      "category": "gaming"
+    },
+    {
+      "eventID": "consoleexperience",
+      "eventName": "NSG ARENA x Console Experience Zone",
+      "eventDate": {
+        "prelims": [],
+        "finals": ["18th April 2025", "19th April 2025", "20th April 2025"]
+      },
+      "eventType": "gaming",
+      "eventHashtags": ["gaming", "console", "experience", "event"],
+      "registrationOpen": true,
+      "eventCoordinators": [
+        "Ranit Garai [+917866069561]"
+      ],
+      "prize": [
+        "1st : TBD     ",
+      "2nd : TBD     ",
+      "3rd : TBD "
+      ],
+      "minMembers": 1,
+      "maxMembers": 1,
+      "eventPoster": "console_experience.webp",
+      "registrationType": "Srijan'25 Website",
+      "eventDescription": [
+        "Kick back with your friends and enjoy a wide range of console games in our casual gaming corner. From classic titles to party games, this zone is all about fun, laughter, and friendly button mashing."
+      ],
+      "eventRules": [
+        "Number of Rounds: NA",
+        "Mode of conduct: Offline",
+        "Description of Each Rounds: Participants can experience playing on new gen consoles like the PS5.",
+        "Prize Pool, Prize pool division: NA"
+      ],
+      "driveLink": null,
+      "category": "gaming"
+    },
+    {
+      "eventID": "rbracing",
+      "eventName": "NSG ARENA x Red Bull Racing Simulator",
+      "eventDate": {
+        "prelims": [],
+        "finals": ["18th April 2025", "19th April 2025", "20th April 2025"]
+      },
+      "eventType": "gaming",
+      "eventHashtags": ["gaming", "racing", "simulator", "event"],
+      "registrationOpen": true,
+      "eventCoordinators": [
+        "Mayukh Sinha [+918617355155]"
+      ],
+      "prize": ["1st : TBD     ",
+      "2nd : TBD     ",
+      "3rd : TBD "],
+      "minMembers": 1,
+      "maxMembers": 1,
+      "eventPoster": "rbracing.webp",
+      "registrationType": "Srijan'25 Website",
+      "eventDescription": [
+        "Feel the adrenaline of high-speed racing as you step into the driver’s seat of the Red Bull Racing Simulator. With realistic controls and immersive visuals, this experience puts you right on the track—no pit stops needed!"
+      ],
+      "eventRules": [
+        "Number of Rounds: NA",
+        "Mode of conduct: Offline",
+        "Description of Each Rounds: Participants can experience driving real racing cars in a driving simulator.",
+        "Prize Pool, Prize pool division: TBD"
+      ],
+      "driveLink": null,
+      "category": "gaming"
+    },
+    {
+      "eventID": "valorant",
+      "eventName": "NSG UEC x VALORANT",
+      "eventDate": {
+        "prelims": [],
+        "finals": ["20th April 2025"]
+      },
+      "eventType": "esports",
+      "eventHashtags": ["gaming", "esports", "valorant", "event"],
+      "registrationOpen": true,
+      "eventCoordinators": [
+        "Md Touseef Alam [+919553420701]",
+        "Nabyendu Das [+917003751910]"
+      ],
+      "prize": [
+        "1st : TBD     ",
+      "2nd : TBD     ",
+      "3rd : TBD "
+      ],
+      "minMembers": 5,
+      "maxMembers": 5,
+      "eventPoster": "uec_valorant.webp",
+      "registrationType": "Srijan'25 Website",
+      "eventDescription": [
+        "Get ready for a full day of high-octane Valorant action at the NSG UEC 2.0 Kolkata Qualifiers! Following intense online prelims, the top teams will battle it out on LAN in a 5v5 showdown filled with clutch plays, razor-sharp aim, and strategic brilliance. This is more than just a qualifier—it’s the proving ground for the best collegiate teams aiming for the UEC LAN Finals. Lock in your agents, rally your squad, and prepare to dominate."
+      ],
+      "eventRules": [
+        "Number of Matches: 9",
+        "Mode of conduct: Offline",
+        "Description of Each Match: Best Of 3 for Finals and rest are Knockout",
+        "Prize Pool, Prize pool division: TBA"
+      ],
+      "driveLink": "https://forms.gle/XNG75v9z85wCAe3q7",
+      "category": "esports"
+    },
+    {
+      "eventID": "bgmi-uec",
+      "eventName": "NSG UEC x BGMI",
+      "eventDate": {
+        "prelims": [],
+        "finals": ["20th April 2025"]
+      },
+      "eventType": "esports",
+      "eventHashtags": ["gaming", "esports", "bgmi", "event"],
+      "registrationOpen": true,
+      "eventCoordinators": [
+        "Arijit Paul [+919123600332]",
+        "Suvodip Howladar [+919123053665]"
+      ],
+      "prize": ["1st : TBD     ",
+      "2nd : TBD     ",
+      "3rd : TBD "],
+      "minMembers": 4,
+      "maxMembers": 4,
+      "eventPoster": "uec_bgmi.webp",
+      "registrationType": "Srijan'25 Website",
+      "eventDescription": [
+        "The battleground heats up at the NSG UEC 2.0 Kolkata Qualifiers! After surviving the online prelims, top BGMI squads will face off in a high-stakes, one-day LAN event. With only one shot at the chicken dinner and qualification for the UEC LAN Finals, expect heart-pounding action, strategic brilliance, and explosive team fights. This isn’t just survival—it’s domination."
+      ],
+      "eventRules": [
+        "Number of Matches: 6",
+        "Mode of conduct: Offline",
+        "Description of Each Match: Finals Only",
+        "Prize Pool, Prize pool division: TBA"
+      ],
+      "driveLink": "https://forms.gle/fSzyAnnvktW5gM1C6",
+      "category": "esports"
+    },
+    {
+      "eventID": "fifa-uec",
+      "eventName": "NSG UEC x EAFC25",
+      "eventDate": {
+        "prelims": [],
+        "finals": ["20th April 2025"]
+      },
+      "eventType": "esports",
+      "eventHashtags": ["gaming", "esports", "eafc", "event"],
+      "registrationOpen": true,
+      "eventCoordinators": [
+        "Md. Mahtabuddin [+916289860853]"
+      ],
+      "prize": [
+        "1st : TBD     ",
+      "2nd : TBD     ",
+      "3rd : TBD "
+      ],
+      "minMembers": 1,
+      "maxMembers": 1,
+      "eventPoster": "uec_eafc25.webp",
+      "registrationType": "Srijan'25 Website",
+      "eventDescription": [
+        "Kick off your path to glory in the NSG UEC 2.0 Kolkata Qualifiers with our EAFC 24 1v1 tournament—packed into one adrenaline filled day. Witness players go head-to-head in fast-paced football battles where every move could secure victory. Precision, tactics, and nerves of steel will define the champions who will earn their spot at the UEC LAN Finals. One day. One goal. One champion."
+      ],
+      "eventRules": [
+        "Number of Rounds: 31",
+        "Mode of conduct: Offline",
+        "Description of Each Rounds: Knockout",
+        "Prize Pool, Prize pool division: TBA"
+      ],
+      "driveLink": "https://forms.gle/ZYsKTB2Y8L7r4ubo8",
+      "category": "esports"
+    },
+    {
+      "eventID": "wtec",
+      "eventName": "NSG UEC x WTEC",
+      "eventDate": {
+        "prelims": [],
+        "finals": ["20th April 2025"]
+      },
+      "eventType": "esports",
+      "eventHashtags": ["gaming", "esports", "wtec", "event"],
+      "registrationOpen": true,
+      "eventCoordinators": [
+        "Aritra Mondal [+917365911452]"
+      ],
+      "prize": [
+        "1st : TBD     ",
+      "2nd : TBD     ",
+      "3rd : TBD "
+      ],
+      "minMembers": 1,
+      "maxMembers": 1,
+      "eventPoster": "uec_wtec.webp",
+      "registrationType": "Srijan'25 Website",
+      "eventDescription": [
+        "Compete like never before in the World Tennis Esports Championship, part of the NSG UEC 2.0 Kolkata Qualifiers. In this cutting-edge VR Tennis tournament, players will step into a virtual court and perform a series of challenges and skill-based tasks to earn points. Each performance contributes to their position on a live leaderboard, with consistency, accuracy, and technique being the keys to climbing the ranks. At the end of the day, the top scorers will qualify for the prestigious UEC LAN Finals, where the best of the best will gather for the ultimate showdown."
+      ],
+      "eventRules": [
+        "Number of Rounds: TBA",
+        "Mode of conduct: Offline",
+        "Description of Each Rounds: VR Tennis",
+        "Prize Pool, Prize pool division: TBA"
+      ],
+      "driveLink": "https://forms.gle/NtbogYBjqsCaifvG6",
+      "category": "esports"
+    }
 ]
+  
