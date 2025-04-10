@@ -793,7 +793,7 @@
     "eventName": "Ace The Case",
     "eventDate": {
       "prelims": [
-        "9th April 2025"
+        "10th April to 12:00 noon, 12th April, 2025"
       ],
       "finals": [
         "19th April 2025"
@@ -831,7 +831,7 @@
       "The event is to be conducted in two rounds: Selection Round and Finale.",
       "Join the group using the links provided by email for all required communication.",
       "Strictly adhere to the slide limit and provide data sources for all rounds.",
-      "Selection Round - Online (Unstop).",
+      "Selection Round - Online (Unstop and Website). Deadline - 12:00 noon, 12/4/2025.",
       "Final Round - Offline."
     ],
     "driveLink": "https://docs.google.com/document/d/13vmnwxAKAkeS6Fk57zAkwcZIPE9DfVot-3OAkHTp_lA/edit?usp=sharing",
@@ -1313,6 +1313,13 @@
       "Strictly adhere to the slide limit and provide data sources for all rounds."
     ],
     "driveLink": "https://docs.google.com/document/d/1RSGmDikWcUddXtkDxZ-Dt1xKXFCUD4h0VTKH0l9TaL0/edit?tab=t.0",
+    "attachments":[
+      {
+        "title":"Problem Statement",
+        "type":"link",
+        "path":"https://drive.google.com/file/d/11q1-1k-vfLeXrofrrdsJXHW2r3L3bsS-/view?usp=sharing"
+      }
+    ],
     "category": "business"
   },
   {
