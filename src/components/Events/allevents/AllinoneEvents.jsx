@@ -302,10 +302,15 @@ const AllEvents = () => {
                 />
                 <Button
                   variant="outlined"
+                  className={(eventID === "consoleexprience" || eventID === "rbracing" || eventID === "vrexperience") ? "disabled" : "none"}
                   onClick={() => {
                     // console.log(eventData.registrationOpen);
                     if (!eventData.registrationOpen) {
                       toast("Registrations have been closed for this event.");
+                      return;
+                    }
+                    if(eventID==="consoleexprience"|| eventID==="rbracing"|| eventID==="vrexperience"){
+                      toast("This is a walk in event! No need to register");
                       return;
                     }
                     switch (eventID) {

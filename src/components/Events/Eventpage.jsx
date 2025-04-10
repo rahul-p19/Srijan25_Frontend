@@ -105,6 +105,7 @@ const CategoryTabs = ({ activeCategory, onCategoryChange }) => {
     "brainstorming",
     "misc",
     "gaming",
+    "esports"
   ];
   return (
     <div className="max-w-6xl mx-auto mb-7 p-4 rounded-xl bg-white/4 backdrop-blur-md">
