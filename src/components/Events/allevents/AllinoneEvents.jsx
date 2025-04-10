@@ -10,6 +10,8 @@ import {
   FaHeart,
   FaFacebookF,
   FaWhatsapp,
+  FaLink, 
+  FaFile,
 } from "react-icons/fa";
 import { MdShare } from "react-icons/md";
 import { ReactTyped } from "react-typed";
@@ -161,7 +163,7 @@ const AllEvents = () => {
     return <div className="text-center text-white">Loading...</div>;
   }
 
-  
+
   // const eventDetails = {
   //   prelims: Array.isArray(eventData.eventDate.prelims)
   //     ? eventData.eventDate.prelims.join(" ")
@@ -173,20 +175,20 @@ const AllEvents = () => {
   //       : `${eventData.minMembers}-${eventData.maxMembers} members`,
   // };
   const eventDetails = {
-  prelims: Array.isArray(eventData.eventDate.prelims)
-    ? eventData.eventDate.prelims.join(" ")
-    : eventData.eventDate.prelims,
-  finals: eventData.eventDate.finals || "__-__-2025",
-  teamSize:
-    eventData.minMembers === eventData.maxMembers
-      ? (eventData.minMembers === 1
+    prelims: Array.isArray(eventData.eventDate.prelims)
+      ? eventData.eventDate.prelims.join(" ")
+      : eventData.eventDate.prelims,
+    finals: eventData.eventDate.finals || "__-__-2025",
+    teamSize:
+      eventData.minMembers === eventData.maxMembers
+        ? (eventData.minMembers === 1
           ? "individual event"
           : `${eventData.minMembers} members`)
-      : `${eventData.minMembers}-${eventData.maxMembers} members`,
-};
+        : `${eventData.minMembers}-${eventData.maxMembers} members`,
+  };
 
 
-  
+
   // Parse prize pool from prize array
   const parsedPrizePool = { first: "", second: "", third: "" };
   if (Array.isArray(eventData.prize)) {
@@ -217,12 +219,12 @@ const AllEvents = () => {
   // Parse event coordinators
   const eventOrganizers = eventData.eventCoordinators
     ? eventData.eventCoordinators.map((coordinator) => {
-        const match = coordinator.match(/(.*)\[\s*([^\]]+)\s*\]/);
-        if (match) {
-          return { name: match[1].trim(), phone: match[2].trim(), email: "" };
-        }
-        return { name: coordinator, phone: "", email: "" };
-      })
+      const match = coordinator.match(/(.*)\[\s*([^\]]+)\s*\]/);
+      if (match) {
+        return { name: match[1].trim(), phone: match[2].trim(), email: "" };
+      }
+      return { name: coordinator, phone: "", email: "" };
+    })
     : [];
 
   const organizersTitle = "EVENT ORGANIZERS";
@@ -298,11 +300,11 @@ const AllEvents = () => {
                   alt={eventData.eventName}
                   className="w-full rounded-lg"
                 />
-                              <Button
+                <Button
                   variant="outlined"
                   onClick={() => {
                     // console.log(eventData.registrationOpen);
-                    if(!eventData.registrationOpen){
+                    if (!eventData.registrationOpen) {
                       toast("Registrations have been closed for this event.");
                       return;
                     }
@@ -360,9 +362,9 @@ const AllEvents = () => {
                       bgcolor: "black",
                       transform: "scale(1.02)",
                     },
-                }}
+                  }}
                 >
-                  REGISTER
+                  {eventData.registrationOpen ? "Register" : "Registrations Closed"}
                 </Button>
                 <div className="flex flex-col sm:flex-row justify-center gap-4 mt-6">
                   <button
@@ -400,13 +402,13 @@ const AllEvents = () => {
                   <h3 className="text-lg md:text-2xl font-bold flex items-center gap-2 text-red-500">
                     <FaCalendarAlt /> EVENT DETAILS
                   </h3>
-                  {eventDetails.prelims && 
+                  {eventDetails.prelims &&
                     <p>
-                    <span className="text-yellow-400">
-                      Event Date (Prelims):{" "}
-                    </span>
-                    {eventDetails.prelims}
-                  </p>
+                      <span className="text-yellow-400">
+                        Event Date (Prelims):{" "}
+                      </span>
+                      {eventDetails.prelims}
+                    </p>
                   }
                   <p>
                     <span className="text-yellow-400">
@@ -516,6 +518,38 @@ const AllEvents = () => {
                 </p>
               </div>
             )}
+
+
+      {eventData.attachments && eventData.attachments.length > 0 && (
+        <div className="border p-8 mt-6 md:mt-8 rounded-lg bg-background">
+        <h3 className="text-lg md:text-2xl font-bold text-center text-blue-400">
+        Attachments
+        </h3>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4">
+        {eventData.attachments.map((attachment, index) => (
+          <a
+          key={index}
+          href={attachment.path}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="block border p-6 rounded-lg shadow-xl bg-background hover:scale-105 transition duration-500 ease-in-out"
+          >
+          <div className="text-center">
+          <h3 className="text-lg md:text-xl font-bold text-gray-800 flex items-center justify-center gap-2">
+          <span>
+          {attachment.type === "link" ? <FaLink /> : <FaFile />}
+          </span>
+          {attachment.title}
+          </h3>
+          <p className="mt-2 text-sm font-medium text-gray-600 capitalize">
+          {attachment.type}
+          </p>
+          </div>
+          </a>
+        ))}
+        </div>
+        </div>
+      )}
 
             {/* Event Rules */}
             <div

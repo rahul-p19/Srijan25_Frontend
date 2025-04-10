@@ -154,7 +154,7 @@
       "ai",
       "openaimer"
     ],
-    "registrationOpen": true,
+    "registrationOpen": false,
     "eventCoordinators": [
       "Aishani Roy [8653121414]",
       "Aditya Anand  [8961313886]",
@@ -806,7 +806,7 @@
       "strategy",
       "competition"
     ],
-    "registrationOpen": false,
+    "registrationOpen": true,
     "eventCoordinators": [
       "Anubrata Karmakar[+91 6295825907]",
       "Arka Dhar[+91 7872980084]",
@@ -835,6 +835,18 @@
       "Final Round - Offline."
     ],
     "driveLink": "https://docs.google.com/document/d/13vmnwxAKAkeS6Fk57zAkwcZIPE9DfVot-3OAkHTp_lA/edit?usp=sharing",
+    "attachments":[
+      {
+        "title":"Case Study",
+        "type":"link",
+        "path":"https://drive.google.com/drive/folders/10E5hFq7W_AgKS5UNHdm8jmQB5OBzcV3J"
+      },
+      {
+        "title":"Case Study",
+        "type":"file",
+        "path":"/docs/events/ace-the-case/case-study-ace-the-case.pdf"
+      }
+    ],
     "category": "business"
   },
   {
