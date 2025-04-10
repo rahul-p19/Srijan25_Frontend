@@ -10,6 +10,8 @@ import {
   FaHeart,
   FaFacebookF,
   FaWhatsapp,
+  FaLink, 
+  FaFile,
 } from "react-icons/fa";
 import { MdShare } from "react-icons/md";
 import { ReactTyped } from "react-typed";
@@ -487,6 +489,38 @@ const AllEvents = () => {
                 </p>
               </div>
             )}
+
+
+      {eventData.attachments && eventData.attachments.length > 0 && (
+        <div className="border p-8 mt-6 md:mt-8 rounded-lg bg-background">
+        <h3 className="text-lg md:text-2xl font-bold text-center text-blue-400">
+        Attachments
+        </h3>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4">
+        {eventData.attachments.map((attachment, index) => (
+          <a
+          key={index}
+          href={attachment.path}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="block border p-6 rounded-lg shadow-xl bg-background hover:scale-105 transition duration-500 ease-in-out"
+          >
+          <div className="text-center">
+          <h3 className="text-lg md:text-xl font-bold text-gray-800 flex items-center justify-center gap-2">
+          <span>
+          {attachment.type === "link" ? <FaLink /> : <FaFile />}
+          </span>
+          {attachment.title}
+          </h3>
+          <p className="mt-2 text-sm font-medium text-gray-600 capitalize">
+          {attachment.type}
+          </p>
+          </div>
+          </a>
+        ))}
+        </div>
+        </div>
+      )}
 
             {/* Event Rules */}
             <div
