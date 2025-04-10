@@ -806,7 +806,7 @@
       "strategy",
       "competition"
     ],
-    "registrationOpen": false,
+    "registrationOpen": true,
     "eventCoordinators": [
       "Anubrata Karmakar[+91 6295825907]",
       "Arka Dhar[+91 7872980084]",
@@ -839,7 +839,7 @@
       {
         "title":"Case Study",
         "type":"link",
-        "path":"https://drive.google.com/file/d/1Y5MXg_7YyYl6wEH63oxgtuZ3vdoXXEyf/view?usp=sharing"
+        "path":"https://drive.google.com/drive/folders/10E5hFq7W_AgKS5UNHdm8jmQB5OBzcV3J"
       },
       {
         "title":"Case Study",
