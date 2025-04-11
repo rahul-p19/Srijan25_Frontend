@@ -1230,6 +1230,18 @@
   },
   {
     "eventID": "deathrace",
+    "attachments":[
+      {
+        "title":"Submit Videos for People's Choice Award",
+        "type":"link",
+        "path":"https://forms.gle/W4zc9oPhAhh1DbZY8"
+      }, 
+      {
+        "title":"Submit Abstract",
+        "type":"link",
+        "path":"https://forms.gle/c7MpaUmDV3K3nPk16"
+      }
+    ],
     "eventName": "Death Race",
     "eventDate": {
       "prelims": [
