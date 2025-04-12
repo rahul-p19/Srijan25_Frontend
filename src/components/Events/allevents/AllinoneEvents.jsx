@@ -151,6 +151,10 @@ const AllEvents = () => {
       return;
     }
     const eventItem = eventsData.find((item) => item.eventID === eventID);
+    if(!eventItem || eventItem.hidden){ 
+      navigate("/events");
+      return;
+    }
     if (eventItem) {
       setEventData(eventItem);
       getWishlist();

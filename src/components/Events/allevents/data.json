@@ -2294,6 +2294,7 @@
     },
     {
       "eventID": "rleague",
+      "hidden":true,
       "eventName": "NSG ARENA x ROCKET LEAGUE",
       "eventDate": {
         "prelims": [],

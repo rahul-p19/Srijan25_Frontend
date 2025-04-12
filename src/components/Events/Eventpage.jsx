@@ -166,16 +166,18 @@ const Events = () => {
 
   // Transform and load event data from JSON once component mounts
   useEffect(() => {
-    const transformed = eventData.map((item) => ({
-      eventID: item.eventID,
-      category: item.category,
-      title: item.eventName,
-      imageUrl: item.eventPoster,
-      description: Array.isArray(item.eventDescription)
+    const transformed = eventData.map((item) => (
+       {
+        eventID: item.eventID,
+        category: item.category,
+        title: item.eventName,
+        hidden : item.hidden ? true : false, 
+        imageUrl: item.eventPoster,
+        description: Array.isArray(item.eventDescription)
         ? item.eventDescription.join(" ")
         : item.eventDescription,
-    }));
-    setEvents(transformed);
+      }));
+    setEvents(transformed.filter((event) => !event.hidden));
     setLoading(false);
   }, []);
 
