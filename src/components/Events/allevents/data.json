@@ -2397,40 +2397,7 @@
       "driveLink": null,
       "category": "gaming"
     },
-    {
-      "eventID": "rbracing",
-      "eventName": "NSG ARENA x Red Bull Racing Simulator",
-      "eventDate": {
-        "prelims": [],
-        "finals": ["18th April 2025", "19th April 2025", "20th April 2025"]
-      },
-      "eventType": "gaming",
-      "eventHashtags": ["gaming", "racing", "simulator", "event"],
-      "registrationOpen": true,
-      "eventCoordinators": [
-        "Mayukh Sinha [+91 8617355155]",
-        "Nirjhar Roy Sarkar [+91 7001617800]",
-        "Souparna Kundu [+91 9800790972]"
-      ],
-      "prize": ["1st : TBD     ",
-      "2nd : TBD     ",
-      "3rd : TBD "],
-      "minMembers": 1,
-      "maxMembers": 1,
-      "eventPoster": "rbracing.webp",
-      "registrationType": "Srijan'25 Website",
-      "eventDescription": [
-        "Feel the adrenaline of high-speed racing as you step into the driver’s seat of the Red Bull Racing Simulator. With realistic controls and immersive visuals, this experience puts you right on the track—no pit stops needed!"
-      ],
-      "eventRules": [
-        "Number of Rounds: NA",
-        "Mode of conduct: Offline",
-        "Description of Each Rounds: Participants can experience driving real racing cars in a driving simulator.",
-        "Prize Pool, Prize pool division: TBD"
-      ],
-      "driveLink": null,
-      "category": "gaming"
-    },
+
     {
       "eventID": "valorant",
       "eventName": "NSG UEC x VALORANT",
