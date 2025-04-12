@@ -806,7 +806,7 @@
       "strategy",
       "competition"
     ],
-    "registrationOpen": true,
+    "registrationOpen": false,
     "eventCoordinators": [
       "Anubrata Karmakar[+91 6295825907]",
       "Arka Dhar[+91 7872980084]",
@@ -1664,7 +1664,7 @@
       "machinelearning",
       "innovation"
     ],
-    "registrationOpen": true,
+    "registrationOpen": false,
     "eventCoordinators": [
       "Soham Bose[9239727821]",
       "Srinjoy Dutta[9732493728]",
