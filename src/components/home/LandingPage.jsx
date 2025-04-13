@@ -15,7 +15,7 @@ import { Suspense, useEffect } from "react";
 import PageReveal from "../PageReveal";
 import Artists from "./Artists";
 import { Helmet } from "react-helmet-async";
-import toast from "react-hot-toast";
+// import toast from "react-hot-toast";
 
 const pastSpeakers = [
   {
@@ -111,9 +111,9 @@ const LandingPage = ({ setUser }) => {
   useEffect(() => {
     const sid = localStorage.getItem("sid");
     setUser(sid ?? "");
-
-    toast("F5 Speakers Live!")
-  });
+    
+    // toast("F5 Speakers Live!")
+  },[]);
 
   return (
     <Suspense fallback={<Loading />}>
