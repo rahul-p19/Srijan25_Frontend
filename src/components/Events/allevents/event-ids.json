@@ -1,29 +1,9 @@
 [
-  {
-    "_id": "67bf56ca62ddfb1c453a926e",
-    "name": "ArtByteArena",
-    "slug": "aba"
-  },
-  {
-    "_id": "67bf571462ddfb1c453a92a4",
-    "name": "PACK-O-VATION",
-    "slug": "pov"
-  },
-  {
-    "_id": "67bf576162ddfb1c453a92de",
-    "name": "Climb-On",
-    "slug": "climbOn"
-  },
-  {
-    "_id": "67bf578962ddfb1c453a92f7",
-    "name": "FlashFrames",
-    "slug": "flfr"
-  },
-  {
-    "_id": "67bf589762ddfb1c453a93c0",
-    "name": "Rook n Roll",
-    "slug": "rnr"
-  },
+  { "_id": "67bf56ca62ddfb1c453a926e", "name": "ArtByteArena", "slug": "aba" },
+  { "_id": "67bf571462ddfb1c453a92a4", "name": "PACK-O-VATION", "slug": "pov" },
+  { "_id": "67bf576162ddfb1c453a92de", "name": "Climb-On", "slug": "climbOn" },
+  { "_id": "67bf578962ddfb1c453a92f7", "name": "FlashFrames", "slug": "flfr" },
+  { "_id": "67bf589762ddfb1c453a93c0", "name": "Rook n Roll", "slug": "rnr" },
   {
     "_id": "67bf59dd62ddfb1c453a9453",
     "name": "PIXELLENSE",
@@ -34,16 +14,8 @@
     "name": "Beat the Market",
     "slug": "btm"
   },
-  {
-    "_id": "67bf5aa062ddfb1c453a94df",
-    "name": "Entropy",
-    "slug": "entropy"
-  },
-  {
-    "_id": "67bf5ac762ddfb1c453a94f5",
-    "name": "UNCODE",
-    "slug": "uncode"
-  },
+  { "_id": "67bf5aa062ddfb1c453a94df", "name": "Entropy", "slug": "entropy" },
+  { "_id": "67bf5ac762ddfb1c453a94f5", "name": "UNCODE", "slug": "uncode" },
   {
     "_id": "67bf5b0862ddfb1c453a951e",
     "name": "Sherlocked",
@@ -84,21 +56,9 @@
     "name": "StratEdgeX",
     "slug": "stratedgex"
   },
-  {
-    "_id": "67bf5d5f62ddfb1c453a972c",
-    "name": "EquilibriX",
-    "slug": "eqbX"
-  },
-  {
-    "_id": "67bf5d9e62ddfb1c453a9742",
-    "name": "Control-Craft",
-    "slug": "ctc"
-  },
-  {
-    "_id": "67bf5dcb62ddfb1c453a9761",
-    "name": "Mysterio",
-    "slug": "myst"
-  },
+  { "_id": "67bf5d5f62ddfb1c453a972c", "name": "EquilibriX", "slug": "eqbX" },
+  { "_id": "67bf5d9e62ddfb1c453a9742", "name": "Control-Craft", "slug": "ctc" },
+  { "_id": "67bf5dcb62ddfb1c453a9761", "name": "Mysterio", "slug": "myst" },
   {
     "_id": "67bf5df662ddfb1c453a976e",
     "name": "Math-e-Magician",
@@ -119,16 +79,8 @@
     "name": "Case-o-mania",
     "slug": "caseomania"
   },
-  {
-    "_id": "67bf5f2262ddfb1c453a97f2",
-    "name": "REEL-A-TION",
-    "slug": "rat"
-  },
-  {
-    "_id": "67bf5f7562ddfb1c453a980d",
-    "name": "Pack-O-Vation",
-    "slug": "pkv"
-  },
+  { "_id": "67bf5f2262ddfb1c453a97f2", "name": "REEL-A-TION", "slug": "rat" },
+  { "_id": "67bf5f7562ddfb1c453a980d", "name": "Pack-O-Vation", "slug": "pkv" },
   {
     "_id": "67bf5f9a62ddfb1c453a9819",
     "name": "Cypher3331",
@@ -139,11 +91,7 @@
     "name": "Investomania",
     "slug": "investomania"
   },
-  {
-    "_id": "67bf603f62ddfb1c453a9867",
-    "name": "H42",
-    "slug": "h42"
-  },
+  { "_id": "67bf603f62ddfb1c453a9867", "name": "H42", "slug": "h42" },
   {
     "_id": "67bf605a62ddfb1c453a9877",
     "name": "SnapSyntax",
@@ -164,11 +112,7 @@
     "name": "Escape Room",
     "slug": "escaperoom"
   },
-  {
-    "_id": "67bf611662ddfb1c453a98df",
-    "name": "Chip-o-Mania",
-    "slug": "chp"
-  },
+  { "_id": "67bf611662ddfb1c453a98df", "name": "Chip-o-Mania", "slug": "chp" },
   {
     "_id": "67c6af0b28ea39fe881e7ab6",
     "name": "Cold Case",
@@ -184,21 +128,9 @@
     "name": "Lord of The Ring",
     "slug": "lotr"
   },
-  {
-    "_id": "67c6b25556edb6ccc0c3f297",
-    "name": "Quizotopia",
-    "slug": "qtp"
-  },
-  {
-    "_id": "67c6b27156edb6ccc0c3f2bc",
-    "name": "CAPITAL CLASH",
-    "slug": "cc1"
-  },
-  {
-    "_id": "67c6b2d556edb6ccc0c3f91c",
-    "name": "Robosoccer",
-    "slug": "rbs"
-  },
+  { "_id": "67c6b25556edb6ccc0c3f297", "name": "Quizotopia", "slug": "qtp" },
+  { "_id": "67c6b27156edb6ccc0c3f2bc", "name": "CAPITAL CLASH", "slug": "cc1" },
+  { "_id": "67c6b2d556edb6ccc0c3f91c", "name": "Robosoccer", "slug": "rbs" },
   {
     "_id": "67c6b2fb56edb6ccc0c3fbb3",
     "name": "Highway to Hell",
@@ -214,14 +146,13 @@
     "name": "Death Race",
     "slug": "deathrace"
   },
+  { "_id": "67c6b3f156edb6ccc0c3fd34", "name": "Homecoming", "slug": "hcg" },
+  { "_id": "67c9f0551c3bb642bb03a225", "name": "LogoCity", "slug": "logocity" },
+  { "_id": "67f3e177a3fa046118bfdaf4", "name": "BeatBox", "slug": "bbx" },
+  { "_id": "67f3e1b4a3fa046118bfde9b", "name": "Rap", "slug": "rap" },
   {
-    "_id": "67c6b3f156edb6ccc0c3fd34",
-    "name": "Homecoming",
-    "slug": "hcg"
-  },
-  {
-    "_id": "67c9f0551c3bb642bb03a225",
-    "name": "LogoCity",
-    "slug": "logocity"
+    "_id": "67fbe3519c84f7069e818e75",
+    "name": "Engineered",
+    "slug": "engineered"
   }
 ]
