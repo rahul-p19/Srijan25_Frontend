@@ -106,7 +106,7 @@
       "cryptography",
       "data-analysis"
     ],
-    "registrationOpen": true,
+    "registrationOpen": false,
     "eventCoordinators": [
       "Subhayan Roy Chowdhury[+91 6289955350]",
       "Atmik Goswami[+91 8910425255]",
@@ -1579,7 +1579,7 @@
       "innovation",
       "sustainability"
     ],
-    "registrationOpen": true,
+    "registrationOpen": false,
     "eventCoordinators": [
       "Ritankar Saha[+91 7595875833]",
       "Manideep Das[+91 7980287030]",
@@ -1833,7 +1833,7 @@
       ]
     },
     "eventType": "brainstorming",
-    "registrationOpen": true,
+    "registrationOpen": false,
     "eventCoordinators": [
       "Tarpan Roy[7908595400]",
       "Suresh Pal[9907579432]",
