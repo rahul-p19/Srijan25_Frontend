@@ -6,6 +6,7 @@ import { useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import clsx from 'clsx';
 import Loading from '../Loading';
+import Linkify from 'react-linkify';
 
 /**
  * @typedef {object} NotificationItem
@@ -122,7 +123,7 @@ const Notifications = ({ user }) => {
                         {item.title}</h2>
                       <span className="text-gray-500 text-sm">{getTimeDifference(item.timestamp)}</span>
                     </div>
-                    <p className="text-gray-300">{item.description}</p>
+                    <p className="text-gray-300"><Linkify>{item.description}</Linkify></p>
                   </li>
                 </div>
               ))
