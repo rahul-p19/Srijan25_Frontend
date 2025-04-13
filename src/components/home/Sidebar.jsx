@@ -24,29 +24,34 @@ const sections = [
     end: 3.2
   },
   {
-    name: "Speakers",
+    name: "F5 Speakers",
     start: 3.2,
     end: 4.0
   },
   {
-    name: "Artists",
+    name: "Past Speakers",
     start: 4.0,
     end: 4.8
   },
   {
-    name: "About",
+    name: "Artists",
     start: 4.8,
-    end: 5.8
+    end: 5.6
+  },
+  {
+    name: "About",
+    start: 5.6,
+    end: 6.6
   },
   {
     name: "Gallery",
-    start: 5.8,
-    end: 6.7
+    start: 6.6,
+    end: 7.5
   },
   {
     name: "Get in Touch",
-    start: 6.7,
-    end: 8
+    start: 7.5,
+    end: 9
   },
 ]
 

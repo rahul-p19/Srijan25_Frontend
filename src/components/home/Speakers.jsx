@@ -6,51 +6,6 @@ import { ScrollTrigger } from "gsap/dist/ScrollTrigger"
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
-
-const speakerDetails = [
-  {
-    name: "Raj Vikramaditya",
-    about: "Founder and CEO, TakeUForward",
-    image: "/speakers/raj-vikramaditya.jpg",
-    youtube: "https://www.youtube.com/@takeUforward",
-    linkedin: "https://www.linkedin.com/in/rajstriver/"
-  },
-  {
-    name: "Aman Dhattarwal",
-    about: "Founder and CEO, Apna College",
-    image: "/speakers/aman-dhattarwal.jpg",
-    youtube: "https://www.youtube.com/@AmanDhattarwal",
-    linkedin: "https://www.linkedin.com/in/dhattarwalaman/"
-  },
-  {
-    name: "Gaurav Sen",
-    about: "Founder, InterviewReady",
-    image: "/speakers/gaurav-sen.jpg",
-    youtube: "https://www.youtube.com/@gkcs",
-    linkedin: "https://www.linkedin.com/in/gkcs/"
-  },
-  {
-    name: "Amitabh",
-    about: "Operations Director, Chandrayaan 3",
-    image: "/speakers/Amitabh-Singh.png",
-    linkedin: "https://www.linkedin.com/in/amitabh-amitabh-069038bb/"
-  },
-  {
-    name: "Soumita Roy Choudhury",
-    about: "VP APAC Mobilewalla",
-    image: "/speakers/soumita-roy-choudhury.jpg",
-    youtube: "",
-    linkedin: "https://www.linkedin.com/in/soumita-roy-choudhury-5a842120/?originalSubdomain=sg"
-  },
-  {
-    name: "Shibaji Paul",
-    about: "Youtuber, 635K+ Subscribers",
-    image: "/speakers/shibaji-paul.jpg",
-    youtube: "https://www.youtube.com/@explorershibaji",
-    instagram: "https://www.instagram.com/explorer_shibaji/"
-  },
-]
-
 function SpeakerCard({ speaker }) {
   return (
     <div className='flex flex-col items-center gap-y-2 w-[87.5vw] sm:w-[25vw] aspect-square h-auto'>
@@ -65,12 +20,12 @@ function SpeakerCard({ speaker }) {
           {speaker.youtube && <a href={speaker.youtube} target='_blank'><YouTube /></a>}
         </div>
       </div>
-      <p className='w-full pl-2'>{speaker.about}</p>
+      <p className='w-full pl-2 text-wrap'>{speaker.about}</p>
     </div >
   )
 }
 
-function Speakers() {
+function Speakers({speakerDetails, headerText}) {
 
   const [carouselStart, setCarouselStart] = useState(0);
   const [touchPosition, setTouchPosition] = useState(null);
@@ -171,7 +126,7 @@ function Speakers() {
     <div ref={container} className='w-full relative border-greyBorder border-t grid grid-cols-1 sm:grid-cols-5 grid-rows-3 sm:grid-rows-1 h-screen overflow-x-hidden'>
       <div className='relative bg-background z-[100] h-full border-greyBorder border-b sm:border-b-transparent sm:border-r sm:-mr-[1px] row-span-1'>
         <div className='sm:hidden absolute left-[50%] -translate-x-[50%] h-full border-greyBorder border-l border-r w-5/7'></div>
-        <h2 className='scrollAnimatedText absolute text-2xl sm:text-xl xl:text-3xl text-center top-[50%] left-[50%] -translate-[50%]'>Past Speakers</h2>
+        <h2 className='scrollAnimatedText absolute text-2xl sm:text-xl xl:text-3xl text-center top-[50%] left-[50%] -translate-[50%]'>{headerText}</h2>
         <div className='absolute top-[65%] left-[50%] -translate-x-[50%] flex gap-x-3'>
           <button className={`text-7xl font-bold`} onClick={previousItem}>
             &lsaquo;

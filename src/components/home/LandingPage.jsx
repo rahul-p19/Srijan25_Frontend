@@ -15,6 +15,73 @@ import { Suspense, useEffect } from "react";
 import PageReveal from "../PageReveal";
 import Artists from "./Artists";
 import { Helmet } from "react-helmet-async";
+import toast from "react-hot-toast";
+
+const pastSpeakers = [
+  {
+    name: "Raj Vikramaditya",
+    about: "Founder and CEO, TakeUForward",
+    image: "/speakers/raj-vikramaditya.jpg",
+    youtube: "https://www.youtube.com/@takeUforward",
+    linkedin: "https://www.linkedin.com/in/rajstriver/"
+  },
+  {
+    name: "Aman Dhattarwal",
+    about: "Founder and CEO, Apna College",
+    image: "/speakers/aman-dhattarwal.jpg",
+    youtube: "https://www.youtube.com/@AmanDhattarwal",
+    linkedin: "https://www.linkedin.com/in/dhattarwalaman/"
+  },
+  {
+    name: "Gaurav Sen",
+    about: "Founder, InterviewReady",
+    image: "/speakers/gaurav-sen.jpg",
+    youtube: "https://www.youtube.com/@gkcs",
+    linkedin: "https://www.linkedin.com/in/gkcs/"
+  },
+  {
+    name: "Amitabh",
+    about: "Operations Director, Chandrayaan 3",
+    image: "/speakers/Amitabh-Singh.png",
+    linkedin: "https://www.linkedin.com/in/amitabh-amitabh-069038bb/"
+  },
+  {
+    name: "Soumita Roy Choudhury",
+    about: "VP APAC Mobilewalla",
+    image: "/speakers/soumita-roy-choudhury.jpg",
+    youtube: "",
+    linkedin: "https://www.linkedin.com/in/soumita-roy-choudhury-5a842120/?originalSubdomain=sg"
+  },
+  {
+    name: "Shibaji Paul",
+    about: "Youtuber, 635K+ Subscribers",
+    image: "/speakers/shibaji-paul.jpg",
+    youtube: "https://www.youtube.com/@explorershibaji",
+    instagram: "https://www.instagram.com/explorer_shibaji/"
+  },
+]
+
+const currentSpeakers = [
+  {
+    name: "Dr. Gajendra Purohit",
+    about: "Educator & Entrepreneur, 1.63M YT Subscribers",
+    image: "/speakers/gajendra-purohit.jpg",
+    youtube: "https://www.youtube.com/@gajendrapurohit",
+    linkedin: "https://www.linkedin.com/in/dr-gajendra-purohit/"
+  },
+  {
+    name: "Rajit Bhattacharya",
+    about: "Founder and CEO, Data Sutram",
+    image: "/speakers/rajit-bhattacharya.jpg",
+    linkedin: "https://www.linkedin.com/in/rajitbhattacharya/"
+  },
+  {
+    name: "Dr. Debiprosad Duari",
+    about: "Former Director, Research & Academic at MP Birla",
+    image: "/speakers/debiprosad-duari.jpg",
+    linkedin: "https://www.linkedin.com/in/debiprosad-duari-039597175/"
+  }
+]
 
 function Loading() {
   return (
@@ -44,6 +111,8 @@ const LandingPage = ({ setUser }) => {
   useEffect(() => {
     const sid = localStorage.getItem("sid");
     setUser(sid ?? "");
+
+    toast("F5 Speakers Live!")
   });
 
   return (
@@ -63,7 +132,8 @@ const LandingPage = ({ setUser }) => {
         <Timeline />
         <Sponsors />
         <Cards />
-        <Speakers />
+        <Speakers speakerDetails={currentSpeakers} headerText={"F5 Speakers"} />
+        <Speakers speakerDetails={pastSpeakers} headerText={"Past Speakers"} />
         <Artists />
         <About />
         <Gallery />
