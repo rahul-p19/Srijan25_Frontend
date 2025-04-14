@@ -2533,6 +2533,34 @@
       ],
       "driveLink": "https://forms.gle/NtbogYBjqsCaifvG6",
       "category": "esports"
+    },
+    {
+      "eventID": "vintage-auto-expo",
+      "eventName": "Vintage Auto Expo",
+      "eventDate": {
+        "prelims": [],
+        "finals": ["20th April 2025"]
+      },
+      "eventType": "special attractions",
+      "eventHashtags": ["special-attractions", "exhibition", "car-expo", "vintage"],
+      "registrationOpen": true,
+      "eventCoordinators": [],
+      "prize": [
+        "1st : NA     ",
+      "2nd : NA     ",
+      "3rd : NA "
+      ],
+      "minMembers": 1,
+      "maxMembers": 1,
+      "eventPoster": "vintage-auto-expo.png",
+      "registrationType": "Walk-in event",
+      "eventDescription": [
+        "Celebrate the charm of the golden era of automobiles as classic engineering meets timeless design. The Vintage Auto Expo brings together a stunning collection of iconic cars from a bygone era—each one a masterpiece of history, elegance, and innovation. From sleek convertibles to legendary muscle cars, this exhibition offers a rare chance to get up close with automotive legends that have stood the test of time. Whether you're a car enthusiast, a history buff, or just love the aesthetics of vintage craftsmanship, this is your invitation to witness automotive heritage like never before. Capture memories, strike up conversations with collectors, and let nostalgia take the wheel in this unforgettable experience."
+      ],
+      "eventRules": [
+        "Vintage Auto Expo - a vintage car exhibition with walk-in registrations"
+      ],
+      "category": "special attractions"
     }
 ]
   

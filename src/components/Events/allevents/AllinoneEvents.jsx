@@ -576,7 +576,8 @@ const AllEvents = () => {
             </div>
 
             {/* Event Organizers */}
-            <div className="border p-8 mt-6 md:mt-8 rounded-lg bg-background">
+            { eventOrganizers && eventOrganizers.length > 0 && 
+              <div className="border p-8 mt-6 md:mt-8 rounded-lg bg-background">
               <h3 className="text-lg md:text-2xl font-bold text-center text-blue-400">
                 {organizersTitle}
               </h3>
@@ -596,6 +597,7 @@ const AllEvents = () => {
                 ))}
               </div>
             </div>
+            }
 
             {/* Share Options Modal */}
             {showShareOptions && (
