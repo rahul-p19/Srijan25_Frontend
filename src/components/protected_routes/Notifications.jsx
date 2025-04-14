@@ -39,6 +39,7 @@ const getNotification = async (setItems)=>{
   
   setItems(notifications.reverse());
 }
+const formattedDescription = DESCRIPTION.replace(/\n/g, "<br />");
 const Notifications = ({ user }) => {
     const userId = localStorage.getItem("sid");
     // console.log( userId );
@@ -123,7 +124,7 @@ const Notifications = ({ user }) => {
                         {item.title}</h2>
                       <span className="text-gray-500 text-sm">{getTimeDifference(item.timestamp)}</span>
                     </div>
-                    <p className="text-gray-300"><Linkify>{item.description}</Linkify></p>
+                    <p className="text-gray-300" dangerouslySetInnerHTML={{ __html: formattedDescription }}><Linkify>{item.description}</Linkify></p>
                   </li>
                 </div>
               ))
