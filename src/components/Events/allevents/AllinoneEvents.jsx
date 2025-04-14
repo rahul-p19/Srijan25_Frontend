@@ -292,7 +292,7 @@ const AllEvents = () => {
 
             {/* Registration Deadline */}
             <h2 className="font-bold text-center mb-4 text-red-700 text-xl md:text-2xl">
-              LAST DATE FOR REGISTRATION: TBD
+              LAST DATE FOR REGISTRATION: {eventData.registrationDeadline ? eventData.registrationDeadline : "TBD"}
             </h2>
 
             {/* Grid for Left & Right Sections */}

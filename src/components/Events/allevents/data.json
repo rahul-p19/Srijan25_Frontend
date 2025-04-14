@@ -536,6 +536,7 @@
   },
   {
     "eventID": "cypher3331",
+    "registrationDeadline":"19th April (On spot registrations open)",
     "eventName": "Cypher 3331",
     "eventDate": {
       "prelims": [
@@ -559,9 +560,9 @@
       "Mayukh Roy[7278972359]"
     ],
     "prize": [
-      "1st : Certificate, Rs 2,500 cash prize",
-      "2nd : Certificate, Rs 1,500 cash prize",
-      "3rd : Certificate, Rs 1,000 cash prize"
+      "1st prize:  Certificate, Rs 2,500 cash, Internship opportunity",
+      "2nd prize: Certificate, Rs 1,500 cash, Internship opportunity",
+      "3rd prize: Certificate, Rs 1,000 cash, Internship opportunity"
     ],
     "minMembers": 3,
     "maxMembers": 3,
@@ -1901,6 +1902,7 @@
   },
   {
     "eventID": "flfr",
+    "registrationDeadline":"16th April,2025",
     "eventName": "FlashFrames",
     "eventDate": {
       "prelims": [
