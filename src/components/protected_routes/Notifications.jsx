@@ -124,7 +124,7 @@ const Notifications = ({ user }) => {
                         {item.title}</h2>
                       <span className="text-gray-500 text-sm">{getTimeDifference(item.timestamp)}</span>
                     </div>
-                    <p className="text-gray-300"}><Linkify>{item.description}</Linkify></p>
+                    <p className="text-gray-300"><Linkify>{item.description}</Linkify></p>
                   </li>
                 </div>
               ))
