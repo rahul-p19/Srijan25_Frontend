@@ -106,7 +106,7 @@
       "cryptography",
       "data-analysis"
     ],
-    "registrationOpen": true,
+    "registrationOpen": false,
     "eventCoordinators": [
       "Subhayan Roy Chowdhury[+91 6289955350]",
       "Atmik Goswami[+91 8910425255]",
@@ -1904,12 +1904,23 @@
     "eventName": "FlashFrames",
     "eventDate": {
       "prelims": [
-        "TBD"
+        "17th April(online submission)"
       ],
       "finals": [
-        "TBD"
+        "18th April(offline)"
       ]
     },
+    "attachments":[
+      {
+        "title":"Round-1 Footage Link",
+        "type":"link",
+        "path":"https://drive.google.com/drive/folders/1BbxgYKJqGVo2faK0I-23sO2zbD4moTlR?usp=sharing"
+      },
+      {
+        "title":"Round-1 Submission Link",
+        "path":"https://drive.google.com/drive/folders/1SGZ1J2KmOgPPsxBCLcRWi-cD1dj1j9az?usp=sharing"
+      }
+    ],
     "eventType": "misc",
     "eventHashtags": [
       "sample",
@@ -1940,7 +1951,7 @@
       "They will be judged, and the top 5 will move on to the next round.",
       "Submissions are to be made by sharing a drive link of their edited videos."
     ],
-    "driveLink": "https://drive.google.com/file/d/14cEcX4xBZTKqlXfdBmawJWR6rwWKr0ws/view?usp=sharing",
+    "driveLink": "https://drive.google.com/file/d/1H9bCpwaqcBm-36MTKNeU-h7GJ6LjqzuJ/view?usp=sharing",
     "category": "misc"
   },
   {
