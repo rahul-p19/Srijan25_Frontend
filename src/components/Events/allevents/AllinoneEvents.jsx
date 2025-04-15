@@ -544,13 +544,13 @@ const AllEvents = () => {
           className="block border p-6 rounded-lg shadow-xl bg-background hover:scale-105 transition duration-500 ease-in-out"
           >
           <div className="text-center">
-          <h3 className="text-lg md:text-xl font-bold text-gray-800 flex items-center justify-center gap-2">
+          <h3 className="text-lg md:text-xl font-bold text-white flex items-center justify-center gap-2">
           <span>
           {attachment.type === "link" ? <FaLink /> : <FaFile />}
           </span>
           {attachment.title}
           </h3>
-          <p className="mt-2 text-sm font-medium text-gray-600 capitalize">
+          <p className="mt-2 text-sm font-medium text-white capitalize">
           {attachment.type}
           </p>
           </div>
