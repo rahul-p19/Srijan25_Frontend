@@ -564,7 +564,7 @@
       "2nd prize: Certificate, Rs 1,500 cash, Internship opportunity",
       "3rd prize: Certificate, Rs 1,000 cash, Internship opportunity"
     ],
-    "minMembers": 3,
+    "minMembers": 1,
     "maxMembers": 3,
     "eventPoster": "cypher3331.webp",
     "registrationType": "Srijan'25 Website",
@@ -576,7 +576,14 @@
       "Finals :  A more intense and challenging quiz session, designed to push participants further and test their mastery of the concepts learned."
     ],
     "driveLink": "https://docs.google.com/document/d/154zO0bxZir7fp8X-9UB8CjRD5yZUhQFum7jidovAxG8/edit?usp=sharing",
-    "category": "brainstorming"
+    "category": "brainstorming",
+    "attachments":[
+      {
+        "title":"Participants Whatsapp Group",
+        "type":"link",
+        "path":"https://chat.whatsapp.com/IsBtZd9ZumkKMJ2VNmFxGW"
+      }
+    ]
   },
   {
     "eventID": "climbOn",
