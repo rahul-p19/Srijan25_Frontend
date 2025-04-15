@@ -264,7 +264,7 @@ export default function MerchandisePage() {
             {/* <div className="hidden md:block absolute top-3/4 left-1/2 w-4 h-px bg-gray-500"></div> */}
           </div>
 
-          {/* Order Button - Centered on mobile */}
+          {/* Order Button - Centered on mobile 
           <div className="flex justify-center md:justify-start md:absolute md:top-80 md:left-2/5">
             <button className="focus:outline-none" onClick={handleOrderClick} disabled={isUserChecking}>
               <img
@@ -279,6 +279,7 @@ export default function MerchandisePage() {
               />
             </button>
           </div>
+          */}
 
           {/* Mobile Price Tag - Below order button, only visible on mobile */}
           <div className="md:hidden w-2/3 my-4 ml-14">
