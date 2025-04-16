@@ -989,7 +989,7 @@
     ],
     "minMembers": 1,
     "maxMembers": 1,
-    "eventPoster": "cold.webp",
+    "eventPoster": "cold-case-poster-2.png",
     "registrationType": "Srijan'25 Website",
     "eventFormat": [
       "Round 1: Participants will be presented with a mystery-based case study (e.g., a murder mystery, a heist, or an unsolved crime). They must analyse clues, identify inconsistencies, and deduce the most logical solution within a given time frame. The fastest and most accurate teams will qualify for the final round.\n",
@@ -1560,7 +1560,12 @@
     ],
     "minMembers": 1,
     "maxMembers": 1,
-    "eventPoster": "logocity.webp",
+    "eventPoster": "logocity-poster-2.jpeg",
+    "attachments":[{
+      "title":"Prelims Rules",
+      "type":"file",
+      "path":"docs/events/logocity/logocity-prelims-rules.pdf"
+    }],
     "registrationType": "Srijan'25 Website",
     "eventDescription": [
       "Are your lecture notes interjected with doodles? Do you have flair of translating your ideas into images? Do you think you can identify the most elusive logos whenever you see them? Wait no more!"
@@ -1716,8 +1721,8 @@
     ],
     "registrationOpen": true,
     "eventCoordinators": [
-      "Rajobrata Dasgupta[7439319042]",
-      "Borno Banerjee[7478054233]"
+      "Sania Gupta [+91 96477 19522]",
+      "Sabyasachi Das [+91 95477 32461]"
     ],
     "prize": [
       "1st : TBD ",
@@ -1726,7 +1731,7 @@
     ],
     "minMembers": 4,
     "maxMembers": 5,
-    "eventPoster": "homecoming.webp",
+    "eventPoster": "homecoming-poster-2.png",
     "registrationType": "Srijan'25 Website",
     "eventDescription": [
       "Embark on a coding odyssey with Homecoming – the ultimate line follower bot race where your creation takes center stage! Will your bot decipher the maze, find the winning path without getting lost, and cross the line of limits faster than the other chasers? Homecoming is not just a race; it's a challenge to push boundaries and innovate. Unleash your creativity, race to victory, and make your bot the star of the show."
