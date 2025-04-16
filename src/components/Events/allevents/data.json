@@ -2595,6 +2595,41 @@
         "Vintage Auto Expo - a vintage car exhibition with walk-in registrations"
       ],
       "category": "special attractions"
+    },
+    {
+      "eventID": "wtec",
+      "eventName": "NSG ARENA x F1 Racing Simulator",
+      "eventDate": {
+        "prelims": [],
+        "finals": [ 
+          "18th April 2025",
+          "19th April 2025",
+          "20th April 2025"
+        ]
+      },
+      "eventType": "esports",
+      "eventHashtags": ["gaming", "esports", "racing", "event"],
+      "registrationOpen": false,
+      "eventCoordinators": [
+        "Mayukh Sinha [+91 8617355155]"
+      ],
+      "prize": [
+      ],
+      "minMembers": 1,
+      "maxMembers": 1,
+      "eventPoster": "racing-sim.jpg",
+      "registrationType": "Srijan'25 Website",
+      "eventDescription": [
+        "Feel the adrenaline of high-speed racing as you step into the driver’s seat of the Red Bull Racing Simulator. With realistic controls and immersive visuals, this experience puts you right on the track—no pit stops needed!"
+      ],
+      "eventRules": [
+        "Number of Rounds: NA",
+        "Mode of conduct(Online/Offline): Offline",
+        "Description of Each Rounds: Participants can experience driving real racing cars in a driving simulator.",
+        "Prize Pool , Prize pool division: NA	",
+        "Preferred dates of different rounds:18th 19th and 20th ",
+      ],
+      "category": "esports"
     }
 ]
   
