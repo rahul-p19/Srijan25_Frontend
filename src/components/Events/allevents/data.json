@@ -1142,6 +1142,13 @@
   {
     "eventID": "cc1",
     "eventName": "Capital Clash",
+    "attachments":[
+      {
+        "title":"Problem Statement",
+        "type":"link",
+        "path":"https://docs.google.com/spreadsheets/d/1Ei2w2wyY3S7fNouXPQ754_IxdniYXnIY/edit?usp=sharing&ouid=103327486775102188726&rtpof=true&sd=true"
+      }
+    ],
     "eventDate": {
       "prelims": [
         "16th April 2025 - 18th April 2025"
