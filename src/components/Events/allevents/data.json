@@ -346,7 +346,7 @@
       "ai",
       "openaimer"
     ],
-    "registrationOpen": true,
+    "registrationOpen": false,
     "eventCoordinators": [
       "Soumyadeep Singh[9046431718]",
       "Rohit Shee[9679827536]",
@@ -875,7 +875,7 @@
       "innovation",
       "technology"
     ],
-    "registrationOpen": true,
+    "registrationOpen": false,
     "eventCoordinators": [
       "Subha Bhattacharya[+91 9073701438]",
       "Adway Paul[+91 8240384498]",
@@ -1726,7 +1726,7 @@
       "competition",
       "innovation"
     ],
-    "registrationOpen": true,
+    "registrationOpen": false,
     "eventCoordinators": [
       "Sania Gupta [+91 96477 19522]",
       "Sabyasachi Das [+91 95477 32461]"
@@ -1892,7 +1892,7 @@
       ]
     },
     "eventType": "brainstorming",
-    "registrationOpen": true,
+    "registrationOpen": false,
     "eventCoordinators": [
       "Avilasha Banerjee[+91 96796 40227]",
       "Bitan Mukherjee[+91 98753 04504]"
@@ -2166,7 +2166,7 @@
     },
     "eventType": "circuits and robotics",
     "eventHashtags": ["sample", "event"],
-    "registrationOpen": true,
+    "registrationOpen": false,
     "eventCoordinators": [
       "Raunak Sengupta[8910721083]",
       "Spandan Saha[9775591123]"
