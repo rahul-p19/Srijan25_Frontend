@@ -1791,13 +1791,14 @@
   },
   {
     "eventID": "data-drift",
+    "registrationDeadline":"18th April 2025",
     "eventName": "DATA DRIFT",
     "eventDate": {
       "prelims": [
-        "TBD"
+        "-"
       ],
       "finals": [
-        "TBD"
+        "20th April 2025"
       ]
     },
     "eventType": "coding",
@@ -1806,7 +1807,7 @@
       "traffic",
       "insights"
     ],
-    "registrationOpen": false,
+    "registrationOpen": true,
     "eventCoordinators": [
       "Sayan Roy[6289846253]",
       "MD Farhan Alam[629080177]",
