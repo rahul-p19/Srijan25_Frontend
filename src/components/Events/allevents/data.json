@@ -2630,6 +2630,41 @@
         "Preferred dates of different rounds:18th 19th and 20th ",
       ],
       "category": "esports"
+    },
+    {
+      "eventID": "nsg-vr",
+      "eventName": "NSG ARENA x  VR Experience Zone",
+      "eventDate": {
+        "prelims": [],
+        "finals": [ 
+          "18th April 2025",
+          "19th April 2025",
+          "20th April 2025"
+        ]
+      },
+      "eventType": "esports",
+      "eventHashtags": ["gaming", "esports", "vr", "event"],
+      "registrationOpen": false,
+      "eventCoordinators": [
+        "Anargha Pal [+91 8777260367]"
+      ],
+      "prize": [
+      ],
+      "minMembers": 1,
+      "maxMembers": 1,
+      "eventPoster": "nsg-vr.png",
+      "registrationType": "Srijan'25 Website",
+      "eventDescription": [
+        "Explore new worlds and step beyond reality with the VR Experience Zone. Whether it's slicing through beats, exploring space, or surviving zombies, this is your portal to a whole new dimension of entertainment."
+      ],
+      "eventRules": [
+        "Number of Rounds: NA",
+        "Mode of conduct(Online/Offline): Offline",
+        "Description of Each Rounds: Participants get to experience virtual reality simulations.",
+        "Prize Pool , Prize pool division: NA",
+        "Preferred dates of different rounds:18th 19th and 20th ",
+      ],
+      "category": "esports"
     }
 ]
   
