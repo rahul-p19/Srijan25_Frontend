@@ -390,7 +390,7 @@
       "ai",
       "openaimer"
     ],
-    "registrationOpen": true,
+    "registrationOpen": false,
     "eventCoordinators": [
       "Soumyadeep Malakar[7439689674]",
       "Md Touhid Alam[7431086857]",
@@ -653,7 +653,7 @@
       "visual-art",
       "tech-fest"
     ],
-    "registrationOpen": true,
+    "registrationOpen": false,
     "eventCoordinators": [
       "Ankan Pal[+91 8900397266]",
       "Anindya Karmakar[+91 9674782427]",
@@ -1164,7 +1164,7 @@
       "finance",
       "market"
     ],
-    "registrationOpen": true,
+    "registrationOpen": false,
     "eventCoordinators": [
       "Sanmitra Nath[+91 8272962528]",
       "Ujjwal Kumar[+91 9110985538]"
@@ -1554,7 +1554,7 @@
       "creativity",
       "design"
     ],
-    "registrationOpen": true,
+    "registrationOpen": false,
     "eventCoordinators": [
       "Sneha Debnath[+91 6290544740]",
       "Aindree Chatterjee[+91 62918 96539]",
@@ -1949,7 +1949,7 @@
       "sample",
       "event"
     ],
-    "registrationOpen": true,
+    "registrationOpen": false,
     "eventCoordinators": [
       "Arijit Baidya[9874684787]",
       "Saumili Roy[ 7318809736]"
