@@ -58,9 +58,9 @@ export default function MerchandisePage() {
     },
     {
       id: 2,
-      name: "Dipayan Bhattacharyya",
-      dept: "Power Engineering (UG4)",
-      number: "+917044836127",
+      name: "Aniket Biswas",
+      dept: "Chemical Engineering (UG3)",
+      number: "+917439258545",
     },
   ];
   const qrValue = "upi://pay?pa=user@upi&pn=User&mc=123456&tid=9876543210";
