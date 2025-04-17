@@ -79,6 +79,12 @@ const currentSpeakers = [
     about: "Former Director, Research & Academic at MP Birla",
     image: "/speakers/debiprosad-duari.jpg",
     linkedin: "https://www.linkedin.com/in/debiprosad-duari-039597175/"
+  },
+  {
+    name: "Sabyasachi Biswas",
+    about: "CEO, VIKI.AI",
+    image: "/speakers/sabyasachi-biswas.jpg",
+    linkedin: "https://www.linkedin.com/in/sabyasachibiswas/"
   }
 ]
 
