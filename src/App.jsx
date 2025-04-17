@@ -79,7 +79,7 @@ function App() {
           {/*           <Route path="/events/:category/:eventID" element={<AllEvents />} />
           <Route path="/events/:category/:eventID/:registration" element={<EventRegistration />} /> */}
           <Route path="/events/:eventID" element={<AllEvents />} />
-          <Route path="/events/:eventID/:registration" element={<EventRegistration />} />
+          <Route path="/events/:eventID/registration" element={<EventRegistration />} />
           <Route>
             {/* <Route path="/merchandise" element={
              <ProtectedRoute checkUserSession={checkUserSession} logout={logout}>
