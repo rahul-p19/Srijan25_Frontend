@@ -34,12 +34,12 @@ function Conveners() {
                 <p>Supriti Sarkar</p>
                 <div className="flex gap-x-2 text-base items-center mb-1">
                     <Call fontSize="small" />
-                    <p>+8961716604</p>
+                    <p>+918961716604</p>
                 </div>
                 <p>Gourab Paul</p>
                 <div className="flex gap-x-2 text-base items-center">
                     <Call fontSize="small" />
-                    <p>+8961716604</p>
+                    <p>+918961716604</p>
                 </div>
             </div>
             <h4>Event Co-ordinators:</h4>
