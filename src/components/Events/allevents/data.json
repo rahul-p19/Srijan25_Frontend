@@ -1814,7 +1814,7 @@
       "traffic",
       "insights"
     ],
-    "registrationOpen": true,
+    "registrationOpen": false,
     "eventCoordinators": [
       "Sayan Roy[6289846253]",
       "MD Farhan Alam[629080177]",
