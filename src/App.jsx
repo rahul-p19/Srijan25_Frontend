@@ -68,7 +68,7 @@ function App() {
     <>
       <Router>
         <Routes>
-          <Route index element={<LandingPage setUser={setUser} />} />
+          <Route index element={<LandingPage />} />
           <Route element={checking ? <Loading /> : <ProtectedRoute accessAllowed={!!user} redirectTo="/login" />}>
             <Route
               path="/dashboard"

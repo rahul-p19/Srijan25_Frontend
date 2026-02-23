@@ -1,20 +1,20 @@
 /* eslint-disable react/prop-types */
-import Footer from "../Footer";
-import Navbar from "../Navbar";
-import About from "./About";
-import Contact from "./Contact";
-import Conveners from "./Conveners";
-import Gallery from "./Gallery";
 import Hero from "./Hero";
-import Speakers from "./Speakers";
-import Sponsors from "./Sponsors";
-import Timeline from "./Timeline";
-import Sidebar from "./Sidebar";
-import Cards from "./Cards";
-import { Suspense, useEffect } from "react";
-import PageReveal from "../PageReveal";
-import Artists from "./Artists";
+import { Suspense} from "react";
 import { Helmet } from "react-helmet-async";
+// import Footer from "../Footer";
+// import Navbar from "../Navbar";
+// import About from "./About";
+// import Contact from "./Contact";
+// import Conveners from "./Conveners";
+// import Gallery from "./Gallery";
+// import Speakers from "./Speakers";
+// import Sponsors from "./Sponsors";
+// import Timeline from "./Timeline";
+// import Sidebar from "./Sidebar";
+// import Cards from "./Cards";
+// import PageReveal from "../PageReveal";
+// import Artists from "./Artists";
 
 const pastSpeakers = [
   {
@@ -112,13 +112,7 @@ function Loading() {
   );
 }
 
-const LandingPage = ({ setUser }) => {
-  useEffect(() => {
-    const sid = localStorage.getItem("sid");
-    setUser(sid ?? "");
-
-  },[]);
-
+const LandingPage = () => {
   return (
     <Suspense fallback={<Loading />}>
       <main className="font-sometypeMono bg-background">
@@ -129,21 +123,7 @@ const LandingPage = ({ setUser }) => {
             content="Official Website for Srijan'25 - The Annual Techno-Management Fest of Jadavpur University"
           />
         </Helmet>
-        <PageReveal />
-        <Navbar />
-        <Sidebar />
         <Hero />
-        <Timeline />
-        <Sponsors />
-        <Cards />
-        <Speakers speakerDetails={currentSpeakers} headerText={"F5 Speakers"} />
-        <Speakers speakerDetails={pastSpeakers} headerText={"Past Speakers"} />
-        <Artists />
-        <About />
-        <Gallery />
-        <Contact />
-        <Conveners />
-        <Footer />
       </main>
     </Suspense>
   );
